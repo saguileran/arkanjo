@@ -1,5 +1,5 @@
 # test-duplication-code
-I want to create some test cases to check the ability to detect duplication code on C code. This repository worht is store this test cases and document my finds.
+I want to create some test cases to check the ability to detect duplication code on C code. This repository worth is store this test cases and document my finds.
 
 
 ## List of Candidate Tools to Test
