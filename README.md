@@ -33,3 +33,25 @@ https://codeclimate.com/
 - Search through github repository.
 - Do not check any .c file. Maybe I will try later with change extension to .cpp.
 
+
+https://www.researchgate.net/publication/2866183_Visual_Detection_of_Duplicated_Code
+
+- Duploc 
+- There is a pape about that. Looks cool.
+- Unfortunaly, I was not able to find an source to test the tool.
+- Main source link on paper is broken.
+
+https://github.com/duploq/duploq
+
+- It is a frond end aplication for https://github.com/dlidstrom/Duplo
+- Look like it is easy to configurate.
+- I will not install it for know. Since it can only do what Duplo can do. 
+
+https://github.com/platisd/duplicate-code-detection-tool
+
+- As a first impression, it is a amazing tool.
+- Check similarity through different files and gives back a porcentage of similarity between each pair of files.
+- It is easy to install and use. 
+- Support GitHub Action. Looks easy to do CI/CD with it.
+- Do not check similarity on code of the same file. I.e, the tool cannot check a copy-paste code if the copy-paste happened on the same file.
+
