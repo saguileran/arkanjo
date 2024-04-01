@@ -14,7 +14,7 @@ g++ parser.cpp -o parser
 
 The output start with a number n, the number of comparations made by the tool.
 
-The following n lines of the output has two strings s,t and a number s, a pair of files compared and  the similarity between them. 
+The following n lines of the output has two strings s,t and a decimal number SIMILARITY, a pair of files compared and  the similarity between them. 
 
 The list of comparations of the output is sorted by similarity in decending order.
 
