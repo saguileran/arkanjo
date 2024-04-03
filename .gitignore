@@ -35,6 +35,8 @@
 *.i*86
 *.x86_64
 *.hex
+parser/parser
+parser/filter
 
 # Debug files
 *.dSYM/
@@ -50,3 +52,8 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+#Ignore duplicate-code-detection-tool from https://github.com/platisd/duplicate-code-detection-tool
+duplicate-code-detection-tool/
+
+#Intermediate files from the tool
