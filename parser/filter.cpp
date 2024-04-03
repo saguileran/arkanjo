@@ -37,7 +37,7 @@ void filter(string file_name){
 
 	for(auto [similar_file,similarity] : similar_files){
 		cout << similar_file << ' ';
-		cout << fixed << setprecision(10) << similarity << endl;
+		cout << fixed << setprecision(2) << similarity << endl;
 	}
 }
 

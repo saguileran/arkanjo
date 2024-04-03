@@ -57,3 +57,4 @@ dkms.conf
 duplicate-code-detection-tool/
 
 #Intermediate files from the tool
+output_tool.txt
