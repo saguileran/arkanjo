@@ -37,6 +37,7 @@
 *.hex
 parser/parser
 parser/filter
+parser/function_breaker
 
 # Debug files
 *.dSYM/
@@ -58,3 +59,6 @@ duplicate-code-detection-tool/
 
 #Intermediate files from the tool
 output_tool.txt
+
+#Temporary Files
+parser/tmp/
