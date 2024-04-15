@@ -1,4 +1,4 @@
-#Description
+# Description
 
 This tool uses as a subrotine the tool from [Duplicate Code Detection Tool](https://github.com/platisd/duplicate-code-detection-tool)  as a subrotine to compare functions
 
