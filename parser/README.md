@@ -47,14 +47,18 @@ It is not stored setup's. So if you want to check another code base you will los
 
 If you has done the standard setup. This is the followint command you can execute with the tool: 
 
-```
-bash run.sh similar FILE_NAME MIN_SIMILARITY
-#find files that the similarity to a given file is greater or equal to a given value MIN
-```
+
+### find files that the similarity to a given file is greater or equal to a given value MIN
 
 ```
-bash run.sh all MIN_SIMILARITY
-#finds the quantity and all pair of files that the similarity is greater or equal to a given value"
+sudo bash run.sh similar FILE_NAME MIN_SIMILARITY
+```
+
+
+### finds the quantity and all pair of files that the similarity is greater or equal to a given value:
+
+```
+sudo bash run.sh all MIN_SIMILARITY
 ```
 
 The output of the all command  start with a number n, the number of comparations made by the tool.
@@ -64,10 +68,12 @@ The following n lines of the output has two strings s,t and a decimal number SIM
 The list of comparations of the output is sorted by similarity in decending order.
 
 
+
+### Find files that the similarity to a given file from the output of the all command:
 ```
-bash run.sh similar_from_all FILE_NAME OUTPUT_ALL
-find files that the similarity to a given file from the output of the all command
+sudo bash run.sh similar_from_all FILE_NAME OUTPUT_ALL
 ```
+
 
 To execute the similar_from_all, save the output of an all command on a temporary file and pass the name of the file to the command.
 
