@@ -71,4 +71,4 @@ find files that the similarity to a given file from the output of the all comman
 
 To execute the similar_from_all, save the output of an all command on a temporary file and pass the name of the file to the command.
 
-If you has done the setup to compare functions, all the commands still applies but insted of FILE_NAME you pass FUNCTION_NAME or FILE_NAME/FUNCTION_NAME (The advantage of FILE_NAME/FUNCTION_NAME is that it uses the function of the given file, while FUNCTION_NAME uses every function on the code bases that has this file).
+If you has done the setup to compare functions, all the commands still applies but instead of FILE_NAME you pass FUNCTION_NAME or FILE_NAME/FUNCTION_NAME (The advantage of FILE_NAME/FUNCTION_NAME is that it uses the function of the given file, while FUNCTION_NAME uses every function on the code bases that has this file).
