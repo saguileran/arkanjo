@@ -38,6 +38,8 @@
 parser/parser
 parser/filter
 parser/function_breaker
+file_parser/filter
+file_parser/parser
 
 # Debug files
 *.dSYM/
