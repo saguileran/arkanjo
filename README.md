@@ -1,6 +1,21 @@
 # test-duplication-code
 I want to create some test cases to check the ability to detect duplication code on C code. This repository worth is store this test cases and document my finds.
 
+## About Parser
+
+In fact none of the tools accomplished the expectations. 
+
+The only useful one are https://github.com/platisd/duplicate-code-detection-tool. 
+
+The parser's folder are tools create to do more complex detectetion code. 
+
+Parser folder is about doing comparations in structs/functions scope, while file_parser is do comparations in files scope.
+
+At the moment, the parser tools uses the above tool as a subrotine to not do more repetitive work. But it can be changed if necessary.
+
+Both tools has their own REAMDE. Read them to learn more.
+
+Probably it is good to create a new repository to the parser folder, but I think about it latter when the tool is more solid.
 
 ## List of Candidate Tools to Test
 
