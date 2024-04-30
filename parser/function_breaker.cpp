@@ -90,15 +90,6 @@ bool is_special_char(char c){
 	return true;
 }
 
-bool contains_special_char(string s){
-	for(auto c : s){
-		if(is_special_char(c)){
-			return true;
-		}
-	}
-	return false;
-}
-
 set<pair<int,int>> find_start_end_of_global_brackets(vector<string> brackets_content){
 	set<pair<int,int>> start_ends;
 	int open_brackets = 0;
@@ -148,7 +139,7 @@ string extract_last_token_of_string(string s){
 	string cur_token = "";
 	for(size_t i = 0; i < s.size(); i++){
 		char c = s[i];
-		if( is_empty_char(c)){
+		if( is_empty_char(c) || is_special_char(c)){
 			if(!cur_token.empty()){
 				tokens.push_back(cur_token);
 			}
@@ -159,11 +150,6 @@ string extract_last_token_of_string(string s){
 	}
 	if(!cur_token.empty()){
 		tokens.push_back(cur_token);
-	}
-
-	
-	while(!tokens.empty() && contains_special_char(tokens.back())){
-		tokens.pop_back();
 	}
 
 	if(tokens.empty()){
