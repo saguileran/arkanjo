@@ -15,7 +15,9 @@ even if the bracket sequence is in a commentary
 using namespace std;
 
 const vector<string> ALLOWED_EXTENSIONS = { "c","h" };
-const string SOURCE_TO_PATH = "tmp/source";
+const string SOURCE_PATH = "tmp/source";
+const string HEADER_PATH = "tmp/header";
+const string INFO_PATH =   "tmp/info";
 const int MKDIR_FLAG = 0700;
 const int NUMBER_OF_LINES_BEFORE_FOR_FUNCTION_NAME = 10;
 
@@ -171,49 +173,87 @@ string extract_last_token_of_string(string s){
 	return tokens.back();
 }
 
-string concat_lines_before_body_function(const vector<string> &file_content, int line_start_body_function, int pos_bracket){	
-	string ret = file_content[line_start_body_function];
+
+struct Line_code{
+	int line_number;
+	string content;
+};
+
+Line_code build_line_code(int line_number, string content){
+	Line_code ret;
+	ret.line_number = line_number;
+	ret.content = content;
+	return ret;
+}
+
+vector<Line_code> get_lines_before_body_function(const vector<string> &file_content, int line_start_body_function, int pos_bracket){	
+	vector<Line_code> ret;
+	Line_code line_bracket = build_line_code(line_start_body_function,file_content[line_start_body_function]);
+	//remove everything after {
+	while(int(line_bracket.content.size()) > pos_bracket){
+		line_bracket.content.pop_back();
+	}
+	ret.push_back(line_bracket);
+
 	int until = max(0,line_start_body_function-NUMBER_OF_LINES_BEFORE_FOR_FUNCTION_NAME);
 	for(int i = line_start_body_function-1; i >= until; i--){
-		pos_bracket += file_content[i].size();
-		ret = file_content[i] + ret;
+		ret.push_back(build_line_code(i,file_content[i]));
 	}
-	//remove everything after {
-	while(int(ret.size()) > pos_bracket){
-		ret.pop_back();
-	}
-	while(!ret.empty() && is_empty_char(ret.back())){
-		ret.pop_back();
+	reverse(ret.begin(),ret.end());
+
+	//remove empty lines/empty characters at the end of lines
+	while(!ret.empty()){
+		if(ret.back().content.empty()){
+			ret.pop_back();
+			continue;
+		}
+		if(is_empty_char(ret.back().content.back())){
+			ret.back().content.pop_back();
+			continue;
+		}
+		break;
 	}
 	return ret;
 }
 
-string remove_parameters_of_declaration(string code){
-	if(code.empty() || code.back() != ')'){
+vector<Line_code> remove_parameters_of_declaration(vector<Line_code> code){
+	if(code.empty() || code.back().content.back() != ')'){
 		return code;
 	}
 	int count_close_parenteses = 0;
+
 	while(!code.empty()){
-		if(code.back() == ')'){
-			count_close_parenteses++;
+		string content = code.back().content;
+		while(!content.empty()){
+			if(content.back() == ')'){
+				count_close_parenteses++;
+			}
+			if(content.back() == '('){
+				count_close_parenteses--;
+			}
+			content.pop_back();
+			if(count_close_parenteses == 0){
+				break;
+			}
 		}
-		if(code.back() == '('){
-			count_close_parenteses--;
-		}
-		code.pop_back();
+		code.back().content = content;
 		if(count_close_parenteses == 0){
 			break;
 		}
+		code.pop_back();
 	}
 	return code;
 }
 
-string extract_function_name_from_declaration(const vector<string> &file_content, int line_start_body_function){
+pair<string,int> extract_function_name_and_line_from_declaration(const vector<string> &file_content, int line_start_body_function){
 	int pos = find_position_first_open_bracket(file_content[line_start_body_function]);
-	string code_before_bracket = concat_lines_before_body_function(file_content, line_start_body_function,pos);
-	string code = remove_parameters_of_declaration(code_before_bracket);
-	string ret = extract_last_token_of_string(code);
-	return ret;
+	vector<Line_code> code_before_bracket = get_lines_before_body_function(file_content, line_start_body_function,pos);
+	vector<Line_code> code = remove_parameters_of_declaration(code_before_bracket);
+	if(code.empty()){
+		return make_pair("",-1);
+	}
+	string ret = extract_last_token_of_string(code.back().content);
+	return {ret,code.back().line_number};
 }
 
 string extract_extension(string file_path){
@@ -233,28 +273,69 @@ string extract_extension(string file_path){
 	return extension;
 }
 
-string build_final_path(string relative_path, string function_name){
+string build_source_path(string relative_path, string function_name){
 	string extension = extract_extension(relative_path);
-	string final_path = SOURCE_TO_PATH + relative_path + "/";
+	string final_path = SOURCE_PATH + relative_path + "/";
 	final_path += function_name + "." + extension;
 	return final_path;
 }
 
-void process_function(int start_number_line, int end_number_line, string relative_path, const vector<string> &file_content){
-	string first_line = file_content[start_number_line];
-	string function_name = extract_function_name_from_declaration(file_content,start_number_line);
+string build_header_path(string relative_path, string function_name){
+	string extension = extract_extension(relative_path);
+	string final_path = HEADER_PATH + relative_path + "/";
+	final_path += function_name + "." + extension;
+	return final_path;
+}
 
-	if(function_name.empty()){
-		return;
-	}
+string build_info_path(string relative_path, string function_name){
+	string extension = extract_extension(relative_path);
+	string final_path = INFO_PATH + relative_path + "/";
+	final_path += function_name + ".json";
+	return final_path;
+}
 
-	string path = build_final_path(relative_path, function_name);
+
+void create_source_file(int start_number_line, int end_number_line, string relative_path, string function_name, const vector<string> &file_content){
+	string path = build_source_path(relative_path, function_name);
 	vector<string> function_content;
 	for(int i = start_number_line; i <= end_number_line; i++){
 		function_content.push_back(file_content[i]);
 	}
-
 	write_file_from_vector(path, function_content);
+}
+
+void create_header_file(int start_number_line, int line_declaration, string relative_path, string function_name, const vector<string> &file_content){
+	string path = build_header_path(relative_path, function_name);
+	vector<string> function_content;
+	for(int i = line_declaration; i < start_number_line; i++){
+		function_content.push_back(file_content[i]);
+	}
+	write_file_from_vector(path, function_content);
+}
+
+/*This creates a json file*/
+void create_info_file(int line_declaration, int start_number_line, int end_number_line, string relative_path, string function_name){
+	vector<string> content;
+	content.push_back("{\n");
+	content.push_back("\"file_name\"=" + relative_path + ",\n");
+	content.push_back("\"function_name\"=" + function_name + ",\n");
+	content.push_back("\"line_declaration\"=" + to_string(line_declaration) + ",\n");
+	content.push_back("\"start_number_line\"=" + to_string(start_number_line) + ",\n");
+	content.push_back("\"end_number_line\"=" + to_string(end_number_line) + "\n");
+	content.push_back("}\n");
+	string path = build_info_path(relative_path, function_name);
+	write_file_from_vector(path, content);
+}
+
+void process_function(int start_number_line, int end_number_line, string relative_path, const vector<string> &file_content){
+	string first_line = file_content[start_number_line];
+	auto [function_name,line_declaration] = extract_function_name_and_line_from_declaration(file_content,start_number_line);
+	if(function_name.empty()){
+		return;
+	}
+	create_source_file(start_number_line,end_number_line,relative_path,function_name,file_content);
+	create_header_file(start_number_line,line_declaration,relative_path,function_name,file_content);
+	create_info_file(line_declaration,start_number_line,end_number_line,relative_path,function_name);
 }
 
 string file_path_from_folder_path(string file_path, string folder_path){
