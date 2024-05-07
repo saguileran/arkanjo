@@ -31,6 +31,13 @@ int Path::find_position_start_relative_path(){
 	return ret;
 }
 
+bool Path::is_empty(){
+	return tokens.empty();
+}
+
+Path::Path(){
+}
+
 Path::Path(string string_path){
 	tokens = split_path(string_path);
 	position_start_relative_path = find_position_start_relative_path();
@@ -49,6 +56,9 @@ string Path::build_string_path(vector<string> path){
 }
 
 string Path::build_base_path(string base){
+	if(is_empty()){
+		return "";
+	}
 	vector<string> path = tokens;
 	int pos_change = position_start_relative_path-1;
 	path[pos_change] = base;
@@ -66,6 +76,9 @@ string Path::build_header_path(){
 
 string Path::build_info_path(){
 	string ret = build_base_path(INFO_STRING);
+	if(ret == ""){
+		return "";
+	}
 	int sz = EXTENSION.size();
 	for(int i = 0; i < sz; i++){
 		ret.pop_back();
@@ -75,6 +88,9 @@ string Path::build_info_path(){
 }
 
 string Path::build_relative_path(){
+	if(is_empty()){
+		return "";
+	}
 	vector<string> path = tokens;
 	path.pop_back();
 	int to_remove = position_start_relative_path;
@@ -88,6 +104,9 @@ string Path::build_relative_path(){
 }
 
 string Path::build_function_name(){
+	if(is_empty()){
+		return "";
+	}
 	string function_name = tokens.back();
 	int sz = EXTENSION.size();
 	for(int i = 0; i < sz; i++){
@@ -96,4 +115,7 @@ string Path::build_function_name(){
 	return function_name;
 }
 
+bool Path::operator<(const Path &path) const{
+	return tokens < path.tokens;
+}
 

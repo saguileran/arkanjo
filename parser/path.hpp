@@ -4,8 +4,8 @@ This code filter the output only printing the files similar to files that contai
 The code filter every file that has the pattern as a substring, so be carefull with duplications
 */
 
-#ifndef PATH_SOURCE
-#define PATH_SOURCE
+#ifndef PATH_HPP
+#define PATH_HPP
 
 #include <bits/stdc++.h> 
 using namespace std;
@@ -13,13 +13,13 @@ using namespace std;
 class Path{
 	//extension added on function name to run on ML TOOL
 private:
-	const string EXTENSION = ".c";
-	const string JSON_EXTENSION = ".json";
-	const string BASE_INIT_STRING = "tmp";
-	const string SOURCE_STRING = "source";
-	const string HEADER_STRING = "header";
-	const string INFO_STRING = "info";
-	const char BAR = '/';
+	string EXTENSION = ".c";
+	string JSON_EXTENSION = ".json";
+	string BASE_INIT_STRING = "tmp";
+	string SOURCE_STRING = "source";
+	string HEADER_STRING = "header";
+	string INFO_STRING = "info";
+	char BAR = '/';
 
 	vector<string> tokens;
 	int position_start_relative_path;
@@ -29,12 +29,15 @@ private:
 	string build_base_path(string base);
 
 public:
+	bool is_empty();
+	Path();
 	Path(string string_path);
 	string build_source_path();
 	string build_header_path();
 	string build_info_path();	
 	string build_relative_path();	
 	string build_function_name();
+	bool operator<(const Path &path) const;
 };
 
 
