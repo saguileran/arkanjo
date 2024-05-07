@@ -37,12 +37,19 @@ vector<string> Function::get_header(){
 }
 
 vector<string> Function::build_all_content(){
+	
 	vector<string> ret;
+	//the last line of header should merge with the first line of content
 	for(auto line : header){
 		ret.push_back(line);
 	}
-	for(auto line : content){
-		ret.push_back(line);
+	for(int i = 0; i < int(content.size()); i++){
+		auto line = content[i];
+		if(i >= 1){
+			ret.push_back(line);
+		}else{
+			ret.back() += line;
+		}
 	}
 	return ret;
 }

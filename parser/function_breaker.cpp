@@ -284,7 +284,17 @@ string build_info_path(string relative_path, string function_name){
 void create_source_file(int start_number_line, int end_number_line, string relative_path, string function_name, const vector<string> &file_content){
 	string path = build_source_path(relative_path, function_name);
 	vector<string> function_content;
-	for(int i = start_number_line; i <= end_number_line; i++){
+	
+	string first_line = file_content[start_number_line];
+	int to_remove = find_position_first_open_bracket(first_line);
+	reverse(first_line.begin(),first_line.end());
+	for(int i = 0; i < to_remove; i++){
+		first_line.pop_back();
+	}
+	reverse(first_line.begin(),first_line.end());
+	function_content.push_back(first_line);
+
+	for(int i = start_number_line+1; i <= end_number_line; i++){
 		function_content.push_back(file_content[i]);
 	}
 	write_file_from_vector(path, function_content);
@@ -296,6 +306,14 @@ void create_header_file(int start_number_line, int line_declaration, string rela
 	for(int i = line_declaration; i < start_number_line; i++){
 		function_content.push_back(file_content[i]);
 	}
+
+	string first_line = file_content[start_number_line];
+	int to_keep = find_position_first_open_bracket(first_line);
+	while(int(first_line.size()) > to_keep){
+		first_line.pop_back();
+	}
+	function_content.push_back(first_line);
+
 	write_file_from_vector(path, function_content);
 }
 
