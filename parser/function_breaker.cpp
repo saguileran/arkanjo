@@ -303,11 +303,11 @@ void create_header_file(int start_number_line, int line_declaration, string rela
 void create_info_file(int line_declaration, int start_number_line, int end_number_line, string relative_path, string function_name){
 	vector<string> content;
 	content.push_back("{\n");
-	content.push_back("\"file_name\"=" + relative_path + ",\n");
-	content.push_back("\"function_name\"=" + function_name + ",\n");
-	content.push_back("\"line_declaration\"=" + to_string(line_declaration) + ",\n");
-	content.push_back("\"start_number_line\"=" + to_string(start_number_line) + ",\n");
-	content.push_back("\"end_number_line\"=" + to_string(end_number_line) + "\n");
+	content.push_back("\"file_name\":\"" + relative_path + "\",\n");
+	content.push_back("\"function_name\":\"" + function_name + "\",\n");
+	content.push_back("\"line_declaration\":" + to_string(line_declaration) + ",\n");
+	content.push_back("\"start_number_line\":" + to_string(start_number_line) + ",\n");
+	content.push_back("\"end_number_line\":" + to_string(end_number_line) + "\n");
 	content.push_back("}\n");
 	string path = build_info_path(relative_path, function_name);
 	write_file_from_vector(path, content);
