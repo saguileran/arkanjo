@@ -23,6 +23,18 @@ It is required the g++. The standard C++ compiler in the GNU/Linux environment
 
 It is required to install the libjsoncpp-dev package with apt-get or anything like that. Maybe this tool only works in ubuntu because of how I read Json files. I will look into that latter. Also remember to add -ljsoncpp flag latter.
 
+Features I want to do:
+
+- Count number of lines affected by code duplication in the repository. Create a kind of report ?
+
+- Given n files, remove the common function in them and create a temporary file .c and .h that has the common functions. In this feature the user should be able to select which functions to remove and it would be nice to have something to visualize the functions and the diff between files.
+
+- Given a function, list the other functions that are similar to this one.
+
+- Given a file, to every function in this file that is a duplicate function, give the user the option to list which files use this function.
+
+- Did I thought In more? I do not know. In order of difficult to implement is second, first, fourth, third feature. 
+
 
 ## How to Setup
 
