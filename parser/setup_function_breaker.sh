@@ -19,6 +19,8 @@ g++ function_breaker.cpp -o function_breaker
 echo "Enter your project path:"
 read  path
 
+echo "Enter minimum similarity desired on using the tool:"
+read similarity
 
 #Execute parser of the tool
 sudo rm -r tmp
@@ -26,6 +28,4 @@ sudo rm -r tmp
 
 #Execute the tool and save in a temporary file
 sudo python3 -W ignore duplicate-code-detection-tool/duplicate_code_detection.py -d tmp > output_tool.txt
-
-
-
+./parser $similarity < output_tool.txt > output_parsed.txt
