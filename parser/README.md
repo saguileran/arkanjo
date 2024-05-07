@@ -19,6 +19,10 @@ It is required access to internet to download the subrotine tool.
 
 It is required the g++. The standard C++ compiler in the GNU/Linux environment
 
+## TODO 
+
+It is required to install the libjsoncpp-dev package with apt-get or anything like that. Maybe this tool only works in ubuntu because of how I read Json files. I will look into that latter. Also remember to add -ljsoncpp flag latter.
+
 
 ## How to Setup
 
