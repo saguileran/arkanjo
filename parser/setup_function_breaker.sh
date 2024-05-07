@@ -27,5 +27,5 @@ sudo rm -r tmp
 ./function_breaker $path
 
 #Execute the tool and save in a temporary file
-sudo python3 -W ignore duplicate-code-detection-tool/duplicate_code_detection.py -d tmp > output_tool.txt
+sudo python3 -W ignore duplicate-code-detection-tool/duplicate_code_detection.py -d tmp/source > output_tool.txt
 ./parser $similarity < output_tool.txt > output_parsed.txt
