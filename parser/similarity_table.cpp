@@ -76,8 +76,26 @@ double Similarity_Table::get_similarity(Path path1, Path path2){
 	return MINIMUM_SIMILARITY;
 }
 
-double Similarity_Table::is_similar(Path path1, Path path2){
-	double similarity = get_similarity(path1, path2);
+bool Similarity_Table::is_above_threshold(double similarity){
 	return similarity_threshold <= similarity + EPS_ERROR_MARGIN;
 }
 
+double Similarity_Table::is_similar(Path path1, Path path2){
+	double similarity = get_similarity(path1, path2);
+	return is_above_threshold(similarity);
+}
+
+vector<Path> Similarity_Table::get_path_list(){
+	return paths;
+}
+
+vector<Path> Similarity_Table::get_similar_path_to_the_reference(Path reference){
+	int id = find_id_path(reference);
+	vector<Path> ret;
+	for(auto [id,similarity] : similarity_graph[id]){
+		if(is_above_threshold(similarity)){
+			ret.push_back(paths[id]);
+		}
+	}
+	return ret;
+}

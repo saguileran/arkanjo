@@ -1,3 +1,4 @@
+
 #include "utils.hpp"
 
 void Utils::ensure_file_is_open(std::ifstream &file, string file_name){
@@ -29,3 +30,9 @@ Json::Value Utils::read_json(string string_path){
 	json_file.close();
 	return json;
 }
+
+string Utils::format_colored_message(string message, COLOR color){
+	return COLOR_TOKENS_UTILS[RESET] + message + COLOR_TOKENS_UTILS[color];
+}
+
+

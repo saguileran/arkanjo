@@ -25,14 +25,17 @@ class Similarity_Table{
 		void read_comparation(ifstream &table_file);
 		void read_file_table(ifstream &table_file);
 		void init_similarity_table();
+		bool is_above_threshold(double similarity);
 
 	public:
 		Similarity_Table(double _similarity_threshold);
 		Similarity_Table();
-
+		
 		void update_similarity(double new_similarity_threshold);
 		double get_similarity(Path path1, Path path2);
 		double is_similar(Path path1, Path path2);
+		vector<Path> get_path_list();
+		vector<Path> get_similar_path_to_the_reference(Path reference);
 };
 
 #endif

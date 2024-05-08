@@ -15,13 +15,19 @@ class Function{
 		string START_NUMBER_LINE_JSON = "start_number_line";
 		string END_NUMBER_LINE_JSON = "end_number_line";
 
+		string LIMITER_PRINT = "---------------";
+		string FUNCTION_PREFIX_PRINT = "Function Name: ";
+		string RELATIVE_PATH_PRINT = "Relative Path: ";
+		string LINE_DECLARATION_PRINT = "Start on line: ";
+		string END_DECLARATION_PRINT = "Ends on line: ";
+
 		Path path;
 		vector<string> content;
 		vector<string> header;
 		int start_number_line;
 		int line_declaration;
 		int end_number_line;
-	
+
 		void read_content();
 		void read_header();
 		void read_info();
@@ -30,6 +36,7 @@ class Function{
 		pair<int,int> get_scope_function_in_file();
 		vector<string> get_header();
 		vector<string> build_all_content();
+		void print_basic_info();
 };
 
 #endif

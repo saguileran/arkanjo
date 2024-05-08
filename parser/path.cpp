@@ -9,7 +9,7 @@ vector<string> Path::split_path(string string_path){
 		if(c == BAR){
 			ret.push_back(aux);
 			aux = "";
-		}else{
+		}else{ 
 			aux += c;
 		}
 	}
@@ -119,3 +119,7 @@ bool Path::operator<(const Path &path) const{
 	return tokens < path.tokens;
 }
 
+bool Path::contains_given_pattern(string pattern){
+	string relative_path = build_relative_path(); 
+	return relative_path.find(pattern) != string::npos;
+}

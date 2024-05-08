@@ -37,6 +37,7 @@ public:
 	string build_info_path();	
 	string build_relative_path();	
 	string build_function_name();
+	bool contains_given_pattern(string pattern);
 	bool operator<(const Path &path) const;
 };
 
