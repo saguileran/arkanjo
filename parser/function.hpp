@@ -15,7 +15,6 @@ class Function{
 		string START_NUMBER_LINE_JSON = "start_number_line";
 		string END_NUMBER_LINE_JSON = "end_number_line";
 
-		string LIMITER_PRINT = "---------------";
 		string FUNCTION_PREFIX_PRINT = "Function Name: ";
 		string RELATIVE_PATH_PRINT = "Relative Path: ";
 		string LINE_DECLARATION_PRINT = "Start on line: ";

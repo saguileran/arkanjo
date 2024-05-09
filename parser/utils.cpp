@@ -32,7 +32,7 @@ Json::Value Utils::read_json(string string_path){
 }
 
 string Utils::format_colored_message(string message, COLOR color){
-	return COLOR_TOKENS_UTILS[RESET] + message + COLOR_TOKENS_UTILS[color];
+	return COLOR_TOKENS_UTILS[color] + message + COLOR_TOKENS_UTILS[RESET];
 }
 
 

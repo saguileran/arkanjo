@@ -8,6 +8,8 @@ using namespace std;
 
 namespace Utils{
 
+	const string LIMITER_PRINT = "---------------------";
+
 	const vector<string> COLOR_TOKENS_UTILS = {
 		"\033[0m", //RESET
 		"\033[31m", //RED
@@ -18,6 +20,7 @@ namespace Utils{
 		"\033[36m", //CYAN
 		"\033[37m", //GRAY
 		"\033[97m", //WHITE
+		"\033[33;1m", //BRIGHT_YELLOW
 	};
 	
 	enum COLOR{
@@ -29,7 +32,8 @@ namespace Utils{
 		MAGENTA,
 		CYAN,
 		GRAY,
-		WHITE
+		WHITE,
+		BRIGHT_YELLOW
 	};
 
 	void ensure_file_is_open(std::ifstream &file, string file_name);
