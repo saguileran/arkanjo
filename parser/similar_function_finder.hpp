@@ -8,7 +8,7 @@ using namespace std;
 class Similar_Function_Finder{
 	string EMPTY_PATH_MESSAGE_1 = "There is no functions that resembles the name: ";
 	string EMPTY_PATH_MESSAGE_2 = "Value incorrected passed or there is no duplication code with this function";
-	string REFERENCE_PATH_MESSAGE = "Following function was found:";
+	string REFERENCE_PATH_MESSAGE = "The following function was found:";
 	string COUNT_MESSAGE_1 = "The total number of functions that are similar to the found one is ";
 	string COUNT_MESSAGE_2 = ". More info about them are listed below.";
 

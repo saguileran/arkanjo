@@ -17,8 +17,9 @@ class Function{
 
 		string FUNCTION_PREFIX_PRINT = "Function Name: ";
 		string RELATIVE_PATH_PRINT = "Relative Path: ";
-		string LINE_DECLARATION_PRINT = "Start on line: ";
+		string LINE_DECLARATION_PRINT = "Starts on line: ";
 		string END_DECLARATION_PRINT = "Ends on line: ";
+		string NUMBER_LINE_PRINT = "Total number of lines: ";
 
 		Path path;
 		vector<string> content;
@@ -30,6 +31,8 @@ class Function{
 		void read_content();
 		void read_header();
 		void read_info();
+
+		int number_of_lines();
 	public:
 		Function(Path _path);
 		pair<int,int> get_scope_function_in_file();

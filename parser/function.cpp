@@ -9,13 +9,16 @@ void Function::read_header(){
 	string header_path = path.build_header_path();
 	header = Utils::read_file_generic(header_path);
 }
-
 void Function::read_info(){
 	string info_path = path.build_info_path();
 	Json::Value info = Utils::read_json(info_path);
 	line_declaration = info[LINE_DECLARATION_JSON].asInt();
 	start_number_line = info[START_NUMBER_LINE_JSON].asInt();
 	end_number_line = info[END_NUMBER_LINE_JSON].asInt();
+}
+
+int Function::number_of_lines(){
+	return end_number_line-line_declaration+1;
 }
 
 Function::Function(Path _path){
@@ -59,6 +62,7 @@ void Function::print_basic_info(){
 	string relative_message = RELATIVE_PATH_PRINT + path.build_relative_path();
 	string start_message = LINE_DECLARATION_PRINT + to_string(line_declaration+1);
 	string end_message = END_DECLARATION_PRINT + to_string(end_number_line+1);
+	string number_message = NUMBER_LINE_PRINT + to_string(number_of_lines());
 	
 	cout << '\n';
 	cout << Utils::LIMITER_PRINT << '\n';
@@ -66,6 +70,7 @@ void Function::print_basic_info(){
 	cout << Utils::format_colored_message(relative_message, Utils::GREEN) << '\n';
 	cout << Utils::format_colored_message(start_message, Utils::WHITE) << '\n';
 	cout << Utils::format_colored_message(end_message, Utils::WHITE) << '\n';
+	cout << Utils::format_colored_message(number_message, Utils::WHITE) << '\n';
 	cout << Utils::LIMITER_PRINT << '\n';
 	cout << '\n';
 }
