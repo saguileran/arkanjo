@@ -86,19 +86,24 @@ string Path::build_info_path(){
 	return ret;
 }
 
+vector<string> Path::get_tokens_from_relative_path(){
+	vector<string> token_relative_path = tokens;
+	token_relative_path.pop_back();
+	int to_remove = position_start_relative_path;
+	reverse(token_relative_path.begin(),token_relative_path.end());
+	for(int i = 0; i < to_remove; i++){
+		token_relative_path.pop_back();
+	}
+	reverse(token_relative_path.begin(),token_relative_path.end());
+	return token_relative_path;
+}
+
 string Path::build_relative_path(){
 	if(is_empty()){
 		return "";
 	}
-	vector<string> path = tokens;
-	path.pop_back();
-	int to_remove = position_start_relative_path;
-	reverse(path.begin(),path.end());
-	for(int i = 0; i < to_remove; i++){
-		path.pop_back();
-	}
-	reverse(path.begin(),path.end());
-	string string_path = build_string_path(path);
+	vector<string> token_relative_path = get_tokens_from_relative_path();
+	string string_path = build_string_path(token_relative_path);
 	return string_path;
 }
 
@@ -112,6 +117,23 @@ string Path::build_function_name(){
 		function_name.pop_back();
 	}
 	return function_name;
+}
+
+vector<string> Path::get_common_folders(Path path){
+	vector<string> tokens_relative_1 = get_tokens_from_relative_path();
+	vector<string> tokens_relative_2 = path.get_tokens_from_relative_path();
+	int minimum_size_tokens = min(tokens_relative_1.size(),tokens_relative_2.size());
+	vector<string> common_folders;
+	for(int i = 0; i < minimum_size_tokens; i++){
+		auto token_1 = tokens_relative_1[i];
+		auto token_2 = tokens_relative_2[i];
+		if(token_1 == token_2){
+			common_folders.push_back(token_1);
+		}else{
+			break;
+		}
+	}
+	return common_folders;
 }
 
 bool Path::operator<(const Path &path) const{

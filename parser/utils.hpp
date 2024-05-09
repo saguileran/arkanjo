@@ -15,7 +15,7 @@ namespace Utils{
 		"\033[31m", //RED
 		"\033[32m", //GREEN
 		"\033[33m", //YELLOW
-		"\033[33m", //BLUE
+		"\033[34m", //BLUE
 		"\033[35m", //MAGENTA
 		"\033[36m", //CYAN
 		"\033[37m", //GRAY

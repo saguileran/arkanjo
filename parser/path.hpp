@@ -27,6 +27,7 @@ private:
 	int find_position_start_relative_path();
 	string build_string_path(vector<string> path);
 	string build_base_path(string base);
+	vector<string> get_tokens_from_relative_path();
 
 public:
 	bool is_empty();
@@ -37,6 +38,7 @@ public:
 	string build_info_path();	
 	string build_relative_path();	
 	string build_function_name();
+	vector<string> get_common_folders(Path path);
 	bool contains_given_pattern(string pattern);
 	bool operator<(const Path &path) const;
 };

@@ -1,3 +1,6 @@
+#ifndef COUNTER_DUPLICATION_CODE_TRIE_HPP
+#define COUNTER_DUPLICATION_CODE_TRIE_HPP
+
 #include <bits/stdc++.h> 
 #include "utils.hpp"
 using namespace std;
@@ -14,11 +17,13 @@ class Counter_Duplication_Code_Trie{
 	string BASIC_SHIFT_PER_DEPTH = "----";
 	string END_ARROW = "--> ";
 	string TWO_POINTER_AFTER_FOLDER = "/: ";
-	string LINE_TEXT = " line duplication detected."; 
+	string LINE_TEXT = " duplicated lines detected."; 
 
 	vector<map<string,int>> trie; //It is a pair {value of the edge which is a string, node that this edges moves to}
 	vector<int> counter_duplication_lines;
-	
+	int number_printed_lines = 0;
+
+	Utils::COLOR choose_text_color();
 	int create_node_at_the_end();
 	void create_edge_if_not_exist(int node, string folder);
 	string create_context_string_on_depth(int depth);
@@ -31,4 +36,4 @@ public:
 	Counter_Duplication_Code_Trie();
 };
 
-
+#endif

@@ -31,9 +31,8 @@ class Function{
 		void read_content();
 		void read_header();
 		void read_info();
-
-		int number_of_lines();
 	public:
+		int number_of_lines();
 		Function(Path _path);
 		pair<int,int> get_scope_function_in_file();
 		vector<string> get_header();

@@ -4,6 +4,15 @@ It is not simple to understand if you do not know the structure. Please refer to
 */
 #include "counter_duplication_code_trie.hpp"
 
+Utils::COLOR Counter_Duplication_Code_Trie::choose_text_color(){
+	number_printed_lines++;
+	Utils::COLOR ret = Utils::GRAY;
+	if(number_printed_lines%2 == 0){
+		ret = Utils::CYAN;
+	}
+	return ret;
+}
+
 int Counter_Duplication_Code_Trie::create_node_at_the_end(){
 	int id = trie.size();
 	map<string,int> aux;
@@ -27,10 +36,12 @@ string Counter_Duplication_Code_Trie::create_context_string_on_depth(int depth){
 	return ret;
 }
 
+
 void Counter_Duplication_Code_Trie::print_node_information(int node, int depth, string folder){
 	string line = create_context_string_on_depth(depth) + folder + TWO_POINTER_AFTER_FOLDER;
 	line += to_string(counter_duplication_lines[node]) + LINE_TEXT;
-	cout << line << '\n';
+	Utils::COLOR color = choose_text_color();
+	cout << Utils::format_colored_message(line,color) << '\n';
 }
 
 void Counter_Duplication_Code_Trie::dfs_print_duplication_code_trie(int current_node, int depth, string folder){
