@@ -36,6 +36,7 @@ class Similarity_Table{
 		double is_similar(Path path1, Path path2);
 		vector<Path> get_path_list();
 		vector<Path> get_similar_path_to_the_reference(Path reference);
+		vector<pair<Path,Path>> get_all_similar_path_pairs_sorted_by_similarity();
 };
 
 #endif

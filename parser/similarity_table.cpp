@@ -99,3 +99,21 @@ vector<Path> Similarity_Table::get_similar_path_to_the_reference(Path reference)
 	}
 	return ret;
 }
+
+vector<pair<Path,Path>> Similarity_Table::get_all_similar_path_pairs_sorted_by_similarity(){
+	vector<tuple<double,Path,Path>> similar_path_pairs;
+	vector<pair<Path,Path>> ret;
+	for(auto [ ids, similarity] : similarity_table){
+		Path path1 = paths[ids.first];
+		Path path2 = paths[ids.second];
+		if(is_similar(path1,path2)){
+			similar_path_pairs.push_back({similarity,path1,path2});
+		}
+	}
+	sort(similar_path_pairs.rbegin(),similar_path_pairs.rend());
+	for(auto [similarity,path1,path2] : similar_path_pairs){
+		ret.push_back({path1,path2});
+	}
+	return ret;
+}
+	
