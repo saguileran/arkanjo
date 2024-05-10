@@ -4,8 +4,7 @@
 # Object files
 *.o
 *.ko
-*.obj
-*.elf
+*.obj *.elf
 
 # Linker output
 *.ilk
@@ -38,6 +37,7 @@
 parser/parser
 parser/filter
 parser/function_breaker
+parser/exec
 file_parser/filter
 file_parser/parser
 
@@ -64,3 +64,4 @@ output_tool.txt
 
 #Temporary Files
 parser/tmp/
+parser/output_parsed.txt
