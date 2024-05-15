@@ -13,7 +13,8 @@ if [[ $install == "Y" ]]; then
 fi
 
 #Compile
-g++ function_breaker.cpp -o function_breaker
+make breaker
+g++ parser.cpp -o parser
 
 #Read The project Directory which is desired to run the tool
 echo "Enter your project path:"

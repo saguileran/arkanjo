@@ -23,6 +23,8 @@ It is required the g++. The standard C++ compiler in the GNU/Linux environment
 
 It is required to install the libjsoncpp-dev package with apt-get or anything like that. Maybe this tool only works in ubuntu because of how I read Json files. I will look into that latter. Also remember to add -ljsoncpp flag latter.
 
+Remember to install : sudo apt-get install libjsoncpp-dev 
+
 Features I want to do:
 
 - Count number of lines affected by code duplication in the repository. Create a kind of report ?

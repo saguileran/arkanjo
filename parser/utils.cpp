@@ -22,6 +22,35 @@ vector<string> Utils::read_file_generic(string string_path){
 	return ret;
 }
 
+void Utils::write_file_generic(string file_path, vector<string> content){
+	std::ofstream fileout;
+	create_parents_folder_of_file_path(file_path);
+	fileout.open(file_path);
+
+	for(auto line : content){
+		fileout << line << '\n';
+	}
+
+	fileout.close();
+}
+
+void Utils::create_parents_folder_of_file_path(string file_path){
+	vector<string> parents;
+	for(size_t i = 0; i < file_path.size(); i++){
+		if(file_path[i] == '/'){
+			string s = "";
+			for(size_t j = 0; j < i; j++){
+				s += file_path[j];
+			}
+			parents.push_back(s);
+		}
+	}
+	for(auto folder : parents){
+		const char *cfolder = folder.c_str();
+		mkdir(cfolder,MKDIR_FLAG);
+	}
+}
+
 Json::Value Utils::read_json(string string_path){
 	ifstream json_file(string_path,std::ifstream::binary);
 	ensure_file_is_open(json_file,string_path);
@@ -34,5 +63,4 @@ Json::Value Utils::read_json(string string_path){
 string Utils::format_colored_message(string message, COLOR color){
 	return COLOR_TOKENS_UTILS[color] + message + COLOR_TOKENS_UTILS[RESET];
 }
-
 

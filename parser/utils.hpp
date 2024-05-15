@@ -3,12 +3,16 @@
 
 #include <bits/stdc++.h> 
 #include <jsoncpp/json/json.h>
+#include <sys/stat.h>
 
 using namespace std;
+
 
 namespace Utils{
 
 	const string LIMITER_PRINT = "---------------------";
+
+	const int MKDIR_FLAG = 0700;
 
 	const vector<string> COLOR_TOKENS_UTILS = {
 		"\033[0m", //RESET
@@ -38,6 +42,8 @@ namespace Utils{
 
 	void ensure_file_is_open(std::ifstream &file, string file_name);
 	vector<string> read_file_generic(string string_path);
+	void write_file_generic(string file_path, vector<string> content);
+	void create_parents_folder_of_file_path(string file_path);
 	Json::Value read_json(string string_path);
 
 	string format_colored_message(string message, COLOR color);

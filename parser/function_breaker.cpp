@@ -12,13 +12,13 @@ even if the bracket sequence is in a commentary
 
 #include <bits/stdc++.h>
 #include <sys/stat.h>
+#include "utils.hpp"
 using namespace std;
 
 const vector<string> ALLOWED_EXTENSIONS = { "c","h" };
 const string SOURCE_PATH = "tmp/source";
 const string HEADER_PATH = "tmp/header";
 const string INFO_PATH =   "tmp/info";
-const int MKDIR_FLAG = 0700;
 const int NUMBER_OF_LINES_BEFORE_FOR_FUNCTION_NAME = 10;
 
 vector<string> read_file_as_vector(string file_path){
@@ -33,35 +33,6 @@ vector<string> read_file_as_vector(string file_path){
 	filein.close();
 
 	return ret;
-}
-
-void create_parents_folder_of_file_path(string file_path){
-	vector<string> parents;
-	for(size_t i = 0; i < file_path.size(); i++){
-		if(file_path[i] == '/'){
-			string s = "";
-			for(size_t j = 0; j < i; j++){
-				s += file_path[j];
-			}
-			parents.push_back(s);
-		}
-	}
-	for(auto folder : parents){
-		const char *cfolder = folder.c_str();
-		mkdir(cfolder,MKDIR_FLAG);
-	}
-}
-
-void write_file_from_vector(string file_path, vector<string> content){
-	std::ofstream fileout;
-	create_parents_folder_of_file_path(file_path);
-	fileout.open(file_path);
-
-	for(auto line : content){
-		fileout << line << '\n';
-	}
-
-	fileout.close();
 }
 
 bool is_empty_char(char c){
@@ -297,7 +268,7 @@ void create_source_file(int start_number_line, int end_number_line, string relat
 	for(int i = start_number_line+1; i <= end_number_line; i++){
 		function_content.push_back(file_content[i]);
 	}
-	write_file_from_vector(path, function_content);
+	Utils::write_file_generic(path, function_content);
 }
 
 void create_header_file(int start_number_line, int line_declaration, string relative_path, string function_name, const vector<string> &file_content){
@@ -314,7 +285,7 @@ void create_header_file(int start_number_line, int line_declaration, string rela
 	}
 	function_content.push_back(first_line);
 
-	write_file_from_vector(path, function_content);
+	Utils::write_file_generic(path, function_content);
 }
 
 /*This creates a json file*/
@@ -328,7 +299,7 @@ void create_info_file(int line_declaration, int start_number_line, int end_numbe
 	content.push_back("\"end_number_line\":" + to_string(end_number_line) + "\n");
 	content.push_back("}\n");
 	string path = build_info_path(relative_path, function_name);
-	write_file_from_vector(path, content);
+	Utils::write_file_generic(path, content);
 }
 
 void process_function(int start_number_line, int end_number_line, string relative_path, const vector<string> &file_content){
@@ -368,7 +339,7 @@ void file_breaker(string file_path, string folder_path){
 		return;
 	}
 
-	vector<string> file_content = read_file_as_vector(file_path);
+	vector<string> file_content = Utils::read_file_generic(file_path);
 	set<pair<int,int>> start_end_of_functions = find_start_end_of_global_brackets(file_content);
 
 	for(auto [start_line, end_line] : start_end_of_functions){
