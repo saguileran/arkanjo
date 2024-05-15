@@ -231,8 +231,6 @@ vector<Line_content> remove_parenteses_at_the_end_of_the_scope(vector<Line_conte
 }
 
 vector<Line_content> remove_content_until_find_parenteses_at_the_end(vector<Line_content> code){
-
-	
 	while(!code.empty()){
 		string content = code.back().content;
 		while(!content.empty()){
@@ -248,7 +246,6 @@ vector<Line_content> remove_content_until_find_parenteses_at_the_end(vector<Line
 		}
 		code.pop_back();
 	}
-	assert(!code.empty() && "Error expected to found ')' but was not found");
 	return code;
 }
 
