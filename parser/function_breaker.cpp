@@ -14,14 +14,64 @@ even if the bracket sequence is in a commentary
 #include "utils.hpp"
 using namespace std;
 
-const vector<string> ALLOWED_EXTENSIONS = { "c","h" };
+const vector<string> C_EXTENSIONS = { "c","h"};
+const vector<string> JAVA_EXTENSIONS =  { "java" };
+const vector<string> ALLOWED_EXTENSIONS = { "c","h","java" };
 const string SOURCE_PATH = "tmp/source";
 const string HEADER_PATH = "tmp/header";
 const string INFO_PATH =   "tmp/info";
 const int NUMBER_OF_LINES_BEFORE_FOR_FUNCTION_NAME = 10;
 const int C_RELEVANT_DEPTH = 0;
+const int JAVA_RELEVANT_DEPTH = 1;
 
+enum PROGRAMMING_LANGUAGE{
+	C,
+	JAVA
+};
 
+bool is_c_extension(string extension){
+	for(auto c_extension : C_EXTENSIONS){
+		if(extension == c_extension){
+			return true;
+		}
+	}
+	return false;
+}
+
+bool is_java_extension(string extension){
+	for(auto java_extension : JAVA_EXTENSIONS){
+		if(extension == java_extension){
+			return true;
+		}
+	}
+	return false;
+}
+
+bool is_allowed_extension(string extension){
+	for(auto allowed_extension : ALLOWED_EXTENSIONS){
+		if(extension == allowed_extension){
+			return true;
+		}
+	}
+	return false;
+}
+
+string extract_extension(string file_path){
+	string extension = "";
+	int pos_last_dot = -1;
+	for(size_t i = 0; i < file_path.size(); i++){
+		if(file_path[i] == '.'){
+			pos_last_dot = i;
+		}
+	}
+	if(pos_last_dot == -1){
+		return extension;
+	}
+	for(size_t i = pos_last_dot+1; i < file_path.size(); i++){
+		extension += file_path[i];
+	}
+	return extension;
+}
 
 set<array<int,3>> find_start_end_and_depth_of_brackets(vector<string> brackets_content){
 	set<array<int,3>> start_ends;
@@ -145,7 +195,8 @@ vector<Line_content> get_lines_before_body_function(const vector<string> &file_c
 	return ret;
 }
 
-vector<Line_content> remove_parameters_of_declaration(vector<Line_content> code){
+
+vector<Line_content> remove_parenteses_at_the_end_of_the_scope(vector<Line_content> code){
 	if(code.empty() || code.back().content.back() != ')'){
 		return code;
 	}
@@ -174,32 +225,54 @@ vector<Line_content> remove_parameters_of_declaration(vector<Line_content> code)
 	return code;
 }
 
-pair<string,int> extract_function_name_and_line_from_declaration(const vector<string> &file_content, int line_start_body_function){
+vector<Line_content> remove_content_until_find_parenteses_at_the_end(vector<Line_content> code){
+	while(!code.empty()){
+		string content = code.back().content;
+		while(!content.empty()){
+			if(content.back() == ')'){
+				break;
+			}else{
+				content.pop_back();
+			}
+		}
+		code.back().content = content;
+		if(!content.empty()){
+			break;
+		}
+		code.pop_back();
+	}
+	assert(!code.empty() && "Error expected to found ')' but was not found");
+	return code;
+}
+
+vector<Line_content> remove_parameters_of_declaration_c(vector<Line_content> code){
+	return remove_parenteses_at_the_end_of_the_scope(code);
+}
+
+vector<Line_content> remove_parameters_of_declaration_java(vector<Line_content> code){
+	auto ret = remove_content_until_find_parenteses_at_the_end(code);
+	return remove_parenteses_at_the_end_of_the_scope(code);
+}
+
+vector<Line_content> remove_parameters_of_declaration(vector<Line_content> code, PROGRAMMING_LANGUAGE programming_language){
+	if(programming_language == C){
+		return remove_parameters_of_declaration_c(code);
+	}
+	if(programming_language == JAVA){
+		return remove_parameters_of_declaration_java(code);
+	}
+	return code;
+}
+
+pair<string,int> extract_function_name_and_line_from_declaration(const vector<string> &file_content, int line_start_body_function, PROGRAMMING_LANGUAGE programming_language){
 	int pos = find_position_first_open_bracket(file_content[line_start_body_function]);
 	vector<Line_content> code_before_bracket = get_lines_before_body_function(file_content, line_start_body_function,pos);
-	vector<Line_content> code = remove_parameters_of_declaration(code_before_bracket);
+	vector<Line_content> code = remove_parameters_of_declaration(code_before_bracket, programming_language);
 	if(code.empty()){
 		return make_pair("",-1);
 	}
 	string ret = extract_last_token_of_string(code.back().content);
 	return {ret,code.back().line_number};
-}
-
-string extract_extension(string file_path){
-	string extension = "";
-	int pos_last_dot = -1;
-	for(size_t i = 0; i < file_path.size(); i++){
-		if(file_path[i] == '.'){
-			pos_last_dot = i;
-		}
-	}
-	if(pos_last_dot == -1){
-		return extension;
-	}
-	for(size_t i = pos_last_dot+1; i < file_path.size(); i++){
-		extension += file_path[i];
-	}
-	return extension;
 }
 
 string build_source_path(string relative_path, string function_name){
@@ -227,7 +300,7 @@ string build_info_path(string relative_path, string function_name){
 void create_source_file(int start_number_line, int end_number_line, string relative_path, string function_name, const vector<string> &file_content){
 	string path = build_source_path(relative_path, function_name);
 	vector<string> function_content;
-	
+
 	string first_line = file_content[start_number_line];
 	int to_remove = find_position_first_open_bracket(first_line);
 	reverse(first_line.begin(),first_line.end());
@@ -274,9 +347,9 @@ void create_info_file(int line_declaration, int start_number_line, int end_numbe
 	Utils::write_file_generic(path, content);
 }
 
-void process_function(int start_number_line, int end_number_line, string relative_path, const vector<string> &file_content){
+void process_function(int start_number_line, int end_number_line, string relative_path, const vector<string> &file_content, PROGRAMMING_LANGUAGE programming_language){
 	string first_line = file_content[start_number_line];
-	auto [function_name,line_declaration] = extract_function_name_and_line_from_declaration(file_content,start_number_line);
+	auto [function_name,line_declaration] = extract_function_name_and_line_from_declaration(file_content,start_number_line, programming_language);
 	if(function_name.empty()){
 		return;
 	}
@@ -293,27 +366,40 @@ string file_path_from_folder_path(string file_path, string folder_path){
 	return ret;
 }
 
-bool is_allowed_extension(string extension){
-	for(auto allowed_extension : ALLOWED_EXTENSIONS){
-		if(extension == allowed_extension){
-			return true;
-		}
+void file_breaker_c(string file_path, string folder_path){
+	string relative_path = file_path_from_folder_path(file_path, folder_path);
+	vector<string> file_content = Utils::read_file_generic(file_path);
+	set<pair<int,int>> start_end_of_functions = find_start_end_of_brackets_of_given_depth(file_content, C_RELEVANT_DEPTH);
+
+	for(auto [start_line, end_line] : start_end_of_functions){
+		process_function(start_line,end_line,relative_path, file_content, C);
 	}
-	return false;
+}
+
+void file_breaker_java(string file_path, string folder_path){
+	string relative_path = file_path_from_folder_path(file_path, folder_path);
+	vector<string> file_content = Utils::read_file_generic(file_path);
+	set<pair<int,int>> start_end_of_functions = find_start_end_of_brackets_of_given_depth(file_content, JAVA_RELEVANT_DEPTH);
+
+	for(auto [start_line, end_line] : start_end_of_functions){
+		process_function(start_line,end_line,relative_path, file_content, JAVA);
+	}
 }
 
 void file_breaker(string file_path, string folder_path){
 	string extension = extract_extension(file_path);
-	string relative_path = file_path_from_folder_path(file_path, folder_path);
 
 	if(!is_allowed_extension(extension)){
 		return;
 	}
 
-	vector<string> file_content = Utils::read_file_generic(file_path);
-	set<pair<int,int>> start_end_of_functions = find_start_end_of_brackets_of_given_depth(file_content, C_RELEVANT_DEPTH);
-	for(auto [start_line, end_line] : start_end_of_functions){
-		process_function(start_line,end_line,relative_path, file_content);
+	if(is_c_extension(extension)){
+		file_breaker_c(file_path, folder_path);
+	}
+	else if(is_java_extension(extension)){
+		file_breaker_java(file_path, folder_path);
+	}else{
+		assert(false && "NOT ALLOWED FILE PASSED");
 	}
 }
 
