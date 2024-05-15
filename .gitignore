@@ -38,6 +38,7 @@ parser/parser
 parser/filter
 parser/function_breaker
 parser/exec
+parser/breaker
 file_parser/filter
 file_parser/parser
 

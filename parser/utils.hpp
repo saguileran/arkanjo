@@ -1,6 +1,6 @@
 #ifndef UTILS_HPP
 #define UTILS_HPP
-
+#pragma once
 #include <bits/stdc++.h> 
 #include <jsoncpp/json/json.h>
 #include <sys/stat.h>

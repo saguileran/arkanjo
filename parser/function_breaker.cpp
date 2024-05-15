@@ -29,6 +29,11 @@ enum PROGRAMMING_LANGUAGE{
 	JAVA
 };
 
+void dbg_out() { cerr << endl; }
+template <typename H, typename... T>
+void dbg_out(H h, T... t) { cerr << ' ' << h; dbg_out(t...); }
+#define dbg(...) { cerr << #__VA_ARGS__ << ':'; dbg_out(__VA_ARGS__); }
+
 bool is_c_extension(string extension){
 	for(auto c_extension : C_EXTENSIONS){
 		if(extension == c_extension){
@@ -122,7 +127,7 @@ set<pair<int,int>> find_start_end_of_brackets_of_given_depth(vector<string> brac
 int find_position_first_open_bracket(string s){
 	for(size_t i = 0; i < s.size(); i++){
 		char c = s[i];
-		if(c == '(' || c == '{'){
+		if(c == '{'){
 			return i;
 		}
 	}
@@ -226,6 +231,8 @@ vector<Line_content> remove_parenteses_at_the_end_of_the_scope(vector<Line_conte
 }
 
 vector<Line_content> remove_content_until_find_parenteses_at_the_end(vector<Line_content> code){
+
+	
 	while(!code.empty()){
 		string content = code.back().content;
 		while(!content.empty()){
@@ -380,7 +387,7 @@ void file_breaker_java(string file_path, string folder_path){
 	string relative_path = file_path_from_folder_path(file_path, folder_path);
 	vector<string> file_content = Utils::read_file_generic(file_path);
 	set<pair<int,int>> start_end_of_functions = find_start_end_of_brackets_of_given_depth(file_content, JAVA_RELEVANT_DEPTH);
-
+	
 	for(auto [start_line, end_line] : start_end_of_functions){
 		process_function(start_line,end_line,relative_path, file_content, JAVA);
 	}
