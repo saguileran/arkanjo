@@ -11,7 +11,6 @@ even if the bracket sequence is in a commentary
 */
 
 #include <bits/stdc++.h>
-#include <sys/stat.h>
 #include "utils.hpp"
 using namespace std;
 
