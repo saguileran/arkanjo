@@ -21,6 +21,8 @@ const string INFO_PATH =   "tmp/info";
 const int NUMBER_OF_LINES_BEFORE_FOR_FUNCTION_NAME = 10;
 const int C_RELEVANT_DEPTH = 0;
 
+
+
 set<array<int,3>> find_start_end_and_depth_of_brackets(vector<string> brackets_content){
 	set<array<int,3>> start_ends;
 	int open_brackets = 0;
@@ -101,21 +103,21 @@ string extract_last_token_of_string(string s){
 	return tokens.back();
 }
 
-struct Line_code{
+struct Line_content{
 	int line_number;
 	string content;
 };
 
-Line_code build_line_code(int line_number, string content){
-	Line_code ret;
+Line_content build_line_code(int line_number, string content){
+	Line_content ret;
 	ret.line_number = line_number;
 	ret.content = content;
 	return ret;
 }
 
-vector<Line_code> get_lines_before_body_function(const vector<string> &file_content, int line_start_body_function, int pos_bracket){	
-	vector<Line_code> ret;
-	Line_code line_bracket = build_line_code(line_start_body_function,file_content[line_start_body_function]);
+vector<Line_content> get_lines_before_body_function(const vector<string> &file_content, int line_start_body_function, int pos_bracket){	
+	vector<Line_content> ret;
+	Line_content line_bracket = build_line_code(line_start_body_function,file_content[line_start_body_function]);
 	//remove everything after {
 	while(int(line_bracket.content.size()) > pos_bracket){
 		line_bracket.content.pop_back();
@@ -143,7 +145,7 @@ vector<Line_code> get_lines_before_body_function(const vector<string> &file_cont
 	return ret;
 }
 
-vector<Line_code> remove_parameters_of_declaration(vector<Line_code> code){
+vector<Line_content> remove_parameters_of_declaration(vector<Line_content> code){
 	if(code.empty() || code.back().content.back() != ')'){
 		return code;
 	}
@@ -174,8 +176,8 @@ vector<Line_code> remove_parameters_of_declaration(vector<Line_code> code){
 
 pair<string,int> extract_function_name_and_line_from_declaration(const vector<string> &file_content, int line_start_body_function){
 	int pos = find_position_first_open_bracket(file_content[line_start_body_function]);
-	vector<Line_code> code_before_bracket = get_lines_before_body_function(file_content, line_start_body_function,pos);
-	vector<Line_code> code = remove_parameters_of_declaration(code_before_bracket);
+	vector<Line_content> code_before_bracket = get_lines_before_body_function(file_content, line_start_body_function,pos);
+	vector<Line_content> code = remove_parameters_of_declaration(code_before_bracket);
 	if(code.empty()){
 		return make_pair("",-1);
 	}
