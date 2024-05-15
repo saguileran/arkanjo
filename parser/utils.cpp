@@ -64,3 +64,28 @@ string Utils::format_colored_message(string message, COLOR color){
 	return COLOR_TOKENS_UTILS[color] + message + COLOR_TOKENS_UTILS[RESET];
 }
 
+bool Utils::is_empty_char(char c){
+	if(c == ' '){
+		return true;
+	}
+	if(c <= 20){
+		return true;
+	}
+	return false;
+}
+
+bool Utils::is_special_char(char c){
+	if(c >= 'a' && c <= 'z'){
+		return false;
+	}
+	if(c >= 'A' && c <= 'Z'){
+		return false;
+	}
+	if(c >= '0' && c <= '9'){
+		return false;
+	}
+	if(c == '_'){
+		return false;
+	}
+	return true;
+}

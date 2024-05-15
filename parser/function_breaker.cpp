@@ -20,67 +20,29 @@ const string SOURCE_PATH = "tmp/source";
 const string HEADER_PATH = "tmp/header";
 const string INFO_PATH =   "tmp/info";
 const int NUMBER_OF_LINES_BEFORE_FOR_FUNCTION_NAME = 10;
+const int C_RELEVANT_DEPTH = 0;
 
-vector<string> read_file_as_vector(string file_path){
-	std::ifstream filein;
-	string line;
-	vector<string> ret;
-
-	filein.open(file_path);
-	while(getline(filein,line)){
-		ret.push_back(line);
-	}
-	filein.close();
-
-	return ret;
-}
-
-bool is_empty_char(char c){
-	if(c == ' '){
-		return true;
-	}
-	if(c <= 20){
-		return true;
-	}
-	return false;
-}
-
-bool is_special_char(char c){
-	if(c >= 'a' && c <= 'z'){
-		return false;
-	}
-	if(c >= 'A' && c <= 'Z'){
-		return false;
-	}
-	if(c >= '0' && c <= '9'){
-		return false;
-	}
-	if(c == '_'){
-		return false;
-	}
-	return true;
-}
-
-set<pair<int,int>> find_start_end_of_global_brackets(vector<string> brackets_content){
-	set<pair<int,int>> start_ends;
+set<array<int,3>> find_start_end_and_depth_of_brackets(vector<string> brackets_content){
+	set<array<int,3>> start_ends;
 	int open_brackets = 0;
-	int ini = -1;
+
+	vector<int> not_processed_open_brackets;
 	auto process_open = [&](int line_number){
 		open_brackets++;
-		if(open_brackets == 1){
-			ini = line_number;
-		}
+		not_processed_open_brackets.push_back(line_number);
 	};
 	auto process_close = [&](int line_number){
 		open_brackets--;
 		if(open_brackets <= -1){
 			open_brackets = 0;
-		}
-		if(open_brackets == 0 && ini != -1){
-			start_ends.insert({ini,line_number});
-			ini = -1;
+		}else{
+			int matched_open_position = not_processed_open_brackets.back();
+			not_processed_open_brackets.pop_back();
+			int depth_of_open = not_processed_open_brackets.size();
+			start_ends.insert({matched_open_position,line_number,depth_of_open});
 		}
 	};
+	
 	for(size_t i = 0; i < brackets_content.size(); i++){
 		auto line = brackets_content[i];
 		for(auto c : line){
@@ -93,6 +55,17 @@ set<pair<int,int>> find_start_end_of_global_brackets(vector<string> brackets_con
 		}
 	}
 	return start_ends;
+}
+
+set<pair<int,int>> find_start_end_of_brackets_of_given_depth(vector<string> brackets_content, int depth){
+	set<pair<int,int>> ret;
+	set<array<int,3>> bracket_pairs = find_start_end_and_depth_of_brackets(brackets_content);
+	for(auto [start,end,dep] : bracket_pairs){
+		if(dep == depth){
+			ret.insert({start,end});
+		}
+	}
+	return ret;
 }
 
 int find_position_first_open_bracket(string s){
@@ -110,7 +83,7 @@ string extract_last_token_of_string(string s){
 	string cur_token = "";
 	for(size_t i = 0; i < s.size(); i++){
 		char c = s[i];
-		if( is_empty_char(c) || is_special_char(c)){
+		if( Utils::is_empty_char(c) || Utils::is_special_char(c)){
 			if(!cur_token.empty()){
 				tokens.push_back(cur_token);
 			}
@@ -126,10 +99,8 @@ string extract_last_token_of_string(string s){
 	if(tokens.empty()){
 		return "";
 	}
-
 	return tokens.back();
 }
-
 
 struct Line_code{
 	int line_number;
@@ -164,7 +135,7 @@ vector<Line_code> get_lines_before_body_function(const vector<string> &file_cont
 			ret.pop_back();
 			continue;
 		}
-		if(is_empty_char(ret.back().content.back())){
+		if(Utils::is_empty_char(ret.back().content.back())){
 			ret.back().content.pop_back();
 			continue;
 		}
@@ -321,7 +292,6 @@ string file_path_from_folder_path(string file_path, string folder_path){
 	return ret;
 }
 
-
 bool is_allowed_extension(string extension){
 	for(auto allowed_extension : ALLOWED_EXTENSIONS){
 		if(extension == allowed_extension){
@@ -340,8 +310,7 @@ void file_breaker(string file_path, string folder_path){
 	}
 
 	vector<string> file_content = Utils::read_file_generic(file_path);
-	set<pair<int,int>> start_end_of_functions = find_start_end_of_global_brackets(file_content);
-
+	set<pair<int,int>> start_end_of_functions = find_start_end_of_brackets_of_given_depth(file_content, C_RELEVANT_DEPTH);
 	for(auto [start_line, end_line] : start_end_of_functions){
 		process_function(start_line,end_line,relative_path, file_content);
 	}

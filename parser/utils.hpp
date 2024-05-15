@@ -47,6 +47,9 @@ namespace Utils{
 	Json::Value read_json(string string_path);
 
 	string format_colored_message(string message, COLOR color);
+
+	bool is_empty_char(char c);
+	bool is_special_char(char c);
 };
 
 #endif
