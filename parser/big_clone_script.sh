@@ -43,18 +43,18 @@ do
 	echo Ended "${FOLDER}"
 done
 
-echo "Passing CSV files to the Evaluator"
-
-for FOLDER in ${FOLDER_LIST[@]};
-do
-	echo Passing "${FOLDER}"
-	path="$(pwd)"
-	path+="/csvs/${FOLDER}.csv"
-
-	cur="$(pwd)"
-
-	cd BigCloneEval/commands
-	./importClones -t 1 -c $path
-	cd $cur
-done
+#echo "Passing CSV files to the Evaluator"
+#
+#for FOLDER in ${FOLDER_LIST[@]};
+#do
+#	echo Passing "${FOLDER}"
+#	path="$(pwd)"
+#	path+="/csvs/${FOLDER}.csv"
+#
+#	cur="$(pwd)"
+#
+#	cd BigCloneEval/commands
+#	./importClones -t 1 -c $path
+#	cd $cur
+#done
 

@@ -31,8 +31,8 @@ Function::Function(Path _path){
 	read_info();
 }
 
-pair<int,int> Function::get_scope_function_in_file(){
-	return make_pair(line_declaration,end_number_line);
+array<int,3> Function::get_scope_function_in_file(){
+	return {line_declaration,start_number_line,end_number_line};
 }
 
 vector<string> Function::get_header(){

@@ -34,7 +34,7 @@ class Function{
 	public:
 		int number_of_lines();
 		Function(Path _path);
-		pair<int,int> get_scope_function_in_file();
+		array<int,3> get_scope_function_in_file();
 		vector<string> get_header();
 		vector<string> build_all_content();
 		void print_basic_info();
