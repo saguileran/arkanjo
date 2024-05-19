@@ -78,9 +78,9 @@ string Path::build_info_path(){
 	if(ret == ""){
 		return "";
 	}
-	int sz = EXTENSION.size();
-	for(int i = 0; i < sz; i++){
-		ret.pop_back();
+	ret = remove_extension(ret);
+	if(ret == ""){
+		return "";
 	}
 	ret += JSON_EXTENSION;
 	return ret;
@@ -98,6 +98,17 @@ vector<string> Path::get_tokens_from_relative_path(){
 	return token_relative_path;
 }
 
+string Path::remove_extension(string token){
+	while(!token.empty()){
+		auto c = token.back();
+		token.pop_back();
+		if(c == '.'){
+			break;
+		}
+	}
+	return token;
+}
+
 string Path::build_relative_path(){
 	if(is_empty()){
 		return "";
@@ -112,10 +123,7 @@ string Path::build_function_name(){
 		return "";
 	}
 	string function_name = tokens.back();
-	int sz = EXTENSION.size();
-	for(int i = 0; i < sz; i++){
-		function_name.pop_back();
-	}
+	function_name = remove_extension(function_name);
 	return function_name;
 }
 

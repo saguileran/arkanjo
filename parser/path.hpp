@@ -13,7 +13,6 @@ using namespace std;
 class Path{
 	//extension added on function name to run on ML TOOL
 private:
-	string EXTENSION = ".c";
 	string JSON_EXTENSION = ".json";
 	string BASE_INIT_STRING = "tmp";
 	string SOURCE_STRING = "source";
@@ -28,7 +27,7 @@ private:
 	string build_string_path(vector<string> path);
 	string build_base_path(string base);
 	vector<string> get_tokens_from_relative_path();
-
+	string remove_extension(string token);
 public:
 	bool is_empty();
 	Path();
