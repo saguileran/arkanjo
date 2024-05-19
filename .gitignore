@@ -60,9 +60,13 @@ dkms.conf
 #Ignore duplicate-code-detection-tool from https://github.com/platisd/duplicate-code-detection-tool
 duplicate-code-detection-tool/
 
+#Ignore BigCloneEval Tool
+parser/BigCloneEval/
+
 #Intermediate files from the tool
 output_tool.txt
 
 #Temporary Files
 parser/tmp/
 parser/output_parsed.txt
+

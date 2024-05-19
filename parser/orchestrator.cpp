@@ -8,7 +8,7 @@
 #include "counter_duplication_code_trie.hpp"
 #include "counter_duplication_code.hpp"
 #include "similarity_explorer.hpp"
-
+#include "big_clone_formater.hpp"
 using namespace std;
 
 //HERE will be a temporary code to enable me to show up the functionalities I implemented to other people.
@@ -57,6 +57,10 @@ private:
 		Counter_Duplication_Code counter_duplication_code(similarity_table);
 	}
 
+	void big_clone_formater_command(vector<string> parameters, Similarity_Table *similarity_table){
+		Big_Clone_Formater big_clone_formater(similarity_table);
+	}
+
 	void similar_function_finder_command(vector<string> parameters, Similarity_Table *similarity_table){
 		int number_parameters = parameters.size();
 		if(number_parameters == 0){
@@ -77,6 +81,8 @@ public:
 			exploration_command(parameters,&similarity_table);
 		}else if(command == "fu"){
 			similar_function_finder_command(parameters,&similarity_table);
+		}else if(command == "bi"){
+			big_clone_formater_command(parameters,&similarity_table);
 		}else{
 			help_command();
 		}
