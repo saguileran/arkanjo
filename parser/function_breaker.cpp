@@ -23,6 +23,7 @@ const string INFO_PATH =   "tmp/info";
 const int NUMBER_OF_LINES_BEFORE_FOR_FUNCTION_NAME = 10;
 const int C_RELEVANT_DEPTH = 0;
 const int JAVA_RELEVANT_DEPTH = 1;
+const bool IGNORE_EMPTY_FUNCTIONS = true;
 
 enum PROGRAMMING_LANGUAGE{
 	C,
@@ -300,23 +301,41 @@ string build_info_path(string relative_path, string function_name){
 	return final_path;
 }
 
-
-void create_source_file(int start_number_line, int end_number_line, string relative_path, string function_name, const vector<string> &file_content){
-	string path = build_source_path(relative_path, function_name);
-	vector<string> function_content;
-
+vector<string> build_function_content(int start_number_line, int end_number_line,const vector<string> &file_content){
 	string first_line = file_content[start_number_line];
 	int to_remove = find_position_first_open_bracket(first_line);
+	
+	vector<string> function_content;
 	reverse(first_line.begin(),first_line.end());
 	for(int i = 0; i < to_remove; i++){
 		first_line.pop_back();
 	}
 	reverse(first_line.begin(),first_line.end());
 	function_content.push_back(first_line);
-
 	for(int i = start_number_line+1; i <= end_number_line; i++){
 		function_content.push_back(file_content[i]);
 	}
+	return function_content;
+}
+
+bool is_body_function_empty(int start_number_line, int end_number_line,const vector<string> &file_content){
+	vector<string> function_content = build_function_content(start_number_line, end_number_line, file_content);
+	int count_not_empty_char = 0;
+	for(auto line : function_content){
+		for(auto c : line){
+			if(!Utils::is_empty_char(c)){
+				count_not_empty_char++;
+			}
+		}
+	}
+	bool is_empty = count_not_empty_char <= 2;
+	return is_empty;
+}
+
+
+void create_source_file(int start_number_line, int end_number_line, string relative_path, string function_name, const vector<string> &file_content){
+	string path = build_source_path(relative_path, function_name);
+	vector<string> function_content = build_function_content(start_number_line, end_number_line, file_content);
 	Utils::write_file_generic(path, function_content);
 }
 
@@ -357,6 +376,11 @@ void process_function(int start_number_line, int end_number_line, string relativ
 	if(function_name.empty()){
 		return;
 	}
+	if(IGNORE_EMPTY_FUNCTIONS){
+		if(is_body_function_empty(start_number_line,end_number_line,file_content)){
+			return;
+		}
+	}
 	create_source_file(start_number_line,end_number_line,relative_path,function_name,file_content);
 	create_header_file(start_number_line,line_declaration,relative_path,function_name,file_content);
 	create_info_file(line_declaration,start_number_line,end_number_line,relative_path,function_name);
@@ -384,7 +408,7 @@ void file_breaker_java(string file_path, string folder_path){
 	string relative_path = file_path_from_folder_path(file_path, folder_path);
 	vector<string> file_content = Utils::read_file_generic(file_path);
 	set<pair<int,int>> start_end_of_functions = find_start_end_of_brackets_of_given_depth(file_content, JAVA_RELEVANT_DEPTH);
-	
+
 	for(auto [start_line, end_line] : start_end_of_functions){
 		process_function(start_line,end_line,relative_path, file_content, JAVA);
 	}
