@@ -38,13 +38,15 @@ class Similarity_Explorer{
 		void print_similar_path_pair(Path path1, Path path2);
 		void process_similar_path_pair(Path path1, Path path2);
 		int find_number_pair_found(vector<pair<Path,Path>> similar_path_pairs);
-		void explorer();
+		vector<pair<Path,Path>> build_similar_path_pairs(bool sorted_by_number_of_duplicated_code);
+		void explorer(bool sorted_by_number_of_duplicated_code);
 
 	public:
 		Similarity_Explorer(Similarity_Table *_similarity_table, 
 				int _limit_on_results, 
 				string _pattern_to_match, 
-				bool _both_path_need_to_match);
+				bool _both_path_need_to_match,
+				bool sorted_by_number_of_duplicated_code=false);
 };
 
 #endif

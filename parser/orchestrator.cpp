@@ -32,11 +32,11 @@ private:
 
 	void exploration_command(vector<string> parameters, Similarity_Table *similarity_table){
 		int number_parameters = parameters.size();
-		
+
 		string pattern = "";
 		int limiter = 0;
 		bool both_need_to_match = false;
-		
+		bool sorted_by_number_of_duplicated_code = false;
 		for(int i = 0; i < number_parameters-1; i++){
 			string param = parameters[i];
 			string next_param = parameters[i+1];
@@ -49,8 +49,16 @@ private:
 			if(param == "-b"){
 				both_need_to_match = (next_param == "T");
 			}
+			if(param == "-c"){
+				sorted_by_number_of_duplicated_code = (next_param == "T");
+			}
 		}
-		Similarity_Explorer similarity_explorer(similarity_table,limiter,pattern,both_need_to_match);
+		Similarity_Explorer similarity_explorer(
+				similarity_table,
+				limiter,
+				pattern,
+				both_need_to_match,
+				sorted_by_number_of_duplicated_code);
 	}
 
 	void duplication_command(vector<string> parameters, Similarity_Table *similarity_table){

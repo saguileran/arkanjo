@@ -28,6 +28,8 @@ class Similarity_Table{
 		void init_similarity_table();
 		bool is_above_threshold(double similarity);
 
+		vector<tuple<int,Path,Path>> sort_pairs_by_line_number(vector<pair<Path,Path>> similar_path_pairs);
+
 	public:
 		Similarity_Table(double _similarity_threshold);
 		Similarity_Table();

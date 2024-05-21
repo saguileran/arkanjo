@@ -87,8 +87,18 @@ int Similarity_Explorer::find_number_pair_found(vector<pair<Path,Path>> similar_
 	return count;
 }
 
-void Similarity_Explorer::explorer(){
-	vector<pair<Path,Path>> similar_path_pairs = similarity_table->get_all_similar_path_pairs_sorted_by_similarity();
+vector<pair<Path,Path>> Similarity_Explorer::build_similar_path_pairs(bool sorted_by_number_of_duplicated_code){
+	vector<pair<Path,Path>> similar_path_pairs;
+	if(sorted_by_number_of_duplicated_code){
+		similar_path_pairs = similarity_table->get_all_similar_path_pairs_sorted_by_line_number();
+	}else{
+		similar_path_pairs = similarity_table->get_all_similar_path_pairs_sorted_by_similarity();
+	}
+	return similar_path_pairs;
+}
+
+void Similarity_Explorer::explorer(bool sorted_by_number_of_duplicated_code){
+	vector<pair<Path,Path>> similar_path_pairs = build_similar_path_pairs(sorted_by_number_of_duplicated_code);
 	string initial_line =  format_initial_message(find_number_pair_found(similar_path_pairs));
 
 	cout << initial_line << '\n';
@@ -102,10 +112,11 @@ void Similarity_Explorer::explorer(){
 Similarity_Explorer::Similarity_Explorer(Similarity_Table *_similarity_table, 
 		int _limit_on_results, 
 		string _pattern_to_match, 
-		bool _both_path_need_to_match){
+		bool _both_path_need_to_match,
+		bool sorted_by_number_of_duplicated_code){
 	similarity_table = _similarity_table;
 	limit_on_results = _limit_on_results;
 	pattern_to_match = _pattern_to_match;
 	both_path_need_to_match_pattern = _both_path_need_to_match;
-	explorer();
+	explorer(sorted_by_number_of_duplicated_code);
 }

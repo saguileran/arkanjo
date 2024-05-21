@@ -122,12 +122,35 @@ vector<pair<Path,Path>> Similarity_Table::get_all_similar_path_pairs_sorted_by_s
 	return ret;
 }
 
+vector<tuple<int,Path,Path>> Similarity_Table::sort_pairs_by_line_number(vector<pair<Path,Path>> similar_path_pairs){
+	vector<tuple<int,Path,Path>> similar_path_pairs_with_number_of_lines;
+	for(auto [path1,path2] : similar_path_pairs){
+		Function function(path1);
+		tuple<int,Path,Path> aux = {function.number_of_lines(),path1,path2};
+		similar_path_pairs_with_number_of_lines.push_back(aux);
+	}
+	sort(
+			similar_path_pairs_with_number_of_lines.begin(),
+			similar_path_pairs_with_number_of_lines.end(),
+			[&](tuple<int,Path,Path> pair1, tuple<int,Path,Path> pair2){
+				int number_lines1 = get<0>(pair1);
+				int number_lines2 = get<0>(pair2);
+				return number_lines1 > number_lines2;
+			}			
+		);
+	return similar_path_pairs_with_number_of_lines;
+}
+
 vector<pair<Path,Path>> Similarity_Table::get_all_similar_path_pairs_sorted_by_line_number(){
 	vector<pair<Path,Path>> similar_path_pairs = get_all_similar_path_pairs_sorted_by_similarity();
-	sort(similar_path_pairs.begin(),similar_path_pairs.end(),[&](pair<Path,Path> pair1, pair<Path,Path> pair2){
-		Function function1(pair1.first);
-		Function function2(pair2.first);
-		return function1.number_of_lines() > function2.number_of_lines();
-	});
-	return similar_path_pairs;
+
+	vector<tuple<int,Path,Path>> similar_path_pairs_with_number_of_lines = 
+		sort_pairs_by_line_number(similar_path_pairs);
+	
+	vector<pair<Path,Path>> ret;
+	for(auto [line_number,path1,path2] : similar_path_pairs_with_number_of_lines){
+		ret.push_back({path1,path2});
+	}
+
+	return ret;
 }
