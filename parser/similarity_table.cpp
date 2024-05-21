@@ -121,3 +121,13 @@ vector<pair<Path,Path>> Similarity_Table::get_all_similar_path_pairs_sorted_by_s
 	}
 	return ret;
 }
+
+vector<pair<Path,Path>> Similarity_Table::get_all_similar_path_pairs_sorted_by_line_number(){
+	vector<pair<Path,Path>> similar_path_pairs = get_all_similar_path_pairs_sorted_by_similarity();
+	sort(similar_path_pairs.begin(),similar_path_pairs.end(),[&](pair<Path,Path> pair1, pair<Path,Path> pair2){
+		Function function1(pair1.first);
+		Function function2(pair2.first);
+		return function1.number_of_lines() > function2.number_of_lines();
+	});
+	return similar_path_pairs;
+}

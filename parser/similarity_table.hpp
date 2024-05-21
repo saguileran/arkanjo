@@ -5,6 +5,7 @@
 
 #include "path.hpp"
 #include "utils.hpp"
+#include "function.hpp"
 using namespace std;
 
 class Similarity_Table{
@@ -38,6 +39,7 @@ class Similarity_Table{
 		vector<Path> get_similar_path_to_the_reference(Path reference);
 		vector<tuple<double,Path,Path>> get_all_path_pairs_and_similarity_sorted_by_similarity();
 		vector<pair<Path,Path>> get_all_similar_path_pairs_sorted_by_similarity();
+		vector<pair<Path,Path>> get_all_similar_path_pairs_sorted_by_line_number();
 };
 
 #endif
