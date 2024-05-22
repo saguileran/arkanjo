@@ -63,6 +63,7 @@ duplicate-code-detection-tool/
 #Ignore BigCloneEval Tool
 parser/BigCloneEval/
 parser/csvs/
+parser/bigclonebench/
 
 #Intermediate files from the tool
 output_tool.txt
