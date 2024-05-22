@@ -50,6 +50,8 @@ namespace Utils{
 
 	bool is_empty_char(char c);
 	bool is_special_char(char c);
+
+	vector<string> split_string(string s, char delimiter);
 };
 
 #endif

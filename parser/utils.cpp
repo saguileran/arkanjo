@@ -89,3 +89,22 @@ bool Utils::is_special_char(char c){
 	}
 	return true;
 }
+
+vector<string> Utils::split_string(string s, char delimiter){
+	string cur_token;
+	vector<string> ret;
+	for(auto c : s){
+		if(c == delimiter){
+			if(!cur_token.empty()){
+				ret.push_back(cur_token);
+			}
+			cur_token = "";
+		}else{
+			cur_token.push_back(c);
+		}
+	}
+	if(!cur_token.empty()){
+		ret.push_back(cur_token);
+	}
+	return ret;
+}
