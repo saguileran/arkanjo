@@ -6,9 +6,9 @@ It is not simple to understand if you do not know the structure. Please refer to
 
 Utils::COLOR Counter_Duplication_Code_Trie::choose_text_color(){
 	number_printed_lines++;
-	Utils::COLOR ret = Utils::GRAY;
+	Utils::COLOR ret = Utils::BLACK;
 	if(number_printed_lines%2 == 0){
-		ret = Utils::CYAN;
+		ret = Utils::BLUE;
 	}
 	return ret;
 }

@@ -25,6 +25,7 @@ namespace Utils{
 		"\033[37m", //GRAY
 		"\033[97m", //WHITE
 		"\033[33;1m", //BRIGHT_YELLOW
+		"\033[30m", //BLACK
 	};
 	
 	enum COLOR{
@@ -37,7 +38,8 @@ namespace Utils{
 		CYAN,
 		GRAY,
 		WHITE,
-		BRIGHT_YELLOW
+		BRIGHT_YELLOW,
+		BLACK
 	};
 
 	void ensure_file_is_open(std::ifstream &file, string file_name);
