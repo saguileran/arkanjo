@@ -49,12 +49,12 @@ bool Big_Clone_Tailor_Evaluator::is_relevant_pair(int id0, int id1){
 	return id_pair_to_type.find(ids) != id_pair_to_type.end();
 }
 
-vector<pair<int,int>> Big_Clone_Tailor_Evaluator::filter_similar_id_pairs_only_relevant_ones(
+set<pair<int,int>> Big_Clone_Tailor_Evaluator::filter_similar_id_pairs_only_relevant_ones(
 		vector<pair<int,int>> similar_id_pairs){
-	vector<pair<int,int>> ret;
+	set<pair<int,int>> ret;
 	for(auto [id0,id1] : similar_id_pairs){
 		if(is_relevant_pair(id0,id1)){
-			ret.push_back({id0,id1});
+			ret.insert({id0,id1});
 		}
 	}
 	return ret;
@@ -74,9 +74,9 @@ vector<pair<int,int>> Big_Clone_Tailor_Evaluator::filter_similar_path_pairs_by_s
 
 vector<int> Big_Clone_Tailor_Evaluator::build_frequency_corrected_guessed_by_type(
 		vector<pair<int,int>> similar_id_pairs){
-	similar_id_pairs = filter_similar_id_pairs_only_relevant_ones(similar_id_pairs);
+	set<pair<int,int>> similar_id_pairs_set = filter_similar_id_pairs_only_relevant_ones(similar_id_pairs);
 	vector<int> frequency(NUMBER_OF_TYPES);
-	for(auto ids : similar_id_pairs){
+	for(auto ids : similar_id_pairs_set){
 		frequency[id_pair_to_type[ids]] += 1;
 	}
 	//for not clone if it is marked as duplicate count is wrong instead of right

@@ -12,7 +12,7 @@ class Big_Clone_Tailor_Evaluator{
 	int NUMBER_OF_TYPES = 6;
 	int NOT_CLONE_TYPE_ID = 5;
 	string RECALL_PER_TYPE_PRINT = "Recall Value of each type";
-	double MINIMUM_SIMILARITY_TEMP = 90;
+	double MINIMUM_SIMILARITY_TEMP = 0;
 	vector<string> ID_TO_TYPE_LABEL = {
 		"T1",
 		"T2",
@@ -31,7 +31,7 @@ class Big_Clone_Tailor_Evaluator{
 	vector<tuple<double,int,int>> similar_path_pairs_formated_with_id();
 	bool is_relevant_pair(int id0, int id1);
 
-	vector<pair<int,int>> filter_similar_id_pairs_only_relevant_ones(
+	set<pair<int,int>> filter_similar_id_pairs_only_relevant_ones(
 			vector<pair<int,int>> similar_id_pairs);
 
 	vector<pair<int,int>> filter_similar_path_pairs_by_similarity(
