@@ -20,10 +20,12 @@ const vector<string> ALLOWED_EXTENSIONS = { "c","h","java" };
 const string SOURCE_PATH = "tmp/source";
 const string HEADER_PATH = "tmp/header";
 const string INFO_PATH =   "tmp/info";
-const int NUMBER_OF_LINES_BEFORE_FOR_FUNCTION_NAME = 10;
+const int NUMBER_OF_LINES_BEFORE_FOR_FUNCTION_NAME = 7;
 const int C_RELEVANT_DEPTH = 0;
 const int JAVA_RELEVANT_DEPTH = 1;
 const bool IGNORE_EMPTY_FUNCTIONS = true;
+
+const bool ALLOW_STRUCTS = false;
 
 enum PROGRAMMING_LANGUAGE{
 	C,
@@ -251,12 +253,16 @@ vector<Line_content> remove_content_until_find_parenteses_at_the_end(vector<Line
 }
 
 vector<Line_content> remove_parameters_of_declaration_c(vector<Line_content> code){
+	if(!ALLOW_STRUCTS){
+		auto ret = remove_content_until_find_parenteses_at_the_end(code);
+		return remove_parenteses_at_the_end_of_the_scope(ret);
+	}
 	return remove_parenteses_at_the_end_of_the_scope(code);
 }
 
 vector<Line_content> remove_parameters_of_declaration_java(vector<Line_content> code){
 	auto ret = remove_content_until_find_parenteses_at_the_end(code);
-	return remove_parenteses_at_the_end_of_the_scope(code);
+	return remove_parenteses_at_the_end_of_the_scope(ret);
 }
 
 vector<Line_content> remove_parameters_of_declaration(vector<Line_content> code, PROGRAMMING_LANGUAGE programming_language){
