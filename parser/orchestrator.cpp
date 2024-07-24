@@ -10,8 +10,8 @@
 #include "similarity_explorer.hpp"
 #include "big_clone_formater.hpp"
 #include "big_clone_tailor_evaluator.hpp"
+#include "random_selector.hpp"
 using namespace std;
-
 
 //HERE will be a temporary code to enable me to show up the functionalities I implemented to other people.
 class Orchestrator{
@@ -63,6 +63,18 @@ class Orchestrator{
 					sorted_by_number_of_duplicated_code);
 		}
 
+		void random_command(vector<string> parameters, Similarity_Table *similarity_table){
+			int number_parameters = parameters.size();
+			if(number_parameters <= 2){
+				cout << "ERROR: Random expect three parameters, but less was given" << endl;
+				exit(0);
+			}
+			int minimum_similarity = stod(parameters[0]);
+			int maximum_similarity = stod(parameters[1]);
+			int maximum_quantity = stod(parameters[2]);
+			Random_Selector random(similarity_table,minimum_similarity,maximum_similarity,maximum_quantity);
+		}
+
 		void duplication_command(vector<string> parameters, Similarity_Table *similarity_table){
 			Counter_Duplication_Code counter_duplication_code(similarity_table);
 		}
@@ -99,6 +111,8 @@ class Orchestrator{
 				big_clone_formater_command(parameters,&similarity_table);
 			}else if(command == "ev"){
 				big_clone_tailor_evaluator_command(parameters,&similarity_table);
+			}else if(command == "ra"){
+				random_command(parameters,&similarity_table);
 			}else{
 				help_command();
 			}
