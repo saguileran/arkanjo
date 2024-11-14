@@ -1,4 +1,4 @@
-#Arkanjo
+# Arkanjo
 
 This repository stores the Arkanjo tool, a tool for find code duplicated functions 
 in codebases. The tool was implemented as part of my master degree's program. 
