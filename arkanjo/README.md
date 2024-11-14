@@ -40,6 +40,12 @@ Features I want to do:
 
 ## How to Setup
 
+This setup tutorial is outdated. We will change how the setup process in a couple of months.
+
+```
+sudo bash setup_function_breaker.sh
+```
+
 Execute the setup_function_breaker.sh and follow the steps:
 
 ```
