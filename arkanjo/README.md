@@ -1,5 +1,11 @@
 # Description
 
+sudo apt install python3-nltk
+sudo apt install python3-gensim
+sudo apt install python3-astor
+sudo python3 -m nltk.downloader punkt
+
+
 This tool uses as a subrotine the tool from [Duplicate Code Detection Tool](https://github.com/platisd/duplicate-code-detection-tool)  as a subrotine to compare functions
 
 
