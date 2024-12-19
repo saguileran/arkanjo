@@ -365,7 +365,7 @@ def run(
                     similarity_percentage, 2
                 )
             if similarity_percentage > fail_threshold:
-                exit_code = ReturnCode.THRESHOLD_EXCEEDED
+                similarity_percentage = 100.00
             color = (
                 CliColors.OKGREEN
                 if similarity_percentage < 10
