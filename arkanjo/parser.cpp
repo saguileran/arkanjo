@@ -1,11 +1,28 @@
-#include <bits/stdc++.h> 
-using namespace std;
+#include "parser.hpp"
 
 
-double CAP = 0;
+Comparation::Comparation(string _path1, string _path2, double _sim){
+	if(_path1 > _path2) swap(_path1,_path2);
+	path1 = _path1;
+	path2 = _path2;
+	similarity = _sim;
+}
 
+bool Comparation::operator<(const Comparation &com) const{
+	if(similarity != com.similarity){
+		return similarity > com.similarity;
+	}
+	if(path1 == com.path1){
+		return path2 < com.path2;
+	}
+	return path1 < com.path1;
+}
 
-vector<string> parser_line(string line){
+bool Comparation::operator==(const Comparation &com) const{
+	return path1 == com.path1 && path2 == com.path2;
+}
+
+vector<string> Parser::parser_line(string line){
 	string at = "";
 	vector<string> ret;
 	for(auto c : line){
@@ -23,11 +40,11 @@ vector<string> parser_line(string line){
 	return ret;
 }
 
-bool is_an_file(string s){
+bool Parser::is_an_file(string s){
 	return !s.empty() && s[0] == '/';
 }
 
-string remove_formatation_from_similarity(string s){
+string Parser::remove_formatation_from_similarity(string s){
 	for(int i = 0; i < 4; i++){
 		s.pop_back();
 	}
@@ -40,48 +57,16 @@ string remove_formatation_from_similarity(string s){
 	return s;
 }
 
-double retrive_similarity(string s){
+double Parser::retrive_similarity(string s){ 
 	s = remove_formatation_from_similarity(s);
 	char *cs = s.data();
 	float similarity = stod(s);
 	return similarity;
 }
 
-
-struct Comparation{
-	string path1, path2;
-	double similarity;
-
-
-	Comparation(){
-	}
-
-	Comparation(string _path1, string _path2, double _sim){
-		if(_path1 > _path2) swap(_path1,_path2);
-		path1 = _path1;
-		path2 = _path2;
-		similarity = _sim;
-	}
-
-	bool operator<(const Comparation &com) const{
-		if(similarity != com.similarity){
-			return similarity > com.similarity;
-		}
-		if(path1 == com.path1){
-			return path2 < com.path2;
-		}
-		return path1 < com.path1;
-	}
-
-	bool operator==(const Comparation &com) const{
-		return path1 == com.path1 && path2 == com.path2;
-	}
-};
-
-
-void parser_block(string path, set<Comparation> &comparations){
+void Parser::parser_block(string path, set<Comparation> &comparations){
 	string line;
-	while(getline(cin,line)){
+	while(getline(fin,line)){
 		vector<string> tokens = parser_line(line);
 		if(tokens.empty()){
 			break;
@@ -93,17 +78,16 @@ void parser_block(string path, set<Comparation> &comparations){
 
 		double similarity = retrive_similarity(tokens[1]);
 		Comparation com(path,path_compared,similarity);
-		if(similarity >= CAP)
+		if(similarity >= similarity_cap_)
 			comparations.insert(com);
 	}
 }
 
-
-void parser(){
+void Parser::exec(){
 	string line;
 	set<Comparation> comparations;
 
-	while(getline(cin,line)){
+	while(getline(fin,line)){
 		vector<string> tokens =  parser_line(line);
 		if(tokens.empty()) continue;
 
@@ -118,17 +102,20 @@ void parser(){
 		for(int i = 0; i < 4; i++) path.pop_back();
 		parser_block(path,comparations);
 	}
-	cout << comparations.size() << '\n';
+	fout << comparations.size() << '\n';
 	for(auto com : comparations){
-		cout << com.path1 << ' ' << com.path2 << ' ';
-		cout << fixed << setprecision(2) << com.similarity << '\n';
+		fout << com.path1 << ' ' << com.path2 << ' ';
+		fout << fixed << setprecision(2) << com.similarity << '\n';
 	}
 }
 
-int main(int argc, char *argv[]){
-	if(argc >= 2){
-		CAP = atof(argv[1]);
-	}
-	parser();
-	return 0;
+Parser::Parser(string input_file, string output_file, double similarity_cap){
+	fin = ifstream(input_file);
+	fout = ofstream(output_file);
+	similarity_cap_ = similarity_cap;
+
+	exec();
+
+	fin.close();
+	fout.close();
 }

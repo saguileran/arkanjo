@@ -2,6 +2,7 @@
 #define PREPROCESSOR_HPP
 
 #include <bits/stdc++.h> 
+#include "parser.hpp"
 using namespace std;
 
 class Preprocessor{
