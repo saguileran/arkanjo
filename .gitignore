@@ -39,7 +39,6 @@ arkanjo/filter
 arkanjo/function_breaker
 arkanjo/exec
 arkanjo/breaker
-arkanjo/pre
 arkanjo/preprocessor
 file_parser/filter
 file_parser/parser
