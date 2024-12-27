@@ -7,10 +7,10 @@
 #include "similar_function_finder.hpp"
 #include "counter/counter_duplication_code_trie.hpp"
 #include "counter/counter_duplication_code.hpp"
-#include "similarity_explorer.hpp"
+#include "explorer/similarity_explorer.hpp"
 #include "big_clone/big_clone_formater.hpp"
 #include "big_clone/big_clone_tailor_evaluator.hpp"
-#include "random_selector.hpp"
+#include "rand/random_selector.hpp"
 using namespace std;
 
 //HERE will be a temporary code to enable me to show up the functionalities I implemented to other people.
