@@ -8,8 +8,8 @@
 #include "counter_duplication_code_trie.hpp"
 #include "counter_duplication_code.hpp"
 #include "similarity_explorer.hpp"
-#include "big_clone_formater.hpp"
-#include "big_clone_tailor_evaluator.hpp"
+#include "big_clone/big_clone_formater.hpp"
+#include "big_clone/big_clone_tailor_evaluator.hpp"
 #include "random_selector.hpp"
 using namespace std;
 
