@@ -4,7 +4,7 @@
 #include "function.hpp"
 #include "utils.hpp"
 #include "similarity_table.hpp"
-#include "similar_function_finder.hpp"
+#include "finder/similar_function_finder.hpp"
 #include "counter/counter_duplication_code_trie.hpp"
 #include "counter/counter_duplication_code.hpp"
 #include "explorer/similarity_explorer.hpp"
