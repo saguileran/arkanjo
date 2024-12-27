@@ -1,3 +1,7 @@
+// Counter Duplication Code implements the relatory/counter functionality,
+// where the user can see the number of duplicated lines per folder in
+// the codebase
+
 #ifndef COUNTER_DUPLICATION_CODE_HPP
 #define COUNTER_DUPLICATION_CODE_HPP
 

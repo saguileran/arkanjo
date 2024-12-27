@@ -1,3 +1,7 @@
+// The Similarity Explorer implements the functionality to 
+// implement to find duplicated functions enabling some
+// filters and sortings options
+
 #ifndef SIMILARITY_EXPLORER_HPP
 #define SIMILARITY_EXPLORER_HPP
 

@@ -1,3 +1,7 @@
+// Implements a TRIE where the nodes are folders, this enable
+// the project to count the number of duplicated lines per folder
+// in the codebase. 
+
 #ifndef COUNTER_DUPLICATION_CODE_TRIE_HPP
 #define COUNTER_DUPLICATION_CODE_TRIE_HPP
 

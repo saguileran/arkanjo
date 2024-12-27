@@ -1,3 +1,7 @@
+// Similar Functions Finder implements the functionality to
+// given a function, find the other functions that are similar
+// to the given one.
+
 #include <bits/stdc++.h> 
 #include "../base/path.hpp"
 #include "../base/function.hpp"
