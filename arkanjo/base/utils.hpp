@@ -1,3 +1,6 @@
+// Defines util functions used across all files, does not define anything specific
+// to the project, only defines generic functions
+
 #ifndef UTILS_HPP
 #define UTILS_HPP
 #pragma once

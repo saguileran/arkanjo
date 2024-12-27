@@ -1,3 +1,7 @@
+// Similarity Table is a abstraction that store the pair of functions 
+// that are similar to each other and the similarity probability between
+// them.
+
 #ifndef SIMILARITY_TABLE_HPP
 #define SIMILARITY_TABLE_HPP
 

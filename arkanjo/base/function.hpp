@@ -1,3 +1,7 @@
+// This is the abstraction of a function in the temporary codebase, 
+// contains all the information related to a function, and for that 
+// open and read the files in the temporary codebase.
+
 #ifndef FUNCTION_HPP
 #define FUNCTION_HPP
 
