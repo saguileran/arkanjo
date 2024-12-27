@@ -1,3 +1,7 @@
+// Defines the preprocessor/setup step of the tool,
+// where we do a heavy preprocessing of the input codebase
+// to enable fast query response later.
+
 #ifndef PREPROCESSOR_HPP
 #define PREPROCESSOR_HPP
 
