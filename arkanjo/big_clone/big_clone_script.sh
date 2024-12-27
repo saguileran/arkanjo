@@ -1,7 +1,10 @@
-#!/bin/bash
-#This script automatize the evaluation of BigCloneEval on this tool
-#Set the BigCloneEval repository correct on this folder before executing this script
-#Set the duplicate-code_detection-tool correct on this folder before executing this script
+# This script was used in the first try to evaluate the tool using the big clone bench dataset
+# as I remember, this does not work, but I will keep this as I am not sure anymore
+#
+# !/bin/bash
+# This script automatize the evaluation of BigCloneEval on this tool
+# Set the BigCloneEval repository correct on this folder before executing this script
+# Set the duplicate-code_detection-tool correct on this folder before executing this script
 
 DIR="$(pwd)"
 RELATIVE="/BigCloneEval/ijadataset/bcb_reduced/"
