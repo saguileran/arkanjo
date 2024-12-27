@@ -1,6 +1,9 @@
 // This class is used to evaluate the tool by the big clone bench dataset
 // using the same methodology as the Tailor tool.
 
+#ifndef BIG_CLONE_TAILOR_EVALUATOR_HPP
+#define BIG_CLONE_TAILOR_EVALUATOR_HPP
+
 #include <bits/stdc++.h> 
 
 #include "../base/path.hpp"
@@ -51,3 +54,5 @@ class Big_Clone_Tailor_Evaluator{
 	public:
 	Big_Clone_Tailor_Evaluator(Similarity_Table *_similarity_table);
 };
+
+#endif

@@ -2,6 +2,9 @@
 // enables to set the interval of acceptable similarity probability and 
 // the number of functions to be selected.
 
+#ifndef RANDOM_SELECTOR_HPP
+#define RANDOM_SELECTOR_HPP
+
 #include <bits/stdc++.h> 
 #include "../base/path.hpp"
 #include "../base/utils.hpp"
@@ -45,3 +48,5 @@ class Random_Selector{
 			double _maximum_quantity
 	);
 };
+
+#endif

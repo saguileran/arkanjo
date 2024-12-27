@@ -1,5 +1,9 @@
 // This files is related to the first try to evaluate the tool in big clone bench dataset
 // the class does not work properly in the moment and should be ignored.
+
+#ifndef BIG_CLONE_FORMATER_HPP
+#define BIG_CLONE_FORMATER_HPP
+
 #include <bits/stdc++.h> 
 
 #include "../base/path.hpp"
@@ -17,3 +21,5 @@ class Big_Clone_Formater{
 	public:
 	Big_Clone_Formater(Similarity_Table *similarity_table);
 };
+
+#endif

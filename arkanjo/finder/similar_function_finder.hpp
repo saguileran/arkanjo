@@ -2,6 +2,9 @@
 // given a function, find the other functions that are similar
 // to the given one.
 
+#ifndef SIMILAR_FUNCTION_FINDER_HPP
+#define SIMILAR_FUNCTION_FINDER_HPP
+
 #include <bits/stdc++.h> 
 #include "../base/path.hpp"
 #include "../base/function.hpp"
@@ -30,3 +33,5 @@ class Similar_Function_Finder{
 public:
 	Similar_Function_Finder(string _function_pattern, Similarity_Table *_similarity_table);
 };
+
+#endif
