@@ -1,8 +1,8 @@
 #include <bits/stdc++.h> 
 
-#include "../path.hpp"
-#include "../utils.hpp"
-#include "../similarity_table.hpp"
+#include "../base/path.hpp"
+#include "../base/utils.hpp"
+#include "../base/similarity_table.hpp"
 
 using namespace std;
 

@@ -1,9 +1,9 @@
 #include <bits/stdc++.h> 
 
-#include "path.hpp"
-#include "function.hpp"
-#include "utils.hpp"
-#include "similarity_table.hpp"
+#include "base/path.hpp"
+#include "base/function.hpp"
+#include "base/utils.hpp"
+#include "base/similarity_table.hpp"
 #include "finder/similar_function_finder.hpp"
 #include "counter/counter_duplication_code_trie.hpp"
 #include "counter/counter_duplication_code.hpp"
