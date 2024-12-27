@@ -1,3 +1,7 @@
+// The Random Selector random selects a set of duplicated functions pairs
+// enables to set the interval of acceptable similarity probability and 
+// the number of functions to be selected.
+
 #include <bits/stdc++.h> 
 #include "../base/path.hpp"
 #include "../base/utils.hpp"
