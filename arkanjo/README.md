@@ -1,5 +1,8 @@
 # Description
 
+This README is outdated and it is far from enough to run the tool in the current state.
+The udpate of this document is a work in progress.
+
 sudo apt install python3-nltk
 sudo apt install python3-gensim
 sudo apt install python3-astor
