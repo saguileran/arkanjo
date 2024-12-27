@@ -1,3 +1,7 @@
+// The orchestrator starts the flow of the user iteraction
+// read the user cli command, parser it and call the correct functionality
+// related to the user query.
+
 #include <bits/stdc++.h> 
 
 #include "base/path.hpp"
@@ -13,7 +17,6 @@
 #include "rand/random_selector.hpp"
 using namespace std;
 
-//HERE will be a temporary code to enable me to show up the functionalities I implemented to other people.
 class Orchestrator{
 	private:
 
