@@ -1,3 +1,6 @@
+// This class is used to evaluate the tool by the big clone bench dataset
+// using the same methodology as the Tailor tool.
+
 #include <bits/stdc++.h> 
 
 #include "../base/path.hpp"

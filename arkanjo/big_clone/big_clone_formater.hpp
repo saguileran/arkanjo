@@ -1,3 +1,5 @@
+// This files is related to the first try to evaluate the tool in big clone bench dataset
+// the class does not work properly in the moment and should be ignored.
 #include <bits/stdc++.h> 
 
 #include "../base/path.hpp"
