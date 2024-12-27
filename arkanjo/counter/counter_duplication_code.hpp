@@ -2,9 +2,9 @@
 #define COUNTER_DUPLICATION_CODE_HPP
 
 #include <bits/stdc++.h> 
-#include "path.hpp"
-#include "function.hpp"
-#include "similarity_table.hpp"
+#include "../path.hpp"
+#include "../function.hpp"
+#include "../similarity_table.hpp"
 #include "counter_duplication_code_trie.hpp"
 using namespace std;
 

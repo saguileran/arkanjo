@@ -2,7 +2,7 @@
 #define COUNTER_DUPLICATION_CODE_TRIE_HPP
 
 #include <bits/stdc++.h> 
-#include "utils.hpp"
+#include "../utils.hpp"
 using namespace std;
 
 /*
