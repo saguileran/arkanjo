@@ -1,0 +1,37 @@
+#ifndef FUNCTION_BREAKER_UTIL_HPP
+#define FUNCTION_BREAKER_UTIL_HPP
+
+#include <bits/stdc++.h>
+#include "../base/utils.hpp"
+
+struct Line_content{
+	int line_number;
+	string content;
+};
+
+enum PROGRAMMING_LANGUAGE{
+	C,
+	JAVA
+};
+
+
+const string SOURCE_PATH = "tmp/source";
+const string HEADER_PATH = "tmp/header";
+const string INFO_PATH =   "tmp/info";
+
+string extract_extension(string file_path);
+
+string build_source_path(string relative_path, string function_name);
+
+string build_header_path(string relative_path, string function_name);
+
+string build_info_path(string relative_path, string function_name);
+
+void create_source_file(int start_number_line, int end_number_line, string relative_path, string function_name, const vector<string> &file_content);
+
+void create_header_file(int start_number_line, int line_declaration, string relative_path, string function_name, const vector<string> &file_content);
+
+/*This creates a json file*/
+void create_info_file(int line_declaration, int start_number_line, int end_number_line, string relative_path, string function_name);
+
+#endif
