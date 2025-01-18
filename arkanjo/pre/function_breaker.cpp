@@ -10,34 +10,14 @@ TODO: Doesn't work correct if the file has an incorrect bracket sequence,
 even if the bracket sequence is in a commentary
 */
 
-#include <bits/stdc++.h>
-#include "../base/utils.hpp"
-using namespace std;
-
-const vector<string> C_EXTENSIONS = { "c","h"};
-const vector<string> JAVA_EXTENSIONS =  { "java" };
-const vector<string> ALLOWED_EXTENSIONS = { "c","h","java" };
-const string SOURCE_PATH = "tmp/source";
-const string HEADER_PATH = "tmp/header";
-const string INFO_PATH =   "tmp/info";
-const int NUMBER_OF_LINES_BEFORE_FOR_FUNCTION_NAME = 7;
-const int C_RELEVANT_DEPTH = 0;
-const int JAVA_RELEVANT_DEPTH = 1;
-const bool IGNORE_EMPTY_FUNCTIONS = true;
-
-const bool ALLOW_STRUCTS = false;
-
-enum PROGRAMMING_LANGUAGE{
-	C,
-	JAVA
-};
+#include "function_breaker.hpp"
 
 void dbg_out() { cerr << endl; }
 template <typename H, typename... T>
 void dbg_out(H h, T... t) { cerr << ' ' << h; dbg_out(t...); }
 #define dbg(...) { cerr << #__VA_ARGS__ << ':'; dbg_out(__VA_ARGS__); }
 
-bool is_c_extension(string extension){
+bool FunctionBreaker::is_c_extension(string extension){
 	for(auto c_extension : C_EXTENSIONS){
 		if(extension == c_extension){
 			return true;
@@ -46,7 +26,7 @@ bool is_c_extension(string extension){
 	return false;
 }
 
-bool is_java_extension(string extension){
+bool FunctionBreaker::is_java_extension(string extension){
 	for(auto java_extension : JAVA_EXTENSIONS){
 		if(extension == java_extension){
 			return true;
@@ -55,7 +35,7 @@ bool is_java_extension(string extension){
 	return false;
 }
 
-bool is_allowed_extension(string extension){
+bool FunctionBreaker::is_allowed_extension(string extension){
 	for(auto allowed_extension : ALLOWED_EXTENSIONS){
 		if(extension == allowed_extension){
 			return true;
@@ -64,7 +44,7 @@ bool is_allowed_extension(string extension){
 	return false;
 }
 
-string extract_extension(string file_path){
+string FunctionBreaker::extract_extension(string file_path){
 	string extension = "";
 	int pos_last_dot = -1;
 	for(size_t i = 0; i < file_path.size(); i++){
@@ -81,7 +61,7 @@ string extract_extension(string file_path){
 	return extension;
 }
 
-set<array<int,3>> find_start_end_and_depth_of_brackets(vector<string> brackets_content){
+set<array<int,3>> FunctionBreaker::find_start_end_and_depth_of_brackets(vector<string> brackets_content){
 	set<array<int,3>> start_ends;
 	int open_brackets = 0;
 
@@ -116,7 +96,7 @@ set<array<int,3>> find_start_end_and_depth_of_brackets(vector<string> brackets_c
 	return start_ends;
 }
 
-set<pair<int,int>> find_start_end_of_brackets_of_given_depth(vector<string> brackets_content, int depth){
+set<pair<int,int>> FunctionBreaker::find_start_end_of_brackets_of_given_depth(vector<string> brackets_content, int depth){
 	set<pair<int,int>> ret;
 	set<array<int,3>> bracket_pairs = find_start_end_and_depth_of_brackets(brackets_content);
 	for(auto [start,end,dep] : bracket_pairs){
@@ -127,7 +107,7 @@ set<pair<int,int>> find_start_end_of_brackets_of_given_depth(vector<string> brac
 	return ret;
 }
 
-int find_position_first_open_bracket(string s){
+int FunctionBreaker::find_position_first_open_bracket(string s){
 	for(size_t i = 0; i < s.size(); i++){
 		char c = s[i];
 		if(c == '{'){
@@ -137,7 +117,7 @@ int find_position_first_open_bracket(string s){
 	return -1;
 }
 
-string extract_last_token_of_string(string s){
+string FunctionBreaker::extract_last_token_of_string(string s){
 	vector<string> tokens;
 	string cur_token = "";
 	for(size_t i = 0; i < s.size(); i++){
@@ -161,19 +141,14 @@ string extract_last_token_of_string(string s){
 	return tokens.back();
 }
 
-struct Line_content{
-	int line_number;
-	string content;
-};
-
-Line_content build_line_code(int line_number, string content){
+Line_content FunctionBreaker::build_line_code(int line_number, string content){
 	Line_content ret;
 	ret.line_number = line_number;
 	ret.content = content;
 	return ret;
 }
 
-vector<Line_content> get_lines_before_body_function(const vector<string> &file_content, int line_start_body_function, int pos_bracket){	
+vector<Line_content> FunctionBreaker::get_lines_before_body_function(const vector<string> &file_content, int line_start_body_function, int pos_bracket){	
 	vector<Line_content> ret;
 	Line_content line_bracket = build_line_code(line_start_body_function,file_content[line_start_body_function]);
 	//remove everything after {
@@ -204,7 +179,7 @@ vector<Line_content> get_lines_before_body_function(const vector<string> &file_c
 }
 
 
-vector<Line_content> remove_parenteses_at_the_end_of_the_scope(vector<Line_content> code){
+vector<Line_content> FunctionBreaker::remove_parenteses_at_the_end_of_the_scope(vector<Line_content> code){
 	if(code.empty() || code.back().content.back() != ')'){
 		return code;
 	}
@@ -233,7 +208,7 @@ vector<Line_content> remove_parenteses_at_the_end_of_the_scope(vector<Line_conte
 	return code;
 }
 
-vector<Line_content> remove_content_until_find_parenteses_at_the_end(vector<Line_content> code){
+vector<Line_content> FunctionBreaker::remove_content_until_find_parenteses_at_the_end(vector<Line_content> code){
 	while(!code.empty()){
 		string content = code.back().content;
 		while(!content.empty()){
@@ -252,7 +227,7 @@ vector<Line_content> remove_content_until_find_parenteses_at_the_end(vector<Line
 	return code;
 }
 
-vector<Line_content> remove_parameters_of_declaration_c(vector<Line_content> code){
+vector<Line_content> FunctionBreaker::remove_parameters_of_declaration_c(vector<Line_content> code){
 	if(!ALLOW_STRUCTS){
 		auto ret = remove_content_until_find_parenteses_at_the_end(code);
 		return remove_parenteses_at_the_end_of_the_scope(ret);
@@ -260,12 +235,12 @@ vector<Line_content> remove_parameters_of_declaration_c(vector<Line_content> cod
 	return remove_parenteses_at_the_end_of_the_scope(code);
 }
 
-vector<Line_content> remove_parameters_of_declaration_java(vector<Line_content> code){
+vector<Line_content> FunctionBreaker::remove_parameters_of_declaration_java(vector<Line_content> code){
 	auto ret = remove_content_until_find_parenteses_at_the_end(code);
 	return remove_parenteses_at_the_end_of_the_scope(ret);
 }
 
-vector<Line_content> remove_parameters_of_declaration(vector<Line_content> code, PROGRAMMING_LANGUAGE programming_language){
+vector<Line_content> FunctionBreaker::remove_parameters_of_declaration(vector<Line_content> code, PROGRAMMING_LANGUAGE programming_language){
 	if(programming_language == C){
 		return remove_parameters_of_declaration_c(code);
 	}
@@ -275,7 +250,7 @@ vector<Line_content> remove_parameters_of_declaration(vector<Line_content> code,
 	return code;
 }
 
-pair<string,int> extract_function_name_and_line_from_declaration(const vector<string> &file_content, int line_start_body_function, PROGRAMMING_LANGUAGE programming_language){
+pair<string,int> FunctionBreaker::extract_function_name_and_line_from_declaration(const vector<string> &file_content, int line_start_body_function, PROGRAMMING_LANGUAGE programming_language){
 	int pos = find_position_first_open_bracket(file_content[line_start_body_function]);
 	vector<Line_content> code_before_bracket = get_lines_before_body_function(file_content, line_start_body_function,pos);
 	vector<Line_content> code = remove_parameters_of_declaration(code_before_bracket, programming_language);
@@ -286,28 +261,28 @@ pair<string,int> extract_function_name_and_line_from_declaration(const vector<st
 	return {ret,code.back().line_number};
 }
 
-string build_source_path(string relative_path, string function_name){
+string FunctionBreaker::build_source_path(string relative_path, string function_name){
 	string extension = extract_extension(relative_path);
 	string final_path = SOURCE_PATH + relative_path + "/";
 	final_path += function_name + "." + extension;
 	return final_path;
 }
 
-string build_header_path(string relative_path, string function_name){
+string FunctionBreaker::build_header_path(string relative_path, string function_name){
 	string extension = extract_extension(relative_path);
 	string final_path = HEADER_PATH + relative_path + "/";
 	final_path += function_name + "." + extension;
 	return final_path;
 }
 
-string build_info_path(string relative_path, string function_name){
+string FunctionBreaker::build_info_path(string relative_path, string function_name){
 	string extension = extract_extension(relative_path);
 	string final_path = INFO_PATH + relative_path + "/";
 	final_path += function_name + ".json";
 	return final_path;
 }
 
-vector<string> build_function_content(int start_number_line, int end_number_line,const vector<string> &file_content){
+vector<string> FunctionBreaker::build_function_content(int start_number_line, int end_number_line,const vector<string> &file_content){
 	string first_line = file_content[start_number_line];
 	int to_remove = find_position_first_open_bracket(first_line);
 	
@@ -324,7 +299,7 @@ vector<string> build_function_content(int start_number_line, int end_number_line
 	return function_content;
 }
 
-bool is_body_function_empty(int start_number_line, int end_number_line,const vector<string> &file_content){
+bool FunctionBreaker::is_body_function_empty(int start_number_line, int end_number_line,const vector<string> &file_content){
 	vector<string> function_content = build_function_content(start_number_line, end_number_line, file_content);
 	int count_not_empty_char = 0;
 	for(auto line : function_content){
@@ -339,13 +314,13 @@ bool is_body_function_empty(int start_number_line, int end_number_line,const vec
 }
 
 
-void create_source_file(int start_number_line, int end_number_line, string relative_path, string function_name, const vector<string> &file_content){
+void FunctionBreaker::create_source_file(int start_number_line, int end_number_line, string relative_path, string function_name, const vector<string> &file_content){
 	string path = build_source_path(relative_path, function_name);
 	vector<string> function_content = build_function_content(start_number_line, end_number_line, file_content);
 	Utils::write_file_generic(path, function_content);
 }
 
-void create_header_file(int start_number_line, int line_declaration, string relative_path, string function_name, const vector<string> &file_content){
+void FunctionBreaker::create_header_file(int start_number_line, int line_declaration, string relative_path, string function_name, const vector<string> &file_content){
 	string path = build_header_path(relative_path, function_name);
 	vector<string> function_content;
 	for(int i = line_declaration; i < start_number_line; i++){
@@ -363,7 +338,7 @@ void create_header_file(int start_number_line, int line_declaration, string rela
 }
 
 /*This creates a json file*/
-void create_info_file(int line_declaration, int start_number_line, int end_number_line, string relative_path, string function_name){
+void FunctionBreaker::create_info_file(int line_declaration, int start_number_line, int end_number_line, string relative_path, string function_name){
 	vector<string> content;
 	content.push_back("{\n");
 	content.push_back("\"file_name\":\"" + relative_path + "\",\n");
@@ -376,7 +351,7 @@ void create_info_file(int line_declaration, int start_number_line, int end_numbe
 	Utils::write_file_generic(path, content);
 }
 
-void process_function(int start_number_line, int end_number_line, string relative_path, const vector<string> &file_content, PROGRAMMING_LANGUAGE programming_language){
+void FunctionBreaker::process_function(int start_number_line, int end_number_line, string relative_path, const vector<string> &file_content, PROGRAMMING_LANGUAGE programming_language){
 	string first_line = file_content[start_number_line];
 	auto [function_name,line_declaration] = extract_function_name_and_line_from_declaration(file_content,start_number_line, programming_language);
 	if(function_name.empty()){
@@ -392,7 +367,7 @@ void process_function(int start_number_line, int end_number_line, string relativ
 	create_info_file(line_declaration,start_number_line,end_number_line,relative_path,function_name);
 }
 
-string file_path_from_folder_path(string file_path, string folder_path){
+string FunctionBreaker::file_path_from_folder_path(string file_path, string folder_path){
 	string ret = "";
 	for(size_t i = folder_path.size(); i < file_path.size(); i++){
 		ret += file_path[i];
@@ -400,7 +375,7 @@ string file_path_from_folder_path(string file_path, string folder_path){
 	return ret;
 }
 
-void file_breaker_c(string file_path, string folder_path){
+void FunctionBreaker::file_breaker_c(string file_path, string folder_path){
 	string relative_path = file_path_from_folder_path(file_path, folder_path);
 	vector<string> file_content = Utils::read_file_generic(file_path);
 	set<pair<int,int>> start_end_of_functions = find_start_end_of_brackets_of_given_depth(file_content, C_RELEVANT_DEPTH);
@@ -410,7 +385,7 @@ void file_breaker_c(string file_path, string folder_path){
 	}
 }
 
-void file_breaker_java(string file_path, string folder_path){
+void FunctionBreaker::file_breaker_java(string file_path, string folder_path){
 	string relative_path = file_path_from_folder_path(file_path, folder_path);
 	vector<string> file_content = Utils::read_file_generic(file_path);
 	set<pair<int,int>> start_end_of_functions = find_start_end_of_brackets_of_given_depth(file_content, JAVA_RELEVANT_DEPTH);
@@ -420,7 +395,7 @@ void file_breaker_java(string file_path, string folder_path){
 	}
 }
 
-void file_breaker(string file_path, string folder_path){
+void FunctionBreaker::file_breaker(string file_path, string folder_path){
 	string extension = extract_extension(file_path);
 
 	if(!is_allowed_extension(extension)){
@@ -437,20 +412,13 @@ void file_breaker(string file_path, string folder_path){
 	}
 }
 
-void function_breaker(string folder_path){
+void FunctionBreaker::function_breaker(string folder_path){
 	for(const auto &dirEntry: std::filesystem::recursive_directory_iterator(folder_path)){
 		string file_path = dirEntry.path().string();
 		file_breaker(file_path,folder_path);
 	}
 }
 
-int main(int argc, char *argv[]){
-	if(argc <= 1){
-		cout << "Required folder path to process was not given" << endl;
-		return 0;
-	}
-	string folder_path(argv[1]);
+FunctionBreaker::FunctionBreaker(string folder_path){
 	function_breaker(folder_path);
-
-	return 0;
 }

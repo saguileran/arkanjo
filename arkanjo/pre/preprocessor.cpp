@@ -10,10 +10,9 @@ void Preprocessor::preprocess(){
 	cin >> similarity_message;
 	double similarity = stod(similarity_message);
 
-	string command_breaker = "./breaker " + path;
+	FunctionBreaker function_breaker(path);
+
 	string command_tool = "python3 -W ignore third-party/duplicate-code-detection-tool/duplicate_code_detection.py -d ./tmp/source > output_tool.txt";
-	
-	system(command_breaker.c_str());
 	system(command_tool.c_str());
 	
 	Parser parser("output_tool.txt","output_parsed.txt",similarity);

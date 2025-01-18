@@ -7,6 +7,7 @@
 
 #include <bits/stdc++.h> 
 #include "parser.hpp"
+#include "function_breaker.hpp"
 using namespace std;
 
 class Preprocessor{
