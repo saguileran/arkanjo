@@ -31,7 +31,7 @@ string build_header_path(string relative_path, string function_name);
 
 string build_info_path(string relative_path, string function_name);
 
-void create_source_file(int start_number_line, int end_number_line, string relative_path, string function_name, const vector<string> &file_content);
+void create_source_file(int start_number_line, int end_number_line, string relative_path, string function_name, const vector<string> &function_content);
 
 void create_header_file(int start_number_line, int line_declaration, string relative_path, string function_name, const vector<string> &file_content);
 

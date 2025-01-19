@@ -11,24 +11,6 @@ namespace {
 		}
 		return -1;
 	}
-
-	vector<string> build_function_content(int start_number_line, int end_number_line,const vector<string> &file_content){
-		string first_line = file_content[start_number_line];
-		int to_remove = find_position_first_open_bracket(first_line);
-
-		vector<string> function_content;
-		reverse(first_line.begin(),first_line.end());
-		for(int i = 0; i < to_remove; i++){
-			first_line.pop_back();
-		}
-		reverse(first_line.begin(),first_line.end());
-		function_content.push_back(first_line);
-		for(int i = start_number_line+1; i <= end_number_line; i++){
-			function_content.push_back(file_content[i]);
-		}
-		return function_content;
-	}
-
 }
 
 string extract_extension(string file_path){
@@ -69,9 +51,8 @@ string build_info_path(string relative_path, string function_name){
 	return final_path;
 }
 
-void create_source_file(int start_number_line, int end_number_line, string relative_path, string function_name, const vector<string> &file_content){
+void create_source_file(int start_number_line, int end_number_line, string relative_path, string function_name, const vector<string> &function_content){
 	string path = build_source_path(relative_path, function_name);
-	vector<string> function_content = build_function_content(start_number_line, end_number_line, file_content);
 	Utils::write_file_generic(path, function_content);
 }
 

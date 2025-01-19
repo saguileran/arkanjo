@@ -242,7 +242,10 @@ void FunctionBreakerJava::process_function(int start_number_line, int end_number
 			return;
 		}
 	}
-	create_source_file(start_number_line,end_number_line,relative_path,function_name,file_content);
+
+	vector<string> function_content = build_function_content(start_number_line,end_number_line,file_content);
+
+	create_source_file(start_number_line,end_number_line,relative_path,function_name,function_content);
 	create_header_file(start_number_line,line_declaration,relative_path,function_name,file_content);
 	create_info_file(line_declaration,start_number_line,end_number_line,relative_path,function_name);
 }
