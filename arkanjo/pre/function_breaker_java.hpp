@@ -1,3 +1,5 @@
+// Defines the flow of parsing a java source file in multiples functions
+
 #ifndef FUNCTION_BREAKER_JAVA_HPP
 #define FUNCTION_BREAKER_JAVA_HPP
 

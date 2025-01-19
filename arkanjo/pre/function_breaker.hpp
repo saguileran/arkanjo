@@ -1,9 +1,7 @@
-#ifndef FUNCTION_BREAKER_HPP
-#define FUNCTION_BREAKER_HPP
-
 /*
-This file intends to create a script to read a directory with 
-code in c and extract every function/struct of every .c file as a new file
+This file intends to create the process of reading a directory with 
+code in c or java and extract every function/struct of every .c /.java file as a new file
+in the temporary repository, aka, tmp/
 
 Example of expected behaviour: 
 There is a file example.c with functions a and b, will be create two new 
@@ -12,6 +10,9 @@ files: example/a.c and example/b.c
 TODO: Doesn't work correct if the file has an incorrect bracket sequence, 
 even if the bracket sequence is in a commentary
 */
+
+#ifndef FUNCTION_BREAKER_HPP
+#define FUNCTION_BREAKER_HPP
 
 #include <bits/stdc++.h>
 #include "../base/utils.hpp"

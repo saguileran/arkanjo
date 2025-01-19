@@ -1,3 +1,5 @@
+// Defines the flow of parsing a source cpp file in multiples functions
+
 #ifndef FUNCTION_BREAKER_C_HPP
 #define FUNCTION_BREAKER_C_HPP
 

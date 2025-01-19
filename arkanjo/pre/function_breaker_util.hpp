@@ -1,3 +1,7 @@
+// Defines util functions, struct and constants used across 
+// the function breaker process for the suported
+// languages
+
 #ifndef FUNCTION_BREAKER_UTIL_HPP
 #define FUNCTION_BREAKER_UTIL_HPP
 
