@@ -24,9 +24,9 @@ class FunctionBreakerC{
 
 	vector<vector<bool>> build_mask_valid_code(vector<string> brackets_content);
 
-	set<array<int,3>> find_start_end_and_depth_of_brackets(vector<string> brackets_content);
+	set<array<int,5>> find_start_end_and_depth_of_brackets(vector<string> brackets_content);
 
-	set<pair<int,int>> find_start_end_of_brackets_of_given_depth(vector<string> brackets_content, int depth);
+	set<array<int,4>> find_start_end_of_brackets_of_given_depth(vector<string> brackets_content, int depth);
 
 	int find_position_first_open_bracket(string s);
 
@@ -52,7 +52,7 @@ class FunctionBreakerC{
 
 	bool is_body_function_empty(int start_number_line, int end_number_line,const vector<string> &file_content);
 
-	void process_function(int start_number_line, int end_number_line, string relative_path, const vector<string> &file_content, PROGRAMMING_LANGUAGE programming_language);
+	void process_function(int start_number_line, int start_column, int end_number_line, int end_column, string relative_path, const vector<string> &file_content, PROGRAMMING_LANGUAGE programming_language);
 
 	string file_path_from_folder_path(string file_path, string folder_path);
 

@@ -1,3 +1,6 @@
+// TODO - line declaration extraction does not work really well to extract definition
+// because of comments or define in the middle of definition
+
 #include "function_breaker_c.hpp"
 
 bool FunctionBreakerC::is_define(vector<string>& brackets_content, int line, int pos){
@@ -149,25 +152,29 @@ vector<vector<bool>> FunctionBreakerC::build_mask_valid_code(vector<string> brac
 	return mask;
 }
 
-set<array<int,3>> FunctionBreakerC::find_start_end_and_depth_of_brackets(vector<string> brackets_content){
+set<array<int,5>> FunctionBreakerC::find_start_end_and_depth_of_brackets(vector<string> brackets_content){
 	vector<vector<bool>> mask_valid = build_mask_valid_code(brackets_content);
-	set<array<int,3>> start_ends;
+	set<array<int,5>> start_ends;
 	int open_brackets = 0;
 
-	vector<int> not_processed_open_brackets;
-	auto process_open = [&](int line_number){
+	vector<pair<int,int>> not_processed_open_brackets;
+	auto process_open = [&](int line_number, int column){
 		open_brackets++;
-		not_processed_open_brackets.push_back(line_number);
+		not_processed_open_brackets.push_back({line_number,column});
 	};
-	auto process_close = [&](int line_number){
+	auto process_close = [&](int line_number, int column){
 		open_brackets--;
 		if(open_brackets <= -1){
 			open_brackets = 0;
 		}else{
-			int matched_open_position = not_processed_open_brackets.back();
+			auto [matched_line,matched_column]= not_processed_open_brackets.back();
 			not_processed_open_brackets.pop_back();
 			int depth_of_open = not_processed_open_brackets.size();
-			start_ends.insert({matched_open_position,line_number,depth_of_open});
+			start_ends.insert({matched_line,
+							   matched_column,
+							   line_number,
+							   column,
+							   depth_of_open});
 		}
 	};
 
@@ -179,22 +186,22 @@ set<array<int,3>> FunctionBreakerC::find_start_end_and_depth_of_brackets(vector<
 			}
 			auto c = line[j];
 			if(c == '{'){
-				process_open(i);
+				process_open(i,j);
 			}
 			if(c == '}'){
-				process_close(i);
+				process_close(i,j);
 			}
 		}
 	}
 	return start_ends;
 }
 
-set<pair<int,int>> FunctionBreakerC::find_start_end_of_brackets_of_given_depth(vector<string> brackets_content, int depth){
-	set<pair<int,int>> ret;
-	set<array<int,3>> bracket_pairs = find_start_end_and_depth_of_brackets(brackets_content);
-	for(auto [start,end,dep] : bracket_pairs){
+set<array<int,4>> FunctionBreakerC::find_start_end_of_brackets_of_given_depth(vector<string> brackets_content, int depth){
+	set<array<int,4>> ret;
+	set<array<int,5>> bracket_pairs = find_start_end_and_depth_of_brackets(brackets_content);
+	for(auto [start_line,start_column,end_line,end_column,dep] : bracket_pairs){
 		if(dep == depth){
-			ret.insert({start,end});
+			ret.insert({start_line,start_column,end_line,end_column});
 		}
 	}
 	return ret;
@@ -385,7 +392,13 @@ bool FunctionBreakerC::is_body_function_empty(int start_number_line, int end_num
 	return is_empty;
 }
 
-void FunctionBreakerC::process_function(int start_number_line, int end_number_line, string relative_path, const vector<string> &file_content, PROGRAMMING_LANGUAGE programming_language){
+void FunctionBreakerC::process_function(int start_number_line, 
+										int start_column,
+										int end_number_line, 
+										int end_column,
+										string relative_path,
+										const vector<string> &file_content, 
+										PROGRAMMING_LANGUAGE programming_language){
 	string first_line = file_content[start_number_line];
 	auto [function_name,line_declaration] = extract_function_name_and_line_from_declaration(file_content,start_number_line, programming_language);
 	if(function_name.empty()){
@@ -412,10 +425,10 @@ string FunctionBreakerC::file_path_from_folder_path(string file_path, string fol
 void FunctionBreakerC::file_breaker_c(string file_path, string folder_path){
 	string relative_path = file_path_from_folder_path(file_path, folder_path);
 	vector<string> file_content = Utils::read_file_generic(file_path);
-	set<pair<int,int>> start_end_of_functions = find_start_end_of_brackets_of_given_depth(file_content, C_RELEVANT_DEPTH);
+	set<array<int,4>> start_end_of_functions = find_start_end_of_brackets_of_given_depth(file_content, C_RELEVANT_DEPTH);
 
-	for(auto [start_line, end_line] : start_end_of_functions){
-		process_function(start_line,end_line,relative_path, file_content, C);
+	for(auto [start_line,start_column,end_line,end_column] : start_end_of_functions){
+		process_function(start_line,start_column,end_line,end_column,relative_path,file_content, C);
 	}
 }
 
