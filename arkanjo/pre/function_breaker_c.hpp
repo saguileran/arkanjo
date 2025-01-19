@@ -48,9 +48,9 @@ class FunctionBreakerC{
 
 	pair<string,int> extract_function_name_and_line_from_declaration(const vector<string> &file_content, int line_start_body_function, PROGRAMMING_LANGUAGE programming_language);
 
-	vector<string> build_function_content(int start_number_line, int end_number_line,const vector<string> &file_content);
+	vector<string> build_function_content(int start_number_line, int start_column, int end_number_line, int end_column, const vector<string> &file_content);
 
-	bool is_body_function_empty(int start_number_line, int end_number_line,const vector<string> &file_content);
+	bool is_body_function_empty(int start_number_line, int start_column, int end_number_line, int end_column,const vector<string> &file_content);
 
 	void process_function(int start_number_line, int start_column, int end_number_line, int end_column, string relative_path, const vector<string> &file_content, PROGRAMMING_LANGUAGE programming_language);
 
