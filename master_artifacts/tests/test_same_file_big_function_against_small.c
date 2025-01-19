@@ -9,6 +9,21 @@
 
 int *sorted_by_distance_to_median(int v[], int n){
 
+ 	#define {djfasuhfhs fddfkjdjfk jkdsklfjalksd \
+	fdsajfdsjkafjkl // fdsajfkldsaf /* \
+	fsadjfkaksjdfjk
+
+	// fdjsff{ weh /* fsdhusgh wekew */ fsajdfjsad // \
+	fdsajfjkdsf " fdsafdsjakfj */ /* asdfjkdsakf //\
+	fsdfjdskjkf // " sjdfkjsd '"'fkljasdf #define
+
+	/*fsd fj }// sadf j #define sdjafkjds "f jdsfj "fsdajkjf '"' fa
+	sdjafkljdsaj h*/
+
+	char D = '"';
+
+	printf("%d, dsfj hushu \" /**/ #define // fdahu ",3);
+
 	int *v_sorted = (int*)malloc(n*sizeof(int));
 	int *dist_to_median = (int*)malloc(n*sizeof(int));
 	int *p = (int*)malloc(n*sizeof(int));

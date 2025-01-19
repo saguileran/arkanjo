@@ -1,6 +1,156 @@
 #include "function_breaker_c.hpp"
 
+bool FunctionBreakerC::is_define(vector<string>& brackets_content, int line, int pos){
+	int line_size = brackets_content.size();
+	// does not fit the #define token
+	if(pos+7 > line_size) return false; 		
+	// match the token
+	string token = "#define";
+	bool match = true;
+	for(int j = 0; j < 7; j++){
+		match &= brackets_content[line][pos+j] == token[j];
+	}
+	return match;
+}
+
+// Only works if the code is compilable. I do have grant any 
+// ensurances if the source code does not compile
+void FunctionBreakerC::filter_mask_commentaries_and_defines(vector<string>& brackets_content,vector<vector<bool>>& mask){
+	// aqui tbm tem que lidar com string literal, ie, "#define" nao eh define a
+	// eh "//" nao eh commentario
+	int number_lines = brackets_content.size();
+	bool is_open_block_comment = false;
+	bool is_open_define = false;
+	bool is_open_quotation_marks = false;
+	bool is_open_line_comment = false;
+
+	for(int i = 0; i < number_lines; i++){
+		auto& line = brackets_content[i];
+		auto& mask_line = mask[i];
+		int line_size = line.size();
+
+		if(is_open_define){
+			for(int j = 0; j < line_size; j++){
+				mask_line[j] = false;
+			}
+			// if the last token is to continue the define
+			if(line.back() != '\\'){
+				is_open_define = false;
+			}
+			continue;
+		}
+
+		if(is_open_line_comment){
+			for(int j = 0; j < line_size; j++){
+				mask_line[j] = false;
+			}
+			// if the last token is to continue the define
+			if(line.back() != '\\'){
+				is_open_line_comment = false;
+			}
+			continue;
+		}
+
+		for(int j = 0; j < line_size; j++){
+			if(is_open_block_comment){
+				mask_line[j] = false;
+				// if the block line comes to an end
+				if(j+1 < line_size && line[j] == '*' && line[j+1] == '/'){
+					j++;
+					mask_line[j] = false;
+					is_open_block_comment = false;
+				}
+				continue;
+			}
+
+			if(is_open_quotation_marks){
+				mask_line[j] = false;
+				// TODO should I take a look on ""s ?
+				if(line[j] == '"'){
+					is_open_quotation_marks = false;
+				}else if(line[j] == '\\'){
+					if(j == line_size-1){
+						break;
+					}else{
+						j++;
+						mask_line[j] = false;
+					}
+				}
+				continue;
+			}
+
+			if(line[j] == '\''){
+				assert(j+2 < line_size && 
+					   line[j+2] == '\'' && 
+					   "source code does not compile, ' open but not closed");
+				mask_line[j] = false;
+				j++;
+				mask_line[j] = false;
+				j++;
+				mask_line[j] = false;
+				continue;
+			}
+
+			if(line[j] == '"'){
+				is_open_quotation_marks = true;
+				mask_line[j] = false;
+				continue;
+			}
+
+			if(line[j] == '/'){
+				if(j == line_size-1){
+					continue;
+				}
+
+				if(line[j+1] == '/'){
+					for(int k = j; k < line_size; k++){
+						mask_line[k] = false;
+					}
+					// find line comment, everything after is comment and 
+					// break the iteration on the current line
+					is_open_line_comment = line.back() == '\\';
+					break;
+				}
+
+				if(line[j+1] == '*'){
+					mask_line[j] = false;
+					j++;
+					mask_line[j] = false;
+					is_open_block_comment = true;
+					continue;
+				}
+			}
+			
+			if(is_define(brackets_content,i,j)){
+				for(int k = j; k < line_size; k++){
+					mask_line[k] = false;
+				}
+				// find #define, everything after is comment and 
+				// break the iteration on the current line
+				is_open_define = line.back() == '\\';
+				break;
+			}
+		}
+	}
+
+	assert(is_open_block_comment == false && 
+		   "source code does not compile, open block comment");
+    assert(is_open_quotation_marks == false &&
+		   "source code does not compile, open quotation marks");
+}
+
+// the exactly same size of the input source, the character will be 1 if it is not in a commentary nor a #define's
+vector<vector<bool>> FunctionBreakerC::build_mask_valid_code(vector<string> brackets_content){
+	vector<vector<bool>> mask(brackets_content.size());
+	for(int i = 0; i < (int)brackets_content.size(); i++){
+		mask[i] = vector<bool>(brackets_content[i].size(),true);
+	}
+	filter_mask_commentaries_and_defines(brackets_content,mask);
+	return mask;
+}
+
 set<array<int,3>> FunctionBreakerC::find_start_end_and_depth_of_brackets(vector<string> brackets_content){
+	vector<vector<bool>> mask_valid = build_mask_valid_code(brackets_content);
 	set<array<int,3>> start_ends;
 	int open_brackets = 0;
 
@@ -20,10 +170,14 @@ set<array<int,3>> FunctionBreakerC::find_start_end_and_depth_of_brackets(vector<
 			start_ends.insert({matched_open_position,line_number,depth_of_open});
 		}
 	};
-	
+
 	for(size_t i = 0; i < brackets_content.size(); i++){
-		auto line = brackets_content[i];
-		for(auto c : line){
+		auto& line = brackets_content[i];
+		for(size_t j = 0; j < line.size(); j++){
+			if(!mask_valid[i][j]){
+				continue;
+			}
+			auto c = line[j];
 			if(c == '{'){
 				process_open(i);
 			}
@@ -203,7 +357,7 @@ pair<string,int> FunctionBreakerC::extract_function_name_and_line_from_declarati
 vector<string> FunctionBreakerC::build_function_content(int start_number_line, int end_number_line,const vector<string> &file_content){
 	string first_line = file_content[start_number_line];
 	int to_remove = find_position_first_open_bracket(first_line);
-	
+
 	vector<string> function_content;
 	reverse(first_line.begin(),first_line.end());
 	for(int i = 0; i < to_remove; i++){

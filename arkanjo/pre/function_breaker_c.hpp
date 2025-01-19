@@ -16,6 +16,14 @@ class FunctionBreakerC{
 
 	const bool ALLOW_STRUCTS = false;
 
+	bool is_define(vector<string>& brackets_content, int line, int pos);
+	
+	// Only works if the code is compilable. I do have grant any 
+	// ensurances if the source code does not compile
+	void filter_mask_commentaries_and_defines(vector<string>& brackets_content,vector<vector<bool>>& mask);
+
+	vector<vector<bool>> build_mask_valid_code(vector<string> brackets_content);
+
 	set<array<int,3>> find_start_end_and_depth_of_brackets(vector<string> brackets_content);
 
 	set<pair<int,int>> find_start_end_of_brackets_of_given_depth(vector<string> brackets_content, int depth);
