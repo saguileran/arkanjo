@@ -83,11 +83,19 @@ void FunctionBreakerC::filter_mask_commentaries_and_defines(vector<string>& brac
 			}
 
 			if(line[j] == '\''){
-				assert(j+2 < line_size && 
-					   line[j+2] == '\'' && 
+				assert(j+1 < line_size && 
 					   "source code does not compile, ' open but not closed");
 				mask_line[j] = false;
 				j++;
+				if(line[j] == '\\'){
+					assert(j+2 < line_size && line[j+2] == '\'' &&
+					   	   "source code does not compile, ' open but not closed");
+					mask_line[j] = false;
+					j++;
+				}else{
+					assert(j+1 < line_size && line[j+1] == '\'' &&
+					   	   "source code does not compile, ' open but not closed");
+				}
 				mask_line[j] = false;
 				j++;
 				mask_line[j] = false;
@@ -123,7 +131,7 @@ void FunctionBreakerC::filter_mask_commentaries_and_defines(vector<string>& brac
 					continue;
 				}
 			}
-			
+
 			if(is_define(brackets_content,i,j)){
 				for(int k = j; k < line_size; k++){
 					mask_line[k] = false;
@@ -137,9 +145,9 @@ void FunctionBreakerC::filter_mask_commentaries_and_defines(vector<string>& brac
 	}
 
 	assert(is_open_block_comment == false && 
-		   "source code does not compile, open block comment");
-    assert(is_open_quotation_marks == false &&
-		   "source code does not compile, open quotation marks");
+			"source code does not compile, open block comment");
+	assert(is_open_quotation_marks == false &&
+			"source code does not compile, open quotation marks");
 }
 
 // the exactly same size of the input source, the character will be 1 if it is not in a commentary nor a #define's
@@ -171,10 +179,10 @@ set<array<int,5>> FunctionBreakerC::find_start_end_and_depth_of_brackets(vector<
 			not_processed_open_brackets.pop_back();
 			int depth_of_open = not_processed_open_brackets.size();
 			start_ends.insert({matched_line,
-							   matched_column,
-							   line_number,
-							   column,
-							   depth_of_open});
+					matched_column,
+					line_number,
+					column,
+					depth_of_open});
 		}
 	};
 
@@ -372,7 +380,7 @@ vector<string> FunctionBreakerC::build_function_content(int start_number_line, i
 		function_content.push_back(line);
 		return function_content;
 	}
-	
+
 	string first_line = file_content[start_number_line];
 	int first_line_size = first_line.size();
 	string first_line_contribution = "";
@@ -392,7 +400,7 @@ vector<string> FunctionBreakerC::build_function_content(int start_number_line, i
 		last_line_contribution += last_line[j];
 	}
 	function_content.push_back(last_line_contribution);
-		
+
 	return function_content;
 }
 
@@ -412,12 +420,12 @@ bool FunctionBreakerC::is_body_function_empty(int start_number_line, int start_c
 }
 
 void FunctionBreakerC::process_function(int start_number_line, 
-										int start_column,
-										int end_number_line, 
-										int end_column,
-										string relative_path,
-										const vector<string> &file_content, 
-										PROGRAMMING_LANGUAGE programming_language){
+		int start_column,
+		int end_number_line, 
+		int end_column,
+		string relative_path,
+		const vector<string> &file_content, 
+		PROGRAMMING_LANGUAGE programming_language){
 	string first_line = file_content[start_number_line];
 	auto [function_name,line_declaration] = extract_function_name_and_line_from_declaration(file_content,start_number_line, programming_language);
 	if(function_name.empty()){
@@ -447,7 +455,6 @@ void FunctionBreakerC::file_breaker_c(string file_path, string folder_path){
 	string relative_path = file_path_from_folder_path(file_path, folder_path);
 	vector<string> file_content = Utils::read_file_generic(file_path);
 	set<array<int,4>> start_end_of_functions = find_start_end_of_brackets_of_given_depth(file_content, C_RELEVANT_DEPTH);
-
 	for(auto [start_line,start_column,end_line,end_column] : start_end_of_functions){
 		process_function(start_line,start_column,end_line,end_column,relative_path,file_content, C);
 	}
