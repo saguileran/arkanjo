@@ -40,19 +40,15 @@ class FunctionBreakerC{
 
 	vector<Line_content> remove_content_until_find_parenteses_at_the_end(vector<Line_content> code);
 
-	vector<Line_content> remove_parameters_of_declaration_c(vector<Line_content> code);
+	vector<Line_content> remove_parameters_of_declaration(vector<Line_content> code);
 
-	vector<Line_content> remove_parameters_of_declaration_java(vector<Line_content> code);
-
-	vector<Line_content> remove_parameters_of_declaration(vector<Line_content> code, PROGRAMMING_LANGUAGE programming_language);
-
-	pair<string,int> extract_function_name_and_line_from_declaration(const vector<string> &file_content, int line_start_body_function, PROGRAMMING_LANGUAGE programming_language);
+	pair<string,int> extract_function_name_and_line_from_declaration(const vector<string> &file_content, int line_start_body_function);
 
 	vector<string> build_function_content(int start_number_line, int start_column, int end_number_line, int end_column, const vector<string> &file_content);
 
 	bool is_body_function_empty(int start_number_line, int start_column, int end_number_line, int end_column,const vector<string> &file_content);
 
-	void process_function(int start_number_line, int start_column, int end_number_line, int end_column, string relative_path, const vector<string> &file_content, PROGRAMMING_LANGUAGE programming_language);
+	void process_function(int start_number_line, int start_column, int end_number_line, int end_column, string relative_path, const vector<string> &file_content);
 
 	string file_path_from_folder_path(string file_path, string folder_path);
 
