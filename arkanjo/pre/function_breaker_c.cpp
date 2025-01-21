@@ -84,17 +84,17 @@ void FunctionBreakerC::filter_mask_commentaries_and_defines(vector<vector<bool>>
 
 			if(line[j] == '\''){
 				assert(j+1 < line_size && 
-					   "source code does not compile, ' open but not closed");
+						"source code does not compile, ' open but not closed");
 				mask_line[j] = false;
 				j++;
 				if(line[j] == '\\'){
 					assert(j+2 < line_size && line[j+2] == '\'' &&
-					   	   "source code does not compile, ' open but not closed");
+							"source code does not compile, ' open but not closed");
 					mask_line[j] = false;
 					j++;
 				}else{
 					assert(j+1 < line_size && line[j+1] == '\'' &&
-					   	   "source code does not compile, ' open but not closed");
+							"source code does not compile, ' open but not closed");
 				}
 				mask_line[j] = false;
 				j++;
@@ -436,28 +436,28 @@ void FunctionBreakerC::process_function(int start_number_line,
 
 	create_source_file(start_number_line,end_number_line,relative_path,function_name,function_content);
 	create_header_file(relative_path, function_name, header_content);
-		create_info_file(line_declaration,start_number_line,end_number_line,relative_path,function_name);
-	}
+	create_info_file(line_declaration,start_number_line,end_number_line,relative_path,function_name);
+}
 
-	string FunctionBreakerC::file_path_from_folder_path(string file_path, string folder_path){
-		string ret = "";
-		for(size_t i = folder_path.size(); i < file_path.size(); i++){
-			ret += file_path[i];
-		}
-		return ret;
+string FunctionBreakerC::file_path_from_folder_path(string file_path, string folder_path){
+	string ret = "";
+	for(size_t i = folder_path.size(); i < file_path.size(); i++){
+		ret += file_path[i];
 	}
+	return ret;
+}
 
-	void FunctionBreakerC::file_breaker_c(string file_path, string folder_path){
-		string relative_path = file_path_from_folder_path(file_path, folder_path);
-		file_content = Utils::read_file_generic(file_path);
-		mask_valid = build_mask_valid_code();
+void FunctionBreakerC::file_breaker_c(string file_path, string folder_path){
+	string relative_path = file_path_from_folder_path(file_path, folder_path);
+	file_content = Utils::read_file_generic(file_path);
+	mask_valid = build_mask_valid_code();
 
-		set<array<int,4>> start_end_of_functions = find_start_end_of_brackets_of_given_depth();
-		for(auto [start_line,start_column,end_line,end_column] : start_end_of_functions){
-			process_function(start_line,start_column,end_line,end_column,relative_path);
-		}
+	set<array<int,4>> start_end_of_functions = find_start_end_of_brackets_of_given_depth();
+	for(auto [start_line,start_column,end_line,end_column] : start_end_of_functions){
+		process_function(start_line,start_column,end_line,end_column,relative_path);
 	}
+}
 
-	FunctionBreakerC::FunctionBreakerC(string file_path, string folder_path){
-		file_breaker_c(file_path, folder_path);
-	}
+FunctionBreakerC::FunctionBreakerC(string file_path, string folder_path){
+	file_breaker_c(file_path, folder_path);
+}
