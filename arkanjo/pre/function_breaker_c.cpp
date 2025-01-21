@@ -377,6 +377,30 @@ vector<string> FunctionBreakerC::build_function_content(int start_number_line, i
 	return function_content;
 }
 
+int FunctionBreakerC::find_position_first_open_bracket(string s){
+	for(size_t i = 0; i < s.size(); i++){
+		char c = s[i];
+		if(c == '{'){
+			return i;
+		}
+	}
+	return -1;
+}
+
+vector<string> FunctionBreakerC::build_header_content(int start_number_line, int line_declaration, string relative_path, string function_name){
+	vector<string> function_content;
+	for(int i = line_declaration; i < start_number_line; i++){
+		function_content.push_back(file_content[i]);
+	}
+
+	string first_line = file_content[start_number_line];
+	int to_keep = find_position_first_open_bracket(first_line);
+	while(int(first_line.size()) > to_keep){
+		first_line.pop_back();
+	}
+	function_content.push_back(first_line);
+	return function_content;
+}
 
 bool FunctionBreakerC::is_body_function_empty(int start_number_line, int start_column, int end_number_line, int end_column){
 	vector<string> function_content = build_function_content(start_number_line, start_column, end_number_line, end_column);
@@ -408,31 +432,32 @@ void FunctionBreakerC::process_function(int start_number_line,
 		}
 	}
 	vector<string> function_content = build_function_content(start_number_line,start_column,end_number_line,end_column);
+	vector<string> header_content = build_header_content(start_number_line,line_declaration,relative_path,function_name);
 
 	create_source_file(start_number_line,end_number_line,relative_path,function_name,function_content);
-	create_header_file(start_number_line,line_declaration,relative_path,function_name,file_content);
-	create_info_file(line_declaration,start_number_line,end_number_line,relative_path,function_name);
-}
-
-string FunctionBreakerC::file_path_from_folder_path(string file_path, string folder_path){
-	string ret = "";
-	for(size_t i = folder_path.size(); i < file_path.size(); i++){
-		ret += file_path[i];
+	create_header_file(relative_path, function_name, header_content);
+		create_info_file(line_declaration,start_number_line,end_number_line,relative_path,function_name);
 	}
-	return ret;
-}
 
-void FunctionBreakerC::file_breaker_c(string file_path, string folder_path){
-	string relative_path = file_path_from_folder_path(file_path, folder_path);
-	file_content = Utils::read_file_generic(file_path);
-	mask_valid = build_mask_valid_code();
-
-	set<array<int,4>> start_end_of_functions = find_start_end_of_brackets_of_given_depth();
-	for(auto [start_line,start_column,end_line,end_column] : start_end_of_functions){
-		process_function(start_line,start_column,end_line,end_column,relative_path);
+	string FunctionBreakerC::file_path_from_folder_path(string file_path, string folder_path){
+		string ret = "";
+		for(size_t i = folder_path.size(); i < file_path.size(); i++){
+			ret += file_path[i];
+		}
+		return ret;
 	}
-}
 
-FunctionBreakerC::FunctionBreakerC(string file_path, string folder_path){
-	file_breaker_c(file_path, folder_path);
-}
+	void FunctionBreakerC::file_breaker_c(string file_path, string folder_path){
+		string relative_path = file_path_from_folder_path(file_path, folder_path);
+		file_content = Utils::read_file_generic(file_path);
+		mask_valid = build_mask_valid_code();
+
+		set<array<int,4>> start_end_of_functions = find_start_end_of_brackets_of_given_depth();
+		for(auto [start_line,start_column,end_line,end_column] : start_end_of_functions){
+			process_function(start_line,start_column,end_line,end_column,relative_path);
+		}
+	}
+
+	FunctionBreakerC::FunctionBreakerC(string file_path, string folder_path){
+		file_breaker_c(file_path, folder_path);
+	}

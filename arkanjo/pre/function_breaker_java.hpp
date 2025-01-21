@@ -42,6 +42,8 @@ class FunctionBreakerJava{
 
 	vector<string> build_function_content(int start_number_line, int end_number_line,const vector<string> &file_content);
 
+	vector<string> build_header_content(int start_number_line, int line_declaration, string relative_path, string function_name, const vector<string> &file_content);
+
 	bool is_body_function_empty(int start_number_line, int end_number_line,const vector<string> &file_content);
 
 	void process_function(int start_number_line, int end_number_line, string relative_path, const vector<string> &file_content, PROGRAMMING_LANGUAGE programming_language);

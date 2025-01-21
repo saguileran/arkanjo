@@ -56,21 +56,9 @@ void create_source_file(int start_number_line, int end_number_line, string relat
 	Utils::write_file_generic(path, function_content);
 }
 
-void create_header_file(int start_number_line, int line_declaration, string relative_path, string function_name, const vector<string> &file_content){
+void create_header_file(string relative_path, string function_name, const vector<string> &header_content){
 	string path = build_header_path(relative_path, function_name);
-	vector<string> function_content;
-	for(int i = line_declaration; i < start_number_line; i++){
-		function_content.push_back(file_content[i]);
-	}
-
-	string first_line = file_content[start_number_line];
-	int to_keep = find_position_first_open_bracket(first_line);
-	while(int(first_line.size()) > to_keep){
-		first_line.pop_back();
-	}
-	function_content.push_back(first_line);
-
-	Utils::write_file_generic(path, function_content);
+	Utils::write_file_generic(path, header_content);
 }
 
 /*This creates a json file*/

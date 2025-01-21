@@ -217,6 +217,21 @@ vector<string> FunctionBreakerJava::build_function_content(int start_number_line
 	return function_content;
 }
 
+vector<string> FunctionBreakerJava::build_header_content(int start_number_line, int line_declaration, string relative_path, string function_name, const vector<string> &file_content){
+	vector<string> function_content;
+	for(int i = line_declaration; i < start_number_line; i++){
+		function_content.push_back(file_content[i]);
+	}
+
+	string first_line = file_content[start_number_line];
+	int to_keep = find_position_first_open_bracket(first_line);
+	while(int(first_line.size()) > to_keep){
+		first_line.pop_back();
+	}
+	function_content.push_back(first_line);
+	return function_content;
+}
+
 bool FunctionBreakerJava::is_body_function_empty(int start_number_line, int end_number_line,const vector<string> &file_content){
 	vector<string> function_content = build_function_content(start_number_line, end_number_line, file_content);
 	int count_not_empty_char = 0;
@@ -244,9 +259,10 @@ void FunctionBreakerJava::process_function(int start_number_line, int end_number
 	}
 
 	vector<string> function_content = build_function_content(start_number_line,end_number_line,file_content);
+	vector<string> header_content = build_header_content(start_number_line,line_declaration,relative_path,function_name,file_content);
 
 	create_source_file(start_number_line,end_number_line,relative_path,function_name,function_content);
-	create_header_file(start_number_line,line_declaration,relative_path,function_name,file_content);
+	create_header_file(relative_path, function_name, header_content);
 	create_info_file(line_declaration,start_number_line,end_number_line,relative_path,function_name);
 }
 
