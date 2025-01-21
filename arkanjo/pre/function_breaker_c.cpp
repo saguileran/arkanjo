@@ -382,7 +382,7 @@ tuple<string,int,vector<string>> FunctionBreakerC::extract_header_related_inform
 	int quantity_open = 0;
 	bool has_parenteses = false;
 	int line = start_line;
-	int column = start_column;
+	int column = start_column-1;
 
 	while(line != 0 || column != -1){
 		if(column == -1){
@@ -409,6 +409,7 @@ tuple<string,int,vector<string>> FunctionBreakerC::extract_header_related_inform
 			column--;
 		}
 		if(quantity_open != 0){
+			column--;
 			continue;
 		}
 		break;
