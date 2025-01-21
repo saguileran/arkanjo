@@ -30,20 +30,6 @@ class FunctionBreakerC{
 
 	set<array<int,4>> find_start_end_of_brackets_of_given_depth();
 
-	string extract_last_token_of_string(string s);
-
-	Line_content build_line_code(int line_number, string content);
-
-	vector<Line_content> get_lines_before_body_function(int line_start_body_function, int pos_bracket);
-
-	vector<Line_content> remove_parenteses_at_the_end_of_the_scope(vector<Line_content> code);
-
-	vector<Line_content> remove_content_until_find_parenteses_at_the_end(vector<Line_content> code);
-
-	vector<Line_content> remove_parameters_of_declaration(vector<Line_content> code);
-
-	pair<string,int> extract_function_name_and_line_from_declaration(int line_start_body_function, int end_column);
-
 	vector<string> build_function_content(int start_number_line, int start_column, int end_number_line, int end_column);
 
 	tuple<string,int,vector<string>> extract_header_related_information(int start_line, int start_column);
