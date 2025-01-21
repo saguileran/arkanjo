@@ -3,32 +3,32 @@
 
 #include "function_breaker_c.hpp"
 
-bool FunctionBreakerC::is_define(vector<string>& brackets_content, int line, int pos){
-	int line_size = brackets_content.size();
+bool FunctionBreakerC::is_define(int line, int pos){
+	int line_size = file_content.size();
 	// does not fit the #define token
 	if(pos+7 > line_size) return false; 		
 	// match the token
 	string token = "#define";
 	bool match = true;
 	for(int j = 0; j < 7; j++){
-		match &= brackets_content[line][pos+j] == token[j];
+		match &= file_content[line][pos+j] == token[j];
 	}
 	return match;
 }
 
 // Only works if the code is compilable. I do have grant any 
 // ensurances if the source code does not compile
-void FunctionBreakerC::filter_mask_commentaries_and_defines(vector<string>& brackets_content,vector<vector<bool>>& mask){
+void FunctionBreakerC::filter_mask_commentaries_and_defines(vector<vector<bool>>& mask){
 	// aqui tbm tem que lidar com string literal, ie, "#define" nao eh define a
 	// eh "//" nao eh commentario
-	int number_lines = brackets_content.size();
+	int number_lines = file_content.size();
 	bool is_open_block_comment = false;
 	bool is_open_define = false;
 	bool is_open_quotation_marks = false;
 	bool is_open_line_comment = false;
 
 	for(int i = 0; i < number_lines; i++){
-		auto& line = brackets_content[i];
+		auto& line = file_content[i];
 		auto& mask_line = mask[i];
 		int line_size = line.size();
 
@@ -132,7 +132,7 @@ void FunctionBreakerC::filter_mask_commentaries_and_defines(vector<string>& brac
 				}
 			}
 
-			if(is_define(brackets_content,i,j)){
+			if(is_define(i,j)){
 				for(int k = j; k < line_size; k++){
 					mask_line[k] = false;
 				}
@@ -151,17 +151,16 @@ void FunctionBreakerC::filter_mask_commentaries_and_defines(vector<string>& brac
 }
 
 // the exactly same size of the input source, the character will be 1 if it is not in a commentary nor a #define's
-vector<vector<bool>> FunctionBreakerC::build_mask_valid_code(vector<string> brackets_content){
-	vector<vector<bool>> mask(brackets_content.size());
-	for(int i = 0; i < (int)brackets_content.size(); i++){
-		mask[i] = vector<bool>(brackets_content[i].size(),true);
+vector<vector<bool>> FunctionBreakerC::build_mask_valid_code(){
+	vector<vector<bool>> mask(file_content.size());
+	for(int i = 0; i < (int)file_content.size(); i++){
+		mask[i] = vector<bool>(file_content[i].size(),true);
 	}
-	filter_mask_commentaries_and_defines(brackets_content,mask);
+	filter_mask_commentaries_and_defines(mask);
 	return mask;
 }
 
-set<array<int,5>> FunctionBreakerC::find_start_end_and_depth_of_brackets(vector<string> brackets_content){
-	vector<vector<bool>> mask_valid = build_mask_valid_code(brackets_content);
+set<array<int,5>> FunctionBreakerC::find_start_end_and_depth_of_brackets(){
 	set<array<int,5>> start_ends;
 	int open_brackets = 0;
 
@@ -186,8 +185,8 @@ set<array<int,5>> FunctionBreakerC::find_start_end_and_depth_of_brackets(vector<
 		}
 	};
 
-	for(size_t i = 0; i < brackets_content.size(); i++){
-		auto& line = brackets_content[i];
+	for(size_t i = 0; i < file_content.size(); i++){
+		auto& line = file_content[i];
 		for(size_t j = 0; j < line.size(); j++){
 			if(!mask_valid[i][j]){
 				continue;
@@ -204,9 +203,9 @@ set<array<int,5>> FunctionBreakerC::find_start_end_and_depth_of_brackets(vector<
 	return start_ends;
 }
 
-set<array<int,4>> FunctionBreakerC::find_start_end_of_brackets_of_given_depth(vector<string> brackets_content){
+set<array<int,4>> FunctionBreakerC::find_start_end_of_brackets_of_given_depth(){
 	set<array<int,4>> ret;
-	set<array<int,5>> bracket_pairs = find_start_end_and_depth_of_brackets(brackets_content);
+	set<array<int,5>> bracket_pairs = find_start_end_and_depth_of_brackets();
 	for(auto [start_line,start_column,end_line,end_column,dep] : bracket_pairs){
 		if(dep == C_RELEVANT_DEPTH){
 			ret.insert({start_line,start_column,end_line,end_column});
@@ -246,7 +245,7 @@ Line_content FunctionBreakerC::build_line_code(int line_number, string content){
 	return ret;
 }
 
-vector<Line_content> FunctionBreakerC::get_lines_before_body_function(const vector<string> &file_content, int line_start_body_function, int pos_bracket){	
+vector<Line_content> FunctionBreakerC::get_lines_before_body_function(int line_start_body_function, int pos_bracket){	
 	vector<Line_content> ret;
 	Line_content line_bracket = build_line_code(line_start_body_function,file_content[line_start_body_function]);
 	//remove everything after {
@@ -333,8 +332,8 @@ vector<Line_content> FunctionBreakerC::remove_parameters_of_declaration(vector<L
 	return remove_parenteses_at_the_end_of_the_scope(code);
 }
 
-pair<string,int> FunctionBreakerC::extract_function_name_and_line_from_declaration(const vector<string> &file_content, int line_start_body_function, int start_column){
-	vector<Line_content> code_before_bracket = get_lines_before_body_function(file_content, line_start_body_function, start_column);
+pair<string,int> FunctionBreakerC::extract_function_name_and_line_from_declaration(int line_start_body_function, int start_column){
+	vector<Line_content> code_before_bracket = get_lines_before_body_function(line_start_body_function, start_column);
 	vector<Line_content> code = remove_parameters_of_declaration(code_before_bracket);
 	if(code.empty()){
 		return make_pair("",-1);
@@ -343,7 +342,7 @@ pair<string,int> FunctionBreakerC::extract_function_name_and_line_from_declarati
 	return {ret,code.back().line_number};
 }
 
-vector<string> FunctionBreakerC::build_function_content(int start_number_line, int start_column, int end_number_line, int end_column, const vector<string> &file_content){
+vector<string> FunctionBreakerC::build_function_content(int start_number_line, int start_column, int end_number_line, int end_column){
 	vector<string> function_content;
 
 	if(start_number_line == end_number_line){
@@ -379,8 +378,8 @@ vector<string> FunctionBreakerC::build_function_content(int start_number_line, i
 }
 
 
-bool FunctionBreakerC::is_body_function_empty(int start_number_line, int start_column, int end_number_line, int end_column,const vector<string> &file_content){
-	vector<string> function_content = build_function_content(start_number_line, start_column, end_number_line, end_column, file_content);
+bool FunctionBreakerC::is_body_function_empty(int start_number_line, int start_column, int end_number_line, int end_column){
+	vector<string> function_content = build_function_content(start_number_line, start_column, end_number_line, end_column);
 	int count_not_empty_char = 0;
 	for(auto line : function_content){
 		for(auto c : line){
@@ -397,19 +396,18 @@ void FunctionBreakerC::process_function(int start_number_line,
 		int start_column,
 		int end_number_line, 
 		int end_column,
-		string relative_path,
-		const vector<string> &file_content){
+		string relative_path){
 	string first_line = file_content[start_number_line];
-	auto [function_name,line_declaration] = extract_function_name_and_line_from_declaration(file_content,start_number_line, start_column);
+	auto [function_name,line_declaration] = extract_function_name_and_line_from_declaration(start_number_line, start_column);
 	if(function_name.empty()){
 		return;
 	}
 	if(IGNORE_EMPTY_FUNCTIONS){
-		if(is_body_function_empty(start_number_line,start_column,end_number_line,end_column,file_content)){
+		if(is_body_function_empty(start_number_line,start_column,end_number_line,end_column)){
 			return;
 		}
 	}
-	vector<string> function_content = build_function_content(start_number_line,start_column,end_number_line,end_column,file_content);
+	vector<string> function_content = build_function_content(start_number_line,start_column,end_number_line,end_column);
 
 	create_source_file(start_number_line,end_number_line,relative_path,function_name,function_content);
 	create_header_file(start_number_line,line_declaration,relative_path,function_name,file_content);
@@ -426,10 +424,12 @@ string FunctionBreakerC::file_path_from_folder_path(string file_path, string fol
 
 void FunctionBreakerC::file_breaker_c(string file_path, string folder_path){
 	string relative_path = file_path_from_folder_path(file_path, folder_path);
-	vector<string> file_content = Utils::read_file_generic(file_path);
-	set<array<int,4>> start_end_of_functions = find_start_end_of_brackets_of_given_depth(file_content);
+	file_content = Utils::read_file_generic(file_path);
+	mask_valid = build_mask_valid_code();
+
+	set<array<int,4>> start_end_of_functions = find_start_end_of_brackets_of_given_depth();
 	for(auto [start_line,start_column,end_line,end_column] : start_end_of_functions){
-		process_function(start_line,start_column,end_line,end_column,relative_path,file_content);
+		process_function(start_line,start_column,end_line,end_column,relative_path);
 	}
 }
 

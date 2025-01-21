@@ -15,23 +15,26 @@ class FunctionBreakerC{
 
 	const bool ALLOW_STRUCTS = false;
 
-	bool is_define(vector<string>& brackets_content, int line, int pos);
+	vector<string> file_content;
+	vector<vector<bool>> mask_valid;
+
+	bool is_define(int line, int pos);
 	
 	// Only works if the code is compilable. I do have grant any 
 	// ensurances if the source code does not compile
-	void filter_mask_commentaries_and_defines(vector<string>& brackets_content,vector<vector<bool>>& mask);
+	void filter_mask_commentaries_and_defines(vector<vector<bool>>& mask);
 
-	vector<vector<bool>> build_mask_valid_code(vector<string> brackets_content);
+	vector<vector<bool>> build_mask_valid_code();
 
-	set<array<int,5>> find_start_end_and_depth_of_brackets(vector<string> brackets_content);
+	set<array<int,5>> find_start_end_and_depth_of_brackets();
 
-	set<array<int,4>> find_start_end_of_brackets_of_given_depth(vector<string> brackets_content);
+	set<array<int,4>> find_start_end_of_brackets_of_given_depth();
 
 	string extract_last_token_of_string(string s);
 
 	Line_content build_line_code(int line_number, string content);
 
-	vector<Line_content> get_lines_before_body_function(const vector<string> &file_content, int line_start_body_function, int pos_bracket);
+	vector<Line_content> get_lines_before_body_function(int line_start_body_function, int pos_bracket);
 
 	vector<Line_content> remove_parenteses_at_the_end_of_the_scope(vector<Line_content> code);
 
@@ -39,13 +42,13 @@ class FunctionBreakerC{
 
 	vector<Line_content> remove_parameters_of_declaration(vector<Line_content> code);
 
-	pair<string,int> extract_function_name_and_line_from_declaration(const vector<string> &file_content, int line_start_body_function, int end_column);
+	pair<string,int> extract_function_name_and_line_from_declaration(int line_start_body_function, int end_column);
 
-	vector<string> build_function_content(int start_number_line, int start_column, int end_number_line, int end_column, const vector<string> &file_content);
+	vector<string> build_function_content(int start_number_line, int start_column, int end_number_line, int end_column);
 
-	bool is_body_function_empty(int start_number_line, int start_column, int end_number_line, int end_column,const vector<string> &file_content);
+	bool is_body_function_empty(int start_number_line, int start_column, int end_number_line, int end_column);
 
-	void process_function(int start_number_line, int start_column, int end_number_line, int end_column, string relative_path, const vector<string> &file_content);
+	void process_function(int start_number_line, int start_column, int end_number_line, int end_column, string relative_path);
 
 	string file_path_from_folder_path(string file_path, string folder_path);
 
