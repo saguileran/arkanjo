@@ -11,7 +11,6 @@ class FunctionBreakerC{
 
 	const int NUMBER_OF_LINES_BEFORE_FOR_FUNCTION_NAME = 7;
 	const int C_RELEVANT_DEPTH = 0;
-	const int JAVA_RELEVANT_DEPTH = 1;
 	const bool IGNORE_EMPTY_FUNCTIONS = true;
 
 	const bool ALLOW_STRUCTS = false;
@@ -26,9 +25,7 @@ class FunctionBreakerC{
 
 	set<array<int,5>> find_start_end_and_depth_of_brackets(vector<string> brackets_content);
 
-	set<array<int,4>> find_start_end_of_brackets_of_given_depth(vector<string> brackets_content, int depth);
-
-	int find_position_first_open_bracket(string s);
+	set<array<int,4>> find_start_end_of_brackets_of_given_depth(vector<string> brackets_content);
 
 	string extract_last_token_of_string(string s);
 
@@ -42,7 +39,7 @@ class FunctionBreakerC{
 
 	vector<Line_content> remove_parameters_of_declaration(vector<Line_content> code);
 
-	pair<string,int> extract_function_name_and_line_from_declaration(const vector<string> &file_content, int line_start_body_function);
+	pair<string,int> extract_function_name_and_line_from_declaration(const vector<string> &file_content, int line_start_body_function, int end_column);
 
 	vector<string> build_function_content(int start_number_line, int start_column, int end_number_line, int end_column, const vector<string> &file_content);
 

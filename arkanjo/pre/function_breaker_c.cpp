@@ -204,25 +204,15 @@ set<array<int,5>> FunctionBreakerC::find_start_end_and_depth_of_brackets(vector<
 	return start_ends;
 }
 
-set<array<int,4>> FunctionBreakerC::find_start_end_of_brackets_of_given_depth(vector<string> brackets_content, int depth){
+set<array<int,4>> FunctionBreakerC::find_start_end_of_brackets_of_given_depth(vector<string> brackets_content){
 	set<array<int,4>> ret;
 	set<array<int,5>> bracket_pairs = find_start_end_and_depth_of_brackets(brackets_content);
 	for(auto [start_line,start_column,end_line,end_column,dep] : bracket_pairs){
-		if(dep == depth){
+		if(dep == C_RELEVANT_DEPTH){
 			ret.insert({start_line,start_column,end_line,end_column});
 		}
 	}
 	return ret;
-}
-
-int FunctionBreakerC::find_position_first_open_bracket(string s){
-	for(size_t i = 0; i < s.size(); i++){
-		char c = s[i];
-		if(c == '{'){
-			return i;
-		}
-	}
-	return -1;
 }
 
 string FunctionBreakerC::extract_last_token_of_string(string s){
@@ -343,9 +333,8 @@ vector<Line_content> FunctionBreakerC::remove_parameters_of_declaration(vector<L
 	return remove_parenteses_at_the_end_of_the_scope(code);
 }
 
-pair<string,int> FunctionBreakerC::extract_function_name_and_line_from_declaration(const vector<string> &file_content, int line_start_body_function){
-	int pos = find_position_first_open_bracket(file_content[line_start_body_function]);
-	vector<Line_content> code_before_bracket = get_lines_before_body_function(file_content, line_start_body_function,pos);
+pair<string,int> FunctionBreakerC::extract_function_name_and_line_from_declaration(const vector<string> &file_content, int line_start_body_function, int start_column){
+	vector<Line_content> code_before_bracket = get_lines_before_body_function(file_content, line_start_body_function, start_column);
 	vector<Line_content> code = remove_parameters_of_declaration(code_before_bracket);
 	if(code.empty()){
 		return make_pair("",-1);
@@ -411,7 +400,7 @@ void FunctionBreakerC::process_function(int start_number_line,
 		string relative_path,
 		const vector<string> &file_content){
 	string first_line = file_content[start_number_line];
-	auto [function_name,line_declaration] = extract_function_name_and_line_from_declaration(file_content,start_number_line);
+	auto [function_name,line_declaration] = extract_function_name_and_line_from_declaration(file_content,start_number_line, start_column);
 	if(function_name.empty()){
 		return;
 	}
@@ -438,7 +427,7 @@ string FunctionBreakerC::file_path_from_folder_path(string file_path, string fol
 void FunctionBreakerC::file_breaker_c(string file_path, string folder_path){
 	string relative_path = file_path_from_folder_path(file_path, folder_path);
 	vector<string> file_content = Utils::read_file_generic(file_path);
-	set<array<int,4>> start_end_of_functions = find_start_end_of_brackets_of_given_depth(file_content, C_RELEVANT_DEPTH);
+	set<array<int,4>> start_end_of_functions = find_start_end_of_brackets_of_given_depth(file_content);
 	for(auto [start_line,start_column,end_line,end_column] : start_end_of_functions){
 		process_function(start_line,start_column,end_line,end_column,relative_path,file_content);
 	}
