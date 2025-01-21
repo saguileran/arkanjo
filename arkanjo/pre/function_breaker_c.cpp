@@ -377,6 +377,72 @@ vector<string> FunctionBreakerC::build_function_content(int start_number_line, i
 	return function_content;
 }
 
+//extract function_name, declaration start line and header content
+tuple<string,int,vector<string>> FunctionBreakerC::extract_header_related_information(int start_line, int start_column){
+	int quantity_open = 0;
+	bool has_parenteses = false;
+	int line = start_line;
+	int column = start_column;
+
+	while(line != 0 || column != -1){
+		if(column == -1){
+			line -= 1;
+			column = file_content[line].size();
+			column -= 1;
+			continue;
+		}
+
+		auto c = file_content[line][column];
+		if(!mask_valid[line][column] || Utils::is_empty_char(c)){
+			column--;
+			continue;
+		}
+		if(c == ')'){
+			quantity_open++;
+			has_parenteses = true;
+			column--;
+			continue;
+		}
+		if(c == '('){
+			quantity_open--;
+			has_parenteses = true;
+			column--;
+		}
+		if(quantity_open != 0){
+			continue;
+		}
+		break;
+	}
+
+	assert( !(line == 0 && column == -1) && "code does not compile, bad formation of parenteses ()");
+
+	string file_name = "";
+	while(column != -1){
+		auto c = file_content[line][column];
+		if(Utils::is_special_char(c)){
+			break;
+		}
+		file_name += c;
+		column--;
+	}
+	reverse(file_name.begin(),file_name.end());
+	
+	//TODO: NEED A BETTER JOB HERE. TAKING UNTIL ALL THE LINE IS NOT THE BEST IDEA, BUT LOOKS
+	//HARD TO PARSE IF WE ALLOW POINTER TO POINTER TO POINTER TO FUNCTIONS OR SOMETHING LIKE TAKE
+	//DOES NOT LOOK IMPOSSIBLE THOUGH. THIS IS JUST TO FINISH THE JOB FOR TODAY
+	vector<string> header_content;
+	if(start_column == 0){
+		header_content = build_function_content(line,0,start_line-1,(int)file_content[start_line-1].size() -1);
+	}else{
+		header_content = build_function_content(line,0,start_line,start_column-1);
+	}
+
+	if(!ALLOW_STRUCTS && !has_parenteses){
+		return {"",-1,header_content};
+	}
+	return {file_name,line,header_content};
+}
+
 int FunctionBreakerC::find_position_first_open_bracket(string s){
 	for(size_t i = 0; i < s.size(); i++){
 		char c = s[i];
@@ -422,7 +488,7 @@ void FunctionBreakerC::process_function(int start_number_line,
 		int end_column,
 		string relative_path){
 	string first_line = file_content[start_number_line];
-	auto [function_name,line_declaration] = extract_function_name_and_line_from_declaration(start_number_line, start_column);
+	auto [function_name, line_declaration, header_content] = extract_header_related_information(start_number_line,start_column);
 	if(function_name.empty()){
 		return;
 	}
@@ -432,7 +498,6 @@ void FunctionBreakerC::process_function(int start_number_line,
 		}
 	}
 	vector<string> function_content = build_function_content(start_number_line,start_column,end_number_line,end_column);
-	vector<string> header_content = build_header_content(start_number_line,line_declaration,relative_path,function_name);
 
 	create_source_file(start_number_line,end_number_line,relative_path,function_name,function_content);
 	create_header_file(relative_path, function_name, header_content);
