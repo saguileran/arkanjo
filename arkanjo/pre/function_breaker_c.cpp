@@ -249,13 +249,10 @@ vector<string> FunctionBreakerC::build_function_content(int start_number_line, i
 	return function_content;
 }
 
-//extract function_name, declaration start line and header content
-tuple<string,int,vector<string>> FunctionBreakerC::extract_header_related_information(int start_line, int start_column){
+
+bool FunctionBreakerC::move_pointer_until_character_outside_parenteses(int &line, int &column){
 	int quantity_open = 0;
 	bool has_parenteses = false;
-	int line = start_line;
-	int column = start_column-1;
-
 	while(line != 0 || column != -1){
 		if(column == -1){
 			line -= 1;
@@ -265,7 +262,7 @@ tuple<string,int,vector<string>> FunctionBreakerC::extract_header_related_inform
 		}
 
 		auto c = file_content[line][column];
-		if(!mask_valid[line][column] || Utils::is_empty_char(c)){
+		if(!mask_valid[line][column]){
 			column--;
 			continue;
 		}
@@ -279,15 +276,24 @@ tuple<string,int,vector<string>> FunctionBreakerC::extract_header_related_inform
 			quantity_open--;
 			has_parenteses = true;
 			column--;
+			continue;
 		}
-		if(quantity_open != 0){
+		if(Utils::is_special_char(c) || quantity_open != 0){
 			column--;
 			continue;
 		}
 		break;
 	}
-
 	assert( !(line == 0 && column == -1) && "code does not compile, bad formation of parenteses ()");
+	return has_parenteses;
+}
+
+//extract function_name, declaration start line and header content
+tuple<string,int,vector<string>> FunctionBreakerC::extract_header_related_information(int start_line, int start_column){
+	int line = start_line;
+	int column = start_column-1;
+
+	bool has_parenteses = move_pointer_until_character_outside_parenteses(line,column);
 
 	string file_name = "";
 	while(column != -1){
@@ -299,15 +305,22 @@ tuple<string,int,vector<string>> FunctionBreakerC::extract_header_related_inform
 		column--;
 	}
 	reverse(file_name.begin(),file_name.end());
-	
+
+	move_pointer_until_character_outside_parenteses(line,column);
+
+	while(column != -1 || !Utils::is_special_char(file_content[line][column])){
+		column--;
+	}
+	column++;
+
 	//TODO: NEED A BETTER JOB HERE. TAKING UNTIL ALL THE LINE IS NOT THE BEST IDEA, BUT LOOKS
 	//HARD TO PARSE IF WE ALLOW POINTER TO POINTER TO POINTER TO FUNCTIONS OR SOMETHING LIKE TAKE
 	//DOES NOT LOOK IMPOSSIBLE THOUGH. THIS IS JUST TO FINISH THE JOB FOR TODAY
 	vector<string> header_content;
 	if(start_column == 0){
-		header_content = build_function_content(line,0,start_line-1,(int)file_content[start_line-1].size() -1);
+		header_content = build_function_content(line,column,start_line-1,(int)file_content[start_line-1].size() -1);
 	}else{
-		header_content = build_function_content(line,0,start_line,start_column-1);
+		header_content = build_function_content(line,column,start_line,start_column-1);
 	}
 
 	if(!ALLOW_STRUCTS && !has_parenteses){
