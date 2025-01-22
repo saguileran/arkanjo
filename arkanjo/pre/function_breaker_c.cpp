@@ -313,9 +313,6 @@ tuple<string,int,vector<string>> FunctionBreakerC::extract_header_related_inform
 	}
 	column++;
 
-	//TODO: NEED A BETTER JOB HERE. TAKING UNTIL ALL THE LINE IS NOT THE BEST IDEA, BUT LOOKS
-	//HARD TO PARSE IF WE ALLOW POINTER TO POINTER TO POINTER TO FUNCTIONS OR SOMETHING LIKE TAKE
-	//DOES NOT LOOK IMPOSSIBLE THOUGH. THIS IS JUST TO FINISH THE JOB FOR TODAY
 	vector<string> header_content;
 	if(start_column == 0){
 		header_content = build_function_content(line,column,start_line-1,(int)file_content[start_line-1].size() -1);
@@ -327,31 +324,6 @@ tuple<string,int,vector<string>> FunctionBreakerC::extract_header_related_inform
 		return {"",-1,header_content};
 	}
 	return {file_name,line,header_content};
-}
-
-int FunctionBreakerC::find_position_first_open_bracket(string s){
-	for(size_t i = 0; i < s.size(); i++){
-		char c = s[i];
-		if(c == '{'){
-			return i;
-		}
-	}
-	return -1;
-}
-
-vector<string> FunctionBreakerC::build_header_content(int start_number_line, int line_declaration, string relative_path, string function_name){
-	vector<string> function_content;
-	for(int i = line_declaration; i < start_number_line; i++){
-		function_content.push_back(file_content[i]);
-	}
-
-	string first_line = file_content[start_number_line];
-	int to_keep = find_position_first_open_bracket(first_line);
-	while(int(first_line.size()) > to_keep){
-		first_line.pop_back();
-	}
-	function_content.push_back(first_line);
-	return function_content;
 }
 
 bool FunctionBreakerC::is_body_function_empty(int start_number_line, int start_column, int end_number_line, int end_column){

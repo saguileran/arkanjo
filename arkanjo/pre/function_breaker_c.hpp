@@ -36,10 +36,6 @@ class FunctionBreakerC{
 
 	tuple<string,int,vector<string>> extract_header_related_information(int start_line, int start_column);
 
-	int find_position_first_open_bracket(string s);
-
-	vector<string> build_header_content(int start_number_line, int line_declaration, string relative_path, string function_name);
-
 	bool is_body_function_empty(int start_number_line, int start_column, int end_number_line, int end_column);
 
 	void process_function(int start_number_line, int start_column, int end_number_line, int end_column, string relative_path);
