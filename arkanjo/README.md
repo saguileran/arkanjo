@@ -16,6 +16,9 @@ an end user.
 
 From now on, we will use the term commands instead of functionalities.
 
+The tool current should cover the C programming language. 
+The tool also supports Java with limitations.
+
 ## Similarity
 
 The tool current uses the concept of similarity. The user can pass a similarity threshold
