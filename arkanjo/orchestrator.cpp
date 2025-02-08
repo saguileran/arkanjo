@@ -15,6 +15,7 @@
 #include "big_clone/big_clone_formater.hpp"
 #include "big_clone/big_clone_tailor_evaluator.hpp"
 #include "rand/random_selector.hpp"
+#include "pre/preprocessor.hpp"
 using namespace std;
 
 class Orchestrator{
@@ -33,6 +34,21 @@ class Orchestrator{
 					similarity_table->update_similarity(stod(next_param));
 				}
 			}
+		}
+
+		bool check_force_preprocess(vector<string> parameters){
+			int number_parameters = parameters.size();
+			for(int i = 0; i < number_parameters; i++){
+				if(parameters[i] == "-p"){
+					return true;
+				}
+			}
+			return false;
+		}
+
+		void call_preprocess(vector<string> parameters){
+			bool should_force = check_force_preprocess(parameters);
+			Preprocessor preprocessor(should_force);
 		}
 
 		void exploration_command(vector<string> parameters, Similarity_Table *similarity_table){
@@ -101,6 +117,7 @@ class Orchestrator{
 
 	public:
 		Orchestrator(string command, vector<string> parameters){
+			call_preprocess(parameters);
 			Similarity_Table similarity_table;
 			check_update_similarity(parameters,&similarity_table);
 
