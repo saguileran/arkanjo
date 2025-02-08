@@ -6,7 +6,6 @@
 using namespace std;
 
 int main(int argc, char *argv[]){
-	Preprocessor preprocessor;
-	preprocessor.preprocess();
+	Preprocessor preprocessor(true);
 	return 0;
 }

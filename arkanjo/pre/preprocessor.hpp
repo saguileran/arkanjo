@@ -14,8 +14,22 @@ class Preprocessor{
 	private:
 		string PROJECT_PATH_MESSAGE = "Enter your project path:";
 		string MINIMUM_SIMILARITY_MESSAGE = "Enter minimum similarity desired on using the tool:";
-	public:
+		string CONFIG_PATH = "tmp/config.txt";
+		string PATH_MESSAGE = "path of the current preprocess: ";
+		string TIME_MESSAGE = "Finished time: ";
+
+		string INITIAL_MESSAGE = "Initiating Preprocessing";
+		string BREAKER_MESSAGE = "Reading codebase... (this may take a while)";
+		string DUPLICATION_MESSAGE = "Finding duplication in the codebase... (this may take a while)";
+		string SAVING_MESSAGE = "Saving results...";
+		string END_MESSAGE = "Finished preprocessing";
+
+		void save_current_run_params(string path);
+
 		void preprocess();
+
+	public:
+		Preprocessor(bool force_preprocess);
 };
 
 #endif

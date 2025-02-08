@@ -60,6 +60,15 @@ Json::Value Utils::read_json(string string_path){
 	return json;
 }
 
+bool Utils::does_file_exist(string file_path){
+	if (FILE *file = fopen(file_path.c_str(), "r")) {
+		fclose(file);
+		return true;
+	} else {
+		return false;
+	} 	
+}
+
 string Utils::format_colored_message(string message, COLOR color){
 	return COLOR_TOKENS_UTILS[color] + message + COLOR_TOKENS_UTILS[RESET];
 }
