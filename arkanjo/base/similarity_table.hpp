@@ -14,7 +14,7 @@ using namespace std;
 
 class Similarity_Table{
 	private:
-		string SIMILARITY_TABLE_FILE_NAME = "output_parsed.txt";
+		string SIMILARITY_TABLE_FILE_NAME = "tmp/output_parsed.txt";
 		double DEFAULT_SIMILARITY = 100.00;
 		double EPS_ERROR_MARGIN = 1e-6;
 		double MAXIMUM_SIMILARITY = 100.00;
