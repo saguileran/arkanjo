@@ -60,7 +60,7 @@ Go to the tool folder:
 cd arkanjo
 ```
 
-Build the binaries:
+Build the binary:
 
 ```
 make preprocessor
@@ -86,11 +86,19 @@ The preprocessor can take a while to execute. Depending on the size of the codeb
 
 ### Execute the run
 
-To execute the tool and the tool functionalities, you need to run a command like this:
+To execute the tool and the tool functionalities, you need to run the command that respect this format:
 
 ```
-./exec command [command_parameters]
+./exec command [command_parameters] [-p] [-s <NUMBER>]
 ```
+
+If you have not executed the preprocessor, the tool will automatically call the preprocessor.
+
+The shared parameters over all commands are:
+
+- [-p] forces the preprocessor to execute.
+
+- [s \<NUMBER\>] changes the similarity threshould to NUMBER, but just for current command.
 
 The following are the guide on how to execute the current commands of the tool:
 
