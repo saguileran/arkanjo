@@ -3,3 +3,6 @@ make:
 
 preprocessor:
 	g++ base/utils.cpp base/config.cpp pre/function_breaker_util.cpp pre/function_breaker_c.cpp pre/function_breaker_java.cpp pre/function_breaker.cpp pre/parser.cpp pre/preprocessor.cpp pre/preprocessor_main.cpp -o preprocessor -g -ljsoncpp
+
+test:
+	g++ base/utils.cpp base/config.cpp pre/function_breaker_util.cpp pre/function_breaker_c.cpp pre/function_breaker_java.cpp pre/function_breaker.cpp pre/parser.cpp pre/preprocessor.cpp tests/e2e/test.cpp -o test -g -ljsoncpp

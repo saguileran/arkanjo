@@ -25,12 +25,17 @@ class Preprocessor{
 		string SAVING_MESSAGE = "Saving results...";
 		string END_MESSAGE = "Finished preprocessing";
 
+		pair<string,double> read_parameters();
+
 		void save_current_run_params(string path);
 
-		void preprocess();
+		void preprocess(string path, double similarity);
 
 	public:
 		Preprocessor(bool force_preprocess);
+		
+		//Exposed for testing
+		Preprocessor(bool force_preprocess, string path, double similarity);
 };
 
 #endif

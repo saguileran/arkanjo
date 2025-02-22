@@ -15,7 +15,7 @@ void Preprocessor::save_current_run_params(string path){
 	Utils::write_file_generic(Config::config()->getBasePath() + "/" + CONFIG_PATH,config_content);
 }
 
-void Preprocessor::preprocess(){
+pair<string,double> Preprocessor::read_parameters(){
 	cout << INITIAL_MESSAGE << '\n';
 	string path,similarity_message;
 
@@ -25,19 +25,22 @@ void Preprocessor::preprocess(){
 	cout << MINIMUM_SIMILARITY_MESSAGE << '\n';
 	cin >> similarity_message;
 	double similarity = stod(similarity_message);
-	
+	return {path,similarity};
+}
+
+void Preprocessor::preprocess(string path, double similarity){
 	cout << BREAKER_MESSAGE << '\n';
-	
+
 	Config *config = Config::config();
 	string base_path = config->getBasePath();
-	
+
 	string command_rm_tmp = "rm -r -f " + base_path + "/";
 	system(command_rm_tmp.c_str());
 	FunctionBreaker function_breaker(path);
 
 
 	cout << DUPLICATION_MESSAGE << '\n';
-	
+
 	string command_tool = "python3 -W ignore third-party/duplicate-code-detection-tool/duplicate_code_detection.py -d ";
 	command_tool += base_path;
 	command_tool += "/source > ";
@@ -57,6 +60,13 @@ void Preprocessor::preprocess(){
 
 Preprocessor::Preprocessor(bool force_preprocess){
 	if(force_preprocess || !Utils::does_file_exist(CONFIG_PATH)){
-		preprocess();
+		auto [path,similarity] = read_parameters();
+		preprocess(path,similarity);
+	}
+}
+
+Preprocessor::Preprocessor(bool force_preprocess, string path, double similarity){
+	if(force_preprocess || !Utils::does_file_exist(CONFIG_PATH)){
+		preprocess(path,similarity);
 	}
 }

@@ -40,6 +40,8 @@ arkanjo/function_breaker
 arkanjo/exec
 arkanjo/breaker
 arkanjo/preprocessor
+arkanjo/tmp
+arkanjo/test
 file_parser/filter
 file_parser/parser
 
