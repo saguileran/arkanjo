@@ -15,7 +15,7 @@ class Preprocessor{
 	private:
 		string PROJECT_PATH_MESSAGE = "Enter your project path:";
 		string MINIMUM_SIMILARITY_MESSAGE = "Enter minimum similarity desired on using the tool:";
-		string CONFIG_PATH = "tmp/config.txt";
+		string CONFIG_PATH = "config.txt";
 		string PATH_MESSAGE = "path of the current preprocess: ";
 		string TIME_MESSAGE = "Finished time: ";
 

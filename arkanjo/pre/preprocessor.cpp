@@ -12,7 +12,7 @@ void Preprocessor::save_current_run_params(string path){
 	config_content.push_back(path_message);
 	config_content.push_back(time_message);
 
-	Utils::write_file_generic(CONFIG_PATH,config_content);
+	Utils::write_file_generic(Config::config()->getBasePath() + CONFIG_PATH,config_content);
 }
 
 void Preprocessor::preprocess(){
