@@ -28,19 +28,27 @@ void Preprocessor::preprocess(){
 	
 	cout << BREAKER_MESSAGE << '\n';
 	
-	string command_rm_tmp = "rm -r -f tmp/";
+	Config *config = Config::config();
+	string base_path = config->getBasePath();
+	
+	string command_rm_tmp = "rm -r -f " + base_path + "/";
 	system(command_rm_tmp.c_str());
 	FunctionBreaker function_breaker(path);
 
 
 	cout << DUPLICATION_MESSAGE << '\n';
 	
-	string command_tool = "python3 -W ignore third-party/duplicate-code-detection-tool/duplicate_code_detection.py -d ./tmp/source > tmp/output_tool.txt";
+	string command_tool = "python3 -W ignore third-party/duplicate-code-detection-tool/duplicate_code_detection.py -d ";
+	command_tool += base_path;
+	command_tool += "/source > ";
+	command_tool += base_path;
+	command_tool += "/output_tool.txt";
+
 	system(command_tool.c_str());
 
 	cout << SAVING_MESSAGE << '\n';
 
-	Parser parser("tmp/output_tool.txt","tmp/output_parsed.txt",similarity);
+	Parser parser(base_path+"/output_tool.txt",base_path+"/output_parsed.txt",similarity);
 
 	save_current_run_params(path);
 

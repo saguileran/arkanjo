@@ -32,21 +32,27 @@ string extract_extension(string file_path){
 
 string build_source_path(string relative_path, string function_name){
 	string extension = extract_extension(relative_path);
-	string final_path = SOURCE_PATH + relative_path + "/";
+	Config *config = Config::config();
+	string final_path = config->getBasePath() + "/";
+	final_path += SOURCE_PATH + relative_path + "/";
 	final_path += function_name + "." + extension;
 	return final_path;
 }
 
 string build_header_path(string relative_path, string function_name){
 	string extension = extract_extension(relative_path);
-	string final_path = HEADER_PATH + relative_path + "/";
+	Config *config = Config::config();
+	string final_path = config->getBasePath() + "/";
+	final_path += HEADER_PATH + relative_path + "/";
 	final_path += function_name + "." + extension;
 	return final_path;
 }
 
 string build_info_path(string relative_path, string function_name){
 	string extension = extract_extension(relative_path);
-	string final_path = INFO_PATH + relative_path + "/";
+	Config *config = Config::config();
+	string final_path = config->getBasePath() + "/";
+	final_path += INFO_PATH + relative_path + "/";
 	final_path += function_name + ".json";
 	return final_path;
 }

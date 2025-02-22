@@ -7,6 +7,7 @@
 
 #include <bits/stdc++.h>
 #include "../base/utils.hpp"
+#include "../base/config.hpp"
 
 struct Line_content{
 	int line_number;
@@ -19,9 +20,9 @@ enum PROGRAMMING_LANGUAGE{
 };
 
 
-const string SOURCE_PATH = "tmp/source";
-const string HEADER_PATH = "tmp/header";
-const string INFO_PATH =   "tmp/info";
+const string SOURCE_PATH = "source";
+const string HEADER_PATH = "header";
+const string INFO_PATH =   "info";
 
 string extract_extension(string file_path);
 
