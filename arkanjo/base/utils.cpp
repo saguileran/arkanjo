@@ -69,6 +69,13 @@ bool Utils::does_file_exist(string file_path){
 	} 	
 }
 
+bool Utils::is_regular_file(string path){
+	struct stat path_stat;
+	auto path_c_str = path.c_str();
+	stat(path_c_str,&path_stat);
+	return S_ISREG(path_stat.st_mode);
+}
+
 string Utils::format_colored_message(string message, COLOR color){
 	return COLOR_TOKENS_UTILS[color] + message + COLOR_TOKENS_UTILS[RESET];
 }

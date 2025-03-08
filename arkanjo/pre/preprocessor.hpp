@@ -10,6 +10,7 @@
 #include "function_breaker.hpp"
 #include "../base/config.hpp"
 #include "duplication_finder_tool.hpp"
+#include "duplication_finder_diff.hpp"
 using namespace std;
 
 class Preprocessor{
@@ -26,11 +27,17 @@ class Preprocessor{
 		string SAVING_MESSAGE = "Saving results...";
 		string END_MESSAGE = "Finished preprocessing";
 
-		pair<string,double> read_parameters();
+		string MESSAGE_DUPLICATION_FINDER_TYPE_1 = "Enter the number of the duplication finder technique you want to use:";
+		string MESSAGE_DUPLICATION_FINDER_TYPE_2 = "1) NLP text similarity using gensim";
+		string MESSAGE_DUPLICATION_FINDER_TYPE_3 = "2) Count proportion of equal lines using diff command";
+
+		string INVALID_CODE_DUPLICATION_FINDER = "Valid options are '1' or '2' only. Stopping Program...";
+
+		tuple<string,double,bool> read_parameters();
 
 		void save_current_run_params(string path);
 
-		void preprocess(string path, double similarity);
+		void preprocess(string path, double similarity, bool use_duplication_finder_by_tool);
 
 	public:
 		Preprocessor(bool force_preprocess);

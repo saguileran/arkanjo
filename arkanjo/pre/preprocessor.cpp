@@ -15,7 +15,7 @@ void Preprocessor::save_current_run_params(string path){
 	Utils::write_file_generic(Config::config()->getBasePath() + "/" + CONFIG_PATH,config_content);
 }
 
-pair<string,double> Preprocessor::read_parameters(){
+tuple<string,double,bool> Preprocessor::read_parameters(){
 	cout << INITIAL_MESSAGE << '\n';
 	string path,similarity_message;
 
@@ -25,10 +25,31 @@ pair<string,double> Preprocessor::read_parameters(){
 	cout << MINIMUM_SIMILARITY_MESSAGE << '\n';
 	cin >> similarity_message;
 	double similarity = stod(similarity_message);
-	return {path,similarity};
+
+	bool use_duplication_finder_by_tool=false;
+
+	while(true){
+		cout << MESSAGE_DUPLICATION_FINDER_TYPE_1 << '\n';
+		cout << MESSAGE_DUPLICATION_FINDER_TYPE_2 << '\n';
+		cout << MESSAGE_DUPLICATION_FINDER_TYPE_3 << '\n';
+		int x;
+		cin >> x;
+		if(x == 1){
+			use_duplication_finder_by_tool = true;
+		}else if(x == 2){
+			use_duplication_finder_by_tool = false;
+		}else{
+			cout << INVALID_CODE_DUPLICATION_FINDER << '\n';
+			exit(0);
+			continue;
+		}
+		break;
+	}
+
+	return {path,similarity,use_duplication_finder_by_tool};
 }
 
-void Preprocessor::preprocess(string path, double similarity){
+void Preprocessor::preprocess(string path, double similarity, bool use_duplication_finder_by_tool){
 	cout << BREAKER_MESSAGE << '\n';
 
 	Config *config = Config::config();
@@ -40,8 +61,13 @@ void Preprocessor::preprocess(string path, double similarity){
 
 	cout << DUPLICATION_MESSAGE << '\n';
 
-	DuplicationFinderTool duplicationFinderTool(base_path,similarity);
-	duplicationFinderTool.execute();
+	if(use_duplication_finder_by_tool){
+		DuplicationFinderTool duplicationFinder(base_path,similarity);
+		duplicationFinder.execute();
+	}else{
+		DuplicationFinderDiff duplicationFinder(base_path,similarity);
+		duplicationFinder.execute();
+	}
 
 	save_current_run_params(path);
 
@@ -49,14 +75,18 @@ void Preprocessor::preprocess(string path, double similarity){
 }
 
 Preprocessor::Preprocessor(bool force_preprocess){
-	if(force_preprocess || !Utils::does_file_exist(CONFIG_PATH)){
-		auto [path,similarity] = read_parameters();
-		preprocess(path,similarity);
+	Config *config = Config::config();
+	string base_path = config->getBasePath();
+	if(force_preprocess || !Utils::does_file_exist(base_path+"/"+CONFIG_PATH)){
+		auto [path,similarity,use_duplication_finder_by_tool] = read_parameters();
+		preprocess(path,similarity,use_duplication_finder_by_tool);
 	}
 }
 
 Preprocessor::Preprocessor(bool force_preprocess, string path, double similarity){
-	if(force_preprocess || !Utils::does_file_exist(CONFIG_PATH)){
-		preprocess(path,similarity);
+	Config *config = Config::config();
+	string base_path = config->getBasePath();
+	if(force_preprocess || !Utils::does_file_exist(base_path+"/"+CONFIG_PATH)){
+		preprocess(path,similarity,true);
 	}
 }

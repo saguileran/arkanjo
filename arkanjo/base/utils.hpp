@@ -51,6 +51,7 @@ namespace Utils{
 	void create_parents_folder_of_file_path(string file_path);
 	Json::Value read_json(string string_path);
 	bool does_file_exist(string file_path);
+	bool is_regular_file(string path);
 
 	string format_colored_message(string message, COLOR color);
 
