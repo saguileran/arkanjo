@@ -9,6 +9,7 @@
 #include "parser.hpp"
 #include "function_breaker.hpp"
 #include "../base/config.hpp"
+#include "duplication_finder_tool.hpp"
 using namespace std;
 
 class Preprocessor{

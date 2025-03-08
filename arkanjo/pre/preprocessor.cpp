@@ -38,20 +38,10 @@ void Preprocessor::preprocess(string path, double similarity){
 	system(command_rm_tmp.c_str());
 	FunctionBreaker function_breaker(path);
 
-
 	cout << DUPLICATION_MESSAGE << '\n';
 
-	string command_tool = "python3 -W ignore third-party/duplicate-code-detection-tool/duplicate_code_detection.py -d ";
-	command_tool += base_path;
-	command_tool += "/source > ";
-	command_tool += base_path;
-	command_tool += "/output_tool.txt";
-
-	system(command_tool.c_str());
-
-	cout << SAVING_MESSAGE << '\n';
-
-	Parser parser(base_path+"/output_tool.txt",base_path+"/output_parsed.txt",similarity);
+	DuplicationFinderTool duplicationFinderTool(base_path,similarity);
+	duplicationFinderTool.execute();
 
 	save_current_run_params(path);
 
