@@ -89,7 +89,7 @@ The preprocessor can take a while to execute. Depending on the size of the codeb
 To execute the tool and the tool functionalities, you need to run the command that respect this format:
 
 ```
-./exec command [command_parameters] [-p] [-s <NUMBER>]
+./exec command [command_parameters] [-pre] [-s <NUMBER>]
 ```
 
 If you have not executed the preprocessor, the tool will automatically call the preprocessor.

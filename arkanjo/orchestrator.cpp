@@ -39,7 +39,7 @@ class Orchestrator{
 		bool check_force_preprocess(vector<string> parameters){
 			int number_parameters = parameters.size();
 			for(int i = 0; i < number_parameters; i++){
-				if(parameters[i] == "-p"){
+				if(parameters[i] == "-pre"){
 					return true;
 				}
 			}
