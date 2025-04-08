@@ -107,21 +107,21 @@ The following are the guide on how to execute the current commands of the tool:
 To execute the explore duplications command, run:
 
 ```
-./exec ex [-l=<number>] [-p=<string>] [-b=<'T' or 'F'>] [-c='T' or 'F'] 
+./exec ex [-l <number>] [-p <string>] [-b <'T' or 'F'>] [-c 'T' or 'F'] 
 ```
 
 All the positional parameters are optional, and the meaning of them are the following:
 
-- [-l=\<number\>] limits the number of results showed to the user. The tool shows all results by default.
+- [-l \<number\>] limits the number of results showed to the user. The tool shows all results by default.
 
-- [-p=\<string\>] defines a pattern that the function names should match to show in the result. A
+- [-p \<string\>] defines a pattern that the function names should match to show in the result. A
 function name is said to match the pattern if the function name has the pattern as a substring of the string 
 formed by the concatenation of the file path that the function exist and the function name.
 
-- [-b='T' or 'F'] 'T' if the pattern need to match both of the functions in the comparation. 'F' if at least
+- [-b 'T' or 'F'] 'T' if the pattern need to match both of the functions in the comparation. 'F' if at least
 one of the functions match the pattern. Default value is 'F'.
 
-- [-c='T' or 'F'] 'T' if the results should be sorted by the number of duplicated lines. 'F' if the results
+- [-c 'T' or 'F'] 'T' if the results should be sorted by the number of duplicated lines. 'F' if the results
 should be sorted by the similarity metric. Default value is 'F'.
 
 #### Find function duplicates
