@@ -3,33 +3,13 @@
 
 #ifndef UTILS_HPP
 #define UTILS_HPP
+
 #pragma once
 #include <bits/stdc++.h> 
 #include <jsoncpp/json/json.h>
 #include <sys/stat.h>
 
-#include <iostream>
-#include <string>
-#include <algorithm>
-#include <cstdlib>
-#include <unistd.h>
-#include <termios.h>
-#include <sys/ioctl.h>
-#include <fcntl.h>
-#include <vector>
-#include <sstream>
-#include <iomanip>
-
-#ifdef _WIN32
-    #include <windows.h>
-#elif __linux__
-    #include <sys/utsname.h>
-#elif __APPLE__
-    #include <TargetConditionals.h>
-#endif
-
 using namespace std;
-
 
 namespace Utils{
 
@@ -93,16 +73,7 @@ namespace Utils{
 	bool is_special_char(char c);
 
 	vector<string> split_string(string s, char delimiter);
-
-  int convert_16_bit_to_8_bit(const string& hex16);
-  tuple<int, int, int> parse_terminal_color_response(const string& response);
-  string capture_terminal_response();
-  bool is_bg_dark();
-  string capture_terminal_response();
-  bool is_bg_color_dark();
-	int get_terminal_bg_color_mean();
 };
-
 
 
 #endif
