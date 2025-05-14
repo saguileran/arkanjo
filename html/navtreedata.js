@@ -25,6 +25,7 @@
 var NAVTREE =
 [
   [ "Arkanjo", "index.html", [
+    [ "Main Components", "index.html#autotoc_md34", null ],
     [ "Arkanjo Module Documentation", "arkanjo_readme.html", [
       [ "Similarity", "arkanjo_readme.html#autotoc_md1", null ],
       [ "Requirements", "arkanjo_readme.html#autotoc_md2", null ],
@@ -37,6 +38,11 @@ var NAVTREE =
           [ "Relatory", "arkanjo_readme.html#autotoc_md9", null ]
         ] ]
       ] ]
+    ] ],
+    [ "Master Artifacts Module", "master_artifacts_readme.html", [
+      [ "Test Duplication Code", "master_artifacts_readme.html#autotoc_md30", null ],
+      [ "About Parser", "master_artifacts_readme.html#autotoc_md31", null ],
+      [ "List of Candidate Tools to Test", "master_artifacts_readme.html#autotoc_md32", null ]
     ] ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
@@ -79,7 +85,7 @@ var NAVTREEINDEX =
 "current_2tmp_2source_2test__same__file__big__function__against__small_8c_2sorted__by__distance__to__median_8c_source.html",
 "expected_2tmp_2header_2test__same__file__different__functions__same__logic_8c_2main_8c_source.html",
 "expected_2tmp_2source_2test__same__file__different__functions__same__logic_8c_2sum_8c_source.html",
-"namespaceUtils.html#a4d656952664ea28855824cc017ccb03aa48528bb8a311b9079ffb50957714a220"
+"namespaceUtils.html#a3b0faf30c09facf4f5d77be103ba90a8"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';
