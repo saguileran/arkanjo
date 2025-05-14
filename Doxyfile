@@ -9,7 +9,7 @@ PROJECT_NUMBER         = 0.1
 PROJECT_BRIEF          = "A tool for find code duplicated functions in codebases"
 PROJECT_LOGO           =
 PROJECT_ICON           =
-OUTPUT_DIRECTORY       = /home/saguileran/Documentos/GitHub/arkanjo2/docs
+OUTPUT_DIRECTORY       = ./docs
 CREATE_SUBDIRS         = NO
 CREATE_SUBDIRS_LEVEL   = 8
 ALLOW_UNICODE_NAMES    = NO
@@ -129,11 +129,11 @@ WARN_LOGFILE           =
 #---------------------------------------------------------------------------
 # Configuration options related to the input files
 #---------------------------------------------------------------------------
-INPUT                  = /home/saguileran/Documentos/GitHub/arkanjo2 \
-                         /home/saguileran/Documentos/GitHub/arkanjo2/arkanjo/README.md \
-                         /home/saguileran/Documentos/GitHub/arkanjo2/arkanjo \
-                         /home/saguileran/Documentos/GitHub/arkanjo2/master_artifacts \
-                         /home/saguileran/Documentos/GitHub/arkanjo2/master_artifacts/README.md
+INPUT                  = ./ \
+                         ./arkanjo/README.md \
+                         ./arkanjo \
+                         ./master_artifacts \
+                         ./master_artifacts/README.md
 INPUT_ENCODING         = UTF-8
 INPUT_FILE_ENCODING    =
 FILE_PATTERNS          = *.c \
