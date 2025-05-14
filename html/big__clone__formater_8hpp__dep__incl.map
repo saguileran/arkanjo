@@ -1,7 +1,9 @@
 <map id="arkanjo/big_clone/big_clone_formater.hpp" name="arkanjo/big_clone/big_clone_formater.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="93,5,237,46"/>
+<area shape="rect" id="Node000001" title="BigCloneEval format conversion interface." alt="" coords="93,5,237,46"/>
 <area shape="rect" id="Node000002" href="$big__clone__formater_8cpp.html" title=" " alt="" coords="5,94,149,135"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="136,59,99,95,95,92,132,55"/>
-<area shape="rect" id="Node000003" href="$orchestrator_8cpp.html" title=" " alt="" coords="173,102,333,127"/>
+<area shape="rect" id="Node000003" href="$orchestrator_8hpp.html" title="Main command orchestration interface." alt="" coords="173,102,333,127"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="198,55,243,99,239,103,194,59"/>
+<area shape="rect" id="Node000004" href="$orchestrator_8cpp.html" title=" " alt="" coords="173,183,333,208"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="256,143,256,182,250,182,250,143"/>
 </map>

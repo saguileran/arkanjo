@@ -1,0 +1,52 @@
+\doxysection{arkanjo/orchestrator.hpp File Reference}
+\hypertarget{orchestrator_8hpp}{}\label{orchestrator_8hpp}\index{arkanjo/orchestrator.hpp@{arkanjo/orchestrator.hpp}}
+
+
+Main command orchestration interface.  
+
+
+{\ttfamily \#include $<$bits/stdc++.\+h$>$}\newline
+{\ttfamily \#include "{}base/path.\+hpp"{}}\newline
+{\ttfamily \#include "{}base/function.\+hpp"{}}\newline
+{\ttfamily \#include "{}base/utils.\+hpp"{}}\newline
+{\ttfamily \#include "{}base/similarity\+\_\+table.\+hpp"{}}\newline
+{\ttfamily \#include "{}finder/similar\+\_\+function\+\_\+finder.\+hpp"{}}\newline
+{\ttfamily \#include "{}counter/counter\+\_\+duplication\+\_\+code\+\_\+trie.\+hpp"{}}\newline
+{\ttfamily \#include "{}counter/counter\+\_\+duplication\+\_\+code.\+hpp"{}}\newline
+{\ttfamily \#include "{}explorer/similarity\+\_\+explorer.\+hpp"{}}\newline
+{\ttfamily \#include "{}big\+\_\+clone/big\+\_\+clone\+\_\+formater.\+hpp"{}}\newline
+{\ttfamily \#include "{}big\+\_\+clone/big\+\_\+clone\+\_\+tailor\+\_\+evaluator.\+hpp"{}}\newline
+{\ttfamily \#include "{}rand/random\+\_\+selector.\+hpp"{}}\newline
+{\ttfamily \#include "{}pre/preprocessor.\+hpp"{}}\newline
+Include dependency graph for orchestrator.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{orchestrator_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=200pt]{orchestrator_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classOrchestrator}{Orchestrator}}
+\begin{DoxyCompactList}\small\item\em Main command orchestrator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Main command orchestration interface. 
+
+Provides the central command dispatch system that coordinates all tool functionality through various subcomponents.
+
+The orchestrator starts the flow of the user iteraction read the user cli command, parser it and call the correct functionality related to the user query. 
+
+Definition in file \mbox{\hyperlink{orchestrator_8hpp_source}{orchestrator.\+hpp}}.
+

@@ -109,6 +109,9 @@ $(function(){initNavTree('windows__utils_8hpp.html',''); initResizable(true); })
   <div class="headertitle"><div class="title">windows_utils.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Windows-specific utility functions.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;string&gt;</code><br />
 <code>#include &lt;sstream&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -116,7 +119,7 @@ Include dependency graph for windows_utils.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="windows__utils_8hpp__incl.png" border="0" usemap="#aarkanjo_2base_2windows__utils_8hpp" alt=""/></div>
 <map name="aarkanjo_2base_2windows__utils_8hpp" id="aarkanjo_2base_2windows__utils_8hpp">
-<area shape="rect" title=" " alt="" coords="5,5,156,46"/>
+<area shape="rect" title="Windows&#45;specific utility functions." alt="" coords="5,5,156,46"/>
 <area shape="rect" title=" " alt="" coords="11,94,64,120"/>
 <area shape="poly" title=" " alt="" coords="72,48,54,81,49,79,68,45"/>
 <area shape="rect" title=" " alt="" coords="89,94,157,120"/>
@@ -128,7 +131,7 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="windows__utils_8hpp__dep__incl.png" border="0" usemap="#aarkanjo_2base_2windows__utils_8hppdep" alt=""/></div>
 <map name="aarkanjo_2base_2windows__utils_8hppdep" id="aarkanjo_2base_2windows__utils_8hppdep">
-<area shape="rect" title=" " alt="" coords="5,5,156,46"/>
+<area shape="rect" title="Windows&#45;specific utility functions." alt="" coords="5,5,156,46"/>
 <area shape="rect" href="windows__utils_8cpp.html" title=" " alt="" coords="5,94,156,135"/>
 <area shape="poly" title=" " alt="" coords="83,62,83,94,78,94,78,62"/>
 </map>
@@ -144,13 +147,21 @@ Namespaces</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ae94000387658cfce3f629da04843784f" id="r_ae94000387658cfce3f629da04843784f"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtilsOSDependable.html#ae94000387658cfce3f629da04843784f">UtilsOSDependable::get_terminal_bg_color_luminance</a> ()</td></tr>
+<tr class="memdesc:ae94000387658cfce3f629da04843784f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the luminance of terminal background color.  <br /></td></tr>
 <tr class="separator:ae94000387658cfce3f629da04843784f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a73ce8621f643db388f85ddefa2dbb361" id="r_a73ce8621f643db388f85ddefa2dbb361"><td class="memItemLeft" align="right" valign="top">tuple&lt; int, int, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtilsOSDependable.html#a73ce8621f643db388f85ddefa2dbb361">UtilsOSDependable::parse_terminal_color_response</a> ()</td></tr>
+<tr class="memdesc:a73ce8621f643db388f85ddefa2dbb361"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses terminal color response into RGB components on Windows.  <br /></td></tr>
 <tr class="separator:a73ce8621f643db388f85ddefa2dbb361"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a77d0b457dded74d7d1f901d333d25453" id="r_a77d0b457dded74d7d1f901d333d25453"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtilsOSDependable.html#a77d0b457dded74d7d1f901d333d25453">UtilsOSDependable::is_bg_color_dark</a> ()</td></tr>
+<tr class="memdesc:a77d0b457dded74d7d1f901d333d25453"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines if terminal background color is dark.  <br /></td></tr>
 <tr class="separator:a77d0b457dded74d7d1f901d333d25453"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Windows-specific utility functions. </p>
+<p>Provides OS-dependent implementations for Windows systems, including terminal color detection utilities. </p>
+
+<p class="definition">Definition in file <a class="el" href="windows__utils_8hpp_source.html">windows_utils.hpp</a>.</p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

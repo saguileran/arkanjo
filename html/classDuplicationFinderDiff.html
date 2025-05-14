@@ -110,21 +110,28 @@ $(function(){initNavTree('classDuplicationFinderDiff.html',''); initResizable(tr
 </div><!--header-->
 <div class="contents">
 
+<p>Code duplication preprocessor.  
+ <a href="#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="duplication__finder__diff_8hpp_source.html">duplication_finder_diff.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a151b39d2692c606c1e34f9a9256a25d4" id="r_a151b39d2692c606c1e34f9a9256a25d4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a151b39d2692c606c1e34f9a9256a25d4">DuplicationFinderDiff</a> (string base_path_, double similatiry_)</td></tr>
-<tr class="separator:a151b39d2692c606c1e34f9a9256a25d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd6fa48bf8650e3d66ed92f6f1194975" id="r_afd6fa48bf8650e3d66ed92f6f1194975"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afd6fa48bf8650e3d66ed92f6f1194975">DuplicationFinderDiff</a> (string base_path_, double similarity_)</td></tr>
+<tr class="memdesc:afd6fa48bf8650e3d66ed92f6f1194975"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs preprocessor with configuration.  <br /></td></tr>
+<tr class="separator:afd6fa48bf8650e3d66ed92f6f1194975"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a299fbfd67897fceb54d3526e033d343c" id="r_a299fbfd67897fceb54d3526e033d343c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a299fbfd67897fceb54d3526e033d343c">execute</a> ()</td></tr>
+<tr class="memdesc:a299fbfd67897fceb54d3526e033d343c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes the preprocessing pipeline.  <br /></td></tr>
 <tr class="separator:a299fbfd67897fceb54d3526e033d343c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="duplication__finder__diff_8hpp_source.html#l00012">12</a> of file <a class="el" href="duplication__finder__diff_8hpp_source.html">duplication_finder_diff.hpp</a>.</p>
+<div class="textblock"><p>Code duplication preprocessor. </p>
+<p>Performs initial analysis of the codebase to identify and catalog potential code duplications, creating a foundation for fast similarity queries during the main operation phase. </p>
+
+<p class="definition">Definition at line <a class="el" href="duplication__finder__diff_8hpp_source.html#l00027">27</a> of file <a class="el" href="duplication__finder__diff_8hpp_source.html">duplication_finder_diff.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a151b39d2692c606c1e34f9a9256a25d4" name="a151b39d2692c606c1e34f9a9256a25d4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a151b39d2692c606c1e34f9a9256a25d4">&#9670;&#160;</a></span>DuplicationFinderDiff()</h2>
+<a id="afd6fa48bf8650e3d66ed92f6f1194975" name="afd6fa48bf8650e3d66ed92f6f1194975"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd6fa48bf8650e3d66ed92f6f1194975">&#9670;&#160;</a></span>DuplicationFinderDiff()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -137,10 +144,19 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>similatiry_</em></span>&#160;)</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>similarity_</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Constructs preprocessor with configuration. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">base_path_</td><td>Root path of codebase </td></tr>
+    <tr><td class="paramname">similarity_</td><td>Similarity threshold (0-100) </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p class="definition">Definition at line <a class="el" href="duplication__finder__diff_8cpp_source.html#l00003">3</a> of file <a class="el" href="duplication__finder__diff_8cpp_source.html">duplication_finder_diff.cpp</a>.</p>
 
@@ -161,6 +177,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Executes the preprocessing pipeline. </p>
 
 <p class="definition">Definition at line <a class="el" href="duplication__finder__diff_8cpp_source.html#l00135">135</a> of file <a class="el" href="duplication__finder__diff_8cpp_source.html">duplication_finder_diff.cpp</a>.</p>
 

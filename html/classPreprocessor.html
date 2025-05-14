@@ -110,18 +110,31 @@ $(function(){initNavTree('classPreprocessor.html',''); initResizable(true); });
 </div><!--header-->
 <div class="contents">
 
+<p>Codebase preprocessing orchestrator.  
+ <a href="#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="preprocessor_8hpp_source.html">preprocessor.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a60cdc40e8c5e4ac19ee8a5e9edf865f0" id="r_a60cdc40e8c5e4ac19ee8a5e9edf865f0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a60cdc40e8c5e4ac19ee8a5e9edf865f0">Preprocessor</a> (bool force_preprocess)</td></tr>
+<tr class="memdesc:a60cdc40e8c5e4ac19ee8a5e9edf865f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs preprocessor with optional forcing.  <br /></td></tr>
 <tr class="separator:a60cdc40e8c5e4ac19ee8a5e9edf865f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac5e41688c3866cb0b7ab6efe20e41ba7" id="r_ac5e41688c3866cb0b7ab6efe20e41ba7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac5e41688c3866cb0b7ab6efe20e41ba7">Preprocessor</a> (bool force_preprocess, string path, double similarity)</td></tr>
+<tr class="memdesc:ac5e41688c3866cb0b7ab6efe20e41ba7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Testing constructor with direct parameter specification.  <br /></td></tr>
 <tr class="separator:ac5e41688c3866cb0b7ab6efe20e41ba7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="preprocessor_8hpp_source.html#l00016">16</a> of file <a class="el" href="preprocessor_8hpp_source.html">preprocessor.hpp</a>.</p>
+<div class="textblock"><p>Codebase preprocessing orchestrator. </p>
+<p>Manages the complete preprocessing pipeline including:</p><ul>
+<li>Code structure analysis</li>
+<li><a class="el" href="classFunction.html" title="Represents a code function with its content and metadata.">Function</a> extraction</li>
+<li>Duplication detection</li>
+<li>Results organization</li>
+</ul>
+<p>Creates the foundation for fast query responses during the main operation phase. </p>
+
+<p class="definition">Definition at line <a class="el" href="preprocessor_8hpp_source.html#l00035">35</a> of file <a class="el" href="preprocessor_8hpp_source.html">preprocessor.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a60cdc40e8c5e4ac19ee8a5e9edf865f0" name="a60cdc40e8c5e4ac19ee8a5e9edf865f0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a60cdc40e8c5e4ac19ee8a5e9edf865f0">&#9670;&#160;</a></span>Preprocessor() <span class="overload">[1/2]</span></h2>
@@ -137,6 +150,14 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Constructs preprocessor with optional forcing. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">force_preprocess</td><td>Whether to force preprocessing even if cached results exist </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p class="definition">Definition at line <a class="el" href="preprocessor_8cpp_source.html#l00077">77</a> of file <a class="el" href="preprocessor_8cpp_source.html">preprocessor.cpp</a>.</p>
 
@@ -165,6 +186,17 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Testing constructor with direct parameter specification. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">force_preprocess</td><td>Whether to force preprocessing </td></tr>
+    <tr><td class="paramname">path</td><td>Direct project path specification </td></tr>
+    <tr><td class="paramname">similarity</td><td>Direct similarity threshold specification </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>Exposed for testing purposes only </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="preprocessor_8cpp_source.html#l00086">86</a> of file <a class="el" href="preprocessor_8cpp_source.html">preprocessor.cpp</a>.</p>
 

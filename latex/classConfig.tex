@@ -2,6 +2,11 @@
 \hypertarget{classConfig}{}\label{classConfig}\index{Config@{Config}}
 
 
+Singleton configuration manager class.  
+
+
+
+
 {\ttfamily \#include $<$config.\+hpp$>$}
 
 
@@ -18,36 +23,38 @@ Collaboration diagram for Config\+:
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classConfig_a1e591735f40d52b02d13a888f6e1ebb5}{Config}} (\mbox{\hyperlink{classConfig}{Config}} \&other)=delete
-\item 
+\begin{DoxyCompactList}\small\item\em Deleted copy constructor. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classConfig_ab901884cc34b030fa9bda9148283ebdb}{operator=}} (const \mbox{\hyperlink{classConfig}{Config}} \&)=delete
-\item 
+\begin{DoxyCompactList}\small\item\em Deleted assignment operator. \end{DoxyCompactList}\item 
 string \mbox{\hyperlink{classConfig_ab7481411c2f3fdad63adfab1b72d8f44}{get\+Base\+Path}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Gets the current base path. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classConfig_a6dc1f7b1c87527053280cce4cb25dbc4}{set\+Test\+Config}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Sets test configuration paths. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classConfig_a3d2a81b7509e42ca7da0e5955c0aea49}{set\+Default\+Config}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Sets default production configuration paths. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 static \mbox{\hyperlink{classConfig}{Config}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classConfig_a5f9fd951fe598fea95966a8b9a6af7db}{config}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Gets the singleton configuration instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classConfig_abd0c571c116924871e30444b192b792a}{Config}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Protected constructor for singleton pattern. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Static Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
 static \mbox{\hyperlink{classConfig}{Config}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classConfig_ab2fc63f36f31db2e39643c4f561f818d}{config\+\_\+}} = nullptr
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Static instance pointer for singleton pattern. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
+Singleton configuration manager class. 
 
+Manages application paths and runtime configuration settings. Implements the singleton pattern to ensure single instance access. 
 
-Definition at line \mbox{\hyperlink{config_8hpp_source_l00011}{11}} of file \mbox{\hyperlink{config_8hpp_source}{config.\+hpp}}.
+Definition at line \mbox{\hyperlink{config_8hpp_source_l00026}{26}} of file \mbox{\hyperlink{config_8hpp_source}{config.\+hpp}}.
 
 
 
@@ -60,13 +67,21 @@ Config\+::\+Config (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0
 
 
 
-Definition at line \mbox{\hyperlink{config_8hpp_source_l00017}{17}} of file \mbox{\hyperlink{config_8hpp_source}{config.\+hpp}}.
+Protected constructor for singleton pattern. 
+
+
+
+Definition at line \mbox{\hyperlink{config_8hpp_source_l00035}{35}} of file \mbox{\hyperlink{config_8hpp_source}{config.\+hpp}}.
 
 \Hypertarget{classConfig_a1e591735f40d52b02d13a888f6e1ebb5}\index{Config@{Config}!Config@{Config}}
 \index{Config@{Config}!Config@{Config}}
 \doxysubsubsection{\texorpdfstring{Config()}{Config()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily \label{classConfig_a1e591735f40d52b02d13a888f6e1ebb5} 
 Config\+::\+Config (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classConfig}{Config}} \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Deleted copy constructor. 
 
 
 
@@ -79,6 +94,13 @@ Config\+::\+Config (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classConfig}
 
 
 
+Gets the singleton configuration instance. 
+
+\begin{DoxyReturn}{Returns}
+Config\texorpdfstring{$\ast$}{*} Pointer to the singleton instance 
+\end{DoxyReturn}
+
+
 Definition at line \mbox{\hyperlink{config_8cpp_source_l00018}{18}} of file \mbox{\hyperlink{config_8cpp_source}{config.\+cpp}}.
 
 \Hypertarget{classConfig_ab7481411c2f3fdad63adfab1b72d8f44}\index{Config@{Config}!getBasePath@{getBasePath}}
@@ -89,6 +111,13 @@ string Config\+::get\+Base\+Path (\begin{DoxyParamCaption}{}{}\end{DoxyParamCapt
 
 
 
+Gets the current base path. 
+
+\begin{DoxyReturn}{Returns}
+string The configured base path 
+\end{DoxyReturn}
+
+
 Definition at line \mbox{\hyperlink{config_8cpp_source_l00004}{4}} of file \mbox{\hyperlink{config_8cpp_source}{config.\+cpp}}.
 
 \Hypertarget{classConfig_ab901884cc34b030fa9bda9148283ebdb}\index{Config@{Config}!operator=@{operator=}}
@@ -97,11 +126,19 @@ Definition at line \mbox{\hyperlink{config_8cpp_source_l00004}{4}} of file \mbox
 {\footnotesize\ttfamily \label{classConfig_ab901884cc34b030fa9bda9148283ebdb} 
 void Config\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classConfig}{Config}} \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
 
+
+
+Deleted assignment operator. 
+
 \Hypertarget{classConfig_a3d2a81b7509e42ca7da0e5955c0aea49}\index{Config@{Config}!setDefaultConfig@{setDefaultConfig}}
 \index{setDefaultConfig@{setDefaultConfig}!Config@{Config}}
 \doxysubsubsection{\texorpdfstring{setDefaultConfig()}{setDefaultConfig()}}
 {\footnotesize\ttfamily \label{classConfig_a3d2a81b7509e42ca7da0e5955c0aea49} 
 void Config\+::set\+Default\+Config (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Sets default production configuration paths. 
 
 
 
@@ -114,6 +151,10 @@ Definition at line \mbox{\hyperlink{config_8cpp_source_l00012}{12}} of file \mbo
 void Config\+::set\+Test\+Config (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
 
+
+Sets test configuration paths. 
+
+Configures paths for end-\/to-\/end testing environment. 
 
 Definition at line \mbox{\hyperlink{config_8cpp_source_l00008}{8}} of file \mbox{\hyperlink{config_8cpp_source}{config.\+cpp}}.
 
@@ -128,7 +169,11 @@ Definition at line \mbox{\hyperlink{config_8cpp_source_l00008}{8}} of file \mbox
 
 
 
-Definition at line \mbox{\hyperlink{config_8hpp_source_l00015}{15}} of file \mbox{\hyperlink{config_8hpp_source}{config.\+hpp}}.
+Static instance pointer for singleton pattern. 
+
+
+
+Definition at line \mbox{\hyperlink{config_8hpp_source_l00030}{30}} of file \mbox{\hyperlink{config_8hpp_source}{config.\+hpp}}.
 
 
 

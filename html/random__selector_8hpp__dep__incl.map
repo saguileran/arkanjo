@@ -1,7 +1,9 @@
 <map id="arkanjo/rand/random_selector.hpp" name="arkanjo/rand/random_selector.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="102,5,242,46"/>
-<area shape="rect" id="Node000002" href="$orchestrator_8cpp.html" title=" " alt="" coords="5,102,166,127"/>
+<area shape="rect" id="Node000001" title="Random selection of similar code pairs." alt="" coords="102,5,242,46"/>
+<area shape="rect" id="Node000002" href="$orchestrator_8hpp.html" title="Main command orchestration interface." alt="" coords="5,102,166,127"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="144,59,99,103,95,99,140,55"/>
-<area shape="rect" id="Node000003" href="$random__selector_8cpp.html" title=" " alt="" coords="189,94,328,135"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="204,55,241,92,237,95,201,59"/>
+<area shape="rect" id="Node000004" href="$random__selector_8cpp.html" title=" " alt="" coords="189,94,328,135"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="204,55,241,92,237,95,201,59"/>
+<area shape="rect" id="Node000003" href="$orchestrator_8cpp.html" title=" " alt="" coords="5,183,166,208"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="88,143,88,182,83,182,83,143"/>
 </map>

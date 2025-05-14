@@ -111,17 +111,24 @@ $(function(){initNavTree('structComparation.html',''); initResizable(true); });
 </div><!--header-->
 <div class="contents">
 
+<p>Structure representing a code comparison result.  
+ <a href="#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="parser_8hpp_source.html">parser.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a1ff81a1d4176d2ed9da455b65dfc5987" id="r_a1ff81a1d4176d2ed9da455b65dfc5987"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1ff81a1d4176d2ed9da455b65dfc5987">Comparation</a> ()</td></tr>
+<tr class="memdesc:a1ff81a1d4176d2ed9da455b65dfc5987"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor.  <br /></td></tr>
 <tr class="separator:a1ff81a1d4176d2ed9da455b65dfc5987"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3f01a2380ce5ce4a844b542d52aca829" id="r_a3f01a2380ce5ce4a844b542d52aca829"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3f01a2380ce5ce4a844b542d52aca829">Comparation</a> (string _path1, string _path2, double _sim)</td></tr>
+<tr class="memdesc:a3f01a2380ce5ce4a844b542d52aca829"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parameterized constructor.  <br /></td></tr>
 <tr class="separator:a3f01a2380ce5ce4a844b542d52aca829"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0c3fe8a9f593e4ea79b88a3ab2e5af03" id="r_a0c3fe8a9f593e4ea79b88a3ab2e5af03"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0c3fe8a9f593e4ea79b88a3ab2e5af03">operator&lt;</a> (const <a class="el" href="structComparation.html">Comparation</a> &amp;com) const</td></tr>
+<tr class="memdesc:a0c3fe8a9f593e4ea79b88a3ab2e5af03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Comparison operator for sorting.  <br /></td></tr>
 <tr class="separator:a0c3fe8a9f593e4ea79b88a3ab2e5af03"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad47199b2989e5e99d4e417f18aa63b18" id="r_ad47199b2989e5e99d4e417f18aa63b18"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad47199b2989e5e99d4e417f18aa63b18">operator==</a> (const <a class="el" href="structComparation.html">Comparation</a> &amp;com) const</td></tr>
+<tr class="memdesc:ad47199b2989e5e99d4e417f18aa63b18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Equality comparison operator.  <br /></td></tr>
 <tr class="separator:ad47199b2989e5e99d4e417f18aa63b18"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1ff81a1d4176d2ed9da455b65dfc5987" id="r_a1ff81a1d4176d2ed9da455b65dfc5987"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1ff81a1d4176d2ed9da455b65dfc5987">Comparation</a> ()</td></tr>
 <tr class="separator:a1ff81a1d4176d2ed9da455b65dfc5987"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -135,15 +142,20 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:abb702ff4651510f8d76ee7dcb720e431" id="r_abb702ff4651510f8d76ee7dcb720e431"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abb702ff4651510f8d76ee7dcb720e431">path1</a></td></tr>
+<tr class="memdesc:abb702ff4651510f8d76ee7dcb720e431"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classPath.html" title="Path manipulation class for tool-specific directory structure.">Path</a> to first code file being compared.  <br /></td></tr>
 <tr class="separator:abb702ff4651510f8d76ee7dcb720e431"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae539ef1011d65fbe8278c2fc33af4967" id="r_ae539ef1011d65fbe8278c2fc33af4967"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae539ef1011d65fbe8278c2fc33af4967">path2</a></td></tr>
+<tr class="memdesc:ae539ef1011d65fbe8278c2fc33af4967"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classPath.html" title="Path manipulation class for tool-specific directory structure.">Path</a> to second code file being compared.  <br /></td></tr>
 <tr class="separator:ae539ef1011d65fbe8278c2fc33af4967"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e585bb85ef2c0690c40c3652bceead2" id="r_a1e585bb85ef2c0690c40c3652bceead2"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1e585bb85ef2c0690c40c3652bceead2">similarity</a></td></tr>
+<tr class="memdesc:a1e585bb85ef2c0690c40c3652bceead2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Similarity score between the files (0-100)  <br /></td></tr>
 <tr class="separator:a1e585bb85ef2c0690c40c3652bceead2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="parser_8hpp_source.html#l00011">11</a> of file <a class="el" href="parser_8hpp_source.html">parser.hpp</a>.</p>
+<div class="textblock"><p>Structure representing a code comparison result. </p>
+<p>Stores information about two code paths and their similarity score, with comparison operators for sorting and deduplication. </p>
+
+<p class="definition">Definition at line <a class="el" href="parser_8hpp_source.html#l00025">25</a> of file <a class="el" href="parser_8hpp_source.html">parser.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a1ff81a1d4176d2ed9da455b65dfc5987" name="a1ff81a1d4176d2ed9da455b65dfc5987"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1ff81a1d4176d2ed9da455b65dfc5987">&#9670;&#160;</a></span>Comparation() <span class="overload">[1/4]</span></h2>
@@ -168,7 +180,9 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="parser_8hpp_source.html#l00016">16</a> of file <a class="el" href="parser_8hpp_source.html">parser.hpp</a>.</p>
+<p>Default constructor. </p>
+
+<p class="definition">Definition at line <a class="el" href="parser_8hpp_source.html#l00033">33</a> of file <a class="el" href="parser_8hpp_source.html">parser.hpp</a>.</p>
 
 </div>
 </div>
@@ -195,6 +209,16 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Parameterized constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_path1</td><td>First file path </td></tr>
+    <tr><td class="paramname">_path2</td><td>Second file path </td></tr>
+    <tr><td class="paramname">_sim</td><td>Similarity score </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p class="definition">Definition at line <a class="el" href="arkanjo_2pre_2parser_8cpp_source.html#l00004">4</a> of file <a class="el" href="arkanjo_2pre_2parser_8cpp_source.html">parser.cpp</a>.</p>
 
@@ -279,6 +303,15 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Comparison operator for sorting. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">com</td><td>Other <a class="el" href="structComparation.html" title="Structure representing a code comparison result.">Comparation</a> to compare with </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>bool True if this should be ordered before com </dd></dl>
+
 <p class="definition">Definition at line <a class="el" href="arkanjo_2pre_2parser_8cpp_source.html#l00011">11</a> of file <a class="el" href="arkanjo_2pre_2parser_8cpp_source.html">parser.cpp</a>.</p>
 
 </div>
@@ -325,6 +358,15 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Equality comparison operator. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">com</td><td>Other <a class="el" href="structComparation.html" title="Structure representing a code comparison result.">Comparation</a> to compare with </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>bool True if comparations are identical </dd></dl>
+
 <p class="definition">Definition at line <a class="el" href="arkanjo_2pre_2parser_8cpp_source.html#l00021">21</a> of file <a class="el" href="arkanjo_2pre_2parser_8cpp_source.html">parser.cpp</a>.</p>
 
 </div>
@@ -369,7 +411,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="parser_8hpp_source.html#l00012">12</a> of file <a class="el" href="parser_8hpp_source.html">parser.hpp</a>.</p>
+<p><a class="el" href="classPath.html" title="Path manipulation class for tool-specific directory structure.">Path</a> to first code file being compared. </p>
+
+<p class="definition">Definition at line <a class="el" href="parser_8hpp_source.html#l00026">26</a> of file <a class="el" href="parser_8hpp_source.html">parser.hpp</a>.</p>
 
 </div>
 </div>
@@ -385,7 +429,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="parser_8hpp_source.html#l00012">12</a> of file <a class="el" href="parser_8hpp_source.html">parser.hpp</a>.</p>
+<p><a class="el" href="classPath.html" title="Path manipulation class for tool-specific directory structure.">Path</a> to second code file being compared. </p>
+
+<p class="definition">Definition at line <a class="el" href="parser_8hpp_source.html#l00027">27</a> of file <a class="el" href="parser_8hpp_source.html">parser.hpp</a>.</p>
 
 </div>
 </div>
@@ -401,7 +447,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="parser_8hpp_source.html#l00013">13</a> of file <a class="el" href="parser_8hpp_source.html">parser.hpp</a>.</p>
+<p>Similarity score between the files (0-100) </p>
+
+<p class="definition">Definition at line <a class="el" href="parser_8hpp_source.html#l00028">28</a> of file <a class="el" href="parser_8hpp_source.html">parser.hpp</a>.</p>
 
 </div>
 </div>

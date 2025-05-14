@@ -111,23 +111,31 @@ $(function(){initNavTree('classSimilarity__Explorer.html',''); initResizable(tru
 </div><!--header-->
 <div class="contents">
 
+<p>Duplicate function explorer and analyzer.  
+ <a href="#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="similarity__explorer_8hpp_source.html">similarity_explorer.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a8bf21da762751a18e9babf733832274a" id="r_a8bf21da762751a18e9babf733832274a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8bf21da762751a18e9babf733832274a">Similarity_Explorer</a> (<a class="el" href="classSimilarity__Table.html">Similarity_Table</a> *_similarity_table, int _limit_on_results, string _pattern_to_match, bool _both_path_need_to_match, bool sorted_by_number_of_duplicated_code=false)</td></tr>
+<tr class="memdesc:a8bf21da762751a18e9babf733832274a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs explorer with configuration.  <br /></td></tr>
 <tr class="separator:a8bf21da762751a18e9babf733832274a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:ae85b5477ee986806aefa7044144dc1b3" id="r_ae85b5477ee986806aefa7044144dc1b3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae85b5477ee986806aefa7044144dc1b3">UNLIMITED_RESULTS</a> = 0</td></tr>
+<tr class="memdesc:ae85b5477ee986806aefa7044144dc1b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constant for unlimited results display.  <br /></td></tr>
 <tr class="separator:ae85b5477ee986806aefa7044144dc1b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a415887327731b75d325dd7734465fc0b" id="r_a415887327731b75d325dd7734465fc0b"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a415887327731b75d325dd7734465fc0b">EMPTY_PATTERN</a> = &quot;&quot;</td></tr>
+<tr class="memdesc:a415887327731b75d325dd7734465fc0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constant for empty search pattern.  <br /></td></tr>
 <tr class="separator:a415887327731b75d325dd7734465fc0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="similarity__explorer_8hpp_source.html#l00016">16</a> of file <a class="el" href="similarity__explorer_8hpp_source.html">similarity_explorer.hpp</a>.</p>
+<div class="textblock"><p>Duplicate function explorer and analyzer. </p>
+<p>Enables exploration of duplicate functions with configurable filtering and sorting capabilities to identify code duplication patterns. </p>
+
+<p class="definition">Definition at line <a class="el" href="similarity__explorer_8hpp_source.html#l00030">30</a> of file <a class="el" href="similarity__explorer_8hpp_source.html">similarity_explorer.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a8bf21da762751a18e9babf733832274a" name="a8bf21da762751a18e9babf733832274a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8bf21da762751a18e9babf733832274a">&#9670;&#160;</a></span>Similarity_Explorer()</h2>
@@ -163,6 +171,18 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Constructs explorer with configuration. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_similarity_table</td><td>Similarity data source </td></tr>
+    <tr><td class="paramname">_limit_on_results</td><td>Maximum results to show </td></tr>
+    <tr><td class="paramname">_pattern_to_match</td><td>Filter pattern </td></tr>
+    <tr><td class="paramname">_both_path_need_to_match</td><td>Whether both paths must match pattern </td></tr>
+    <tr><td class="paramname">sorted_by_number_of_duplicated_code</td><td>Whether to sort by line count </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p class="definition">Definition at line <a class="el" href="similarity__explorer_8cpp_source.html#l00112">112</a> of file <a class="el" href="similarity__explorer_8cpp_source.html">similarity_explorer.cpp</a>.</p>
 
 </div>
@@ -180,7 +200,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="similarity__explorer_8hpp_source.html#l00019">19</a> of file <a class="el" href="similarity__explorer_8hpp_source.html">similarity_explorer.hpp</a>.</p>
+<p>Constant for empty search pattern. </p>
+
+<p class="definition">Definition at line <a class="el" href="similarity__explorer_8hpp_source.html#l00033">33</a> of file <a class="el" href="similarity__explorer_8hpp_source.html">similarity_explorer.hpp</a>.</p>
 
 </div>
 </div>
@@ -196,7 +218,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="similarity__explorer_8hpp_source.html#l00018">18</a> of file <a class="el" href="similarity__explorer_8hpp_source.html">similarity_explorer.hpp</a>.</p>
+<p>Constant for unlimited results display. </p>
+
+<p class="definition">Definition at line <a class="el" href="similarity__explorer_8hpp_source.html#l00032">32</a> of file <a class="el" href="similarity__explorer_8hpp_source.html">similarity_explorer.hpp</a>.</p>
 
 </div>
 </div>

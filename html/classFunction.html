@@ -110,26 +110,37 @@ $(function(){initNavTree('classFunction.html',''); initResizable(true); });
 </div><!--header-->
 <div class="contents">
 
+<p>Represents a code function with its content and metadata.  
+ <a href="#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="function_8hpp_source.html">function.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:af1fb06b1347f9c953cd0e9267e1c885e" id="r_af1fb06b1347f9c953cd0e9267e1c885e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af1fb06b1347f9c953cd0e9267e1c885e">number_of_lines</a> ()</td></tr>
+<tr class="memdesc:af1fb06b1347f9c953cd0e9267e1c885e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the total number of lines in the function.  <br /></td></tr>
 <tr class="separator:af1fb06b1347f9c953cd0e9267e1c885e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeb1e057869579d8f707506f4b928934b" id="r_aeb1e057869579d8f707506f4b928934b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeb1e057869579d8f707506f4b928934b">Function</a> (<a class="el" href="classPath.html">Path</a> _path)</td></tr>
+<tr class="memdesc:aeb1e057869579d8f707506f4b928934b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="classFunction.html" title="Represents a code function with its content and metadata.">Function</a> object.  <br /></td></tr>
 <tr class="separator:aeb1e057869579d8f707506f4b928934b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a551116719fafec5d8e387957d96ec744" id="r_a551116719fafec5d8e387957d96ec744"><td class="memItemLeft" align="right" valign="top">array&lt; int, 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a551116719fafec5d8e387957d96ec744">get_scope_function_in_file</a> ()</td></tr>
+<tr class="memdesc:a551116719fafec5d8e387957d96ec744"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the function's line number scope.  <br /></td></tr>
 <tr class="separator:a551116719fafec5d8e387957d96ec744"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aea58fced35931266f4e63472da04c33e" id="r_aea58fced35931266f4e63472da04c33e"><td class="memItemLeft" align="right" valign="top">vector&lt; string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aea58fced35931266f4e63472da04c33e">get_header</a> ()</td></tr>
+<tr class="memdesc:aea58fced35931266f4e63472da04c33e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the function's header content.  <br /></td></tr>
 <tr class="separator:aea58fced35931266f4e63472da04c33e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3a90213ec8ec1e4c2b4ac3478cde8e57" id="r_a3a90213ec8ec1e4c2b4ac3478cde8e57"><td class="memItemLeft" align="right" valign="top">vector&lt; string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3a90213ec8ec1e4c2b4ac3478cde8e57">build_all_content</a> ()</td></tr>
+<tr class="memdesc:a3a90213ec8ec1e4c2b4ac3478cde8e57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Builds combined content of header and source.  <br /></td></tr>
 <tr class="separator:a3a90213ec8ec1e4c2b4ac3478cde8e57"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa4177e78fa7bf87334a09084f3af533e" id="r_aa4177e78fa7bf87334a09084f3af533e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa4177e78fa7bf87334a09084f3af533e">print_basic_info</a> ()</td></tr>
+<tr class="memdesc:aa4177e78fa7bf87334a09084f3af533e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints formatted function information to console.  <br /></td></tr>
 <tr class="separator:aa4177e78fa7bf87334a09084f3af533e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="function_8hpp_source.html#l00016">16</a> of file <a class="el" href="function_8hpp_source.html">function.hpp</a>.</p>
+<div class="textblock"><p>Represents a code function with its content and metadata. </p>
+<p>Provides access to function source, header, line information, and various utility methods for function manipulation and display. </p>
+
+<p class="definition">Definition at line <a class="el" href="function_8hpp_source.html#l00031">31</a> of file <a class="el" href="function_8hpp_source.html">function.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aeb1e057869579d8f707506f4b928934b" name="aeb1e057869579d8f707506f4b928934b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aeb1e057869579d8f707506f4b928934b">&#9670;&#160;</a></span>Function()</h2>
@@ -145,6 +156,14 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Constructs a <a class="el" href="classFunction.html" title="Represents a code function with its content and metadata.">Function</a> object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_path</td><td><a class="el" href="classPath.html" title="Path manipulation class for tool-specific directory structure.">Path</a> object containing function location info </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p class="definition">Definition at line <a class="el" href="function_8cpp_source.html#l00024">24</a> of file <a class="el" href="function_8cpp_source.html">function.cpp</a>.</p>
 
@@ -166,6 +185,9 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Builds combined content of header and source. </p>
+<dl class="section return"><dt>Returns</dt><dd>vector&lt;string&gt; Merged content with header and source </dd></dl>
+
 <p class="definition">Definition at line <a class="el" href="function_8cpp_source.html#l00042">42</a> of file <a class="el" href="function_8cpp_source.html">function.cpp</a>.</p>
 
 </div>
@@ -184,6 +206,9 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Gets the function's header content. </p>
+<dl class="section return"><dt>Returns</dt><dd>vector&lt;string&gt; Each element represents a line of header </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="function_8cpp_source.html#l00038">38</a> of file <a class="el" href="function_8cpp_source.html">function.cpp</a>.</p>
 
@@ -204,6 +229,9 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Gets the function's line number scope. </p>
+<dl class="section return"><dt>Returns</dt><dd>array&lt;int,3&gt; Array containing: [0] - Declaration line [1] - Start line [2] - End line </dd></dl>
+
 <p class="definition">Definition at line <a class="el" href="function_8cpp_source.html#l00034">34</a> of file <a class="el" href="function_8cpp_source.html">function.cpp</a>.</p>
 
 </div>
@@ -223,6 +251,9 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Calculates the total number of lines in the function. </p>
+<dl class="section return"><dt>Returns</dt><dd>int Number of lines from declaration to end (inclusive) </dd></dl>
+
 <p class="definition">Definition at line <a class="el" href="function_8cpp_source.html#l00020">20</a> of file <a class="el" href="function_8cpp_source.html">function.cpp</a>.</p>
 
 </div>
@@ -241,6 +272,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Prints formatted function information to console. </p>
 
 <p class="definition">Definition at line <a class="el" href="function_8cpp_source.html#l00060">60</a> of file <a class="el" href="function_8cpp_source.html">function.cpp</a>.</p>
 

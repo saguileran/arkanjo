@@ -108,13 +108,16 @@ $(function(){initNavTree('config_8hpp.html',''); initResizable(true); });
   <div class="headertitle"><div class="title">config.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Configuration management interface.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;bits/stdc++.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for config.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="config_8hpp__incl.png" border="0" usemap="#aarkanjo_2base_2config_8hpp" alt=""/></div>
 <map name="aarkanjo_2base_2config_8hpp" id="aarkanjo_2base_2config_8hpp">
-<area shape="rect" title=" " alt="" coords="5,5,163,31"/>
+<area shape="rect" title="Configuration management interface." alt="" coords="5,5,163,31"/>
 <area shape="rect" title=" " alt="" coords="35,79,133,105"/>
 <area shape="poly" title=" " alt="" coords="87,31,87,63,81,63,81,31"/>
 </map>
@@ -124,33 +127,35 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="config_8hpp__dep__incl.png" border="0" usemap="#aarkanjo_2base_2config_8hppdep" alt=""/></div>
 <map name="aarkanjo_2base_2config_8hppdep" id="aarkanjo_2base_2config_8hppdep">
-<area shape="rect" title=" " alt="" coords="449,5,606,31"/>
+<area shape="rect" title="Configuration management interface." alt="" coords="449,5,606,31"/>
 <area shape="rect" href="config_8cpp.html" title=" " alt="" coords="173,86,330,112"/>
 <area shape="poly" title=" " alt="" coords="471,38,295,88,293,83,470,33"/>
-<area shape="rect" href="function__breaker__util_8hpp.html" title=" " alt="" coords="354,79,490,120"/>
+<area shape="rect" href="function__breaker__util_8hpp.html" title="Function breaker utilities and constants." alt="" coords="354,79,490,120"/>
 <area shape="poly" title=" " alt="" coords="501,43,450,81,447,76,498,38"/>
-<area shape="rect" href="preprocessor_8hpp.html" title=" " alt="" coords="392,352,580,378"/>
+<area shape="rect" href="preprocessor_8hpp.html" title="Codebase preprocessing interface." alt="" coords="392,352,580,378"/>
 <area shape="poly" title=" " alt="" coords="541,44,557,93,570,157,574,228,569,264,558,298,548,315,535,331,507,354,504,350,531,327,544,312,553,296,563,263,568,228,565,158,551,94,536,46"/>
 <area shape="rect" href="test_8cpp.html" title=" " alt="" coords="590,441,761,467"/>
 <area shape="poly" title=" " alt="" coords="561,38,594,64,627,98,653,139,661,162,663,187,663,278,669,372,676,441,671,441,663,372,658,278,658,187,655,164,648,142,623,101,590,68,558,42"/>
-<area shape="rect" href="function__breaker_8hpp.html" title=" " alt="" coords="248,256,383,297"/>
+<area shape="rect" href="function__breaker_8hpp.html" title="Main function extraction interface." alt="" coords="248,256,383,297"/>
 <area shape="poly" title=" " alt="" coords="405,134,330,257,325,254,400,131"/>
-<area shape="rect" href="function__breaker__c_8hpp.html" title=" " alt="" coords="408,168,543,208"/>
+<area shape="rect" href="function__breaker__c_8hpp.html" title="C/C++ function parsing and extraction." alt="" coords="408,168,543,208"/>
 <area shape="poly" title=" " alt="" coords="444,132,466,166,461,169,440,134"/>
-<area shape="rect" href="function__breaker__java_8hpp.html" title=" " alt="" coords="37,168,172,208"/>
+<area shape="rect" href="function__breaker__java_8hpp.html" title="Java function parsing and extraction." alt="" coords="37,168,172,208"/>
 <area shape="poly" title=" " alt="" coords="341,126,173,171,172,166,339,120"/>
 <area shape="rect" href="function__breaker__util_8cpp.html" title=" " alt="" coords="197,168,332,208"/>
 <area shape="poly" title=" " alt="" coords="374,130,302,170,299,165,372,125"/>
 <area shape="rect" href="function__breaker_8cpp.html" title=" " alt="" coords="233,345,368,386"/>
 <area shape="poly" title=" " alt="" coords="312,313,307,345,302,344,307,312"/>
 <area shape="poly" title=" " alt="" coords="369,302,464,350,461,354,366,307"/>
-<area shape="rect" href="orchestrator_8cpp.html" title=" " alt="" coords="406,441,566,467"/>
+<area shape="rect" href="orchestrator_8hpp.html" title="Main command orchestration interface." alt="" coords="406,441,566,467"/>
 <area shape="poly" title=" " alt="" coords="489,394,489,441,484,441,484,394"/>
 <area shape="rect" href="preprocessor_8cpp.html" title=" " alt="" coords="5,441,194,467"/>
 <area shape="poly" title=" " alt="" coords="417,385,154,443,153,438,416,380"/>
 <area shape="rect" href="preprocessor__main_8cpp.html" title=" " alt="" coords="217,434,382,474"/>
 <area shape="poly" title=" " alt="" coords="447,388,343,436,341,431,445,383"/>
 <area shape="poly" title=" " alt="" coords="528,383,650,438,648,443,526,387"/>
+<area shape="rect" href="orchestrator_8cpp.html" title=" " alt="" coords="406,522,566,548"/>
+<area shape="poly" title=" " alt="" coords="489,483,489,522,484,522,484,483"/>
 <area shape="poly" title=" " alt="" coords="427,218,353,258,350,254,425,214"/>
 <area shape="rect" href="function__breaker__c_8cpp.html" title=" " alt="" coords="408,256,543,297"/>
 <area shape="poly" title=" " alt="" coords="478,224,478,256,473,256,473,224"/>
@@ -165,9 +170,16 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classConfig.html">Config</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Singleton configuration manager class.  <a href="classConfig.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Configuration management interface. </p>
+<p>Defines the singleton configuration class that manages application paths. Provides abstraction for file paths in the temporary codebase without requiring direct file access.</p>
+<p>Contains the abstraction of a path to a function in the temporary code base. Useful for elements that does not need to, in fact, read the files in the temporary codebase. </p>
+
+<p class="definition">Definition in file <a class="el" href="config_8hpp_source.html">config.hpp</a>.</p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

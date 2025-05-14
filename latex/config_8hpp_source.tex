@@ -2,35 +2,36 @@
 \hypertarget{config_8hpp_source}{}\label{config_8hpp_source}\index{arkanjo/base/config.hpp@{arkanjo/base/config.hpp}}
 \mbox{\hyperlink{config_8hpp}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\Hypertarget{config_8hpp_source_l00001}00001\ \textcolor{comment}{//\ Contains\ the\ abstraction\ of\ a\ path\ to\ a\ function\ in\ the\ temporary\ code\ base.}}
-\DoxyCodeLine{\Hypertarget{config_8hpp_source_l00002}00002\ \textcolor{comment}{//\ Useful\ for\ elements\ that\ does\ not\ need\ to,\ in\ fact,\ read\ the\ files\ in\ the\ }}
-\DoxyCodeLine{\Hypertarget{config_8hpp_source_l00003}00003\ \textcolor{comment}{//\ temporary\ codebase.}}
-\DoxyCodeLine{\Hypertarget{config_8hpp_source_l00004}00004\ }
-\DoxyCodeLine{\Hypertarget{config_8hpp_source_l00005}00005\ \textcolor{preprocessor}{\#ifndef\ CONFIG\_HPP}}
-\DoxyCodeLine{\Hypertarget{config_8hpp_source_l00006}00006\ \textcolor{preprocessor}{\#define\ CONFIG\_HPP}}
-\DoxyCodeLine{\Hypertarget{config_8hpp_source_l00007}00007\ }
-\DoxyCodeLine{\Hypertarget{config_8hpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <bits/stdc++.h>}\ }
-\DoxyCodeLine{\Hypertarget{config_8hpp_source_l00009}00009\ \textcolor{keyword}{using\ namespace\ }std;}
-\DoxyCodeLine{\Hypertarget{config_8hpp_source_l00010}00010\ }
-\DoxyCodeLine{\Hypertarget{config_8hpp_source_l00011}\mbox{\hyperlink{classConfig}{00011}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classConfig_abd0c571c116924871e30444b192b792a}{Config}}\{}
-\DoxyCodeLine{\Hypertarget{config_8hpp_source_l00012}00012\ \ \ \ \ \textcolor{keywordtype}{string}\ base\_path\ =\ \textcolor{stringliteral}{"{}tmp"{}};}
+\DoxyCodeLine{\Hypertarget{config_8hpp_source_l00001}00001\ }
 \DoxyCodeLine{\Hypertarget{config_8hpp_source_l00013}00013\ }
-\DoxyCodeLine{\Hypertarget{config_8hpp_source_l00014}00014\ \textcolor{keyword}{protected}:}
-\DoxyCodeLine{\Hypertarget{config_8hpp_source_l00015}\mbox{\hyperlink{classConfig_ab2fc63f36f31db2e39643c4f561f818d}{00015}}\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classConfig_abd0c571c116924871e30444b192b792a}{Config}}*\ \mbox{\hyperlink{classConfig_ab2fc63f36f31db2e39643c4f561f818d}{config\_}};}
+\DoxyCodeLine{\Hypertarget{config_8hpp_source_l00014}00014\ \textcolor{preprocessor}{\#ifndef\ CONFIG\_HPP}}
+\DoxyCodeLine{\Hypertarget{config_8hpp_source_l00015}00015\ \textcolor{preprocessor}{\#define\ CONFIG\_HPP}}
 \DoxyCodeLine{\Hypertarget{config_8hpp_source_l00016}00016\ }
-\DoxyCodeLine{\Hypertarget{config_8hpp_source_l00017}\mbox{\hyperlink{classConfig_abd0c571c116924871e30444b192b792a}{00017}}\ \ \ \ \ \mbox{\hyperlink{classConfig_abd0c571c116924871e30444b192b792a}{Config}}()\{\}}
-\DoxyCodeLine{\Hypertarget{config_8hpp_source_l00018}00018\ }
-\DoxyCodeLine{\Hypertarget{config_8hpp_source_l00019}00019\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{\Hypertarget{config_8hpp_source_l00020}\mbox{\hyperlink{classConfig_a1e591735f40d52b02d13a888f6e1ebb5}{00020}}\ \ \ \ \ \mbox{\hyperlink{classConfig_a1e591735f40d52b02d13a888f6e1ebb5}{Config}}(\mbox{\hyperlink{classConfig_abd0c571c116924871e30444b192b792a}{Config}}\ \&other)\ =\ \textcolor{keyword}{delete};}
-\DoxyCodeLine{\Hypertarget{config_8hpp_source_l00021}\mbox{\hyperlink{classConfig_ab901884cc34b030fa9bda9148283ebdb}{00021}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classConfig_ab901884cc34b030fa9bda9148283ebdb}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classConfig_abd0c571c116924871e30444b192b792a}{Config}}\ \&)\ =\ \textcolor{keyword}{delete};}
-\DoxyCodeLine{\Hypertarget{config_8hpp_source_l00022}00022\ }
-\DoxyCodeLine{\Hypertarget{config_8hpp_source_l00023}00023\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classConfig_abd0c571c116924871e30444b192b792a}{Config}}\ *\mbox{\hyperlink{classConfig_a5f9fd951fe598fea95966a8b9a6af7db}{config}}();}
-\DoxyCodeLine{\Hypertarget{config_8hpp_source_l00024}00024\ }
-\DoxyCodeLine{\Hypertarget{config_8hpp_source_l00025}00025\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{classConfig_ab7481411c2f3fdad63adfab1b72d8f44}{getBasePath}}();}
-\DoxyCodeLine{\Hypertarget{config_8hpp_source_l00026}00026\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classConfig_a6dc1f7b1c87527053280cce4cb25dbc4}{setTestConfig}}();}
-\DoxyCodeLine{\Hypertarget{config_8hpp_source_l00027}00027\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classConfig_a3d2a81b7509e42ca7da0e5955c0aea49}{setDefaultConfig}}();}
-\DoxyCodeLine{\Hypertarget{config_8hpp_source_l00028}00028\ \};}
-\DoxyCodeLine{\Hypertarget{config_8hpp_source_l00029}00029\ }
-\DoxyCodeLine{\Hypertarget{config_8hpp_source_l00030}00030\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{config_8hpp_source_l00017}00017\ \textcolor{preprocessor}{\#include\ <bits/stdc++.h>}\ }
+\DoxyCodeLine{\Hypertarget{config_8hpp_source_l00018}00018\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{config_8hpp_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{config_8hpp_source_l00026}\mbox{\hyperlink{classConfig}{00026}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classConfig_abd0c571c116924871e30444b192b792a}{Config}}\ \{}
+\DoxyCodeLine{\Hypertarget{config_8hpp_source_l00027}00027\ \ \ \ \ \textcolor{keywordtype}{string}\ base\_path\ =\ \textcolor{stringliteral}{"{}tmp"{}};\ \ }
+\DoxyCodeLine{\Hypertarget{config_8hpp_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{config_8hpp_source_l00029}00029\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{config_8hpp_source_l00030}\mbox{\hyperlink{classConfig_ab2fc63f36f31db2e39643c4f561f818d}{00030}}\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classConfig_abd0c571c116924871e30444b192b792a}{Config}}*\ \mbox{\hyperlink{classConfig_ab2fc63f36f31db2e39643c4f561f818d}{config\_}};\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{config_8hpp_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{config_8hpp_source_l00035}\mbox{\hyperlink{classConfig_abd0c571c116924871e30444b192b792a}{00035}}\ \ \ \ \ \mbox{\hyperlink{classConfig_abd0c571c116924871e30444b192b792a}{Config}}()\{\}}
+\DoxyCodeLine{\Hypertarget{config_8hpp_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{config_8hpp_source_l00037}00037\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{config_8hpp_source_l00041}\mbox{\hyperlink{classConfig_a1e591735f40d52b02d13a888f6e1ebb5}{00041}}\ \ \ \ \ \mbox{\hyperlink{classConfig_a1e591735f40d52b02d13a888f6e1ebb5}{Config}}(\mbox{\hyperlink{classConfig_abd0c571c116924871e30444b192b792a}{Config}}\ \&other)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{\Hypertarget{config_8hpp_source_l00042}00042\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{config_8hpp_source_l00046}\mbox{\hyperlink{classConfig_ab901884cc34b030fa9bda9148283ebdb}{00046}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classConfig_ab901884cc34b030fa9bda9148283ebdb}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classConfig_abd0c571c116924871e30444b192b792a}{Config}}\ \&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{\Hypertarget{config_8hpp_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{config_8hpp_source_l00052}00052\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classConfig_abd0c571c116924871e30444b192b792a}{Config}}\ *\mbox{\hyperlink{classConfig_a5f9fd951fe598fea95966a8b9a6af7db}{config}}();}
+\DoxyCodeLine{\Hypertarget{config_8hpp_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{config_8hpp_source_l00058}00058\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{classConfig_ab7481411c2f3fdad63adfab1b72d8f44}{getBasePath}}();}
+\DoxyCodeLine{\Hypertarget{config_8hpp_source_l00059}00059\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{config_8hpp_source_l00065}00065\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classConfig_a6dc1f7b1c87527053280cce4cb25dbc4}{setTestConfig}}();}
+\DoxyCodeLine{\Hypertarget{config_8hpp_source_l00066}00066\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{config_8hpp_source_l00070}00070\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classConfig_a3d2a81b7509e42ca7da0e5955c0aea49}{setDefaultConfig}}();}
+\DoxyCodeLine{\Hypertarget{config_8hpp_source_l00071}00071\ \};}
+\DoxyCodeLine{\Hypertarget{config_8hpp_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{config_8hpp_source_l00073}00073\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

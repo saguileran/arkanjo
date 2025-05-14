@@ -1,14 +1,14 @@
 <map id="arkanjo/pre/function_breaker.hpp" name="arkanjo/pre/function_breaker.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="291,5,426,46"/>
+<area shape="rect" id="Node000001" title="Main function extraction interface." alt="" coords="291,5,426,46"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="293,315,390,341"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="422,44,455,64,481,93,484,106,481,120,484,163,489,198,487,231,480,249,469,269,440,296,406,313,403,309,437,291,465,265,475,247,481,230,483,198,478,163,476,120,478,106,476,95,452,68,419,49"/>
 <area shape="rect" id="Node000003" href="$utils_8hpp.html" title="Defines utility functions used across all files." alt="" coords="52,241,164,267"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="291,37,231,45,169,58,116,75,96,85,83,96,75,111,70,127,72,162,82,197,96,227,91,229,77,199,66,163,65,126,70,108,79,92,93,80,113,70,167,53,230,40,290,31"/>
-<area shape="rect" id="Node000006" href="$function__breaker__c_8hpp.html" title=" " alt="" coords="93,94,248,120"/>
+<area shape="rect" id="Node000006" href="$function__breaker__c_8hpp.html" title="C/C++ function parsing and extraction." alt="" coords="93,94,248,120"/>
 <area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="313,49,214,90,212,85,311,44"/>
-<area shape="rect" id="Node000007" href="$function__breaker__util_8hpp.html" title=" " alt="" coords="276,168,441,193"/>
+<area shape="rect" id="Node000007" href="$function__breaker__util_8hpp.html" title="Function breaker utilities and constants." alt="" coords="276,168,441,193"/>
 <area shape="poly" id="edge18_Node000001_Node000007" title=" " alt="" coords="407,44,432,59,453,76,464,97,464,109,460,121,438,146,411,163,408,159,435,142,455,118,459,108,459,99,448,80,429,63,405,49"/>
-<area shape="rect" id="Node000009" href="$function__breaker__java_8hpp.html" title=" " alt="" coords="272,94,445,120"/>
+<area shape="rect" id="Node000009" href="$function__breaker__java_8hpp.html" title="Java function parsing and extraction." alt="" coords="272,94,445,120"/>
 <area shape="poly" id="edge14_Node000001_Node000009" title=" " alt="" coords="361,46,361,78,356,78,356,46"/>
 <area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="148,265,288,307,286,313,147,270"/>
 <area shape="rect" id="Node000004" title=" " alt="" coords="107,315,240,341"/>
@@ -20,7 +20,7 @@
 <area shape="poly" id="edge9_Node000006_Node000007" title=" " alt="" coords="204,118,313,159,311,164,202,123"/>
 <area shape="poly" id="edge10_Node000007_Node000002" title=" " alt="" coords="341,196,318,216,300,242,297,258,301,273,320,302,315,305,296,275,292,258,295,240,314,212,338,192"/>
 <area shape="poly" id="edge11_Node000007_Node000003" title=" " alt="" coords="317,196,166,239,164,234,315,191"/>
-<area shape="rect" id="Node000008" href="$config_8hpp.html" title=" " alt="" coords="309,241,430,267"/>
+<area shape="rect" id="Node000008" href="$config_8hpp.html" title="Configuration management interface." alt="" coords="309,241,430,267"/>
 <area shape="poly" id="edge12_Node000007_Node000008" title=" " alt="" coords="363,193,368,226,363,226,358,194"/>
 <area shape="poly" id="edge13_Node000008_Node000002" title=" " alt="" coords="367,268,354,301,349,299,362,266"/>
 <area shape="poly" id="edge15_Node000009_Node000002" title=" " alt="" coords="395,118,429,137,444,150,456,167,458,180,456,194,457,232,454,249,445,269,421,293,393,311,390,306,418,289,440,265,449,248,451,232,451,193,453,180,451,169,440,154,425,141,393,123"/>

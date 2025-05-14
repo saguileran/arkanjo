@@ -2,35 +2,40 @@
 \hypertarget{counter__duplication__code_8hpp_source}{}\label{counter__duplication__code_8hpp_source}\index{arkanjo/counter/counter\_duplication\_code.hpp@{arkanjo/counter/counter\_duplication\_code.hpp}}
 \mbox{\hyperlink{counter__duplication__code_8hpp}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00001}00001\ \textcolor{comment}{//\ Counter\ Duplication\ Code\ implements\ the\ relatory/counter\ functionality,}}
-\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00002}00002\ \textcolor{comment}{//\ where\ the\ user\ can\ see\ the\ number\ of\ duplicated\ lines\ per\ folder\ in}}
-\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00003}00003\ \textcolor{comment}{//\ the\ codebase}}
-\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00004}00004\ }
-\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00005}00005\ \textcolor{preprocessor}{\#ifndef\ COUNTER\_DUPLICATION\_CODE\_HPP}}
-\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00006}00006\ \textcolor{preprocessor}{\#define\ COUNTER\_DUPLICATION\_CODE\_HPP}}
-\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00007}00007\ }
-\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <bits/stdc++.h>}\ }
-\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{path_8hpp}{../base/path.hpp}}"{}}}
-\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00010}00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{function_8hpp}{../base/function.hpp}}"{}}}
-\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00011}00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{similarity__table_8hpp}{../base/similarity\_table.hpp}}"{}}}
-\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00012}00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{counter__duplication__code__trie_8hpp}{counter\_duplication\_code\_trie.hpp}}"{}}}
-\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00013}00013\ \textcolor{keyword}{using\ namespace\ }std;}
-\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00014}00014\ }
-\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00015}\mbox{\hyperlink{classCounter__Duplication__Code}{00015}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCounter__Duplication__Code_ae87c1513ef03d849aac658da818e22a4}{Counter\_Duplication\_Code}}\{}
-\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00016}00016\ \ \ \ \ set<Path>\ processed\_paths;}
-\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00017}00017\ \ \ \ \ \mbox{\hyperlink{classCounter__Duplication__Code__Trie}{Counter\_Duplication\_Code\_Trie}}\ counter\_duplication\_code\_trie;}
-\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00018}00018\ \ \ \ \ \mbox{\hyperlink{classSimilarity__Table}{Similarity\_Table}}\ *similarity\_table;}
-\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00019}00019\ }
-\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00020}00020\ \ \ \ \ \textcolor{keywordtype}{void}\ mark\_path\_as\_processed(\mbox{\hyperlink{classPath}{Path}}\ path);}
-\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00021}00021\ \ \ \ \ \textcolor{keywordtype}{bool}\ is\_path\_processed\_path(\mbox{\hyperlink{classPath}{Path}}\ path);}
-\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00022}00022\ \ \ \ \ \textcolor{keywordtype}{int}\ get\_number\_of\_lines\_in\_path(\mbox{\hyperlink{classPath}{Path}}\ path);}
-\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00023}00023\ \ \ \ \ \textcolor{keywordtype}{void}\ register\_code\_duplication(\mbox{\hyperlink{classPath}{Path}}\ path1,\ \mbox{\hyperlink{classPath}{Path}}\ path2,\ \textcolor{keywordtype}{int}\ number\_of\_lines);}
-\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00024}00024\ \ \ \ \ \textcolor{keywordtype}{void}\ process\_path(\mbox{\hyperlink{classPath}{Path}}\ path);}
-\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00025}00025\ \ \ \ \ \textcolor{keywordtype}{void}\ process\_every\_path\_in\_similarity\_table();}
-\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00026}00026\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00027}00027\ \ \ \ \ \mbox{\hyperlink{classCounter__Duplication__Code_ae87c1513ef03d849aac658da818e22a4}{Counter\_Duplication\_Code}}(\mbox{\hyperlink{classSimilarity__Table}{Similarity\_Table}}\ *\_similarity\_table);}
-\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00028}00028\ \};}
-\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00029}00029\ }
-\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00030}00030\ \textcolor{preprocessor}{\#endif\ }}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00013}00013\ \textcolor{preprocessor}{\#ifndef\ COUNTER\_DUPLICATION\_CODE\_HPP}}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00014}00014\ \textcolor{preprocessor}{\#define\ COUNTER\_DUPLICATION\_CODE\_HPP}}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00016}00016\ \textcolor{preprocessor}{\#include\ <bits/stdc++.h>}\ }
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00017}00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{path_8hpp}{../base/path.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00018}00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{function_8hpp}{../base/function.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00019}00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{similarity__table_8hpp}{../base/similarity\_table.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00020}00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{counter__duplication__code__trie_8hpp}{counter\_duplication\_code\_trie.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00021}00021\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00030}\mbox{\hyperlink{classCounter__Duplication__Code}{00030}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCounter__Duplication__Code_ae87c1513ef03d849aac658da818e22a4}{Counter\_Duplication\_Code}}\ \{}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00031}00031\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00032}00032\ \ \ \ \ set<Path>\ processed\_paths;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00033}00033\ \ \ \ \ \mbox{\hyperlink{classCounter__Duplication__Code__Trie}{Counter\_Duplication\_Code\_Trie}}\ counter\_duplication\_code\_trie;\ \ }
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00034}00034\ \ \ \ \ \mbox{\hyperlink{classSimilarity__Table}{Similarity\_Table}}\ *similarity\_table;\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00040}00040\ \ \ \ \ \textcolor{keywordtype}{void}\ mark\_path\_as\_processed(\mbox{\hyperlink{classPath}{Path}}\ path);}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00047}00047\ \ \ \ \ \textcolor{keywordtype}{bool}\ is\_path\_processed\_path(\mbox{\hyperlink{classPath}{Path}}\ path);}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00054}00054\ \ \ \ \ \textcolor{keywordtype}{int}\ get\_number\_of\_lines\_in\_path(\mbox{\hyperlink{classPath}{Path}}\ path);}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00062}00062\ \ \ \ \ \textcolor{keywordtype}{void}\ register\_code\_duplication(\mbox{\hyperlink{classPath}{Path}}\ path1,\ \mbox{\hyperlink{classPath}{Path}}\ path2,\ \textcolor{keywordtype}{int}\ number\_of\_lines);}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00068}00068\ \ \ \ \ \textcolor{keywordtype}{void}\ process\_path(\mbox{\hyperlink{classPath}{Path}}\ path);}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00073}00073\ \ \ \ \ \textcolor{keywordtype}{void}\ process\_every\_path\_in\_similarity\_table();}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00075}00075\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00080}00080\ \ \ \ \ \mbox{\hyperlink{classCounter__Duplication__Code_ae87c1513ef03d849aac658da818e22a4}{Counter\_Duplication\_Code}}(\mbox{\hyperlink{classSimilarity__Table}{Similarity\_Table}}\ *\_similarity\_table);}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00081}00081\ \};}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00083}00083\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

@@ -20,19 +20,19 @@ namespace \mbox{\hyperlink{namespaceanonymous__namespace_02function__breaker__ut
 int \mbox{\hyperlink{namespaceanonymous__namespace_02function__breaker__util_8cpp_03_a23a222ef0be291f7522c2b31cf841bef}{anonymous\+\_\+namespace\{function\+\_\+breaker\+\_\+util.\+cpp\}\+::find\+\_\+position\+\_\+first\+\_\+open\+\_\+bracket}} (string s)
 \item 
 string \mbox{\hyperlink{function__breaker__util_8cpp_aa98958a2eea26c27b022e37565597738}{extract\+\_\+extension}} (string file\+\_\+path)
-\item 
+\begin{DoxyCompactList}\small\item\em Extracts file extension from path. \end{DoxyCompactList}\item 
 string \mbox{\hyperlink{function__breaker__util_8cpp_a9f7b059ffa233c9236e881a841905495}{build\+\_\+source\+\_\+path}} (string relative\+\_\+path, string function\+\_\+name)
-\item 
+\begin{DoxyCompactList}\small\item\em Builds source file path for a function. \end{DoxyCompactList}\item 
 string \mbox{\hyperlink{function__breaker__util_8cpp_ab21e5aae0c0ec27f4e1ad1fb0c25cfc9}{build\+\_\+header\+\_\+path}} (string relative\+\_\+path, string function\+\_\+name)
-\item 
+\begin{DoxyCompactList}\small\item\em Builds header file path for a function. \end{DoxyCompactList}\item 
 string \mbox{\hyperlink{function__breaker__util_8cpp_a2a74ec572c5d53a6b9657f6ab72b3398}{build\+\_\+info\+\_\+path}} (string relative\+\_\+path, string function\+\_\+name)
-\item 
+\begin{DoxyCompactList}\small\item\em Builds info file path for a function. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{function__breaker__util_8cpp_af36d90b18dc7740f504f5adb06d4b66b}{create\+\_\+source\+\_\+file}} (int start\+\_\+number\+\_\+line, int end\+\_\+number\+\_\+line, string relative\+\_\+path, string function\+\_\+name, const vector$<$ string $>$ \&function\+\_\+content)
-\item 
+\begin{DoxyCompactList}\small\item\em Creates source file for a function. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{function__breaker__util_8cpp_aa7568b2f26d97dafcd6942921956cab0}{create\+\_\+header\+\_\+file}} (string relative\+\_\+path, string function\+\_\+name, const vector$<$ string $>$ \&header\+\_\+content)
-\item 
+\begin{DoxyCompactList}\small\item\em Creates header file for a function. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{function__breaker__util_8cpp_a26e4da801859502c632d70ccec642f31}{create\+\_\+info\+\_\+file}} (int line\+\_\+declaration, int start\+\_\+number\+\_\+line, int end\+\_\+number\+\_\+line, string relative\+\_\+path, string function\+\_\+name)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Creates JSON metadata file for a function. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
@@ -42,6 +42,20 @@ void \mbox{\hyperlink{function__breaker__util_8cpp_a26e4da801859502c632d70ccec64
 {\footnotesize\ttfamily \label{function__breaker__util_8cpp_ab21e5aae0c0ec27f4e1ad1fb0c25cfc9} 
 string build\+\_\+header\+\_\+path (\begin{DoxyParamCaption}\item[{string}]{relative\+\_\+path}{, }\item[{string}]{function\+\_\+name}{}\end{DoxyParamCaption})}
 
+
+
+Builds header file path for a function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em relative\+\_\+path} & Relative path of the original file \\
+\hline
+{\em function\+\_\+name} & Name of the function \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string Full path for the header file 
+\end{DoxyReturn}
 
 
 Definition at line \mbox{\hyperlink{function__breaker__util_8cpp_source_l00042}{42}} of file \mbox{\hyperlink{function__breaker__util_8cpp_source}{function\+\_\+breaker\+\_\+util.\+cpp}}.
@@ -54,6 +68,20 @@ string build\+\_\+info\+\_\+path (\begin{DoxyParamCaption}\item[{string}]{relati
 
 
 
+Builds info file path for a function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em relative\+\_\+path} & Relative path of the original file \\
+\hline
+{\em function\+\_\+name} & Name of the function \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string Full path for the info file 
+\end{DoxyReturn}
+
+
 Definition at line \mbox{\hyperlink{function__breaker__util_8cpp_source_l00051}{51}} of file \mbox{\hyperlink{function__breaker__util_8cpp_source}{function\+\_\+breaker\+\_\+util.\+cpp}}.
 
 \Hypertarget{function__breaker__util_8cpp_a9f7b059ffa233c9236e881a841905495}\index{function\_breaker\_util.cpp@{function\_breaker\_util.cpp}!build\_source\_path@{build\_source\_path}}
@@ -62,6 +90,20 @@ Definition at line \mbox{\hyperlink{function__breaker__util_8cpp_source_l00051}{
 {\footnotesize\ttfamily \label{function__breaker__util_8cpp_a9f7b059ffa233c9236e881a841905495} 
 string build\+\_\+source\+\_\+path (\begin{DoxyParamCaption}\item[{string}]{relative\+\_\+path}{, }\item[{string}]{function\+\_\+name}{}\end{DoxyParamCaption})}
 
+
+
+Builds source file path for a function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em relative\+\_\+path} & Relative path of the original file \\
+\hline
+{\em function\+\_\+name} & Name of the function \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string Full path for the source file 
+\end{DoxyReturn}
 
 
 Definition at line \mbox{\hyperlink{function__breaker__util_8cpp_source_l00033}{33}} of file \mbox{\hyperlink{function__breaker__util_8cpp_source}{function\+\_\+breaker\+\_\+util.\+cpp}}.
@@ -74,6 +116,19 @@ void create\+\_\+header\+\_\+file (\begin{DoxyParamCaption}\item[{string}]{relat
 
 
 
+Creates header file for a function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em relative\+\_\+path} & Relative path of the original file \\
+\hline
+{\em function\+\_\+name} & Name of the function \\
+\hline
+{\em header\+\_\+content} & Vector of strings containing the header content \\
+\hline
+\end{DoxyParams}
+
+
 Definition at line \mbox{\hyperlink{function__breaker__util_8cpp_source_l00065}{65}} of file \mbox{\hyperlink{function__breaker__util_8cpp_source}{function\+\_\+breaker\+\_\+util.\+cpp}}.
 
 \Hypertarget{function__breaker__util_8cpp_a26e4da801859502c632d70ccec642f31}\index{function\_breaker\_util.cpp@{function\_breaker\_util.cpp}!create\_info\_file@{create\_info\_file}}
@@ -82,6 +137,23 @@ Definition at line \mbox{\hyperlink{function__breaker__util_8cpp_source_l00065}{
 {\footnotesize\ttfamily \label{function__breaker__util_8cpp_a26e4da801859502c632d70ccec642f31} 
 void create\+\_\+info\+\_\+file (\begin{DoxyParamCaption}\item[{int}]{line\+\_\+declaration}{, }\item[{int}]{start\+\_\+number\+\_\+line}{, }\item[{int}]{end\+\_\+number\+\_\+line}{, }\item[{string}]{relative\+\_\+path}{, }\item[{string}]{function\+\_\+name}{}\end{DoxyParamCaption})}
 
+
+
+Creates JSON metadata file for a function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em line\+\_\+declaration} & Line number where function is declared \\
+\hline
+{\em start\+\_\+number\+\_\+line} & Starting line number of function body \\
+\hline
+{\em end\+\_\+number\+\_\+line} & Ending line number of function body \\
+\hline
+{\em relative\+\_\+path} & Relative path of the original file \\
+\hline
+{\em function\+\_\+name} & Name of the function \\
+\hline
+\end{DoxyParams}
 
 
 Definition at line \mbox{\hyperlink{function__breaker__util_8cpp_source_l00071}{71}} of file \mbox{\hyperlink{function__breaker__util_8cpp_source}{function\+\_\+breaker\+\_\+util.\+cpp}}.
@@ -94,6 +166,23 @@ void create\+\_\+source\+\_\+file (\begin{DoxyParamCaption}\item[{int}]{start\+\
 
 
 
+Creates source file for a function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+\_\+number\+\_\+line} & Starting line number in original file \\
+\hline
+{\em end\+\_\+number\+\_\+line} & Ending line number in original file \\
+\hline
+{\em relative\+\_\+path} & Relative path of the original file \\
+\hline
+{\em function\+\_\+name} & Name of the function \\
+\hline
+{\em function\+\_\+content} & Vector of strings containing the function body \\
+\hline
+\end{DoxyParams}
+
+
 Definition at line \mbox{\hyperlink{function__breaker__util_8cpp_source_l00060}{60}} of file \mbox{\hyperlink{function__breaker__util_8cpp_source}{function\+\_\+breaker\+\_\+util.\+cpp}}.
 
 \Hypertarget{function__breaker__util_8cpp_aa98958a2eea26c27b022e37565597738}\index{function\_breaker\_util.cpp@{function\_breaker\_util.cpp}!extract\_extension@{extract\_extension}}
@@ -102,6 +191,18 @@ Definition at line \mbox{\hyperlink{function__breaker__util_8cpp_source_l00060}{
 {\footnotesize\ttfamily \label{function__breaker__util_8cpp_aa98958a2eea26c27b022e37565597738} 
 string extract\+\_\+extension (\begin{DoxyParamCaption}\item[{string}]{file\+\_\+path}{}\end{DoxyParamCaption})}
 
+
+
+Extracts file extension from path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+\_\+path} & \doxylink{classPath}{Path} to the file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string File extension 
+\end{DoxyReturn}
 
 
 Definition at line \mbox{\hyperlink{function__breaker__util_8cpp_source_l00016}{16}} of file \mbox{\hyperlink{function__breaker__util_8cpp_source}{function\+\_\+breaker\+\_\+util.\+cpp}}.

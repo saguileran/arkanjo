@@ -108,6 +108,9 @@ $(function(){initNavTree('counter__duplication__code_8hpp.html',''); initResizab
   <div class="headertitle"><div class="title">counter_duplication_code.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Code duplication reporting system.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;bits/stdc++.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="path_8hpp_source.html">../base/path.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="function_8hpp_source.html">../base/function.hpp</a>&quot;</code><br />
@@ -118,16 +121,16 @@ Include dependency graph for counter_duplication_code.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="counter__duplication__code_8hpp__incl.png" border="0" usemap="#aarkanjo_2counter_2counter__duplication__code_8hpp" alt=""/></div>
 <map name="aarkanjo_2counter_2counter__duplication__code_8hpp" id="aarkanjo_2counter_2counter__duplication__code_8hpp">
-<area shape="rect" title=" " alt="" coords="204,5,362,46"/>
+<area shape="rect" title="Code duplication reporting system." alt="" coords="204,5,362,46"/>
 <area shape="rect" title=" " alt="" coords="301,345,398,371"/>
 <area shape="poly" title=" " alt="" coords="342,44,389,65,439,95,485,133,505,156,521,182,529,207,525,232,513,255,494,277,445,313,395,340,392,336,442,309,491,273,509,252,520,231,524,208,516,184,501,159,482,137,436,99,386,70,340,49"/>
-<area shape="rect" href="path_8hpp.html" title=" " alt="" coords="5,271,118,297"/>
+<area shape="rect" href="path_8hpp.html" title="Path abstraction for temporary codebase." alt="" coords="5,271,118,297"/>
 <area shape="poly" title=" " alt="" coords="239,49,197,71,152,101,109,139,75,184,63,220,61,256,56,256,58,219,70,181,105,135,148,97,194,67,236,44"/>
-<area shape="rect" href="function_8hpp.html" title=" " alt="" coords="115,190,248,216"/>
+<area shape="rect" href="function_8hpp.html" title="Function abstraction for temporary codebase." alt="" coords="115,190,248,216"/>
 <area shape="poly" title=" " alt="" coords="259,48,236,70,216,95,198,136,188,176,183,174,193,135,211,93,232,66,255,45"/>
-<area shape="rect" href="similarity__table_8hpp.html" title=" " alt="" coords="226,94,340,135"/>
+<area shape="rect" href="similarity__table_8hpp.html" title="Similarity relationships storage and analysis." alt="" coords="226,94,340,135"/>
 <area shape="poly" title=" " alt="" coords="286,47,286,78,280,78,280,47"/>
-<area shape="rect" href="counter__duplication__code__trie_8hpp.html" title=" " alt="" coords="374,183,507,223"/>
+<area shape="rect" href="counter__duplication__code__trie_8hpp.html" title="Trie&#45;based code duplication counter." alt="" coords="374,183,507,223"/>
 <area shape="poly" title=" " alt="" coords="306,44,354,92,418,168,414,172,350,96,302,48"/>
 <area shape="poly" title=" " alt="" coords="111,295,286,338,285,343,110,300"/>
 <area shape="poly" title=" " alt="" coords="202,214,237,238,275,269,333,331,329,335,272,273,234,243,199,219"/>
@@ -153,11 +156,13 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="counter__duplication__code_8hpp__dep__incl.png" border="0" usemap="#aarkanjo_2counter_2counter__duplication__code_8hppdep" alt=""/></div>
 <map name="aarkanjo_2counter_2counter__duplication__code_8hppdep" id="aarkanjo_2counter_2counter__duplication__code_8hppdep">
-<area shape="rect" title=" " alt="" coords="96,5,253,46"/>
+<area shape="rect" title="Code duplication reporting system." alt="" coords="96,5,253,46"/>
 <area shape="rect" href="counter__duplication__code_8cpp.html" title=" " alt="" coords="5,94,163,135"/>
 <area shape="poly" title=" " alt="" coords="145,59,106,95,103,92,142,55"/>
-<area shape="rect" href="orchestrator_8cpp.html" title=" " alt="" coords="186,102,347,127"/>
+<area shape="rect" href="orchestrator_8hpp.html" title="Main command orchestration interface." alt="" coords="186,102,347,127"/>
 <area shape="poly" title=" " alt="" coords="208,55,256,99,252,103,205,59"/>
+<area shape="rect" href="orchestrator_8cpp.html" title=" " alt="" coords="186,183,347,208"/>
+<area shape="poly" title=" " alt="" coords="269,143,269,182,264,182,264,143"/>
 </map>
 </div>
 </div>
@@ -166,9 +171,15 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCounter__Duplication__Code.html">Counter_Duplication_Code</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Code duplication analyzer and reporter.  <a href="classCounter__Duplication__Code.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Code duplication reporting system. </p>
+<p>Implements functionality to count and report duplicated lines across folders in the codebase, providing hierarchical insights. Counter Duplication Code implements the relatory/counter functionality, where the user can see the number of duplicated lines per folder in the codebase </p>
+
+<p class="definition">Definition in file <a class="el" href="counter__duplication__code_8hpp_source.html">counter_duplication_code.hpp</a>.</p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

@@ -2,39 +2,39 @@
 \hypertarget{linux__utils_8hpp_source}{}\label{linux__utils_8hpp_source}\index{arkanjo/base/linux\_utils.hpp@{arkanjo/base/linux\_utils.hpp}}
 \mbox{\hyperlink{linux__utils_8hpp}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\Hypertarget{linux__utils_8hpp_source_l00001}00001\ \textcolor{comment}{//\ Defines\ color\ util\ functions\ used\ for\ result\ messages,\ depending\ on\ the\ user\ operating\ system\ }}
-\DoxyCodeLine{\Hypertarget{linux__utils_8hpp_source_l00002}00002\ }
-\DoxyCodeLine{\Hypertarget{linux__utils_8hpp_source_l00003}00003\ \textcolor{preprocessor}{\#ifndef\ LINUX\_UTILS\_HPP}}
-\DoxyCodeLine{\Hypertarget{linux__utils_8hpp_source_l00004}00004\ \textcolor{preprocessor}{\#define\ LINUX\_UTILS\_HPP}}
-\DoxyCodeLine{\Hypertarget{linux__utils_8hpp_source_l00005}00005\ }
-\DoxyCodeLine{\Hypertarget{linux__utils_8hpp_source_l00006}00006\ \textcolor{preprocessor}{\#pragma\ once}}
-\DoxyCodeLine{\Hypertarget{linux__utils_8hpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <iostream>}}
-\DoxyCodeLine{\Hypertarget{linux__utils_8hpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <string>}}
-\DoxyCodeLine{\Hypertarget{linux__utils_8hpp_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <algorithm>}}
-\DoxyCodeLine{\Hypertarget{linux__utils_8hpp_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <cstdlib>}}
-\DoxyCodeLine{\Hypertarget{linux__utils_8hpp_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <unistd.h>}}
-\DoxyCodeLine{\Hypertarget{linux__utils_8hpp_source_l00012}00012\ \textcolor{preprocessor}{\#include\ <termios.h>}}
-\DoxyCodeLine{\Hypertarget{linux__utils_8hpp_source_l00013}00013\ \textcolor{preprocessor}{\#include\ <sys/ioctl.h>}}
-\DoxyCodeLine{\Hypertarget{linux__utils_8hpp_source_l00014}00014\ \textcolor{preprocessor}{\#include\ <fcntl.h>}}
-\DoxyCodeLine{\Hypertarget{linux__utils_8hpp_source_l00015}00015\ \textcolor{preprocessor}{\#include\ <vector>}}
-\DoxyCodeLine{\Hypertarget{linux__utils_8hpp_source_l00016}00016\ \textcolor{preprocessor}{\#include\ <sstream>}}
-\DoxyCodeLine{\Hypertarget{linux__utils_8hpp_source_l00017}00017\ \textcolor{preprocessor}{\#include\ <iomanip>}}
-\DoxyCodeLine{\Hypertarget{linux__utils_8hpp_source_l00018}00018\ }
-\DoxyCodeLine{\Hypertarget{linux__utils_8hpp_source_l00019}00019\ \textcolor{keyword}{using\ namespace\ }std;}
-\DoxyCodeLine{\Hypertarget{linux__utils_8hpp_source_l00020}00020\ }
-\DoxyCodeLine{\Hypertarget{linux__utils_8hpp_source_l00021}00021\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceUtilsOSDependable}{UtilsOSDependable}}\{}
-\DoxyCodeLine{\Hypertarget{linux__utils_8hpp_source_l00022}00022\ }
-\DoxyCodeLine{\Hypertarget{linux__utils_8hpp_source_l00023}\mbox{\hyperlink{namespaceUtilsOSDependable_acfff3b9114f5bf307e2aa78cbabfe21f}{00023}}\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespaceUtilsOSDependable_acfff3b9114f5bf307e2aa78cbabfe21f}{convert\_16\_bit\_to\_8\_bit}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ hex16);}
-\DoxyCodeLine{\Hypertarget{linux__utils_8hpp_source_l00024}00024\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{namespaceUtilsOSDependable_ae94000387658cfce3f629da04843784f}{get\_terminal\_bg\_color\_luminance}}();}
-\DoxyCodeLine{\Hypertarget{linux__utils_8hpp_source_l00025}00025\ \ \ tuple<int,\ int,\ int>\ \mbox{\hyperlink{namespaceUtilsOSDependable_a73ce8621f643db388f85ddefa2dbb361}{parse\_terminal\_color\_response}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ response);}
-\DoxyCodeLine{\Hypertarget{linux__utils_8hpp_source_l00026}00026\ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{namespaceUtilsOSDependable_a4e245ddb29771bf9f2e3190c6182f06d}{capture\_terminal\_response}}();}
-\DoxyCodeLine{\Hypertarget{linux__utils_8hpp_source_l00027}00027\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceUtilsOSDependable_a77d0b457dded74d7d1f901d333d25453}{is\_bg\_color\_dark}}();}
-\DoxyCodeLine{\Hypertarget{linux__utils_8hpp_source_l00028}00028\ \};}
-\DoxyCodeLine{\Hypertarget{linux__utils_8hpp_source_l00029}00029\ }
-\DoxyCodeLine{\Hypertarget{linux__utils_8hpp_source_l00030}00030\ }
-\DoxyCodeLine{\Hypertarget{linux__utils_8hpp_source_l00031}00031\ \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{\Hypertarget{linux__utils_8hpp_source_l00032}00032\ }
-\DoxyCodeLine{\Hypertarget{linux__utils_8hpp_source_l00033}00033\ }
-\DoxyCodeLine{\Hypertarget{linux__utils_8hpp_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{linux__utils_8hpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{linux__utils_8hpp_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{linux__utils_8hpp_source_l00009}00009\ \textcolor{preprocessor}{\#ifndef\ LINUX\_UTILS\_HPP}}
+\DoxyCodeLine{\Hypertarget{linux__utils_8hpp_source_l00010}00010\ \textcolor{preprocessor}{\#define\ LINUX\_UTILS\_HPP}}
+\DoxyCodeLine{\Hypertarget{linux__utils_8hpp_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{linux__utils_8hpp_source_l00012}00012\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{linux__utils_8hpp_source_l00013}00013\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{linux__utils_8hpp_source_l00014}00014\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{linux__utils_8hpp_source_l00015}00015\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{\Hypertarget{linux__utils_8hpp_source_l00016}00016\ \textcolor{preprocessor}{\#include\ <cstdlib>}}
+\DoxyCodeLine{\Hypertarget{linux__utils_8hpp_source_l00017}00017\ \textcolor{preprocessor}{\#include\ <unistd.h>}}
+\DoxyCodeLine{\Hypertarget{linux__utils_8hpp_source_l00018}00018\ \textcolor{preprocessor}{\#include\ <termios.h>}}
+\DoxyCodeLine{\Hypertarget{linux__utils_8hpp_source_l00019}00019\ \textcolor{preprocessor}{\#include\ <sys/ioctl.h>}}
+\DoxyCodeLine{\Hypertarget{linux__utils_8hpp_source_l00020}00020\ \textcolor{preprocessor}{\#include\ <fcntl.h>}}
+\DoxyCodeLine{\Hypertarget{linux__utils_8hpp_source_l00021}00021\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{linux__utils_8hpp_source_l00022}00022\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{\Hypertarget{linux__utils_8hpp_source_l00023}00023\ \textcolor{preprocessor}{\#include\ <iomanip>}}
+\DoxyCodeLine{\Hypertarget{linux__utils_8hpp_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{linux__utils_8hpp_source_l00025}00025\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{linux__utils_8hpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{linux__utils_8hpp_source_l00027}00027\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceUtilsOSDependable}{UtilsOSDependable}}\{}
+\DoxyCodeLine{\Hypertarget{linux__utils_8hpp_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{linux__utils_8hpp_source_l00037}\mbox{\hyperlink{namespaceUtilsOSDependable_acfff3b9114f5bf307e2aa78cbabfe21f}{00037}}\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespaceUtilsOSDependable_acfff3b9114f5bf307e2aa78cbabfe21f}{convert\_16\_bit\_to\_8\_bit}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ hex16);}
+\DoxyCodeLine{\Hypertarget{linux__utils_8hpp_source_l00038}00038\ \ \ }
+\DoxyCodeLine{\Hypertarget{linux__utils_8hpp_source_l00046}00046\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{namespaceUtilsOSDependable_ae94000387658cfce3f629da04843784f}{get\_terminal\_bg\_color\_luminance}}();}
+\DoxyCodeLine{\Hypertarget{linux__utils_8hpp_source_l00047}00047\ \ \ }
+\DoxyCodeLine{\Hypertarget{linux__utils_8hpp_source_l00056}00056\ \ \ tuple<int,\ int,\ int>\ \mbox{\hyperlink{namespaceUtilsOSDependable_a73ce8621f643db388f85ddefa2dbb361}{parse\_terminal\_color\_response}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ response);}
+\DoxyCodeLine{\Hypertarget{linux__utils_8hpp_source_l00057}00057\ \ \ }
+\DoxyCodeLine{\Hypertarget{linux__utils_8hpp_source_l00065}00065\ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{namespaceUtilsOSDependable_a4e245ddb29771bf9f2e3190c6182f06d}{capture\_terminal\_response}}();}
+\DoxyCodeLine{\Hypertarget{linux__utils_8hpp_source_l00066}00066\ \ \ }
+\DoxyCodeLine{\Hypertarget{linux__utils_8hpp_source_l00074}00074\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceUtilsOSDependable_a77d0b457dded74d7d1f901d333d25453}{is\_bg\_color\_dark}}();}
+\DoxyCodeLine{\Hypertarget{linux__utils_8hpp_source_l00075}00075\ \};}
+\DoxyCodeLine{\Hypertarget{linux__utils_8hpp_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{linux__utils_8hpp_source_l00077}00077\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

@@ -4,18 +4,18 @@
 \begin{DoxyCompactItemize}
 \item 
 class \mbox{\hyperlink{classduplicate__code__detection_1_1CliColors}{Cli\+Colors}}
-\item 
+\begin{DoxyCompactList}\small\item\em ANSI color codes for terminal text formatting. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classduplicate__code__detection_1_1ReturnCode}{Return\+Code}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Enumeration of possible return codes for the application. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{namespaceduplicate__code__detection_ae010ffc70f3bd8ddea24ea426730b410}{get\+\_\+all\+\_\+source\+\_\+code\+\_\+from\+\_\+directory}} (directory, file\+\_\+extensions)
-\item 
+\begin{DoxyCompactList}\small\item\em Get a list with all the source code files within the directory. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{namespaceduplicate__code__detection_a00a1899a4818d03117ee859ab010f58a}{conditional\+\_\+print}} (text, machine\+\_\+friendly\+\_\+output)
 \item 
 str \mbox{\hyperlink{namespaceduplicate__code__detection_a72670ee80af736f522eaaf0b86883300}{remove\+\_\+comments\+\_\+and\+\_\+docstrings}} (str source\+\_\+code)
-\item 
+\begin{DoxyCompactList}\small\item\em Strip comments and docstrings from source code. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{namespaceduplicate__code__detection_aa319b29e5b513dc5d0fd97f18cbd36d0}{get\+\_\+loc\+\_\+count}} (file\+\_\+path)
 \item 
 \mbox{\hyperlink{namespaceduplicate__code__detection_a8004dc22e7af260e78190dbd3ca5da53}{get\+\_\+loc\+\_\+to\+\_\+print}} (loc\+\_\+count)
@@ -47,14 +47,6 @@ str \mbox{\hyperlink{namespaceduplicate__code__detection_a070f42a6779b0b85a9d0d6
 \end{DoxyCompactItemize}
 
 
-\doxysubsection{Detailed Description}
-\begin{DoxyVerb}A simple Python3 tool to detect similarities between files within a repository.
-
-Document similarity code adapted from Jonathan Mugan's tutorial:
-https://www.oreilly.com/learning/how-do-i-compare-document-similarity-using-python
-\end{DoxyVerb}
- 
-
 \doxysubsection{Function Documentation}
 \Hypertarget{namespaceduplicate__code__detection_a00a1899a4818d03117ee859ab010f58a}\index{duplicate\_code\_detection@{duplicate\_code\_detection}!conditional\_print@{conditional\_print}}
 \index{conditional\_print@{conditional\_print}!duplicate\_code\_detection@{duplicate\_code\_detection}}
@@ -63,8 +55,15 @@ https://www.oreilly.com/learning/how-do-i-compare-document-similarity-using-pyth
 duplicate\+\_\+code\+\_\+detection.\+conditional\+\_\+print (\begin{DoxyParamCaption}\item[{}]{text}{, }\item[{}]{machine\+\_\+friendly\+\_\+output}{}\end{DoxyParamCaption})}
 
 
+\begin{DoxyParams}{Parameters}
+{\em text} & \\
+\hline
+{\em machine\+\_\+friendly\+\_\+output} & \\
+\hline
+\end{DoxyParams}
 
-Definition at line \mbox{\hyperlink{duplicate__code__detection_8py_source_l00060}{60}} of file \mbox{\hyperlink{duplicate__code__detection_8py_source}{duplicate\+\_\+code\+\_\+detection.\+py}}.
+
+Definition at line \mbox{\hyperlink{duplicate__code__detection_8py_source_l00080}{80}} of file \mbox{\hyperlink{duplicate__code__detection_8py_source}{duplicate\+\_\+code\+\_\+detection.\+py}}.
 
 \Hypertarget{namespaceduplicate__code__detection_ae010ffc70f3bd8ddea24ea426730b410}\index{duplicate\_code\_detection@{duplicate\_code\_detection}!get\_all\_source\_code\_from\_directory@{get\_all\_source\_code\_from\_directory}}
 \index{get\_all\_source\_code\_from\_directory@{get\_all\_source\_code\_from\_directory}!duplicate\_code\_detection@{duplicate\_code\_detection}}
@@ -72,10 +71,23 @@ Definition at line \mbox{\hyperlink{duplicate__code__detection_8py_source_l00060
 {\footnotesize\ttfamily \label{namespaceduplicate__code__detection_ae010ffc70f3bd8ddea24ea426730b410} 
 duplicate\+\_\+code\+\_\+detection.\+get\+\_\+all\+\_\+source\+\_\+code\+\_\+from\+\_\+directory (\begin{DoxyParamCaption}\item[{}]{directory}{, }\item[{}]{file\+\_\+extensions}{}\end{DoxyParamCaption})}
 
-\begin{DoxyVerb}Get a list with all the source code files within the directory\end{DoxyVerb}
- 
 
-Definition at line \mbox{\hyperlink{duplicate__code__detection_8py_source_l00047}{47}} of file \mbox{\hyperlink{duplicate__code__detection_8py_source}{duplicate\+\_\+code\+\_\+detection.\+py}}.
+
+Get a list with all the source code files within the directory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em directory} & \\
+\hline
+{\em file\+\_\+extensions} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+source\+\_\+code\+\_\+files 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{duplicate__code__detection_8py_source_l00062}{62}} of file \mbox{\hyperlink{duplicate__code__detection_8py_source}{duplicate\+\_\+code\+\_\+detection.\+py}}.
 
 \Hypertarget{namespaceduplicate__code__detection_aa319b29e5b513dc5d0fd97f18cbd36d0}\index{duplicate\_code\_detection@{duplicate\_code\_detection}!get\_loc\_count@{get\_loc\_count}}
 \index{get\_loc\_count@{get\_loc\_count}!duplicate\_code\_detection@{duplicate\_code\_detection}}
@@ -84,8 +96,16 @@ Definition at line \mbox{\hyperlink{duplicate__code__detection_8py_source_l00047
 duplicate\+\_\+code\+\_\+detection.\+get\+\_\+loc\+\_\+count (\begin{DoxyParamCaption}\item[{}]{file\+\_\+path}{}\end{DoxyParamCaption})}
 
 
+\begin{DoxyParams}{Parameters}
+{\em file\+\_\+path} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+lines\+\_\+count 
+\end{DoxyReturn}
 
-Definition at line \mbox{\hyperlink{duplicate__code__detection_8py_source_l00101}{101}} of file \mbox{\hyperlink{duplicate__code__detection_8py_source}{duplicate\+\_\+code\+\_\+detection.\+py}}.
+
+Definition at line \mbox{\hyperlink{duplicate__code__detection_8py_source_l00122}{122}} of file \mbox{\hyperlink{duplicate__code__detection_8py_source}{duplicate\+\_\+code\+\_\+detection.\+py}}.
 
 \Hypertarget{namespaceduplicate__code__detection_a8004dc22e7af260e78190dbd3ca5da53}\index{duplicate\_code\_detection@{duplicate\_code\_detection}!get\_loc\_to\_print@{get\_loc\_to\_print}}
 \index{get\_loc\_to\_print@{get\_loc\_to\_print}!duplicate\_code\_detection@{duplicate\_code\_detection}}
@@ -94,8 +114,16 @@ Definition at line \mbox{\hyperlink{duplicate__code__detection_8py_source_l00101
 duplicate\+\_\+code\+\_\+detection.\+get\+\_\+loc\+\_\+to\+\_\+print (\begin{DoxyParamCaption}\item[{}]{loc\+\_\+count}{}\end{DoxyParamCaption})}
 
 
+\begin{DoxyParams}{Parameters}
+{\em loc\+\_\+count} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+loc\+\_\+to\+\_\+print 
+\end{DoxyReturn}
 
-Definition at line \mbox{\hyperlink{duplicate__code__detection_8py_source_l00111}{111}} of file \mbox{\hyperlink{duplicate__code__detection_8py_source}{duplicate\+\_\+code\+\_\+detection.\+py}}.
+
+Definition at line \mbox{\hyperlink{duplicate__code__detection_8py_source_l00137}{137}} of file \mbox{\hyperlink{duplicate__code__detection_8py_source}{duplicate\+\_\+code\+\_\+detection.\+py}}.
 
 \Hypertarget{namespaceduplicate__code__detection_af10e203db7259a37996405ee6411868f}\index{duplicate\_code\_detection@{duplicate\_code\_detection}!main@{main}}
 \index{main@{main}!duplicate\_code\_detection@{duplicate\_code\_detection}}
@@ -103,9 +131,12 @@ Definition at line \mbox{\hyperlink{duplicate__code__detection_8py_source_l00111
 {\footnotesize\ttfamily \label{namespaceduplicate__code__detection_af10e203db7259a37996405ee6411868f} 
 duplicate\+\_\+code\+\_\+detection.\+main (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
+\begin{DoxyReturn}{Returns}
+result 
+\end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{duplicate__code__detection_8py_source_l00116}{116}} of file \mbox{\hyperlink{duplicate__code__detection_8py_source}{duplicate\+\_\+code\+\_\+detection.\+py}}.
+Definition at line \mbox{\hyperlink{duplicate__code__detection_8py_source_l00147}{147}} of file \mbox{\hyperlink{duplicate__code__detection_8py_source}{duplicate\+\_\+code\+\_\+detection.\+py}}.
 
 \Hypertarget{namespaceduplicate__code__detection_a72670ee80af736f522eaaf0b86883300}\index{duplicate\_code\_detection@{duplicate\_code\_detection}!remove\_comments\_and\_docstrings@{remove\_comments\_and\_docstrings}}
 \index{remove\_comments\_and\_docstrings@{remove\_comments\_and\_docstrings}!duplicate\_code\_detection@{duplicate\_code\_detection}}
@@ -113,20 +144,24 @@ Definition at line \mbox{\hyperlink{duplicate__code__detection_8py_source_l00116
 {\footnotesize\ttfamily \label{namespaceduplicate__code__detection_a72670ee80af736f522eaaf0b86883300} 
  str duplicate\+\_\+code\+\_\+detection.\+remove\+\_\+comments\+\_\+and\+\_\+docstrings (\begin{DoxyParamCaption}\item[{str}]{source\+\_\+code}{}\end{DoxyParamCaption})}
 
-\begin{DoxyVerb}Strip comments and docstrings from source code
 
-.. seealso::
 
-    https://gist.github.com/phpdude/1ae6f19de213d66286c8183e9e3b9ec1
+Strip comments and docstrings from source code. 
 
-:param source_code: Raw source code as a single string
-:type source_code: str
-:return: Stripped source code as a single string
-:rtype: str
-\end{DoxyVerb}
- 
+\begin{DoxySeeAlso}{See also}
+\href{https://gist.github.com/phpdude/1ae6f19de213d66286c8183e9e3b9ec1}{\texttt{ https\+://gist.\+github.\+com/phpdude/1ae6f19de213d66286c8183e9e3b9ec1}}
+\end{DoxySeeAlso}
 
-Definition at line \mbox{\hyperlink{duplicate__code__detection_8py_source_l00065}{65}} of file \mbox{\hyperlink{duplicate__code__detection_8py_source}{duplicate\+\_\+code\+\_\+detection.\+py}}.
+\begin{DoxyParams}{Parameters}
+{\em source\+\_\+code} & Raw source code as a single string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+source\+\_\+code\+\_\+clean Stripped source code as a single string 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{duplicate__code__detection_8py_source_l00090}{90}} of file \mbox{\hyperlink{duplicate__code__detection_8py_source}{duplicate\+\_\+code\+\_\+detection.\+py}}.
 
 \Hypertarget{namespaceduplicate__code__detection_ae591f33a24d4217787d2fec3a769d8af}\index{duplicate\_code\_detection@{duplicate\_code\_detection}!run@{run}}
 \index{run@{run}!duplicate\_code\_detection@{duplicate\_code\_detection}}
@@ -135,8 +170,35 @@ Definition at line \mbox{\hyperlink{duplicate__code__detection_8py_source_l00065
 duplicate\+\_\+code\+\_\+detection.\+run (\begin{DoxyParamCaption}\item[{}]{fail\+\_\+threshold}{, }\item[{}]{directories}{, }\item[{}]{files}{, }\item[{}]{ignore\+\_\+directories}{, }\item[{}]{ignore\+\_\+files}{, }\item[{}]{json\+\_\+output}{, }\item[{}]{project\+\_\+root\+\_\+dir}{, }\item[{}]{file\+\_\+extensions}{, }\item[{}]{ignore\+\_\+threshold}{, }\item[{}]{only\+\_\+code}{, }\item[{}]{csv\+\_\+output}{, }\item[{}]{show\+\_\+loc}{}\end{DoxyParamCaption})}
 
 
+\begin{DoxyParams}{Parameters}
+{\em fail\+\_\+threshold} & \\
+\hline
+{\em directories} & \\
+\hline
+{\em files} & \\
+\hline
+{\em ignore\+\_\+directories} & \\
+\hline
+{\em ignore\+\_\+files} & \\
+\hline
+{\em json\+\_\+output} & \\
+\hline
+{\em project\+\_\+root\+\_\+dir} & \\
+\hline
+{\em file\+\_\+extensions} & \\
+\hline
+{\em ignore\+\_\+threshold} & \\
+\hline
+{\em only\+\_\+code} & \\
+\hline
+{\em csv\+\_\+output} & \\
+\hline
+{\em show\+\_\+loc} & \\
+\hline
+\end{DoxyParams}
 
-Definition at line \mbox{\hyperlink{duplicate__code__detection_8py_source_l00206}{206}} of file \mbox{\hyperlink{duplicate__code__detection_8py_source}{duplicate\+\_\+code\+\_\+detection.\+py}}.
+
+Definition at line \mbox{\hyperlink{duplicate__code__detection_8py_source_l00241}{241}} of file \mbox{\hyperlink{duplicate__code__detection_8py_source}{duplicate\+\_\+code\+\_\+detection.\+py}}.
 
 
 
@@ -149,7 +211,7 @@ duplicate\+\_\+code\+\_\+detection.\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
-Definition at line \mbox{\hyperlink{duplicate__code__detection_8py_source_l00433}{433}} of file \mbox{\hyperlink{duplicate__code__detection_8py_source}{duplicate\+\_\+code\+\_\+detection.\+py}}.
+Definition at line \mbox{\hyperlink{duplicate__code__detection_8py_source_l00483}{483}} of file \mbox{\hyperlink{duplicate__code__detection_8py_source}{duplicate\+\_\+code\+\_\+detection.\+py}}.
 
 \Hypertarget{namespaceduplicate__code__detection_a095fecae86b3f771dc1a5e61b34a9249}\index{duplicate\_code\_detection@{duplicate\_code\_detection}!exit\_code@{exit\_code}}
 \index{exit\_code@{exit\_code}!duplicate\_code\_detection@{duplicate\_code\_detection}}
@@ -159,7 +221,7 @@ duplicate\+\_\+code\+\_\+detection.\+exit\+\_\+code}
 
 
 
-Definition at line \mbox{\hyperlink{duplicate__code__detection_8py_source_l00433}{433}} of file \mbox{\hyperlink{duplicate__code__detection_8py_source}{duplicate\+\_\+code\+\_\+detection.\+py}}.
+Definition at line \mbox{\hyperlink{duplicate__code__detection_8py_source_l00483}{483}} of file \mbox{\hyperlink{duplicate__code__detection_8py_source}{duplicate\+\_\+code\+\_\+detection.\+py}}.
 
 \Hypertarget{namespaceduplicate__code__detection_a4433bbd434b289e4da92454c3a2ad4fa}\index{duplicate\_code\_detection@{duplicate\_code\_detection}!file\_column\_label@{file\_column\_label}}
 \index{file\_column\_label@{file\_column\_label}!duplicate\_code\_detection@{duplicate\_code\_detection}}
@@ -169,7 +231,7 @@ str duplicate\+\_\+code\+\_\+detection.\+file\+\_\+column\+\_\+label = "{}File"{
 
 
 
-Definition at line \mbox{\hyperlink{duplicate__code__detection_8py_source_l00022}{22}} of file \mbox{\hyperlink{duplicate__code__detection_8py_source}{duplicate\+\_\+code\+\_\+detection.\+py}}.
+Definition at line \mbox{\hyperlink{duplicate__code__detection_8py_source_l00024}{24}} of file \mbox{\hyperlink{duplicate__code__detection_8py_source}{duplicate\+\_\+code\+\_\+detection.\+py}}.
 
 \Hypertarget{namespaceduplicate__code__detection_a1d614e10a73985e62c7c30b03df4ae2f}\index{duplicate\_code\_detection@{duplicate\_code\_detection}!file\_loc\_label@{file\_loc\_label}}
 \index{file\_loc\_label@{file\_loc\_label}!duplicate\_code\_detection@{duplicate\_code\_detection}}
@@ -179,7 +241,7 @@ str duplicate\+\_\+code\+\_\+detection.\+file\+\_\+loc\+\_\+label = "{},\#Lo\+C"
 
 
 
-Definition at line \mbox{\hyperlink{duplicate__code__detection_8py_source_l00023}{23}} of file \mbox{\hyperlink{duplicate__code__detection_8py_source}{duplicate\+\_\+code\+\_\+detection.\+py}}.
+Definition at line \mbox{\hyperlink{duplicate__code__detection_8py_source_l00025}{25}} of file \mbox{\hyperlink{duplicate__code__detection_8py_source}{duplicate\+\_\+code\+\_\+detection.\+py}}.
 
 \Hypertarget{namespaceduplicate__code__detection_a34289ca119ade2d224b831d76832612a}\index{duplicate\_code\_detection@{duplicate\_code\_detection}!loc\_label@{loc\_label}}
 \index{loc\_label@{loc\_label}!duplicate\_code\_detection@{duplicate\_code\_detection}}
@@ -189,7 +251,7 @@ str duplicate\+\_\+code\+\_\+detection.\+loc\+\_\+label = "{}\#Lo\+C"{}}
 
 
 
-Definition at line \mbox{\hyperlink{duplicate__code__detection_8py_source_l00026}{26}} of file \mbox{\hyperlink{duplicate__code__detection_8py_source}{duplicate\+\_\+code\+\_\+detection.\+py}}.
+Definition at line \mbox{\hyperlink{duplicate__code__detection_8py_source_l00028}{28}} of file \mbox{\hyperlink{duplicate__code__detection_8py_source}{duplicate\+\_\+code\+\_\+detection.\+py}}.
 
 \Hypertarget{namespaceduplicate__code__detection_ac6d9803b05d68b220c2ba6441521a0d2}\index{duplicate\_code\_detection@{duplicate\_code\_detection}!similarity\_column\_label@{similarity\_column\_label}}
 \index{similarity\_column\_label@{similarity\_column\_label}!duplicate\_code\_detection@{duplicate\_code\_detection}}
@@ -199,7 +261,7 @@ str duplicate\+\_\+code\+\_\+detection.\+similarity\+\_\+column\+\_\+label = "{}
 
 
 
-Definition at line \mbox{\hyperlink{duplicate__code__detection_8py_source_l00024}{24}} of file \mbox{\hyperlink{duplicate__code__detection_8py_source}{duplicate\+\_\+code\+\_\+detection.\+py}}.
+Definition at line \mbox{\hyperlink{duplicate__code__detection_8py_source_l00026}{26}} of file \mbox{\hyperlink{duplicate__code__detection_8py_source}{duplicate\+\_\+code\+\_\+detection.\+py}}.
 
 \Hypertarget{namespaceduplicate__code__detection_a070f42a6779b0b85a9d0d6f94fa2f4d6}\index{duplicate\_code\_detection@{duplicate\_code\_detection}!similarity\_label@{similarity\_label}}
 \index{similarity\_label@{similarity\_label}!duplicate\_code\_detection@{duplicate\_code\_detection}}
@@ -209,7 +271,7 @@ str duplicate\+\_\+code\+\_\+detection.\+similarity\+\_\+label = "{}Similarity"{
 
 
 
-Definition at line \mbox{\hyperlink{duplicate__code__detection_8py_source_l00027}{27}} of file \mbox{\hyperlink{duplicate__code__detection_8py_source}{duplicate\+\_\+code\+\_\+detection.\+py}}.
+Definition at line \mbox{\hyperlink{duplicate__code__detection_8py_source_l00029}{29}} of file \mbox{\hyperlink{duplicate__code__detection_8py_source}{duplicate\+\_\+code\+\_\+detection.\+py}}.
 
 \Hypertarget{namespaceduplicate__code__detection_aa7e4b2e25d1517a2375ae35a02513bff}\index{duplicate\_code\_detection@{duplicate\_code\_detection}!similarity\_label\_length@{similarity\_label\_length}}
 \index{similarity\_label\_length@{similarity\_label\_length}!duplicate\_code\_detection@{duplicate\_code\_detection}}
@@ -219,7 +281,7 @@ duplicate\+\_\+code\+\_\+detection.\+similarity\+\_\+label\+\_\+length = len(\mb
 
 
 
-Definition at line \mbox{\hyperlink{duplicate__code__detection_8py_source_l00025}{25}} of file \mbox{\hyperlink{duplicate__code__detection_8py_source}{duplicate\+\_\+code\+\_\+detection.\+py}}.
+Definition at line \mbox{\hyperlink{duplicate__code__detection_8py_source_l00027}{27}} of file \mbox{\hyperlink{duplicate__code__detection_8py_source}{duplicate\+\_\+code\+\_\+detection.\+py}}.
 
 \Hypertarget{namespaceduplicate__code__detection_a65d680666010fc201ddc0f9423c315c8}\index{duplicate\_code\_detection@{duplicate\_code\_detection}!source\_code\_file\_extensions@{source\_code\_file\_extensions}}
 \index{source\_code\_file\_extensions@{source\_code\_file\_extensions}!duplicate\_code\_detection@{duplicate\_code\_detection}}
@@ -229,5 +291,5 @@ list duplicate\+\_\+code\+\_\+detection.\+source\+\_\+code\+\_\+file\+\_\+extens
 
 
 
-Definition at line \mbox{\hyperlink{duplicate__code__detection_8py_source_l00021}{21}} of file \mbox{\hyperlink{duplicate__code__detection_8py_source}{duplicate\+\_\+code\+\_\+detection.\+py}}.
+Definition at line \mbox{\hyperlink{duplicate__code__detection_8py_source_l00023}{23}} of file \mbox{\hyperlink{duplicate__code__detection_8py_source}{duplicate\+\_\+code\+\_\+detection.\+py}}.
 

@@ -110,16 +110,22 @@ $(function(){initNavTree('classParser.html',''); initResizable(true); });
 </div><!--header-->
 <div class="contents">
 
+<p>Parses and transforms duplication detection tool output.  
+ <a href="#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="parser_8hpp_source.html">parser.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ae1372e72f0f323dbfb13526a0f194f4c" id="r_ae1372e72f0f323dbfb13526a0f194f4c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae1372e72f0f323dbfb13526a0f194f4c">Parser</a> (string input_file, string output_file, double similarity_cap)</td></tr>
+<tr class="memdesc:ae1372e72f0f323dbfb13526a0f194f4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs parser with configuration.  <br /></td></tr>
 <tr class="separator:ae1372e72f0f323dbfb13526a0f194f4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="parser_8hpp_source.html#l00025">25</a> of file <a class="el" href="parser_8hpp_source.html">parser.hpp</a>.</p>
+<div class="textblock"><p>Parses and transforms duplication detection tool output. </p>
+<p>Processes raw output from third-party duplication detection tools, filters results by similarity threshold, and produces cleaned output. </p>
+
+<p class="definition">Definition at line <a class="el" href="parser_8hpp_source.html#l00064">64</a> of file <a class="el" href="parser_8hpp_source.html">parser.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ae1372e72f0f323dbfb13526a0f194f4c" name="ae1372e72f0f323dbfb13526a0f194f4c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae1372e72f0f323dbfb13526a0f194f4c">&#9670;&#160;</a></span>Parser()</h2>
@@ -144,6 +150,16 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Constructs parser with configuration. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">input_file</td><td><a class="el" href="classPath.html" title="Path manipulation class for tool-specific directory structure.">Path</a> to raw tool output </td></tr>
+    <tr><td class="paramname">output_file</td><td><a class="el" href="classPath.html" title="Path manipulation class for tool-specific directory structure.">Path</a> for cleaned output </td></tr>
+    <tr><td class="paramname">similarity_cap</td><td>Minimum similarity threshold (0-100) </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p class="definition">Definition at line <a class="el" href="arkanjo_2pre_2parser_8cpp_source.html#l00112">112</a> of file <a class="el" href="arkanjo_2pre_2parser_8cpp_source.html">parser.cpp</a>.</p>
 

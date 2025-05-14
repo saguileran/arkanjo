@@ -108,6 +108,9 @@ $(function(){initNavTree('similar__function__finder_8hpp.html',''); initResizabl
   <div class="headertitle"><div class="title">similar_function_finder.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Similar function locator interface.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;bits/stdc++.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="path_8hpp_source.html">../base/path.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="function_8hpp_source.html">../base/function.hpp</a>&quot;</code><br />
@@ -118,16 +121,16 @@ Include dependency graph for similar_function_finder.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="similar__function__finder_8hpp__incl.png" border="0" usemap="#aarkanjo_2finder_2similar__function__finder_8hpp" alt=""/></div>
 <map name="aarkanjo_2finder_2similar__function__finder_8hpp" id="aarkanjo_2finder_2similar__function__finder_8hpp">
-<area shape="rect" title=" " alt="" coords="23,5,163,46"/>
+<area shape="rect" title="Similar function locator interface." alt="" coords="23,5,163,46"/>
 <area shape="rect" title=" " alt="" coords="52,330,150,356"/>
 <area shape="poly" title=" " alt="" coords="60,49,36,69,17,95,14,114,17,135,14,177,9,211,10,243,23,281,41,303,63,320,60,324,37,306,19,283,5,244,4,211,9,177,12,135,9,114,12,93,32,65,57,44"/>
-<area shape="rect" href="path_8hpp.html" title=" " alt="" coords="45,256,157,282"/>
+<area shape="rect" href="path_8hpp.html" title="Path abstraction for temporary codebase." alt="" coords="45,256,157,282"/>
 <area shape="poly" title=" " alt="" coords="65,48,43,69,26,95,22,114,26,134,37,165,52,194,84,243,80,245,48,197,32,167,21,135,17,114,21,93,39,66,62,45"/>
-<area shape="rect" href="function_8hpp.html" title=" " alt="" coords="128,183,261,208"/>
+<area shape="rect" href="function_8hpp.html" title="Function abstraction for temporary codebase." alt="" coords="128,183,261,208"/>
 <area shape="poly" title=" " alt="" coords="121,45,144,66,165,93,182,130,192,167,187,168,177,132,160,95,140,70,117,49"/>
 <area shape="rect" href="utils_8hpp.html" title="Defines utility functions used across all files." alt="" coords="282,256,352,282"/>
 <area shape="poly" title=" " alt="" coords="137,44,178,67,224,97,268,136,303,181,315,211,319,241,314,241,310,212,299,184,264,139,221,102,176,71,135,49"/>
-<area shape="rect" href="similarity__table_8hpp.html" title=" " alt="" coords="36,94,150,135"/>
+<area shape="rect" href="similarity__table_8hpp.html" title="Similarity relationships storage and analysis." alt="" coords="36,94,150,135"/>
 <area shape="poly" title=" " alt="" coords="96,47,96,78,90,78,90,47"/>
 <area shape="poly" title=" " alt="" coords="104,282,104,314,98,314,98,282"/>
 <area shape="poly" title=" " alt="" coords="196,209,188,244,171,283,154,305,134,323,130,319,150,301,167,281,183,242,190,208"/>
@@ -150,11 +153,13 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="similar__function__finder_8hpp__dep__incl.png" border="0" usemap="#aarkanjo_2finder_2similar__function__finder_8hppdep" alt=""/></div>
 <map name="aarkanjo_2finder_2similar__function__finder_8hppdep" id="aarkanjo_2finder_2similar__function__finder_8hppdep">
-<area shape="rect" title=" " alt="" coords="92,5,232,46"/>
+<area shape="rect" title="Similar function locator interface." alt="" coords="92,5,232,46"/>
 <area shape="rect" href="similar__function__finder_8cpp.html" title=" " alt="" coords="5,94,146,135"/>
 <area shape="poly" title=" " alt="" coords="134,59,97,95,93,92,130,55"/>
-<area shape="rect" href="orchestrator_8cpp.html" title=" " alt="" coords="170,102,330,127"/>
+<area shape="rect" href="orchestrator_8hpp.html" title="Main command orchestration interface." alt="" coords="170,102,330,127"/>
 <area shape="poly" title=" " alt="" coords="195,55,240,99,236,103,191,59"/>
+<area shape="rect" href="orchestrator_8cpp.html" title=" " alt="" coords="170,183,330,208"/>
+<area shape="poly" title=" " alt="" coords="253,143,253,182,248,182,248,143"/>
 </map>
 </div>
 </div>
@@ -163,9 +168,16 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSimilar__Function__Finder.html">Similar_Function_Finder</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Similar function locator and reporter.  <a href="classSimilar__Function__Finder.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Similar function locator interface. </p>
+<p>Provides functionality to find and display functions similar to a given reference function within the codebase.</p>
+<p>Similar Functions Finder implements the functionality to given a function, find the other functions that are similar to the given one. </p>
+
+<p class="definition">Definition in file <a class="el" href="similar__function__finder_8hpp_source.html">similar_function_finder.hpp</a>.</p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

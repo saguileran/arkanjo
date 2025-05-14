@@ -1,12 +1,17 @@
 \doxysection{arkanjo/third-\/party/duplicate-\/code-\/detection-\/tool/duplicate\+\_\+code\+\_\+detection.py File Reference}
 \hypertarget{duplicate__code__detection_8py}{}\label{duplicate__code__detection_8py}\index{arkanjo/third-\/party/duplicate-\/code-\/detection-\/tool/duplicate\_code\_detection.py@{arkanjo/third-\/party/duplicate-\/code-\/detection-\/tool/duplicate\_code\_detection.py}}
+
+
+A simple Python3 tool to detect similarities between files within a repository.  
+
+
 \doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
 class \mbox{\hyperlink{classduplicate__code__detection_1_1ReturnCode}{duplicate\+\_\+code\+\_\+detection.\+Return\+Code}}
-\item 
+\begin{DoxyCompactList}\small\item\em Enumeration of possible return codes for the application. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classduplicate__code__detection_1_1CliColors}{duplicate\+\_\+code\+\_\+detection.\+Cli\+Colors}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em ANSI color codes for terminal text formatting. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
@@ -16,11 +21,11 @@ namespace \mbox{\hyperlink{namespaceduplicate__code__detection}{duplicate\+\_\+c
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{namespaceduplicate__code__detection_ae010ffc70f3bd8ddea24ea426730b410}{duplicate\+\_\+code\+\_\+detection.\+get\+\_\+all\+\_\+source\+\_\+code\+\_\+from\+\_\+directory}} (directory, file\+\_\+extensions)
-\item 
+\begin{DoxyCompactList}\small\item\em Get a list with all the source code files within the directory. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{namespaceduplicate__code__detection_a00a1899a4818d03117ee859ab010f58a}{duplicate\+\_\+code\+\_\+detection.\+conditional\+\_\+print}} (text, machine\+\_\+friendly\+\_\+output)
 \item 
 str \mbox{\hyperlink{namespaceduplicate__code__detection_a72670ee80af736f522eaaf0b86883300}{duplicate\+\_\+code\+\_\+detection.\+remove\+\_\+comments\+\_\+and\+\_\+docstrings}} (str source\+\_\+code)
-\item 
+\begin{DoxyCompactList}\small\item\em Strip comments and docstrings from source code. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{namespaceduplicate__code__detection_aa319b29e5b513dc5d0fd97f18cbd36d0}{duplicate\+\_\+code\+\_\+detection.\+get\+\_\+loc\+\_\+count}} (file\+\_\+path)
 \item 
 \mbox{\hyperlink{namespaceduplicate__code__detection_a8004dc22e7af260e78190dbd3ca5da53}{duplicate\+\_\+code\+\_\+detection.\+get\+\_\+loc\+\_\+to\+\_\+print}} (loc\+\_\+count)
@@ -50,3 +55,12 @@ str \mbox{\hyperlink{namespaceduplicate__code__detection_a070f42a6779b0b85a9d0d6
 \item 
 \mbox{\hyperlink{namespaceduplicate__code__detection_a333b51eeabf26f3de4b6c3dd9591ba2a}{duplicate\+\_\+code\+\_\+detection.\+\_\+}}
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A simple Python3 tool to detect similarities between files within a repository. 
+
+Document similarity code adapted from Jonathan Mugan\textquotesingle{}s tutorial\+: \href{https://www.oreilly.com/learning/how-do-i-compare-document-similarity-using-python}{\texttt{ https\+://www.\+oreilly.\+com/learning/how-\/do-\/i-\/compare-\/document-\/similarity-\/using-\/python}} 
+
+Definition in file \mbox{\hyperlink{duplicate__code__detection_8py_source}{duplicate\+\_\+code\+\_\+detection.\+py}}.
+

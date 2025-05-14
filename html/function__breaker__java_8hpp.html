@@ -108,6 +108,9 @@ $(function(){initNavTree('function__breaker__java_8hpp.html',''); initResizable(
   <div class="headertitle"><div class="title">function_breaker_java.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Java function parsing and extraction.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;bits/stdc++.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="utils_8hpp_source.html">../base/utils.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="function__breaker__util_8hpp_source.html">function_breaker_util.hpp</a>&quot;</code><br />
@@ -116,12 +119,12 @@ Include dependency graph for function_breaker_java.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="function__breaker__java_8hpp__incl.png" border="0" usemap="#aarkanjo_2pre_2function__breaker__java_8hpp" alt=""/></div>
 <map name="aarkanjo_2pre_2function__breaker__java_8hpp" id="aarkanjo_2pre_2function__breaker__java_8hpp">
-<area shape="rect" title=" " alt="" coords="41,5,176,46"/>
+<area shape="rect" title="Java function parsing and extraction." alt="" coords="41,5,176,46"/>
 <area shape="rect" title=" " alt="" coords="11,241,108,267"/>
 <area shape="poly" title=" " alt="" coords="66,49,38,69,16,95,10,112,8,129,14,165,27,199,44,227,39,229,22,201,8,166,3,129,5,111,12,93,34,65,63,44"/>
 <area shape="rect" href="utils_8hpp.html" title="Defines utility functions used across all files." alt="" coords="193,168,304,193"/>
 <area shape="poly" title=" " alt="" coords="146,44,176,66,205,92,226,122,241,152,236,154,221,125,201,96,173,70,142,49"/>
-<area shape="rect" href="function__breaker__util_8hpp.html" title=" " alt="" coords="26,94,191,120"/>
+<area shape="rect" href="function__breaker__util_8hpp.html" title="Function breaker utilities and constants." alt="" coords="26,94,191,120"/>
 <area shape="poly" title=" " alt="" coords="111,46,111,78,106,78,106,46"/>
 <area shape="poly" title=" " alt="" coords="217,196,106,238,104,233,215,191"/>
 <area shape="rect" title=" " alt="" coords="157,241,289,267"/>
@@ -130,7 +133,7 @@ Include dependency graph for function_breaker_java.hpp:</div>
 <area shape="poly" title=" " alt="" coords="268,192,324,230,321,235,265,196"/>
 <area shape="poly" title=" " alt="" coords="86,122,59,142,38,169,34,183,35,198,45,227,40,229,30,199,29,182,33,166,55,138,83,118"/>
 <area shape="poly" title=" " alt="" coords="133,118,212,158,210,163,131,123"/>
-<area shape="rect" href="config_8hpp.html" title=" " alt="" coords="48,168,169,193"/>
+<area shape="rect" href="config_8hpp.html" title="Configuration management interface." alt="" coords="48,168,169,193"/>
 <area shape="poly" title=" " alt="" coords="111,120,111,152,106,152,106,120"/>
 <area shape="poly" title=" " alt="" coords="103,195,78,230,74,227,98,192"/>
 </map>
@@ -140,16 +143,16 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="function__breaker__java_8hpp__dep__incl.png" border="0" usemap="#aarkanjo_2pre_2function__breaker__java_8hppdep" alt=""/></div>
 <map name="aarkanjo_2pre_2function__breaker__java_8hppdep" id="aarkanjo_2pre_2function__breaker__java_8hppdep">
-<area shape="rect" title=" " alt="" coords="303,5,438,46"/>
-<area shape="rect" href="function__breaker_8hpp.html" title=" " alt="" coords="223,94,358,135"/>
+<area shape="rect" title="Java function parsing and extraction." alt="" coords="303,5,438,46"/>
+<area shape="rect" href="function__breaker_8hpp.html" title="Main function extraction interface." alt="" coords="223,94,358,135"/>
 <area shape="poly" title=" " alt="" coords="344,59,311,95,307,92,341,56"/>
 <area shape="rect" href="function__breaker__java_8cpp.html" title=" " alt="" coords="383,94,518,135"/>
 <area shape="poly" title=" " alt="" coords="401,56,435,92,431,95,397,59"/>
 <area shape="rect" href="function__breaker_8cpp.html" title=" " alt="" coords="131,183,266,223"/>
 <area shape="poly" title=" " alt="" coords="261,147,221,184,218,180,257,143"/>
-<area shape="rect" href="preprocessor_8hpp.html" title=" " alt="" coords="290,190,478,216"/>
+<area shape="rect" href="preprocessor_8hpp.html" title="Codebase preprocessing interface." alt="" coords="290,190,478,216"/>
 <area shape="poly" title=" " alt="" coords="325,143,373,188,370,192,321,147"/>
-<area shape="rect" href="orchestrator_8cpp.html" title=" " alt="" coords="5,279,166,304"/>
+<area shape="rect" href="orchestrator_8hpp.html" title="Main command orchestration interface." alt="" coords="5,279,166,304"/>
 <area shape="poly" title=" " alt="" coords="328,223,128,281,127,276,327,218"/>
 <area shape="rect" href="preprocessor_8cpp.html" title=" " alt="" coords="190,279,378,304"/>
 <area shape="poly" title=" " alt="" coords="360,228,300,280,296,276,357,224"/>
@@ -157,6 +160,8 @@ This graph shows which files directly or indirectly include this file:</div>
 <area shape="poly" title=" " alt="" coords="411,224,463,269,460,273,408,228"/>
 <area shape="rect" href="test_8cpp.html" title=" " alt="" coords="590,279,762,304"/>
 <area shape="poly" title=" " alt="" coords="441,218,636,276,634,281,439,223"/>
+<area shape="rect" href="orchestrator_8cpp.html" title=" " alt="" coords="5,360,166,386"/>
+<area shape="poly" title=" " alt="" coords="88,320,88,359,83,359,83,320"/>
 </map>
 </div>
 </div>
@@ -165,9 +170,16 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFunctionBreakerJava.html">FunctionBreakerJava</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Java function parser and extractor.  <a href="classFunctionBreakerJava.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Java function parsing and extraction. </p>
+<p>Implements functionality to parse Java source files and break them into individual function components with metadata.</p>
+<p>Defines the flow of parsing a java source file in multiples functions </p>
+
+<p class="definition">Definition in file <a class="el" href="function__breaker__java_8hpp_source.html">function_breaker_java.hpp</a>.</p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

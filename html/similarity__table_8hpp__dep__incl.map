@@ -1,37 +1,39 @@
 <map id="arkanjo/base/similarity_table.hpp" name="arkanjo/base/similarity_table.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="611,5,761,46"/>
+<area shape="rect" id="Node000001" title="Similarity relationships storage and analysis." alt="" coords="611,5,761,46"/>
 <area shape="rect" id="Node000002" href="$similarity__table_8cpp.html" title=" " alt="" coords="5,94,156,135"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="596,39,399,62,168,97,157,99,156,93,167,91,398,57,595,34"/>
-<area shape="rect" id="Node000003" href="$big__clone__formater_8hpp.html" title=" " alt="" coords="180,94,323,135"/>
+<area shape="rect" id="Node000003" href="$big__clone__formater_8hpp.html" title="BigCloneEval format conversion interface." alt="" coords="180,94,323,135"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="596,46,336,97,324,99,323,94,335,91,595,41"/>
-<area shape="rect" id="Node000005" href="$orchestrator_8cpp.html" title=" " alt="" coords="664,190,825,216"/>
-<area shape="poly" id="edge17_Node000001_Node000005" title=" " alt="" coords="707,59,722,93,737,147,745,190,740,191,732,148,717,95,702,61"/>
-<area shape="rect" id="Node000006" href="$big__clone__tailor__evaluator_8hpp.html" title=" " alt="" coords="347,94,526,135"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="616,54,494,96,492,91,614,49"/>
-<area shape="rect" id="Node000008" href="$counter__duplication__code_8hpp.html" title=" " alt="" coords="550,94,707,135"/>
-<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="667,60,644,95,639,92,662,57"/>
-<area shape="rect" id="Node000010" href="$similarity__explorer_8hpp.html" title=" " alt="" coords="782,94,950,135"/>
-<area shape="poly" id="edge11_Node000001_Node000010" title=" " alt="" coords="742,51,826,91,824,96,739,55"/>
-<area shape="rect" id="Node000012" href="$similar__function__finder_8hpp.html" title=" " alt="" coords="973,94,1113,135"/>
-<area shape="poly" id="edge14_Node000001_Node000012" title=" " alt="" coords="777,46,973,93,972,99,776,51"/>
-<area shape="rect" id="Node000014" href="$random__selector_8hpp.html" title=" " alt="" coords="1138,94,1277,135"/>
-<area shape="poly" id="edge18_Node000001_Node000014" title=" " alt="" coords="777,36,940,60,1126,91,1138,94,1137,99,1125,97,939,65,776,41"/>
+<area shape="rect" id="Node000005" href="$orchestrator_8hpp.html" title="Main command orchestration interface." alt="" coords="664,190,825,216"/>
+<area shape="poly" id="edge18_Node000001_Node000005" title=" " alt="" coords="707,59,722,93,737,147,745,190,740,191,732,148,717,95,702,61"/>
+<area shape="rect" id="Node000007" href="$big__clone__tailor__evaluator_8hpp.html" title="BigCloneBench evaluation interface." alt="" coords="347,94,526,135"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="616,54,494,96,492,91,614,49"/>
+<area shape="rect" id="Node000009" href="$counter__duplication__code_8hpp.html" title="Code duplication reporting system." alt="" coords="550,94,707,135"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="667,60,644,95,639,92,662,57"/>
+<area shape="rect" id="Node000011" href="$similarity__explorer_8hpp.html" title="Duplicate function exploration interface." alt="" coords="782,94,950,135"/>
+<area shape="poly" id="edge12_Node000001_Node000011" title=" " alt="" coords="742,51,826,91,824,96,739,55"/>
+<area shape="rect" id="Node000013" href="$similar__function__finder_8hpp.html" title="Similar function locator interface." alt="" coords="973,94,1113,135"/>
+<area shape="poly" id="edge15_Node000001_Node000013" title=" " alt="" coords="777,46,973,93,972,99,776,51"/>
+<area shape="rect" id="Node000015" href="$random__selector_8hpp.html" title="Random selection of similar code pairs." alt="" coords="1138,94,1277,135"/>
+<area shape="poly" id="edge19_Node000001_Node000015" title=" " alt="" coords="777,36,940,60,1126,91,1138,94,1137,99,1125,97,939,65,776,41"/>
 <area shape="rect" id="Node000004" href="$big__clone__formater_8cpp.html" title=" " alt="" coords="113,183,256,223"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="229,149,202,184,197,181,225,146"/>
 <area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="339,132,497,157,653,180,689,187,688,192,652,185,496,162,338,138"/>
-<area shape="poly" id="edge7_Node000006_Node000005" title=" " alt="" coords="522,137,702,187,700,192,520,142"/>
-<area shape="rect" id="Node000007" href="$big__clone__tailor__evaluator_8cpp.html" title=" " alt="" coords="281,183,459,223"/>
-<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="414,149,387,184,383,181,410,146"/>
-<area shape="poly" id="edge10_Node000008_Node000005" title=" " alt="" coords="668,142,730,188,727,192,665,146"/>
-<area shape="rect" id="Node000009" href="$counter__duplication__code_8cpp.html" title=" " alt="" coords="483,183,640,223"/>
-<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="606,149,579,184,575,181,602,146"/>
-<area shape="poly" id="edge13_Node000010_Node000005" title=" " alt="" coords="828,146,763,192,760,187,824,142"/>
-<area shape="rect" id="Node000011" href="$similarity__explorer_8cpp.html" title=" " alt="" coords="849,183,1016,223"/>
-<area shape="poly" id="edge12_Node000010_Node000011" title=" " alt="" coords="892,146,920,181,915,184,888,149"/>
-<area shape="poly" id="edge16_Node000012_Node000005" title=" " alt="" coords="961,142,787,192,786,187,960,137"/>
-<area shape="rect" id="Node000013" href="$similar__function__finder_8cpp.html" title=" " alt="" coords="1040,183,1180,223"/>
-<area shape="poly" id="edge15_Node000012_Node000013" title=" " alt="" coords="1070,146,1097,181,1093,184,1066,149"/>
-<area shape="poly" id="edge19_Node000014_Node000005" title=" " alt="" coords="1123,138,979,162,837,185,802,192,801,187,836,180,978,157,1122,133"/>
-<area shape="rect" id="Node000015" href="$random__selector_8cpp.html" title=" " alt="" coords="1204,183,1344,223"/>
-<area shape="poly" id="edge20_Node000014_Node000015" title=" " alt="" coords="1234,146,1261,181,1257,184,1230,149"/>
+<area shape="rect" id="Node000006" href="$orchestrator_8cpp.html" title=" " alt="" coords="664,271,825,297"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="747,232,747,271,742,271,742,232"/>
+<area shape="poly" id="edge8_Node000007_Node000005" title=" " alt="" coords="522,137,702,187,700,192,520,142"/>
+<area shape="rect" id="Node000008" href="$big__clone__tailor__evaluator_8cpp.html" title=" " alt="" coords="281,183,459,223"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="414,149,387,184,383,181,410,146"/>
+<area shape="poly" id="edge11_Node000009_Node000005" title=" " alt="" coords="668,142,730,188,727,192,665,146"/>
+<area shape="rect" id="Node000010" href="$counter__duplication__code_8cpp.html" title=" " alt="" coords="483,183,640,223"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="606,149,579,184,575,181,602,146"/>
+<area shape="poly" id="edge14_Node000011_Node000005" title=" " alt="" coords="828,146,763,192,760,187,824,142"/>
+<area shape="rect" id="Node000012" href="$similarity__explorer_8cpp.html" title=" " alt="" coords="849,183,1016,223"/>
+<area shape="poly" id="edge13_Node000011_Node000012" title=" " alt="" coords="892,146,920,181,915,184,888,149"/>
+<area shape="poly" id="edge17_Node000013_Node000005" title=" " alt="" coords="961,142,787,192,786,187,960,137"/>
+<area shape="rect" id="Node000014" href="$similar__function__finder_8cpp.html" title=" " alt="" coords="1040,183,1180,223"/>
+<area shape="poly" id="edge16_Node000013_Node000014" title=" " alt="" coords="1070,146,1097,181,1093,184,1066,149"/>
+<area shape="poly" id="edge20_Node000015_Node000005" title=" " alt="" coords="1123,138,979,162,837,185,802,192,801,187,836,180,978,157,1122,133"/>
+<area shape="rect" id="Node000016" href="$random__selector_8cpp.html" title=" " alt="" coords="1204,183,1344,223"/>
+<area shape="poly" id="edge21_Node000015_Node000016" title=" " alt="" coords="1234,146,1261,181,1257,184,1230,149"/>
 </map>

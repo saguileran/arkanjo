@@ -4,17 +4,17 @@
 \begin{DoxyCompactItemize}
 \item 
 float \mbox{\hyperlink{namespaceUtilsOSDependable_ae94000387658cfce3f629da04843784f}{get\+\_\+terminal\+\_\+bg\+\_\+color\+\_\+luminance}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Gets the luminance of terminal background color. \end{DoxyCompactList}\item 
 tuple$<$ int, int, int $>$ \mbox{\hyperlink{namespaceUtilsOSDependable_a974ef162d7d2726649ea37db8594558d}{parse\+\_\+terminal\+\_\+color\+\_\+response}} (const string \&response)
-\item 
+\begin{DoxyCompactList}\small\item\em Parses terminal color response into RGB components. \end{DoxyCompactList}\item 
 string \mbox{\hyperlink{namespaceUtilsOSDependable_a4e245ddb29771bf9f2e3190c6182f06d}{capture\+\_\+terminal\+\_\+response}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Captures terminal response to color query. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{namespaceUtilsOSDependable_a77d0b457dded74d7d1f901d333d25453}{is\+\_\+bg\+\_\+color\+\_\+dark}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Determines if terminal background color is dark. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{namespaceUtilsOSDependable_acfff3b9114f5bf307e2aa78cbabfe21f}{convert\+\_\+16\+\_\+bit\+\_\+to\+\_\+8\+\_\+bit}} (const string \&hex16)
-\item 
+\begin{DoxyCompactList}\small\item\em Converts a 16-\/bit hex color string to 8-\/bit RGB components. \end{DoxyCompactList}\item 
 tuple$<$ int, int, int $>$ \mbox{\hyperlink{namespaceUtilsOSDependable_a73ce8621f643db388f85ddefa2dbb361}{parse\+\_\+terminal\+\_\+color\+\_\+response}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Parses terminal color response into RGB components on Windows. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
@@ -26,6 +26,16 @@ string Utils\+OSDependable\+::capture\+\_\+terminal\+\_\+response (\begin{DoxyPa
 
 
 
+Captures terminal response to color query. 
+
+\begin{DoxyReturn}{Returns}
+string Raw terminal response containing color information
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Uses low-\/level terminal I/O to capture the response 
+\end{DoxyNote}
+
+
 Definition at line \mbox{\hyperlink{linux__utils_8cpp_source_l00040}{40}} of file \mbox{\hyperlink{linux__utils_8cpp_source}{linux\+\_\+utils.\+cpp}}.
 
 \Hypertarget{namespaceUtilsOSDependable_acfff3b9114f5bf307e2aa78cbabfe21f}\index{UtilsOSDependable@{UtilsOSDependable}!convert\_16\_bit\_to\_8\_bit@{convert\_16\_bit\_to\_8\_bit}}
@@ -34,12 +44,47 @@ Definition at line \mbox{\hyperlink{linux__utils_8cpp_source_l00040}{40}} of fil
 {\footnotesize\ttfamily \label{namespaceUtilsOSDependable_acfff3b9114f5bf307e2aa78cbabfe21f} 
 int Utils\+OSDependable\+::convert\+\_\+16\+\_\+bit\+\_\+to\+\_\+8\+\_\+bit (\begin{DoxyParamCaption}\item[{const string \&}]{hex16}{}\end{DoxyParamCaption})}
 
+
+
+Converts a 16-\/bit hex color string to 8-\/bit RGB components. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hex16} & 16-\/bit hex color string (format\+: "{}\+RRGGBB"{} or "{}\#\+RRGGBB"{}) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 8-\/bit color value (0-\/255)
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Input string can be with or without leading \textquotesingle{}\#\textquotesingle{} 
+\end{DoxyNote}
 \Hypertarget{namespaceUtilsOSDependable_ae94000387658cfce3f629da04843784f}\index{UtilsOSDependable@{UtilsOSDependable}!get\_terminal\_bg\_color\_luminance@{get\_terminal\_bg\_color\_luminance}}
 \index{get\_terminal\_bg\_color\_luminance@{get\_terminal\_bg\_color\_luminance}!UtilsOSDependable@{UtilsOSDependable}}
 \doxysubsubsection{\texorpdfstring{get\_terminal\_bg\_color\_luminance()}{get\_terminal\_bg\_color\_luminance()}}
 {\footnotesize\ttfamily \label{namespaceUtilsOSDependable_ae94000387658cfce3f629da04843784f} 
 float Utils\+OSDependable\+::get\+\_\+terminal\+\_\+bg\+\_\+color\+\_\+luminance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
+
+
+Gets the luminance of terminal background color. 
+
+Gets the luminance of terminal background color on Windows.
+
+\begin{DoxyReturn}{Returns}
+float Luminance value between 0 (dark) and 1 (light)
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Uses terminal escape sequences to query background color
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+float Luminance value between 0 (dark) and 1 (light)
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Uses Windows Console API to determine background color 
+
+Defaults to dark if unable to determine color 
+\end{DoxyNote}
 
 
 Definition at line \mbox{\hyperlink{linux__utils_8cpp_source_l00077}{77}} of file \mbox{\hyperlink{linux__utils_8cpp_source}{linux\+\_\+utils.\+cpp}}.
@@ -52,6 +97,26 @@ bool Utils\+OSDependable\+::is\+\_\+bg\+\_\+color\+\_\+dark (\begin{DoxyParamCap
 
 
 
+Determines if terminal background color is dark. 
+
+Determines if terminal background color is dark on Windows.
+
+\begin{DoxyReturn}{Returns}
+bool True if background is dark (luminance \texorpdfstring{$<$}{<} 0.\+5), false otherwise
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Uses \doxylink{namespaceUtilsOSDependable_ae94000387658cfce3f629da04843784f}{get\+\_\+terminal\+\_\+bg\+\_\+color\+\_\+luminance()} internally
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+bool True if background is dark (luminance \texorpdfstring{$<$}{<} 0.\+5), false otherwise
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Uses \doxylink{namespaceUtilsOSDependable_ae94000387658cfce3f629da04843784f}{get\+\_\+terminal\+\_\+bg\+\_\+color\+\_\+luminance()} internally 
+
+Defaults to true (dark) if unable to determine color 
+\end{DoxyNote}
+
+
 Definition at line \mbox{\hyperlink{linux__utils_8cpp_source_l00088}{88}} of file \mbox{\hyperlink{linux__utils_8cpp_source}{linux\+\_\+utils.\+cpp}}.
 
 \Hypertarget{namespaceUtilsOSDependable_a73ce8621f643db388f85ddefa2dbb361}\index{UtilsOSDependable@{UtilsOSDependable}!parse\_terminal\_color\_response@{parse\_terminal\_color\_response}}
@@ -60,12 +125,41 @@ Definition at line \mbox{\hyperlink{linux__utils_8cpp_source_l00088}{88}} of fil
 {\footnotesize\ttfamily \label{namespaceUtilsOSDependable_a73ce8621f643db388f85ddefa2dbb361} 
 tuple$<$ int, int, int $>$ Utils\+OSDependable\+::parse\+\_\+terminal\+\_\+color\+\_\+response (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
+
+
+Parses terminal color response into RGB components on Windows. 
+
+\begin{DoxyReturn}{Returns}
+tuple$<$int, int, int$>$ RGB components as 8-\/bit values (0-\/255)
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Uses Windows Console API to get color information 
+
+Returns default dark theme colors if unable to determine 
+\end{DoxyNote}
 \Hypertarget{namespaceUtilsOSDependable_a974ef162d7d2726649ea37db8594558d}\index{UtilsOSDependable@{UtilsOSDependable}!parse\_terminal\_color\_response@{parse\_terminal\_color\_response}}
 \index{parse\_terminal\_color\_response@{parse\_terminal\_color\_response}!UtilsOSDependable@{UtilsOSDependable}}
 \doxysubsubsection{\texorpdfstring{parse\_terminal\_color\_response()}{parse\_terminal\_color\_response()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily \label{namespaceUtilsOSDependable_a974ef162d7d2726649ea37db8594558d} 
 tuple$<$ int, int, int $>$ Utils\+OSDependable\+::parse\+\_\+terminal\+\_\+color\+\_\+response (\begin{DoxyParamCaption}\item[{const string \&}]{response}{}\end{DoxyParamCaption})}
 
+
+
+Parses terminal color response into RGB components. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em response} & Terminal color response string (format\+: "{}rgb\+:\+RRRR/\+GGGG/\+BBBB"{}) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+tuple$<$int, int, int$>$ RGB components as 16-\/bit values (0-\/65535)
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em May} & throw runtime\+\_\+error for malformed input \\
+\hline
+\end{DoxyExceptions}
 
 
 Definition at line \mbox{\hyperlink{linux__utils_8cpp_source_l00014}{14}} of file \mbox{\hyperlink{linux__utils_8cpp_source}{linux\+\_\+utils.\+cpp}}.

@@ -110,16 +110,22 @@ $(function(){initNavTree('classSimilar__Function__Finder.html',''); initResizabl
 </div><!--header-->
 <div class="contents">
 
+<p>Similar function locator and reporter.  
+ <a href="#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="similar__function__finder_8hpp_source.html">similar_function_finder.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a0d44dea6097a532f30204589cc4bb450" id="r_a0d44dea6097a532f30204589cc4bb450"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0d44dea6097a532f30204589cc4bb450">Similar_Function_Finder</a> (string _function_pattern, <a class="el" href="classSimilarity__Table.html">Similarity_Table</a> *_similarity_table)</td></tr>
+<tr class="memdesc:a0d44dea6097a532f30204589cc4bb450"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs finder and initiates search.  <br /></td></tr>
 <tr class="separator:a0d44dea6097a532f30204589cc4bb450"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="similar__function__finder_8hpp_source.html#l00015">15</a> of file <a class="el" href="similar__function__finder_8hpp_source.html">similar_function_finder.hpp</a>.</p>
+<div class="textblock"><p>Similar function locator and reporter. </p>
+<p>Identifies functions similar to a specified reference function pattern and provides detailed reporting about the matches found. </p>
+
+<p class="definition">Definition at line <a class="el" href="similar__function__finder_8hpp_source.html#l00028">28</a> of file <a class="el" href="similar__function__finder_8hpp_source.html">similar_function_finder.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a0d44dea6097a532f30204589cc4bb450" name="a0d44dea6097a532f30204589cc4bb450"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0d44dea6097a532f30204589cc4bb450">&#9670;&#160;</a></span>Similar_Function_Finder()</h2>
@@ -139,6 +145,15 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Constructs finder and initiates search. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_function_pattern</td><td><a class="el" href="classFunction.html" title="Represents a code function with its content and metadata.">Function</a> name pattern to match </td></tr>
+    <tr><td class="paramname">_similarity_table</td><td>Source of similarity data </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p class="definition">Definition at line <a class="el" href="similar__function__finder_8cpp_source.html#l00050">50</a> of file <a class="el" href="similar__function__finder_8cpp_source.html">similar_function_finder.cpp</a>.</p>
 

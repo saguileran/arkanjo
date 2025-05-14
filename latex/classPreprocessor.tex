@@ -2,21 +2,36 @@
 \hypertarget{classPreprocessor}{}\label{classPreprocessor}\index{Preprocessor@{Preprocessor}}
 
 
+Codebase preprocessing orchestrator.  
+
+
+
+
 {\ttfamily \#include $<$preprocessor.\+hpp$>$}
 
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classPreprocessor_a60cdc40e8c5e4ac19ee8a5e9edf865f0}{Preprocessor}} (bool force\+\_\+preprocess)
-\item 
+\begin{DoxyCompactList}\small\item\em Constructs preprocessor with optional forcing. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classPreprocessor_ac5e41688c3866cb0b7ab6efe20e41ba7}{Preprocessor}} (bool force\+\_\+preprocess, string path, double similarity)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Testing constructor with direct parameter specification. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
+Codebase preprocessing orchestrator. 
 
+Manages the complete preprocessing pipeline including\+:
+\begin{DoxyItemize}
+\item Code structure analysis
+\item \doxylink{classFunction}{Function} extraction
+\item Duplication detection
+\item Results organization
+\end{DoxyItemize}
 
-Definition at line \mbox{\hyperlink{preprocessor_8hpp_source_l00016}{16}} of file \mbox{\hyperlink{preprocessor_8hpp_source}{preprocessor.\+hpp}}.
+Creates the foundation for fast query responses during the main operation phase. 
+
+Definition at line \mbox{\hyperlink{preprocessor_8hpp_source_l00035}{35}} of file \mbox{\hyperlink{preprocessor_8hpp_source}{preprocessor.\+hpp}}.
 
 
 
@@ -29,6 +44,15 @@ Preprocessor\+::\+Preprocessor (\begin{DoxyParamCaption}\item[{bool}]{force\+\_\
 
 
 
+Constructs preprocessor with optional forcing. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em force\+\_\+preprocess} & Whether to force preprocessing even if cached results exist \\
+\hline
+\end{DoxyParams}
+
+
 Definition at line \mbox{\hyperlink{preprocessor_8cpp_source_l00077}{77}} of file \mbox{\hyperlink{preprocessor_8cpp_source}{preprocessor.\+cpp}}.
 
 \Hypertarget{classPreprocessor_ac5e41688c3866cb0b7ab6efe20e41ba7}\index{Preprocessor@{Preprocessor}!Preprocessor@{Preprocessor}}
@@ -37,6 +61,22 @@ Definition at line \mbox{\hyperlink{preprocessor_8cpp_source_l00077}{77}} of fil
 {\footnotesize\ttfamily \label{classPreprocessor_ac5e41688c3866cb0b7ab6efe20e41ba7} 
 Preprocessor\+::\+Preprocessor (\begin{DoxyParamCaption}\item[{bool}]{force\+\_\+preprocess}{, }\item[{string}]{path}{, }\item[{double}]{similarity}{}\end{DoxyParamCaption})}
 
+
+
+Testing constructor with direct parameter specification. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em force\+\_\+preprocess} & Whether to force preprocessing \\
+\hline
+{\em path} & Direct project path specification \\
+\hline
+{\em similarity} & Direct similarity threshold specification \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Exposed for testing purposes only 
+\end{DoxyNote}
 
 
 Definition at line \mbox{\hyperlink{preprocessor_8cpp_source_l00086}{86}} of file \mbox{\hyperlink{preprocessor_8cpp_source}{preprocessor.\+cpp}}.

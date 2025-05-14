@@ -112,16 +112,22 @@ $(function(){initNavTree('namespaceUtilsOSDependable.html',''); initResizable(tr
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ae94000387658cfce3f629da04843784f" id="r_ae94000387658cfce3f629da04843784f"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae94000387658cfce3f629da04843784f">get_terminal_bg_color_luminance</a> ()</td></tr>
+<tr class="memdesc:ae94000387658cfce3f629da04843784f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the luminance of terminal background color.  <br /></td></tr>
 <tr class="separator:ae94000387658cfce3f629da04843784f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a974ef162d7d2726649ea37db8594558d" id="r_a974ef162d7d2726649ea37db8594558d"><td class="memItemLeft" align="right" valign="top">tuple&lt; int, int, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a974ef162d7d2726649ea37db8594558d">parse_terminal_color_response</a> (const string &amp;response)</td></tr>
+<tr class="memdesc:a974ef162d7d2726649ea37db8594558d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses terminal color response into RGB components.  <br /></td></tr>
 <tr class="separator:a974ef162d7d2726649ea37db8594558d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4e245ddb29771bf9f2e3190c6182f06d" id="r_a4e245ddb29771bf9f2e3190c6182f06d"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4e245ddb29771bf9f2e3190c6182f06d">capture_terminal_response</a> ()</td></tr>
+<tr class="memdesc:a4e245ddb29771bf9f2e3190c6182f06d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Captures terminal response to color query.  <br /></td></tr>
 <tr class="separator:a4e245ddb29771bf9f2e3190c6182f06d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a77d0b457dded74d7d1f901d333d25453" id="r_a77d0b457dded74d7d1f901d333d25453"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a77d0b457dded74d7d1f901d333d25453">is_bg_color_dark</a> ()</td></tr>
+<tr class="memdesc:a77d0b457dded74d7d1f901d333d25453"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines if terminal background color is dark.  <br /></td></tr>
 <tr class="separator:a77d0b457dded74d7d1f901d333d25453"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acfff3b9114f5bf307e2aa78cbabfe21f" id="r_acfff3b9114f5bf307e2aa78cbabfe21f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acfff3b9114f5bf307e2aa78cbabfe21f">convert_16_bit_to_8_bit</a> (const string &amp;hex16)</td></tr>
+<tr class="memdesc:acfff3b9114f5bf307e2aa78cbabfe21f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a 16-bit hex color string to 8-bit RGB components.  <br /></td></tr>
 <tr class="separator:acfff3b9114f5bf307e2aa78cbabfe21f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a73ce8621f643db388f85ddefa2dbb361" id="r_a73ce8621f643db388f85ddefa2dbb361"><td class="memItemLeft" align="right" valign="top">tuple&lt; int, int, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a73ce8621f643db388f85ddefa2dbb361">parse_terminal_color_response</a> ()</td></tr>
+<tr class="memdesc:a73ce8621f643db388f85ddefa2dbb361"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses terminal color response into RGB components on Windows.  <br /></td></tr>
 <tr class="separator:a73ce8621f643db388f85ddefa2dbb361"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -139,6 +145,10 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Captures terminal response to color query. </p>
+<dl class="section return"><dt>Returns</dt><dd>string Raw terminal response containing color information</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Uses low-level terminal I/O to capture the response </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="linux__utils_8cpp_source.html#l00040">40</a> of file <a class="el" href="linux__utils_8cpp_source.html">linux_utils.cpp</a>.</p>
 
@@ -159,6 +169,16 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Converts a 16-bit hex color string to 8-bit RGB components. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">hex16</td><td>16-bit hex color string (format: "RRGGBB" or "#RRGGBB") </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int 8-bit color value (0-255)</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Input string can be with or without leading '#' </dd></dl>
+
 </div>
 </div>
 <a id="ae94000387658cfce3f629da04843784f" name="ae94000387658cfce3f629da04843784f"></a>
@@ -175,6 +195,15 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Gets the luminance of terminal background color. </p>
+<p>Gets the luminance of terminal background color on Windows.</p>
+<dl class="section return"><dt>Returns</dt><dd>float Luminance value between 0 (dark) and 1 (light)</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Uses terminal escape sequences to query background color</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>float Luminance value between 0 (dark) and 1 (light)</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Uses Windows Console API to determine background color </dd>
+<dd>
+Defaults to dark if unable to determine color </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="linux__utils_8cpp_source.html#l00077">77</a> of file <a class="el" href="linux__utils_8cpp_source.html">linux_utils.cpp</a>.</p>
 
@@ -195,6 +224,15 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Determines if terminal background color is dark. </p>
+<p>Determines if terminal background color is dark on Windows.</p>
+<dl class="section return"><dt>Returns</dt><dd>bool True if background is dark (luminance &lt; 0.5), false otherwise</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Uses <a class="el" href="#ae94000387658cfce3f629da04843784f" title="Gets the luminance of terminal background color.">get_terminal_bg_color_luminance()</a> internally</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>bool True if background is dark (luminance &lt; 0.5), false otherwise</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Uses <a class="el" href="#ae94000387658cfce3f629da04843784f" title="Gets the luminance of terminal background color.">get_terminal_bg_color_luminance()</a> internally </dd>
+<dd>
+Defaults to true (dark) if unable to determine color </dd></dl>
+
 <p class="definition">Definition at line <a class="el" href="linux__utils_8cpp_source.html#l00088">88</a> of file <a class="el" href="linux__utils_8cpp_source.html">linux_utils.cpp</a>.</p>
 
 </div>
@@ -214,6 +252,12 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Parses terminal color response into RGB components on Windows. </p>
+<dl class="section return"><dt>Returns</dt><dd>tuple&lt;int, int, int&gt; RGB components as 8-bit values (0-255)</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Uses Windows Console API to get color information </dd>
+<dd>
+Returns default dark theme colors if unable to determine </dd></dl>
+
 </div>
 </div>
 <a id="a974ef162d7d2726649ea37db8594558d" name="a974ef162d7d2726649ea37db8594558d"></a>
@@ -230,6 +274,21 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Parses terminal color response into RGB components. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">response</td><td>Terminal color response string (format: "rgb:RRRR/GGGG/BBBB") </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>tuple&lt;int, int, int&gt; RGB components as 16-bit values (0-65535)</dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">May</td><td>throw runtime_error for malformed input </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p class="definition">Definition at line <a class="el" href="linux__utils_8cpp_source.html#l00014">14</a> of file <a class="el" href="linux__utils_8cpp_source.html">linux_utils.cpp</a>.</p>
 

@@ -2,37 +2,44 @@
 \hypertarget{classSimilarity__Table}{}\label{classSimilarity__Table}\index{Similarity\_Table@{Similarity\_Table}}
 
 
+Manages and analyzes function similarity relationships.  
+
+
+
+
 {\ttfamily \#include $<$similarity\+\_\+table.\+hpp$>$}
 
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classSimilarity__Table_a2a4703c08a255444950055041905ab9d}{Similarity\+\_\+\+Table}} (double \+\_\+similarity\+\_\+threshold)
-\item 
+\begin{DoxyCompactList}\small\item\em Constructs with custom similarity threshold. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classSimilarity__Table_aa2b6b79ada7c70429b678e6570a54c34}{Similarity\+\_\+\+Table}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Constructs with default similarity threshold. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classSimilarity__Table_a35f8cb1b8c488a81d0011795c3e26256}{update\+\_\+similarity}} (double new\+\_\+similarity\+\_\+threshold)
-\item 
+\begin{DoxyCompactList}\small\item\em Updates similarity threshold. \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{classSimilarity__Table_ac5060fd7468ab450ee43f3b753e5bd54}{get\+\_\+similarity}} (\mbox{\hyperlink{classPath}{Path}} path1, \mbox{\hyperlink{classPath}{Path}} path2)
-\item 
+\begin{DoxyCompactList}\small\item\em Gets similarity between two paths. \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{classSimilarity__Table_a7744d1810571f17a88cd94bcc200a73f}{is\+\_\+similar}} (\mbox{\hyperlink{classPath}{Path}} path1, \mbox{\hyperlink{classPath}{Path}} path2)
-\item 
+\begin{DoxyCompactList}\small\item\em Checks if two paths are similar. \end{DoxyCompactList}\item 
 vector$<$ \mbox{\hyperlink{classPath}{Path}} $>$ \mbox{\hyperlink{classSimilarity__Table_a439b3abde9580321bbdfcd781074ed02}{get\+\_\+path\+\_\+list}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Gets list of all known paths. \end{DoxyCompactList}\item 
 vector$<$ \mbox{\hyperlink{classPath}{Path}} $>$ \mbox{\hyperlink{classSimilarity__Table_a6b6ed8039345bf944b987140ddb9ab41}{get\+\_\+similar\+\_\+path\+\_\+to\+\_\+the\+\_\+reference}} (\mbox{\hyperlink{classPath}{Path}} reference)
-\item 
+\begin{DoxyCompactList}\small\item\em Gets paths similar to reference path. \end{DoxyCompactList}\item 
 vector$<$ tuple$<$ double, \mbox{\hyperlink{classPath}{Path}}, \mbox{\hyperlink{classPath}{Path}} $>$ $>$ \mbox{\hyperlink{classSimilarity__Table_a774e4001d75a5d128f428941622a4868}{get\+\_\+all\+\_\+path\+\_\+pairs\+\_\+and\+\_\+similarity\+\_\+sorted\+\_\+by\+\_\+similarity}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Gets all similar path pairs with scores, sorted. \end{DoxyCompactList}\item 
 vector$<$ pair$<$ \mbox{\hyperlink{classPath}{Path}}, \mbox{\hyperlink{classPath}{Path}} $>$ $>$ \mbox{\hyperlink{classSimilarity__Table_ade181f191adb4a2cbbbf0d2dfd8f54c7}{get\+\_\+all\+\_\+similar\+\_\+path\+\_\+pairs\+\_\+sorted\+\_\+by\+\_\+similarity}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Gets all similar path pairs, sorted by similarity. \end{DoxyCompactList}\item 
 vector$<$ pair$<$ \mbox{\hyperlink{classPath}{Path}}, \mbox{\hyperlink{classPath}{Path}} $>$ $>$ \mbox{\hyperlink{classSimilarity__Table_a1ca3f6a266dff65fecef8ea40e74ab48}{get\+\_\+all\+\_\+similar\+\_\+path\+\_\+pairs\+\_\+sorted\+\_\+by\+\_\+line\+\_\+number}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Gets all similar path pairs, sorted by line count. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
+Manages and analyzes function similarity relationships. 
 
+Stores pairs of similar functions with their similarity scores, providing various query and analysis capabilities. 
 
-Definition at line \mbox{\hyperlink{similarity__table_8hpp_source_l00015}{15}} of file \mbox{\hyperlink{similarity__table_8hpp_source}{similarity\+\_\+table.\+hpp}}.
+Definition at line \mbox{\hyperlink{similarity__table_8hpp_source_l00029}{29}} of file \mbox{\hyperlink{similarity__table_8hpp_source}{similarity\+\_\+table.\+hpp}}.
 
 
 
@@ -45,6 +52,15 @@ Similarity\+\_\+\+Table\+::\+Similarity\+\_\+\+Table (\begin{DoxyParamCaption}\i
 
 
 
+Constructs with custom similarity threshold. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+similarity\+\_\+threshold} & Initial threshold value \\
+\hline
+\end{DoxyParams}
+
+
 Definition at line \mbox{\hyperlink{similarity__table_8cpp_source_l00048}{48}} of file \mbox{\hyperlink{similarity__table_8cpp_source}{similarity\+\_\+table.\+cpp}}.
 
 \Hypertarget{classSimilarity__Table_aa2b6b79ada7c70429b678e6570a54c34}\index{Similarity\_Table@{Similarity\_Table}!Similarity\_Table@{Similarity\_Table}}
@@ -52,6 +68,10 @@ Definition at line \mbox{\hyperlink{similarity__table_8cpp_source_l00048}{48}} o
 \doxysubsubsection{\texorpdfstring{Similarity\_Table()}{Similarity\_Table()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily \label{classSimilarity__Table_aa2b6b79ada7c70429b678e6570a54c34} 
 Similarity\+\_\+\+Table\+::\+Similarity\+\_\+\+Table (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Constructs with default similarity threshold. 
 
 
 
@@ -68,6 +88,13 @@ vector$<$ tuple$<$ double, \mbox{\hyperlink{classPath}{Path}}, \mbox{\hyperlink{
 
 
 
+Gets all similar path pairs with scores, sorted. 
+
+\begin{DoxyReturn}{Returns}
+vector$<$tuple$<$double,\+Path,\+Path$>$$>$ Similar pairs with scores 
+\end{DoxyReturn}
+
+
 Definition at line \mbox{\hyperlink{similarity__table_8cpp_source_l00103}{103}} of file \mbox{\hyperlink{similarity__table_8cpp_source}{similarity\+\_\+table.\+cpp}}.
 
 \Hypertarget{classSimilarity__Table_a1ca3f6a266dff65fecef8ea40e74ab48}\index{Similarity\_Table@{Similarity\_Table}!get\_all\_similar\_path\_pairs\_sorted\_by\_line\_number@{get\_all\_similar\_path\_pairs\_sorted\_by\_line\_number}}
@@ -76,6 +103,13 @@ Definition at line \mbox{\hyperlink{similarity__table_8cpp_source_l00103}{103}} 
 {\footnotesize\ttfamily \label{classSimilarity__Table_a1ca3f6a266dff65fecef8ea40e74ab48} 
 vector$<$ pair$<$ \mbox{\hyperlink{classPath}{Path}}, \mbox{\hyperlink{classPath}{Path}} $>$ $>$ Similarity\+\_\+\+Table\+::get\+\_\+all\+\_\+similar\+\_\+path\+\_\+pairs\+\_\+sorted\+\_\+by\+\_\+line\+\_\+number (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
+
+
+Gets all similar path pairs, sorted by line count. 
+
+\begin{DoxyReturn}{Returns}
+vector$<$pair$<$\+Path,\+Path$>$$>$ Similar path pairs 
+\end{DoxyReturn}
 
 
 Definition at line \mbox{\hyperlink{similarity__table_8cpp_source_l00144}{144}} of file \mbox{\hyperlink{similarity__table_8cpp_source}{similarity\+\_\+table.\+cpp}}.
@@ -88,6 +122,13 @@ vector$<$ pair$<$ \mbox{\hyperlink{classPath}{Path}}, \mbox{\hyperlink{classPath
 
 
 
+Gets all similar path pairs, sorted by similarity. 
+
+\begin{DoxyReturn}{Returns}
+vector$<$pair$<$\+Path,\+Path$>$$>$ Similar path pairs 
+\end{DoxyReturn}
+
+
 Definition at line \mbox{\hyperlink{similarity__table_8cpp_source_l00116}{116}} of file \mbox{\hyperlink{similarity__table_8cpp_source}{similarity\+\_\+table.\+cpp}}.
 
 \Hypertarget{classSimilarity__Table_a439b3abde9580321bbdfcd781074ed02}\index{Similarity\_Table@{Similarity\_Table}!get\_path\_list@{get\_path\_list}}
@@ -96,6 +137,13 @@ Definition at line \mbox{\hyperlink{similarity__table_8cpp_source_l00116}{116}} 
 {\footnotesize\ttfamily \label{classSimilarity__Table_a439b3abde9580321bbdfcd781074ed02} 
 vector$<$ \mbox{\hyperlink{classPath}{Path}} $>$ Similarity\+\_\+\+Table\+::get\+\_\+path\+\_\+list (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
+
+
+Gets list of all known paths. 
+
+\begin{DoxyReturn}{Returns}
+vector$<$\+Path$>$ All paths in table 
+\end{DoxyReturn}
 
 
 Definition at line \mbox{\hyperlink{similarity__table_8cpp_source_l00088}{88}} of file \mbox{\hyperlink{similarity__table_8cpp_source}{similarity\+\_\+table.\+cpp}}.
@@ -108,6 +156,18 @@ vector$<$ \mbox{\hyperlink{classPath}{Path}} $>$ Similarity\+\_\+\+Table\+::get\
 
 
 
+Gets paths similar to reference path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reference} & \doxylink{classPath}{Path} to compare against \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vector$<$\+Path$>$ Similar paths 
+\end{DoxyReturn}
+
+
 Definition at line \mbox{\hyperlink{similarity__table_8cpp_source_l00092}{92}} of file \mbox{\hyperlink{similarity__table_8cpp_source}{similarity\+\_\+table.\+cpp}}.
 
 \Hypertarget{classSimilarity__Table_ac5060fd7468ab450ee43f3b753e5bd54}\index{Similarity\_Table@{Similarity\_Table}!get\_similarity@{get\_similarity}}
@@ -116,6 +176,20 @@ Definition at line \mbox{\hyperlink{similarity__table_8cpp_source_l00092}{92}} o
 {\footnotesize\ttfamily \label{classSimilarity__Table_ac5060fd7468ab450ee43f3b753e5bd54} 
 double Similarity\+\_\+\+Table\+::get\+\_\+similarity (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPath}{Path}}}]{path1}{, }\item[{\mbox{\hyperlink{classPath}{Path}}}]{path2}{}\end{DoxyParamCaption})}
 
+
+
+Gets similarity between two paths. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path1} & First path to compare \\
+\hline
+{\em path2} & Second path to compare \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+double Similarity score 
+\end{DoxyReturn}
 
 
 Definition at line \mbox{\hyperlink{similarity__table_8cpp_source_l00062}{62}} of file \mbox{\hyperlink{similarity__table_8cpp_source}{similarity\+\_\+table.\+cpp}}.
@@ -128,6 +202,20 @@ double Similarity\+\_\+\+Table\+::is\+\_\+similar (\begin{DoxyParamCaption}\item
 
 
 
+Checks if two paths are similar. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path1} & First path to compare \\
+\hline
+{\em path2} & Second path to compare \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True if paths are similar 
+\end{DoxyReturn}
+
+
 Definition at line \mbox{\hyperlink{similarity__table_8cpp_source_l00083}{83}} of file \mbox{\hyperlink{similarity__table_8cpp_source}{similarity\+\_\+table.\+cpp}}.
 
 \Hypertarget{classSimilarity__Table_a35f8cb1b8c488a81d0011795c3e26256}\index{Similarity\_Table@{Similarity\_Table}!update\_similarity@{update\_similarity}}
@@ -136,6 +224,15 @@ Definition at line \mbox{\hyperlink{similarity__table_8cpp_source_l00083}{83}} o
 {\footnotesize\ttfamily \label{classSimilarity__Table_a35f8cb1b8c488a81d0011795c3e26256} 
 void Similarity\+\_\+\+Table\+::update\+\_\+similarity (\begin{DoxyParamCaption}\item[{double}]{new\+\_\+similarity\+\_\+threshold}{}\end{DoxyParamCaption})}
 
+
+
+Updates similarity threshold. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+similarity\+\_\+threshold} & New threshold value \\
+\hline
+\end{DoxyParams}
 
 
 Definition at line \mbox{\hyperlink{similarity__table_8cpp_source_l00058}{58}} of file \mbox{\hyperlink{similarity__table_8cpp_source}{similarity\+\_\+table.\+cpp}}.

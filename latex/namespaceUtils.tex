@@ -133,17 +133,12 @@ Creates all parent directories for a given file path.
 
 
 \begin{DoxyParams}{Parameters}
-{\em file\+\_\+path} & The full file path for which to create parent directories\\
-\hline
-{\em file\+\_\+path} & The full file path for which to create parent directories\\
+{\em file\+\_\+path} & The full file path for which to create parent directories \\
 \hline
 \end{DoxyParams}
-\begin{DoxyNote}{Note}
-Handles paths with \textquotesingle{}/\textquotesingle{} separators. Creates each directory in the path. 
-\end{DoxyNote}
 
 
-Definition at line \mbox{\hyperlink{utils_8cpp_source_l00074}{74}} of file \mbox{\hyperlink{utils_8cpp_source}{utils.\+cpp}}.
+Definition at line \mbox{\hyperlink{utils_8cpp_source_l00043}{43}} of file \mbox{\hyperlink{utils_8cpp_source}{utils.\+cpp}}.
 
 \Hypertarget{namespaceUtils_a7bd5db6a9faceb861ee6dc90b0797d98}\index{Utils@{Utils}!does\_file\_exist@{does\_file\_exist}}
 \index{does\_file\_exist@{does\_file\_exist}!Utils@{Utils}}
@@ -165,7 +160,7 @@ bool True if file exists and is accessible, false otherwise
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{utils_8cpp_source_l00113}{113}} of file \mbox{\hyperlink{utils_8cpp_source}{utils.\+cpp}}.
+Definition at line \mbox{\hyperlink{utils_8cpp_source_l00069}{69}} of file \mbox{\hyperlink{utils_8cpp_source}{utils.\+cpp}}.
 
 \Hypertarget{namespaceUtils_a8f4a13f11467403825ee90aa736220f6}\index{Utils@{Utils}!ensure\_file\_is\_open@{ensure\_file\_is\_open}}
 \index{ensure\_file\_is\_open@{ensure\_file\_is\_open}!Utils@{Utils}}
@@ -181,24 +176,12 @@ Ensures that a file stream is successfully opened.
 \begin{DoxyParams}{Parameters}
 {\em file} & Reference to the input file stream to check \\
 \hline
-{\em file\+\_\+name} & Name/path of the file being opened (for error message)\\
-\hline
-{\em file} & Reference to the input file stream to check \\
-\hline
 {\em file\+\_\+name} & Name/path of the file being opened (for error message) \\
 \hline
 \end{DoxyParams}
 
-\begin{DoxyExceptions}{Exceptions}
-{\em Exits} & the program if file is not open\\
-\hline
-\end{DoxyExceptions}
-\begin{DoxyNote}{Note}
-This function will terminate the program if the file is not open 
-\end{DoxyNote}
 
-
-Definition at line \mbox{\hyperlink{utils_8cpp_source_l00020}{20}} of file \mbox{\hyperlink{utils_8cpp_source}{utils.\+cpp}}.
+Definition at line \mbox{\hyperlink{utils_8cpp_source_l00011}{11}} of file \mbox{\hyperlink{utils_8cpp_source}{utils.\+cpp}}.
 
 \Hypertarget{namespaceUtils_a7f67e71533b529a3c6196b22871dfdb4}\index{Utils@{Utils}!format\_colored\_message@{format\_colored\_message}}
 \index{format\_colored\_message@{format\_colored\_message}!Utils@{Utils}}
@@ -210,8 +193,6 @@ string Utils\+::format\+\_\+colored\+\_\+message (\begin{DoxyParamCaption}\item[
 
 Formats a message with ANSI color codes. 
 
-Formats a message with ANSI color codes based on background darkness.
-
 
 \begin{DoxyParams}{Parameters}
 {\em message} & Text to colorize \\
@@ -220,24 +201,11 @@ Formats a message with ANSI color codes based on background darkness.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-string Colorized message with reset code at the end
+string Colorized message with reset code at the end 
 \end{DoxyReturn}
 
-\begin{DoxyParams}{Parameters}
-{\em message} & Text to colorize \\
-\hline
-{\em color} & Color to apply \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-string Colorized message with reset code at the end
-\end{DoxyReturn}
-\begin{DoxyNote}{Note}
-Automatically selects light or dark color variants based on background 
-\end{DoxyNote}
 
-
-Definition at line \mbox{\hyperlink{utils_8cpp_source_l00144}{144}} of file \mbox{\hyperlink{utils_8cpp_source}{utils.\+cpp}}.
+Definition at line \mbox{\hyperlink{utils_8cpp_source_l00085}{85}} of file \mbox{\hyperlink{utils_8cpp_source}{utils.\+cpp}}.
 
 \Hypertarget{namespaceUtils_a84c55dc78b9ab9af93009b25c6a7dc39}\index{Utils@{Utils}!is\_empty\_char@{is\_empty\_char}}
 \index{is\_empty\_char@{is\_empty\_char}!Utils@{Utils}}
@@ -255,19 +223,11 @@ Checks if a character is considered empty/whitespace.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-bool True if character is space or control character, false otherwise
-\end{DoxyReturn}
-
-\begin{DoxyParams}{Parameters}
-{\em c} & Character to check \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-bool True if character is space or control character (\texorpdfstring{$<$}{<}= 20), false otherwise 
+bool True if character is space or control character, false otherwise 
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{utils_8cpp_source_l00159}{159}} of file \mbox{\hyperlink{utils_8cpp_source}{utils.\+cpp}}.
+Definition at line \mbox{\hyperlink{utils_8cpp_source_l00094}{94}} of file \mbox{\hyperlink{utils_8cpp_source}{utils.\+cpp}}.
 
 \Hypertarget{namespaceUtils_a519273dc6d52ae9884ca753cf4f5ed3d}\index{Utils@{Utils}!is\_regular\_file@{is\_regular\_file}}
 \index{is\_regular\_file@{is\_regular\_file}!Utils@{Utils}}
@@ -289,7 +249,7 @@ bool True if path is a regular file, false otherwise
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{utils_8cpp_source_l00128}{128}} of file \mbox{\hyperlink{utils_8cpp_source}{utils.\+cpp}}.
+Definition at line \mbox{\hyperlink{utils_8cpp_source_l00078}{78}} of file \mbox{\hyperlink{utils_8cpp_source}{utils.\+cpp}}.
 
 \Hypertarget{namespaceUtils_a3b0faf30c09facf4f5d77be103ba90a8}\index{Utils@{Utils}!is\_special\_char@{is\_special\_char}}
 \index{is\_special\_char@{is\_special\_char}!Utils@{Utils}}
@@ -307,19 +267,11 @@ Checks if a character is special (non-\/alphanumeric and not underscore)
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-bool True if character is special, false otherwise
-\end{DoxyReturn}
-
-\begin{DoxyParams}{Parameters}
-{\em c} & Character to check \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-bool True if character is special, false if alphanumeric or underscore 
+bool True if character is special, false otherwise 
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{utils_8cpp_source_l00175}{175}} of file \mbox{\hyperlink{utils_8cpp_source}{utils.\+cpp}}.
+Definition at line \mbox{\hyperlink{utils_8cpp_source_l00104}{104}} of file \mbox{\hyperlink{utils_8cpp_source}{utils.\+cpp}}.
 
 \Hypertarget{namespaceUtils_a99bf3af71b6d6933fe7fe731962b8c4b}\index{Utils@{Utils}!read\_file\_generic@{read\_file\_generic}}
 \index{read\_file\_generic@{read\_file\_generic}!Utils@{Utils}}
@@ -337,24 +289,11 @@ Reads a file line by line into a vector of strings.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-vector$<$string$>$ Contents of the file as a vector of strings
+vector$<$string$>$ Contents of the file as a vector of strings 
 \end{DoxyReturn}
 
-\begin{DoxyParams}{Parameters}
-{\em string\+\_\+path} & \doxylink{classPath}{Path} to the file to read \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-vector$<$string$>$ Contents of the file as a vector of strings (one per line) 
-\end{DoxyReturn}
 
-\begin{DoxyExceptions}{Exceptions}
-{\em Exits} & program if file cannot be opened (via ensure\+\_\+file\+\_\+is\+\_\+open) \\
-\hline
-\end{DoxyExceptions}
-
-
-Definition at line \mbox{\hyperlink{utils_8cpp_source_l00035}{35}} of file \mbox{\hyperlink{utils_8cpp_source}{utils.\+cpp}}.
+Definition at line \mbox{\hyperlink{utils_8cpp_source_l00019}{19}} of file \mbox{\hyperlink{utils_8cpp_source}{utils.\+cpp}}.
 
 \Hypertarget{namespaceUtils_a007673348afbff920d1c4ad70339dabb}\index{Utils@{Utils}!read\_json@{read\_json}}
 \index{read\_json@{read\_json}!Utils@{Utils}}
@@ -372,24 +311,11 @@ Reads and parses a JSON file.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-Json\+::\+Value Parsed JSON content
-\end{DoxyReturn}
-
-\begin{DoxyParams}{Parameters}
-{\em string\+\_\+path} & \doxylink{classPath}{Path} to the JSON file \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
 Json\+::\+Value Parsed JSON content 
 \end{DoxyReturn}
 
-\begin{DoxyExceptions}{Exceptions}
-{\em Exits} & program if file cannot be opened (via ensure\+\_\+file\+\_\+is\+\_\+open) \\
-\hline
-\end{DoxyExceptions}
 
-
-Definition at line \mbox{\hyperlink{utils_8cpp_source_l00098}{98}} of file \mbox{\hyperlink{utils_8cpp_source}{utils.\+cpp}}.
+Definition at line \mbox{\hyperlink{utils_8cpp_source_l00060}{60}} of file \mbox{\hyperlink{utils_8cpp_source}{utils.\+cpp}}.
 
 \Hypertarget{namespaceUtils_a36a03199cfc37693d745afe43648df5d}\index{Utils@{Utils}!split\_string@{split\_string}}
 \index{split\_string@{split\_string}!Utils@{Utils}}
@@ -413,7 +339,7 @@ vector$<$string$>$ Vector of tokens (empty tokens are omitted)
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{utils_8cpp_source_l00198}{198}} of file \mbox{\hyperlink{utils_8cpp_source}{utils.\+cpp}}.
+Definition at line \mbox{\hyperlink{utils_8cpp_source_l00120}{120}} of file \mbox{\hyperlink{utils_8cpp_source}{utils.\+cpp}}.
 
 \Hypertarget{namespaceUtils_af167beace554e442af15d3eb264c2033}\index{Utils@{Utils}!write\_file\_generic@{write\_file\_generic}}
 \index{write\_file\_generic@{write\_file\_generic}!Utils@{Utils}}
@@ -429,19 +355,12 @@ Writes content to a file at specified path.
 \begin{DoxyParams}{Parameters}
 {\em file\+\_\+path} & \doxylink{classPath}{Path} where file should be written \\
 \hline
-{\em content} & Vector of strings to write (each element becomes a line)\\
-\hline
-{\em file\+\_\+path} & \doxylink{classPath}{Path} where file should be written \\
-\hline
-{\em content} & Vector of strings to write (each element becomes a line)\\
+{\em content} & Vector of strings to write (each element becomes a line) \\
 \hline
 \end{DoxyParams}
-\begin{DoxyNote}{Note}
-Creates parent directories if they don\textquotesingle{}t exist 
-\end{DoxyNote}
 
 
-Definition at line \mbox{\hyperlink{utils_8cpp_source_l00056}{56}} of file \mbox{\hyperlink{utils_8cpp_source}{utils.\+cpp}}.
+Definition at line \mbox{\hyperlink{utils_8cpp_source_l00032}{32}} of file \mbox{\hyperlink{utils_8cpp_source}{utils.\+cpp}}.
 
 
 

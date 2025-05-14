@@ -1,5 +1,10 @@
 \doxysection{arkanjo/pre/function\+\_\+breaker.hpp File Reference}
 \hypertarget{function__breaker_8hpp}{}\label{function__breaker_8hpp}\index{arkanjo/pre/function\_breaker.hpp@{arkanjo/pre/function\_breaker.hpp}}
+
+
+Main function extraction interface.  
+
+
 {\ttfamily \#include $<$bits/stdc++.\+h$>$}\newline
 {\ttfamily \#include "{}../base/utils.\+hpp"{}}\newline
 {\ttfamily \#include "{}function\+\_\+breaker\+\_\+c.\+hpp"{}}\newline
@@ -25,4 +30,19 @@ This graph shows which files directly or indirectly include this file\+:
 \begin{DoxyCompactItemize}
 \item 
 class \mbox{\hyperlink{classFunctionBreaker}{Function\+Breaker}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Main function extraction processor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Main function extraction interface. 
+
+Provides the primary interface for processing source code directories and extracting functions/structs into individual files in a temporary repository.
+
+This file intends to create the process of reading a directory with code in c or java and extract every function/struct of every .c /.java file as a new file in the temporary repository, aka, tmp/
+
+Example of expected behaviour\+: There is a file example.\+c with functions a and b, will be create two new files\+: example/a.\+c and example/b.\+c
+
+TODO\+: Doesn\textquotesingle{}t work correct if the file has an incorrect bracket sequence, even if the bracket sequence is in a commentary 
+
+Definition in file \mbox{\hyperlink{function__breaker_8hpp_source}{function\+\_\+breaker.\+hpp}}.
+

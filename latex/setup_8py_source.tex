@@ -2,26 +2,35 @@
 \hypertarget{setup_8py_source}{}\label{setup_8py_source}\index{arkanjo/third-\/party/duplicate-\/code-\/detection-\/tool/setup.py@{arkanjo/third-\/party/duplicate-\/code-\/detection-\/tool/setup.py}}
 \mbox{\hyperlink{setup_8py}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\Hypertarget{setup_8py_source_l00001}\mbox{\hyperlink{namespacesetup}{00001}}\ \textcolor{keyword}{from}\ setuptools\ \textcolor{keyword}{import}\ setup}
-\DoxyCodeLine{\Hypertarget{setup_8py_source_l00002}00002\ }
-\DoxyCodeLine{\Hypertarget{setup_8py_source_l00003}00003\ \mbox{\hyperlink{namespacesetup}{setup}}(}
-\DoxyCodeLine{\Hypertarget{setup_8py_source_l00004}\mbox{\hyperlink{namespacesetup_ab3a7a0638d76a01367c5bc3cc699447f}{00004}}\ \ \ \ \ name=\textcolor{stringliteral}{'duplicate\ code\ detection\ tool'},}
-\DoxyCodeLine{\Hypertarget{setup_8py_source_l00005}\mbox{\hyperlink{namespacesetup_ada7058afc98897f073d3f3b8b9157059}{00005}}\ \ \ \ \ entry\_points=\{}
-\DoxyCodeLine{\Hypertarget{setup_8py_source_l00006}00006\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'console\_scripts'}:\ [\textcolor{stringliteral}{'duplicate-\/code-\/detection=duplicate\_code\_detection:main'}]}
-\DoxyCodeLine{\Hypertarget{setup_8py_source_l00007}00007\ \ \ \ \ \},}
-\DoxyCodeLine{\Hypertarget{setup_8py_source_l00008}\mbox{\hyperlink{namespacesetup_ad6a0f278ba38b7ed3595fd6896196fb3}{00008}}\ \ \ \ \ py\_modules=[\textcolor{stringliteral}{'duplicate\_code\_detection'}],}
-\DoxyCodeLine{\Hypertarget{setup_8py_source_l00009}\mbox{\hyperlink{namespacesetup_afd7273d426fd6e1796ec17175f6521c3}{00009}}\ \ \ \ \ package\_dir=\{}
-\DoxyCodeLine{\Hypertarget{setup_8py_source_l00010}00010\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'duplicate\_code\_detection'}:\ \textcolor{stringliteral}{'.'},}
-\DoxyCodeLine{\Hypertarget{setup_8py_source_l00011}00011\ \ \ \ \ \},}
-\DoxyCodeLine{\Hypertarget{setup_8py_source_l00012}\mbox{\hyperlink{namespacesetup_abead4f26b530856f858f0d44c7cf2588}{00012}}\ \ \ \ \ install\_requires=[}
-\DoxyCodeLine{\Hypertarget{setup_8py_source_l00013}00013\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'gensim>=3.8'},}
-\DoxyCodeLine{\Hypertarget{setup_8py_source_l00014}00014\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'nltk>=3.5'},}
-\DoxyCodeLine{\Hypertarget{setup_8py_source_l00015}00015\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'astor>=0.8.1'}}
-\DoxyCodeLine{\Hypertarget{setup_8py_source_l00016}00016\ \ \ \ \ ],}
-\DoxyCodeLine{\Hypertarget{setup_8py_source_l00017}\mbox{\hyperlink{namespacesetup_a4bf7b6b1125988e7c931e6017d0ed7c5}{00017}}\ \ \ \ \ setuptools\_git\_versioning=\{}
-\DoxyCodeLine{\Hypertarget{setup_8py_source_l00018}00018\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}enabled"{}}:\ \textcolor{keyword}{True},}
-\DoxyCodeLine{\Hypertarget{setup_8py_source_l00019}00019\ \ \ \ \ \},}
-\DoxyCodeLine{\Hypertarget{setup_8py_source_l00020}\mbox{\hyperlink{namespacesetup_a2367b2951475f615fb78d9b5d9d07e50}{00020}}\ \ \ \ \ setup\_requires=[\textcolor{stringliteral}{"{}setuptools-\/git-\/versioning<2"{}}],}
-\DoxyCodeLine{\Hypertarget{setup_8py_source_l00021}00021\ )}
+\DoxyCodeLine{\Hypertarget{setup_8py_source_l00001}\mbox{\hyperlink{namespacesetup}{00001}}\ \textcolor{stringliteral}{"{}"{}"{}!\ @package\ setup}}
+\DoxyCodeLine{\Hypertarget{setup_8py_source_l00002}00002\ \textcolor{stringliteral}{@file\ setup.py}}
+\DoxyCodeLine{\Hypertarget{setup_8py_source_l00003}00003\ \textcolor{stringliteral}{@brief\ Package\ configuration\ for\ duplicate\ code\ detection\ tool.}}
+\DoxyCodeLine{\Hypertarget{setup_8py_source_l00004}00004\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{setup_8py_source_l00005}00005\ \textcolor{stringliteral}{This\ setup\ configuration\ defines\ the\ installation\ parameters\ for\ the\ duplicate}}
+\DoxyCodeLine{\Hypertarget{setup_8py_source_l00006}00006\ \textcolor{stringliteral}{code\ detection\ tool\ package,\ including\ dependencies,\ version\ control,\ and}}
+\DoxyCodeLine{\Hypertarget{setup_8py_source_l00007}00007\ \textcolor{stringliteral}{console\ entry\ points.}}
+\DoxyCodeLine{\Hypertarget{setup_8py_source_l00008}00008\ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{setup_8py_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{setup_8py_source_l00010}00010\ \textcolor{keyword}{from}\ setuptools\ \textcolor{keyword}{import}\ setup}
+\DoxyCodeLine{\Hypertarget{setup_8py_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{setup_8py_source_l00012}00012\ \mbox{\hyperlink{namespacesetup}{setup}}(}
+\DoxyCodeLine{\Hypertarget{setup_8py_source_l00013}\mbox{\hyperlink{namespacesetup_ab3a7a0638d76a01367c5bc3cc699447f}{00013}}\ \ \ \ \ name=\textcolor{stringliteral}{'duplicate\ code\ detection\ tool'},}
+\DoxyCodeLine{\Hypertarget{setup_8py_source_l00014}\mbox{\hyperlink{namespacesetup_ada7058afc98897f073d3f3b8b9157059}{00014}}\ \ \ \ \ entry\_points=\{}
+\DoxyCodeLine{\Hypertarget{setup_8py_source_l00015}00015\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'console\_scripts'}:\ [\textcolor{stringliteral}{'duplicate-\/code-\/detection=duplicate\_code\_detection:main'}]}
+\DoxyCodeLine{\Hypertarget{setup_8py_source_l00016}00016\ \ \ \ \ \},}
+\DoxyCodeLine{\Hypertarget{setup_8py_source_l00017}\mbox{\hyperlink{namespacesetup_ad6a0f278ba38b7ed3595fd6896196fb3}{00017}}\ \ \ \ \ py\_modules=[\textcolor{stringliteral}{'duplicate\_code\_detection'}],}
+\DoxyCodeLine{\Hypertarget{setup_8py_source_l00018}\mbox{\hyperlink{namespacesetup_afd7273d426fd6e1796ec17175f6521c3}{00018}}\ \ \ \ \ package\_dir=\{}
+\DoxyCodeLine{\Hypertarget{setup_8py_source_l00019}00019\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'duplicate\_code\_detection'}:\ \textcolor{stringliteral}{'.'},}
+\DoxyCodeLine{\Hypertarget{setup_8py_source_l00020}00020\ \ \ \ \ \},}
+\DoxyCodeLine{\Hypertarget{setup_8py_source_l00021}\mbox{\hyperlink{namespacesetup_abead4f26b530856f858f0d44c7cf2588}{00021}}\ \ \ \ \ install\_requires=[}
+\DoxyCodeLine{\Hypertarget{setup_8py_source_l00022}00022\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'gensim>=3.8'},}
+\DoxyCodeLine{\Hypertarget{setup_8py_source_l00023}00023\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'nltk>=3.5'},}
+\DoxyCodeLine{\Hypertarget{setup_8py_source_l00024}00024\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'astor>=0.8.1'}}
+\DoxyCodeLine{\Hypertarget{setup_8py_source_l00025}00025\ \ \ \ \ ],}
+\DoxyCodeLine{\Hypertarget{setup_8py_source_l00026}\mbox{\hyperlink{namespacesetup_a4bf7b6b1125988e7c931e6017d0ed7c5}{00026}}\ \ \ \ \ setuptools\_git\_versioning=\{}
+\DoxyCodeLine{\Hypertarget{setup_8py_source_l00027}00027\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}enabled"{}}:\ \textcolor{keyword}{True},}
+\DoxyCodeLine{\Hypertarget{setup_8py_source_l00028}00028\ \ \ \ \ \},}
+\DoxyCodeLine{\Hypertarget{setup_8py_source_l00029}\mbox{\hyperlink{namespacesetup_a2367b2951475f615fb78d9b5d9d07e50}{00029}}\ \ \ \ \ setup\_requires=[\textcolor{stringliteral}{"{}setuptools-\/git-\/versioning<2"{}}],}
+\DoxyCodeLine{\Hypertarget{setup_8py_source_l00030}00030\ )}
 
 \end{DoxyCode}

@@ -1,10 +1,10 @@
 <map id="arkanjo/pre/function_breaker_util.hpp" name="arkanjo/pre/function_breaker_util.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="14,5,150,46"/>
+<area shape="rect" id="Node000001" title="Function breaker utilities and constants." alt="" coords="14,5,150,46"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="33,168,131,193"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="52,48,29,69,11,95,9,112,16,129,30,144,47,157,44,161,26,148,12,132,4,113,6,93,25,65,49,44"/>
 <area shape="rect" id="Node000003" href="$utils_8hpp.html" title="Defines utility functions used across all files." alt="" coords="166,94,278,120"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="118,44,189,84,186,88,116,49"/>
-<area shape="rect" id="Node000006" href="$config_8hpp.html" title=" " alt="" coords="21,94,143,120"/>
+<area shape="rect" id="Node000006" href="$config_8hpp.html" title="Configuration management interface." alt="" coords="21,94,143,120"/>
 <area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="85,46,85,78,79,78,79,46"/>
 <area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="200,123,121,163,118,158,197,118"/>
 <area shape="rect" id="Node000004" title=" " alt="" coords="155,168,287,193"/>

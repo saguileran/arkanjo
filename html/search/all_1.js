@@ -15,6 +15,6 @@ var searchData=
   ['apple_5futils_2ehpp_12',['apple_utils.hpp',['../apple__utils_8hpp.html',1,'']]],
   ['areequalfile_13',['areEqualFile',['../test_8cpp.html#ac8de8f892f1979de37eb710a059a86b6',1,'test.cpp']]],
   ['arkanjo_14',['Arkanjo',['../index.html',1,'']]],
-  ['arkanjo_20module_20documentation_15',['Arkanjo Module Documentation',['../arkanjo_readme.html',1,'']]],
+  ['arkanjo_20module_15',['Arkanjo Module',['../arkanjo_readme.html',1,'']]],
   ['artifacts_20module_16',['Master Artifacts Module',['../master_artifacts_readme.html',1,'']]]
 ];

@@ -2,19 +2,26 @@
 \hypertarget{classCounter__Duplication__Code}{}\label{classCounter__Duplication__Code}\index{Counter\_Duplication\_Code@{Counter\_Duplication\_Code}}
 
 
+Code duplication analyzer and reporter.  
+
+
+
+
 {\ttfamily \#include $<$counter\+\_\+duplication\+\_\+code.\+hpp$>$}
 
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classCounter__Duplication__Code_ae87c1513ef03d849aac658da818e22a4}{Counter\+\_\+\+Duplication\+\_\+\+Code}} (\mbox{\hyperlink{classSimilarity__Table}{Similarity\+\_\+\+Table}} \texorpdfstring{$\ast$}{*}\+\_\+similarity\+\_\+table)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Constructs analyzer with similarity data. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
+Code duplication analyzer and reporter. 
 
+Provides functionality to analyze and report code duplication metrics across the codebase, organized by folder hierarchy using a trie structure for efficient hierarchical counting and reporting. 
 
-Definition at line \mbox{\hyperlink{counter__duplication__code_8hpp_source_l00015}{15}} of file \mbox{\hyperlink{counter__duplication__code_8hpp_source}{counter\+\_\+duplication\+\_\+code.\+hpp}}.
+Definition at line \mbox{\hyperlink{counter__duplication__code_8hpp_source_l00030}{30}} of file \mbox{\hyperlink{counter__duplication__code_8hpp_source}{counter\+\_\+duplication\+\_\+code.\+hpp}}.
 
 
 
@@ -25,6 +32,15 @@ Definition at line \mbox{\hyperlink{counter__duplication__code_8hpp_source_l0001
 {\footnotesize\ttfamily \label{classCounter__Duplication__Code_ae87c1513ef03d849aac658da818e22a4} 
 Counter\+\_\+\+Duplication\+\_\+\+Code\+::\+Counter\+\_\+\+Duplication\+\_\+\+Code (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classSimilarity__Table}{Similarity\+\_\+\+Table}} \texorpdfstring{$\ast$}{*}}]{\+\_\+similarity\+\_\+table}{}\end{DoxyParamCaption})}
 
+
+
+Constructs analyzer with similarity data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+similarity\+\_\+table} & Pointer to similarity table \\
+\hline
+\end{DoxyParams}
 
 
 Definition at line \mbox{\hyperlink{counter__duplication__code_8cpp_source_l00041}{41}} of file \mbox{\hyperlink{counter__duplication__code_8cpp_source}{counter\+\_\+duplication\+\_\+code.\+cpp}}.

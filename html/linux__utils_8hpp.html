@@ -109,6 +109,9 @@ $(function(){initNavTree('linux__utils_8hpp.html',''); initResizable(true); });
   <div class="headertitle"><div class="title">linux_utils.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Linux-specific utility functions.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;iostream&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
 <code>#include &lt;algorithm&gt;</code><br />
@@ -125,7 +128,7 @@ Include dependency graph for linux_utils.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="linux__utils_8hpp__incl.png" border="0" usemap="#aarkanjo_2base_2linux__utils_8hpp" alt=""/></div>
 <map name="aarkanjo_2base_2linux__utils_8hpp" id="aarkanjo_2base_2linux__utils_8hpp">
-<area shape="rect" title=" " alt="" coords="425,5,550,46"/>
+<area shape="rect" title="Linux&#45;specific utility functions." alt="" coords="425,5,550,46"/>
 <area shape="rect" title=" " alt="" coords="5,94,77,120"/>
 <area shape="poly" title=" " alt="" coords="425,39,277,62,92,96,92,91,276,57,424,34"/>
 <area shape="rect" title=" " alt="" coords="101,94,154,120"/>
@@ -155,7 +158,7 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="linux__utils_8hpp__dep__incl.png" border="0" usemap="#aarkanjo_2base_2linux__utils_8hppdep" alt=""/></div>
 <map name="aarkanjo_2base_2linux__utils_8hppdep" id="aarkanjo_2base_2linux__utils_8hppdep">
-<area shape="rect" title=" " alt="" coords="5,5,131,46"/>
+<area shape="rect" title="Linux&#45;specific utility functions." alt="" coords="5,5,131,46"/>
 <area shape="rect" href="linux__utils_8cpp.html" title=" " alt="" coords="5,94,131,135"/>
 <area shape="poly" title=" " alt="" coords="71,62,71,94,65,94,65,62"/>
 </map>
@@ -171,17 +174,27 @@ Namespaces</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:acfff3b9114f5bf307e2aa78cbabfe21f" id="r_acfff3b9114f5bf307e2aa78cbabfe21f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtilsOSDependable.html#acfff3b9114f5bf307e2aa78cbabfe21f">UtilsOSDependable::convert_16_bit_to_8_bit</a> (const string &amp;hex16)</td></tr>
+<tr class="memdesc:acfff3b9114f5bf307e2aa78cbabfe21f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a 16-bit hex color string to 8-bit RGB components.  <br /></td></tr>
 <tr class="separator:acfff3b9114f5bf307e2aa78cbabfe21f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae94000387658cfce3f629da04843784f" id="r_ae94000387658cfce3f629da04843784f"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtilsOSDependable.html#ae94000387658cfce3f629da04843784f">UtilsOSDependable::get_terminal_bg_color_luminance</a> ()</td></tr>
+<tr class="memdesc:ae94000387658cfce3f629da04843784f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the luminance of terminal background color.  <br /></td></tr>
 <tr class="separator:ae94000387658cfce3f629da04843784f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a974ef162d7d2726649ea37db8594558d" id="r_a974ef162d7d2726649ea37db8594558d"><td class="memItemLeft" align="right" valign="top">tuple&lt; int, int, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtilsOSDependable.html#a974ef162d7d2726649ea37db8594558d">UtilsOSDependable::parse_terminal_color_response</a> (const string &amp;response)</td></tr>
+<tr class="memdesc:a974ef162d7d2726649ea37db8594558d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses terminal color response into RGB components.  <br /></td></tr>
 <tr class="separator:a974ef162d7d2726649ea37db8594558d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4e245ddb29771bf9f2e3190c6182f06d" id="r_a4e245ddb29771bf9f2e3190c6182f06d"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtilsOSDependable.html#a4e245ddb29771bf9f2e3190c6182f06d">UtilsOSDependable::capture_terminal_response</a> ()</td></tr>
+<tr class="memdesc:a4e245ddb29771bf9f2e3190c6182f06d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Captures terminal response to color query.  <br /></td></tr>
 <tr class="separator:a4e245ddb29771bf9f2e3190c6182f06d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a77d0b457dded74d7d1f901d333d25453" id="r_a77d0b457dded74d7d1f901d333d25453"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtilsOSDependable.html#a77d0b457dded74d7d1f901d333d25453">UtilsOSDependable::is_bg_color_dark</a> ()</td></tr>
+<tr class="memdesc:a77d0b457dded74d7d1f901d333d25453"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines if terminal background color is dark.  <br /></td></tr>
 <tr class="separator:a77d0b457dded74d7d1f901d333d25453"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Linux-specific utility functions. </p>
+<p>Provides OS-dependent implementations for Linux systems, including terminal color detection and conversion utilities. </p>
+
+<p class="definition">Definition in file <a class="el" href="linux__utils_8hpp_source.html">linux_utils.hpp</a>.</p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

@@ -110,16 +110,22 @@ $(function(){initNavTree('classFunctionBreakerC.html',''); initResizable(true); 
 </div><!--header-->
 <div class="contents">
 
+<p>C/C++ function parser and extractor.  
+ <a href="#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="function__breaker__c_8hpp_source.html">function_breaker_c.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a717f2187141f5e24688115e24bd93ef1" id="r_a717f2187141f5e24688115e24bd93ef1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a717f2187141f5e24688115e24bd93ef1">FunctionBreakerC</a> (string file_path, string folder_path)</td></tr>
+<tr class="memdesc:a717f2187141f5e24688115e24bd93ef1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs function breaker and processes file.  <br /></td></tr>
 <tr class="separator:a717f2187141f5e24688115e24bd93ef1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="function__breaker__c_8hpp_source.html#l00010">10</a> of file <a class="el" href="function__breaker__c_8hpp_source.html">function_breaker_c.hpp</a>.</p>
+<div class="textblock"><p>C/C++ function parser and extractor. </p>
+<p>Analyzes C/C++ source code to identify and extract individual functions, including their headers, bodies, and location information. Handles complex C syntax including preprocessor directives and comments. </p>
+
+<p class="definition">Definition at line <a class="el" href="function__breaker__c_8hpp_source.html#l00025">25</a> of file <a class="el" href="function__breaker__c_8hpp_source.html">function_breaker_c.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a717f2187141f5e24688115e24bd93ef1" name="a717f2187141f5e24688115e24bd93ef1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a717f2187141f5e24688115e24bd93ef1">&#9670;&#160;</a></span>FunctionBreakerC()</h2>
@@ -139,6 +145,15 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Constructs function breaker and processes file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">file_path</td><td>Source file to parse </td></tr>
+    <tr><td class="paramname">folder_path</td><td>Containing folder path </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p class="definition">Definition at line <a class="el" href="function__breaker__c_8cpp_source.html#l00384">384</a> of file <a class="el" href="function__breaker__c_8cpp_source.html">function_breaker_c.cpp</a>.</p>
 

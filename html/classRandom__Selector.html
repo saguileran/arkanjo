@@ -110,16 +110,22 @@ $(function(){initNavTree('classRandom__Selector.html',''); initResizable(true); 
 </div><!--header-->
 <div class="contents">
 
+<p>Random pair selector for similar code segments.  
+ <a href="#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="random__selector_8hpp_source.html">random_selector.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a478d14ada399a73dde0d91358a3fbde6" id="r_a478d14ada399a73dde0d91358a3fbde6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a478d14ada399a73dde0d91358a3fbde6">Random_Selector</a> (<a class="el" href="classSimilarity__Table.html">Similarity_Table</a> *_similarity_table, double _minimum_similarity, double _maximum_similarity, double _maximum_quantity)</td></tr>
+<tr class="memdesc:a478d14ada399a73dde0d91358a3fbde6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs selector with configuration.  <br /></td></tr>
 <tr class="separator:a478d14ada399a73dde0d91358a3fbde6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="random__selector_8hpp_source.html#l00014">14</a> of file <a class="el" href="random__selector_8hpp_source.html">random_selector.hpp</a>.</p>
+<div class="textblock"><p>Random pair selector for similar code segments. </p>
+<p>Selects and displays random pairs of similar functions within configurable similarity thresholds, with formatted output and color-coded display options. </p>
+
+<p class="definition">Definition at line <a class="el" href="random__selector_8hpp_source.html#l00029">29</a> of file <a class="el" href="random__selector_8hpp_source.html">random_selector.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a478d14ada399a73dde0d91358a3fbde6" name="a478d14ada399a73dde0d91358a3fbde6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a478d14ada399a73dde0d91358a3fbde6">&#9670;&#160;</a></span>Random_Selector()</h2>
@@ -149,6 +155,17 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Constructs selector with configuration. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_similarity_table</td><td>Source of similarity data </td></tr>
+    <tr><td class="paramname">_minimum_similarity</td><td>Minimum similarity threshold (0-100) </td></tr>
+    <tr><td class="paramname">_maximum_similarity</td><td>Maximum similarity threshold (0-100) </td></tr>
+    <tr><td class="paramname">_maximum_quantity</td><td>Maximum number of pairs to select </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p class="definition">Definition at line <a class="el" href="random__selector_8cpp_source.html#l00061">61</a> of file <a class="el" href="random__selector_8cpp_source.html">random_selector.cpp</a>.</p>
 

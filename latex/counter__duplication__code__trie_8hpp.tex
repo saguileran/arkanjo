@@ -1,5 +1,10 @@
 \doxysection{arkanjo/counter/counter\+\_\+duplication\+\_\+code\+\_\+trie.hpp File Reference}
 \hypertarget{counter__duplication__code__trie_8hpp}{}\label{counter__duplication__code__trie_8hpp}\index{arkanjo/counter/counter\_duplication\_code\_trie.hpp@{arkanjo/counter/counter\_duplication\_code\_trie.hpp}}
+
+
+Trie-\/based code duplication counter.  
+
+
 {\ttfamily \#include $<$bits/stdc++.\+h$>$}\newline
 {\ttfamily \#include "{}../base/utils.\+hpp"{}}\newline
 Include dependency graph for counter\+\_\+duplication\+\_\+code\+\_\+trie.\+hpp\+:
@@ -22,4 +27,13 @@ This graph shows which files directly or indirectly include this file\+:
 \begin{DoxyCompactItemize}
 \item 
 class \mbox{\hyperlink{classCounter__Duplication__Code__Trie}{Counter\+\_\+\+Duplication\+\_\+\+Code\+\_\+\+Trie}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Trie structure for hierarchical duplication counting. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Trie-\/based code duplication counter. 
+
+Implements a trie structure where nodes represent folders to enable hierarchical counting of duplicated lines across the codebase. Implements a TRIE where the nodes are folders, this enable the project to count the number of duplicated lines per folde in the codebase. 
+
+Definition in file \mbox{\hyperlink{counter__duplication__code__trie_8hpp_source}{counter\+\_\+duplication\+\_\+code\+\_\+trie.\+hpp}}.
+

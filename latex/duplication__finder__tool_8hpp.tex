@@ -1,5 +1,10 @@
 \doxysection{arkanjo/pre/duplication\+\_\+finder\+\_\+tool.hpp File Reference}
 \hypertarget{duplication__finder__tool_8hpp}{}\label{duplication__finder__tool_8hpp}\index{arkanjo/pre/duplication\_finder\_tool.hpp@{arkanjo/pre/duplication\_finder\_tool.hpp}}
+
+
+Main duplication detection tool interface.  
+
+
 {\ttfamily \#include $<$bits/stdc++.\+h$>$}\newline
 {\ttfamily \#include "{}parser.\+hpp"{}}\newline
 Include dependency graph for duplication\+\_\+finder\+\_\+tool.\+hpp\+:
@@ -22,4 +27,15 @@ This graph shows which files directly or indirectly include this file\+:
 \begin{DoxyCompactItemize}
 \item 
 class \mbox{\hyperlink{classDuplicationFinderTool}{Duplication\+Finder\+Tool}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Main code duplication detection tool. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Main duplication detection tool interface. 
+
+Provides the primary interface for the code duplication detection tool, handling the heavy preprocessing of the input codebase to enable fast query responses during operation.
+
+Defines the preprocessor/setup step of the tool, where we do a heavy preprocessing of the input codebase to enable fast query response later. 
+
+Definition in file \mbox{\hyperlink{duplication__finder__tool_8hpp_source}{duplication\+\_\+finder\+\_\+tool.\+hpp}}.
+

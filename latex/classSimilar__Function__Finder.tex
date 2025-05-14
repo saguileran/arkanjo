@@ -2,19 +2,26 @@
 \hypertarget{classSimilar__Function__Finder}{}\label{classSimilar__Function__Finder}\index{Similar\_Function\_Finder@{Similar\_Function\_Finder}}
 
 
+Similar function locator and reporter.  
+
+
+
+
 {\ttfamily \#include $<$similar\+\_\+function\+\_\+finder.\+hpp$>$}
 
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classSimilar__Function__Finder_a0d44dea6097a532f30204589cc4bb450}{Similar\+\_\+\+Function\+\_\+\+Finder}} (string \+\_\+function\+\_\+pattern, \mbox{\hyperlink{classSimilarity__Table}{Similarity\+\_\+\+Table}} \texorpdfstring{$\ast$}{*}\+\_\+similarity\+\_\+table)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Constructs finder and initiates search. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
+Similar function locator and reporter. 
 
+Identifies functions similar to a specified reference function pattern and provides detailed reporting about the matches found. 
 
-Definition at line \mbox{\hyperlink{similar__function__finder_8hpp_source_l00015}{15}} of file \mbox{\hyperlink{similar__function__finder_8hpp_source}{similar\+\_\+function\+\_\+finder.\+hpp}}.
+Definition at line \mbox{\hyperlink{similar__function__finder_8hpp_source_l00028}{28}} of file \mbox{\hyperlink{similar__function__finder_8hpp_source}{similar\+\_\+function\+\_\+finder.\+hpp}}.
 
 
 
@@ -25,6 +32,17 @@ Definition at line \mbox{\hyperlink{similar__function__finder_8hpp_source_l00015
 {\footnotesize\ttfamily \label{classSimilar__Function__Finder_a0d44dea6097a532f30204589cc4bb450} 
 Similar\+\_\+\+Function\+\_\+\+Finder\+::\+Similar\+\_\+\+Function\+\_\+\+Finder (\begin{DoxyParamCaption}\item[{string}]{\+\_\+function\+\_\+pattern}{, }\item[{\mbox{\hyperlink{classSimilarity__Table}{Similarity\+\_\+\+Table}} \texorpdfstring{$\ast$}{*}}]{\+\_\+similarity\+\_\+table}{}\end{DoxyParamCaption})}
 
+
+
+Constructs finder and initiates search. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+function\+\_\+pattern} & \doxylink{classFunction}{Function} name pattern to match \\
+\hline
+{\em \+\_\+similarity\+\_\+table} & Source of similarity data \\
+\hline
+\end{DoxyParams}
 
 
 Definition at line \mbox{\hyperlink{similar__function__finder_8cpp_source_l00050}{50}} of file \mbox{\hyperlink{similar__function__finder_8cpp_source}{similar\+\_\+function\+\_\+finder.\+cpp}}.

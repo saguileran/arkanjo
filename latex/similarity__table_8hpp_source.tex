@@ -2,56 +2,66 @@
 \hypertarget{similarity__table_8hpp_source}{}\label{similarity__table_8hpp_source}\index{arkanjo/base/similarity\_table.hpp@{arkanjo/base/similarity\_table.hpp}}
 \mbox{\hyperlink{similarity__table_8hpp}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00001}00001\ \textcolor{comment}{//\ Similarity\ Table\ is\ a\ abstraction\ that\ store\ the\ pair\ of\ functions\ }}
-\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00002}00002\ \textcolor{comment}{//\ that\ are\ similar\ to\ each\ other\ and\ the\ similarity\ probability\ between}}
-\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00003}00003\ \textcolor{comment}{//\ them.}}
-\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00004}00004\ }
-\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00005}00005\ \textcolor{preprocessor}{\#ifndef\ SIMILARITY\_TABLE\_HPP}}
-\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00006}00006\ \textcolor{preprocessor}{\#define\ SIMILARITY\_TABLE\_HPP}}
-\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00007}00007\ }
-\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <bits/stdc++.h>}\ }
-\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00009}00009\ }
-\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00010}00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{path_8hpp}{path.hpp}}"{}}}
-\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00011}00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{utils_8hpp}{utils.hpp}}"{}}}
-\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00012}00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{function_8hpp}{function.hpp}}"{}}}
-\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00013}00013\ \textcolor{keyword}{using\ namespace\ }std;}
-\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00014}00014\ }
-\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00015}\mbox{\hyperlink{classSimilarity__Table}{00015}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classSimilarity__Table_a2a4703c08a255444950055041905ab9d}{Similarity\_Table}}\{}
-\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00016}00016\ \ \ \ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00017}00017\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ SIMILARITY\_TABLE\_FILE\_NAME\ =\ \textcolor{stringliteral}{"{}tmp/output\_parsed.txt"{}};}
-\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00018}00018\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ DEFAULT\_SIMILARITY\ =\ 100.00;}
-\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00019}00019\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ EPS\_ERROR\_MARGIN\ =\ 1e-\/6;}
-\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ MAXIMUM\_SIMILARITY\ =\ 100.00;}
-\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ MINIMUM\_SIMILARITY\ =\ 0.00;}
+\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00013}00013\ \textcolor{preprocessor}{\#ifndef\ SIMILARITY\_TABLE\_HPP}}
+\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00014}00014\ \textcolor{preprocessor}{\#define\ SIMILARITY\_TABLE\_HPP}}
+\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00016}00016\ \textcolor{preprocessor}{\#include\ <bits/stdc++.h>}\ }
+\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00018}00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{path_8hpp}{path.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00019}00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{utils_8hpp}{utils.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00020}00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{function_8hpp}{function.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00021}00021\ \textcolor{keyword}{using\ namespace\ }std;}
 \DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00022}00022\ }
-\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ similarity\_threshold;}
-\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00024}00024\ \ \ \ \ \ \ \ \ vector<Path>\ paths;}
-\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00025}00025\ \ \ \ \ \ \ \ \ map<Path,int>\ path\_id;}
-\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00026}00026\ \ \ \ \ \ \ \ \ vector<vector<pair<int,double>>>\ similarity\_graph;}
-\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00027}00027\ \ \ \ \ \ \ \ \ map<pair<int,int>,\textcolor{keywordtype}{double}>\ similarity\_table;}
-\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00028}00028\ }
-\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ find\_id\_path(\mbox{\hyperlink{classPath}{Path}}\ path);}
-\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ read\_comparation(ifstream\ \&table\_file);}
-\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ read\_file\_table(ifstream\ \&table\_file);}
-\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ init\_similarity\_table();}
-\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ is\_above\_threshold(\textcolor{keywordtype}{double}\ similarity);}
-\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00034}00034\ }
-\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00035}00035\ \ \ \ \ \ \ \ \ vector<tuple<int,Path,Path>>\ sort\_pairs\_by\_line\_number(vector<pair<Path,Path>>\ similar\_path\_pairs);}
+\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00029}\mbox{\hyperlink{classSimilarity__Table}{00029}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classSimilarity__Table_a2a4703c08a255444950055041905ab9d}{Similarity\_Table}}\ \{}
+\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00030}00030\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00031}00031\ \ \ \ \ \textcolor{keywordtype}{string}\ SIMILARITY\_TABLE\_FILE\_NAME\ =\ \textcolor{stringliteral}{"{}tmp/output\_parsed.txt"{}};\ \ }
+\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00032}00032\ \ \ \ \ \textcolor{keywordtype}{double}\ DEFAULT\_SIMILARITY\ =\ 100.00;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00033}00033\ \ \ \ \ \textcolor{keywordtype}{double}\ EPS\_ERROR\_MARGIN\ =\ 1e-\/6;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00034}00034\ \ \ \ \ \textcolor{keywordtype}{double}\ MAXIMUM\_SIMILARITY\ =\ 100.00;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00035}00035\ \ \ \ \ \textcolor{keywordtype}{double}\ MINIMUM\_SIMILARITY\ =\ 0.00;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
 \DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00036}00036\ }
-\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00037}00037\ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSimilarity__Table_aa2b6b79ada7c70429b678e6570a54c34}{Similarity\_Table}}(\textcolor{keywordtype}{double}\ \_similarity\_threshold);}
-\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSimilarity__Table_aa2b6b79ada7c70429b678e6570a54c34}{Similarity\_Table}}();}
-\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00040}00040\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSimilarity__Table_a35f8cb1b8c488a81d0011795c3e26256}{update\_similarity}}(\textcolor{keywordtype}{double}\ new\_similarity\_threshold);}
-\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classSimilarity__Table_ac5060fd7468ab450ee43f3b753e5bd54}{get\_similarity}}(\mbox{\hyperlink{classPath}{Path}}\ path1,\ \mbox{\hyperlink{classPath}{Path}}\ path2);}
-\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classSimilarity__Table_a7744d1810571f17a88cd94bcc200a73f}{is\_similar}}(\mbox{\hyperlink{classPath}{Path}}\ path1,\ \mbox{\hyperlink{classPath}{Path}}\ path2);}
-\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00044}00044\ \ \ \ \ \ \ \ \ vector<Path>\ \mbox{\hyperlink{classSimilarity__Table_a439b3abde9580321bbdfcd781074ed02}{get\_path\_list}}();}
-\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00045}00045\ \ \ \ \ \ \ \ \ vector<Path>\ \mbox{\hyperlink{classSimilarity__Table_a6b6ed8039345bf944b987140ddb9ab41}{get\_similar\_path\_to\_the\_reference}}(\mbox{\hyperlink{classPath}{Path}}\ reference);}
-\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00046}00046\ \ \ \ \ \ \ \ \ vector<tuple<double,Path,Path>>\ \mbox{\hyperlink{classSimilarity__Table_a774e4001d75a5d128f428941622a4868}{get\_all\_path\_pairs\_and\_similarity\_sorted\_by\_similarity}}();}
-\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00047}00047\ \ \ \ \ \ \ \ \ vector<pair<Path,Path>>\ \mbox{\hyperlink{classSimilarity__Table_ade181f191adb4a2cbbbf0d2dfd8f54c7}{get\_all\_similar\_path\_pairs\_sorted\_by\_similarity}}();}
-\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00048}00048\ \ \ \ \ \ \ \ \ vector<pair<Path,Path>>\ \mbox{\hyperlink{classSimilarity__Table_a1ca3f6a266dff65fecef8ea40e74ab48}{get\_all\_similar\_path\_pairs\_sorted\_by\_line\_number}}();}
-\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00049}00049\ \};}
-\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00050}00050\ }
-\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00051}00051\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00037}00037\ \ \ \ \ \textcolor{keywordtype}{double}\ similarity\_threshold;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00038}00038\ \ \ \ \ vector<Path>\ paths;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00039}00039\ \ \ \ \ map<Path,int>\ path\_id;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00040}00040\ \ \ \ \ vector<vector<pair<int,double>>>\ similarity\_graph;\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00041}00041\ \ \ \ \ map<pair<int,int>,\textcolor{keywordtype}{double}>\ similarity\_table;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00048}00048\ \ \ \ \ \textcolor{keywordtype}{int}\ find\_id\_path(\mbox{\hyperlink{classPath}{Path}}\ path);}
+\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00054}00054\ \ \ \ \ \textcolor{keywordtype}{void}\ read\_comparation(ifstream\ \&table\_file);}
+\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00060}00060\ \ \ \ \ \textcolor{keywordtype}{void}\ read\_file\_table(ifstream\ \&table\_file);}
+\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00065}00065\ \ \ \ \ \textcolor{keywordtype}{void}\ init\_similarity\_table();}
+\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00072}00072\ \ \ \ \ \textcolor{keywordtype}{bool}\ is\_above\_threshold(\textcolor{keywordtype}{double}\ similarity);}
+\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00079}00079\ \ \ \ \ vector<tuple<int,Path,Path>>\ sort\_pairs\_by\_line\_number(vector<pair<Path,Path>>\ similar\_path\_pairs);}
+\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00081}00081\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00086}00086\ \ \ \ \ \mbox{\hyperlink{classSimilarity__Table_aa2b6b79ada7c70429b678e6570a54c34}{Similarity\_Table}}(\textcolor{keywordtype}{double}\ \_similarity\_threshold);}
+\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00087}00087\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00091}00091\ \ \ \ \ \mbox{\hyperlink{classSimilarity__Table_aa2b6b79ada7c70429b678e6570a54c34}{Similarity\_Table}}();}
+\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00092}00092\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00097}00097\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSimilarity__Table_a35f8cb1b8c488a81d0011795c3e26256}{update\_similarity}}(\textcolor{keywordtype}{double}\ new\_similarity\_threshold);}
+\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00098}00098\ }
+\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00105}00105\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classSimilarity__Table_ac5060fd7468ab450ee43f3b753e5bd54}{get\_similarity}}(\mbox{\hyperlink{classPath}{Path}}\ path1,\ \mbox{\hyperlink{classPath}{Path}}\ path2);}
+\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00106}00106\ }
+\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00113}00113\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classSimilarity__Table_a7744d1810571f17a88cd94bcc200a73f}{is\_similar}}(\mbox{\hyperlink{classPath}{Path}}\ path1,\ \mbox{\hyperlink{classPath}{Path}}\ path2);}
+\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00114}00114\ }
+\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00119}00119\ \ \ \ \ vector<Path>\ \mbox{\hyperlink{classSimilarity__Table_a439b3abde9580321bbdfcd781074ed02}{get\_path\_list}}();}
+\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00120}00120\ }
+\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00126}00126\ \ \ \ \ vector<Path>\ \mbox{\hyperlink{classSimilarity__Table_a6b6ed8039345bf944b987140ddb9ab41}{get\_similar\_path\_to\_the\_reference}}(\mbox{\hyperlink{classPath}{Path}}\ reference);}
+\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00127}00127\ }
+\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00132}00132\ \ \ \ \ vector<tuple<double,Path,Path>>\ \mbox{\hyperlink{classSimilarity__Table_a774e4001d75a5d128f428941622a4868}{get\_all\_path\_pairs\_and\_similarity\_sorted\_by\_similarity}}();}
+\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00133}00133\ }
+\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00138}00138\ \ \ \ \ vector<pair<Path,Path>>\ \mbox{\hyperlink{classSimilarity__Table_ade181f191adb4a2cbbbf0d2dfd8f54c7}{get\_all\_similar\_path\_pairs\_sorted\_by\_similarity}}();}
+\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00139}00139\ }
+\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00144}00144\ \ \ \ \ vector<pair<Path,Path>>\ \mbox{\hyperlink{classSimilarity__Table_a1ca3f6a266dff65fecef8ea40e74ab48}{get\_all\_similar\_path\_pairs\_sorted\_by\_line\_number}}();}
+\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00145}00145\ \};}
+\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00146}00146\ }
+\DoxyCodeLine{\Hypertarget{similarity__table_8hpp_source_l00147}00147\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

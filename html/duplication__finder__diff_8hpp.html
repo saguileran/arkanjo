@@ -108,6 +108,9 @@ $(function(){initNavTree('duplication__finder__diff_8hpp.html',''); initResizabl
   <div class="headertitle"><div class="title">duplication_finder_diff.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Code duplication preprocessing system.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;bits/stdc++.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="utils_8hpp_source.html">../base/utils.hpp</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -115,7 +118,7 @@ Include dependency graph for duplication_finder_diff.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="duplication__finder__diff_8hpp__incl.png" border="0" usemap="#aarkanjo_2pre_2duplication__finder__diff_8hpp" alt=""/></div>
 <map name="aarkanjo_2pre_2duplication__finder__diff_8hpp" id="aarkanjo_2pre_2duplication__finder__diff_8hpp">
-<area shape="rect" title=" " alt="" coords="48,5,199,46"/>
+<area shape="rect" title="Code duplication preprocessing system." alt="" coords="48,5,199,46"/>
 <area shape="rect" title=" " alt="" coords="5,168,103,193"/>
 <area shape="poly" title=" " alt="" coords="117,47,68,154,63,152,112,45"/>
 <area shape="rect" href="utils_8hpp.html" title="Defines utility functions used across all files." alt="" coords="125,94,236,120"/>
@@ -132,12 +135,12 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="duplication__finder__diff_8hpp__dep__incl.png" border="0" usemap="#aarkanjo_2pre_2duplication__finder__diff_8hppdep" alt=""/></div>
 <map name="aarkanjo_2pre_2duplication__finder__diff_8hppdep" id="aarkanjo_2pre_2duplication__finder__diff_8hppdep">
-<area shape="rect" title=" " alt="" coords="211,5,362,46"/>
+<area shape="rect" title="Code duplication preprocessing system." alt="" coords="211,5,362,46"/>
 <area shape="rect" href="duplication__finder__diff_8cpp.html" title=" " alt="" coords="115,94,266,135"/>
 <area shape="poly" title=" " alt="" coords="255,59,214,96,211,92,252,55"/>
-<area shape="rect" href="preprocessor_8hpp.html" title=" " alt="" coords="290,102,478,127"/>
+<area shape="rect" href="preprocessor_8hpp.html" title="Codebase preprocessing interface." alt="" coords="290,102,478,127"/>
 <area shape="poly" title=" " alt="" coords="322,55,373,99,369,103,319,59"/>
-<area shape="rect" href="orchestrator_8cpp.html" title=" " alt="" coords="5,190,166,216"/>
+<area shape="rect" href="orchestrator_8hpp.html" title="Main command orchestration interface." alt="" coords="5,190,166,216"/>
 <area shape="poly" title=" " alt="" coords="328,135,128,192,127,187,327,129"/>
 <area shape="rect" href="preprocessor_8cpp.html" title=" " alt="" coords="190,190,378,216"/>
 <area shape="poly" title=" " alt="" coords="360,140,300,192,296,188,357,136"/>
@@ -145,6 +148,8 @@ This graph shows which files directly or indirectly include this file:</div>
 <area shape="poly" title=" " alt="" coords="411,135,463,180,460,184,408,139"/>
 <area shape="rect" href="test_8cpp.html" title=" " alt="" coords="590,190,762,216"/>
 <area shape="poly" title=" " alt="" coords="441,130,636,187,634,192,439,135"/>
+<area shape="rect" href="orchestrator_8cpp.html" title=" " alt="" coords="5,271,166,297"/>
+<area shape="poly" title=" " alt="" coords="88,232,88,271,83,271,83,232"/>
 </map>
 </div>
 </div>
@@ -153,9 +158,16 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDuplicationFinderDiff.html">DuplicationFinderDiff</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Code duplication preprocessor.  <a href="classDuplicationFinderDiff.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Code duplication preprocessing system. </p>
+<p>Implements the heavy preprocessing stage that analyzes the codebase for potential duplications to enable fast query responses later.</p>
+<p>Defines the preprocessor/setup step of the tool, where we do a heavy preprocessing of the input codebase to enable fast query response later. </p>
+
+<p class="definition">Definition in file <a class="el" href="duplication__finder__diff_8hpp_source.html">duplication_finder_diff.hpp</a>.</p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

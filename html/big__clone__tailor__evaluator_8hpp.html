@@ -108,6 +108,9 @@ $(function(){initNavTree('big__clone__tailor__evaluator_8hpp.html',''); initResi
   <div class="headertitle"><div class="title">big_clone_tailor_evaluator.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>BigCloneBench evaluation interface.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;bits/stdc++.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="path_8hpp_source.html">../base/path.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="utils_8hpp_source.html">../base/utils.hpp</a>&quot;</code><br />
@@ -117,14 +120,14 @@ Include dependency graph for big_clone_tailor_evaluator.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="big__clone__tailor__evaluator_8hpp__incl.png" border="0" usemap="#aarkanjo_2big__clone_2big__clone__tailor__evaluator_8hpp" alt=""/></div>
 <map name="aarkanjo_2big__clone_2big__clone__tailor__evaluator_8hpp" id="aarkanjo_2big__clone_2big__clone__tailor__evaluator_8hpp">
-<area shape="rect" title=" " alt="" coords="5,5,184,46"/>
+<area shape="rect" title="BigCloneBench evaluation interface." alt="" coords="5,5,184,46"/>
 <area shape="rect" title=" " alt="" coords="92,330,190,356"/>
 <area shape="poly" title=" " alt="" coords="88,47,71,91,56,151,52,184,52,217,57,250,68,281,83,302,104,319,101,323,79,306,63,283,51,251,46,218,47,183,51,150,66,89,83,45"/>
-<area shape="rect" href="path_8hpp.html" title=" " alt="" coords="85,256,197,282"/>
+<area shape="rect" href="path_8hpp.html" title="Path abstraction for temporary codebase." alt="" coords="85,256,197,282"/>
 <area shape="poly" title=" " alt="" coords="89,47,78,88,76,111,78,134,100,193,127,242,122,244,95,195,73,135,71,111,73,87,84,46"/>
 <area shape="rect" href="utils_8hpp.html" title="Defines utility functions used across all files." alt="" coords="323,256,434,282"/>
 <area shape="poly" title=" " alt="" coords="137,44,181,67,231,99,282,137,328,181,351,211,368,241,364,244,347,214,325,184,279,141,228,103,178,72,135,49"/>
-<area shape="rect" href="similarity__table_8hpp.html" title=" " alt="" coords="88,94,202,135"/>
+<area shape="rect" href="similarity__table_8hpp.html" title="Similarity relationships storage and analysis." alt="" coords="88,94,202,135"/>
 <area shape="poly" title=" " alt="" coords="108,45,128,79,124,82,104,48"/>
 <area shape="poly" title=" " alt="" coords="144,282,144,314,138,314,138,282"/>
 <area shape="poly" title=" " alt="" coords="339,285,197,328,195,322,337,280"/>
@@ -135,7 +138,7 @@ Include dependency graph for big_clone_tailor_evaluator.hpp:</div>
 <area shape="poly" title=" " alt="" coords="134,136,102,189,87,222,76,257,73,269,76,281,90,302,109,319,105,323,86,305,71,283,68,269,71,256,82,220,98,187,129,134"/>
 <area shape="poly" title=" " alt="" coords="147,135,145,241,139,241,142,135"/>
 <area shape="poly" title=" " alt="" coords="201,133,247,154,293,180,331,211,361,243,357,246,327,215,290,185,245,158,199,138"/>
-<area shape="rect" href="function_8hpp.html" title=" " alt="" coords="189,183,280,208"/>
+<area shape="rect" href="function_8hpp.html" title="Function abstraction for temporary codebase." alt="" coords="189,183,280,208"/>
 <area shape="poly" title=" " alt="" coords="169,133,211,170,208,174,165,137"/>
 <area shape="poly" title=" " alt="" coords="236,209,228,244,211,283,194,305,174,323,170,319,190,301,207,281,223,242,230,208"/>
 <area shape="poly" title=" " alt="" coords="220,211,170,249,167,245,217,207"/>
@@ -148,11 +151,13 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="big__clone__tailor__evaluator_8hpp__dep__incl.png" border="0" usemap="#aarkanjo_2big__clone_2big__clone__tailor__evaluator_8hppdep" alt=""/></div>
 <map name="aarkanjo_2big__clone_2big__clone__tailor__evaluator_8hppdep" id="aarkanjo_2big__clone_2big__clone__tailor__evaluator_8hppdep">
-<area shape="rect" title=" " alt="" coords="101,5,280,46"/>
+<area shape="rect" title="BigCloneBench evaluation interface." alt="" coords="101,5,280,46"/>
 <area shape="rect" href="big__clone__tailor__evaluator_8cpp.html" title=" " alt="" coords="5,94,184,135"/>
 <area shape="poly" title=" " alt="" coords="159,59,118,96,114,92,156,55"/>
-<area shape="rect" href="orchestrator_8cpp.html" title=" " alt="" coords="208,102,368,127"/>
+<area shape="rect" href="orchestrator_8hpp.html" title="Main command orchestration interface." alt="" coords="208,102,368,127"/>
 <area shape="poly" title=" " alt="" coords="226,55,276,99,273,103,222,59"/>
+<area shape="rect" href="orchestrator_8cpp.html" title=" " alt="" coords="208,183,368,208"/>
+<area shape="poly" title=" " alt="" coords="290,143,290,182,285,182,285,143"/>
 </map>
 </div>
 </div>
@@ -161,9 +166,16 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBig__Clone__Tailor__Evaluator.html">Big_Clone_Tailor_Evaluator</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates clone detection using BigCloneBench methodology.  <a href="classBig__Clone__Tailor__Evaluator.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>BigCloneBench evaluation interface. </p>
+<p>Provides evaluation metrics compatible with BigCloneBench dataset using methodology similar to the Tailor tool for clone detection.</p>
+<p>This class is used to evaluate the tool by the big clone bench dataset using the same methodology as the Tailor tool. </p>
+
+<p class="definition">Definition in file <a class="el" href="big__clone__tailor__evaluator_8hpp_source.html">big_clone_tailor_evaluator.hpp</a>.</p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

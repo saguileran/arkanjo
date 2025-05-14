@@ -1,14 +1,14 @@
 <map id="arkanjo/explorer/similarity_explorer.hpp" name="arkanjo/explorer/similarity_explorer.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="9,5,177,46"/>
+<area shape="rect" id="Node000001" title="Duplicate function exploration interface." alt="" coords="9,5,177,46"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="52,330,150,356"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="60,49,36,69,17,95,14,114,17,135,14,177,9,211,10,243,23,281,41,303,63,320,60,324,37,306,19,283,5,244,4,211,9,177,12,135,9,114,12,93,32,65,57,44"/>
-<area shape="rect" id="Node000003" href="$path_8hpp.html" title=" " alt="" coords="45,256,157,282"/>
+<area shape="rect" id="Node000003" href="$path_8hpp.html" title="Path abstraction for temporary codebase." alt="" coords="45,256,157,282"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="65,48,43,69,26,95,22,114,26,134,37,165,52,194,84,243,80,245,48,197,32,167,21,135,17,114,21,93,39,66,62,45"/>
-<area shape="rect" id="Node000004" href="$function_8hpp.html" title=" " alt="" coords="128,183,261,208"/>
+<area shape="rect" id="Node000004" href="$function_8hpp.html" title="Function abstraction for temporary codebase." alt="" coords="128,183,261,208"/>
 <area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="121,45,144,66,165,93,182,130,192,167,187,168,177,132,160,95,140,70,117,49"/>
 <area shape="rect" id="Node000006" href="$utils_8hpp.html" title="Defines utility functions used across all files." alt="" coords="282,256,352,282"/>
 <area shape="poly" id="edge12_Node000001_Node000006" title=" " alt="" coords="137,44,178,67,224,97,268,136,303,181,315,211,319,241,314,241,310,212,299,184,264,139,221,102,176,71,135,49"/>
-<area shape="rect" id="Node000008" href="$similarity__table_8hpp.html" title=" " alt="" coords="36,94,150,135"/>
+<area shape="rect" id="Node000008" href="$similarity__table_8hpp.html" title="Similarity relationships storage and analysis." alt="" coords="36,94,150,135"/>
 <area shape="poly" id="edge13_Node000001_Node000008" title=" " alt="" coords="96,47,96,78,90,78,90,47"/>
 <area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="104,282,104,314,98,314,98,282"/>
 <area shape="poly" id="edge5_Node000004_Node000002" title=" " alt="" coords="196,209,188,244,171,283,154,305,134,323,130,319,150,301,167,281,183,242,190,208"/>

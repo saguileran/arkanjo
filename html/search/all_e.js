@@ -15,5 +15,6 @@ var searchData=
   ['or_20equal_20to_20a_20given_20value_3a_12',['finds the quantity and all pair of files that the similarity is greater or equal to a given value:',['..//github/workspace/master_artifacts/file_parser/README.md#autotoc_md28',1,'']]],
   ['orchestrator_13',['Orchestrator',['../classOrchestrator.html',1,'Orchestrator'],['../classOrchestrator.html#ab7bc963fbc5074993b6dc46cb3e8580b',1,'Orchestrator::Orchestrator()']]],
   ['orchestrator_2ecpp_14',['orchestrator.cpp',['../orchestrator_8cpp.html',1,'']]],
-  ['output_20of_20the_20all_20command_3a_15',['Find files that the similarity to a given file from the output of the all command:',['..//github/workspace/master_artifacts/file_parser/README.md#autotoc_md29',1,'']]]
+  ['orchestrator_2ehpp_15',['orchestrator.hpp',['../orchestrator_8hpp.html',1,'']]],
+  ['output_20of_20the_20all_20command_3a_16',['Find files that the similarity to a given file from the output of the all command:',['..//github/workspace/master_artifacts/file_parser/README.md#autotoc_md29',1,'']]]
 ];

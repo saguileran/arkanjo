@@ -110,21 +110,28 @@ $(function(){initNavTree('classDuplicationFinderTool.html',''); initResizable(tr
 </div><!--header-->
 <div class="contents">
 
+<p>Main code duplication detection tool.  
+ <a href="#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="duplication__finder__tool_8hpp_source.html">duplication_finder_tool.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a6ad73dc1a4db0983453e3e3dcd5f0e72" id="r_a6ad73dc1a4db0983453e3e3dcd5f0e72"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6ad73dc1a4db0983453e3e3dcd5f0e72">DuplicationFinderTool</a> (string base_path_, double similatiry_)</td></tr>
-<tr class="separator:a6ad73dc1a4db0983453e3e3dcd5f0e72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51ccfae6f59662e833c2909540de8e53" id="r_a51ccfae6f59662e833c2909540de8e53"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a51ccfae6f59662e833c2909540de8e53">DuplicationFinderTool</a> (string base_path_, double similarity_)</td></tr>
+<tr class="memdesc:a51ccfae6f59662e833c2909540de8e53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs the duplication finder tool.  <br /></td></tr>
+<tr class="separator:a51ccfae6f59662e833c2909540de8e53"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a40998a449cec56cdbebeb96a3c600c94" id="r_a40998a449cec56cdbebeb96a3c600c94"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a40998a449cec56cdbebeb96a3c600c94">execute</a> ()</td></tr>
+<tr class="memdesc:a40998a449cec56cdbebeb96a3c600c94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes the full duplication analysis pipeline.  <br /></td></tr>
 <tr class="separator:a40998a449cec56cdbebeb96a3c600c94"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="duplication__finder__tool_8hpp_source.html#l00012">12</a> of file <a class="el" href="duplication__finder__tool_8hpp_source.html">duplication_finder_tool.hpp</a>.</p>
+<div class="textblock"><p>Main code duplication detection tool. </p>
+<p>Orchestrates the preprocessing pipeline that analyzes the entire codebase to identify and catalog potential code duplications, creating the foundation for efficient similarity queries during the tool's operation phase. </p>
+
+<p class="definition">Definition at line <a class="el" href="duplication__finder__tool_8hpp_source.html#l00028">28</a> of file <a class="el" href="duplication__finder__tool_8hpp_source.html">duplication_finder_tool.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a6ad73dc1a4db0983453e3e3dcd5f0e72" name="a6ad73dc1a4db0983453e3e3dcd5f0e72"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6ad73dc1a4db0983453e3e3dcd5f0e72">&#9670;&#160;</a></span>DuplicationFinderTool()</h2>
+<a id="a51ccfae6f59662e833c2909540de8e53" name="a51ccfae6f59662e833c2909540de8e53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51ccfae6f59662e833c2909540de8e53">&#9670;&#160;</a></span>DuplicationFinderTool()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -137,10 +144,19 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>similatiry_</em></span>&#160;)</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>similarity_</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Constructs the duplication finder tool. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">base_path_</td><td>Root path of the codebase to analyze </td></tr>
+    <tr><td class="paramname">similarity_</td><td>Minimum similarity threshold (0-100) to consider as duplicate </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p class="definition">Definition at line <a class="el" href="duplication__finder__tool_8cpp_source.html#l00003">3</a> of file <a class="el" href="duplication__finder__tool_8cpp_source.html">duplication_finder_tool.cpp</a>.</p>
 
@@ -161,6 +177,9 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Executes the full duplication analysis pipeline. </p>
+<p>Performs the complete preprocessing and analysis of the codebase, including file scanning, similarity comparison, and result saving. </p>
 
 <p class="definition">Definition at line <a class="el" href="duplication__finder__tool_8cpp_source.html#l00008">8</a> of file <a class="el" href="duplication__finder__tool_8cpp_source.html">duplication_finder_tool.cpp</a>.</p>
 

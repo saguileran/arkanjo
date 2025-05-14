@@ -1,35 +1,37 @@
 <map id="arkanjo/base/config.hpp" name="arkanjo/base/config.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="449,5,606,31"/>
+<area shape="rect" id="Node000001" title="Configuration management interface." alt="" coords="449,5,606,31"/>
 <area shape="rect" id="Node000002" href="$config_8cpp.html" title=" " alt="" coords="173,86,330,112"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="471,38,295,88,293,83,470,33"/>
-<area shape="rect" id="Node000003" href="$function__breaker__util_8hpp.html" title=" " alt="" coords="354,79,490,120"/>
+<area shape="rect" id="Node000003" href="$function__breaker__util_8hpp.html" title="Function breaker utilities and constants." alt="" coords="354,79,490,120"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="501,43,450,81,447,76,498,38"/>
-<area shape="rect" id="Node000006" href="$preprocessor_8hpp.html" title=" " alt="" coords="392,352,580,378"/>
-<area shape="poly" id="edge17_Node000001_Node000006" title=" " alt="" coords="541,44,557,93,570,157,574,228,569,264,558,298,548,315,535,331,507,354,504,350,531,327,544,312,553,296,563,263,568,228,565,158,551,94,536,46"/>
-<area shape="rect" id="Node000010" href="$test_8cpp.html" title=" " alt="" coords="590,441,761,467"/>
-<area shape="poly" id="edge18_Node000001_Node000010" title=" " alt="" coords="561,38,594,64,627,98,653,139,661,162,663,187,663,278,669,372,676,441,671,441,663,372,658,278,658,187,655,164,648,142,623,101,590,68,558,42"/>
-<area shape="rect" id="Node000004" href="$function__breaker_8hpp.html" title=" " alt="" coords="248,256,383,297"/>
+<area shape="rect" id="Node000006" href="$preprocessor_8hpp.html" title="Codebase preprocessing interface." alt="" coords="392,352,580,378"/>
+<area shape="poly" id="edge18_Node000001_Node000006" title=" " alt="" coords="541,44,557,93,570,157,574,228,569,264,558,298,548,315,535,331,507,354,504,350,531,327,544,312,553,296,563,263,568,228,565,158,551,94,536,46"/>
+<area shape="rect" id="Node000011" href="$test_8cpp.html" title=" " alt="" coords="590,441,761,467"/>
+<area shape="poly" id="edge19_Node000001_Node000011" title=" " alt="" coords="561,38,594,64,627,98,653,139,661,162,663,187,663,278,669,372,676,441,671,441,663,372,658,278,658,187,655,164,648,142,623,101,590,68,558,42"/>
+<area shape="rect" id="Node000004" href="$function__breaker_8hpp.html" title="Main function extraction interface." alt="" coords="248,256,383,297"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="405,134,330,257,325,254,400,131"/>
-<area shape="rect" id="Node000011" href="$function__breaker__c_8hpp.html" title=" " alt="" coords="408,168,543,208"/>
-<area shape="poly" id="edge10_Node000003_Node000011" title=" " alt="" coords="444,132,466,166,461,169,440,134"/>
-<area shape="rect" id="Node000013" href="$function__breaker__java_8hpp.html" title=" " alt="" coords="37,168,172,208"/>
-<area shape="poly" id="edge13_Node000003_Node000013" title=" " alt="" coords="341,126,173,171,172,166,339,120"/>
-<area shape="rect" id="Node000015" href="$function__breaker__util_8cpp.html" title=" " alt="" coords="197,168,332,208"/>
-<area shape="poly" id="edge16_Node000003_Node000015" title=" " alt="" coords="374,130,302,170,299,165,372,125"/>
+<area shape="rect" id="Node000012" href="$function__breaker__c_8hpp.html" title="C/C++ function parsing and extraction." alt="" coords="408,168,543,208"/>
+<area shape="poly" id="edge11_Node000003_Node000012" title=" " alt="" coords="444,132,466,166,461,169,440,134"/>
+<area shape="rect" id="Node000014" href="$function__breaker__java_8hpp.html" title="Java function parsing and extraction." alt="" coords="37,168,172,208"/>
+<area shape="poly" id="edge14_Node000003_Node000014" title=" " alt="" coords="341,126,173,171,172,166,339,120"/>
+<area shape="rect" id="Node000016" href="$function__breaker__util_8cpp.html" title=" " alt="" coords="197,168,332,208"/>
+<area shape="poly" id="edge17_Node000003_Node000016" title=" " alt="" coords="374,130,302,170,299,165,372,125"/>
 <area shape="rect" id="Node000005" href="$function__breaker_8cpp.html" title=" " alt="" coords="233,345,368,386"/>
 <area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="312,313,307,345,302,344,307,312"/>
 <area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="369,302,464,350,461,354,366,307"/>
-<area shape="rect" id="Node000007" href="$orchestrator_8cpp.html" title=" " alt="" coords="406,441,566,467"/>
+<area shape="rect" id="Node000007" href="$orchestrator_8hpp.html" title="Main command orchestration interface." alt="" coords="406,441,566,467"/>
 <area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="489,394,489,441,484,441,484,394"/>
-<area shape="rect" id="Node000008" href="$preprocessor_8cpp.html" title=" " alt="" coords="5,441,194,467"/>
-<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="417,385,154,443,153,438,416,380"/>
-<area shape="rect" id="Node000009" href="$preprocessor__main_8cpp.html" title=" " alt="" coords="217,434,382,474"/>
-<area shape="poly" id="edge8_Node000006_Node000009" title=" " alt="" coords="447,388,343,436,341,431,445,383"/>
-<area shape="poly" id="edge9_Node000006_Node000010" title=" " alt="" coords="528,383,650,438,648,443,526,387"/>
-<area shape="poly" id="edge11_Node000011_Node000004" title=" " alt="" coords="427,218,353,258,350,254,425,214"/>
-<area shape="rect" id="Node000012" href="$function__breaker__c_8cpp.html" title=" " alt="" coords="408,256,543,297"/>
-<area shape="poly" id="edge12_Node000011_Node000012" title=" " alt="" coords="478,224,478,256,473,256,473,224"/>
-<area shape="poly" id="edge14_Node000013_Node000004" title=" " alt="" coords="167,212,269,253,267,258,165,217"/>
-<area shape="rect" id="Node000014" href="$function__breaker__java_8cpp.html" title=" " alt="" coords="37,256,172,297"/>
-<area shape="poly" id="edge15_Node000013_Node000014" title=" " alt="" coords="108,224,108,256,102,256,102,224"/>
+<area shape="rect" id="Node000009" href="$preprocessor_8cpp.html" title=" " alt="" coords="5,441,194,467"/>
+<area shape="poly" id="edge8_Node000006_Node000009" title=" " alt="" coords="417,385,154,443,153,438,416,380"/>
+<area shape="rect" id="Node000010" href="$preprocessor__main_8cpp.html" title=" " alt="" coords="217,434,382,474"/>
+<area shape="poly" id="edge9_Node000006_Node000010" title=" " alt="" coords="447,388,343,436,341,431,445,383"/>
+<area shape="poly" id="edge10_Node000006_Node000011" title=" " alt="" coords="528,383,650,438,648,443,526,387"/>
+<area shape="rect" id="Node000008" href="$orchestrator_8cpp.html" title=" " alt="" coords="406,522,566,548"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="489,483,489,522,484,522,484,483"/>
+<area shape="poly" id="edge12_Node000012_Node000004" title=" " alt="" coords="427,218,353,258,350,254,425,214"/>
+<area shape="rect" id="Node000013" href="$function__breaker__c_8cpp.html" title=" " alt="" coords="408,256,543,297"/>
+<area shape="poly" id="edge13_Node000012_Node000013" title=" " alt="" coords="478,224,478,256,473,256,473,224"/>
+<area shape="poly" id="edge15_Node000014_Node000004" title=" " alt="" coords="167,212,269,253,267,258,165,217"/>
+<area shape="rect" id="Node000015" href="$function__breaker__java_8cpp.html" title=" " alt="" coords="37,256,172,297"/>
+<area shape="poly" id="edge16_Node000014_Node000015" title=" " alt="" coords="108,224,108,256,102,256,102,224"/>
 </map>

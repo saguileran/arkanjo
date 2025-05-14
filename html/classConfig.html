@@ -113,13 +113,16 @@ $(function(){initNavTree('classConfig.html',''); initResizable(true); });
 </div><!--header-->
 <div class="contents">
 
+<p>Singleton configuration manager class.  
+ <a href="#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="config_8hpp_source.html">config.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for Config:</div>
 <div class="dyncontent">
 <div class="center"><img src="classConfig__coll__graph.png" border="0" usemap="#aConfig_coll__map" alt="Collaboration graph"/></div>
 <map name="aConfig_coll__map" id="aConfig_coll__map">
-<area shape="rect" title=" " alt="" coords="5,5,63,31"/>
+<area shape="rect" title="Singleton configuration manager class." alt="" coords="5,5,63,31"/>
 <area shape="poly" title=" " alt="" coords="80,12,89,18,80,25,63,26,63,20,79,19,84,18,77,16"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
@@ -127,34 +130,44 @@ Collaboration diagram for Config:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a1e591735f40d52b02d13a888f6e1ebb5" id="r_a1e591735f40d52b02d13a888f6e1ebb5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1e591735f40d52b02d13a888f6e1ebb5">Config</a> (<a class="el" href="classConfig.html">Config</a> &amp;other)=delete</td></tr>
+<tr class="memdesc:a1e591735f40d52b02d13a888f6e1ebb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deleted copy constructor.  <br /></td></tr>
 <tr class="separator:a1e591735f40d52b02d13a888f6e1ebb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab901884cc34b030fa9bda9148283ebdb" id="r_ab901884cc34b030fa9bda9148283ebdb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab901884cc34b030fa9bda9148283ebdb">operator=</a> (const <a class="el" href="classConfig.html">Config</a> &amp;)=delete</td></tr>
+<tr class="memdesc:ab901884cc34b030fa9bda9148283ebdb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deleted assignment operator.  <br /></td></tr>
 <tr class="separator:ab901884cc34b030fa9bda9148283ebdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab7481411c2f3fdad63adfab1b72d8f44" id="r_ab7481411c2f3fdad63adfab1b72d8f44"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab7481411c2f3fdad63adfab1b72d8f44">getBasePath</a> ()</td></tr>
+<tr class="memdesc:ab7481411c2f3fdad63adfab1b72d8f44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the current base path.  <br /></td></tr>
 <tr class="separator:ab7481411c2f3fdad63adfab1b72d8f44"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6dc1f7b1c87527053280cce4cb25dbc4" id="r_a6dc1f7b1c87527053280cce4cb25dbc4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6dc1f7b1c87527053280cce4cb25dbc4">setTestConfig</a> ()</td></tr>
+<tr class="memdesc:a6dc1f7b1c87527053280cce4cb25dbc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets test configuration paths.  <br /></td></tr>
 <tr class="separator:a6dc1f7b1c87527053280cce4cb25dbc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3d2a81b7509e42ca7da0e5955c0aea49" id="r_a3d2a81b7509e42ca7da0e5955c0aea49"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3d2a81b7509e42ca7da0e5955c0aea49">setDefaultConfig</a> ()</td></tr>
+<tr class="memdesc:a3d2a81b7509e42ca7da0e5955c0aea49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets default production configuration paths.  <br /></td></tr>
 <tr class="separator:a3d2a81b7509e42ca7da0e5955c0aea49"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a5f9fd951fe598fea95966a8b9a6af7db" id="r_a5f9fd951fe598fea95966a8b9a6af7db"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classConfig.html">Config</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5f9fd951fe598fea95966a8b9a6af7db">config</a> ()</td></tr>
+<tr class="memdesc:a5f9fd951fe598fea95966a8b9a6af7db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the singleton configuration instance.  <br /></td></tr>
 <tr class="separator:a5f9fd951fe598fea95966a8b9a6af7db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:abd0c571c116924871e30444b192b792a" id="r_abd0c571c116924871e30444b192b792a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abd0c571c116924871e30444b192b792a">Config</a> ()</td></tr>
+<tr class="memdesc:abd0c571c116924871e30444b192b792a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Protected constructor for singleton pattern.  <br /></td></tr>
 <tr class="separator:abd0c571c116924871e30444b192b792a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-static-attribs" name="pro-static-attribs"></a>
 Static Protected Attributes</h2></td></tr>
 <tr class="memitem:ab2fc63f36f31db2e39643c4f561f818d" id="r_ab2fc63f36f31db2e39643c4f561f818d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classConfig.html">Config</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab2fc63f36f31db2e39643c4f561f818d">config_</a> = nullptr</td></tr>
+<tr class="memdesc:ab2fc63f36f31db2e39643c4f561f818d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Static instance pointer for singleton pattern.  <br /></td></tr>
 <tr class="separator:ab2fc63f36f31db2e39643c4f561f818d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="config_8hpp_source.html#l00011">11</a> of file <a class="el" href="config_8hpp_source.html">config.hpp</a>.</p>
+<div class="textblock"><p>Singleton configuration manager class. </p>
+<p>Manages application paths and runtime configuration settings. Implements the singleton pattern to ensure single instance access. </p>
+
+<p class="definition">Definition at line <a class="el" href="config_8hpp_source.html#l00026">26</a> of file <a class="el" href="config_8hpp_source.html">config.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="abd0c571c116924871e30444b192b792a" name="abd0c571c116924871e30444b192b792a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abd0c571c116924871e30444b192b792a">&#9670;&#160;</a></span>Config() <span class="overload">[1/2]</span></h2>
@@ -179,7 +192,9 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="config_8hpp_source.html#l00017">17</a> of file <a class="el" href="config_8hpp_source.html">config.hpp</a>.</p>
+<p>Protected constructor for singleton pattern. </p>
+
+<p class="definition">Definition at line <a class="el" href="config_8hpp_source.html#l00035">35</a> of file <a class="el" href="config_8hpp_source.html">config.hpp</a>.</p>
 
 </div>
 </div>
@@ -205,6 +220,8 @@ Static Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Deleted copy constructor. </p>
 
 </div>
 </div>
@@ -232,6 +249,9 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Gets the singleton configuration instance. </p>
+<dl class="section return"><dt>Returns</dt><dd>Config* Pointer to the singleton instance </dd></dl>
+
 <p class="definition">Definition at line <a class="el" href="config_8cpp_source.html#l00018">18</a> of file <a class="el" href="config_8cpp_source.html">config.cpp</a>.</p>
 
 </div>
@@ -250,6 +270,9 @@ Static Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Gets the current base path. </p>
+<dl class="section return"><dt>Returns</dt><dd>string The configured base path </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="config_8cpp_source.html#l00004">4</a> of file <a class="el" href="config_8cpp_source.html">config.cpp</a>.</p>
 
@@ -278,6 +301,8 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Deleted assignment operator. </p>
+
 </div>
 </div>
 <a id="a3d2a81b7509e42ca7da0e5955c0aea49" name="a3d2a81b7509e42ca7da0e5955c0aea49"></a>
@@ -294,6 +319,8 @@ Static Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Sets default production configuration paths. </p>
 
 <p class="definition">Definition at line <a class="el" href="config_8cpp_source.html#l00012">12</a> of file <a class="el" href="config_8cpp_source.html">config.cpp</a>.</p>
 
@@ -313,6 +340,9 @@ Static Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Sets test configuration paths. </p>
+<p>Configures paths for end-to-end testing environment. </p>
 
 <p class="definition">Definition at line <a class="el" href="config_8cpp_source.html#l00008">8</a> of file <a class="el" href="config_8cpp_source.html">config.cpp</a>.</p>
 
@@ -339,7 +369,9 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="config_8hpp_source.html#l00015">15</a> of file <a class="el" href="config_8hpp_source.html">config.hpp</a>.</p>
+<p>Static instance pointer for singleton pattern. </p>
+
+<p class="definition">Definition at line <a class="el" href="config_8hpp_source.html#l00030">30</a> of file <a class="el" href="config_8hpp_source.html">config.hpp</a>.</p>
 
 </div>
 </div>

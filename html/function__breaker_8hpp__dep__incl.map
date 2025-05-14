@@ -1,15 +1,17 @@
 <map id="arkanjo/pre/function_breaker.hpp" name="arkanjo/pre/function_breaker.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="223,5,358,46"/>
+<area shape="rect" id="Node000001" title="Main function extraction interface." alt="" coords="223,5,358,46"/>
 <area shape="rect" id="Node000002" href="$function__breaker_8cpp.html" title=" " alt="" coords="131,94,266,135"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="261,59,221,96,218,92,257,55"/>
-<area shape="rect" id="Node000003" href="$preprocessor_8hpp.html" title=" " alt="" coords="290,102,478,127"/>
+<area shape="rect" id="Node000003" href="$preprocessor_8hpp.html" title="Codebase preprocessing interface." alt="" coords="290,102,478,127"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="325,55,373,99,370,103,321,59"/>
-<area shape="rect" id="Node000004" href="$orchestrator_8cpp.html" title=" " alt="" coords="5,190,166,216"/>
+<area shape="rect" id="Node000004" href="$orchestrator_8hpp.html" title="Main command orchestration interface." alt="" coords="5,190,166,216"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="328,135,128,192,127,187,327,129"/>
-<area shape="rect" id="Node000005" href="$preprocessor_8cpp.html" title=" " alt="" coords="190,190,378,216"/>
-<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="360,140,300,192,296,188,357,136"/>
-<area shape="rect" id="Node000006" href="$preprocessor__main_8cpp.html" title=" " alt="" coords="402,183,566,223"/>
-<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="411,135,463,180,460,184,408,139"/>
-<area shape="rect" id="Node000007" href="$test_8cpp.html" title=" " alt="" coords="590,190,762,216"/>
-<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="441,130,636,187,634,192,439,135"/>
+<area shape="rect" id="Node000006" href="$preprocessor_8cpp.html" title=" " alt="" coords="190,190,378,216"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="360,140,300,192,296,188,357,136"/>
+<area shape="rect" id="Node000007" href="$preprocessor__main_8cpp.html" title=" " alt="" coords="402,183,566,223"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="411,135,463,180,460,184,408,139"/>
+<area shape="rect" id="Node000008" href="$test_8cpp.html" title=" " alt="" coords="590,190,762,216"/>
+<area shape="poly" id="edge7_Node000003_Node000008" title=" " alt="" coords="441,130,636,187,634,192,439,135"/>
+<area shape="rect" id="Node000005" href="$orchestrator_8cpp.html" title=" " alt="" coords="5,271,166,297"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="88,232,88,271,83,271,83,232"/>
 </map>

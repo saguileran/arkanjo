@@ -1,0 +1,49 @@
+\doxysection{orchestrator.\+hpp}
+\hypertarget{orchestrator_8hpp_source}{}\label{orchestrator_8hpp_source}\index{arkanjo/orchestrator.hpp@{arkanjo/orchestrator.hpp}}
+\mbox{\hyperlink{orchestrator_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{orchestrator_8hpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{orchestrator_8hpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{orchestrator_8hpp_source_l00013}00013\ \textcolor{preprocessor}{\#include\ <bits/stdc++.h>}\ }
+\DoxyCodeLine{\Hypertarget{orchestrator_8hpp_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{orchestrator_8hpp_source_l00015}00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{path_8hpp}{base/path.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{orchestrator_8hpp_source_l00016}00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{function_8hpp}{base/function.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{orchestrator_8hpp_source_l00017}00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{utils_8hpp}{base/utils.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{orchestrator_8hpp_source_l00018}00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{similarity__table_8hpp}{base/similarity\_table.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{orchestrator_8hpp_source_l00019}00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{similar__function__finder_8hpp}{finder/similar\_function\_finder.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{orchestrator_8hpp_source_l00020}00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{counter__duplication__code__trie_8hpp}{counter/counter\_duplication\_code\_trie.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{orchestrator_8hpp_source_l00021}00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{counter__duplication__code_8hpp}{counter/counter\_duplication\_code.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{orchestrator_8hpp_source_l00022}00022\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{similarity__explorer_8hpp}{explorer/similarity\_explorer.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{orchestrator_8hpp_source_l00023}00023\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{big__clone__formater_8hpp}{big\_clone/big\_clone\_formater.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{orchestrator_8hpp_source_l00024}00024\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{big__clone__tailor__evaluator_8hpp}{big\_clone/big\_clone\_tailor\_evaluator.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{orchestrator_8hpp_source_l00025}00025\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{random__selector_8hpp}{rand/random\_selector.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{orchestrator_8hpp_source_l00026}00026\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{preprocessor_8hpp}{pre/preprocessor.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{orchestrator_8hpp_source_l00027}00027\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{orchestrator_8hpp_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{orchestrator_8hpp_source_l00036}\mbox{\hyperlink{classOrchestrator}{00036}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classOrchestrator_ab7bc963fbc5074993b6dc46cb3e8580b}{Orchestrator}}\ \{}
+\DoxyCodeLine{\Hypertarget{orchestrator_8hpp_source_l00037}00037\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{orchestrator_8hpp_source_l00041}00041\ \ \ \ \ \textcolor{keywordtype}{void}\ help\_command();}
+\DoxyCodeLine{\Hypertarget{orchestrator_8hpp_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{orchestrator_8hpp_source_l00048}00048\ \ \ \ \ \textcolor{keywordtype}{void}\ check\_update\_similarity(vector<string>\ parameters,\ \mbox{\hyperlink{classSimilarity__Table}{Similarity\_Table}}\ *similarity\_table);}
+\DoxyCodeLine{\Hypertarget{orchestrator_8hpp_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{orchestrator_8hpp_source_l00055}00055\ \ \ \ \ \textcolor{keywordtype}{bool}\ check\_force\_preprocess(vector<string>\ parameters);}
+\DoxyCodeLine{\Hypertarget{orchestrator_8hpp_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{orchestrator_8hpp_source_l00061}00061\ \ \ \ \ \textcolor{keywordtype}{void}\ call\_preprocess(vector<string>\ parameters);}
+\DoxyCodeLine{\Hypertarget{orchestrator_8hpp_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{orchestrator_8hpp_source_l00068}00068\ \ \ \ \ \textcolor{keywordtype}{void}\ exploration\_command(vector<string>\ parameters,\ \mbox{\hyperlink{classSimilarity__Table}{Similarity\_Table}}\ *similarity\_table);}
+\DoxyCodeLine{\Hypertarget{orchestrator_8hpp_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{orchestrator_8hpp_source_l00075}00075\ \ \ \ \ \textcolor{keywordtype}{void}\ random\_command(vector<string>\ parameters,\ \mbox{\hyperlink{classSimilarity__Table}{Similarity\_Table}}\ *similarity\_table);}
+\DoxyCodeLine{\Hypertarget{orchestrator_8hpp_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{orchestrator_8hpp_source_l00082}00082\ \ \ \ \ \textcolor{keywordtype}{void}\ duplication\_command(vector<string>\ parameters,\ \mbox{\hyperlink{classSimilarity__Table}{Similarity\_Table}}\ *similarity\_table);}
+\DoxyCodeLine{\Hypertarget{orchestrator_8hpp_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{orchestrator_8hpp_source_l00089}00089\ \ \ \ \ \textcolor{keywordtype}{void}\ big\_clone\_formater\_command(vector<string>\ parameters,\ \mbox{\hyperlink{classSimilarity__Table}{Similarity\_Table}}\ *similarity\_table);}
+\DoxyCodeLine{\Hypertarget{orchestrator_8hpp_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{orchestrator_8hpp_source_l00096}00096\ \ \ \ \ \textcolor{keywordtype}{void}\ big\_clone\_tailor\_evaluator\_command(vector<string>\ parameters,\ \mbox{\hyperlink{classSimilarity__Table}{Similarity\_Table}}\ *similarity\_table);}
+\DoxyCodeLine{\Hypertarget{orchestrator_8hpp_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{orchestrator_8hpp_source_l00103}00103\ \ \ \ \ \textcolor{keywordtype}{void}\ similar\_function\_finder\_command(vector<string>\ parameters,\ \mbox{\hyperlink{classSimilarity__Table}{Similarity\_Table}}\ *similarity\_table);}
+\DoxyCodeLine{\Hypertarget{orchestrator_8hpp_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{orchestrator_8hpp_source_l00105}00105\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{orchestrator_8hpp_source_l00111}00111\ \ \ \ \ \mbox{\hyperlink{classOrchestrator_ab7bc963fbc5074993b6dc46cb3e8580b}{Orchestrator}}(\textcolor{keywordtype}{string}\ command,\ vector<string>\ parameters);}
+\DoxyCodeLine{\Hypertarget{orchestrator_8hpp_source_l00112}00112\ \};}
+
+\end{DoxyCode}

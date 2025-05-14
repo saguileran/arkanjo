@@ -1,14 +1,14 @@
 <map id="arkanjo/big_clone/big_clone_tailor_evaluator.cpp" name="arkanjo/big_clone/big_clone_tailor_evaluator.cpp">
 <area shape="rect" id="Node000001" title=" " alt="" coords="14,5,192,46"/>
-<area shape="rect" id="Node000002" href="$big__clone__tailor__evaluator_8hpp.html" title=" " alt="" coords="5,94,201,120"/>
+<area shape="rect" id="Node000002" href="$big__clone__tailor__evaluator_8hpp.html" title="BigCloneBench evaluation interface." alt="" coords="5,94,201,120"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="106,46,106,78,100,78,100,46"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="101,404,198,429"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="98,121,88,143,79,168,66,221,57,264,59,306,76,354,92,376,113,393,109,397,88,380,71,357,53,307,52,264,61,220,74,167,83,141,94,119"/>
-<area shape="rect" id="Node000004" href="$path_8hpp.html" title=" " alt="" coords="94,330,206,356"/>
+<area shape="rect" id="Node000004" href="$path_8hpp.html" title="Path abstraction for temporary codebase." alt="" coords="94,330,206,356"/>
 <area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="100,121,88,160,85,184,87,208,109,267,135,315,131,318,104,269,82,209,80,184,83,159,95,119"/>
 <area shape="rect" id="Node000005" href="$utils_8hpp.html" title="Defines utility functions used across all files." alt="" coords="331,330,443,356"/>
 <area shape="poly" id="edge5_Node000002_Node000005" title=" " alt="" coords="133,118,177,139,231,169,287,208,337,255,360,285,377,315,372,318,355,288,333,258,283,212,228,173,174,143,131,123"/>
-<area shape="rect" id="Node000008" href="$similarity__table_8hpp.html" title=" " alt="" coords="96,168,211,208"/>
+<area shape="rect" id="Node000008" href="$similarity__table_8hpp.html" title="Similarity relationships storage and analysis." alt="" coords="96,168,211,208"/>
 <area shape="poly" id="edge9_Node000002_Node000008" title=" " alt="" coords="113,119,135,153,131,156,108,122"/>
 <area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="152,356,152,388,147,388,147,356"/>
 <area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="348,359,206,401,204,396,346,354"/>
@@ -19,7 +19,7 @@
 <area shape="poly" id="edge10_Node000008_Node000003" title=" " alt="" coords="142,210,111,263,96,296,84,331,82,343,84,355,98,376,118,393,114,397,94,379,79,357,76,343,79,329,91,294,106,260,138,207"/>
 <area shape="poly" id="edge11_Node000008_Node000004" title=" " alt="" coords="156,209,153,314,148,314,150,209"/>
 <area shape="poly" id="edge12_Node000008_Node000005" title=" " alt="" coords="209,207,256,227,302,254,339,285,369,316,366,320,336,289,299,259,253,232,207,211"/>
-<area shape="rect" id="Node000009" href="$function_8hpp.html" title=" " alt="" coords="197,256,289,282"/>
+<area shape="rect" id="Node000009" href="$function_8hpp.html" title="Function abstraction for temporary codebase." alt="" coords="197,256,289,282"/>
 <area shape="poly" id="edge13_Node000008_Node000009" title=" " alt="" coords="178,207,220,244,216,248,174,211"/>
 <area shape="poly" id="edge14_Node000009_Node000003" title=" " alt="" coords="244,283,237,318,220,357,202,379,182,396,179,392,198,375,215,354,232,316,239,282"/>
 <area shape="poly" id="edge16_Node000009_Node000004" title=" " alt="" coords="229,285,179,323,176,318,226,280"/>

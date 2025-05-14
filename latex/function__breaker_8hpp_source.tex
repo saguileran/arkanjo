@@ -2,50 +2,37 @@
 \hypertarget{function__breaker_8hpp_source}{}\label{function__breaker_8hpp_source}\index{arkanjo/pre/function\_breaker.hpp@{arkanjo/pre/function\_breaker.hpp}}
 \mbox{\hyperlink{function__breaker_8hpp}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\Hypertarget{function__breaker_8hpp_source_l00001}00001\ \textcolor{comment}{/*}}
-\DoxyCodeLine{\Hypertarget{function__breaker_8hpp_source_l00002}00002\ \textcolor{comment}{This\ file\ intends\ to\ create\ the\ process\ of\ reading\ a\ directory\ with\ }}
-\DoxyCodeLine{\Hypertarget{function__breaker_8hpp_source_l00003}00003\ \textcolor{comment}{code\ in\ c\ or\ java\ and\ extract\ every\ function/struct\ of\ every\ .c\ /.java\ file\ as\ a\ new\ file}}
-\DoxyCodeLine{\Hypertarget{function__breaker_8hpp_source_l00004}00004\ \textcolor{comment}{in\ the\ temporary\ repository,\ aka,\ tmp/}}
-\DoxyCodeLine{\Hypertarget{function__breaker_8hpp_source_l00005}00005\ \textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{function__breaker_8hpp_source_l00006}00006\ \textcolor{comment}{Example\ of\ expected\ behaviour:\ }}
-\DoxyCodeLine{\Hypertarget{function__breaker_8hpp_source_l00007}00007\ \textcolor{comment}{There\ is\ a\ file\ example.c\ with\ functions\ a\ and\ b,\ will\ be\ create\ two\ new\ }}
-\DoxyCodeLine{\Hypertarget{function__breaker_8hpp_source_l00008}00008\ \textcolor{comment}{files:\ example/a.c\ and\ example/b.c}}
-\DoxyCodeLine{\Hypertarget{function__breaker_8hpp_source_l00009}00009\ \textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{function__breaker_8hpp_source_l00010}00010\ \textcolor{comment}{TODO:\ Doesn't\ work\ correct\ if\ the\ file\ has\ an\ incorrect\ bracket\ sequence,\ }}
-\DoxyCodeLine{\Hypertarget{function__breaker_8hpp_source_l00011}00011\ \textcolor{comment}{even\ if\ the\ bracket\ sequence\ is\ in\ a\ commentary}}
-\DoxyCodeLine{\Hypertarget{function__breaker_8hpp_source_l00012}00012\ \textcolor{comment}{*/}}
-\DoxyCodeLine{\Hypertarget{function__breaker_8hpp_source_l00013}00013\ }
-\DoxyCodeLine{\Hypertarget{function__breaker_8hpp_source_l00014}00014\ \textcolor{preprocessor}{\#ifndef\ FUNCTION\_BREAKER\_HPP}}
-\DoxyCodeLine{\Hypertarget{function__breaker_8hpp_source_l00015}00015\ \textcolor{preprocessor}{\#define\ FUNCTION\_BREAKER\_HPP}}
-\DoxyCodeLine{\Hypertarget{function__breaker_8hpp_source_l00016}00016\ }
-\DoxyCodeLine{\Hypertarget{function__breaker_8hpp_source_l00017}00017\ \textcolor{preprocessor}{\#include\ <bits/stdc++.h>}}
-\DoxyCodeLine{\Hypertarget{function__breaker_8hpp_source_l00018}00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{utils_8hpp}{../base/utils.hpp}}"{}}}
-\DoxyCodeLine{\Hypertarget{function__breaker_8hpp_source_l00019}00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{function__breaker__c_8hpp}{function\_breaker\_c.hpp}}"{}}}
-\DoxyCodeLine{\Hypertarget{function__breaker_8hpp_source_l00020}00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{function__breaker__java_8hpp}{function\_breaker\_java.hpp}}"{}}}
-\DoxyCodeLine{\Hypertarget{function__breaker_8hpp_source_l00021}00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{function__breaker__util_8hpp}{function\_breaker\_util.hpp}}"{}}}
-\DoxyCodeLine{\Hypertarget{function__breaker_8hpp_source_l00022}00022\ \textcolor{keyword}{using\ namespace\ }std;}
-\DoxyCodeLine{\Hypertarget{function__breaker_8hpp_source_l00023}00023\ }
-\DoxyCodeLine{\Hypertarget{function__breaker_8hpp_source_l00024}\mbox{\hyperlink{classFunctionBreaker}{00024}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classFunctionBreaker_a041958058b6eb1e0581679e7f71701be}{FunctionBreaker}}\{}
-\DoxyCodeLine{\Hypertarget{function__breaker_8hpp_source_l00025}00025\ }
-\DoxyCodeLine{\Hypertarget{function__breaker_8hpp_source_l00026}00026\ \ \ \ \ \textcolor{keyword}{const}\ vector<string>\ C\_EXTENSIONS\ =\ \{\ \textcolor{stringliteral}{"{}c"{}},\textcolor{stringliteral}{"{}h"{}}\};}
-\DoxyCodeLine{\Hypertarget{function__breaker_8hpp_source_l00027}00027\ \ \ \ \ \textcolor{keyword}{const}\ vector<string>\ JAVA\_EXTENSIONS\ =\ \ \{\ \textcolor{stringliteral}{"{}java"{}}\ \};}
-\DoxyCodeLine{\Hypertarget{function__breaker_8hpp_source_l00028}00028\ \ \ \ \ \textcolor{keyword}{const}\ vector<string>\ ALLOWED\_EXTENSIONS\ =\ \{\ \textcolor{stringliteral}{"{}c"{}},\textcolor{stringliteral}{"{}h"{}},\textcolor{stringliteral}{"{}java"{}}\ \};}
+\DoxyCodeLine{\Hypertarget{function__breaker_8hpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{function__breaker_8hpp_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{function__breaker_8hpp_source_l00020}00020\ \textcolor{preprocessor}{\#ifndef\ FUNCTION\_BREAKER\_HPP}}
+\DoxyCodeLine{\Hypertarget{function__breaker_8hpp_source_l00021}00021\ \textcolor{preprocessor}{\#define\ FUNCTION\_BREAKER\_HPP}}
+\DoxyCodeLine{\Hypertarget{function__breaker_8hpp_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{function__breaker_8hpp_source_l00023}00023\ \textcolor{preprocessor}{\#include\ <bits/stdc++.h>}}
+\DoxyCodeLine{\Hypertarget{function__breaker_8hpp_source_l00024}00024\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{utils_8hpp}{../base/utils.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{function__breaker_8hpp_source_l00025}00025\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{function__breaker__c_8hpp}{function\_breaker\_c.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{function__breaker_8hpp_source_l00026}00026\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{function__breaker__java_8hpp}{function\_breaker\_java.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{function__breaker_8hpp_source_l00027}00027\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{function__breaker__util_8hpp}{function\_breaker\_util.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{function__breaker_8hpp_source_l00028}00028\ \textcolor{keyword}{using\ namespace\ }std;}
 \DoxyCodeLine{\Hypertarget{function__breaker_8hpp_source_l00029}00029\ }
-\DoxyCodeLine{\Hypertarget{function__breaker_8hpp_source_l00030}00030\ \ \ \ \ \textcolor{keywordtype}{bool}\ is\_c\_extension(\textcolor{keywordtype}{string}\ extension);}
-\DoxyCodeLine{\Hypertarget{function__breaker_8hpp_source_l00031}00031\ }
-\DoxyCodeLine{\Hypertarget{function__breaker_8hpp_source_l00032}00032\ \ \ \ \ \textcolor{keywordtype}{bool}\ is\_java\_extension(\textcolor{keywordtype}{string}\ extension);}
-\DoxyCodeLine{\Hypertarget{function__breaker_8hpp_source_l00033}00033\ }
-\DoxyCodeLine{\Hypertarget{function__breaker_8hpp_source_l00034}00034\ \ \ \ \ \textcolor{keywordtype}{bool}\ is\_allowed\_extension(\textcolor{keywordtype}{string}\ extension);}
-\DoxyCodeLine{\Hypertarget{function__breaker_8hpp_source_l00035}00035\ }
-\DoxyCodeLine{\Hypertarget{function__breaker_8hpp_source_l00036}00036\ }
-\DoxyCodeLine{\Hypertarget{function__breaker_8hpp_source_l00037}00037\ \ \ \ \ \textcolor{keywordtype}{void}\ file\_breaker(\textcolor{keywordtype}{string}\ file\_path,\ \textcolor{keywordtype}{string}\ folder\_path);}
-\DoxyCodeLine{\Hypertarget{function__breaker_8hpp_source_l00038}00038\ }
-\DoxyCodeLine{\Hypertarget{function__breaker_8hpp_source_l00039}00039\ \ \ \ \ \textcolor{keywordtype}{void}\ function\_breaker(\textcolor{keywordtype}{string}\ folder\_path);}
-\DoxyCodeLine{\Hypertarget{function__breaker_8hpp_source_l00040}00040\ }
-\DoxyCodeLine{\Hypertarget{function__breaker_8hpp_source_l00041}00041\ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{\Hypertarget{function__breaker_8hpp_source_l00042}00042\ \ \ \ \ \mbox{\hyperlink{classFunctionBreaker_a041958058b6eb1e0581679e7f71701be}{FunctionBreaker}}(\textcolor{keywordtype}{string}\ folder\_path);}
-\DoxyCodeLine{\Hypertarget{function__breaker_8hpp_source_l00043}00043\ \};}
-\DoxyCodeLine{\Hypertarget{function__breaker_8hpp_source_l00044}00044\ }
-\DoxyCodeLine{\Hypertarget{function__breaker_8hpp_source_l00045}00045\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{function__breaker_8hpp_source_l00043}\mbox{\hyperlink{classFunctionBreaker}{00043}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classFunctionBreaker_a041958058b6eb1e0581679e7f71701be}{FunctionBreaker}}\ \{}
+\DoxyCodeLine{\Hypertarget{function__breaker_8hpp_source_l00044}00044\ \ \ \ \ \textcolor{keyword}{const}\ vector<string>\ C\_EXTENSIONS\ =\ \{\ \textcolor{stringliteral}{"{}c"{}},\ \textcolor{stringliteral}{"{}h"{}}\ \};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{function__breaker_8hpp_source_l00045}00045\ \ \ \ \ \textcolor{keyword}{const}\ vector<string>\ JAVA\_EXTENSIONS\ =\ \{\ \textcolor{stringliteral}{"{}java"{}}\ \};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{function__breaker_8hpp_source_l00046}00046\ \ \ \ \ \textcolor{keyword}{const}\ vector<string>\ ALLOWED\_EXTENSIONS\ =\ \{\ \textcolor{stringliteral}{"{}c"{}},\ \textcolor{stringliteral}{"{}h"{}},\ \textcolor{stringliteral}{"{}java"{}}\ \};\ \ }
+\DoxyCodeLine{\Hypertarget{function__breaker_8hpp_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{function__breaker_8hpp_source_l00053}00053\ \ \ \ \ \textcolor{keywordtype}{bool}\ is\_c\_extension(\textcolor{keywordtype}{string}\ extension);}
+\DoxyCodeLine{\Hypertarget{function__breaker_8hpp_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{function__breaker_8hpp_source_l00060}00060\ \ \ \ \ \textcolor{keywordtype}{bool}\ is\_java\_extension(\textcolor{keywordtype}{string}\ extension);}
+\DoxyCodeLine{\Hypertarget{function__breaker_8hpp_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{function__breaker_8hpp_source_l00067}00067\ \ \ \ \ \textcolor{keywordtype}{bool}\ is\_allowed\_extension(\textcolor{keywordtype}{string}\ extension);}
+\DoxyCodeLine{\Hypertarget{function__breaker_8hpp_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{function__breaker_8hpp_source_l00074}00074\ \ \ \ \ \textcolor{keywordtype}{void}\ file\_breaker(\textcolor{keywordtype}{string}\ file\_path,\ \textcolor{keywordtype}{string}\ folder\_path);}
+\DoxyCodeLine{\Hypertarget{function__breaker_8hpp_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{function__breaker_8hpp_source_l00080}00080\ \ \ \ \ \textcolor{keywordtype}{void}\ function\_breaker(\textcolor{keywordtype}{string}\ folder\_path);}
+\DoxyCodeLine{\Hypertarget{function__breaker_8hpp_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{function__breaker_8hpp_source_l00082}00082\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{function__breaker_8hpp_source_l00087}00087\ \ \ \ \ \mbox{\hyperlink{classFunctionBreaker_a041958058b6eb1e0581679e7f71701be}{FunctionBreaker}}(\textcolor{keywordtype}{string}\ folder\_path);}
+\DoxyCodeLine{\Hypertarget{function__breaker_8hpp_source_l00088}00088\ \};}
+\DoxyCodeLine{\Hypertarget{function__breaker_8hpp_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{function__breaker_8hpp_source_l00090}00090\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

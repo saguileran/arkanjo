@@ -2,29 +2,36 @@
 \hypertarget{classFunction}{}\label{classFunction}\index{Function@{Function}}
 
 
+Represents a code function with its content and metadata.  
+
+
+
+
 {\ttfamily \#include $<$function.\+hpp$>$}
 
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 int \mbox{\hyperlink{classFunction_af1fb06b1347f9c953cd0e9267e1c885e}{number\+\_\+of\+\_\+lines}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Calculates the total number of lines in the function. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classFunction_aeb1e057869579d8f707506f4b928934b}{Function}} (\mbox{\hyperlink{classPath}{Path}} \+\_\+path)
-\item 
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classFunction}{Function} object. \end{DoxyCompactList}\item 
 array$<$ int, 3 $>$ \mbox{\hyperlink{classFunction_a551116719fafec5d8e387957d96ec744}{get\+\_\+scope\+\_\+function\+\_\+in\+\_\+file}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Gets the function\textquotesingle{}s line number scope. \end{DoxyCompactList}\item 
 vector$<$ string $>$ \mbox{\hyperlink{classFunction_aea58fced35931266f4e63472da04c33e}{get\+\_\+header}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Gets the function\textquotesingle{}s header content. \end{DoxyCompactList}\item 
 vector$<$ string $>$ \mbox{\hyperlink{classFunction_a3a90213ec8ec1e4c2b4ac3478cde8e57}{build\+\_\+all\+\_\+content}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Builds combined content of header and source. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classFunction_aa4177e78fa7bf87334a09084f3af533e}{print\+\_\+basic\+\_\+info}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Prints formatted function information to console. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
+Represents a code function with its content and metadata. 
 
+Provides access to function source, header, line information, and various utility methods for function manipulation and display. 
 
-Definition at line \mbox{\hyperlink{function_8hpp_source_l00016}{16}} of file \mbox{\hyperlink{function_8hpp_source}{function.\+hpp}}.
+Definition at line \mbox{\hyperlink{function_8hpp_source_l00031}{31}} of file \mbox{\hyperlink{function_8hpp_source}{function.\+hpp}}.
 
 
 
@@ -35,6 +42,15 @@ Definition at line \mbox{\hyperlink{function_8hpp_source_l00016}{16}} of file \m
 {\footnotesize\ttfamily \label{classFunction_aeb1e057869579d8f707506f4b928934b} 
 Function\+::\+Function (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPath}{Path}}}]{\+\_\+path}{}\end{DoxyParamCaption})}
 
+
+
+Constructs a \doxylink{classFunction}{Function} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+path} & \doxylink{classPath}{Path} object containing function location info \\
+\hline
+\end{DoxyParams}
 
 
 Definition at line \mbox{\hyperlink{function_8cpp_source_l00024}{24}} of file \mbox{\hyperlink{function_8cpp_source}{function.\+cpp}}.
@@ -50,6 +66,13 @@ vector$<$ string $>$ Function\+::build\+\_\+all\+\_\+content (\begin{DoxyParamCa
 
 
 
+Builds combined content of header and source. 
+
+\begin{DoxyReturn}{Returns}
+vector$<$string$>$ Merged content with header and source 
+\end{DoxyReturn}
+
+
 Definition at line \mbox{\hyperlink{function_8cpp_source_l00042}{42}} of file \mbox{\hyperlink{function_8cpp_source}{function.\+cpp}}.
 
 \Hypertarget{classFunction_aea58fced35931266f4e63472da04c33e}\index{Function@{Function}!get\_header@{get\_header}}
@@ -58,6 +81,13 @@ Definition at line \mbox{\hyperlink{function_8cpp_source_l00042}{42}} of file \m
 {\footnotesize\ttfamily \label{classFunction_aea58fced35931266f4e63472da04c33e} 
 vector$<$ string $>$ Function\+::get\+\_\+header (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
+
+
+Gets the function\textquotesingle{}s header content. 
+
+\begin{DoxyReturn}{Returns}
+vector$<$string$>$ Each element represents a line of header 
+\end{DoxyReturn}
 
 
 Definition at line \mbox{\hyperlink{function_8cpp_source_l00038}{38}} of file \mbox{\hyperlink{function_8cpp_source}{function.\+cpp}}.
@@ -70,6 +100,13 @@ array$<$ int, 3 $>$ Function\+::get\+\_\+scope\+\_\+function\+\_\+in\+\_\+file (
 
 
 
+Gets the function\textquotesingle{}s line number scope. 
+
+\begin{DoxyReturn}{Returns}
+array$<$int,3$>$ Array containing\+: \mbox{[}0\mbox{]} -\/ Declaration line \mbox{[}1\mbox{]} -\/ Start line \mbox{[}2\mbox{]} -\/ End line 
+\end{DoxyReturn}
+
+
 Definition at line \mbox{\hyperlink{function_8cpp_source_l00034}{34}} of file \mbox{\hyperlink{function_8cpp_source}{function.\+cpp}}.
 
 \Hypertarget{classFunction_af1fb06b1347f9c953cd0e9267e1c885e}\index{Function@{Function}!number\_of\_lines@{number\_of\_lines}}
@@ -80,6 +117,13 @@ int Function\+::number\+\_\+of\+\_\+lines (\begin{DoxyParamCaption}{}{}\end{Doxy
 
 
 
+Calculates the total number of lines in the function. 
+
+\begin{DoxyReturn}{Returns}
+int Number of lines from declaration to end (inclusive) 
+\end{DoxyReturn}
+
+
 Definition at line \mbox{\hyperlink{function_8cpp_source_l00020}{20}} of file \mbox{\hyperlink{function_8cpp_source}{function.\+cpp}}.
 
 \Hypertarget{classFunction_aa4177e78fa7bf87334a09084f3af533e}\index{Function@{Function}!print\_basic\_info@{print\_basic\_info}}
@@ -87,6 +131,10 @@ Definition at line \mbox{\hyperlink{function_8cpp_source_l00020}{20}} of file \m
 \doxysubsubsection{\texorpdfstring{print\_basic\_info()}{print\_basic\_info()}}
 {\footnotesize\ttfamily \label{classFunction_aa4177e78fa7bf87334a09084f3af533e} 
 void Function\+::print\+\_\+basic\+\_\+info (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Prints formatted function information to console. 
 
 
 

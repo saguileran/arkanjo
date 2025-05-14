@@ -1,16 +1,27 @@
 \doxysection{Orchestrator Class Reference}
 \hypertarget{classOrchestrator}{}\label{classOrchestrator}\index{Orchestrator@{Orchestrator}}
+
+
+Main command orchestrator.  
+
+
+
+
+{\ttfamily \#include $<$orchestrator.\+hpp$>$}
+
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classOrchestrator_ab7bc963fbc5074993b6dc46cb3e8580b}{Orchestrator}} (string command, vector$<$ string $>$ parameters)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Constructs orchestrator and executes requested command. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
+Main command orchestrator. 
 
+Routes and executes tool commands by coordinating between various subsystems including preprocessing, exploration, duplication counting, and evaluation components. 
 
-Definition at line \mbox{\hyperlink{orchestrator_8cpp_source_l00021}{21}} of file \mbox{\hyperlink{orchestrator_8cpp_source}{orchestrator.\+cpp}}.
+Definition at line \mbox{\hyperlink{orchestrator_8hpp_source_l00036}{36}} of file \mbox{\hyperlink{orchestrator_8hpp_source}{orchestrator.\+hpp}}.
 
 
 
@@ -19,14 +30,26 @@ Definition at line \mbox{\hyperlink{orchestrator_8cpp_source_l00021}{21}} of fil
 \index{Orchestrator@{Orchestrator}!Orchestrator@{Orchestrator}}
 \doxysubsubsection{\texorpdfstring{Orchestrator()}{Orchestrator()}}
 {\footnotesize\ttfamily \label{classOrchestrator_ab7bc963fbc5074993b6dc46cb3e8580b} 
-Orchestrator\+::\+Orchestrator (\begin{DoxyParamCaption}\item[{string}]{command}{, }\item[{vector$<$ string $>$}]{parameters}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+Orchestrator\+::\+Orchestrator (\begin{DoxyParamCaption}\item[{string}]{command}{, }\item[{vector$<$ string $>$}]{parameters}{}\end{DoxyParamCaption})}
 
 
 
-Definition at line \mbox{\hyperlink{orchestrator_8cpp_source_l00119}{119}} of file \mbox{\hyperlink{orchestrator_8cpp_source}{orchestrator.\+cpp}}.
+Constructs orchestrator and executes requested command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em command} & The main command to execute \\
+\hline
+{\em parameters} & Additional command parameters \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{orchestrator_8cpp_source_l00098}{98}} of file \mbox{\hyperlink{orchestrator_8cpp_source}{orchestrator.\+cpp}}.
 
 
 
-The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
+arkanjo/\mbox{\hyperlink{orchestrator_8hpp}{orchestrator.\+hpp}}\item 
 arkanjo/\mbox{\hyperlink{orchestrator_8cpp}{orchestrator.\+cpp}}\end{DoxyCompactItemize}

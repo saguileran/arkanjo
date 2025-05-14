@@ -2,23 +2,35 @@
 \hypertarget{classCounter__Duplication__Code__Trie}{}\label{classCounter__Duplication__Code__Trie}\index{Counter\_Duplication\_Code\_Trie@{Counter\_Duplication\_Code\_Trie}}
 
 
+Trie structure for hierarchical duplication counting.  
+
+
+
+
 {\ttfamily \#include $<$counter\+\_\+duplication\+\_\+code\+\_\+trie.\+hpp$>$}
 
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{classCounter__Duplication__Code__Trie_ae5a2c87636db73813e03e8a93d1d3e71}{add\+\_\+folder\+\_\+duplication\+\_\+code}} (vector$<$ string $>$ folder\+\_\+path, int number\+\_\+of\+\_\+duplication\+\_\+lines)
-\item 
+\begin{DoxyCompactList}\small\item\em Adds duplication count for a folder path. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classCounter__Duplication__Code__Trie_a32ab2d308bd20e1b917bcc7b1eb39f33}{print\+\_\+duplication\+\_\+code\+\_\+trie}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Prints the trie structure with duplication counts. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classCounter__Duplication__Code__Trie_a09f1ebbf0e26db282b990e621e7b6c55}{Counter\+\_\+\+Duplication\+\_\+\+Code\+\_\+\+Trie}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Constructs a new trie with root node. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
+Trie structure for hierarchical duplication counting. 
+
+Implements a modified trie where each node represents a folder in the codebase, enabling efficient counting and reporting of duplicated lines at different directory levels.
+
+\begin{DoxyNote}{Note}
+For understanding the trie structure, refer to\+: \href{https://en.wikipedia.org/wiki/Trie}{\texttt{ https\+://en.\+wikipedia.\+org/wiki/\+Trie}} 
+\end{DoxyNote}
 
 
-Definition at line \mbox{\hyperlink{counter__duplication__code__trie_8hpp_source_l00016}{16}} of file \mbox{\hyperlink{counter__duplication__code__trie_8hpp_source}{counter\+\_\+duplication\+\_\+code\+\_\+trie.\+hpp}}.
+Definition at line \mbox{\hyperlink{counter__duplication__code__trie_8hpp_source_l00030}{30}} of file \mbox{\hyperlink{counter__duplication__code__trie_8hpp_source}{counter\+\_\+duplication\+\_\+code\+\_\+trie.\+hpp}}.
 
 
 
@@ -28,6 +40,10 @@ Definition at line \mbox{\hyperlink{counter__duplication__code__trie_8hpp_source
 \doxysubsubsection{\texorpdfstring{Counter\_Duplication\_Code\_Trie()}{Counter\_Duplication\_Code\_Trie()}}
 {\footnotesize\ttfamily \label{classCounter__Duplication__Code__Trie_a09f1ebbf0e26db282b990e621e7b6c55} 
 Counter\+\_\+\+Duplication\+\_\+\+Code\+\_\+\+Trie\+::\+Counter\+\_\+\+Duplication\+\_\+\+Code\+\_\+\+Trie (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a new trie with root node. 
 
 
 
@@ -44,6 +60,17 @@ void Counter\+\_\+\+Duplication\+\_\+\+Code\+\_\+\+Trie\+::add\+\_\+folder\+\_\+
 
 
 
+Adds duplication count for a folder path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em folder\+\_\+path} & Hierarchical folder path \\
+\hline
+{\em number\+\_\+of\+\_\+duplication\+\_\+lines} & Count of duplicated lines \\
+\hline
+\end{DoxyParams}
+
+
 Definition at line \mbox{\hyperlink{counter__duplication__code__trie_8cpp_source_l00055}{55}} of file \mbox{\hyperlink{counter__duplication__code__trie_8cpp_source}{counter\+\_\+duplication\+\_\+code\+\_\+trie.\+cpp}}.
 
 \Hypertarget{classCounter__Duplication__Code__Trie_a32ab2d308bd20e1b917bcc7b1eb39f33}\index{Counter\_Duplication\_Code\_Trie@{Counter\_Duplication\_Code\_Trie}!print\_duplication\_code\_trie@{print\_duplication\_code\_trie}}
@@ -51,6 +78,10 @@ Definition at line \mbox{\hyperlink{counter__duplication__code__trie_8cpp_source
 \doxysubsubsection{\texorpdfstring{print\_duplication\_code\_trie()}{print\_duplication\_code\_trie()}}
 {\footnotesize\ttfamily \label{classCounter__Duplication__Code__Trie_a32ab2d308bd20e1b917bcc7b1eb39f33} 
 void Counter\+\_\+\+Duplication\+\_\+\+Code\+\_\+\+Trie\+::print\+\_\+duplication\+\_\+code\+\_\+trie (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Prints the trie structure with duplication counts. 
 
 
 

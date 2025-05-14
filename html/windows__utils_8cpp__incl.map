@@ -1,6 +1,6 @@
 <map id="arkanjo/base/windows_utils.cpp" name="arkanjo/base/windows_utils.cpp">
 <area shape="rect" id="Node000001" title=" " alt="" coords="50,5,200,46"/>
-<area shape="rect" id="Node000002" href="$windows__utils_8hpp.html" title=" " alt="" coords="62,94,189,120"/>
+<area shape="rect" id="Node000002" href="$windows__utils_8hpp.html" title="Windows&#45;specific utility functions." alt="" coords="62,94,189,120"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="128,46,128,78,123,78,123,46"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="5,168,59,193"/>
 <area shape="poly" id="edge5_Node000001_Node000003" title=" " alt="" coords="97,48,72,69,52,95,41,124,36,153,30,152,35,123,47,93,68,66,93,44"/>

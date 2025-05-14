@@ -1,5 +1,10 @@
 \doxysection{arkanjo/base/path.hpp File Reference}
 \hypertarget{path_8hpp}{}\label{path_8hpp}\index{arkanjo/base/path.hpp@{arkanjo/base/path.hpp}}
+
+
+\doxylink{classPath}{Path} abstraction for temporary codebase.  
+
+
 {\ttfamily \#include $<$bits/stdc++.\+h$>$}\newline
 Include dependency graph for path.\+hpp\+:
 \nopagebreak
@@ -21,4 +26,13 @@ This graph shows which files directly or indirectly include this file\+:
 \begin{DoxyCompactItemize}
 \item 
 class \mbox{\hyperlink{classPath}{Path}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em \doxylink{classPath}{Path} manipulation class for tool-\/specific directory structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{classPath}{Path} abstraction for temporary codebase. 
+
+Provides path manipulation utilities specific to the tool\textquotesingle{}s directory structure. Handles paths without requiring actual file system access. Contains the abstraction of a path to a function in the temporary code base. Useful for elements that does not need to, in fact, read the files in the temporary codebase. 
+
+Definition in file \mbox{\hyperlink{path_8hpp_source}{path.\+hpp}}.
+

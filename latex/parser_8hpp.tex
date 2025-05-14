@@ -1,5 +1,10 @@
 \doxysection{arkanjo/pre/parser.hpp File Reference}
 \hypertarget{parser_8hpp}{}\label{parser_8hpp}\index{arkanjo/pre/parser.hpp@{arkanjo/pre/parser.hpp}}
+
+
+Code duplication results parser.  
+
+
 {\ttfamily \#include $<$bits/stdc++.\+h$>$}\newline
 Include dependency graph for parser.\+hpp\+:
 \nopagebreak
@@ -21,6 +26,17 @@ This graph shows which files directly or indirectly include this file\+:
 \begin{DoxyCompactItemize}
 \item 
 struct \mbox{\hyperlink{structComparation}{Comparation}}
-\item 
+\begin{DoxyCompactList}\small\item\em Structure representing a code comparison result. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classParser}{Parser}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Parses and transforms duplication detection tool output. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Code duplication results parser. 
+
+Handles parsing and transformation of output from third-\/party code duplication detection tools into a more usable format.
+
+The parser is responsible to read the output to the code duplication detection tool that exists in the third\+\_\+party folder and parse/transform it in a way that is easier to work with later. 
+
+Definition in file \mbox{\hyperlink{parser_8hpp_source}{parser.\+hpp}}.
+

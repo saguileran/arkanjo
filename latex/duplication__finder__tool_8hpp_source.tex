@@ -2,28 +2,28 @@
 \hypertarget{duplication__finder__tool_8hpp_source}{}\label{duplication__finder__tool_8hpp_source}\index{arkanjo/pre/duplication\_finder\_tool.hpp@{arkanjo/pre/duplication\_finder\_tool.hpp}}
 \mbox{\hyperlink{duplication__finder__tool_8hpp}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\Hypertarget{duplication__finder__tool_8hpp_source_l00001}00001\ \textcolor{comment}{//\ Defines\ the\ preprocessor/setup\ step\ of\ the\ tool,}}
-\DoxyCodeLine{\Hypertarget{duplication__finder__tool_8hpp_source_l00002}00002\ \textcolor{comment}{//\ where\ we\ do\ a\ heavy\ preprocessing\ of\ the\ input\ codebase}}
-\DoxyCodeLine{\Hypertarget{duplication__finder__tool_8hpp_source_l00003}00003\ \textcolor{comment}{//\ to\ enable\ fast\ query\ response\ later.}}
-\DoxyCodeLine{\Hypertarget{duplication__finder__tool_8hpp_source_l00004}00004\ }
-\DoxyCodeLine{\Hypertarget{duplication__finder__tool_8hpp_source_l00005}00005\ \textcolor{preprocessor}{\#ifndef\ DUPLICATION\_FINDER\_TOOL\_HPP\ }}
-\DoxyCodeLine{\Hypertarget{duplication__finder__tool_8hpp_source_l00006}00006\ \textcolor{preprocessor}{\#define\ DUPLICATION\_FINDER\_TOOL\_HPP\ }}
-\DoxyCodeLine{\Hypertarget{duplication__finder__tool_8hpp_source_l00007}00007\ }
-\DoxyCodeLine{\Hypertarget{duplication__finder__tool_8hpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <bits/stdc++.h>}\ }
-\DoxyCodeLine{\Hypertarget{duplication__finder__tool_8hpp_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{parser_8hpp}{parser.hpp}}"{}}}
-\DoxyCodeLine{\Hypertarget{duplication__finder__tool_8hpp_source_l00010}00010\ \textcolor{keyword}{using\ namespace\ }std;}
-\DoxyCodeLine{\Hypertarget{duplication__finder__tool_8hpp_source_l00011}00011\ }
-\DoxyCodeLine{\Hypertarget{duplication__finder__tool_8hpp_source_l00012}\mbox{\hyperlink{classDuplicationFinderTool}{00012}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classDuplicationFinderTool_a6ad73dc1a4db0983453e3e3dcd5f0e72}{DuplicationFinderTool}}\{}
-\DoxyCodeLine{\Hypertarget{duplication__finder__tool_8hpp_source_l00013}00013\ \ \ \ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{\Hypertarget{duplication__finder__tool_8hpp_source_l00014}00014\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ SAVING\_MESSAGE\ =\ \textcolor{stringliteral}{"{}Saving\ results..."{}};}
-\DoxyCodeLine{\Hypertarget{duplication__finder__tool_8hpp_source_l00015}00015\ }
-\DoxyCodeLine{\Hypertarget{duplication__finder__tool_8hpp_source_l00016}00016\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ base\_path;}
-\DoxyCodeLine{\Hypertarget{duplication__finder__tool_8hpp_source_l00017}00017\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ similarity;}
-\DoxyCodeLine{\Hypertarget{duplication__finder__tool_8hpp_source_l00018}00018\ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{\Hypertarget{duplication__finder__tool_8hpp_source_l00019}00019\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDuplicationFinderTool_a6ad73dc1a4db0983453e3e3dcd5f0e72}{DuplicationFinderTool}}(\textcolor{keywordtype}{string}\ base\_path\_,\ \textcolor{keywordtype}{double}\ similatiry\_);}
-\DoxyCodeLine{\Hypertarget{duplication__finder__tool_8hpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classDuplicationFinderTool_a40998a449cec56cdbebeb96a3c600c94}{execute}}();}
-\DoxyCodeLine{\Hypertarget{duplication__finder__tool_8hpp_source_l00021}00021\ \};}
-\DoxyCodeLine{\Hypertarget{duplication__finder__tool_8hpp_source_l00022}00022\ }
-\DoxyCodeLine{\Hypertarget{duplication__finder__tool_8hpp_source_l00023}00023\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{duplication__finder__tool_8hpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{duplication__finder__tool_8hpp_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{duplication__finder__tool_8hpp_source_l00014}00014\ \textcolor{preprocessor}{\#ifndef\ DUPLICATION\_FINDER\_TOOL\_HPP}}
+\DoxyCodeLine{\Hypertarget{duplication__finder__tool_8hpp_source_l00015}00015\ \textcolor{preprocessor}{\#define\ DUPLICATION\_FINDER\_TOOL\_HPP}}
+\DoxyCodeLine{\Hypertarget{duplication__finder__tool_8hpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{duplication__finder__tool_8hpp_source_l00017}00017\ \textcolor{preprocessor}{\#include\ <bits/stdc++.h>}}
+\DoxyCodeLine{\Hypertarget{duplication__finder__tool_8hpp_source_l00018}00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{parser_8hpp}{parser.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{duplication__finder__tool_8hpp_source_l00019}00019\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{duplication__finder__tool_8hpp_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{duplication__finder__tool_8hpp_source_l00028}\mbox{\hyperlink{classDuplicationFinderTool}{00028}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classDuplicationFinderTool_a51ccfae6f59662e833c2909540de8e53}{DuplicationFinderTool}}\ \{}
+\DoxyCodeLine{\Hypertarget{duplication__finder__tool_8hpp_source_l00029}00029\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{duplication__finder__tool_8hpp_source_l00030}00030\ \ \ \ \ \textcolor{keywordtype}{string}\ SAVING\_MESSAGE\ =\ \textcolor{stringliteral}{"{}Saving\ results..."{}};\ \ }
+\DoxyCodeLine{\Hypertarget{duplication__finder__tool_8hpp_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{duplication__finder__tool_8hpp_source_l00032}00032\ \ \ \ \ \textcolor{keywordtype}{string}\ base\_path;\ \ }
+\DoxyCodeLine{\Hypertarget{duplication__finder__tool_8hpp_source_l00033}00033\ \ \ \ \ \textcolor{keywordtype}{double}\ similarity;\ \ }
+\DoxyCodeLine{\Hypertarget{duplication__finder__tool_8hpp_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{duplication__finder__tool_8hpp_source_l00035}00035\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{duplication__finder__tool_8hpp_source_l00041}00041\ \ \ \ \ \mbox{\hyperlink{classDuplicationFinderTool_a51ccfae6f59662e833c2909540de8e53}{DuplicationFinderTool}}(\textcolor{keywordtype}{string}\ base\_path\_,\ \textcolor{keywordtype}{double}\ similarity\_);}
+\DoxyCodeLine{\Hypertarget{duplication__finder__tool_8hpp_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{duplication__finder__tool_8hpp_source_l00049}00049\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classDuplicationFinderTool_a40998a449cec56cdbebeb96a3c600c94}{execute}}();}
+\DoxyCodeLine{\Hypertarget{duplication__finder__tool_8hpp_source_l00050}00050\ \};}
+\DoxyCodeLine{\Hypertarget{duplication__finder__tool_8hpp_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{duplication__finder__tool_8hpp_source_l00052}00052\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

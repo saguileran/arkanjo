@@ -106,46 +106,46 @@ $(function(){initNavTree('linux__utils_8hpp_source.html',''); initResizable(true
   <div class="headertitle"><div class="title">linux_utils.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="linux__utils_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// Defines color util functions used for result messages, depending on the user operating system </span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#ifndef LINUX_UTILS_HPP</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#define LINUX_UTILS_HPP</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;algorithm&gt;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;cstdlib&gt;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;unistd.h&gt;</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;termios.h&gt;</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;sys/ioctl.h&gt;</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;fcntl.h&gt;</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;sstream&gt;</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;iomanip&gt;</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">using namespace </span>std;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceUtilsOSDependable.html">UtilsOSDependable</a>{</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="namespaceUtilsOSDependable.html#acfff3b9114f5bf307e2aa78cbabfe21f">   23</a></span>  <span class="keywordtype">int</span> <a class="code hl_function" href="namespaceUtilsOSDependable.html#acfff3b9114f5bf307e2aa78cbabfe21f">convert_16_bit_to_8_bit</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; hex16);</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordtype">float</span> <a class="code hl_function" href="namespaceUtilsOSDependable.html#ae94000387658cfce3f629da04843784f">get_terminal_bg_color_luminance</a>();</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  tuple&lt;int, int, int&gt; <a class="code hl_function" href="namespaceUtilsOSDependable.html#a73ce8621f643db388f85ddefa2dbb361">parse_terminal_color_response</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; response);</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  <span class="keywordtype">string</span> <a class="code hl_function" href="namespaceUtilsOSDependable.html#a4e245ddb29771bf9f2e3190c6182f06d">capture_terminal_response</a>();</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="namespaceUtilsOSDependable.html#a77d0b457dded74d7d1f901d333d25453">is_bg_color_dark</a>();</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>};</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<a href="linux__utils_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#ifndef LINUX_UTILS_HPP</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#define LINUX_UTILS_HPP</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;algorithm&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;cstdlib&gt;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;unistd.h&gt;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &lt;termios.h&gt;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &lt;sys/ioctl.h&gt;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &lt;fcntl.h&gt;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &lt;sstream&gt;</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &lt;iomanip&gt;</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">using namespace </span>std;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceUtilsOSDependable.html">UtilsOSDependable</a>{</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="namespaceUtilsOSDependable.html#acfff3b9114f5bf307e2aa78cbabfe21f">   37</a></span>  <span class="keywordtype">int</span> <a class="code hl_function" href="namespaceUtilsOSDependable.html#acfff3b9114f5bf307e2aa78cbabfe21f">convert_16_bit_to_8_bit</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; hex16);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  <span class="keywordtype">float</span> <a class="code hl_function" href="namespaceUtilsOSDependable.html#ae94000387658cfce3f629da04843784f">get_terminal_bg_color_luminance</a>();</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  tuple&lt;int, int, int&gt; <a class="code hl_function" href="namespaceUtilsOSDependable.html#a73ce8621f643db388f85ddefa2dbb361">parse_terminal_color_response</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; response);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  <span class="keywordtype">string</span> <a class="code hl_function" href="namespaceUtilsOSDependable.html#a4e245ddb29771bf9f2e3190c6182f06d">capture_terminal_response</a>();</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="namespaceUtilsOSDependable.html#a77d0b457dded74d7d1f901d333d25453">is_bg_color_dark</a>();</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>};</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="anamespaceUtilsOSDependable_html"><div class="ttname"><a href="namespaceUtilsOSDependable.html">UtilsOSDependable</a></div><div class="ttdef"><b>Definition</b> <a href="apple__utils_8hpp_source.html#l00012">apple_utils.hpp:12</a></div></div>
-<div class="ttc" id="anamespaceUtilsOSDependable_html_a4e245ddb29771bf9f2e3190c6182f06d"><div class="ttname"><a href="namespaceUtilsOSDependable.html#a4e245ddb29771bf9f2e3190c6182f06d">UtilsOSDependable::capture_terminal_response</a></div><div class="ttdeci">string capture_terminal_response()</div><div class="ttdef"><b>Definition</b> <a href="linux__utils_8cpp_source.html#l00040">linux_utils.cpp:40</a></div></div>
-<div class="ttc" id="anamespaceUtilsOSDependable_html_a73ce8621f643db388f85ddefa2dbb361"><div class="ttname"><a href="namespaceUtilsOSDependable.html#a73ce8621f643db388f85ddefa2dbb361">UtilsOSDependable::parse_terminal_color_response</a></div><div class="ttdeci">tuple&lt; int, int, int &gt; parse_terminal_color_response()</div></div>
-<div class="ttc" id="anamespaceUtilsOSDependable_html_a77d0b457dded74d7d1f901d333d25453"><div class="ttname"><a href="namespaceUtilsOSDependable.html#a77d0b457dded74d7d1f901d333d25453">UtilsOSDependable::is_bg_color_dark</a></div><div class="ttdeci">bool is_bg_color_dark()</div><div class="ttdef"><b>Definition</b> <a href="linux__utils_8cpp_source.html#l00088">linux_utils.cpp:88</a></div></div>
-<div class="ttc" id="anamespaceUtilsOSDependable_html_acfff3b9114f5bf307e2aa78cbabfe21f"><div class="ttname"><a href="namespaceUtilsOSDependable.html#acfff3b9114f5bf307e2aa78cbabfe21f">UtilsOSDependable::convert_16_bit_to_8_bit</a></div><div class="ttdeci">int convert_16_bit_to_8_bit(const string &amp;hex16)</div></div>
-<div class="ttc" id="anamespaceUtilsOSDependable_html_ae94000387658cfce3f629da04843784f"><div class="ttname"><a href="namespaceUtilsOSDependable.html#ae94000387658cfce3f629da04843784f">UtilsOSDependable::get_terminal_bg_color_luminance</a></div><div class="ttdeci">float get_terminal_bg_color_luminance()</div><div class="ttdef"><b>Definition</b> <a href="linux__utils_8cpp_source.html#l00077">linux_utils.cpp:77</a></div></div>
+<div class="ttc" id="anamespaceUtilsOSDependable_html_a4e245ddb29771bf9f2e3190c6182f06d"><div class="ttname"><a href="namespaceUtilsOSDependable.html#a4e245ddb29771bf9f2e3190c6182f06d">UtilsOSDependable::capture_terminal_response</a></div><div class="ttdeci">string capture_terminal_response()</div><div class="ttdoc">Captures terminal response to color query.</div><div class="ttdef"><b>Definition</b> <a href="linux__utils_8cpp_source.html#l00040">linux_utils.cpp:40</a></div></div>
+<div class="ttc" id="anamespaceUtilsOSDependable_html_a73ce8621f643db388f85ddefa2dbb361"><div class="ttname"><a href="namespaceUtilsOSDependable.html#a73ce8621f643db388f85ddefa2dbb361">UtilsOSDependable::parse_terminal_color_response</a></div><div class="ttdeci">tuple&lt; int, int, int &gt; parse_terminal_color_response()</div><div class="ttdoc">Parses terminal color response into RGB components on Windows.</div></div>
+<div class="ttc" id="anamespaceUtilsOSDependable_html_a77d0b457dded74d7d1f901d333d25453"><div class="ttname"><a href="namespaceUtilsOSDependable.html#a77d0b457dded74d7d1f901d333d25453">UtilsOSDependable::is_bg_color_dark</a></div><div class="ttdeci">bool is_bg_color_dark()</div><div class="ttdoc">Determines if terminal background color is dark.</div><div class="ttdef"><b>Definition</b> <a href="linux__utils_8cpp_source.html#l00088">linux_utils.cpp:88</a></div></div>
+<div class="ttc" id="anamespaceUtilsOSDependable_html_acfff3b9114f5bf307e2aa78cbabfe21f"><div class="ttname"><a href="namespaceUtilsOSDependable.html#acfff3b9114f5bf307e2aa78cbabfe21f">UtilsOSDependable::convert_16_bit_to_8_bit</a></div><div class="ttdeci">int convert_16_bit_to_8_bit(const string &amp;hex16)</div><div class="ttdoc">Converts a 16-bit hex color string to 8-bit RGB components.</div></div>
+<div class="ttc" id="anamespaceUtilsOSDependable_html_ae94000387658cfce3f629da04843784f"><div class="ttname"><a href="namespaceUtilsOSDependable.html#ae94000387658cfce3f629da04843784f">UtilsOSDependable::get_terminal_bg_color_luminance</a></div><div class="ttdeci">float get_terminal_bg_color_luminance()</div><div class="ttdoc">Gets the luminance of terminal background color.</div><div class="ttdef"><b>Definition</b> <a href="linux__utils_8cpp_source.html#l00077">linux_utils.cpp:77</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

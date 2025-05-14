@@ -1,5 +1,10 @@
 \doxysection{arkanjo/base/config.hpp File Reference}
 \hypertarget{config_8hpp}{}\label{config_8hpp}\index{arkanjo/base/config.hpp@{arkanjo/base/config.hpp}}
+
+
+Configuration management interface.  
+
+
 {\ttfamily \#include $<$bits/stdc++.\+h$>$}\newline
 Include dependency graph for config.\+hpp\+:
 \nopagebreak
@@ -21,4 +26,15 @@ This graph shows which files directly or indirectly include this file\+:
 \begin{DoxyCompactItemize}
 \item 
 class \mbox{\hyperlink{classConfig}{Config}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Singleton configuration manager class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Configuration management interface. 
+
+Defines the singleton configuration class that manages application paths. Provides abstraction for file paths in the temporary codebase without requiring direct file access.
+
+Contains the abstraction of a path to a function in the temporary code base. Useful for elements that does not need to, in fact, read the files in the temporary codebase. 
+
+Definition in file \mbox{\hyperlink{config_8hpp_source}{config.\+hpp}}.
+

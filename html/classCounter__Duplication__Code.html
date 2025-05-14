@@ -110,16 +110,22 @@ $(function(){initNavTree('classCounter__Duplication__Code.html',''); initResizab
 </div><!--header-->
 <div class="contents">
 
+<p>Code duplication analyzer and reporter.  
+ <a href="#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="counter__duplication__code_8hpp_source.html">counter_duplication_code.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ae87c1513ef03d849aac658da818e22a4" id="r_ae87c1513ef03d849aac658da818e22a4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae87c1513ef03d849aac658da818e22a4">Counter_Duplication_Code</a> (<a class="el" href="classSimilarity__Table.html">Similarity_Table</a> *_similarity_table)</td></tr>
+<tr class="memdesc:ae87c1513ef03d849aac658da818e22a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs analyzer with similarity data.  <br /></td></tr>
 <tr class="separator:ae87c1513ef03d849aac658da818e22a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="counter__duplication__code_8hpp_source.html#l00015">15</a> of file <a class="el" href="counter__duplication__code_8hpp_source.html">counter_duplication_code.hpp</a>.</p>
+<div class="textblock"><p>Code duplication analyzer and reporter. </p>
+<p>Provides functionality to analyze and report code duplication metrics across the codebase, organized by folder hierarchy using a trie structure for efficient hierarchical counting and reporting. </p>
+
+<p class="definition">Definition at line <a class="el" href="counter__duplication__code_8hpp_source.html#l00030">30</a> of file <a class="el" href="counter__duplication__code_8hpp_source.html">counter_duplication_code.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ae87c1513ef03d849aac658da818e22a4" name="ae87c1513ef03d849aac658da818e22a4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae87c1513ef03d849aac658da818e22a4">&#9670;&#160;</a></span>Counter_Duplication_Code()</h2>
@@ -135,6 +141,14 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Constructs analyzer with similarity data. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_similarity_table</td><td>Pointer to similarity table </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p class="definition">Definition at line <a class="el" href="counter__duplication__code_8cpp_source.html#l00041">41</a> of file <a class="el" href="counter__duplication__code_8cpp_source.html">counter_duplication_code.cpp</a>.</p>
 

@@ -1,5 +1,10 @@
 \doxysection{arkanjo/pre/function\+\_\+breaker\+\_\+util.hpp File Reference}
 \hypertarget{function__breaker__util_8hpp}{}\label{function__breaker__util_8hpp}\index{arkanjo/pre/function\_breaker\_util.hpp@{arkanjo/pre/function\_breaker\_util.hpp}}
+
+
+\doxylink{classFunction}{Function} breaker utilities and constants.  
+
+
 {\ttfamily \#include $<$bits/stdc++.\+h$>$}\newline
 {\ttfamily \#include "{}../base/utils.\+hpp"{}}\newline
 {\ttfamily \#include "{}../base/config.\+hpp"{}}\newline
@@ -23,40 +28,51 @@ This graph shows which files directly or indirectly include this file\+:
 \begin{DoxyCompactItemize}
 \item 
 struct \mbox{\hyperlink{structLine__content}{Line\+\_\+content}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Structure representing a line of source code. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Enumerations}
 \begin{DoxyCompactItemize}
 \item 
 enum \mbox{\hyperlink{function__breaker__util_8hpp_a0fef8749500f3d98444fd6e121ba079a}{PROGRAMMING\+\_\+\+LANGUAGE}} \{ \mbox{\hyperlink{function__breaker__util_8hpp_a0fef8749500f3d98444fd6e121ba079aa739ce3f516592d245d16fd8a3893472c}{C}}
 , \mbox{\hyperlink{function__breaker__util_8hpp_a0fef8749500f3d98444fd6e121ba079aa70b9213a328b71cbc9abad715b4601f1}{JAVA}}
  \}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Enumeration of supported programming languages. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 string \mbox{\hyperlink{function__breaker__util_8hpp_aa98958a2eea26c27b022e37565597738}{extract\+\_\+extension}} (string file\+\_\+path)
-\item 
+\begin{DoxyCompactList}\small\item\em Extracts file extension from path. \end{DoxyCompactList}\item 
 string \mbox{\hyperlink{function__breaker__util_8hpp_a9f7b059ffa233c9236e881a841905495}{build\+\_\+source\+\_\+path}} (string relative\+\_\+path, string function\+\_\+name)
-\item 
+\begin{DoxyCompactList}\small\item\em Builds source file path for a function. \end{DoxyCompactList}\item 
 string \mbox{\hyperlink{function__breaker__util_8hpp_ab21e5aae0c0ec27f4e1ad1fb0c25cfc9}{build\+\_\+header\+\_\+path}} (string relative\+\_\+path, string function\+\_\+name)
-\item 
+\begin{DoxyCompactList}\small\item\em Builds header file path for a function. \end{DoxyCompactList}\item 
 string \mbox{\hyperlink{function__breaker__util_8hpp_a2a74ec572c5d53a6b9657f6ab72b3398}{build\+\_\+info\+\_\+path}} (string relative\+\_\+path, string function\+\_\+name)
-\item 
+\begin{DoxyCompactList}\small\item\em Builds info file path for a function. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{function__breaker__util_8hpp_af36d90b18dc7740f504f5adb06d4b66b}{create\+\_\+source\+\_\+file}} (int start\+\_\+number\+\_\+line, int end\+\_\+number\+\_\+line, string relative\+\_\+path, string function\+\_\+name, const vector$<$ string $>$ \&function\+\_\+content)
-\item 
+\begin{DoxyCompactList}\small\item\em Creates source file for a function. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{function__breaker__util_8hpp_aa7568b2f26d97dafcd6942921956cab0}{create\+\_\+header\+\_\+file}} (string relative\+\_\+path, string function\+\_\+name, const vector$<$ string $>$ \&header\+\_\+content)
-\item 
+\begin{DoxyCompactList}\small\item\em Creates header file for a function. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{function__breaker__util_8hpp_a26e4da801859502c632d70ccec642f31}{create\+\_\+info\+\_\+file}} (int line\+\_\+declaration, int start\+\_\+number\+\_\+line, int end\+\_\+number\+\_\+line, string relative\+\_\+path, string function\+\_\+name)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Creates JSON metadata file for a function. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
 const string \mbox{\hyperlink{function__breaker__util_8hpp_a42e3ba2809066eb6a55ea07b49d2bc30}{SOURCE\+\_\+\+PATH}} = "{}source"{}
-\item 
+\begin{DoxyCompactList}\small\item\em Directory name for source files. \end{DoxyCompactList}\item 
 const string \mbox{\hyperlink{function__breaker__util_8hpp_aa7a6817f93183c0d48151edc419e00ac}{HEADER\+\_\+\+PATH}} = "{}header"{}
-\item 
+\begin{DoxyCompactList}\small\item\em Directory name for header files. \end{DoxyCompactList}\item 
 const string \mbox{\hyperlink{function__breaker__util_8hpp_ae3749f1ae704c074ba9ab3e33112fb25}{INFO\+\_\+\+PATH}} = "{}info"{}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Directory name for metadata files. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{classFunction}{Function} breaker utilities and constants. 
+
+Defines common utilities, structures, and constants used across the function breaking process for supported programming languages.
+
+Defines util functions, struct and constants used across the function breaker process for the suported languages 
+
+Definition in file \mbox{\hyperlink{function__breaker__util_8hpp_source}{function\+\_\+breaker\+\_\+util.\+hpp}}.
+
 
 
 \doxysubsection{Enumeration Type Documentation}
@@ -66,19 +82,23 @@ const string \mbox{\hyperlink{function__breaker__util_8hpp_ae3749f1ae704c074ba9a
 {\footnotesize\ttfamily \label{function__breaker__util_8hpp_a0fef8749500f3d98444fd6e121ba079a} 
 enum \mbox{\hyperlink{function__breaker__util_8hpp_a0fef8749500f3d98444fd6e121ba079a}{PROGRAMMING\+\_\+\+LANGUAGE}}}
 
+
+
+Enumeration of supported programming languages. 
+
 \begin{DoxyEnumFields}[2]{Enumerator}
 \raisebox{\heightof{T}}[0pt][0pt]{\index{C@{C}!function\_breaker\_util.hpp@{function\_breaker\_util.hpp}}\index{function\_breaker\_util.hpp@{function\_breaker\_util.hpp}!C@{C}}}\Hypertarget{function__breaker__util_8hpp_a0fef8749500f3d98444fd6e121ba079aa739ce3f516592d245d16fd8a3893472c}\label{function__breaker__util_8hpp_a0fef8749500f3d98444fd6e121ba079aa739ce3f516592d245d16fd8a3893472c} 
-C&\\
+C&C programming language. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{JAVA@{JAVA}!function\_breaker\_util.hpp@{function\_breaker\_util.hpp}}\index{function\_breaker\_util.hpp@{function\_breaker\_util.hpp}!JAVA@{JAVA}}}\Hypertarget{function__breaker__util_8hpp_a0fef8749500f3d98444fd6e121ba079aa70b9213a328b71cbc9abad715b4601f1}\label{function__breaker__util_8hpp_a0fef8749500f3d98444fd6e121ba079aa70b9213a328b71cbc9abad715b4601f1} 
-JAVA&\\
+JAVA&Java programming language. \\
 \hline
 
 \end{DoxyEnumFields}
 
 
-Definition at line \mbox{\hyperlink{function__breaker__util_8hpp_source_l00017}{17}} of file \mbox{\hyperlink{function__breaker__util_8hpp_source}{function\+\_\+breaker\+\_\+util.\+hpp}}.
+Definition at line \mbox{\hyperlink{function__breaker__util_8hpp_source_l00030}{30}} of file \mbox{\hyperlink{function__breaker__util_8hpp_source}{function\+\_\+breaker\+\_\+util.\+hpp}}.
 
 
 
@@ -91,6 +111,20 @@ string build\+\_\+header\+\_\+path (\begin{DoxyParamCaption}\item[{string}]{rela
 
 
 
+Builds header file path for a function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em relative\+\_\+path} & Relative path of the original file \\
+\hline
+{\em function\+\_\+name} & Name of the function \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string Full path for the header file 
+\end{DoxyReturn}
+
+
 Definition at line \mbox{\hyperlink{function__breaker__util_8cpp_source_l00042}{42}} of file \mbox{\hyperlink{function__breaker__util_8cpp_source}{function\+\_\+breaker\+\_\+util.\+cpp}}.
 
 \Hypertarget{function__breaker__util_8hpp_a2a74ec572c5d53a6b9657f6ab72b3398}\index{function\_breaker\_util.hpp@{function\_breaker\_util.hpp}!build\_info\_path@{build\_info\_path}}
@@ -99,6 +133,20 @@ Definition at line \mbox{\hyperlink{function__breaker__util_8cpp_source_l00042}{
 {\footnotesize\ttfamily \label{function__breaker__util_8hpp_a2a74ec572c5d53a6b9657f6ab72b3398} 
 string build\+\_\+info\+\_\+path (\begin{DoxyParamCaption}\item[{string}]{relative\+\_\+path}{, }\item[{string}]{function\+\_\+name}{}\end{DoxyParamCaption})}
 
+
+
+Builds info file path for a function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em relative\+\_\+path} & Relative path of the original file \\
+\hline
+{\em function\+\_\+name} & Name of the function \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string Full path for the info file 
+\end{DoxyReturn}
 
 
 Definition at line \mbox{\hyperlink{function__breaker__util_8cpp_source_l00051}{51}} of file \mbox{\hyperlink{function__breaker__util_8cpp_source}{function\+\_\+breaker\+\_\+util.\+cpp}}.
@@ -111,6 +159,20 @@ string build\+\_\+source\+\_\+path (\begin{DoxyParamCaption}\item[{string}]{rela
 
 
 
+Builds source file path for a function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em relative\+\_\+path} & Relative path of the original file \\
+\hline
+{\em function\+\_\+name} & Name of the function \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string Full path for the source file 
+\end{DoxyReturn}
+
+
 Definition at line \mbox{\hyperlink{function__breaker__util_8cpp_source_l00033}{33}} of file \mbox{\hyperlink{function__breaker__util_8cpp_source}{function\+\_\+breaker\+\_\+util.\+cpp}}.
 
 \Hypertarget{function__breaker__util_8hpp_aa7568b2f26d97dafcd6942921956cab0}\index{function\_breaker\_util.hpp@{function\_breaker\_util.hpp}!create\_header\_file@{create\_header\_file}}
@@ -119,6 +181,19 @@ Definition at line \mbox{\hyperlink{function__breaker__util_8cpp_source_l00033}{
 {\footnotesize\ttfamily \label{function__breaker__util_8hpp_aa7568b2f26d97dafcd6942921956cab0} 
 void create\+\_\+header\+\_\+file (\begin{DoxyParamCaption}\item[{string}]{relative\+\_\+path}{, }\item[{string}]{function\+\_\+name}{, }\item[{const vector$<$ string $>$ \&}]{header\+\_\+content}{}\end{DoxyParamCaption})}
 
+
+
+Creates header file for a function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em relative\+\_\+path} & Relative path of the original file \\
+\hline
+{\em function\+\_\+name} & Name of the function \\
+\hline
+{\em header\+\_\+content} & Vector of strings containing the header content \\
+\hline
+\end{DoxyParams}
 
 
 Definition at line \mbox{\hyperlink{function__breaker__util_8cpp_source_l00065}{65}} of file \mbox{\hyperlink{function__breaker__util_8cpp_source}{function\+\_\+breaker\+\_\+util.\+cpp}}.
@@ -131,6 +206,23 @@ void create\+\_\+info\+\_\+file (\begin{DoxyParamCaption}\item[{int}]{line\+\_\+
 
 
 
+Creates JSON metadata file for a function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em line\+\_\+declaration} & Line number where function is declared \\
+\hline
+{\em start\+\_\+number\+\_\+line} & Starting line number of function body \\
+\hline
+{\em end\+\_\+number\+\_\+line} & Ending line number of function body \\
+\hline
+{\em relative\+\_\+path} & Relative path of the original file \\
+\hline
+{\em function\+\_\+name} & Name of the function \\
+\hline
+\end{DoxyParams}
+
+
 Definition at line \mbox{\hyperlink{function__breaker__util_8cpp_source_l00071}{71}} of file \mbox{\hyperlink{function__breaker__util_8cpp_source}{function\+\_\+breaker\+\_\+util.\+cpp}}.
 
 \Hypertarget{function__breaker__util_8hpp_af36d90b18dc7740f504f5adb06d4b66b}\index{function\_breaker\_util.hpp@{function\_breaker\_util.hpp}!create\_source\_file@{create\_source\_file}}
@@ -141,6 +233,23 @@ void create\+\_\+source\+\_\+file (\begin{DoxyParamCaption}\item[{int}]{start\+\
 
 
 
+Creates source file for a function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+\_\+number\+\_\+line} & Starting line number in original file \\
+\hline
+{\em end\+\_\+number\+\_\+line} & Ending line number in original file \\
+\hline
+{\em relative\+\_\+path} & Relative path of the original file \\
+\hline
+{\em function\+\_\+name} & Name of the function \\
+\hline
+{\em function\+\_\+content} & Vector of strings containing the function body \\
+\hline
+\end{DoxyParams}
+
+
 Definition at line \mbox{\hyperlink{function__breaker__util_8cpp_source_l00060}{60}} of file \mbox{\hyperlink{function__breaker__util_8cpp_source}{function\+\_\+breaker\+\_\+util.\+cpp}}.
 
 \Hypertarget{function__breaker__util_8hpp_aa98958a2eea26c27b022e37565597738}\index{function\_breaker\_util.hpp@{function\_breaker\_util.hpp}!extract\_extension@{extract\_extension}}
@@ -149,6 +258,18 @@ Definition at line \mbox{\hyperlink{function__breaker__util_8cpp_source_l00060}{
 {\footnotesize\ttfamily \label{function__breaker__util_8hpp_aa98958a2eea26c27b022e37565597738} 
 string extract\+\_\+extension (\begin{DoxyParamCaption}\item[{string}]{file\+\_\+path}{}\end{DoxyParamCaption})}
 
+
+
+Extracts file extension from path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+\_\+path} & \doxylink{classPath}{Path} to the file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string File extension 
+\end{DoxyReturn}
 
 
 Definition at line \mbox{\hyperlink{function__breaker__util_8cpp_source_l00016}{16}} of file \mbox{\hyperlink{function__breaker__util_8cpp_source}{function\+\_\+breaker\+\_\+util.\+cpp}}.
@@ -164,7 +285,11 @@ const string HEADER\+\_\+\+PATH = "{}header"{}}
 
 
 
-Definition at line \mbox{\hyperlink{function__breaker__util_8hpp_source_l00024}{24}} of file \mbox{\hyperlink{function__breaker__util_8hpp_source}{function\+\_\+breaker\+\_\+util.\+hpp}}.
+Directory name for header files. 
+
+
+
+Definition at line \mbox{\hyperlink{function__breaker__util_8hpp_source_l00036}{36}} of file \mbox{\hyperlink{function__breaker__util_8hpp_source}{function\+\_\+breaker\+\_\+util.\+hpp}}.
 
 \Hypertarget{function__breaker__util_8hpp_ae3749f1ae704c074ba9ab3e33112fb25}\index{function\_breaker\_util.hpp@{function\_breaker\_util.hpp}!INFO\_PATH@{INFO\_PATH}}
 \index{INFO\_PATH@{INFO\_PATH}!function\_breaker\_util.hpp@{function\_breaker\_util.hpp}}
@@ -174,7 +299,11 @@ const string INFO\+\_\+\+PATH = "{}info"{}}
 
 
 
-Definition at line \mbox{\hyperlink{function__breaker__util_8hpp_source_l00025}{25}} of file \mbox{\hyperlink{function__breaker__util_8hpp_source}{function\+\_\+breaker\+\_\+util.\+hpp}}.
+Directory name for metadata files. 
+
+
+
+Definition at line \mbox{\hyperlink{function__breaker__util_8hpp_source_l00037}{37}} of file \mbox{\hyperlink{function__breaker__util_8hpp_source}{function\+\_\+breaker\+\_\+util.\+hpp}}.
 
 \Hypertarget{function__breaker__util_8hpp_a42e3ba2809066eb6a55ea07b49d2bc30}\index{function\_breaker\_util.hpp@{function\_breaker\_util.hpp}!SOURCE\_PATH@{SOURCE\_PATH}}
 \index{SOURCE\_PATH@{SOURCE\_PATH}!function\_breaker\_util.hpp@{function\_breaker\_util.hpp}}
@@ -184,5 +313,9 @@ const string SOURCE\+\_\+\+PATH = "{}source"{}}
 
 
 
-Definition at line \mbox{\hyperlink{function__breaker__util_8hpp_source_l00023}{23}} of file \mbox{\hyperlink{function__breaker__util_8hpp_source}{function\+\_\+breaker\+\_\+util.\+hpp}}.
+Directory name for source files. 
+
+
+
+Definition at line \mbox{\hyperlink{function__breaker__util_8hpp_source_l00035}{35}} of file \mbox{\hyperlink{function__breaker__util_8hpp_source}{function\+\_\+breaker\+\_\+util.\+hpp}}.
 

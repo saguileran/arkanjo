@@ -110,16 +110,28 @@ $(function(){initNavTree('classFunctionBreaker.html',''); initResizable(true); }
 </div><!--header-->
 <div class="contents">
 
+<p>Main function extraction processor.  
+ <a href="#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="function__breaker_8hpp_source.html">function_breaker.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a041958058b6eb1e0581679e7f71701be" id="r_a041958058b6eb1e0581679e7f71701be"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a041958058b6eb1e0581679e7f71701be">FunctionBreaker</a> (string folder_path)</td></tr>
+<tr class="memdesc:a041958058b6eb1e0581679e7f71701be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs function breaker and processes directory.  <br /></td></tr>
 <tr class="separator:a041958058b6eb1e0581679e7f71701be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="function__breaker_8hpp_source.html#l00024">24</a> of file <a class="el" href="function__breaker_8hpp_source.html">function_breaker.hpp</a>.</p>
+<div class="textblock"><p>Main function extraction processor. </p>
+<p>Analyzes source code directories (C/C++/Java) and extracts each function into individual files within a temporary repository. Handles file organization and delegates language-specific parsing to appropriate handlers.</p>
+<dl class="section note"><dt>Note</dt><dd>Current limitations:<ul>
+<li>May not work correctly with malformed bracket sequences</li>
+<li>May fail on brackets within comments</li>
+<li>Example behavior: For file example.c with functions a and b, creates example/a.c and example/b.c in tmp/ directory </li>
+</ul>
+</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="function__breaker_8hpp_source.html#l00043">43</a> of file <a class="el" href="function__breaker_8hpp_source.html">function_breaker.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a041958058b6eb1e0581679e7f71701be" name="a041958058b6eb1e0581679e7f71701be"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a041958058b6eb1e0581679e7f71701be">&#9670;&#160;</a></span>FunctionBreaker()</h2>
@@ -135,6 +147,14 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Constructs function breaker and processes directory. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">folder_path</td><td>Directory containing source files to process </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p class="definition">Definition at line <a class="el" href="function__breaker_8cpp_source.html#l00066">66</a> of file <a class="el" href="function__breaker_8cpp_source.html">function_breaker.cpp</a>.</p>
 

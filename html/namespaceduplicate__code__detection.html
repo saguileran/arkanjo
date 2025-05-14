@@ -114,17 +114,21 @@ $(function(){initNavTree('namespaceduplicate__code__detection.html',''); initRes
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classduplicate__code__detection_1_1CliColors.html">CliColors</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">ANSI color codes for terminal text formatting.  <a href="classduplicate__code__detection_1_1CliColors.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classduplicate__code__detection_1_1ReturnCode.html">ReturnCode</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumeration of possible return codes for the application.  <a href="classduplicate__code__detection_1_1ReturnCode.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ae010ffc70f3bd8ddea24ea426730b410" id="r_ae010ffc70f3bd8ddea24ea426730b410"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae010ffc70f3bd8ddea24ea426730b410">get_all_source_code_from_directory</a> (directory, file_extensions)</td></tr>
+<tr class="memdesc:ae010ffc70f3bd8ddea24ea426730b410"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a list with all the source code files within the directory.  <br /></td></tr>
 <tr class="separator:ae010ffc70f3bd8ddea24ea426730b410"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a00a1899a4818d03117ee859ab010f58a" id="r_a00a1899a4818d03117ee859ab010f58a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a00a1899a4818d03117ee859ab010f58a">conditional_print</a> (text, machine_friendly_output)</td></tr>
 <tr class="separator:a00a1899a4818d03117ee859ab010f58a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a72670ee80af736f522eaaf0b86883300" id="r_a72670ee80af736f522eaaf0b86883300"><td class="memItemLeft" align="right" valign="top">str&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a72670ee80af736f522eaaf0b86883300">remove_comments_and_docstrings</a> (str source_code)</td></tr>
+<tr class="memdesc:a72670ee80af736f522eaaf0b86883300"><td class="mdescLeft">&#160;</td><td class="mdescRight">Strip comments and docstrings from source code.  <br /></td></tr>
 <tr class="separator:a72670ee80af736f522eaaf0b86883300"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa319b29e5b513dc5d0fd97f18cbd36d0" id="r_aa319b29e5b513dc5d0fd97f18cbd36d0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa319b29e5b513dc5d0fd97f18cbd36d0">get_loc_count</a> (file_path)</td></tr>
 <tr class="separator:aa319b29e5b513dc5d0fd97f18cbd36d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -156,12 +160,7 @@ Variables</h2></td></tr>
 <tr class="memitem:a333b51eeabf26f3de4b6c3dd9591ba2a" id="r_a333b51eeabf26f3de4b6c3dd9591ba2a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a333b51eeabf26f3de4b6c3dd9591ba2a">_</a></td></tr>
 <tr class="separator:a333b51eeabf26f3de4b6c3dd9591ba2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><pre class="fragment">A simple Python3 tool to detect similarities between files within a repository.
-
-Document similarity code adapted from Jonathan Mugan's tutorial:
-https://www.oreilly.com/learning/how-do-i-compare-document-similarity-using-python
-</pre> </div><h2 class="groupheader">Function Documentation</h2>
+<h2 class="groupheader">Function Documentation</h2>
 <a id="a00a1899a4818d03117ee859ab010f58a" name="a00a1899a4818d03117ee859ab010f58a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a00a1899a4818d03117ee859ab010f58a">&#9670;&#160;</a></span>conditional_print()</h2>
 
@@ -180,8 +179,15 @@ https://www.oreilly.com/learning/how-do-i-compare-document-similarity-using-pyth
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">text</td><td></td></tr>
+    <tr><td class="paramname">machine_friendly_output</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p class="definition">Definition at line <a class="el" href="duplicate__code__detection_8py_source.html#l00060">60</a> of file <a class="el" href="duplicate__code__detection_8py_source.html">duplicate_code_detection.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="duplicate__code__detection_8py_source.html#l00080">80</a> of file <a class="el" href="duplicate__code__detection_8py_source.html">duplicate_code_detection.py</a>.</p>
 
 </div>
 </div>
@@ -203,8 +209,18 @@ https://www.oreilly.com/learning/how-do-i-compare-document-similarity-using-pyth
         </tr>
       </table>
 </div><div class="memdoc">
-<pre class="fragment">Get a list with all the source code files within the directory</pre> 
-<p class="definition">Definition at line <a class="el" href="duplicate__code__detection_8py_source.html#l00047">47</a> of file <a class="el" href="duplicate__code__detection_8py_source.html">duplicate_code_detection.py</a>.</p>
+
+<p>Get a list with all the source code files within the directory. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">directory</td><td></td></tr>
+    <tr><td class="paramname">file_extensions</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>source_code_files </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="duplicate__code__detection_8py_source.html#l00062">62</a> of file <a class="el" href="duplicate__code__detection_8py_source.html">duplicate_code_detection.py</a>.</p>
 
 </div>
 </div>
@@ -222,8 +238,15 @@ https://www.oreilly.com/learning/how-do-i-compare-document-similarity-using-pyth
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">file_path</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>lines_count </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="duplicate__code__detection_8py_source.html#l00101">101</a> of file <a class="el" href="duplicate__code__detection_8py_source.html">duplicate_code_detection.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="duplicate__code__detection_8py_source.html#l00122">122</a> of file <a class="el" href="duplicate__code__detection_8py_source.html">duplicate_code_detection.py</a>.</p>
 
 </div>
 </div>
@@ -241,8 +264,15 @@ https://www.oreilly.com/learning/how-do-i-compare-document-similarity-using-pyth
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">loc_count</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>loc_to_print </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="duplicate__code__detection_8py_source.html#l00111">111</a> of file <a class="el" href="duplicate__code__detection_8py_source.html">duplicate_code_detection.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="duplicate__code__detection_8py_source.html#l00137">137</a> of file <a class="el" href="duplicate__code__detection_8py_source.html">duplicate_code_detection.py</a>.</p>
 
 </div>
 </div>
@@ -260,8 +290,9 @@ https://www.oreilly.com/learning/how-do-i-compare-document-similarity-using-pyth
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>result </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="duplicate__code__detection_8py_source.html#l00116">116</a> of file <a class="el" href="duplicate__code__detection_8py_source.html">duplicate_code_detection.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="duplicate__code__detection_8py_source.html#l00147">147</a> of file <a class="el" href="duplicate__code__detection_8py_source.html">duplicate_code_detection.py</a>.</p>
 
 </div>
 </div>
@@ -279,18 +310,18 @@ https://www.oreilly.com/learning/how-do-i-compare-document-similarity-using-pyth
         </tr>
       </table>
 </div><div class="memdoc">
-<pre class="fragment">Strip comments and docstrings from source code
 
-.. seealso::
+<p>Strip comments and docstrings from source code. </p>
+<dl class="section see"><dt>See also</dt><dd><a href="https://gist.github.com/phpdude/1ae6f19de213d66286c8183e9e3b9ec1">https://gist.github.com/phpdude/1ae6f19de213d66286c8183e9e3b9ec1</a></dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">source_code</td><td>Raw source code as a single string </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>source_code_clean Stripped source code as a single string </dd></dl>
 
-    https://gist.github.com/phpdude/1ae6f19de213d66286c8183e9e3b9ec1
-
-:param source_code: Raw source code as a single string
-:type source_code: str
-:return: Stripped source code as a single string
-:rtype: str
-</pre> 
-<p class="definition">Definition at line <a class="el" href="duplicate__code__detection_8py_source.html#l00065">65</a> of file <a class="el" href="duplicate__code__detection_8py_source.html">duplicate_code_detection.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="duplicate__code__detection_8py_source.html#l00090">90</a> of file <a class="el" href="duplicate__code__detection_8py_source.html">duplicate_code_detection.py</a>.</p>
 
 </div>
 </div>
@@ -362,8 +393,25 @@ https://www.oreilly.com/learning/how-do-i-compare-document-similarity-using-pyth
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fail_threshold</td><td></td></tr>
+    <tr><td class="paramname">directories</td><td></td></tr>
+    <tr><td class="paramname">files</td><td></td></tr>
+    <tr><td class="paramname">ignore_directories</td><td></td></tr>
+    <tr><td class="paramname">ignore_files</td><td></td></tr>
+    <tr><td class="paramname">json_output</td><td></td></tr>
+    <tr><td class="paramname">project_root_dir</td><td></td></tr>
+    <tr><td class="paramname">file_extensions</td><td></td></tr>
+    <tr><td class="paramname">ignore_threshold</td><td></td></tr>
+    <tr><td class="paramname">only_code</td><td></td></tr>
+    <tr><td class="paramname">csv_output</td><td></td></tr>
+    <tr><td class="paramname">show_loc</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p class="definition">Definition at line <a class="el" href="duplicate__code__detection_8py_source.html#l00206">206</a> of file <a class="el" href="duplicate__code__detection_8py_source.html">duplicate_code_detection.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="duplicate__code__detection_8py_source.html#l00241">241</a> of file <a class="el" href="duplicate__code__detection_8py_source.html">duplicate_code_detection.py</a>.</p>
 
 </div>
 </div>
@@ -388,7 +436,7 @@ https://www.oreilly.com/learning/how-do-i-compare-document-similarity-using-pyth
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="duplicate__code__detection_8py_source.html#l00433">433</a> of file <a class="el" href="duplicate__code__detection_8py_source.html">duplicate_code_detection.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="duplicate__code__detection_8py_source.html#l00483">483</a> of file <a class="el" href="duplicate__code__detection_8py_source.html">duplicate_code_detection.py</a>.</p>
 
 </div>
 </div>
@@ -404,7 +452,7 @@ https://www.oreilly.com/learning/how-do-i-compare-document-similarity-using-pyth
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="duplicate__code__detection_8py_source.html#l00433">433</a> of file <a class="el" href="duplicate__code__detection_8py_source.html">duplicate_code_detection.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="duplicate__code__detection_8py_source.html#l00483">483</a> of file <a class="el" href="duplicate__code__detection_8py_source.html">duplicate_code_detection.py</a>.</p>
 
 </div>
 </div>
@@ -420,7 +468,7 @@ https://www.oreilly.com/learning/how-do-i-compare-document-similarity-using-pyth
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="duplicate__code__detection_8py_source.html#l00022">22</a> of file <a class="el" href="duplicate__code__detection_8py_source.html">duplicate_code_detection.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="duplicate__code__detection_8py_source.html#l00024">24</a> of file <a class="el" href="duplicate__code__detection_8py_source.html">duplicate_code_detection.py</a>.</p>
 
 </div>
 </div>
@@ -436,7 +484,7 @@ https://www.oreilly.com/learning/how-do-i-compare-document-similarity-using-pyth
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="duplicate__code__detection_8py_source.html#l00023">23</a> of file <a class="el" href="duplicate__code__detection_8py_source.html">duplicate_code_detection.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="duplicate__code__detection_8py_source.html#l00025">25</a> of file <a class="el" href="duplicate__code__detection_8py_source.html">duplicate_code_detection.py</a>.</p>
 
 </div>
 </div>
@@ -452,7 +500,7 @@ https://www.oreilly.com/learning/how-do-i-compare-document-similarity-using-pyth
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="duplicate__code__detection_8py_source.html#l00026">26</a> of file <a class="el" href="duplicate__code__detection_8py_source.html">duplicate_code_detection.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="duplicate__code__detection_8py_source.html#l00028">28</a> of file <a class="el" href="duplicate__code__detection_8py_source.html">duplicate_code_detection.py</a>.</p>
 
 </div>
 </div>
@@ -468,7 +516,7 @@ https://www.oreilly.com/learning/how-do-i-compare-document-similarity-using-pyth
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="duplicate__code__detection_8py_source.html#l00024">24</a> of file <a class="el" href="duplicate__code__detection_8py_source.html">duplicate_code_detection.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="duplicate__code__detection_8py_source.html#l00026">26</a> of file <a class="el" href="duplicate__code__detection_8py_source.html">duplicate_code_detection.py</a>.</p>
 
 </div>
 </div>
@@ -484,7 +532,7 @@ https://www.oreilly.com/learning/how-do-i-compare-document-similarity-using-pyth
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="duplicate__code__detection_8py_source.html#l00027">27</a> of file <a class="el" href="duplicate__code__detection_8py_source.html">duplicate_code_detection.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="duplicate__code__detection_8py_source.html#l00029">29</a> of file <a class="el" href="duplicate__code__detection_8py_source.html">duplicate_code_detection.py</a>.</p>
 
 </div>
 </div>
@@ -500,7 +548,7 @@ https://www.oreilly.com/learning/how-do-i-compare-document-similarity-using-pyth
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="duplicate__code__detection_8py_source.html#l00025">25</a> of file <a class="el" href="duplicate__code__detection_8py_source.html">duplicate_code_detection.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="duplicate__code__detection_8py_source.html#l00027">27</a> of file <a class="el" href="duplicate__code__detection_8py_source.html">duplicate_code_detection.py</a>.</p>
 
 </div>
 </div>
@@ -516,7 +564,7 @@ https://www.oreilly.com/learning/how-do-i-compare-document-similarity-using-pyth
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="duplicate__code__detection_8py_source.html#l00021">21</a> of file <a class="el" href="duplicate__code__detection_8py_source.html">duplicate_code_detection.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="duplicate__code__detection_8py_source.html#l00023">23</a> of file <a class="el" href="duplicate__code__detection_8py_source.html">duplicate_code_detection.py</a>.</p>
 
 </div>
 </div>

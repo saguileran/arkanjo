@@ -1,14 +1,14 @@
 <map id="arkanjo/counter/counter_duplication_code.hpp" name="arkanjo/counter/counter_duplication_code.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="204,5,362,46"/>
+<area shape="rect" id="Node000001" title="Code duplication reporting system." alt="" coords="204,5,362,46"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="301,345,398,371"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="342,44,389,65,439,95,485,133,505,156,521,182,529,207,525,232,513,255,494,277,445,313,395,340,392,336,442,309,491,273,509,252,520,231,524,208,516,184,501,159,482,137,436,99,386,70,340,49"/>
-<area shape="rect" id="Node000003" href="$path_8hpp.html" title=" " alt="" coords="5,271,118,297"/>
+<area shape="rect" id="Node000003" href="$path_8hpp.html" title="Path abstraction for temporary codebase." alt="" coords="5,271,118,297"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="239,49,197,71,152,101,109,139,75,184,63,220,61,256,56,256,58,219,70,181,105,135,148,97,194,67,236,44"/>
-<area shape="rect" id="Node000004" href="$function_8hpp.html" title=" " alt="" coords="115,190,248,216"/>
+<area shape="rect" id="Node000004" href="$function_8hpp.html" title="Function abstraction for temporary codebase." alt="" coords="115,190,248,216"/>
 <area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="259,48,236,70,216,95,198,136,188,176,183,174,193,135,211,93,232,66,255,45"/>
-<area shape="rect" id="Node000008" href="$similarity__table_8hpp.html" title=" " alt="" coords="226,94,340,135"/>
+<area shape="rect" id="Node000008" href="$similarity__table_8hpp.html" title="Similarity relationships storage and analysis." alt="" coords="226,94,340,135"/>
 <area shape="poly" id="edge12_Node000001_Node000008" title=" " alt="" coords="286,47,286,78,280,78,280,47"/>
-<area shape="rect" id="Node000009" href="$counter__duplication__code__trie_8hpp.html" title=" " alt="" coords="374,183,507,223"/>
+<area shape="rect" id="Node000009" href="$counter__duplication__code__trie_8hpp.html" title="Trie&#45;based code duplication counter." alt="" coords="374,183,507,223"/>
 <area shape="poly" id="edge17_Node000001_Node000009" title=" " alt="" coords="306,44,354,92,418,168,414,172,350,96,302,48"/>
 <area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="111,295,286,338,285,343,110,300"/>
 <area shape="poly" id="edge5_Node000004_Node000002" title=" " alt="" coords="202,214,237,238,275,269,333,331,329,335,272,273,234,243,199,219"/>

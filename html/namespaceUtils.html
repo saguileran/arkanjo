@@ -245,14 +245,12 @@ Variables</h2></td></tr>
 <p>Creates all parent directories for a given file path. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">file_path</td><td>The full file path for which to create parent directories</td></tr>
-    <tr><td class="paramname">file_path</td><td>The full file path for which to create parent directories</td></tr>
+    <tr><td class="paramname">file_path</td><td>The full file path for which to create parent directories </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section note"><dt>Note</dt><dd>Handles paths with '/' separators. Creates each directory in the path. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="utils_8cpp_source.html#l00074">74</a> of file <a class="el" href="utils_8cpp_source.html">utils.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="utils_8cpp_source.html#l00043">43</a> of file <a class="el" href="utils_8cpp_source.html">utils.cpp</a>.</p>
 
 </div>
 </div>
@@ -274,13 +272,13 @@ Variables</h2></td></tr>
 <p>Checks if a file exists at the given path. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">file_path</td><td><a class="el" href="classPath.html">Path</a> to check </td></tr>
+    <tr><td class="paramname">file_path</td><td><a class="el" href="classPath.html" title="Path manipulation class for tool-specific directory structure.">Path</a> to check </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool True if file exists and is accessible, false otherwise </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="utils_8cpp_source.html#l00113">113</a> of file <a class="el" href="utils_8cpp_source.html">utils.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="utils_8cpp_source.html#l00069">69</a> of file <a class="el" href="utils_8cpp_source.html">utils.cpp</a>.</p>
 
 </div>
 </div>
@@ -307,21 +305,12 @@ Variables</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">file</td><td>Reference to the input file stream to check </td></tr>
-    <tr><td class="paramname">file_name</td><td>Name/path of the file being opened (for error message)</td></tr>
-    <tr><td class="paramname">file</td><td>Reference to the input file stream to check </td></tr>
     <tr><td class="paramname">file_name</td><td>Name/path of the file being opened (for error message) </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">Exits</td><td>the program if file is not open</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section note"><dt>Note</dt><dd>This function will terminate the program if the file is not open </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="utils_8cpp_source.html#l00020">20</a> of file <a class="el" href="utils_8cpp_source.html">utils.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="utils_8cpp_source.html#l00011">11</a> of file <a class="el" href="utils_8cpp_source.html">utils.cpp</a>.</p>
 
 </div>
 </div>
@@ -345,7 +334,6 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Formats a message with ANSI color codes. </p>
-<p>Formats a message with ANSI color codes based on background darkness.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">message</td><td>Text to colorize </td></tr>
@@ -353,18 +341,9 @@ Variables</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>string Colorized message with reset code at the end</dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">message</td><td>Text to colorize </td></tr>
-    <tr><td class="paramname">color</td><td>Color to apply </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>string Colorized message with reset code at the end</dd></dl>
-<dl class="section note"><dt>Note</dt><dd>Automatically selects light or dark color variants based on background </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>string Colorized message with reset code at the end </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="utils_8cpp_source.html#l00144">144</a> of file <a class="el" href="utils_8cpp_source.html">utils.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="utils_8cpp_source.html#l00085">85</a> of file <a class="el" href="utils_8cpp_source.html">utils.cpp</a>.</p>
 
 </div>
 </div>
@@ -390,16 +369,9 @@ Variables</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>bool True if character is space or control character, false otherwise</dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">c</td><td>Character to check </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>bool True if character is space or control character (&lt;= 20), false otherwise </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>bool True if character is space or control character, false otherwise </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="utils_8cpp_source.html#l00159">159</a> of file <a class="el" href="utils_8cpp_source.html">utils.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="utils_8cpp_source.html#l00094">94</a> of file <a class="el" href="utils_8cpp_source.html">utils.cpp</a>.</p>
 
 </div>
 </div>
@@ -421,13 +393,13 @@ Variables</h2></td></tr>
 <p>Determines if a path refers to a regular file. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">path</td><td><a class="el" href="classPath.html">Path</a> to check </td></tr>
+    <tr><td class="paramname">path</td><td><a class="el" href="classPath.html" title="Path manipulation class for tool-specific directory structure.">Path</a> to check </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool True if path is a regular file, false otherwise </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="utils_8cpp_source.html#l00128">128</a> of file <a class="el" href="utils_8cpp_source.html">utils.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="utils_8cpp_source.html#l00078">78</a> of file <a class="el" href="utils_8cpp_source.html">utils.cpp</a>.</p>
 
 </div>
 </div>
@@ -453,16 +425,9 @@ Variables</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>bool True if character is special, false otherwise</dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">c</td><td>Character to check </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>bool True if character is special, false if alphanumeric or underscore </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>bool True if character is special, false otherwise </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="utils_8cpp_source.html#l00175">175</a> of file <a class="el" href="utils_8cpp_source.html">utils.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="utils_8cpp_source.html#l00104">104</a> of file <a class="el" href="utils_8cpp_source.html">utils.cpp</a>.</p>
 
 </div>
 </div>
@@ -484,26 +449,13 @@ Variables</h2></td></tr>
 <p>Reads a file line by line into a vector of strings. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">string_path</td><td><a class="el" href="classPath.html">Path</a> to the file to read </td></tr>
+    <tr><td class="paramname">string_path</td><td><a class="el" href="classPath.html" title="Path manipulation class for tool-specific directory structure.">Path</a> to the file to read </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>vector&lt;string&gt; Contents of the file as a vector of strings</dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">string_path</td><td><a class="el" href="classPath.html">Path</a> to the file to read </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>vector&lt;string&gt; Contents of the file as a vector of strings (one per line) </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">Exits</td><td>program if file cannot be opened (via ensure_file_is_open) </td></tr>
-  </table>
-  </dd>
-</dl>
+<dl class="section return"><dt>Returns</dt><dd>vector&lt;string&gt; Contents of the file as a vector of strings </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="utils_8cpp_source.html#l00035">35</a> of file <a class="el" href="utils_8cpp_source.html">utils.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="utils_8cpp_source.html#l00019">19</a> of file <a class="el" href="utils_8cpp_source.html">utils.cpp</a>.</p>
 
 </div>
 </div>
@@ -525,26 +477,13 @@ Variables</h2></td></tr>
 <p>Reads and parses a JSON file. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">string_path</td><td><a class="el" href="classPath.html">Path</a> to the JSON file </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Json::Value Parsed JSON content</dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">string_path</td><td><a class="el" href="classPath.html">Path</a> to the JSON file </td></tr>
+    <tr><td class="paramname">string_path</td><td><a class="el" href="classPath.html" title="Path manipulation class for tool-specific directory structure.">Path</a> to the JSON file </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Json::Value Parsed JSON content </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">Exits</td><td>program if file cannot be opened (via ensure_file_is_open) </td></tr>
-  </table>
-  </dd>
-</dl>
 
-<p class="definition">Definition at line <a class="el" href="utils_8cpp_source.html#l00098">98</a> of file <a class="el" href="utils_8cpp_source.html">utils.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="utils_8cpp_source.html#l00060">60</a> of file <a class="el" href="utils_8cpp_source.html">utils.cpp</a>.</p>
 
 </div>
 </div>
@@ -577,7 +516,7 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>vector&lt;string&gt; Vector of tokens (empty tokens are omitted) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="utils_8cpp_source.html#l00198">198</a> of file <a class="el" href="utils_8cpp_source.html">utils.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="utils_8cpp_source.html#l00120">120</a> of file <a class="el" href="utils_8cpp_source.html">utils.cpp</a>.</p>
 
 </div>
 </div>
@@ -603,16 +542,13 @@ Variables</h2></td></tr>
 <p>Writes content to a file at specified path. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">file_path</td><td><a class="el" href="classPath.html">Path</a> where file should be written </td></tr>
-    <tr><td class="paramname">content</td><td>Vector of strings to write (each element becomes a line)</td></tr>
-    <tr><td class="paramname">file_path</td><td><a class="el" href="classPath.html">Path</a> where file should be written </td></tr>
-    <tr><td class="paramname">content</td><td>Vector of strings to write (each element becomes a line)</td></tr>
+    <tr><td class="paramname">file_path</td><td><a class="el" href="classPath.html" title="Path manipulation class for tool-specific directory structure.">Path</a> where file should be written </td></tr>
+    <tr><td class="paramname">content</td><td>Vector of strings to write (each element becomes a line) </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section note"><dt>Note</dt><dd>Creates parent directories if they don't exist </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="utils_8cpp_source.html#l00056">56</a> of file <a class="el" href="utils_8cpp_source.html">utils.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="utils_8cpp_source.html#l00032">32</a> of file <a class="el" href="utils_8cpp_source.html">utils.cpp</a>.</p>
 
 </div>
 </div>

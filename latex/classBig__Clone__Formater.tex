@@ -2,19 +2,31 @@
 \hypertarget{classBig__Clone__Formater}{}\label{classBig__Clone__Formater}\index{Big\_Clone\_Formater@{Big\_Clone\_Formater}}
 
 
+Formats clone detection results for Big\+Clone\+Bench evaluation.  
+
+
+
+
 {\ttfamily \#include $<$big\+\_\+clone\+\_\+formater.\+hpp$>$}
 
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classBig__Clone__Formater_a2045b560c92ce5ae1e2238b6d05d3769}{Big\+\_\+\+Clone\+\_\+\+Formater}} (\mbox{\hyperlink{classSimilarity__Table}{Similarity\+\_\+\+Table}} \texorpdfstring{$\ast$}{*}similarity\+\_\+table)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Constructs formatter and processes similarity table. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
+Formats clone detection results for Big\+Clone\+Bench evaluation. 
+
+Converts internal path and similarity representations into the standardized Big\+Clone\+Eval output format expected by the Big\+Clone\+Bench dataset evaluation tools.
+
+\begin{DoxyNote}{Note}
+Designed to operate within the Big\+Clone\+Bench dataset directory structure 
+\end{DoxyNote}
 
 
-Definition at line \mbox{\hyperlink{big__clone__formater_8hpp_source_l00016}{16}} of file \mbox{\hyperlink{big__clone__formater_8hpp_source}{big\+\_\+clone\+\_\+formater.\+hpp}}.
+Definition at line \mbox{\hyperlink{big__clone__formater_8hpp_source_l00031}{31}} of file \mbox{\hyperlink{big__clone__formater_8hpp_source}{big\+\_\+clone\+\_\+formater.\+hpp}}.
 
 
 
@@ -25,6 +37,18 @@ Definition at line \mbox{\hyperlink{big__clone__formater_8hpp_source_l00016}{16}
 {\footnotesize\ttfamily \label{classBig__Clone__Formater_a2045b560c92ce5ae1e2238b6d05d3769} 
 Big\+\_\+\+Clone\+\_\+\+Formater\+::\+Big\+\_\+\+Clone\+\_\+\+Formater (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classSimilarity__Table}{Similarity\+\_\+\+Table}} \texorpdfstring{$\ast$}{*}}]{similarity\+\_\+table}{}\end{DoxyParamCaption})}
 
+
+
+Constructs formatter and processes similarity table. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em similarity\+\_\+table} & Pointer to similarity data to format\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Immediately outputs all formatted pairs to stdout 
+\end{DoxyNote}
 
 
 Definition at line \mbox{\hyperlink{big__clone__formater_8cpp_source_l00036}{36}} of file \mbox{\hyperlink{big__clone__formater_8cpp_source}{big\+\_\+clone\+\_\+formater.\+cpp}}.

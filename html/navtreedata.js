@@ -25,8 +25,8 @@
 var NAVTREE =
 [
   [ "Arkanjo", "index.html", [
-    [ "Main Components", "index.html#autotoc_md34", null ],
-    [ "Arkanjo Module Documentation", "arkanjo_readme.html", [
+    [ "Arkanjo Module", "arkanjo_readme.html", [
+      [ "Main Components", "index.html#autotoc_md34", null ],
       [ "Similarity", "arkanjo_readme.html#autotoc_md1", null ],
       [ "Requirements", "arkanjo_readme.html#autotoc_md2", null ],
       [ "How to install", "arkanjo_readme.html#autotoc_md3", null ],

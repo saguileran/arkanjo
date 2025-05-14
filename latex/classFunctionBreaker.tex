@@ -2,19 +2,36 @@
 \hypertarget{classFunctionBreaker}{}\label{classFunctionBreaker}\index{FunctionBreaker@{FunctionBreaker}}
 
 
+Main function extraction processor.  
+
+
+
+
 {\ttfamily \#include $<$function\+\_\+breaker.\+hpp$>$}
 
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classFunctionBreaker_a041958058b6eb1e0581679e7f71701be}{Function\+Breaker}} (string folder\+\_\+path)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Constructs function breaker and processes directory. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
+Main function extraction processor. 
+
+Analyzes source code directories (C/\+C++/\+Java) and extracts each function into individual files within a temporary repository. Handles file organization and delegates language-\/specific parsing to appropriate handlers.
+
+\begin{DoxyNote}{Note}
+Current limitations\+:
+\begin{DoxyItemize}
+\item May not work correctly with malformed bracket sequences
+\item May fail on brackets within comments
+\item Example behavior\+: For file example.\+c with functions a and b, creates example/a.\+c and example/b.\+c in tmp/ directory 
+\end{DoxyItemize}
+\end{DoxyNote}
 
 
-Definition at line \mbox{\hyperlink{function__breaker_8hpp_source_l00024}{24}} of file \mbox{\hyperlink{function__breaker_8hpp_source}{function\+\_\+breaker.\+hpp}}.
+Definition at line \mbox{\hyperlink{function__breaker_8hpp_source_l00043}{43}} of file \mbox{\hyperlink{function__breaker_8hpp_source}{function\+\_\+breaker.\+hpp}}.
 
 
 
@@ -25,6 +42,15 @@ Definition at line \mbox{\hyperlink{function__breaker_8hpp_source_l00024}{24}} o
 {\footnotesize\ttfamily \label{classFunctionBreaker_a041958058b6eb1e0581679e7f71701be} 
 Function\+Breaker\+::\+Function\+Breaker (\begin{DoxyParamCaption}\item[{string}]{folder\+\_\+path}{}\end{DoxyParamCaption})}
 
+
+
+Constructs function breaker and processes directory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em folder\+\_\+path} & Directory containing source files to process \\
+\hline
+\end{DoxyParams}
 
 
 Definition at line \mbox{\hyperlink{function__breaker_8cpp_source_l00066}{66}} of file \mbox{\hyperlink{function__breaker_8cpp_source}{function\+\_\+breaker.\+cpp}}.

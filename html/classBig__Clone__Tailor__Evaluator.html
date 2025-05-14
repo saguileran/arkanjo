@@ -110,16 +110,22 @@ $(function(){initNavTree('classBig__Clone__Tailor__Evaluator.html',''); initResi
 </div><!--header-->
 <div class="contents">
 
+<p>Evaluates clone detection using BigCloneBench methodology.  
+ <a href="#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="big__clone__tailor__evaluator_8hpp_source.html">big_clone_tailor_evaluator.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ab91804777e8b25e5d242b3c06363244d" id="r_ab91804777e8b25e5d242b3c06363244d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab91804777e8b25e5d242b3c06363244d">Big_Clone_Tailor_Evaluator</a> (<a class="el" href="classSimilarity__Table.html">Similarity_Table</a> *_similarity_table)</td></tr>
+<tr class="memdesc:ab91804777e8b25e5d242b3c06363244d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs evaluator with similarity data.  <br /></td></tr>
 <tr class="separator:ab91804777e8b25e5d242b3c06363244d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="big__clone__tailor__evaluator_8hpp_source.html#l00015">15</a> of file <a class="el" href="big__clone__tailor__evaluator_8hpp_source.html">big_clone_tailor_evaluator.hpp</a>.</p>
+<div class="textblock"><p>Evaluates clone detection using BigCloneBench methodology. </p>
+<p>Implements evaluation metrics that compare detected clones against BigCloneBench ground truth data, following Tailor tool's approach. </p>
+
+<p class="definition">Definition at line <a class="el" href="big__clone__tailor__evaluator_8hpp_source.html#l00029">29</a> of file <a class="el" href="big__clone__tailor__evaluator_8hpp_source.html">big_clone_tailor_evaluator.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ab91804777e8b25e5d242b3c06363244d" name="ab91804777e8b25e5d242b3c06363244d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab91804777e8b25e5d242b3c06363244d">&#9670;&#160;</a></span>Big_Clone_Tailor_Evaluator()</h2>
@@ -135,6 +141,14 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Constructs evaluator with similarity data. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_similarity_table</td><td>Pointer to similarity table </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p class="definition">Definition at line <a class="el" href="big__clone__tailor__evaluator_8cpp_source.html#l00113">113</a> of file <a class="el" href="big__clone__tailor__evaluator_8cpp_source.html">big_clone_tailor_evaluator.cpp</a>.</p>
 

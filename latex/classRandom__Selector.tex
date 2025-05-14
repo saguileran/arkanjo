@@ -2,19 +2,26 @@
 \hypertarget{classRandom__Selector}{}\label{classRandom__Selector}\index{Random\_Selector@{Random\_Selector}}
 
 
+Random pair selector for similar code segments.  
+
+
+
+
 {\ttfamily \#include $<$random\+\_\+selector.\+hpp$>$}
 
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classRandom__Selector_a478d14ada399a73dde0d91358a3fbde6}{Random\+\_\+\+Selector}} (\mbox{\hyperlink{classSimilarity__Table}{Similarity\+\_\+\+Table}} \texorpdfstring{$\ast$}{*}\+\_\+similarity\+\_\+table, double \+\_\+minimum\+\_\+similarity, double \+\_\+maximum\+\_\+similarity, double \+\_\+maximum\+\_\+quantity)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Constructs selector with configuration. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
+Random pair selector for similar code segments. 
 
+Selects and displays random pairs of similar functions within configurable similarity thresholds, with formatted output and color-\/coded display options. 
 
-Definition at line \mbox{\hyperlink{random__selector_8hpp_source_l00014}{14}} of file \mbox{\hyperlink{random__selector_8hpp_source}{random\+\_\+selector.\+hpp}}.
+Definition at line \mbox{\hyperlink{random__selector_8hpp_source_l00029}{29}} of file \mbox{\hyperlink{random__selector_8hpp_source}{random\+\_\+selector.\+hpp}}.
 
 
 
@@ -25,6 +32,21 @@ Definition at line \mbox{\hyperlink{random__selector_8hpp_source_l00014}{14}} of
 {\footnotesize\ttfamily \label{classRandom__Selector_a478d14ada399a73dde0d91358a3fbde6} 
 Random\+\_\+\+Selector\+::\+Random\+\_\+\+Selector (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classSimilarity__Table}{Similarity\+\_\+\+Table}} \texorpdfstring{$\ast$}{*}}]{\+\_\+similarity\+\_\+table}{, }\item[{double}]{\+\_\+minimum\+\_\+similarity}{, }\item[{double}]{\+\_\+maximum\+\_\+similarity}{, }\item[{double}]{\+\_\+maximum\+\_\+quantity}{}\end{DoxyParamCaption})}
 
+
+
+Constructs selector with configuration. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+similarity\+\_\+table} & Source of similarity data \\
+\hline
+{\em \+\_\+minimum\+\_\+similarity} & Minimum similarity threshold (0-\/100) \\
+\hline
+{\em \+\_\+maximum\+\_\+similarity} & Maximum similarity threshold (0-\/100) \\
+\hline
+{\em \+\_\+maximum\+\_\+quantity} & Maximum number of pairs to select \\
+\hline
+\end{DoxyParams}
 
 
 Definition at line \mbox{\hyperlink{random__selector_8cpp_source_l00061}{61}} of file \mbox{\hyperlink{random__selector_8cpp_source}{random\+\_\+selector.\+cpp}}.
