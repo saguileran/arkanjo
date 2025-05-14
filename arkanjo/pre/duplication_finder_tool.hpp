@@ -26,27 +26,27 @@ using namespace std;
  * for efficient similarity queries during the tool's operation phase.
  */
 class DuplicationFinderTool {
-private:
-    string SAVING_MESSAGE = "Saving results...";  ///< Status message displayed when saving analysis results
+        private:
+                string SAVING_MESSAGE = "Saving results...";  ///< Status message displayed when saving analysis results
 
-    string base_path;  ///< Root directory path of the codebase to analyze
-    double similarity;  ///< Similarity threshold for considering code segments duplicates (0-100 scale)
+                string base_path;  ///< Root directory path of the codebase to analyze
+                double similarity;  ///< Similarity threshold for considering code segments duplicates (0-100 scale)
 
-public:
-    /**
-     * @brief Constructs the duplication finder tool
-     * @param base_path_ Root path of the codebase to analyze
-     * @param similarity_ Minimum similarity threshold (0-100) to consider as duplicate
-     */
-    DuplicationFinderTool(string base_path_, double similarity_);
+        public:
+                /**
+                 * @brief Constructs the duplication finder tool
+                 * @param base_path_ Root path of the codebase to analyze
+                 * @param similarity_ Minimum similarity threshold (0-100) to consider as duplicate
+                 */
+                DuplicationFinderTool(string base_path_, double similarity_);
 
-    /**
-     * @brief Executes the full duplication analysis pipeline
-     *
-     * Performs the complete preprocessing and analysis of the codebase,
-     * including file scanning, similarity comparison, and result saving.
-     */
-    void execute();
+                /**
+                 * @brief Executes the full duplication analysis pipeline
+                 *
+                 * Performs the complete preprocessing and analysis of the codebase,
+                 * including file scanning, similarity comparison, and result saving.
+                 */
+                void execute();
 };
 
 #endif
