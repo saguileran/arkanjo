@@ -16,37 +16,37 @@
 \DoxyCodeLine{\Hypertarget{preprocessor_8hpp_source_l00022}00022\ \textcolor{keyword}{using\ namespace\ }std;}
 \DoxyCodeLine{\Hypertarget{preprocessor_8hpp_source_l00023}00023\ }
 \DoxyCodeLine{\Hypertarget{preprocessor_8hpp_source_l00035}\mbox{\hyperlink{classPreprocessor}{00035}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classPreprocessor_a60cdc40e8c5e4ac19ee8a5e9edf865f0}{Preprocessor}}\ \{}
-\DoxyCodeLine{\Hypertarget{preprocessor_8hpp_source_l00036}00036\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{\Hypertarget{preprocessor_8hpp_source_l00037}00037\ \ \ \ \ \textcolor{comment}{//\ User\ interaction\ messages}}
-\DoxyCodeLine{\Hypertarget{preprocessor_8hpp_source_l00038}00038\ \ \ \ \ \textcolor{keywordtype}{string}\ PROJECT\_PATH\_MESSAGE\ =\ \textcolor{stringliteral}{"{}Enter\ your\ project\ path:"{}};\ \ }
-\DoxyCodeLine{\Hypertarget{preprocessor_8hpp_source_l00039}00039\ \ \ \ \ \textcolor{keywordtype}{string}\ MINIMUM\_SIMILARITY\_MESSAGE\ =\ \textcolor{stringliteral}{"{}Enter\ minimum\ similarity\ desired\ on\ using\ the\ tool:"{}};\ \ }
-\DoxyCodeLine{\Hypertarget{preprocessor_8hpp_source_l00040}00040\ \ \ \ \ \textcolor{keywordtype}{string}\ CONFIG\_PATH\ =\ \textcolor{stringliteral}{"{}config.txt"{}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{preprocessor_8hpp_source_l00041}00041\ \ \ \ \ \textcolor{keywordtype}{string}\ PATH\_MESSAGE\ =\ \textcolor{stringliteral}{"{}path\ of\ the\ current\ preprocess:\ "{}};\ }
-\DoxyCodeLine{\Hypertarget{preprocessor_8hpp_source_l00042}00042\ \ \ \ \ \textcolor{keywordtype}{string}\ TIME\_MESSAGE\ =\ \textcolor{stringliteral}{"{}Finished\ time:\ "{}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{preprocessor_8hpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{preprocessor_8hpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ User\ interaction\ messages}}
+\DoxyCodeLine{\Hypertarget{preprocessor_8hpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ PROJECT\_PATH\_MESSAGE\ =\ \textcolor{stringliteral}{"{}Enter\ your\ project\ path:"{}};\ \ }
+\DoxyCodeLine{\Hypertarget{preprocessor_8hpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ MINIMUM\_SIMILARITY\_MESSAGE\ =\ \textcolor{stringliteral}{"{}Enter\ minimum\ similarity\ desired\ on\ using\ the\ tool:"{}};\ \ }
+\DoxyCodeLine{\Hypertarget{preprocessor_8hpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ CONFIG\_PATH\ =\ \textcolor{stringliteral}{"{}config.txt"{}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{preprocessor_8hpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ PATH\_MESSAGE\ =\ \textcolor{stringliteral}{"{}path\ of\ the\ current\ preprocess:\ "{}};\ }
+\DoxyCodeLine{\Hypertarget{preprocessor_8hpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ TIME\_MESSAGE\ =\ \textcolor{stringliteral}{"{}Finished\ time:\ "{}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
 \DoxyCodeLine{\Hypertarget{preprocessor_8hpp_source_l00043}00043\ }
-\DoxyCodeLine{\Hypertarget{preprocessor_8hpp_source_l00044}00044\ \ \ \ \ \textcolor{comment}{//\ Processing\ stage\ messages}}
-\DoxyCodeLine{\Hypertarget{preprocessor_8hpp_source_l00045}00045\ \ \ \ \ \textcolor{keywordtype}{string}\ INITIAL\_MESSAGE\ =\ \textcolor{stringliteral}{"{}Initiating\ Preprocessing"{}};\ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{preprocessor_8hpp_source_l00046}00046\ \ \ \ \ \textcolor{keywordtype}{string}\ BREAKER\_MESSAGE\ =\ \textcolor{stringliteral}{"{}Reading\ codebase...\ (this\ may\ take\ a\ while)"{}};\ \ }
-\DoxyCodeLine{\Hypertarget{preprocessor_8hpp_source_l00047}00047\ \ \ \ \ \textcolor{keywordtype}{string}\ DUPLICATION\_MESSAGE\ =\ \textcolor{stringliteral}{"{}Finding\ duplication\ in\ the\ codebase...\ (this\ may\ take\ a\ while)"{}};\ \ }
-\DoxyCodeLine{\Hypertarget{preprocessor_8hpp_source_l00048}00048\ \ \ \ \ \textcolor{keywordtype}{string}\ SAVING\_MESSAGE\ =\ \textcolor{stringliteral}{"{}Saving\ results..."{}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{preprocessor_8hpp_source_l00049}00049\ \ \ \ \ \textcolor{keywordtype}{string}\ END\_MESSAGE\ =\ \textcolor{stringliteral}{"{}Finished\ preprocessing"{}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{preprocessor_8hpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Processing\ stage\ messages}}
+\DoxyCodeLine{\Hypertarget{preprocessor_8hpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ INITIAL\_MESSAGE\ =\ \textcolor{stringliteral}{"{}Initiating\ Preprocessing"{}};\ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{preprocessor_8hpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ BREAKER\_MESSAGE\ =\ \textcolor{stringliteral}{"{}Reading\ codebase...\ (this\ may\ take\ a\ while)"{}};\ \ }
+\DoxyCodeLine{\Hypertarget{preprocessor_8hpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ DUPLICATION\_MESSAGE\ =\ \textcolor{stringliteral}{"{}Finding\ duplication\ in\ the\ codebase...\ (this\ may\ take\ a\ while)"{}};\ \ }
+\DoxyCodeLine{\Hypertarget{preprocessor_8hpp_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ SAVING\_MESSAGE\ =\ \textcolor{stringliteral}{"{}Saving\ results..."{}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{preprocessor_8hpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ END\_MESSAGE\ =\ \textcolor{stringliteral}{"{}Finished\ preprocessing"{}};\ \ \ \ \ \ \ \ \ \ \ \ }
 \DoxyCodeLine{\Hypertarget{preprocessor_8hpp_source_l00050}00050\ }
-\DoxyCodeLine{\Hypertarget{preprocessor_8hpp_source_l00051}00051\ \ \ \ \ \textcolor{comment}{//\ Duplication\ finder\ selection\ messages}}
-\DoxyCodeLine{\Hypertarget{preprocessor_8hpp_source_l00052}00052\ \ \ \ \ \textcolor{keywordtype}{string}\ MESSAGE\_DUPLICATION\_FINDER\_TYPE\_1\ =\ \textcolor{stringliteral}{"{}Enter\ the\ number\ of\ the\ duplication\ finder\ technique\ you\ want\ to\ use:"{}};}
-\DoxyCodeLine{\Hypertarget{preprocessor_8hpp_source_l00053}00053\ \ \ \ \ \textcolor{keywordtype}{string}\ MESSAGE\_DUPLICATION\_FINDER\_TYPE\_2\ =\ \textcolor{stringliteral}{"{}1)\ NLP\ text\ similarity\ using\ gensim"{}};}
-\DoxyCodeLine{\Hypertarget{preprocessor_8hpp_source_l00054}00054\ \ \ \ \ \textcolor{keywordtype}{string}\ MESSAGE\_DUPLICATION\_FINDER\_TYPE\_3\ =\ \textcolor{stringliteral}{"{}2)\ Count\ proportion\ of\ equal\ lines\ using\ diff\ command"{}};}
-\DoxyCodeLine{\Hypertarget{preprocessor_8hpp_source_l00055}00055\ \ \ \ \ \textcolor{keywordtype}{string}\ INVALID\_CODE\_DUPLICATION\_FINDER\ =\ \textcolor{stringliteral}{"{}Valid\ options\ are\ '1'\ or\ '2'\ only.\ Stopping\ Program..."{}};}
+\DoxyCodeLine{\Hypertarget{preprocessor_8hpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Duplication\ finder\ selection\ messages}}
+\DoxyCodeLine{\Hypertarget{preprocessor_8hpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ MESSAGE\_DUPLICATION\_FINDER\_TYPE\_1\ =\ \textcolor{stringliteral}{"{}Enter\ the\ number\ of\ the\ duplication\ finder\ technique\ you\ want\ to\ use:"{}};}
+\DoxyCodeLine{\Hypertarget{preprocessor_8hpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ MESSAGE\_DUPLICATION\_FINDER\_TYPE\_2\ =\ \textcolor{stringliteral}{"{}1)\ NLP\ text\ similarity\ using\ gensim"{}};}
+\DoxyCodeLine{\Hypertarget{preprocessor_8hpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ MESSAGE\_DUPLICATION\_FINDER\_TYPE\_3\ =\ \textcolor{stringliteral}{"{}2)\ Count\ proportion\ of\ equal\ lines\ using\ diff\ command"{}};}
+\DoxyCodeLine{\Hypertarget{preprocessor_8hpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ INVALID\_CODE\_DUPLICATION\_FINDER\ =\ \textcolor{stringliteral}{"{}Valid\ options\ are\ '1'\ or\ '2'\ only.\ Stopping\ Program..."{}};}
 \DoxyCodeLine{\Hypertarget{preprocessor_8hpp_source_l00056}00056\ }
-\DoxyCodeLine{\Hypertarget{preprocessor_8hpp_source_l00064}00064\ \ \ \ \ tuple<string,double,bool>\ read\_parameters();}
+\DoxyCodeLine{\Hypertarget{preprocessor_8hpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tuple<string,double,bool>\ read\_parameters();}
 \DoxyCodeLine{\Hypertarget{preprocessor_8hpp_source_l00065}00065\ }
-\DoxyCodeLine{\Hypertarget{preprocessor_8hpp_source_l00070}00070\ \ \ \ \ \textcolor{keywordtype}{void}\ save\_current\_run\_params(\textcolor{keywordtype}{string}\ path);}
+\DoxyCodeLine{\Hypertarget{preprocessor_8hpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ save\_current\_run\_params(\textcolor{keywordtype}{string}\ path);}
 \DoxyCodeLine{\Hypertarget{preprocessor_8hpp_source_l00071}00071\ }
-\DoxyCodeLine{\Hypertarget{preprocessor_8hpp_source_l00078}00078\ \ \ \ \ \textcolor{keywordtype}{void}\ preprocess(\textcolor{keywordtype}{string}\ path,\ \textcolor{keywordtype}{double}\ similarity,\ \textcolor{keywordtype}{bool}\ use\_duplication\_finder\_by\_tool);}
+\DoxyCodeLine{\Hypertarget{preprocessor_8hpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ preprocess(\textcolor{keywordtype}{string}\ path,\ \textcolor{keywordtype}{double}\ similarity,\ \textcolor{keywordtype}{bool}\ use\_duplication\_finder\_by\_tool);}
 \DoxyCodeLine{\Hypertarget{preprocessor_8hpp_source_l00079}00079\ }
-\DoxyCodeLine{\Hypertarget{preprocessor_8hpp_source_l00080}00080\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{\Hypertarget{preprocessor_8hpp_source_l00085}00085\ \ \ \ \ \mbox{\hyperlink{classPreprocessor_a60cdc40e8c5e4ac19ee8a5e9edf865f0}{Preprocessor}}(\textcolor{keywordtype}{bool}\ force\_preprocess);}
-\DoxyCodeLine{\Hypertarget{preprocessor_8hpp_source_l00086}00086\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{preprocessor_8hpp_source_l00094}00094\ \ \ \ \ \mbox{\hyperlink{classPreprocessor_a60cdc40e8c5e4ac19ee8a5e9edf865f0}{Preprocessor}}(\textcolor{keywordtype}{bool}\ force\_preprocess,\ \textcolor{keywordtype}{string}\ path,\ \textcolor{keywordtype}{double}\ similarity);}
+\DoxyCodeLine{\Hypertarget{preprocessor_8hpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{preprocessor_8hpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classPreprocessor_a60cdc40e8c5e4ac19ee8a5e9edf865f0}{Preprocessor}}(\textcolor{keywordtype}{bool}\ force\_preprocess);}
+\DoxyCodeLine{\Hypertarget{preprocessor_8hpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{preprocessor_8hpp_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classPreprocessor_a60cdc40e8c5e4ac19ee8a5e9edf865f0}{Preprocessor}}(\textcolor{keywordtype}{bool}\ force\_preprocess,\ \textcolor{keywordtype}{string}\ path,\ \textcolor{keywordtype}{double}\ similarity);}
 \DoxyCodeLine{\Hypertarget{preprocessor_8hpp_source_l00095}00095\ \};}
 \DoxyCodeLine{\Hypertarget{preprocessor_8hpp_source_l00096}00096\ }
 \DoxyCodeLine{\Hypertarget{preprocessor_8hpp_source_l00097}00097\ \textcolor{preprocessor}{\#endif}}

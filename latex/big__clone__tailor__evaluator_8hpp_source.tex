@@ -16,53 +16,53 @@
 \DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00021}00021\ \textcolor{keyword}{using\ namespace\ }std;}
 \DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00022}00022\ }
 \DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00029}\mbox{\hyperlink{classBig__Clone__Tailor__Evaluator}{00029}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classBig__Clone__Tailor__Evaluator_ab91804777e8b25e5d242b3c06363244d}{Big\_Clone\_Tailor\_Evaluator}}\ \{}
-\DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00030}00030\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00031}00031\ \ \ \ \ \textcolor{keywordtype}{string}\ CLONE\_LABELS\_FILE\_PATH\ =\ \textcolor{stringliteral}{"{}/home/luan/linux/test-\/duplication-\/code/parser/bigclonebench/clone\_labels.txt"{}};\ \ }
-\DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00032}00032\ \ \ \ \ \textcolor{keywordtype}{string}\ EXTENSION\ =\ \textcolor{stringliteral}{"{}.java"{}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00033}00033\ \ \ \ \ \textcolor{keywordtype}{int}\ NUMBER\_OF\_TYPES\ =\ 6;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00034}00034\ \ \ \ \ \textcolor{keywordtype}{int}\ NOT\_CLONE\_TYPE\_ID\ =\ 5;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00035}00035\ \ \ \ \ \textcolor{keywordtype}{string}\ RECALL\_PER\_TYPE\_PRINT\ =\ \textcolor{stringliteral}{"{}Recall\ Value\ of\ each\ type"{}};\ \ }
-\DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00036}00036\ \ \ \ \ \textcolor{keywordtype}{double}\ MINIMUM\_SIMILARITY\_TEMP\ =\ 0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00037}00037\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00039}00039\ \ \ \ \ vector<string>\ ID\_TO\_TYPE\_LABEL\ =\ \{}
-\DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}T1"{}},}
-\DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}T2"{}},}
-\DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}ST3"{}},}
-\DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}MT3"{}},}
-\DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}WT3/T4"{}},}
-\DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Negative"{}},}
-\DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00046}00046\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ CLONE\_LABELS\_FILE\_PATH\ =\ \textcolor{stringliteral}{"{}/home/luan/linux/test-\/duplication-\/code/parser/bigclonebench/clone\_labels.txt"{}};\ \ }
+\DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ EXTENSION\ =\ \textcolor{stringliteral}{"{}.java"{}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ NUMBER\_OF\_TYPES\ =\ 6;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ NOT\_CLONE\_TYPE\_ID\ =\ 5;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ RECALL\_PER\_TYPE\_PRINT\ =\ \textcolor{stringliteral}{"{}Recall\ Value\ of\ each\ type"{}};\ \ }
+\DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ MINIMUM\_SIMILARITY\_TEMP\ =\ 0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vector<string>\ ID\_TO\_TYPE\_LABEL\ =\ \{}
+\DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}T1"{}},}
+\DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}T2"{}},}
+\DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}ST3"{}},}
+\DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}MT3"{}},}
+\DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}WT3/T4"{}},}
+\DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Negative"{}},}
+\DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \};}
 \DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00047}00047\ }
-\DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00048}00048\ \ \ \ \ \mbox{\hyperlink{classSimilarity__Table}{Similarity\_Table}}\ *similarity\_table;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00049}00049\ \ \ \ \ map<pair<int,int>,\textcolor{keywordtype}{int}>\ id\_pair\_to\_type;\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00050}00050\ \ \ \ \ vector<int>\ count\_of\_samples\_by\_type;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSimilarity__Table}{Similarity\_Table}}\ *similarity\_table;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ map<pair<int,int>,\textcolor{keywordtype}{int}>\ id\_pair\_to\_type;\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vector<int>\ count\_of\_samples\_by\_type;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
 \DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00051}00051\ }
-\DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00055}00055\ \ \ \ \ \textcolor{keywordtype}{void}\ read\_clone\_labels();}
+\DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ read\_clone\_labels();}
 \DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00056}00056\ }
-\DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00062}00062\ \ \ \ \ \textcolor{keywordtype}{int}\ path\_to\_id(\mbox{\hyperlink{classPath}{Path}}\ path);}
+\DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ path\_to\_id(\mbox{\hyperlink{classPath}{Path}}\ path);}
 \DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00063}00063\ }
-\DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00068}00068\ \ \ \ \ vector<tuple<double,int,int>>\ similar\_path\_pairs\_formated\_with\_id();}
+\DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vector<tuple<double,int,int>>\ similar\_path\_pairs\_formated\_with\_id();}
 \DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00069}00069\ }
-\DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00076}00076\ \ \ \ \ \textcolor{keywordtype}{bool}\ is\_relevant\_pair(\textcolor{keywordtype}{int}\ id0,\ \textcolor{keywordtype}{int}\ id1);}
+\DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ is\_relevant\_pair(\textcolor{keywordtype}{int}\ id0,\ \textcolor{keywordtype}{int}\ id1);}
 \DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00077}00077\ }
-\DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00083}00083\ \ \ \ \ set<pair<int,int>>\ filter\_similar\_id\_pairs\_only\_relevant\_ones(}
-\DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ vector<pair<int,int>>\ similar\_id\_pairs);}
+\DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ set<pair<int,int>>\ filter\_similar\_id\_pairs\_only\_relevant\_ones(}
+\DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vector<pair<int,int>>\ similar\_id\_pairs);}
 \DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00085}00085\ }
-\DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00092}00092\ \ \ \ \ vector<pair<int,int>>\ filter\_similar\_path\_pairs\_by\_similarity(}
-\DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ vector<tuple<double,int,int>>\ similar\_id\_pairs,}
-\DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ minimum\_similarity);}
+\DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vector<pair<int,int>>\ filter\_similar\_path\_pairs\_by\_similarity(}
+\DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vector<tuple<double,int,int>>\ similar\_id\_pairs,}
+\DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ minimum\_similarity);}
 \DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00095}00095\ }
-\DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00101}00101\ \ \ \ \ vector<int>\ build\_frequency\_corrected\_guessed\_by\_type(}
-\DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ vector<pair<int,int>>\ similar\_id\_pairs);}
+\DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vector<int>\ build\_frequency\_corrected\_guessed\_by\_type(}
+\DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vector<pair<int,int>>\ similar\_id\_pairs);}
 \DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00103}00103\ }
-\DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00110}00110\ \ \ \ \ \textcolor{keywordtype}{double}\ calc\_recall(vector<int>\ frequency,\ \textcolor{keywordtype}{int}\ type);}
+\DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ calc\_recall(vector<int>\ frequency,\ \textcolor{keywordtype}{int}\ type);}
 \DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00111}00111\ }
-\DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00116}00116\ \ \ \ \ \textcolor{keywordtype}{void}\ print\_recall\_per\_type(vector<int>\ frequency);}
+\DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ print\_recall\_per\_type(vector<int>\ frequency);}
 \DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00117}00117\ }
-\DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00122}00122\ \ \ \ \ \textcolor{keywordtype}{void}\ evaluate(\textcolor{keywordtype}{double}\ minimum\_similarity);}
+\DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ evaluate(\textcolor{keywordtype}{double}\ minimum\_similarity);}
 \DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00123}00123\ }
-\DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00124}00124\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00129}00129\ \ \ \ \ \mbox{\hyperlink{classBig__Clone__Tailor__Evaluator_ab91804777e8b25e5d242b3c06363244d}{Big\_Clone\_Tailor\_Evaluator}}(\mbox{\hyperlink{classSimilarity__Table}{Similarity\_Table}}\ *\_similarity\_table);}
+\DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00124}00124\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classBig__Clone__Tailor__Evaluator_ab91804777e8b25e5d242b3c06363244d}{Big\_Clone\_Tailor\_Evaluator}}(\mbox{\hyperlink{classSimilarity__Table}{Similarity\_Table}}\ *\_similarity\_table);}
 \DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00130}00130\ \};}
 \DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00131}00131\ }
 \DoxyCodeLine{\Hypertarget{big__clone__tailor__evaluator_8hpp_source_l00132}00132\ \textcolor{preprocessor}{\#endif}}

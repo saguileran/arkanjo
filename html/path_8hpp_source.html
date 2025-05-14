@@ -116,51 +116,51 @@ $(function(){initNavTree('path_8hpp_source.html',''); initResizable(true); });
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span></div>
 <div class="foldopen" id="foldopen00024" data-start="{" data-end="};">
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="classPath.html">   24</a></span><span class="keyword">class </span><a class="code hl_function" href="classPath.html#af26cfab021ddf49af73da3b2beca85ac">Path</a> {</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keywordtype">string</span> JSON_EXTENSION = <span class="stringliteral">&quot;.json&quot;</span>;      </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordtype">string</span> BASE_INIT_STRING = <span class="stringliteral">&quot;tmp&quot;</span>;     </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keywordtype">string</span> SOURCE_STRING = <span class="stringliteral">&quot;source&quot;</span>;     </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordtype">string</span> HEADER_STRING = <span class="stringliteral">&quot;header&quot;</span>;     </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordtype">string</span> INFO_STRING = <span class="stringliteral">&quot;info&quot;</span>;         </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordtype">char</span> BAR = <span class="charliteral">&#39;/&#39;</span>;                      </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>                <span class="keywordtype">string</span> JSON_EXTENSION = <span class="stringliteral">&quot;.json&quot;</span>;      </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>                <span class="keywordtype">string</span> BASE_INIT_STRING = <span class="stringliteral">&quot;tmp&quot;</span>;     </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>                <span class="keywordtype">string</span> SOURCE_STRING = <span class="stringliteral">&quot;source&quot;</span>;     </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>                <span class="keywordtype">string</span> HEADER_STRING = <span class="stringliteral">&quot;header&quot;</span>;     </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>                <span class="keywordtype">string</span> INFO_STRING = <span class="stringliteral">&quot;info&quot;</span>;         </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>                <span class="keywordtype">char</span> BAR = <span class="charliteral">&#39;/&#39;</span>;                      </div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    vector&lt;string&gt; tokens;               </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keywordtype">int</span> position_start_relative_path;    </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>                vector&lt;string&gt; tokens;               </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>                <span class="keywordtype">int</span> position_start_relative_path;    </div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span></div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    vector&lt;string&gt; split_path(<span class="keywordtype">string</span> string_path);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>                vector&lt;string&gt; split_path(<span class="keywordtype">string</span> string_path);</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keywordtype">int</span> find_position_start_relative_path();</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>                <span class="keywordtype">int</span> find_position_start_relative_path();</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span></div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordtype">string</span> build_string_path(vector&lt;string&gt; path);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>                <span class="keywordtype">string</span> build_string_path(vector&lt;string&gt; path);</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span></div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keywordtype">string</span> build_base_path(<span class="keywordtype">string</span> base);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>                <span class="keywordtype">string</span> build_base_path(<span class="keywordtype">string</span> base);</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span></div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    vector&lt;string&gt; get_tokens_from_relative_path();</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>                vector&lt;string&gt; get_tokens_from_relative_path();</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span></div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keywordtype">string</span> remove_extension(<span class="keywordtype">string</span> token);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>                <span class="keywordtype">string</span> remove_extension(<span class="keywordtype">string</span> token);</div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classPath.html#aa9be149ff40e69c853f590325aee9e11">is_empty</a>();</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>                <span class="keywordtype">bool</span> <a class="code hl_function" href="classPath.html#aa9be149ff40e69c853f590325aee9e11">is_empty</a>();</div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span></div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <a class="code hl_function" href="classPath.html#af26cfab021ddf49af73da3b2beca85ac">Path</a>();</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>                <a class="code hl_function" href="classPath.html#af26cfab021ddf49af73da3b2beca85ac">Path</a>();</div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span></div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <a class="code hl_function" href="classPath.html#af26cfab021ddf49af73da3b2beca85ac">Path</a>(<span class="keywordtype">string</span> string_path);</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>                <a class="code hl_function" href="classPath.html#af26cfab021ddf49af73da3b2beca85ac">Path</a>(<span class="keywordtype">string</span> string_path);</div>
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span></div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <span class="keywordtype">string</span> <a class="code hl_function" href="classPath.html#a45c4cec75531202d3d51a73a1fbb267c">build_source_path</a>();</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>                <span class="keywordtype">string</span> <a class="code hl_function" href="classPath.html#a45c4cec75531202d3d51a73a1fbb267c">build_source_path</a>();</div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span></div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <span class="keywordtype">string</span> <a class="code hl_function" href="classPath.html#a89f564c938860839e2068c0be53fe035">build_header_path</a>();</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>                <span class="keywordtype">string</span> <a class="code hl_function" href="classPath.html#a89f564c938860839e2068c0be53fe035">build_header_path</a>();</div>
 <div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span></div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <span class="keywordtype">string</span> <a class="code hl_function" href="classPath.html#a5d41b625a19bfd6757c2ecb52ecd61f0">build_info_path</a>();</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>                <span class="keywordtype">string</span> <a class="code hl_function" href="classPath.html#a5d41b625a19bfd6757c2ecb52ecd61f0">build_info_path</a>();</div>
 <div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span></div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <span class="keywordtype">string</span> <a class="code hl_function" href="classPath.html#a7c2bce76d5bea7271c6661a566353b84">build_relative_path</a>();</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>                <span class="keywordtype">string</span> <a class="code hl_function" href="classPath.html#a7c2bce76d5bea7271c6661a566353b84">build_relative_path</a>();</div>
 <div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span></div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    <span class="keywordtype">string</span> <a class="code hl_function" href="classPath.html#aff1233c49ba67722430eebc37eb4f31a">build_function_name</a>();</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>                <span class="keywordtype">string</span> <a class="code hl_function" href="classPath.html#aff1233c49ba67722430eebc37eb4f31a">build_function_name</a>();</div>
 <div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span></div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    vector&lt;string&gt; <a class="code hl_function" href="classPath.html#ae1a0fe75eefcf9d2e2e0cfcfb948e314">get_common_folders</a>(<a class="code hl_function" href="classPath.html#af26cfab021ddf49af73da3b2beca85ac">Path</a> path);</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>                vector&lt;string&gt; <a class="code hl_function" href="classPath.html#ae1a0fe75eefcf9d2e2e0cfcfb948e314">get_common_folders</a>(<a class="code hl_function" href="classPath.html#af26cfab021ddf49af73da3b2beca85ac">Path</a> path);</div>
 <div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span></div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classPath.html#a32d5892f7332c1d61bf223d43f39f882">contains_given_pattern</a>(<span class="keywordtype">string</span> pattern);</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>                <span class="keywordtype">bool</span> <a class="code hl_function" href="classPath.html#a32d5892f7332c1d61bf223d43f39f882">contains_given_pattern</a>(<span class="keywordtype">string</span> pattern);</div>
 <div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span></div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classPath.html#a95754559f4dd407c3b2d793fd0c4aca4">operator&lt;</a>(<span class="keyword">const</span> <a class="code hl_function" href="classPath.html#af26cfab021ddf49af73da3b2beca85ac">Path</a> &amp;path) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>                <span class="keywordtype">bool</span> <a class="code hl_function" href="classPath.html#a95754559f4dd407c3b2d793fd0c4aca4">operator&lt;</a>(<span class="keyword">const</span> <a class="code hl_function" href="classPath.html#af26cfab021ddf49af73da3b2beca85ac">Path</a> &amp;path) <span class="keyword">const</span>;</div>
 <div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>};</div>
 </div>
 <div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span> </div>

@@ -120,22 +120,22 @@ $(function(){initNavTree('function__breaker_8hpp_source.html',''); initResizable
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span></div>
 <div class="foldopen" id="foldopen00043" data-start="{" data-end="};">
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="classFunctionBreaker.html">   43</a></span><span class="keyword">class </span><a class="code hl_function" href="classFunctionBreaker.html#a041958058b6eb1e0581679e7f71701be">FunctionBreaker</a> {</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keyword">const</span> vector&lt;string&gt; C_EXTENSIONS = { <span class="stringliteral">&quot;c&quot;</span>, <span class="stringliteral">&quot;h&quot;</span> };          </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keyword">const</span> vector&lt;string&gt; JAVA_EXTENSIONS = { <span class="stringliteral">&quot;java&quot;</span> };         </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keyword">const</span> vector&lt;string&gt; ALLOWED_EXTENSIONS = { <span class="stringliteral">&quot;c&quot;</span>, <span class="stringliteral">&quot;h&quot;</span>, <span class="stringliteral">&quot;java&quot;</span> };  </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <span class="keyword">const</span> vector&lt;string&gt; C_EXTENSIONS = { <span class="stringliteral">&quot;c&quot;</span>, <span class="stringliteral">&quot;h&quot;</span> };          </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        <span class="keyword">const</span> vector&lt;string&gt; JAVA_EXTENSIONS = { <span class="stringliteral">&quot;java&quot;</span> };         </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <span class="keyword">const</span> vector&lt;string&gt; ALLOWED_EXTENSIONS = { <span class="stringliteral">&quot;c&quot;</span>, <span class="stringliteral">&quot;h&quot;</span>, <span class="stringliteral">&quot;java&quot;</span> };  </div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span></div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keywordtype">bool</span> is_c_extension(<span class="keywordtype">string</span> extension);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        <span class="keywordtype">bool</span> is_c_extension(<span class="keywordtype">string</span> extension);</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span></div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keywordtype">bool</span> is_java_extension(<span class="keywordtype">string</span> extension);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        <span class="keywordtype">bool</span> is_java_extension(<span class="keywordtype">string</span> extension);</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span></div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordtype">bool</span> is_allowed_extension(<span class="keywordtype">string</span> extension);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        <span class="keywordtype">bool</span> is_allowed_extension(<span class="keywordtype">string</span> extension);</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span></div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keywordtype">void</span> file_breaker(<span class="keywordtype">string</span> file_path, <span class="keywordtype">string</span> folder_path);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        <span class="keywordtype">void</span> file_breaker(<span class="keywordtype">string</span> file_path, <span class="keywordtype">string</span> folder_path);</div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span></div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keywordtype">void</span> function_breaker(<span class="keywordtype">string</span> folder_path);</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        <span class="keywordtype">void</span> function_breaker(<span class="keywordtype">string</span> folder_path);</div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <a class="code hl_function" href="classFunctionBreaker.html#a041958058b6eb1e0581679e7f71701be">FunctionBreaker</a>(<span class="keywordtype">string</span> folder_path);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>                <a class="code hl_function" href="classFunctionBreaker.html#a041958058b6eb1e0581679e7f71701be">FunctionBreaker</a>(<span class="keywordtype">string</span> folder_path);</div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>};</div>
 </div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>

@@ -122,42 +122,42 @@ $(function(){initNavTree('function_8hpp_source.html',''); initResizable(true); }
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span></div>
 <div class="foldopen" id="foldopen00031" data-start="{" data-end="};">
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="classFunction.html">   31</a></span><span class="keyword">class </span><a class="code hl_function" href="classFunction.html#aeb1e057869579d8f707506f4b928934b">Function</a> {</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keywordtype">string</span> LINE_DECLARATION_JSON = <span class="stringliteral">&quot;line_declaration&quot;</span>;    </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keywordtype">string</span> START_NUMBER_LINE_JSON = <span class="stringliteral">&quot;start_number_line&quot;</span>;  </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keywordtype">string</span> END_NUMBER_LINE_JSON = <span class="stringliteral">&quot;end_number_line&quot;</span>;      </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>                <span class="keywordtype">string</span> LINE_DECLARATION_JSON = <span class="stringliteral">&quot;line_declaration&quot;</span>;    </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>                <span class="keywordtype">string</span> START_NUMBER_LINE_JSON = <span class="stringliteral">&quot;start_number_line&quot;</span>;  </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>                <span class="keywordtype">string</span> END_NUMBER_LINE_JSON = <span class="stringliteral">&quot;end_number_line&quot;</span>;      </div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordtype">string</span> FUNCTION_PREFIX_PRINT = <span class="stringliteral">&quot;Function Name: &quot;</span>;    </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordtype">string</span> RELATIVE_PATH_PRINT = <span class="stringliteral">&quot;Relative Path: &quot;</span>;       </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keywordtype">string</span> LINE_DECLARATION_PRINT = <span class="stringliteral">&quot;Starts on line: &quot;</span>;  </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordtype">string</span> END_DECLARATION_PRINT = <span class="stringliteral">&quot;Ends on line: &quot;</span>;     </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keywordtype">string</span> NUMBER_LINE_PRINT = <span class="stringliteral">&quot;Total number of lines: &quot;</span>; </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>                <span class="keywordtype">string</span> FUNCTION_PREFIX_PRINT = <span class="stringliteral">&quot;Function Name: &quot;</span>;    </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>                <span class="keywordtype">string</span> RELATIVE_PATH_PRINT = <span class="stringliteral">&quot;Relative Path: &quot;</span>;       </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>                <span class="keywordtype">string</span> LINE_DECLARATION_PRINT = <span class="stringliteral">&quot;Starts on line: &quot;</span>;  </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>                <span class="keywordtype">string</span> END_DECLARATION_PRINT = <span class="stringliteral">&quot;Ends on line: &quot;</span>;     </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>                <span class="keywordtype">string</span> NUMBER_LINE_PRINT = <span class="stringliteral">&quot;Total number of lines: &quot;</span>; </div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <a class="code hl_class" href="classPath.html">Path</a> path;                  </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    vector&lt;string&gt; content;     </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    vector&lt;string&gt; header;      </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keywordtype">int</span> start_number_line;      </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keywordtype">int</span> line_declaration;       </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordtype">int</span> end_number_line;        </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>                <a class="code hl_class" href="classPath.html">Path</a> path;                  </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>                vector&lt;string&gt; content;     </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>                vector&lt;string&gt; header;      </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>                <span class="keywordtype">int</span> start_number_line;      </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>                <span class="keywordtype">int</span> line_declaration;       </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>                <span class="keywordtype">int</span> end_number_line;        </div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span></div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keywordtype">void</span> read_content();</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>                <span class="keywordtype">void</span> read_content();</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span></div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keywordtype">void</span> read_header();</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>                <span class="keywordtype">void</span> read_header();</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span></div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keywordtype">void</span> read_info();</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>                <span class="keywordtype">void</span> read_info();</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="classFunction.html#af1fb06b1347f9c953cd0e9267e1c885e">number_of_lines</a>();</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>                <span class="keywordtype">int</span> <a class="code hl_function" href="classFunction.html#af1fb06b1347f9c953cd0e9267e1c885e">number_of_lines</a>();</div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span></div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <a class="code hl_function" href="classFunction.html#aeb1e057869579d8f707506f4b928934b">Function</a>(<a class="code hl_class" href="classPath.html">Path</a> _path);</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>                <a class="code hl_function" href="classFunction.html#aeb1e057869579d8f707506f4b928934b">Function</a>(<a class="code hl_class" href="classPath.html">Path</a> _path);</div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span></div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    array&lt;int,3&gt; <a class="code hl_function" href="classFunction.html#a551116719fafec5d8e387957d96ec744">get_scope_function_in_file</a>();</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>                array&lt;int,3&gt; <a class="code hl_function" href="classFunction.html#a551116719fafec5d8e387957d96ec744">get_scope_function_in_file</a>();</div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span></div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    vector&lt;string&gt; <a class="code hl_function" href="classFunction.html#aea58fced35931266f4e63472da04c33e">get_header</a>();</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>                vector&lt;string&gt; <a class="code hl_function" href="classFunction.html#aea58fced35931266f4e63472da04c33e">get_header</a>();</div>
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span></div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    vector&lt;string&gt; <a class="code hl_function" href="classFunction.html#a3a90213ec8ec1e4c2b4ac3478cde8e57">build_all_content</a>();</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>                vector&lt;string&gt; <a class="code hl_function" href="classFunction.html#a3a90213ec8ec1e4c2b4ac3478cde8e57">build_all_content</a>();</div>
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span></div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classFunction.html#aa4177e78fa7bf87334a09084f3af533e">print_basic_info</a>();</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>                <span class="keywordtype">void</span> <a class="code hl_function" href="classFunction.html#aa4177e78fa7bf87334a09084f3af533e">print_basic_info</a>();</div>
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>};</div>
 </div>
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>

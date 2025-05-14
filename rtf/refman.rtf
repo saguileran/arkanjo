@@ -2708,18 +2708,18 @@ const vector<string> Utils::COLOR_TOKENS_UTILS_DARK}}
 {\b Initial value:}{
 \par
 \pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid = \{\par
-        {\cf22 "\\033[0m"},    \par
-        {\cf22 "\\033[31;2m"}, \par
-        {\cf22 "\\033[32;2m"}, \par
-        {\cf22 "\\033[33;2m"}, \par
-        {\cf22 "\\033[34;2m"}, \par
-        {\cf22 "\\033[35;2m"}, \par
-        {\cf22 "\\033[36;2m"}, \par
-        {\cf22 "\\033[37;2m"}, \par
-        {\cf22 "\\033[30m"},   \par
-        {\cf22 "\\033[33m"},   \par
-        {\cf22 "\\033[97m"}    \par
-    \}\par
+            {\cf22 "\\033[0m"},    \par
+            {\cf22 "\\033[31;2m"}, \par
+            {\cf22 "\\033[32;2m"}, \par
+            {\cf22 "\\033[33;2m"}, \par
+            {\cf22 "\\033[34;2m"}, \par
+            {\cf22 "\\033[35;2m"}, \par
+            {\cf22 "\\033[36;2m"}, \par
+            {\cf22 "\\033[37;2m"}, \par
+            {\cf22 "\\033[30m"},   \par
+            {\cf22 "\\033[33m"},   \par
+            {\cf22 "\\033[97m"}    \par
+        \}\par
 }
 {
 {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
@@ -2765,18 +2765,18 @@ const vector<string> Utils::COLOR_TOKENS_UTILS_LIGTH}}
 {\b Initial value:}{
 \par
 \pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid = \{\par
-        {\cf22 "\\033[0m"},    \par
-        {\cf22 "\\033[31m"},   \par
-        {\cf22 "\\033[32m"},   \par
-        {\cf22 "\\033[33m"},   \par
-        {\cf22 "\\033[34m"},   \par
-        {\cf22 "\\033[35m"},   \par
-        {\cf22 "\\033[36m"},   \par
-        {\cf22 "\\033[37m"},   \par
-        {\cf22 "\\033[97m"},   \par
-        {\cf22 "\\033[33;1m"}, \par
-        {\cf22 "\\033[30m"},   \par
-    \}\par
+            {\cf22 "\\033[0m"},    \par
+            {\cf22 "\\033[31m"},   \par
+            {\cf22 "\\033[32m"},   \par
+            {\cf22 "\\033[33m"},   \par
+            {\cf22 "\\033[34m"},   \par
+            {\cf22 "\\033[35m"},   \par
+            {\cf22 "\\033[36m"},   \par
+            {\cf22 "\\033[37m"},   \par
+            {\cf22 "\\033[97m"},   \par
+            {\cf22 "\\033[33;1m"}, \par
+            {\cf22 "\\033[30m"},   \par
+        \}\par
 }
 {
 {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
@@ -6809,10 +6809,10 @@ Go to the documentation of this file.\par
 00011 \par
 00012 {\cf17 namespace }UtilsOSDependable\{\par
 00013 \par
-00014   {\cf18 float} get_terminal_bg_color_luminance();\par
-00015   tuple<int, int, int> parse_terminal_color_response({\cf17 const} {\cf18 string}& response);\par
-00016   {\cf18 string} capture_terminal_response();\par
-00017   {\cf18 bool} is_bg_color_dark();\par
+00014         {\cf18 float} get_terminal_bg_color_luminance();\par
+00015         tuple<int, int, int> parse_terminal_color_response({\cf17 const} {\cf18 string}& response);\par
+00016         {\cf18 string} capture_terminal_response();\par
+00017         {\cf18 bool} is_bg_color_dark();\par
 00018 \};\par
 00019 \par
 00020 {\cf21 #endif}\par
@@ -6950,25 +6950,25 @@ Go to the documentation of this file.\par
 00018 {\cf17 using namespace }std;\par
 00019 \par
 00026 {\cf17 class }Config \{\par
-00027     {\cf18 string} base_path = {\cf22 "tmp"};  \par
+00027         {\cf18 string} base_path = {\cf22 "tmp"};  \par
 00028 \par
 00029 {\cf17 protected}:\par
-00030     {\cf17 static} Config* config_;    \par
+00030         {\cf17 static} Config* config_;    \par
 00031 \par
-00035     Config()\{\}\par
+00035         Config()\{\}\par
 00036 \par
 00037 {\cf17 public}:\par
-00041     Config(Config &other) = {\cf17 delete};\par
-00042     \par
-00046     {\cf18 void} operator=({\cf17 const} Config &) = {\cf17 delete};\par
+00041         Config(Config &other) = {\cf17 delete};\par
+00042         \par
+00046         {\cf18 void} operator=({\cf17 const} Config &) = {\cf17 delete};\par
 00047 \par
-00052     {\cf17 static} Config *config();\par
+00052         {\cf17 static} Config *config();\par
 00053 \par
-00058     {\cf18 string} getBasePath();\par
-00059     \par
-00065     {\cf18 void} setTestConfig();\par
-00066     \par
-00070     {\cf18 void} setDefaultConfig();\par
+00058         {\cf18 string} getBasePath();\par
+00059         \par
+00065         {\cf18 void} setTestConfig();\par
+00066         \par
+00070         {\cf18 void} setDefaultConfig();\par
 00071 \};\par
 00072 \par
 00073 {\cf21 #endif}\par
@@ -7168,42 +7168,42 @@ Go to the documentation of this file.\par
 00023 {\cf17 using namespace }std;\par
 00024 \par
 00031 {\cf17 class }Function \{\par
-00032 {\cf17 private}:\par
-00033     {\cf18 string} LINE_DECLARATION_JSON = {\cf22 "line_declaration"};    \par
-00034     {\cf18 string} START_NUMBER_LINE_JSON = {\cf22 "start_number_line"};  \par
-00035     {\cf18 string} END_NUMBER_LINE_JSON = {\cf22 "end_number_line"};      \par
+00032         {\cf17 private}:\par
+00033                 {\cf18 string} LINE_DECLARATION_JSON = {\cf22 "line_declaration"};    \par
+00034                 {\cf18 string} START_NUMBER_LINE_JSON = {\cf22 "start_number_line"};  \par
+00035                 {\cf18 string} END_NUMBER_LINE_JSON = {\cf22 "end_number_line"};      \par
 00036 \par
-00037     {\cf18 string} FUNCTION_PREFIX_PRINT = {\cf22 "Function Name: "};    \par
-00038     {\cf18 string} RELATIVE_PATH_PRINT = {\cf22 "Relative Path: "};       \par
-00039     {\cf18 string} LINE_DECLARATION_PRINT = {\cf22 "Starts on line: "};  \par
-00040     {\cf18 string} END_DECLARATION_PRINT = {\cf22 "Ends on line: "};     \par
-00041     {\cf18 string} NUMBER_LINE_PRINT = {\cf22 "Total number of lines: "}; \par
+00037                 {\cf18 string} FUNCTION_PREFIX_PRINT = {\cf22 "Function Name: "};    \par
+00038                 {\cf18 string} RELATIVE_PATH_PRINT = {\cf22 "Relative Path: "};       \par
+00039                 {\cf18 string} LINE_DECLARATION_PRINT = {\cf22 "Starts on line: "};  \par
+00040                 {\cf18 string} END_DECLARATION_PRINT = {\cf22 "Ends on line: "};     \par
+00041                 {\cf18 string} NUMBER_LINE_PRINT = {\cf22 "Total number of lines: "}; \par
 00042 \par
-00043     Path path;                  \par
-00044     vector<string> content;     \par
-00045     vector<string> header;      \par
-00046     {\cf18 int} start_number_line;      \par
-00047     {\cf18 int} line_declaration;       \par
-00048     {\cf18 int} end_number_line;        \par
+00043                 Path path;                  \par
+00044                 vector<string> content;     \par
+00045                 vector<string> header;      \par
+00046                 {\cf18 int} start_number_line;      \par
+00047                 {\cf18 int} line_declaration;       \par
+00048                 {\cf18 int} end_number_line;        \par
 00049 \par
-00053     {\cf18 void} read_content();\par
+00053                 {\cf18 void} read_content();\par
 00054 \par
-00058     {\cf18 void} read_header();\par
+00058                 {\cf18 void} read_header();\par
 00059 \par
-00063     {\cf18 void} read_info();\par
+00063                 {\cf18 void} read_info();\par
 00064 \par
-00065 {\cf17 public}:\par
-00070     {\cf18 int} number_of_lines();\par
+00065         {\cf17 public}:\par
+00070                 {\cf18 int} number_of_lines();\par
 00071 \par
-00076     Function(Path _path);\par
+00076                 Function(Path _path);\par
 00077 \par
-00085     array<int,3> get_scope_function_in_file();\par
+00085                 array<int,3> get_scope_function_in_file();\par
 00086 \par
-00091     vector<string> get_header();\par
+00091                 vector<string> get_header();\par
 00092 \par
-00097     vector<string> build_all_content();\par
+00097                 vector<string> build_all_content();\par
 00098 \par
-00102     {\cf18 void} print_basic_info();\par
+00102                 {\cf18 void} print_basic_info();\par
 00103 \};\par
 00104 \par
 00105 {\cf21 #endif}\par
@@ -7469,19 +7469,18 @@ Go to the documentation of this file.\par
 00025 {\cf17 using namespace }std;\par
 00026 \par
 00027 {\cf17 namespace }UtilsOSDependable\{\par
-00028 \par
-00037   {\cf18 int} convert_16_bit_to_8_bit({\cf17 const} {\cf18 string}& hex16);\par
-00038   \par
-00046   {\cf18 float} get_terminal_bg_color_luminance();\par
-00047   \par
-00056   tuple<int, int, int> parse_terminal_color_response({\cf17 const} {\cf18 string}& response);\par
-00057   \par
-00065   {\cf18 string} capture_terminal_response();\par
-00066   \par
-00074   {\cf18 bool} is_bg_color_dark();\par
-00075 \};\par
-00076 \par
-00077 {\cf21 #endif}\par
+00036         {\cf18 int} convert_16_bit_to_8_bit({\cf17 const} {\cf18 string}& hex16);\par
+00037         \par
+00045         {\cf18 float} get_terminal_bg_color_luminance();\par
+00046         \par
+00055         tuple<int, int, int> parse_terminal_color_response({\cf17 const} {\cf18 string}& response);\par
+00056         \par
+00064         {\cf18 string} capture_terminal_response();\par
+00065         \par
+00073         {\cf18 bool} is_bg_color_dark();\par
+00074 \};\par
+00075 \par
+00076 {\cf21 #endif}\par
 }
 \par \pard\plain 
 
@@ -7746,51 +7745,51 @@ Go to the documentation of this file.\par
 00016 {\cf17 using namespace }std;\par
 00017 \par
 00024 {\cf17 class }Path \{\par
-00025 {\cf17 private}:\par
-00026     {\cf18 string} JSON_EXTENSION = {\cf22 ".json"};      \par
-00027     {\cf18 string} BASE_INIT_STRING = {\cf22 "tmp"};     \par
-00028     {\cf18 string} SOURCE_STRING = {\cf22 "source"};     \par
-00029     {\cf18 string} HEADER_STRING = {\cf22 "header"};     \par
-00030     {\cf18 string} INFO_STRING = {\cf22 "info"};         \par
-00031     {\cf18 char} BAR = {\cf23 '/'};                      \par
+00025         {\cf17 private}:\par
+00026                 {\cf18 string} JSON_EXTENSION = {\cf22 ".json"};      \par
+00027                 {\cf18 string} BASE_INIT_STRING = {\cf22 "tmp"};     \par
+00028                 {\cf18 string} SOURCE_STRING = {\cf22 "source"};     \par
+00029                 {\cf18 string} HEADER_STRING = {\cf22 "header"};     \par
+00030                 {\cf18 string} INFO_STRING = {\cf22 "info"};         \par
+00031                 {\cf18 char} BAR = {\cf23 '/'};                      \par
 00032 \par
-00033     vector<string> tokens;               \par
-00034     {\cf18 int} position_start_relative_path;    \par
+00033                 vector<string> tokens;               \par
+00034                 {\cf18 int} position_start_relative_path;    \par
 00035 \par
-00041     vector<string> split_path({\cf18 string} string_path);\par
+00041                 vector<string> split_path({\cf18 string} string_path);\par
 00042 \par
-00047     {\cf18 int} find_position_start_relative_path();\par
+00047                 {\cf18 int} find_position_start_relative_path();\par
 00048 \par
-00054     {\cf18 string} build_string_path(vector<string> path);\par
+00054                 {\cf18 string} build_string_path(vector<string> path);\par
 00055 \par
-00061     {\cf18 string} build_base_path({\cf18 string} base);\par
+00061                 {\cf18 string} build_base_path({\cf18 string} base);\par
 00062 \par
-00067     vector<string> get_tokens_from_relative_path();\par
+00067                 vector<string> get_tokens_from_relative_path();\par
 00068 \par
-00074     {\cf18 string} remove_extension({\cf18 string} token);\par
+00074                 {\cf18 string} remove_extension({\cf18 string} token);\par
 00075 \par
-00076 {\cf17 public}:\par
-00081     {\cf18 bool} is_empty();\par
+00076         {\cf17 public}:\par
+00081                 {\cf18 bool} is_empty();\par
 00082 \par
-00086     Path();\par
+00086                 Path();\par
 00087 \par
-00092     Path({\cf18 string} string_path);\par
+00092                 Path({\cf18 string} string_path);\par
 00093 \par
-00098     {\cf18 string} build_source_path();\par
+00098                 {\cf18 string} build_source_path();\par
 00099 \par
-00104     {\cf18 string} build_header_path();\par
+00104                 {\cf18 string} build_header_path();\par
 00105 \par
-00110     {\cf18 string} build_info_path();\par
+00110                 {\cf18 string} build_info_path();\par
 00111 \par
-00116     {\cf18 string} build_relative_path();\par
+00116                 {\cf18 string} build_relative_path();\par
 00117 \par
-00122     {\cf18 string} build_function_name();\par
+00122                 {\cf18 string} build_function_name();\par
 00123 \par
-00129     vector<string> get_common_folders(Path path);\par
+00129                 vector<string> get_common_folders(Path path);\par
 00130 \par
-00136     {\cf18 bool} contains_given_pattern({\cf18 string} pattern);\par
+00136                 {\cf18 bool} contains_given_pattern({\cf18 string} pattern);\par
 00137 \par
-00143     {\cf18 bool} operator<({\cf17 const} Path &path) {\cf17 const};\par
+00143                 {\cf18 bool} operator<({\cf17 const} Path &path) {\cf17 const};\par
 00144 \};\par
 00145 \par
 00146 {\cf21 #endif}\par
@@ -8068,51 +8067,51 @@ Go to the documentation of this file.\par
 00021 {\cf17 using namespace }std;\par
 00022 \par
 00029 {\cf17 class }Similarity_Table \{\par
-00030 {\cf17 private}:\par
-00031     {\cf18 string} SIMILARITY_TABLE_FILE_NAME = {\cf22 "tmp/output_parsed.txt"};  \par
-00032     {\cf18 double} DEFAULT_SIMILARITY = 100.00;                         \par
-00033     {\cf18 double} EPS_ERROR_MARGIN = 1e-6;                             \par
-00034     {\cf18 double} MAXIMUM_SIMILARITY = 100.00;                         \par
-00035     {\cf18 double} MINIMUM_SIMILARITY = 0.00;                           \par
+00030         {\cf17 private}:\par
+00031                 {\cf18 string} SIMILARITY_TABLE_FILE_NAME = {\cf22 "tmp/output_parsed.txt"};  \par
+00032                 {\cf18 double} DEFAULT_SIMILARITY = 100.00;                         \par
+00033                 {\cf18 double} EPS_ERROR_MARGIN = 1e-6;                             \par
+00034                 {\cf18 double} MAXIMUM_SIMILARITY = 100.00;                         \par
+00035                 {\cf18 double} MINIMUM_SIMILARITY = 0.00;                           \par
 00036 \par
-00037     {\cf18 double} similarity_threshold;                                \par
-00038     vector<Path> paths;                                        \par
-00039     map<Path,int> path_id;                                     \par
-00040     vector<vector<pair<int,double>>> similarity_graph;         \par
-00041     map<pair<int,int>,{\cf18 double}> similarity_table;                \par
+00037                 {\cf18 double} similarity_threshold;                                \par
+00038                 vector<Path> paths;                                        \par
+00039                 map<Path,int> path_id;                                     \par
+00040                 vector<vector<pair<int,double>>> similarity_graph;         \par
+00041                 map<pair<int,int>,{\cf18 double}> similarity_table;                \par
 00042 \par
-00048     {\cf18 int} find_id_path(Path path);\par
+00048                 {\cf18 int} find_id_path(Path path);\par
 00049 \par
-00054     {\cf18 void} read_comparation(ifstream &table_file);\par
+00054                 {\cf18 void} read_comparation(ifstream &table_file);\par
 00055 \par
-00060     {\cf18 void} read_file_table(ifstream &table_file);\par
+00060                 {\cf18 void} read_file_table(ifstream &table_file);\par
 00061 \par
-00065     {\cf18 void} init_similarity_table();\par
+00065                 {\cf18 void} init_similarity_table();\par
 00066 \par
-00072     {\cf18 bool} is_above_threshold({\cf18 double} similarity);\par
+00072                 {\cf18 bool} is_above_threshold({\cf18 double} similarity);\par
 00073 \par
-00079     vector<tuple<int,Path,Path>> sort_pairs_by_line_number(vector<pair<Path,Path>> similar_path_pairs);\par
+00079                 vector<tuple<int,Path,Path>> sort_pairs_by_line_number(vector<pair<Path,Path>> similar_path_pairs);\par
 00080 \par
-00081 {\cf17 public}:\par
-00086     Similarity_Table({\cf18 double} _similarity_threshold);\par
-00087     \par
-00091     Similarity_Table();\par
-00092     \par
-00097     {\cf18 void} update_similarity({\cf18 double} new_similarity_threshold);\par
+00081         {\cf17 public}:\par
+00086                 Similarity_Table({\cf18 double} _similarity_threshold);\par
+00087                 \par
+00091                 Similarity_Table();\par
+00092                 \par
+00097                 {\cf18 void} update_similarity({\cf18 double} new_similarity_threshold);\par
 00098 \par
-00105     {\cf18 double} get_similarity(Path path1, Path path2);\par
+00105                 {\cf18 double} get_similarity(Path path1, Path path2);\par
 00106 \par
-00113     {\cf18 double} is_similar(Path path1, Path path2);\par
+00113                 {\cf18 double} is_similar(Path path1, Path path2);\par
 00114 \par
-00119     vector<Path> get_path_list();\par
+00119                 vector<Path> get_path_list();\par
 00120 \par
-00126     vector<Path> get_similar_path_to_the_reference(Path reference);\par
+00126                 vector<Path> get_similar_path_to_the_reference(Path reference);\par
 00127 \par
-00132     vector<tuple<double,Path,Path>> get_all_path_pairs_and_similarity_sorted_by_similarity();\par
+00132                 vector<tuple<double,Path,Path>> get_all_path_pairs_and_similarity_sorted_by_similarity();\par
 00133 \par
-00138     vector<pair<Path,Path>> get_all_similar_path_pairs_sorted_by_similarity();\par
+00138                 vector<pair<Path,Path>> get_all_similar_path_pairs_sorted_by_similarity();\par
 00139 \par
-00144     vector<pair<Path,Path>> get_all_similar_path_pairs_sorted_by_line_number();\par
+00144                 vector<pair<Path,Path>> get_all_similar_path_pairs_sorted_by_line_number();\par
 00145 \};\par
 00146 \par
 00147 {\cf21 #endif}\par
@@ -8507,73 +8506,73 @@ Go to the documentation of this file.\par
 00018 \par
 00019 {\cf17 namespace }Utils\{\par
 00020 \par
-00024     {\cf17 const} {\cf18 string} LIMITER_PRINT = {\cf22 "---------------------"};\par
+00024         {\cf17 const} {\cf18 string} LIMITER_PRINT = {\cf22 "---------------------"};\par
 00025 \par
-00029     {\cf17 const} {\cf18 int} MKDIR_FLAG = 0700;\par
+00029         {\cf17 const} {\cf18 int} MKDIR_FLAG = 0700;\par
 00030 \par
-00047     {\cf17 const} vector<string> COLOR_TOKENS_UTILS_LIGTH = \{\par
-00048         {\cf22 "\\033[0m"},    {\cf20 //RESET}\par
-00049         {\cf22 "\\033[31m"},   {\cf20 //RED}\par
-00050         {\cf22 "\\033[32m"},   {\cf20 //GREEN}\par
-00051         {\cf22 "\\033[33m"},   {\cf20 //YELLOW}\par
-00052         {\cf22 "\\033[34m"},   {\cf20 //BLUE}\par
-00053         {\cf22 "\\033[35m"},   {\cf20 //MAGENTA}\par
-00054         {\cf22 "\\033[36m"},   {\cf20 //CYAN}\par
-00055         {\cf22 "\\033[37m"},   {\cf20 //GRAY}\par
-00056         {\cf22 "\\033[97m"},   {\cf20 //WHITE}\par
-00057         {\cf22 "\\033[33;1m"}, {\cf20 //BRIGHT_YELLOW}\par
-00058         {\cf22 "\\033[30m"},   {\cf20 //BLACK}\par
-00059     \};\par
+00047         {\cf17 const} vector<string> COLOR_TOKENS_UTILS_LIGTH = \{\par
+00048             {\cf22 "\\033[0m"},    {\cf20 //RESET}\par
+00049             {\cf22 "\\033[31m"},   {\cf20 //RED}\par
+00050             {\cf22 "\\033[32m"},   {\cf20 //GREEN}\par
+00051             {\cf22 "\\033[33m"},   {\cf20 //YELLOW}\par
+00052             {\cf22 "\\033[34m"},   {\cf20 //BLUE}\par
+00053             {\cf22 "\\033[35m"},   {\cf20 //MAGENTA}\par
+00054             {\cf22 "\\033[36m"},   {\cf20 //CYAN}\par
+00055             {\cf22 "\\033[37m"},   {\cf20 //GRAY}\par
+00056             {\cf22 "\\033[97m"},   {\cf20 //WHITE}\par
+00057             {\cf22 "\\033[33;1m"}, {\cf20 //BRIGHT_YELLOW}\par
+00058             {\cf22 "\\033[30m"},   {\cf20 //BLACK}\par
+00059         \};\par
 00060 \par
-00077     {\cf17 const} vector<string> COLOR_TOKENS_UTILS_DARK = \{\par
-00078         {\cf22 "\\033[0m"},    {\cf20 // RESET}\par
-00079         {\cf22 "\\033[31;2m"}, {\cf20 // DARK_RED}\par
-00080         {\cf22 "\\033[32;2m"}, {\cf20 // DARK_GREEN}\par
-00081         {\cf22 "\\033[33;2m"}, {\cf20 // DARK_YELLOW}\par
-00082         {\cf22 "\\033[34;2m"}, {\cf20 // DARK_BLUE}\par
-00083         {\cf22 "\\033[35;2m"}, {\cf20 // DARK_MAGENTA}\par
-00084         {\cf22 "\\033[36;2m"}, {\cf20 // DARK_CYAN}\par
-00085         {\cf22 "\\033[37;2m"}, {\cf20 // DARK_GRAY}\par
-00086         {\cf22 "\\033[30m"},   {\cf20 // BLACK}\par
-00087         {\cf22 "\\033[33m"},   {\cf20 // YELLOW}\par
-00088         {\cf22 "\\033[97m"}    {\cf20 // WHITE}\par
-00089     \};\par
-00090     \par
-00094     {\cf17 enum} COLOR\{\par
-00095         RESET,          \par
-00096         RED,            \par
-00097         GREEN,          \par
-00098         YELLOW,         \par
-00099         BLUE,           \par
-00100         MAGENTA,        \par
-00101         CYAN,           \par
-00102         GRAY,           \par
-00103         WHITE,          \par
-00104         BRIGHT_YELLOW,  \par
-00105         BLACK           \par
-00106     \};\par
+00077         {\cf17 const} vector<string> COLOR_TOKENS_UTILS_DARK = \{\par
+00078             {\cf22 "\\033[0m"},    {\cf20 // RESET}\par
+00079             {\cf22 "\\033[31;2m"}, {\cf20 // DARK_RED}\par
+00080             {\cf22 "\\033[32;2m"}, {\cf20 // DARK_GREEN}\par
+00081             {\cf22 "\\033[33;2m"}, {\cf20 // DARK_YELLOW}\par
+00082             {\cf22 "\\033[34;2m"}, {\cf20 // DARK_BLUE}\par
+00083             {\cf22 "\\033[35;2m"}, {\cf20 // DARK_MAGENTA}\par
+00084             {\cf22 "\\033[36;2m"}, {\cf20 // DARK_CYAN}\par
+00085             {\cf22 "\\033[37;2m"}, {\cf20 // DARK_GRAY}\par
+00086             {\cf22 "\\033[30m"},   {\cf20 // BLACK}\par
+00087             {\cf22 "\\033[33m"},   {\cf20 // YELLOW}\par
+00088             {\cf22 "\\033[97m"}    {\cf20 // WHITE}\par
+00089         \};\par
+00090         \par
+00094         {\cf17 enum} COLOR\{\par
+00095             RESET,          \par
+00096             RED,            \par
+00097             GREEN,          \par
+00098             YELLOW,         \par
+00099             BLUE,           \par
+00100             MAGENTA,        \par
+00101             CYAN,           \par
+00102             GRAY,           \par
+00103             WHITE,          \par
+00104             BRIGHT_YELLOW,  \par
+00105             BLACK           \par
+00106         \};\par
 00107 \par
-00113     {\cf18 void} ensure_file_is_open(std::ifstream &file, {\cf18 string} file_name);\par
-00114     \par
-00120     vector<string> read_file_generic({\cf18 string} string_path);\par
-00121     \par
-00127     {\cf18 void} write_file_generic({\cf18 string} file_path, vector<string> content);\par
-00128     \par
-00133     {\cf18 void} create_parents_folder_of_file_path({\cf18 string} file_path);\par
-00134     \par
-00140     Json::Value read_json({\cf18 string} string_path);\par
-00141     \par
-00147     {\cf18 bool} does_file_exist({\cf18 string} file_path);\par
-00148     \par
-00154     {\cf18 bool} is_regular_file({\cf18 string} path);\par
+00113         {\cf18 void} ensure_file_is_open(std::ifstream &file, {\cf18 string} file_name);\par
+00114         \par
+00120         vector<string> read_file_generic({\cf18 string} string_path);\par
+00121         \par
+00127         {\cf18 void} write_file_generic({\cf18 string} file_path, vector<string> content);\par
+00128         \par
+00133         {\cf18 void} create_parents_folder_of_file_path({\cf18 string} file_path);\par
+00134         \par
+00140         Json::Value read_json({\cf18 string} string_path);\par
+00141         \par
+00147         {\cf18 bool} does_file_exist({\cf18 string} file_path);\par
+00148         \par
+00154         {\cf18 bool} is_regular_file({\cf18 string} path);\par
 00155 \par
-00162     {\cf18 string} format_colored_message({\cf18 string} message, COLOR color);\par
+00162         {\cf18 string} format_colored_message({\cf18 string} message, COLOR color);\par
 00163 \par
-00169     {\cf18 bool} is_empty_char({\cf18 char} c);\par
-00170     \par
-00176     {\cf18 bool} is_special_char({\cf18 char} c);\par
+00169         {\cf18 bool} is_empty_char({\cf18 char} c);\par
+00170         \par
+00176         {\cf18 bool} is_special_char({\cf18 char} c);\par
 00177 \par
-00184     vector<string> split_string({\cf18 string} s, {\cf18 char} delimiter);\par
+00184         vector<string> split_string({\cf18 string} s, {\cf18 char} delimiter);\par
 00185 \};\par
 00186 \par
 00187 {\cf21 #endif}\par
@@ -8808,15 +8807,14 @@ Go to the documentation of this file.\par
 00016 {\cf17 using namespace }std;\par
 00017 \par
 00018 {\cf17 namespace }UtilsOSDependable\{\par
-00019 \par
-00028   {\cf18 float} get_terminal_bg_color_luminance();\par
-00029   \par
-00038   tuple<int, int, int> parse_terminal_color_response();\par
-00039   \par
-00048   {\cf18 bool} is_bg_color_dark();\par
-00049 \};\par
-00050 \par
-00051 {\cf21 #endif}\par
+00027         {\cf18 float} get_terminal_bg_color_luminance();\par
+00028         \par
+00037         tuple<int, int, int> parse_terminal_color_response();\par
+00038         \par
+00047         {\cf18 bool} is_bg_color_dark();\par
+00048 \};\par
+00049 \par
+00050 {\cf21 #endif}\par
 }
 \par \pard\plain 
 
@@ -8976,15 +8974,15 @@ Go to the documentation of this file.\par
 00020 {\cf17 using namespace }std;\par
 00021 \par
 00031 {\cf17 class }Big_Clone_Formater \{\par
-00032 {\cf17 private}:\par
-00038     {\cf18 string} format_relative_path({\cf18 string} relative_path);\par
+00032         {\cf17 private}:\par
+00038                 {\cf18 string} format_relative_path({\cf18 string} relative_path);\par
 00039 \par
-00045     {\cf18 string} build_path_formated_string(Path path);\par
+00045                 {\cf18 string} build_path_formated_string(Path path);\par
 00046 \par
-00053     {\cf17 auto} process_similar_path_pair(Path path1, Path path2, {\cf18 double} similarity);\par
+00053                 {\cf17 auto} process_similar_path_pair(Path path1, Path path2, {\cf18 double} similarity);\par
 00054 \par
-00055 {\cf17 public}:\par
-00062     Big_Clone_Formater(Similarity_Table *similarity_table);\par
+00055         {\cf17 public}:\par
+00062                 Big_Clone_Formater(Similarity_Table *similarity_table);\par
 00063 \};\par
 00064 \par
 00065 {\cf21 #endif}\par
@@ -9224,53 +9222,53 @@ Go to the documentation of this file.\par
 00021 {\cf17 using namespace }std;\par
 00022 \par
 00029 {\cf17 class }Big_Clone_Tailor_Evaluator \{\par
-00030 {\cf17 private}:\par
-00031     {\cf18 string} CLONE_LABELS_FILE_PATH = {\cf22 "/home/luan/linux/test-duplication-code/parser/bigclonebench/clone_labels.txt"};  \par
-00032     {\cf18 string} EXTENSION = {\cf22 ".java"};                          \par
-00033     {\cf18 int} NUMBER_OF_TYPES = 6;                             \par
-00034     {\cf18 int} NOT_CLONE_TYPE_ID = 5;                           \par
-00035     {\cf18 string} RECALL_PER_TYPE_PRINT = {\cf22 "Recall Value of each type"};  \par
-00036     {\cf18 double} MINIMUM_SIMILARITY_TEMP = 0;                  \par
-00037     \par
-00039     vector<string> ID_TO_TYPE_LABEL = \{\par
-00040         {\cf22 "T1"},\par
-00041         {\cf22 "T2"},\par
-00042         {\cf22 "ST3"},\par
-00043         {\cf22 "MT3"},\par
-00044         {\cf22 "WT3/T4"},\par
-00045         {\cf22 "Negative"},\par
-00046     \};\par
+00030         {\cf17 private}:\par
+00031                 {\cf18 string} CLONE_LABELS_FILE_PATH = {\cf22 "/home/luan/linux/test-duplication-code/parser/bigclonebench/clone_labels.txt"};  \par
+00032                 {\cf18 string} EXTENSION = {\cf22 ".java"};                          \par
+00033                 {\cf18 int} NUMBER_OF_TYPES = 6;                             \par
+00034                 {\cf18 int} NOT_CLONE_TYPE_ID = 5;                           \par
+00035                 {\cf18 string} RECALL_PER_TYPE_PRINT = {\cf22 "Recall Value of each type"};  \par
+00036                 {\cf18 double} MINIMUM_SIMILARITY_TEMP = 0;                  \par
+00037                 \par
+00039                 vector<string> ID_TO_TYPE_LABEL = \{\par
+00040                     {\cf22 "T1"},\par
+00041                     {\cf22 "T2"},\par
+00042                     {\cf22 "ST3"},\par
+00043                     {\cf22 "MT3"},\par
+00044                     {\cf22 "WT3/T4"},\par
+00045                     {\cf22 "Negative"},\par
+00046                 \};\par
 00047 \par
-00048     Similarity_Table *similarity_table;                  \par
-00049     map<pair<int,int>,{\cf18 int}> id_pair_to_type;              \par
-00050     vector<int> count_of_samples_by_type;                \par
+00048                 Similarity_Table *similarity_table;                  \par
+00049                 map<pair<int,int>,{\cf18 int}> id_pair_to_type;              \par
+00050                 vector<int> count_of_samples_by_type;                \par
 00051 \par
-00055     {\cf18 void} read_clone_labels();\par
+00055                 {\cf18 void} read_clone_labels();\par
 00056 \par
-00062     {\cf18 int} path_to_id(Path path);\par
+00062                 {\cf18 int} path_to_id(Path path);\par
 00063 \par
-00068     vector<tuple<double,int,int>> similar_path_pairs_formated_with_id();\par
+00068                 vector<tuple<double,int,int>> similar_path_pairs_formated_with_id();\par
 00069 \par
-00076     {\cf18 bool} is_relevant_pair({\cf18 int} id0, {\cf18 int} id1);\par
+00076                 {\cf18 bool} is_relevant_pair({\cf18 int} id0, {\cf18 int} id1);\par
 00077 \par
-00083     set<pair<int,int>> filter_similar_id_pairs_only_relevant_ones(\par
-00084             vector<pair<int,int>> similar_id_pairs);\par
+00083                 set<pair<int,int>> filter_similar_id_pairs_only_relevant_ones(\par
+00084                         vector<pair<int,int>> similar_id_pairs);\par
 00085 \par
-00092     vector<pair<int,int>> filter_similar_path_pairs_by_similarity(\par
-00093             vector<tuple<double,int,int>> similar_id_pairs,\par
-00094             {\cf18 double} minimum_similarity);\par
+00092                 vector<pair<int,int>> filter_similar_path_pairs_by_similarity(\par
+00093                         vector<tuple<double,int,int>> similar_id_pairs,\par
+00094                         {\cf18 double} minimum_similarity);\par
 00095 \par
-00101     vector<int> build_frequency_corrected_guessed_by_type(\par
-00102             vector<pair<int,int>> similar_id_pairs);\par
+00101                 vector<int> build_frequency_corrected_guessed_by_type(\par
+00102                         vector<pair<int,int>> similar_id_pairs);\par
 00103 \par
-00110     {\cf18 double} calc_recall(vector<int> frequency, {\cf18 int} type);\par
+00110                 {\cf18 double} calc_recall(vector<int> frequency, {\cf18 int} type);\par
 00111 \par
-00116     {\cf18 void} print_recall_per_type(vector<int> frequency);\par
+00116                 {\cf18 void} print_recall_per_type(vector<int> frequency);\par
 00117 \par
-00122     {\cf18 void} evaluate({\cf18 double} minimum_similarity);\par
+00122                 {\cf18 void} evaluate({\cf18 double} minimum_similarity);\par
 00123 \par
-00124 {\cf17 public}:\par
-00129     Big_Clone_Tailor_Evaluator(Similarity_Table *_similarity_table);\par
+00124         {\cf17 public}:\par
+00129                 Big_Clone_Tailor_Evaluator(Similarity_Table *_similarity_table);\par
 00130 \};\par
 00131 \par
 00132 {\cf21 #endif}\par
@@ -9437,25 +9435,25 @@ Go to the documentation of this file.\par
 00021 {\cf17 using namespace }std;\par
 00022 \par
 00030 {\cf17 class }Counter_Duplication_Code \{\par
-00031 {\cf17 private}:\par
-00032     set<Path> processed_paths;                      \par
-00033     Counter_Duplication_Code_Trie counter_duplication_code_trie;  \par
-00034     Similarity_Table *similarity_table;             \par
+00031         {\cf17 private}:\par
+00032                 set<Path> processed_paths;                      \par
+00033                 Counter_Duplication_Code_Trie counter_duplication_code_trie;  \par
+00034                 Similarity_Table *similarity_table;             \par
 00035 \par
-00040     {\cf18 void} mark_path_as_processed(Path path);\par
+00040                 {\cf18 void} mark_path_as_processed(Path path);\par
 00041 \par
-00047     {\cf18 bool} is_path_processed_path(Path path);\par
+00047                 {\cf18 bool} is_path_processed_path(Path path);\par
 00048 \par
-00054     {\cf18 int} get_number_of_lines_in_path(Path path);\par
+00054                 {\cf18 int} get_number_of_lines_in_path(Path path);\par
 00055 \par
-00062     {\cf18 void} register_code_duplication(Path path1, Path path2, {\cf18 int} number_of_lines);\par
+00062                 {\cf18 void} register_code_duplication(Path path1, Path path2, {\cf18 int} number_of_lines);\par
 00063 \par
-00068     {\cf18 void} process_path(Path path);\par
+00068                 {\cf18 void} process_path(Path path);\par
 00069 \par
-00073     {\cf18 void} process_every_path_in_similarity_table();\par
+00073                 {\cf18 void} process_every_path_in_similarity_table();\par
 00074 \par
-00075 {\cf17 public}:\par
-00080     Counter_Duplication_Code(Similarity_Table *_similarity_table);\par
+00075         {\cf17 public}:\par
+00080                 Counter_Duplication_Code(Similarity_Table *_similarity_table);\par
 00081 \};\par
 00082 \par
 00083 {\cf21 #endif}\par
@@ -9642,38 +9640,38 @@ Go to the documentation of this file.\par
 00018 {\cf17 using namespace }std;\par
 00019 \par
 00030 {\cf17 class }Counter_Duplication_Code_Trie \{\par
-00031 {\cf17 private}:\par
-00032     {\cf18 int} ZERO_INITIAL_COUNTER = 0;                \par
-00033     {\cf18 int} ROOT_NODE = 0;                           \par
-00034     {\cf18 int} BASE_DEPTH = 0;                          \par
-00035     {\cf18 string} EMPTY_FOLDER = {\cf22 ""};                    \par
-00036     {\cf18 string} BASIC_SHIFT_PER_DEPTH = {\cf22 "----"};       \par
-00037     {\cf18 string} END_ARROW = {\cf22 "--> "};                   \par
-00038     {\cf18 string} TWO_POINTER_AFTER_FOLDER = {\cf22 "/: "};     \par
-00039     {\cf18 string} LINE_TEXT = {\cf22 " duplicated lines detected."}; \par
+00031         {\cf17 private}:\par
+00032                 {\cf18 int} ZERO_INITIAL_COUNTER = 0;                \par
+00033                 {\cf18 int} ROOT_NODE = 0;                           \par
+00034                 {\cf18 int} BASE_DEPTH = 0;                          \par
+00035                 {\cf18 string} EMPTY_FOLDER = {\cf22 ""};                    \par
+00036                 {\cf18 string} BASIC_SHIFT_PER_DEPTH = {\cf22 "----"};       \par
+00037                 {\cf18 string} END_ARROW = {\cf22 "--> "};                   \par
+00038                 {\cf18 string} TWO_POINTER_AFTER_FOLDER = {\cf22 "/: "};     \par
+00039                 {\cf18 string} LINE_TEXT = {\cf22 " duplicated lines detected."}; \par
 00040 \par
-00041     vector<map<string,int>> trie;                \par
-00042     vector<int> counter_duplication_lines;       \par
-00043     {\cf18 int} number_printed_lines = 0;                \par
+00041                 vector<map<string,int>> trie;                \par
+00042                 vector<int> counter_duplication_lines;       \par
+00043                 {\cf18 int} number_printed_lines = 0;                \par
 00044 \par
-00049     Utils::COLOR choose_text_color();\par
+00049                 Utils::COLOR choose_text_color();\par
 00050 \par
-00055     {\cf18 int} create_node_at_the_end();\par
+00055                 {\cf18 int} create_node_at_the_end();\par
 00056 \par
-00062     {\cf18 void} create_edge_if_not_exist({\cf18 int} node, {\cf18 string} folder);\par
+00062                 {\cf18 void} create_edge_if_not_exist({\cf18 int} node, {\cf18 string} folder);\par
 00063 \par
-00069     {\cf18 string} create_context_string_on_depth({\cf18 int} depth);\par
+00069                 {\cf18 string} create_context_string_on_depth({\cf18 int} depth);\par
 00070 \par
-00077     {\cf18 void} print_node_information({\cf18 int} node, {\cf18 int} depth, {\cf18 string} folder);\par
+00077                 {\cf18 void} print_node_information({\cf18 int} node, {\cf18 int} depth, {\cf18 string} folder);\par
 00078 \par
-00085     {\cf18 void} dfs_print_duplication_code_trie({\cf18 int} current_node, {\cf18 int} depth, {\cf18 string} folder);\par
+00085                 {\cf18 void} dfs_print_duplication_code_trie({\cf18 int} current_node, {\cf18 int} depth, {\cf18 string} folder);\par
 00086 \par
-00087 {\cf17 public}:\par
-00093     {\cf18 void} add_folder_duplication_code(vector<string> folder_path, {\cf18 int} number_of_duplication_lines);\par
+00087         {\cf17 public}:\par
+00093                 {\cf18 void} add_folder_duplication_code(vector<string> folder_path, {\cf18 int} number_of_duplication_lines);\par
 00094 \par
-00098     {\cf18 void} print_duplication_code_trie();\par
+00098                 {\cf18 void} print_duplication_code_trie();\par
 00099 \par
-00103     Counter_Duplication_Code_Trie();\par
+00103                 Counter_Duplication_Code_Trie();\par
 00104 \};\par
 00105 \par
 00106 {\cf21 #endif}\par
@@ -9920,54 +9918,54 @@ Go to the documentation of this file.\par
 00022 {\cf17 using namespace }std;\par
 00023 \par
 00030 {\cf17 class }Similarity_Explorer \{\par
-00031 {\cf17 public}:\par
-00032     {\cf18 int} UNLIMITED_RESULTS = 0;       \par
-00033     {\cf18 string} EMPTY_PATTERN = {\cf22 ""};       \par
+00031         {\cf17 public}:\par
+00032                 {\cf18 int} UNLIMITED_RESULTS = 0;       \par
+00033                 {\cf18 string} EMPTY_PATTERN = {\cf22 ""};       \par
 00034 \par
-00035 {\cf17 private}:\par
-00036     {\cf18 string} BETWEEN_RELATIVE_AND_FUNCTION_NAME = {\cf22 "::"};  \par
-00037     {\cf18 string} START_LINE_COMPARATION_PRINT = {\cf22 "Functions find: "};  \par
-00038     {\cf18 string} BETWEEN_TWO_FUNCTION = {\cf22 " AND "};             \par
-00039     {\cf18 string} NUMBER_LINES_MESSAGE = {\cf22 " , TOTAL NUMBER LINES IN FUNCTIONS: "};  \par
-00040     {\cf18 string} INITIAL_TEXT_PRINT_1 = {\cf22 "It was found a total of "};  \par
-00041     {\cf18 string} INITIAL_TEXT_PRINT_2 = {\cf22 " pair of duplicate functions in the codebase. Which the first "};  \par
-00042     {\cf18 string} INITIAL_TEXT_PRINT_3 = {\cf22 " can be found below."};  \par
-00043     {\cf18 int} INITIAL_PROCESSED_RESULTS = 0;  \par
+00035         {\cf17 private}:\par
+00036                 {\cf18 string} BETWEEN_RELATIVE_AND_FUNCTION_NAME = {\cf22 "::"};  \par
+00037                 {\cf18 string} START_LINE_COMPARATION_PRINT = {\cf22 "Functions find: "};  \par
+00038                 {\cf18 string} BETWEEN_TWO_FUNCTION = {\cf22 " AND "};             \par
+00039                 {\cf18 string} NUMBER_LINES_MESSAGE = {\cf22 " , TOTAL NUMBER LINES IN FUNCTIONS: "};  \par
+00040                 {\cf18 string} INITIAL_TEXT_PRINT_1 = {\cf22 "It was found a total of "};  \par
+00041                 {\cf18 string} INITIAL_TEXT_PRINT_2 = {\cf22 " pair of duplicate functions in the codebase. Which the first "};  \par
+00042                 {\cf18 string} INITIAL_TEXT_PRINT_3 = {\cf22 " can be found below."};  \par
+00043                 {\cf18 int} INITIAL_PROCESSED_RESULTS = 0;  \par
 00044 \par
-00045     Similarity_Table *similarity_table;  \par
-00046     {\cf18 int} limit_on_results;               \par
-00047     {\cf18 string} pattern_to_match;            \par
-00048     {\cf18 bool} both_path_need_to_match_pattern;  \par
-00049     {\cf18 int} processed_results = INITIAL_PROCESSED_RESULTS;  \par
+00045                 Similarity_Table *similarity_table;  \par
+00046                 {\cf18 int} limit_on_results;               \par
+00047                 {\cf18 string} pattern_to_match;            \par
+00048                 {\cf18 bool} both_path_need_to_match_pattern;  \par
+00049                 {\cf18 int} processed_results = INITIAL_PROCESSED_RESULTS;  \par
 00050 \par
-00055     Utils::COLOR choose_text_color();\par
+00055                 Utils::COLOR choose_text_color();\par
 00056 \par
-00062     {\cf18 int} find_number_pairs_show({\cf18 int} number_pair_found);\par
+00062                 {\cf18 int} find_number_pairs_show({\cf18 int} number_pair_found);\par
 00063 \par
-00069     {\cf18 string} format_initial_message({\cf18 int} number_pair_found);\par
+00069                 {\cf18 string} format_initial_message({\cf18 int} number_pair_found);\par
 00070 \par
-00077     {\cf18 bool} match_pattern(Path path1, Path path2);\par
+00077                 {\cf18 bool} match_pattern(Path path1, Path path2);\par
 00078 \par
-00084     {\cf18 string} format_path_message_in_pair(Path path);\par
+00084                 {\cf18 string} format_path_message_in_pair(Path path);\par
 00085 \par
-00091     {\cf18 int} find_number_lines(Path path1);\par
+00091                 {\cf18 int} find_number_lines(Path path1);\par
 00092 \par
-00098     {\cf18 void} print_similar_path_pair(Path path1, Path path2);\par
+00098                 {\cf18 void} print_similar_path_pair(Path path1, Path path2);\par
 00099 \par
-00105     {\cf18 void} process_similar_path_pair(Path path1, Path path2);\par
+00105                 {\cf18 void} process_similar_path_pair(Path path1, Path path2);\par
 00106 \par
-00112     {\cf18 int} find_number_pair_found(vector<pair<Path,Path>> similar_path_pairs);\par
+00112                 {\cf18 int} find_number_pair_found(vector<pair<Path,Path>> similar_path_pairs);\par
 00113 \par
-00119     vector<pair<Path,Path>> build_similar_path_pairs({\cf18 bool} sorted_by_number_of_duplicated_code);\par
+00119                 vector<pair<Path,Path>> build_similar_path_pairs({\cf18 bool} sorted_by_number_of_duplicated_code);\par
 00120 \par
-00125     {\cf18 void} explorer({\cf18 bool} sorted_by_number_of_duplicated_code);\par
+00125                 {\cf18 void} explorer({\cf18 bool} sorted_by_number_of_duplicated_code);\par
 00126 \par
-00127 {\cf17 public}:\par
-00136     Similarity_Explorer(Similarity_Table *_similarity_table,\par
-00137             {\cf18 int} _limit_on_results,\par
-00138             {\cf18 string} _pattern_to_match,\par
-00139             {\cf18 bool} _both_path_need_to_match,\par
-00140             {\cf18 bool} sorted_by_number_of_duplicated_code={\cf17 false});\par
+00127         {\cf17 public}:\par
+00136                 Similarity_Explorer(Similarity_Table *_similarity_table,\par
+00137                         {\cf18 int} _limit_on_results,\par
+00138                         {\cf18 string} _pattern_to_match,\par
+00139                         {\cf18 bool} _both_path_need_to_match,\par
+00140                         {\cf18 bool} sorted_by_number_of_duplicated_code={\cf17 false});\par
 00141 \};\par
 00142 \par
 00143 {\cf21 #endif}\par
@@ -10146,30 +10144,30 @@ Go to the documentation of this file.\par
 00020 {\cf17 using namespace }std;\par
 00021 \par
 00028 {\cf17 class }Similar_Function_Finder \{\par
-00029     {\cf18 string} EMPTY_PATH_MESSAGE_1 = {\cf22 "There is no functions that resembles the name: "};  \par
-00030     {\cf18 string} EMPTY_PATH_MESSAGE_2 = {\cf22 "Value incorrected passed or there is no duplication code with this function"};  \par
-00031     {\cf18 string} REFERENCE_PATH_MESSAGE = {\cf22 "The following function was found:"};  \par
-00032     {\cf18 string} COUNT_MESSAGE_1 = {\cf22 "The total number of functions that are similar to the found one is "};  \par
-00033     {\cf18 string} COUNT_MESSAGE_2 = {\cf22 ". More info about them are listed below."};  \par
+00029         {\cf18 string} EMPTY_PATH_MESSAGE_1 = {\cf22 "There is no functions that resembles the name: "};  \par
+00030         {\cf18 string} EMPTY_PATH_MESSAGE_2 = {\cf22 "Value incorrected passed or there is no duplication code with this function"};  \par
+00031         {\cf18 string} REFERENCE_PATH_MESSAGE = {\cf22 "The following function was found:"};  \par
+00032         {\cf18 string} COUNT_MESSAGE_1 = {\cf22 "The total number of functions that are similar to the found one is "};  \par
+00033         {\cf18 string} COUNT_MESSAGE_2 = {\cf22 ". More info about them are listed below."};  \par
 00034 \par
-00035     Similarity_Table *similarity_table;  \par
-00036     {\cf18 string} function_pattern;             \par
-00037     Path path;                          \par
+00035         Similarity_Table *similarity_table;  \par
+00036         {\cf18 string} function_pattern;             \par
+00037         Path path;                          \par
 00038 \par
-00042     {\cf18 void} find_path_that_meets_pattern();\par
+00042         {\cf18 void} find_path_that_meets_pattern();\par
 00043 \par
-00047     {\cf18 void} print_empty_path_message();\par
+00047         {\cf18 void} print_empty_path_message();\par
 00048 \par
-00053     {\cf18 void} print_function(Path path);\par
+00053         {\cf18 void} print_function(Path path);\par
 00054 \par
-00058     {\cf18 void} print_reference_path();\par
+00058         {\cf18 void} print_reference_path();\par
 00059 \par
-00064     {\cf18 void} print_similar_functions(vector<Path> similar_paths);\par
+00064         {\cf18 void} print_similar_functions(vector<Path> similar_paths);\par
 00065 \par
-00069     {\cf18 void} print_similar_functions();\par
+00069         {\cf18 void} print_similar_functions();\par
 00070 \par
-00071 {\cf17 public}:\par
-00077     Similar_Function_Finder({\cf18 string} _function_pattern, Similarity_Table *_similarity_table);\par
+00071         {\cf17 public}:\par
+00077                 Similar_Function_Finder({\cf18 string} _function_pattern, Similarity_Table *_similarity_table);\par
 00078 \};\par
 00079 \par
 00080 {\cf21 #endif}\par
@@ -10467,29 +10465,29 @@ Go to the documentation of this file.\par
 00027 {\cf17 using namespace }std;\par
 00028 \par
 00036 {\cf17 class }Orchestrator \{\par
-00037 {\cf17 private}:\par
-00041     {\cf18 void} help_command();\par
+00037         {\cf17 private}:\par
+00041                 {\cf18 void} help_command();\par
 00042 \par
-00048     {\cf18 void} check_update_similarity(vector<string> parameters, Similarity_Table *similarity_table);\par
+00048                 {\cf18 void} check_update_similarity(vector<string> parameters, Similarity_Table *similarity_table);\par
 00049 \par
-00055     {\cf18 bool} check_force_preprocess(vector<string> parameters);\par
+00055                 {\cf18 bool} check_force_preprocess(vector<string> parameters);\par
 00056 \par
-00061     {\cf18 void} call_preprocess(vector<string> parameters);\par
+00061                 {\cf18 void} call_preprocess(vector<string> parameters);\par
 00062 \par
-00068     {\cf18 void} exploration_command(vector<string> parameters, Similarity_Table *similarity_table);\par
+00068                 {\cf18 void} exploration_command(vector<string> parameters, Similarity_Table *similarity_table);\par
 00069 \par
-00075     {\cf18 void} random_command(vector<string> parameters, Similarity_Table *similarity_table);\par
+00075                 {\cf18 void} random_command(vector<string> parameters, Similarity_Table *similarity_table);\par
 00076 \par
-00082     {\cf18 void} duplication_command(vector<string> parameters, Similarity_Table *similarity_table);\par
+00082                 {\cf18 void} duplication_command(vector<string> parameters, Similarity_Table *similarity_table);\par
 00083 \par
-00089     {\cf18 void} big_clone_formater_command(vector<string> parameters, Similarity_Table *similarity_table);\par
+00089                 {\cf18 void} big_clone_formater_command(vector<string> parameters, Similarity_Table *similarity_table);\par
 00090 \par
-00096     {\cf18 void} big_clone_tailor_evaluator_command(vector<string> parameters, Similarity_Table *similarity_table);\par
+00096                 {\cf18 void} big_clone_tailor_evaluator_command(vector<string> parameters, Similarity_Table *similarity_table);\par
 00097 \par
-00103     {\cf18 void} similar_function_finder_command(vector<string> parameters, Similarity_Table *similarity_table);\par
+00103                 {\cf18 void} similar_function_finder_command(vector<string> parameters, Similarity_Table *similarity_table);\par
 00104 \par
-00105 {\cf17 public}:\par
-00111     Orchestrator({\cf18 string} command, vector<string> parameters);\par
+00105         {\cf17 public}:\par
+00111                 Orchestrator({\cf18 string} command, vector<string> parameters);\par
 00112 \};\par
 }
 \par \pard\plain 
@@ -10748,30 +10746,30 @@ Go to the documentation of this file.\par
 00018 {\cf17 using namespace }std;\par
 00019 \par
 00027 {\cf17 class }DuplicationFinderDiff \{\par
-00028 {\cf17 private}:\par
-00029     {\cf18 string} SAVING_MESSAGE = {\cf22 "Saving results..."};  \par
+00028         {\cf17 private}:\par
+00029                 {\cf18 string} SAVING_MESSAGE = {\cf22 "Saving results..."};  \par
 00030 \par
-00031     {\cf18 string} base_path;  \par
-00032     {\cf18 double} similarity;  \par
+00031                 {\cf18 string} base_path;  \par
+00032                 {\cf18 double} similarity;  \par
 00033 \par
-00039     vector<string> find_files({\cf18 string} folder_path);\par
+00039                 vector<string> find_files({\cf18 string} folder_path);\par
 00040 \par
-00046     {\cf18 bool} is_empty_line({\cf18 string} line);\par
+00046                 {\cf18 bool} is_empty_line({\cf18 string} line);\par
 00047 \par
-00053     vector<string> remove_blank_lines(vector<string> content);\par
+00053                 vector<string> remove_blank_lines(vector<string> content);\par
 00054 \par
-00061     {\cf18 bool} is_equal_files(vector<string> content1, vector<string> content2);\par
+00061                 {\cf18 bool} is_equal_files(vector<string> content1, vector<string> content2);\par
 00062 \par
-00069     {\cf18 double} find_similarity({\cf18 string} path1, {\cf18 string} path2);\par
+00069                 {\cf18 double} find_similarity({\cf18 string} path1, {\cf18 string} path2);\par
 00070 \par
-00076     vector<tuple<double,string,string>> find_similar_pairs(vector<string> &file_paths);\par
+00076                 vector<tuple<double,string,string>> find_similar_pairs(vector<string> &file_paths);\par
 00077 \par
-00082     {\cf18 void} save_duplications(vector<tuple<double,string,string>> &file_duplication_pairs);\par
+00082                 {\cf18 void} save_duplications(vector<tuple<double,string,string>> &file_duplication_pairs);\par
 00083 \par
-00084 {\cf17 public}:\par
-00090     DuplicationFinderDiff({\cf18 string} base_path_, {\cf18 double} similarity_);\par
+00084         {\cf17 public}:\par
+00090                 DuplicationFinderDiff({\cf18 string} base_path_, {\cf18 double} similarity_);\par
 00091 \par
-00095     {\cf18 void} execute();\par
+00095                 {\cf18 void} execute();\par
 00096 \};\par
 00097 \par
 00098 {\cf21 #endif}\par
@@ -10909,16 +10907,16 @@ Go to the documentation of this file.\par
 00019 {\cf17 using namespace }std;\par
 00020 \par
 00028 {\cf17 class }DuplicationFinderTool \{\par
-00029 {\cf17 private}:\par
-00030     {\cf18 string} SAVING_MESSAGE = {\cf22 "Saving results..."};  \par
+00029         {\cf17 private}:\par
+00030                 {\cf18 string} SAVING_MESSAGE = {\cf22 "Saving results..."};  \par
 00031 \par
-00032     {\cf18 string} base_path;  \par
-00033     {\cf18 double} similarity;  \par
+00032                 {\cf18 string} base_path;  \par
+00033                 {\cf18 double} similarity;  \par
 00034 \par
-00035 {\cf17 public}:\par
-00041     DuplicationFinderTool({\cf18 string} base_path_, {\cf18 double} similarity_);\par
+00035         {\cf17 public}:\par
+00041                 DuplicationFinderTool({\cf18 string} base_path_, {\cf18 double} similarity_);\par
 00042 \par
-00049     {\cf18 void} execute();\par
+00049                 {\cf18 void} execute();\par
 00050 \};\par
 00051 \par
 00052 {\cf21 #endif}\par
@@ -11111,22 +11109,22 @@ Go to the documentation of this file.\par
 00028 {\cf17 using namespace }std;\par
 00029 \par
 00043 {\cf17 class }FunctionBreaker \{\par
-00044     {\cf17 const} vector<string> C_EXTENSIONS = \{ {\cf22 "c"}, {\cf22 "h"} \};          \par
-00045     {\cf17 const} vector<string> JAVA_EXTENSIONS = \{ {\cf22 "java"} \};         \par
-00046     {\cf17 const} vector<string> ALLOWED_EXTENSIONS = \{ {\cf22 "c"}, {\cf22 "h"}, {\cf22 "java"} \};  \par
+00044         {\cf17 const} vector<string> C_EXTENSIONS = \{ {\cf22 "c"}, {\cf22 "h"} \};          \par
+00045         {\cf17 const} vector<string> JAVA_EXTENSIONS = \{ {\cf22 "java"} \};         \par
+00046         {\cf17 const} vector<string> ALLOWED_EXTENSIONS = \{ {\cf22 "c"}, {\cf22 "h"}, {\cf22 "java"} \};  \par
 00047 \par
-00053     {\cf18 bool} is_c_extension({\cf18 string} extension);\par
+00053         {\cf18 bool} is_c_extension({\cf18 string} extension);\par
 00054 \par
-00060     {\cf18 bool} is_java_extension({\cf18 string} extension);\par
+00060         {\cf18 bool} is_java_extension({\cf18 string} extension);\par
 00061 \par
-00067     {\cf18 bool} is_allowed_extension({\cf18 string} extension);\par
+00067         {\cf18 bool} is_allowed_extension({\cf18 string} extension);\par
 00068 \par
-00074     {\cf18 void} file_breaker({\cf18 string} file_path, {\cf18 string} folder_path);\par
+00074         {\cf18 void} file_breaker({\cf18 string} file_path, {\cf18 string} folder_path);\par
 00075 \par
-00080     {\cf18 void} function_breaker({\cf18 string} folder_path);\par
+00080         {\cf18 void} function_breaker({\cf18 string} folder_path);\par
 00081 \par
-00082 {\cf17 public}:\par
-00087     FunctionBreaker({\cf18 string} folder_path);\par
+00082         {\cf17 public}:\par
+00087                 FunctionBreaker({\cf18 string} folder_path);\par
 00088 \};\par
 00089 \par
 00090 {\cf21 #endif}\par
@@ -11630,40 +11628,40 @@ Go to the documentation of this file.\par
 00016 {\cf21 #include "function_breaker_util.hpp"}\par
 00017 \par
 00025 {\cf17 class }FunctionBreakerC \{\par
-00026     {\cf17 const} {\cf18 int} NUMBER_OF_LINES_BEFORE_FOR_FUNCTION_NAME = 7;  \par
-00027     {\cf17 const} {\cf18 int} C_RELEVANT_DEPTH = 0;                         \par
-00028     {\cf17 const} {\cf18 bool} IGNORE_EMPTY_FUNCTIONS = {\cf17 true};               \par
-00029     {\cf17 const} {\cf18 bool} ALLOW_STRUCTS = {\cf17 false};                       \par
+00026         {\cf17 const} {\cf18 int} NUMBER_OF_LINES_BEFORE_FOR_FUNCTION_NAME = 7;  \par
+00027         {\cf17 const} {\cf18 int} C_RELEVANT_DEPTH = 0;                         \par
+00028         {\cf17 const} {\cf18 bool} IGNORE_EMPTY_FUNCTIONS = {\cf17 true};               \par
+00029         {\cf17 const} {\cf18 bool} ALLOW_STRUCTS = {\cf17 false};                       \par
 00030 \par
-00031     vector<string> file_content;                             \par
-00032     vector<vector<bool>> mask_valid;                         \par
+00031         vector<string> file_content;                             \par
+00032         vector<vector<bool>> mask_valid;                         \par
 00033 \par
-00040     {\cf18 bool} is_define({\cf18 int} line, {\cf18 int} pos);\par
-00041     \par
-00047     {\cf18 void} filter_mask_commentaries_and_defines(vector<vector<bool>>& mask);\par
+00040         {\cf18 bool} is_define({\cf18 int} line, {\cf18 int} pos);\par
+00041         \par
+00047         {\cf18 void} filter_mask_commentaries_and_defines(vector<vector<bool>>& mask);\par
 00048 \par
-00053     vector<vector<bool>> build_mask_valid_code();\par
+00053         vector<vector<bool>> build_mask_valid_code();\par
 00054 \par
-00059     set<array<int,5>> find_start_end_and_depth_of_brackets();\par
+00059         set<array<int,5>> find_start_end_and_depth_of_brackets();\par
 00060 \par
-00065     set<array<int,4>> find_start_end_of_brackets_of_given_depth();\par
+00065         set<array<int,4>> find_start_end_of_brackets_of_given_depth();\par
 00066 \par
-00075     vector<string> build_function_content({\cf18 int} start_number_line, {\cf18 int} start_column, {\cf18 int} end_number_line, {\cf18 int} end_column);\par
+00075         vector<string> build_function_content({\cf18 int} start_number_line, {\cf18 int} start_column, {\cf18 int} end_number_line, {\cf18 int} end_column);\par
 00076 \par
-00083     {\cf18 bool} move_pointer_until_character_outside_parenteses({\cf18 int} &line, {\cf18 int} &column);\par
+00083         {\cf18 bool} move_pointer_until_character_outside_parenteses({\cf18 int} &line, {\cf18 int} &column);\par
 00084 \par
-00091     tuple<string,int,vector<string>> extract_header_related_information({\cf18 int} start_line, {\cf18 int} start_column);\par
+00091         tuple<string,int,vector<string>> extract_header_related_information({\cf18 int} start_line, {\cf18 int} start_column);\par
 00092 \par
-00101     {\cf18 bool} is_body_function_empty({\cf18 int} start_number_line, {\cf18 int} start_column, {\cf18 int} end_number_line, {\cf18 int} end_column);\par
+00101         {\cf18 bool} is_body_function_empty({\cf18 int} start_number_line, {\cf18 int} start_column, {\cf18 int} end_number_line, {\cf18 int} end_column);\par
 00102 \par
-00111     {\cf18 void} process_function({\cf18 int} start_number_line, {\cf18 int} start_column, {\cf18 int} end_number_line, {\cf18 int} end_column, {\cf18 string} relative_path);\par
+00111         {\cf18 void} process_function({\cf18 int} start_number_line, {\cf18 int} start_column, {\cf18 int} end_number_line, {\cf18 int} end_column, {\cf18 string} relative_path);\par
 00112 \par
-00119     {\cf18 string} file_path_from_folder_path({\cf18 string} file_path, {\cf18 string} folder_path);\par
+00119         {\cf18 string} file_path_from_folder_path({\cf18 string} file_path, {\cf18 string} folder_path);\par
 00120 \par
-00126     {\cf18 void} file_breaker_c({\cf18 string} file_path, {\cf18 string} folder_path);\par
+00126         {\cf18 void} file_breaker_c({\cf18 string} file_path, {\cf18 string} folder_path);\par
 00127 \par
-00128 {\cf17 public}:\par
-00134     FunctionBreakerC({\cf18 string} file_path, {\cf18 string} folder_path);\par
+00128         {\cf17 public}:\par
+00134                 FunctionBreakerC({\cf18 string} file_path, {\cf18 string} folder_path);\par
 00135 \};\par
 00136 \par
 00137 {\cf21 #endif}\par
@@ -12070,50 +12068,50 @@ Go to the documentation of this file.\par
 00016 {\cf21 #include "function_breaker_util.hpp"}\par
 00017 \par
 00025 {\cf17 class }FunctionBreakerJava \{\par
-00026     {\cf17 const} {\cf18 int} NUMBER_OF_LINES_BEFORE_FOR_FUNCTION_NAME = 7;  \par
-00027     {\cf17 const} {\cf18 int} C_RELEVANT_DEPTH = 0;                         \par
-00028     {\cf17 const} {\cf18 int} JAVA_RELEVANT_DEPTH = 1;                      \par
-00029     {\cf17 const} {\cf18 bool} IGNORE_EMPTY_FUNCTIONS = {\cf17 true};               \par
-00030     {\cf17 const} {\cf18 bool} ALLOW_STRUCTS = {\cf17 false};                       \par
+00026         {\cf17 const} {\cf18 int} NUMBER_OF_LINES_BEFORE_FOR_FUNCTION_NAME = 7;  \par
+00027         {\cf17 const} {\cf18 int} C_RELEVANT_DEPTH = 0;                         \par
+00028         {\cf17 const} {\cf18 int} JAVA_RELEVANT_DEPTH = 1;                      \par
+00029         {\cf17 const} {\cf18 bool} IGNORE_EMPTY_FUNCTIONS = {\cf17 true};               \par
+00030         {\cf17 const} {\cf18 bool} ALLOW_STRUCTS = {\cf17 false};                       \par
 00031 \par
-00037     set<array<int,3>> find_start_end_and_depth_of_brackets(vector<string> brackets_content);\par
+00037         set<array<int,3>> find_start_end_and_depth_of_brackets(vector<string> brackets_content);\par
 00038 \par
-00045     set<pair<int,int>> find_start_end_of_brackets_of_given_depth(vector<string> brackets_content, {\cf18 int} depth);\par
+00045         set<pair<int,int>> find_start_end_of_brackets_of_given_depth(vector<string> brackets_content, {\cf18 int} depth);\par
 00046 \par
-00052     {\cf18 int} find_position_first_open_bracket({\cf18 string} s);\par
+00052         {\cf18 int} find_position_first_open_bracket({\cf18 string} s);\par
 00053 \par
-00059     {\cf18 string} extract_last_token_of_string({\cf18 string} s);\par
+00059         {\cf18 string} extract_last_token_of_string({\cf18 string} s);\par
 00060 \par
-00067     Line_content build_line_code({\cf18 int} line_number, {\cf18 string} content);\par
+00067         Line_content build_line_code({\cf18 int} line_number, {\cf18 string} content);\par
 00068 \par
-00076     vector<Line_content> get_lines_before_body_function({\cf17 const} vector<string> &file_content, {\cf18 int} line_start_body_function, {\cf18 int} pos_bracket);\par
+00076         vector<Line_content> get_lines_before_body_function({\cf17 const} vector<string> &file_content, {\cf18 int} line_start_body_function, {\cf18 int} pos_bracket);\par
 00077 \par
-00083     vector<Line_content> remove_parenteses_at_the_end_of_the_scope(vector<Line_content> code);\par
+00083         vector<Line_content> remove_parenteses_at_the_end_of_the_scope(vector<Line_content> code);\par
 00084 \par
-00090     vector<Line_content> remove_content_until_find_parenteses_at_the_end(vector<Line_content> code);\par
+00090         vector<Line_content> remove_content_until_find_parenteses_at_the_end(vector<Line_content> code);\par
 00091 \par
-00097     vector<Line_content> remove_parameters_of_declaration_c(vector<Line_content> code);\par
+00097         vector<Line_content> remove_parameters_of_declaration_c(vector<Line_content> code);\par
 00098 \par
-00104     vector<Line_content> remove_parameters_of_declaration_java(vector<Line_content> code);\par
+00104         vector<Line_content> remove_parameters_of_declaration_java(vector<Line_content> code);\par
 00105 \par
-00112     vector<Line_content> remove_parameters_of_declaration(vector<Line_content> code, PROGRAMMING_LANGUAGE programming_language);\par
+00112         vector<Line_content> remove_parameters_of_declaration(vector<Line_content> code, PROGRAMMING_LANGUAGE programming_language);\par
 00113 \par
-00121     pair<string,int> extract_function_name_and_line_from_declaration({\cf17 const} vector<string> &file_content, {\cf18 int} line_start_body_function, PROGRAMMING_LANGUAGE programming_language);\par
+00121         pair<string,int> extract_function_name_and_line_from_declaration({\cf17 const} vector<string> &file_content, {\cf18 int} line_start_body_function, PROGRAMMING_LANGUAGE programming_language);\par
 00122 \par
-00130     vector<string> build_function_content({\cf18 int} start_number_line, {\cf18 int} end_number_line, {\cf17 const} vector<string> &file_content);\par
+00130         vector<string> build_function_content({\cf18 int} start_number_line, {\cf18 int} end_number_line, {\cf17 const} vector<string> &file_content);\par
 00131 \par
-00141     vector<string> build_header_content({\cf18 int} start_number_line, {\cf18 int} line_declaration, {\cf18 string} relative_path, {\cf18 string} function_name, {\cf17 const} vector<string> &file_content);\par
+00141         vector<string> build_header_content({\cf18 int} start_number_line, {\cf18 int} line_declaration, {\cf18 string} relative_path, {\cf18 string} function_name, {\cf17 const} vector<string> &file_content);\par
 00142 \par
-00150     {\cf18 bool} is_body_function_empty({\cf18 int} start_number_line, {\cf18 int} end_number_line, {\cf17 const} vector<string> &file_content);\par
+00150         {\cf18 bool} is_body_function_empty({\cf18 int} start_number_line, {\cf18 int} end_number_line, {\cf17 const} vector<string> &file_content);\par
 00151 \par
-00160     {\cf18 void} process_function({\cf18 int} start_number_line, {\cf18 int} end_number_line, {\cf18 string} relative_path, {\cf17 const} vector<string> &file_content, PROGRAMMING_LANGUAGE programming_language);\par
+00160         {\cf18 void} process_function({\cf18 int} start_number_line, {\cf18 int} end_number_line, {\cf18 string} relative_path, {\cf17 const} vector<string> &file_content, PROGRAMMING_LANGUAGE programming_language);\par
 00161 \par
-00168     {\cf18 string} file_path_from_folder_path({\cf18 string} file_path, {\cf18 string} folder_path);\par
+00168         {\cf18 string} file_path_from_folder_path({\cf18 string} file_path, {\cf18 string} folder_path);\par
 00169 \par
-00175     {\cf18 void} file_breaker_java({\cf18 string} file_path, {\cf18 string} folder_path);\par
+00175         {\cf18 void} file_breaker_java({\cf18 string} file_path, {\cf18 string} folder_path);\par
 00176 \par
-00177 {\cf17 public}:\par
-00183     FunctionBreakerJava({\cf18 string} file_path, {\cf18 string} folder_path);\par
+00177         {\cf17 public}:\par
+00183                 FunctionBreakerJava({\cf18 string} file_path, {\cf18 string} folder_path);\par
 00184 \};\par
 00185 \par
 00186 {\cf21 #endif}\par
@@ -13266,42 +13264,42 @@ Go to the documentation of this file.\par
 00017 {\cf17 using namespace }std;\par
 00018 \par
 00025 {\cf17 struct }Comparation \{\par
-00026     {\cf18 string} path1;       \par
-00027     {\cf18 string} path2;       \par
-00028     {\cf18 double} similarity;  \par
+00026         {\cf18 string} path1;       \par
+00027         {\cf18 string} path2;       \par
+00028         {\cf18 double} similarity;  \par
 00029 \par
-00033     Comparation() \{\}\par
+00033         Comparation() \{\}\par
 00034 \par
-00041     Comparation({\cf18 string} _path1, {\cf18 string} _path2, {\cf18 double} _sim);\par
+00041         Comparation({\cf18 string} _path1, {\cf18 string} _path2, {\cf18 double} _sim);\par
 00042 \par
-00048     {\cf18 bool} operator<({\cf17 const} Comparation &com) {\cf17 const};\par
+00048         {\cf18 bool} operator<({\cf17 const} Comparation &com) {\cf17 const};\par
 00049 \par
-00055     {\cf18 bool} operator==({\cf17 const} Comparation &com) {\cf17 const};\par
+00055         {\cf18 bool} operator==({\cf17 const} Comparation &com) {\cf17 const};\par
 00056 \};\par
 00057 \par
 00064 {\cf17 class }Parser \{\par
-00065 {\cf17 private}:\par
-00066     {\cf18 string} PROJECT_PATH_MESSAGE = {\cf22 "Enter your project path:"};            \par
-00067     {\cf18 string} MINIMUM_SIMILARITY_MESSAGE = {\cf22 "Enter minimum similarity desired on using the tool:"};  \par
+00065         {\cf17 private}:\par
+00066                 {\cf18 string} PROJECT_PATH_MESSAGE = {\cf22 "Enter your project path:"};            \par
+00067                 {\cf18 string} MINIMUM_SIMILARITY_MESSAGE = {\cf22 "Enter minimum similarity desired on using the tool:"};  \par
 00068 \par
-00069     ifstream fin;           \par
-00070     ofstream fout;          \par
-00071     {\cf18 double} similarity_cap_; \par
+00069                 ifstream fin;           \par
+00070                 ofstream fout;          \par
+00071                 {\cf18 double} similarity_cap_; \par
 00072 \par
-00078     vector<string> parser_line({\cf18 string} line);\par
+00078                 vector<string> parser_line({\cf18 string} line);\par
 00079 \par
-00085     {\cf18 bool} is_an_file({\cf18 string} s);\par
+00085                 {\cf18 bool} is_an_file({\cf18 string} s);\par
 00086 \par
-00092     {\cf18 string} remove_formatation_from_similarity({\cf18 string} s);\par
+00092                 {\cf18 string} remove_formatation_from_similarity({\cf18 string} s);\par
 00093 \par
-00099     {\cf18 double} retrive_similarity({\cf18 string} s);\par
+00099                 {\cf18 double} retrive_similarity({\cf18 string} s);\par
 00100 \par
-00106     {\cf18 void} parser_block({\cf18 string} path, set<Comparation> &comparations);\par
+00106                 {\cf18 void} parser_block({\cf18 string} path, set<Comparation> &comparations);\par
 00107 \par
-00111     {\cf18 void} exec();\par
+00111                 {\cf18 void} exec();\par
 00112 \par
-00113 {\cf17 public}:\par
-00120     Parser({\cf18 string} input_file, {\cf18 string} output_file, {\cf18 double} similarity_cap);\par
+00113         {\cf17 public}:\par
+00120                 Parser({\cf18 string} input_file, {\cf18 string} output_file, {\cf18 double} similarity_cap);\par
 00121 \};\par
 00122 \par
 00123 {\cf21 #endif}\par
@@ -13518,37 +13516,37 @@ Go to the documentation of this file.\par
 00022 {\cf17 using namespace }std;\par
 00023 \par
 00035 {\cf17 class }Preprocessor \{\par
-00036 {\cf17 private}:\par
-00037     {\cf20 // User interaction messages}\par
-00038     {\cf18 string} PROJECT_PATH_MESSAGE = {\cf22 "Enter your project path:"};  \par
-00039     {\cf18 string} MINIMUM_SIMILARITY_MESSAGE = {\cf22 "Enter minimum similarity desired on using the tool:"};  \par
-00040     {\cf18 string} CONFIG_PATH = {\cf22 "config.txt"};                        \par
-00041     {\cf18 string} PATH_MESSAGE = {\cf22 "path of the current preprocess: "}; \par
-00042     {\cf18 string} TIME_MESSAGE = {\cf22 "Finished time: "};                  \par
+00036         {\cf17 private}:\par
+00037                 {\cf20 // User interaction messages}\par
+00038                 {\cf18 string} PROJECT_PATH_MESSAGE = {\cf22 "Enter your project path:"};  \par
+00039                 {\cf18 string} MINIMUM_SIMILARITY_MESSAGE = {\cf22 "Enter minimum similarity desired on using the tool:"};  \par
+00040                 {\cf18 string} CONFIG_PATH = {\cf22 "config.txt"};                        \par
+00041                 {\cf18 string} PATH_MESSAGE = {\cf22 "path of the current preprocess: "}; \par
+00042                 {\cf18 string} TIME_MESSAGE = {\cf22 "Finished time: "};                  \par
 00043 \par
-00044     {\cf20 // Processing stage messages}\par
-00045     {\cf18 string} INITIAL_MESSAGE = {\cf22 "Initiating Preprocessing"};      \par
-00046     {\cf18 string} BREAKER_MESSAGE = {\cf22 "Reading codebase... (this may take a while)"};  \par
-00047     {\cf18 string} DUPLICATION_MESSAGE = {\cf22 "Finding duplication in the codebase... (this may take a while)"};  \par
-00048     {\cf18 string} SAVING_MESSAGE = {\cf22 "Saving results..."};              \par
-00049     {\cf18 string} END_MESSAGE = {\cf22 "Finished preprocessing"};            \par
+00044                 {\cf20 // Processing stage messages}\par
+00045                 {\cf18 string} INITIAL_MESSAGE = {\cf22 "Initiating Preprocessing"};      \par
+00046                 {\cf18 string} BREAKER_MESSAGE = {\cf22 "Reading codebase... (this may take a while)"};  \par
+00047                 {\cf18 string} DUPLICATION_MESSAGE = {\cf22 "Finding duplication in the codebase... (this may take a while)"};  \par
+00048                 {\cf18 string} SAVING_MESSAGE = {\cf22 "Saving results..."};              \par
+00049                 {\cf18 string} END_MESSAGE = {\cf22 "Finished preprocessing"};            \par
 00050 \par
-00051     {\cf20 // Duplication finder selection messages}\par
-00052     {\cf18 string} MESSAGE_DUPLICATION_FINDER_TYPE_1 = {\cf22 "Enter the number of the duplication finder technique you want to use:"};\par
-00053     {\cf18 string} MESSAGE_DUPLICATION_FINDER_TYPE_2 = {\cf22 "1) NLP text similarity using gensim"};\par
-00054     {\cf18 string} MESSAGE_DUPLICATION_FINDER_TYPE_3 = {\cf22 "2) Count proportion of equal lines using diff command"};\par
-00055     {\cf18 string} INVALID_CODE_DUPLICATION_FINDER = {\cf22 "Valid options are '1' or '2' only. Stopping Program..."};\par
+00051                 {\cf20 // Duplication finder selection messages}\par
+00052                 {\cf18 string} MESSAGE_DUPLICATION_FINDER_TYPE_1 = {\cf22 "Enter the number of the duplication finder technique you want to use:"};\par
+00053                 {\cf18 string} MESSAGE_DUPLICATION_FINDER_TYPE_2 = {\cf22 "1) NLP text similarity using gensim"};\par
+00054                 {\cf18 string} MESSAGE_DUPLICATION_FINDER_TYPE_3 = {\cf22 "2) Count proportion of equal lines using diff command"};\par
+00055                 {\cf18 string} INVALID_CODE_DUPLICATION_FINDER = {\cf22 "Valid options are '1' or '2' only. Stopping Program..."};\par
 00056 \par
-00064     tuple<string,double,bool> read_parameters();\par
+00064                 tuple<string,double,bool> read_parameters();\par
 00065 \par
-00070     {\cf18 void} save_current_run_params({\cf18 string} path);\par
+00070                 {\cf18 void} save_current_run_params({\cf18 string} path);\par
 00071 \par
-00078     {\cf18 void} preprocess({\cf18 string} path, {\cf18 double} similarity, {\cf18 bool} use_duplication_finder_by_tool);\par
+00078                 {\cf18 void} preprocess({\cf18 string} path, {\cf18 double} similarity, {\cf18 bool} use_duplication_finder_by_tool);\par
 00079 \par
-00080 {\cf17 public}:\par
-00085     Preprocessor({\cf18 bool} force_preprocess);\par
-00086     \par
-00094     Preprocessor({\cf18 bool} force_preprocess, {\cf18 string} path, {\cf18 double} similarity);\par
+00080         {\cf17 public}:\par
+00085                 Preprocessor({\cf18 bool} force_preprocess);\par
+00086                 \par
+00094                 Preprocessor({\cf18 bool} force_preprocess, {\cf18 string} path, {\cf18 double} similarity);\par
 00095 \};\par
 00096 \par
 00097 {\cf21 #endif}\par
@@ -13817,42 +13815,42 @@ Go to the documentation of this file.\par
 00020 {\cf17 using namespace }std;\par
 00021 \par
 00029 {\cf17 class }Random_Selector \{\par
-00030     {\cf18 string} START_LINE_COMPARATION_PRINT = {\cf22 "Functions: "};          \par
-00031     {\cf18 string} BETWEEN_TWO_FUNCTION = {\cf22 " AND "};                       \par
-00032     {\cf18 string} BETWEEN_RELATIVE_AND_FUNCTION_NAME = {\cf22 "::"};            \par
-00033     {\cf18 string} SIMILARITY_MESSAGE = {\cf22 ". Similarity: "};                \par
-00034     \par
-00035     Similarity_Table *similarity_table;                          \par
-00036     {\cf18 double} minimum_similarity;                                   \par
-00037     {\cf18 double} maximum_similarity;                                   \par
-00038     {\cf18 double} maximum_quantity;                                     \par
-00039     \par
-00040     {\cf17 const} {\cf18 int} seed = 123456789;                                  \par
-00041     mt19937 rng = mt19937(seed);                                 \par
-00042     \par
-00043     {\cf18 int} processed_results = 0;                                   \par
+00030         {\cf18 string} START_LINE_COMPARATION_PRINT = {\cf22 "Functions: "};          \par
+00031         {\cf18 string} BETWEEN_TWO_FUNCTION = {\cf22 " AND "};                       \par
+00032         {\cf18 string} BETWEEN_RELATIVE_AND_FUNCTION_NAME = {\cf22 "::"};            \par
+00033         {\cf18 string} SIMILARITY_MESSAGE = {\cf22 ". Similarity: "};                \par
+00034         \par
+00035         Similarity_Table *similarity_table;                          \par
+00036         {\cf18 double} minimum_similarity;                                   \par
+00037         {\cf18 double} maximum_similarity;                                   \par
+00038         {\cf18 double} maximum_quantity;                                     \par
+00039         \par
+00040         {\cf17 const} {\cf18 int} seed = 123456789;                                  \par
+00041         mt19937 rng = mt19937(seed);                                 \par
+00042         \par
+00043         {\cf18 int} processed_results = 0;                                   \par
 00044 \par
-00049     Utils::COLOR choose_text_color();\par
+00049         Utils::COLOR choose_text_color();\par
 00050 \par
-00056     {\cf18 string} format_path_message_in_pair(Path path);\par
+00056         {\cf18 string} format_path_message_in_pair(Path path);\par
 00057 \par
-00063     {\cf18 bool} is_valid_pair(tuple<double,Path,Path> path_pair);\par
+00063         {\cf18 bool} is_valid_pair(tuple<double,Path,Path> path_pair);\par
 00064 \par
-00069     vector<tuple<double,Path,Path>> get_similarity_pairs_filtered();\par
+00069         vector<tuple<double,Path,Path>> get_similarity_pairs_filtered();\par
 00070 \par
-00076     vector<tuple<double,Path,Path>> make_random_selection(vector<tuple<double,Path,Path>> path_pairs);\par
+00076         vector<tuple<double,Path,Path>> make_random_selection(vector<tuple<double,Path,Path>> path_pairs);\par
 00077 \par
-00082     {\cf18 void} print_path_pair(tuple<double,Path,Path> path_pair);\par
+00082         {\cf18 void} print_path_pair(tuple<double,Path,Path> path_pair);\par
 00083 \par
-00088     {\cf18 void} print_path_pairs(vector<tuple<double,Path,Path>> path_pairs);\par
+00088         {\cf18 void} print_path_pairs(vector<tuple<double,Path,Path>> path_pairs);\par
 00089 \par
-00090 {\cf17 public}:\par
-00098     Random_Selector(\par
-00099             Similarity_Table *_similarity_table,\par
-00100             {\cf18 double} _minimum_similarity,\par
-00101             {\cf18 double} _maximum_similarity,\par
-00102             {\cf18 double} _maximum_quantity\par
-00103     );\par
+00090         {\cf17 public}:\par
+00098                 Random_Selector(\par
+00099                         Similarity_Table *_similarity_table,\par
+00100                         {\cf18 double} _minimum_similarity,\par
+00101                         {\cf18 double} _maximum_similarity,\par
+00102                         {\cf18 double} _maximum_quantity\par
+00103                 );\par
 00104 \};\par
 00105 \par
 00106 {\cf21 #endif}\par

@@ -15,25 +15,25 @@
 \DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00021}00021\ \textcolor{keyword}{using\ namespace\ }std;}
 \DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00022}00022\ }
 \DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00030}\mbox{\hyperlink{classCounter__Duplication__Code}{00030}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCounter__Duplication__Code_ae87c1513ef03d849aac658da818e22a4}{Counter\_Duplication\_Code}}\ \{}
-\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00031}00031\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00032}00032\ \ \ \ \ set<Path>\ processed\_paths;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00033}00033\ \ \ \ \ \mbox{\hyperlink{classCounter__Duplication__Code__Trie}{Counter\_Duplication\_Code\_Trie}}\ counter\_duplication\_code\_trie;\ \ }
-\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00034}00034\ \ \ \ \ \mbox{\hyperlink{classSimilarity__Table}{Similarity\_Table}}\ *similarity\_table;\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ set<Path>\ processed\_paths;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classCounter__Duplication__Code__Trie}{Counter\_Duplication\_Code\_Trie}}\ counter\_duplication\_code\_trie;\ \ }
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSimilarity__Table}{Similarity\_Table}}\ *similarity\_table;\ \ \ \ \ \ \ \ \ \ \ \ \ }
 \DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00035}00035\ }
-\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00040}00040\ \ \ \ \ \textcolor{keywordtype}{void}\ mark\_path\_as\_processed(\mbox{\hyperlink{classPath}{Path}}\ path);}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ mark\_path\_as\_processed(\mbox{\hyperlink{classPath}{Path}}\ path);}
 \DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00041}00041\ }
-\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00047}00047\ \ \ \ \ \textcolor{keywordtype}{bool}\ is\_path\_processed\_path(\mbox{\hyperlink{classPath}{Path}}\ path);}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ is\_path\_processed\_path(\mbox{\hyperlink{classPath}{Path}}\ path);}
 \DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00048}00048\ }
-\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00054}00054\ \ \ \ \ \textcolor{keywordtype}{int}\ get\_number\_of\_lines\_in\_path(\mbox{\hyperlink{classPath}{Path}}\ path);}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ get\_number\_of\_lines\_in\_path(\mbox{\hyperlink{classPath}{Path}}\ path);}
 \DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00055}00055\ }
-\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00062}00062\ \ \ \ \ \textcolor{keywordtype}{void}\ register\_code\_duplication(\mbox{\hyperlink{classPath}{Path}}\ path1,\ \mbox{\hyperlink{classPath}{Path}}\ path2,\ \textcolor{keywordtype}{int}\ number\_of\_lines);}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ register\_code\_duplication(\mbox{\hyperlink{classPath}{Path}}\ path1,\ \mbox{\hyperlink{classPath}{Path}}\ path2,\ \textcolor{keywordtype}{int}\ number\_of\_lines);}
 \DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00063}00063\ }
-\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00068}00068\ \ \ \ \ \textcolor{keywordtype}{void}\ process\_path(\mbox{\hyperlink{classPath}{Path}}\ path);}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ process\_path(\mbox{\hyperlink{classPath}{Path}}\ path);}
 \DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00069}00069\ }
-\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00073}00073\ \ \ \ \ \textcolor{keywordtype}{void}\ process\_every\_path\_in\_similarity\_table();}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ process\_every\_path\_in\_similarity\_table();}
 \DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00074}00074\ }
-\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00075}00075\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00080}00080\ \ \ \ \ \mbox{\hyperlink{classCounter__Duplication__Code_ae87c1513ef03d849aac658da818e22a4}{Counter\_Duplication\_Code}}(\mbox{\hyperlink{classSimilarity__Table}{Similarity\_Table}}\ *\_similarity\_table);}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classCounter__Duplication__Code_ae87c1513ef03d849aac658da818e22a4}{Counter\_Duplication\_Code}}(\mbox{\hyperlink{classSimilarity__Table}{Similarity\_Table}}\ *\_similarity\_table);}
 \DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00081}00081\ \};}
 \DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00082}00082\ }
 \DoxyCodeLine{\Hypertarget{counter__duplication__code_8hpp_source_l00083}00083\ \textcolor{preprocessor}{\#endif}}

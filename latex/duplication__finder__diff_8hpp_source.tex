@@ -12,30 +12,30 @@
 \DoxyCodeLine{\Hypertarget{duplication__finder__diff_8hpp_source_l00018}00018\ \textcolor{keyword}{using\ namespace\ }std;}
 \DoxyCodeLine{\Hypertarget{duplication__finder__diff_8hpp_source_l00019}00019\ }
 \DoxyCodeLine{\Hypertarget{duplication__finder__diff_8hpp_source_l00027}\mbox{\hyperlink{classDuplicationFinderDiff}{00027}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classDuplicationFinderDiff_afd6fa48bf8650e3d66ed92f6f1194975}{DuplicationFinderDiff}}\ \{}
-\DoxyCodeLine{\Hypertarget{duplication__finder__diff_8hpp_source_l00028}00028\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{\Hypertarget{duplication__finder__diff_8hpp_source_l00029}00029\ \ \ \ \ \textcolor{keywordtype}{string}\ SAVING\_MESSAGE\ =\ \textcolor{stringliteral}{"{}Saving\ results..."{}};\ \ }
+\DoxyCodeLine{\Hypertarget{duplication__finder__diff_8hpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{duplication__finder__diff_8hpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ SAVING\_MESSAGE\ =\ \textcolor{stringliteral}{"{}Saving\ results..."{}};\ \ }
 \DoxyCodeLine{\Hypertarget{duplication__finder__diff_8hpp_source_l00030}00030\ }
-\DoxyCodeLine{\Hypertarget{duplication__finder__diff_8hpp_source_l00031}00031\ \ \ \ \ \textcolor{keywordtype}{string}\ base\_path;\ \ }
-\DoxyCodeLine{\Hypertarget{duplication__finder__diff_8hpp_source_l00032}00032\ \ \ \ \ \textcolor{keywordtype}{double}\ similarity;\ \ }
+\DoxyCodeLine{\Hypertarget{duplication__finder__diff_8hpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ base\_path;\ \ }
+\DoxyCodeLine{\Hypertarget{duplication__finder__diff_8hpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ similarity;\ \ }
 \DoxyCodeLine{\Hypertarget{duplication__finder__diff_8hpp_source_l00033}00033\ }
-\DoxyCodeLine{\Hypertarget{duplication__finder__diff_8hpp_source_l00039}00039\ \ \ \ \ vector<string>\ find\_files(\textcolor{keywordtype}{string}\ folder\_path);}
+\DoxyCodeLine{\Hypertarget{duplication__finder__diff_8hpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vector<string>\ find\_files(\textcolor{keywordtype}{string}\ folder\_path);}
 \DoxyCodeLine{\Hypertarget{duplication__finder__diff_8hpp_source_l00040}00040\ }
-\DoxyCodeLine{\Hypertarget{duplication__finder__diff_8hpp_source_l00046}00046\ \ \ \ \ \textcolor{keywordtype}{bool}\ is\_empty\_line(\textcolor{keywordtype}{string}\ line);}
+\DoxyCodeLine{\Hypertarget{duplication__finder__diff_8hpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ is\_empty\_line(\textcolor{keywordtype}{string}\ line);}
 \DoxyCodeLine{\Hypertarget{duplication__finder__diff_8hpp_source_l00047}00047\ }
-\DoxyCodeLine{\Hypertarget{duplication__finder__diff_8hpp_source_l00053}00053\ \ \ \ \ vector<string>\ remove\_blank\_lines(vector<string>\ content);}
+\DoxyCodeLine{\Hypertarget{duplication__finder__diff_8hpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vector<string>\ remove\_blank\_lines(vector<string>\ content);}
 \DoxyCodeLine{\Hypertarget{duplication__finder__diff_8hpp_source_l00054}00054\ }
-\DoxyCodeLine{\Hypertarget{duplication__finder__diff_8hpp_source_l00061}00061\ \ \ \ \ \textcolor{keywordtype}{bool}\ is\_equal\_files(vector<string>\ content1,\ vector<string>\ content2);}
+\DoxyCodeLine{\Hypertarget{duplication__finder__diff_8hpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ is\_equal\_files(vector<string>\ content1,\ vector<string>\ content2);}
 \DoxyCodeLine{\Hypertarget{duplication__finder__diff_8hpp_source_l00062}00062\ }
-\DoxyCodeLine{\Hypertarget{duplication__finder__diff_8hpp_source_l00069}00069\ \ \ \ \ \textcolor{keywordtype}{double}\ find\_similarity(\textcolor{keywordtype}{string}\ path1,\ \textcolor{keywordtype}{string}\ path2);}
+\DoxyCodeLine{\Hypertarget{duplication__finder__diff_8hpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ find\_similarity(\textcolor{keywordtype}{string}\ path1,\ \textcolor{keywordtype}{string}\ path2);}
 \DoxyCodeLine{\Hypertarget{duplication__finder__diff_8hpp_source_l00070}00070\ }
-\DoxyCodeLine{\Hypertarget{duplication__finder__diff_8hpp_source_l00076}00076\ \ \ \ \ vector<tuple<double,string,string>>\ find\_similar\_pairs(vector<string>\ \&file\_paths);}
+\DoxyCodeLine{\Hypertarget{duplication__finder__diff_8hpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vector<tuple<double,string,string>>\ find\_similar\_pairs(vector<string>\ \&file\_paths);}
 \DoxyCodeLine{\Hypertarget{duplication__finder__diff_8hpp_source_l00077}00077\ }
-\DoxyCodeLine{\Hypertarget{duplication__finder__diff_8hpp_source_l00082}00082\ \ \ \ \ \textcolor{keywordtype}{void}\ save\_duplications(vector<tuple<double,string,string>>\ \&file\_duplication\_pairs);}
+\DoxyCodeLine{\Hypertarget{duplication__finder__diff_8hpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ save\_duplications(vector<tuple<double,string,string>>\ \&file\_duplication\_pairs);}
 \DoxyCodeLine{\Hypertarget{duplication__finder__diff_8hpp_source_l00083}00083\ }
-\DoxyCodeLine{\Hypertarget{duplication__finder__diff_8hpp_source_l00084}00084\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{\Hypertarget{duplication__finder__diff_8hpp_source_l00090}00090\ \ \ \ \ \mbox{\hyperlink{classDuplicationFinderDiff_afd6fa48bf8650e3d66ed92f6f1194975}{DuplicationFinderDiff}}(\textcolor{keywordtype}{string}\ base\_path\_,\ \textcolor{keywordtype}{double}\ similarity\_);}
+\DoxyCodeLine{\Hypertarget{duplication__finder__diff_8hpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{duplication__finder__diff_8hpp_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDuplicationFinderDiff_afd6fa48bf8650e3d66ed92f6f1194975}{DuplicationFinderDiff}}(\textcolor{keywordtype}{string}\ base\_path\_,\ \textcolor{keywordtype}{double}\ similarity\_);}
 \DoxyCodeLine{\Hypertarget{duplication__finder__diff_8hpp_source_l00091}00091\ }
-\DoxyCodeLine{\Hypertarget{duplication__finder__diff_8hpp_source_l00095}00095\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classDuplicationFinderDiff_a299fbfd67897fceb54d3526e033d343c}{execute}}();}
+\DoxyCodeLine{\Hypertarget{duplication__finder__diff_8hpp_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classDuplicationFinderDiff_a299fbfd67897fceb54d3526e033d343c}{execute}}();}
 \DoxyCodeLine{\Hypertarget{duplication__finder__diff_8hpp_source_l00096}00096\ \};}
 \DoxyCodeLine{\Hypertarget{duplication__finder__diff_8hpp_source_l00097}00097\ }
 \DoxyCodeLine{\Hypertarget{duplication__finder__diff_8hpp_source_l00098}00098\ \textcolor{preprocessor}{\#endif}}
