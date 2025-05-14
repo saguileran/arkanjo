@@ -1,0 +1,19 @@
+var searchData=
+[
+  ['get_5fall_5fpath_5fpairs_5fand_5fsimilarity_5fsorted_5fby_5fsimilarity_0',['get_all_path_pairs_and_similarity_sorted_by_similarity',['../classSimilarity__Table.html#a774e4001d75a5d128f428941622a4868',1,'Similarity_Table']]],
+  ['get_5fall_5fsimilar_5fpath_5fpairs_5fsorted_5fby_5fline_5fnumber_1',['get_all_similar_path_pairs_sorted_by_line_number',['../classSimilarity__Table.html#a1ca3f6a266dff65fecef8ea40e74ab48',1,'Similarity_Table']]],
+  ['get_5fall_5fsimilar_5fpath_5fpairs_5fsorted_5fby_5fsimilarity_2',['get_all_similar_path_pairs_sorted_by_similarity',['../classSimilarity__Table.html#ade181f191adb4a2cbbbf0d2dfd8f54c7',1,'Similarity_Table']]],
+  ['get_5fall_5fsource_5fcode_5ffrom_5fdirectory_3',['get_all_source_code_from_directory',['../namespaceduplicate__code__detection.html#ae010ffc70f3bd8ddea24ea426730b410',1,'duplicate_code_detection']]],
+  ['get_5fcommon_5ffolders_4',['get_common_folders',['../classPath.html#ae1a0fe75eefcf9d2e2e0cfcfb948e314',1,'Path']]],
+  ['get_5fheader_5',['get_header',['../classFunction.html#aea58fced35931266f4e63472da04c33e',1,'Function']]],
+  ['get_5floc_5fcount_6',['get_loc_count',['../namespaceduplicate__code__detection.html#aa319b29e5b513dc5d0fd97f18cbd36d0',1,'duplicate_code_detection']]],
+  ['get_5floc_5fto_5fprint_7',['get_loc_to_print',['../namespaceduplicate__code__detection.html#a8004dc22e7af260e78190dbd3ca5da53',1,'duplicate_code_detection']]],
+  ['get_5fmarkdown_5flink_8',['get_markdown_link',['../namespacerun__action.html#a47e340fc279bcb0c077ae959712d83e5',1,'run_action']]],
+  ['get_5fpath_5flist_9',['get_path_list',['../classSimilarity__Table.html#a439b3abde9580321bbdfcd781074ed02',1,'Similarity_Table']]],
+  ['get_5fscope_5ffunction_5fin_5ffile_10',['get_scope_function_in_file',['../classFunction.html#a551116719fafec5d8e387957d96ec744',1,'Function']]],
+  ['get_5fsimilar_5fpath_5fto_5fthe_5freference_11',['get_similar_path_to_the_reference',['../classSimilarity__Table.html#a6b6ed8039345bf944b987140ddb9ab41',1,'Similarity_Table']]],
+  ['get_5fsimilarity_12',['get_similarity',['../classSimilarity__Table.html#ac5060fd7468ab450ee43f3b753e5bd54',1,'Similarity_Table']]],
+  ['get_5fterminal_5fbg_5fcolor_5fluminance_13',['get_terminal_bg_color_luminance',['../namespaceUtilsOSDependable.html#ae94000387658cfce3f629da04843784f',1,'UtilsOSDependable']]],
+  ['get_5fwarning_14',['get_warning',['../namespacerun__action.html#ad86aa614d89bec6e77cf4204bfc4f217',1,'run_action']]],
+  ['getbasepath_15',['getBasePath',['../classConfig.html#ab7481411c2f3fdad63adfab1b72d8f44',1,'Config']]]
+];

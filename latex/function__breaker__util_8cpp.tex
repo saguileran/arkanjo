@@ -1,0 +1,108 @@
+\doxysection{arkanjo/pre/function\+\_\+breaker\+\_\+util.cpp File Reference}
+\hypertarget{function__breaker__util_8cpp}{}\label{function__breaker__util_8cpp}\index{arkanjo/pre/function\_breaker\_util.cpp@{arkanjo/pre/function\_breaker\_util.cpp}}
+{\ttfamily \#include "{}function\+\_\+breaker\+\_\+util.\+hpp"{}}\newline
+Include dependency graph for function\+\_\+breaker\+\_\+util.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{function__breaker__util_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceanonymous__namespace_02function__breaker__util_8cpp_03}{anonymous\+\_\+namespace\{function\+\_\+breaker\+\_\+util.\+cpp\}}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{namespaceanonymous__namespace_02function__breaker__util_8cpp_03_a23a222ef0be291f7522c2b31cf841bef}{anonymous\+\_\+namespace\{function\+\_\+breaker\+\_\+util.\+cpp\}\+::find\+\_\+position\+\_\+first\+\_\+open\+\_\+bracket}} (string s)
+\item 
+string \mbox{\hyperlink{function__breaker__util_8cpp_aa98958a2eea26c27b022e37565597738}{extract\+\_\+extension}} (string file\+\_\+path)
+\item 
+string \mbox{\hyperlink{function__breaker__util_8cpp_a9f7b059ffa233c9236e881a841905495}{build\+\_\+source\+\_\+path}} (string relative\+\_\+path, string function\+\_\+name)
+\item 
+string \mbox{\hyperlink{function__breaker__util_8cpp_ab21e5aae0c0ec27f4e1ad1fb0c25cfc9}{build\+\_\+header\+\_\+path}} (string relative\+\_\+path, string function\+\_\+name)
+\item 
+string \mbox{\hyperlink{function__breaker__util_8cpp_a2a74ec572c5d53a6b9657f6ab72b3398}{build\+\_\+info\+\_\+path}} (string relative\+\_\+path, string function\+\_\+name)
+\item 
+void \mbox{\hyperlink{function__breaker__util_8cpp_af36d90b18dc7740f504f5adb06d4b66b}{create\+\_\+source\+\_\+file}} (int start\+\_\+number\+\_\+line, int end\+\_\+number\+\_\+line, string relative\+\_\+path, string function\+\_\+name, const vector$<$ string $>$ \&function\+\_\+content)
+\item 
+void \mbox{\hyperlink{function__breaker__util_8cpp_aa7568b2f26d97dafcd6942921956cab0}{create\+\_\+header\+\_\+file}} (string relative\+\_\+path, string function\+\_\+name, const vector$<$ string $>$ \&header\+\_\+content)
+\item 
+void \mbox{\hyperlink{function__breaker__util_8cpp_a26e4da801859502c632d70ccec642f31}{create\+\_\+info\+\_\+file}} (int line\+\_\+declaration, int start\+\_\+number\+\_\+line, int end\+\_\+number\+\_\+line, string relative\+\_\+path, string function\+\_\+name)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{function__breaker__util_8cpp_ab21e5aae0c0ec27f4e1ad1fb0c25cfc9}\index{function\_breaker\_util.cpp@{function\_breaker\_util.cpp}!build\_header\_path@{build\_header\_path}}
+\index{build\_header\_path@{build\_header\_path}!function\_breaker\_util.cpp@{function\_breaker\_util.cpp}}
+\doxysubsubsection{\texorpdfstring{build\_header\_path()}{build\_header\_path()}}
+{\footnotesize\ttfamily \label{function__breaker__util_8cpp_ab21e5aae0c0ec27f4e1ad1fb0c25cfc9} 
+string build\+\_\+header\+\_\+path (\begin{DoxyParamCaption}\item[{string}]{relative\+\_\+path}{, }\item[{string}]{function\+\_\+name}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{function__breaker__util_8cpp_source_l00042}{42}} of file \mbox{\hyperlink{function__breaker__util_8cpp_source}{function\+\_\+breaker\+\_\+util.\+cpp}}.
+
+\Hypertarget{function__breaker__util_8cpp_a2a74ec572c5d53a6b9657f6ab72b3398}\index{function\_breaker\_util.cpp@{function\_breaker\_util.cpp}!build\_info\_path@{build\_info\_path}}
+\index{build\_info\_path@{build\_info\_path}!function\_breaker\_util.cpp@{function\_breaker\_util.cpp}}
+\doxysubsubsection{\texorpdfstring{build\_info\_path()}{build\_info\_path()}}
+{\footnotesize\ttfamily \label{function__breaker__util_8cpp_a2a74ec572c5d53a6b9657f6ab72b3398} 
+string build\+\_\+info\+\_\+path (\begin{DoxyParamCaption}\item[{string}]{relative\+\_\+path}{, }\item[{string}]{function\+\_\+name}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{function__breaker__util_8cpp_source_l00051}{51}} of file \mbox{\hyperlink{function__breaker__util_8cpp_source}{function\+\_\+breaker\+\_\+util.\+cpp}}.
+
+\Hypertarget{function__breaker__util_8cpp_a9f7b059ffa233c9236e881a841905495}\index{function\_breaker\_util.cpp@{function\_breaker\_util.cpp}!build\_source\_path@{build\_source\_path}}
+\index{build\_source\_path@{build\_source\_path}!function\_breaker\_util.cpp@{function\_breaker\_util.cpp}}
+\doxysubsubsection{\texorpdfstring{build\_source\_path()}{build\_source\_path()}}
+{\footnotesize\ttfamily \label{function__breaker__util_8cpp_a9f7b059ffa233c9236e881a841905495} 
+string build\+\_\+source\+\_\+path (\begin{DoxyParamCaption}\item[{string}]{relative\+\_\+path}{, }\item[{string}]{function\+\_\+name}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{function__breaker__util_8cpp_source_l00033}{33}} of file \mbox{\hyperlink{function__breaker__util_8cpp_source}{function\+\_\+breaker\+\_\+util.\+cpp}}.
+
+\Hypertarget{function__breaker__util_8cpp_aa7568b2f26d97dafcd6942921956cab0}\index{function\_breaker\_util.cpp@{function\_breaker\_util.cpp}!create\_header\_file@{create\_header\_file}}
+\index{create\_header\_file@{create\_header\_file}!function\_breaker\_util.cpp@{function\_breaker\_util.cpp}}
+\doxysubsubsection{\texorpdfstring{create\_header\_file()}{create\_header\_file()}}
+{\footnotesize\ttfamily \label{function__breaker__util_8cpp_aa7568b2f26d97dafcd6942921956cab0} 
+void create\+\_\+header\+\_\+file (\begin{DoxyParamCaption}\item[{string}]{relative\+\_\+path}{, }\item[{string}]{function\+\_\+name}{, }\item[{const vector$<$ string $>$ \&}]{header\+\_\+content}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{function__breaker__util_8cpp_source_l00065}{65}} of file \mbox{\hyperlink{function__breaker__util_8cpp_source}{function\+\_\+breaker\+\_\+util.\+cpp}}.
+
+\Hypertarget{function__breaker__util_8cpp_a26e4da801859502c632d70ccec642f31}\index{function\_breaker\_util.cpp@{function\_breaker\_util.cpp}!create\_info\_file@{create\_info\_file}}
+\index{create\_info\_file@{create\_info\_file}!function\_breaker\_util.cpp@{function\_breaker\_util.cpp}}
+\doxysubsubsection{\texorpdfstring{create\_info\_file()}{create\_info\_file()}}
+{\footnotesize\ttfamily \label{function__breaker__util_8cpp_a26e4da801859502c632d70ccec642f31} 
+void create\+\_\+info\+\_\+file (\begin{DoxyParamCaption}\item[{int}]{line\+\_\+declaration}{, }\item[{int}]{start\+\_\+number\+\_\+line}{, }\item[{int}]{end\+\_\+number\+\_\+line}{, }\item[{string}]{relative\+\_\+path}{, }\item[{string}]{function\+\_\+name}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{function__breaker__util_8cpp_source_l00071}{71}} of file \mbox{\hyperlink{function__breaker__util_8cpp_source}{function\+\_\+breaker\+\_\+util.\+cpp}}.
+
+\Hypertarget{function__breaker__util_8cpp_af36d90b18dc7740f504f5adb06d4b66b}\index{function\_breaker\_util.cpp@{function\_breaker\_util.cpp}!create\_source\_file@{create\_source\_file}}
+\index{create\_source\_file@{create\_source\_file}!function\_breaker\_util.cpp@{function\_breaker\_util.cpp}}
+\doxysubsubsection{\texorpdfstring{create\_source\_file()}{create\_source\_file()}}
+{\footnotesize\ttfamily \label{function__breaker__util_8cpp_af36d90b18dc7740f504f5adb06d4b66b} 
+void create\+\_\+source\+\_\+file (\begin{DoxyParamCaption}\item[{int}]{start\+\_\+number\+\_\+line}{, }\item[{int}]{end\+\_\+number\+\_\+line}{, }\item[{string}]{relative\+\_\+path}{, }\item[{string}]{function\+\_\+name}{, }\item[{const vector$<$ string $>$ \&}]{function\+\_\+content}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{function__breaker__util_8cpp_source_l00060}{60}} of file \mbox{\hyperlink{function__breaker__util_8cpp_source}{function\+\_\+breaker\+\_\+util.\+cpp}}.
+
+\Hypertarget{function__breaker__util_8cpp_aa98958a2eea26c27b022e37565597738}\index{function\_breaker\_util.cpp@{function\_breaker\_util.cpp}!extract\_extension@{extract\_extension}}
+\index{extract\_extension@{extract\_extension}!function\_breaker\_util.cpp@{function\_breaker\_util.cpp}}
+\doxysubsubsection{\texorpdfstring{extract\_extension()}{extract\_extension()}}
+{\footnotesize\ttfamily \label{function__breaker__util_8cpp_aa98958a2eea26c27b022e37565597738} 
+string extract\+\_\+extension (\begin{DoxyParamCaption}\item[{string}]{file\+\_\+path}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{function__breaker__util_8cpp_source_l00016}{16}} of file \mbox{\hyperlink{function__breaker__util_8cpp_source}{function\+\_\+breaker\+\_\+util.\+cpp}}.
+

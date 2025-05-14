@@ -1,0 +1,135 @@
+\chapter{Arkanjo Module Documentation}
+\hypertarget{arkanjo_readme}{}\label{arkanjo_readme}\index{Arkanjo Module Documentation@{Arkanjo Module Documentation}}
+The arkanjo is a cli tool is designed to help developers find code duplications in their codebases. The tool is designed to find duplication in the scope of functions.
+
+The current functionalities of the tool are\+:
+
+
+\begin{DoxyItemize}
+\item Explore the duplications on a codebases, enabling a limited amount of filters to the user.
+\item Find all functions that are a duplication of a function given by the user.
+\item Create a "{}relatory"{} of the number of duplications in the codebases separed by folder.
+\end{DoxyItemize}
+
+There are some other functionalities used for the cretor master degree, but should not matter for an end user.
+
+From now on, we will use the term commands instead of functionalities.
+
+The tool current should cover the C programming language. The tool also supports Java with limitations.\hypertarget{arkanjo_readme_autotoc_md1}{}\doxysection{\texorpdfstring{Similarity}{Similarity}}\label{arkanjo_readme_autotoc_md1}
+The tool current uses the concept of similarity. The user can pass a similarity threshold to the tool. This similarity threshold is used for limiting what the tool consider a duplication.
+
+The similarity threshold is a number between 0 and 100. If you set the threshold to 0, everything is considered a duplication. If you set the threhold to 100, only complety equal functions are considered duplications. The current state of the tool gives good results for similarity threshols around \texorpdfstring{$\sim$}{\string~}90.
+
+The arkanjo tool uses as a subrotine the \href{https://github.com/platisd/duplicate-code-detection-tool}{\texttt{ Duplicate Code Detection Tool}} to generate the similarity metrics.\hypertarget{arkanjo_readme_autotoc_md2}{}\doxysection{\texorpdfstring{Requirements}{Requirements}}\label{arkanjo_readme_autotoc_md2}
+The tool have only being tested on ubuntu operation systems. The instalation guide could included.\hypertarget{arkanjo_readme_autotoc_md3}{}\doxysection{\texorpdfstring{How to install}{How to install}}\label{arkanjo_readme_autotoc_md3}
+Run on the terminal the following commands to install the dependencies\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{sudo\ apt\ install\ python3-\/nltk}
+\DoxyCodeLine{sudo\ apt\ install\ python3-\/gensim}
+\DoxyCodeLine{sudo\ apt\ install\ python3-\/astor}
+\DoxyCodeLine{sudo\ python3\ -\/m\ nltk.downloader\ punkt}
+\DoxyCodeLine{sudo\ apt-\/get\ install\ libjsoncpp-\/dev}
+
+\end{DoxyCode}
+
+
+Download the source code\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{git\ clone\ https://github.com/LipArcanjo/arkanjo.git}
+
+\end{DoxyCode}
+
+
+Go to the tool folder\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cd\ arkanjo}
+
+\end{DoxyCode}
+
+
+Build the binary\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make\ preprocessor}
+\DoxyCodeLine{make}
+
+\end{DoxyCode}
+\hypertarget{arkanjo_readme_autotoc_md4}{}\doxysection{\texorpdfstring{How to Run}{How to Run}}\label{arkanjo_readme_autotoc_md4}
+\hypertarget{arkanjo_readme_autotoc_md5}{}\doxysubsection{\texorpdfstring{Preprocessor}{Preprocessor}}\label{arkanjo_readme_autotoc_md5}
+The tool is designed to have a heavy preprocesing, to enable the tool to answer different kind of queries fastly.
+
+To do the preprocessing, execute the preprocessor\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{./preprocessor}
+
+\end{DoxyCode}
+
+
+The preprocessor will ask for the complete path to the codebase you are interested to find code duplications and the similarity threshold.
+
+The preprocessor can take a while to execute. Depending on the size of the codebases, it cannot run or take a some hours.\hypertarget{arkanjo_readme_autotoc_md6}{}\doxysubsection{\texorpdfstring{Execute the run}{Execute the run}}\label{arkanjo_readme_autotoc_md6}
+To execute the tool and the tool functionalities, you need to run the command that respect this format\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{./exec\ command\ [command\_parameters]\ [-\/pre]\ [-\/s\ <NUMBER>]}
+
+\end{DoxyCode}
+
+
+If you have not executed the preprocessor, the tool will automatically call the preprocessor.
+
+The shared parameters over all commands are\+:
+
+
+\begin{DoxyItemize}
+\item \mbox{[}-\/p\mbox{]} forces the preprocessor to execute.
+\item \mbox{[}s \texorpdfstring{$<$}{<}NUMBER\texorpdfstring{$>$}{>}\mbox{]} changes the similarity threshould to NUMBER, but just for current command.
+\end{DoxyItemize}
+
+The following are the guide on how to execute the current commands of the tool\+:\hypertarget{arkanjo_readme_autotoc_md7}{}\doxysubsubsection{\texorpdfstring{Explore duplications}{Explore duplications}}\label{arkanjo_readme_autotoc_md7}
+To execute the explore duplications command, run\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{./exec\ ex\ [-\/l\ <number>]\ [-\/p\ <string>]\ [-\/b\ <'T'\ or\ 'F'>]\ [-\/c\ 'T'\ or\ 'F']\ }
+
+\end{DoxyCode}
+
+
+All the positional parameters are optional, and the meaning of them are the following\+:
+
+
+\begin{DoxyItemize}
+\item \mbox{[}-\/l \texorpdfstring{$<$}{<}number\texorpdfstring{$>$}{>}\mbox{]} limits the number of results showed to the user. The tool shows all results by default.
+\item \mbox{[}-\/p \texorpdfstring{$<$}{<}string\texorpdfstring{$>$}{>}\mbox{]} defines a pattern that the function names should match to show in the result. A function name is said to match the pattern if the function name has the pattern as a substring of the string formed by the concatenation of the file path that the function exist and the function name.
+\item \mbox{[}-\/b \textquotesingle{}T\textquotesingle{} or \textquotesingle{}F\textquotesingle{}\mbox{]} \textquotesingle{}T\textquotesingle{} if the pattern need to match both of the functions in the comparation. \textquotesingle{}F\textquotesingle{} if at least one of the functions match the pattern. Default value is \textquotesingle{}F\textquotesingle{}.
+\item \mbox{[}-\/c \textquotesingle{}T\textquotesingle{} or \textquotesingle{}F\textquotesingle{}\mbox{]} \textquotesingle{}T\textquotesingle{} if the results should be sorted by the number of duplicated lines. \textquotesingle{}F\textquotesingle{} if the results should be sorted by the similarity metric. Default value is \textquotesingle{}F\textquotesingle{}.
+\end{DoxyItemize}\hypertarget{arkanjo_readme_autotoc_md8}{}\doxysubsubsection{\texorpdfstring{Find function duplicates}{Find function duplicates}}\label{arkanjo_readme_autotoc_md8}
+To execute the relatory commands, execute\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{./exec\ fu\ <FUNCTION\_NAME>}
+
+\end{DoxyCode}
+
+
+Where \texorpdfstring{$<$}{<}FUNCTION\+\_\+\+NAME\texorpdfstring{$>$}{>} is a parameter passed by the user. The tool will match the parameter with any function that has the FUNCTION\+\_\+\+NAME as a substring.\hypertarget{arkanjo_readme_autotoc_md9}{}\doxysubsubsection{\texorpdfstring{Relatory}{Relatory}}\label{arkanjo_readme_autotoc_md9}
+To execute the relatory commands, execute\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{./exec\ du}
+
+\end{DoxyCode}
+ 

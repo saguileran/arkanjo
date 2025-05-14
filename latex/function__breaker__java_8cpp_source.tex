@@ -1,0 +1,295 @@
+\doxysection{function\+\_\+breaker\+\_\+java.\+cpp}
+\hypertarget{function__breaker__java_8cpp_source}{}\label{function__breaker__java_8cpp_source}\index{arkanjo/pre/function\_breaker\_java.cpp@{arkanjo/pre/function\_breaker\_java.cpp}}
+\mbox{\hyperlink{function__breaker__java_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{function__breaker__java_8hpp}{function\_breaker\_java.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00003}00003\ set<array<int,3>>\ FunctionBreakerJava::find\_start\_end\_and\_depth\_of\_brackets(vector<string>\ brackets\_content)\{}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00004}00004\ \ \ \ \ set<array<int,3>>\ start\_ends;}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00005}00005\ \ \ \ \ \textcolor{keywordtype}{int}\ open\_brackets\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00007}00007\ \ \ \ \ vector<int>\ not\_processed\_open\_brackets;}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00008}00008\ \ \ \ \ \textcolor{keyword}{auto}\ process\_open\ =\ [\&](\textcolor{keywordtype}{int}\ line\_number)\{}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00009}00009\ \ \ \ \ \ \ \ \ open\_brackets++;}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00010}00010\ \ \ \ \ \ \ \ \ not\_processed\_open\_brackets.push\_back(line\_number);}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00011}00011\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00012}00012\ \ \ \ \ \textcolor{keyword}{auto}\ process\_close\ =\ [\&](\textcolor{keywordtype}{int}\ line\_number)\{}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00013}00013\ \ \ \ \ \ \ \ \ open\_brackets-\/-\/;}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00014}00014\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(open\_brackets\ <=\ -\/1)\{}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00015}00015\ \ \ \ \ \ \ \ \ \ \ \ \ open\_brackets\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00016}00016\ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ matched\_open\_position\ =\ not\_processed\_open\_brackets.back();}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ \ \ \ \ not\_processed\_open\_brackets.pop\_back();}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ depth\_of\_open\ =\ not\_processed\_open\_brackets.size();}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ \ start\_ends.insert(\{matched\_open\_position,line\_number,depth\_of\_open\});}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00022}00022\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00023}00023\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00024}00024\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ brackets\_content.size();\ i++)\{}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ line\ =\ brackets\_content[i];}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ c\ :\ line)\{}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(c\ ==\ \textcolor{charliteral}{'\{'})\{}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ process\_open(i);}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(c\ ==\ \textcolor{charliteral}{'\}'})\{}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ process\_close(i);}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00034}00034\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00035}00035\ \ \ \ \ \textcolor{keywordflow}{return}\ start\_ends;}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00036}00036\ \}}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00038}00038\ set<pair<int,int>>\ FunctionBreakerJava::find\_start\_end\_of\_brackets\_of\_given\_depth(vector<string>\ brackets\_content,\ \textcolor{keywordtype}{int}\ depth)\{}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00039}00039\ \ \ \ \ set<pair<int,int>>\ \mbox{\hyperlink{current_2tmp_2source_2test__same__file__different__functions__same__logic_8c_2sum_8c_a339672ff94e6199019102f50d317c3d7}{ret}};}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00040}00040\ \ \ \ \ set<array<int,3>>\ bracket\_pairs\ =\ find\_start\_end\_and\_depth\_of\_brackets(brackets\_content);}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00041}00041\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ [start,end,dep]\ :\ bracket\_pairs)\{}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(dep\ ==\ depth)\{}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{current_2tmp_2source_2test__same__file__different__functions__same__logic_8c_2sum_8c_a339672ff94e6199019102f50d317c3d7}{ret}}.insert(\{start,end\});}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00045}00045\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00046}00046\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{current_2tmp_2source_2test__same__file__different__functions__same__logic_8c_2sum_8c_a339672ff94e6199019102f50d317c3d7}{ret}};}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00047}00047\ \}}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00049}00049\ \textcolor{keywordtype}{int}\ FunctionBreakerJava::find\_position\_first\_open\_bracket(\textcolor{keywordtype}{string}\ s)\{}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00050}00050\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ s.size();\ i++)\{}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ c\ =\ s[i];}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(c\ ==\ \textcolor{charliteral}{'\{'})\{}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ i;}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00055}00055\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00056}00056\ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00057}00057\ \}}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00059}00059\ \textcolor{keywordtype}{string}\ FunctionBreakerJava::extract\_last\_token\_of\_string(\textcolor{keywordtype}{string}\ s)\{}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00060}00060\ \ \ \ \ vector<string>\ tokens;}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00061}00061\ \ \ \ \ \textcolor{keywordtype}{string}\ cur\_token\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00062}00062\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ s.size();\ i++)\{}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ c\ =\ s[i];}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\ \mbox{\hyperlink{namespaceUtils_a84c55dc78b9ab9af93009b25c6a7dc39}{Utils::is\_empty\_char}}(c)\ ||\ \mbox{\hyperlink{namespaceUtils_a3b0faf30c09facf4f5d77be103ba90a8}{Utils::is\_special\_char}}(c))\{}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!cur\_token.empty())\{}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tokens.push\_back(cur\_token);}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ cur\_token\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ cur\_token\ +=\ c;}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00072}00072\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00073}00073\ \ \ \ \ \textcolor{keywordflow}{if}(!cur\_token.empty())\{}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ tokens.push\_back(cur\_token);}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00075}00075\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00077}00077\ \ \ \ \ \textcolor{keywordflow}{if}(tokens.empty())\{}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00079}00079\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00080}00080\ \ \ \ \ \textcolor{keywordflow}{return}\ tokens.back();}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00081}00081\ \}}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00083}00083\ \mbox{\hyperlink{structLine__content}{Line\_content}}\ FunctionBreakerJava::build\_line\_code(\textcolor{keywordtype}{int}\ line\_number,\ \textcolor{keywordtype}{string}\ content)\{}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00084}00084\ \ \ \ \ Line\_content\ \mbox{\hyperlink{current_2tmp_2source_2test__same__file__different__functions__same__logic_8c_2sum_8c_a339672ff94e6199019102f50d317c3d7}{ret}};}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00085}00085\ \ \ \ \ \mbox{\hyperlink{current_2tmp_2source_2test__same__file__different__functions__same__logic_8c_2sum_8c_a339672ff94e6199019102f50d317c3d7}{ret}}.\mbox{\hyperlink{structLine__content_a8391dcb9ad3e0d22ac4ace2e42462ffa}{line\_number}}\ =\ line\_number;}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00086}00086\ \ \ \ \ \mbox{\hyperlink{current_2tmp_2source_2test__same__file__different__functions__same__logic_8c_2sum_8c_a339672ff94e6199019102f50d317c3d7}{ret}}.content\ =\ content;}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00087}00087\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{current_2tmp_2source_2test__same__file__different__functions__same__logic_8c_2sum_8c_a339672ff94e6199019102f50d317c3d7}{ret}};}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00088}00088\ \}}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00090}00090\ vector<Line\_content>\ FunctionBreakerJava::get\_lines\_before\_body\_function(\textcolor{keyword}{const}\ vector<string>\ \&file\_content,\ \textcolor{keywordtype}{int}\ line\_start\_body\_function,\ \textcolor{keywordtype}{int}\ pos\_bracket)\{\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00091}00091\ \ \ \ \ vector<Line\_content>\ \mbox{\hyperlink{current_2tmp_2source_2test__same__file__different__functions__same__logic_8c_2sum_8c_a339672ff94e6199019102f50d317c3d7}{ret}};}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00092}00092\ \ \ \ \ Line\_content\ line\_bracket\ =\ build\_line\_code(line\_start\_body\_function,file\_content[line\_start\_body\_function]);}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00093}00093\ \ \ \ \ \textcolor{comment}{//remove\ everything\ after\ \{}}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00094}00094\ \ \ \ \ \textcolor{keywordflow}{while}(\textcolor{keywordtype}{int}(line\_bracket.\mbox{\hyperlink{structLine__content_aa925fb1acc1b8247c08a28b701c5dfaf}{content}}.size())\ >\ pos\_bracket)\{}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ line\_bracket.\mbox{\hyperlink{structLine__content_aa925fb1acc1b8247c08a28b701c5dfaf}{content}}.pop\_back();}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00096}00096\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00097}00097\ \ \ \ \ \mbox{\hyperlink{current_2tmp_2source_2test__same__file__different__functions__same__logic_8c_2sum_8c_a339672ff94e6199019102f50d317c3d7}{ret}}.push\_back(line\_bracket);}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00098}00098\ }
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00099}00099\ \ \ \ \ \textcolor{keywordtype}{int}\ until\ =\ max(0,line\_start\_body\_function-\/NUMBER\_OF\_LINES\_BEFORE\_FOR\_FUNCTION\_NAME);}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00100}00100\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ line\_start\_body\_function-\/1;\ i\ >=\ until;\ i-\/-\/)\{}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00101}00101\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{current_2tmp_2source_2test__same__file__different__functions__same__logic_8c_2sum_8c_a339672ff94e6199019102f50d317c3d7}{ret}}.push\_back(build\_line\_code(i,file\_content[i]));}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00102}00102\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00103}00103\ \ \ \ \ reverse(\mbox{\hyperlink{current_2tmp_2source_2test__same__file__different__functions__same__logic_8c_2sum_8c_a339672ff94e6199019102f50d317c3d7}{ret}}.begin(),\mbox{\hyperlink{current_2tmp_2source_2test__same__file__different__functions__same__logic_8c_2sum_8c_a339672ff94e6199019102f50d317c3d7}{ret}}.end());}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00105}00105\ \ \ \ \ \textcolor{comment}{//remove\ empty\ lines/empty\ characters\ at\ the\ end\ of\ lines}}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00106}00106\ \ \ \ \ \textcolor{keywordflow}{while}(!\mbox{\hyperlink{current_2tmp_2source_2test__same__file__different__functions__same__logic_8c_2sum_8c_a339672ff94e6199019102f50d317c3d7}{ret}}.empty())\{}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00107}00107\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{current_2tmp_2source_2test__same__file__different__functions__same__logic_8c_2sum_8c_a339672ff94e6199019102f50d317c3d7}{ret}}.back().content.empty())\{}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{current_2tmp_2source_2test__same__file__different__functions__same__logic_8c_2sum_8c_a339672ff94e6199019102f50d317c3d7}{ret}}.pop\_back();}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00111}00111\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{namespaceUtils_a84c55dc78b9ab9af93009b25c6a7dc39}{Utils::is\_empty\_char}}(\mbox{\hyperlink{current_2tmp_2source_2test__same__file__different__functions__same__logic_8c_2sum_8c_a339672ff94e6199019102f50d317c3d7}{ret}}.back().content.back()))\{}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{current_2tmp_2source_2test__same__file__different__functions__same__logic_8c_2sum_8c_a339672ff94e6199019102f50d317c3d7}{ret}}.back().content.pop\_back();}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00114}00114\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00115}00115\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00116}00116\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00117}00117\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{current_2tmp_2source_2test__same__file__different__functions__same__logic_8c_2sum_8c_a339672ff94e6199019102f50d317c3d7}{ret}};}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00118}00118\ \}}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00120}00120\ }
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00121}00121\ vector<Line\_content>\ FunctionBreakerJava::remove\_parenteses\_at\_the\_end\_of\_the\_scope(vector<Line\_content>\ code)\{}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00122}00122\ \ \ \ \ \textcolor{keywordflow}{if}(code.empty()\ ||\ code.back().content.back()\ !=\ \textcolor{charliteral}{')'})\{}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00123}00123\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ code;}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00124}00124\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00125}00125\ \ \ \ \ \textcolor{keywordtype}{int}\ count\_close\_parenteses\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00126}00126\ }
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00127}00127\ \ \ \ \ \textcolor{keywordflow}{while}(!code.empty())\{}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00128}00128\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ content\ =\ code.back().content;}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00129}00129\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(!content.empty())\{}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(content.back()\ ==\ \textcolor{charliteral}{')'})\{}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ count\_close\_parenteses++;}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(content.back()\ ==\ \textcolor{charliteral}{'('})\{}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ count\_close\_parenteses-\/-\/;}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ content.pop\_back();}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(count\_close\_parenteses\ ==\ 0)\{}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00140}00140\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00141}00141\ \ \ \ \ \ \ \ \ code.back().content\ =\ content;}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00142}00142\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(count\_close\_parenteses\ ==\ 0)\{}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00144}00144\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00145}00145\ \ \ \ \ \ \ \ \ code.pop\_back();}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00146}00146\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00147}00147\ \ \ \ \ \textcolor{keywordflow}{return}\ code;}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00148}00148\ \}}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00149}00149\ }
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00150}00150\ vector<Line\_content>\ FunctionBreakerJava::remove\_content\_until\_find\_parenteses\_at\_the\_end(vector<Line\_content>\ code)\{}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00151}00151\ \ \ \ \ \textcolor{keywordflow}{while}(!code.empty())\{}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00152}00152\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ content\ =\ code.back().content;}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00153}00153\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(!content.empty())\{}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(content.back()\ ==\ \textcolor{charliteral}{')'})\{}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00156}00156\ \ \ \ \ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00157}00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ content.pop\_back();}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00158}00158\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00159}00159\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00160}00160\ \ \ \ \ \ \ \ \ code.back().content\ =\ content;}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00161}00161\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!content.empty())\{}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00163}00163\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00164}00164\ \ \ \ \ \ \ \ \ code.pop\_back();}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00165}00165\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00166}00166\ \ \ \ \ \textcolor{keywordflow}{return}\ code;}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00167}00167\ \}}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00168}00168\ }
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00169}00169\ vector<Line\_content>\ FunctionBreakerJava::remove\_parameters\_of\_declaration\_c(vector<Line\_content>\ code)\{}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00170}00170\ \ \ \ \ \textcolor{keywordflow}{if}(!ALLOW\_STRUCTS)\{}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00171}00171\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{current_2tmp_2source_2test__same__file__different__functions__same__logic_8c_2sum_8c_a339672ff94e6199019102f50d317c3d7}{ret}}\ =\ remove\_content\_until\_find\_parenteses\_at\_the\_end(code);}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00172}00172\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ remove\_parenteses\_at\_the\_end\_of\_the\_scope(\mbox{\hyperlink{current_2tmp_2source_2test__same__file__different__functions__same__logic_8c_2sum_8c_a339672ff94e6199019102f50d317c3d7}{ret}});}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00173}00173\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00174}00174\ \ \ \ \ \textcolor{keywordflow}{return}\ remove\_parenteses\_at\_the\_end\_of\_the\_scope(code);}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00175}00175\ \}}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00176}00176\ }
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00177}00177\ vector<Line\_content>\ FunctionBreakerJava::remove\_parameters\_of\_declaration\_java(vector<Line\_content>\ code)\{}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00178}00178\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{current_2tmp_2source_2test__same__file__different__functions__same__logic_8c_2sum_8c_a339672ff94e6199019102f50d317c3d7}{ret}}\ =\ remove\_content\_until\_find\_parenteses\_at\_the\_end(code);}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00179}00179\ \ \ \ \ \textcolor{keywordflow}{return}\ remove\_parenteses\_at\_the\_end\_of\_the\_scope(\mbox{\hyperlink{current_2tmp_2source_2test__same__file__different__functions__same__logic_8c_2sum_8c_a339672ff94e6199019102f50d317c3d7}{ret}});}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00180}00180\ \}}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00181}00181\ }
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00182}00182\ vector<Line\_content>\ FunctionBreakerJava::remove\_parameters\_of\_declaration(vector<Line\_content>\ code,\ \mbox{\hyperlink{function__breaker__util_8hpp_a0fef8749500f3d98444fd6e121ba079a}{PROGRAMMING\_LANGUAGE}}\ programming\_language)\{}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00183}00183\ \ \ \ \ \textcolor{keywordflow}{if}(programming\_language\ ==\ \mbox{\hyperlink{function__breaker__util_8hpp_a0fef8749500f3d98444fd6e121ba079aa739ce3f516592d245d16fd8a3893472c}{C}})\{}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00184}00184\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ remove\_parameters\_of\_declaration\_c(code);}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00185}00185\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00186}00186\ \ \ \ \ \textcolor{keywordflow}{if}(programming\_language\ ==\ \mbox{\hyperlink{function__breaker__util_8hpp_a0fef8749500f3d98444fd6e121ba079aa70b9213a328b71cbc9abad715b4601f1}{JAVA}})\{}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00187}00187\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ remove\_parameters\_of\_declaration\_java(code);}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00188}00188\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00189}00189\ \ \ \ \ \textcolor{keywordflow}{return}\ code;}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00190}00190\ \}}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00191}00191\ }
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00192}00192\ pair<string,int>\ FunctionBreakerJava::extract\_function\_name\_and\_line\_from\_declaration(\textcolor{keyword}{const}\ vector<string>\ \&file\_content,\ \textcolor{keywordtype}{int}\ line\_start\_body\_function,\ \mbox{\hyperlink{function__breaker__util_8hpp_a0fef8749500f3d98444fd6e121ba079a}{PROGRAMMING\_LANGUAGE}}\ programming\_language)\{}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00193}00193\ \ \ \ \ \textcolor{keywordtype}{int}\ pos\ =\ find\_position\_first\_open\_bracket(file\_content[line\_start\_body\_function]);}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00194}00194\ \ \ \ \ vector<Line\_content>\ code\_before\_bracket\ =\ get\_lines\_before\_body\_function(file\_content,\ line\_start\_body\_function,pos);}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00195}00195\ \ \ \ \ vector<Line\_content>\ code\ =\ remove\_parameters\_of\_declaration(code\_before\_bracket,\ programming\_language);}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00196}00196\ \ \ \ \ \textcolor{keywordflow}{if}(code.empty())\{}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00197}00197\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ make\_pair(\textcolor{stringliteral}{"{}"{}},-\/1);}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00198}00198\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00199}00199\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{current_2tmp_2source_2test__same__file__different__functions__same__logic_8c_2sum_8c_a339672ff94e6199019102f50d317c3d7}{ret}}\ =\ extract\_last\_token\_of\_string(code.back().content);}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00200}00200\ \ \ \ \ \textcolor{keywordflow}{return}\ \{\mbox{\hyperlink{current_2tmp_2source_2test__same__file__different__functions__same__logic_8c_2sum_8c_a339672ff94e6199019102f50d317c3d7}{ret}},code.back().line\_number\};}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00201}00201\ \}}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00202}00202\ }
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00203}00203\ vector<string>\ FunctionBreakerJava::build\_function\_content(\textcolor{keywordtype}{int}\ start\_number\_line,\ \textcolor{keywordtype}{int}\ end\_number\_line,\textcolor{keyword}{const}\ vector<string>\ \&file\_content)\{}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00204}00204\ \ \ \ \ \textcolor{keywordtype}{string}\ first\_line\ =\ file\_content[start\_number\_line];}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00205}00205\ \ \ \ \ \textcolor{keywordtype}{int}\ to\_remove\ =\ find\_position\_first\_open\_bracket(first\_line);}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00206}00206\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00207}00207\ \ \ \ \ vector<string>\ function\_content;}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00208}00208\ \ \ \ \ reverse(first\_line.begin(),first\_line.end());}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00209}00209\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ to\_remove;\ i++)\{}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00210}00210\ \ \ \ \ \ \ \ \ first\_line.pop\_back();}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00211}00211\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00212}00212\ \ \ \ \ reverse(first\_line.begin(),first\_line.end());}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00213}00213\ \ \ \ \ function\_content.push\_back(first\_line);}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00214}00214\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ start\_number\_line+1;\ i\ <=\ end\_number\_line;\ i++)\{}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00215}00215\ \ \ \ \ \ \ \ \ function\_content.push\_back(file\_content[i]);}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00216}00216\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00217}00217\ \ \ \ \ \textcolor{keywordflow}{return}\ function\_content;}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00218}00218\ \}}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00219}00219\ }
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00220}00220\ vector<string>\ FunctionBreakerJava::build\_header\_content(\textcolor{keywordtype}{int}\ start\_number\_line,\ \textcolor{keywordtype}{int}\ line\_declaration,\ \textcolor{keywordtype}{string}\ relative\_path,\ \textcolor{keywordtype}{string}\ function\_name,\ \textcolor{keyword}{const}\ vector<string>\ \&file\_content)\{}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00221}00221\ \ \ \ \ vector<string>\ function\_content;}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00222}00222\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ line\_declaration;\ i\ <\ start\_number\_line;\ i++)\{}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00223}00223\ \ \ \ \ \ \ \ \ function\_content.push\_back(file\_content[i]);}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00224}00224\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00225}00225\ }
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00226}00226\ \ \ \ \ \textcolor{keywordtype}{string}\ first\_line\ =\ file\_content[start\_number\_line];}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00227}00227\ \ \ \ \ \textcolor{keywordtype}{int}\ to\_keep\ =\ find\_position\_first\_open\_bracket(first\_line);}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00228}00228\ \ \ \ \ \textcolor{keywordflow}{while}(\textcolor{keywordtype}{int}(first\_line.size())\ >\ to\_keep)\{}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00229}00229\ \ \ \ \ \ \ \ \ first\_line.pop\_back();}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00230}00230\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00231}00231\ \ \ \ \ function\_content.push\_back(first\_line);}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00232}00232\ \ \ \ \ \textcolor{keywordflow}{return}\ function\_content;}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00233}00233\ \}}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00234}00234\ }
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00235}00235\ \textcolor{keywordtype}{bool}\ FunctionBreakerJava::is\_body\_function\_empty(\textcolor{keywordtype}{int}\ start\_number\_line,\ \textcolor{keywordtype}{int}\ end\_number\_line,\textcolor{keyword}{const}\ vector<string>\ \&file\_content)\{}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00236}00236\ \ \ \ \ vector<string>\ function\_content\ =\ build\_function\_content(start\_number\_line,\ end\_number\_line,\ file\_content);}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00237}00237\ \ \ \ \ \textcolor{keywordtype}{int}\ count\_not\_empty\_char\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00238}00238\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ line\ :\ function\_content)\{}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00239}00239\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ c\ :\ line)\{}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00240}00240\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!\mbox{\hyperlink{namespaceUtils_a84c55dc78b9ab9af93009b25c6a7dc39}{Utils::is\_empty\_char}}(c))\{}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00241}00241\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ count\_not\_empty\_char++;}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00242}00242\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00243}00243\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00244}00244\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00245}00245\ \ \ \ \ \textcolor{keywordtype}{bool}\ is\_empty\ =\ count\_not\_empty\_char\ <=\ 2;}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00246}00246\ \ \ \ \ \textcolor{keywordflow}{return}\ is\_empty;}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00247}00247\ \}}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00248}00248\ }
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00249}00249\ \textcolor{keywordtype}{void}\ FunctionBreakerJava::process\_function(\textcolor{keywordtype}{int}\ start\_number\_line,\ \textcolor{keywordtype}{int}\ end\_number\_line,\ \textcolor{keywordtype}{string}\ relative\_path,\ \textcolor{keyword}{const}\ vector<string>\ \&file\_content,\ \mbox{\hyperlink{function__breaker__util_8hpp_a0fef8749500f3d98444fd6e121ba079a}{PROGRAMMING\_LANGUAGE}}\ programming\_language)\{}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00250}00250\ \ \ \ \ \textcolor{keywordtype}{string}\ first\_line\ =\ file\_content[start\_number\_line];}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00251}00251\ \ \ \ \ \textcolor{keyword}{auto}\ [function\_name,line\_declaration]\ =\ extract\_function\_name\_and\_line\_from\_declaration(file\_content,start\_number\_line,\ programming\_language);}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00252}00252\ \ \ \ \ \textcolor{keywordflow}{if}(function\_name.empty())\{}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00253}00253\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00254}00254\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00255}00255\ \ \ \ \ \textcolor{keywordflow}{if}(IGNORE\_EMPTY\_FUNCTIONS)\{}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00256}00256\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(is\_body\_function\_empty(start\_number\_line,end\_number\_line,file\_content))\{}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00257}00257\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00258}00258\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00259}00259\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00260}00260\ }
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00261}00261\ \ \ \ \ vector<string>\ function\_content\ =\ build\_function\_content(start\_number\_line,end\_number\_line,file\_content);}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00262}00262\ \ \ \ \ vector<string>\ header\_content\ =\ build\_header\_content(start\_number\_line,line\_declaration,relative\_path,function\_name,file\_content);}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00263}00263\ }
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00264}00264\ \ \ \ \ \mbox{\hyperlink{function__breaker__util_8cpp_af36d90b18dc7740f504f5adb06d4b66b}{create\_source\_file}}(start\_number\_line,end\_number\_line,relative\_path,function\_name,function\_content);}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00265}00265\ \ \ \ \ \mbox{\hyperlink{function__breaker__util_8cpp_aa7568b2f26d97dafcd6942921956cab0}{create\_header\_file}}(relative\_path,\ function\_name,\ header\_content);}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00266}00266\ \ \ \ \ \mbox{\hyperlink{function__breaker__util_8cpp_a26e4da801859502c632d70ccec642f31}{create\_info\_file}}(line\_declaration,start\_number\_line,end\_number\_line,relative\_path,function\_name);}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00267}00267\ \}}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00268}00268\ }
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00269}00269\ \textcolor{keywordtype}{string}\ FunctionBreakerJava::file\_path\_from\_folder\_path(\textcolor{keywordtype}{string}\ file\_path,\ \textcolor{keywordtype}{string}\ folder\_path)\{}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00270}00270\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{current_2tmp_2source_2test__same__file__different__functions__same__logic_8c_2sum_8c_a339672ff94e6199019102f50d317c3d7}{ret}}\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00271}00271\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ folder\_path.size();\ i\ <\ file\_path.size();\ i++)\{}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00272}00272\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{current_2tmp_2source_2test__same__file__different__functions__same__logic_8c_2sum_8c_a339672ff94e6199019102f50d317c3d7}{ret}}\ +=\ file\_path[i];}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00273}00273\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00274}00274\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{current_2tmp_2source_2test__same__file__different__functions__same__logic_8c_2sum_8c_a339672ff94e6199019102f50d317c3d7}{ret}};}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00275}00275\ \}}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00276}00276\ }
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00277}00277\ \textcolor{keywordtype}{void}\ FunctionBreakerJava::file\_breaker\_java(\textcolor{keywordtype}{string}\ file\_path,\ \textcolor{keywordtype}{string}\ folder\_path)\{}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00278}00278\ \ \ \ \ \textcolor{keywordtype}{string}\ relative\_path\ =\ file\_path\_from\_folder\_path(file\_path,\ folder\_path);}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00279}00279\ \ \ \ \ vector<string>\ file\_content\ =\ \mbox{\hyperlink{namespaceUtils_a99bf3af71b6d6933fe7fe731962b8c4b}{Utils::read\_file\_generic}}(file\_path);}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00280}00280\ \ \ \ \ set<pair<int,int>>\ start\_end\_of\_functions\ =\ find\_start\_end\_of\_brackets\_of\_given\_depth(file\_content,\ JAVA\_RELEVANT\_DEPTH);}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00281}00281\ }
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00282}00282\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ [start\_line,\ end\_line]\ :\ start\_end\_of\_functions)\{}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00283}00283\ \ \ \ \ \ \ \ \ process\_function(start\_line,end\_line,relative\_path,\ file\_content,\ \mbox{\hyperlink{function__breaker__util_8hpp_a0fef8749500f3d98444fd6e121ba079aa70b9213a328b71cbc9abad715b4601f1}{JAVA}});}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00284}00284\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00285}00285\ \}}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00286}00286\ }
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00287}\mbox{\hyperlink{classFunctionBreakerJava_a91f446f115f7e2d9b01cdda089b7383f}{00287}}\ \mbox{\hyperlink{classFunctionBreakerJava_a91f446f115f7e2d9b01cdda089b7383f}{FunctionBreakerJava::FunctionBreakerJava}}(\textcolor{keywordtype}{string}\ file\_path,\ \textcolor{keywordtype}{string}\ folder\_path)\{}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00288}00288\ \ \ \ \ file\_breaker\_java(file\_path,\ folder\_path);}
+\DoxyCodeLine{\Hypertarget{function__breaker__java_8cpp_source_l00289}00289\ \}}
+
+\end{DoxyCode}

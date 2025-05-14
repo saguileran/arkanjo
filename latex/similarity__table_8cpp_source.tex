@@ -1,0 +1,162 @@
+\doxysection{similarity\+\_\+table.\+cpp}
+\hypertarget{similarity__table_8cpp_source}{}\label{similarity__table_8cpp_source}\index{arkanjo/base/similarity\_table.cpp@{arkanjo/base/similarity\_table.cpp}}
+\mbox{\hyperlink{similarity__table_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{similarity__table_8hpp}{similarity\_table.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00003}00003\ \textcolor{keywordtype}{int}\ Similarity\_Table::find\_id\_path(\mbox{\hyperlink{classPath}{Path}}\ path)\{}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00004}00004\ \ \ \ \ \textcolor{keywordflow}{if}(path\_id.find(path)\ ==\ path\_id.end())\{}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00005}00005\ \ \ \ \ \ \ \ \ path\_id[path]\ =\ paths.size();}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00006}00006\ \ \ \ \ \ \ \ \ paths.push\_back(path);}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00007}00007\ \ \ \ \ \ \ \ \ vector<pair<int,double>>\ empty\_vec;}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00008}00008\ \ \ \ \ \ \ \ \ similarity\_graph.push\_back(empty\_vec);}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00009}00009\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00010}00010\ \ \ \ \ \textcolor{keywordflow}{return}\ path\_id[path];}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00011}00011\ \}}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00013}00013\ \textcolor{keywordtype}{void}\ Similarity\_Table::read\_comparation(ifstream\ \&table\_file)\{}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00014}00014\ \ \ \ \ \textcolor{keywordtype}{string}\ string\_path1,\ string\_path2;}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00015}00015\ \ \ \ \ \textcolor{keywordtype}{double}\ similarity;}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00016}00016\ \ \ \ \ table\_file\ >>\ string\_path1\ >>\ string\_path2\ >>\ similarity;}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00018}00018\ \ \ \ \ \textcolor{keywordtype}{int}\ id1\ =\ find\_id\_path(Path(string\_path1));}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00019}00019\ \ \ \ \ \textcolor{keywordtype}{int}\ id2\ =\ find\_id\_path(Path(string\_path2));}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00021}00021\ \ \ \ \ \textcolor{keywordflow}{if}(id1\ >\ id2)\{}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ swap(id1,id2);}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00023}00023\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00025}00025\ \ \ \ \ similarity\_graph[id1].push\_back(make\_pair(id2,similarity));}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00026}00026\ \ \ \ \ similarity\_graph[id2].push\_back(make\_pair(id1,similarity));}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00027}00027\ \ \ \ \ similarity\_table[make\_pair(id1,id2)]\ =\ similarity;}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00028}00028\ \}}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00030}00030\ \textcolor{keywordtype}{void}\ Similarity\_Table::read\_file\_table(ifstream\ \&table\_file)\{}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00031}00031\ \ \ \ \ \textcolor{keywordtype}{int}\ number\_comparations;}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00032}00032\ \ \ \ \ table\_file\ >>\ number\_comparations;}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00033}00033\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ number\_comparations;\ i++)\{}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ read\_comparation(table\_file);}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00035}00035\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00036}00036\ \}}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00038}00038\ \textcolor{keywordtype}{void}\ Similarity\_Table::init\_similarity\_table()\{}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00039}00039\ \ \ \ \ std::ifstream\ table\_file;}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00040}00040\ \ \ \ \ table\_file.open(SIMILARITY\_TABLE\_FILE\_NAME);}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00041}00041\ \ \ \ \ \mbox{\hyperlink{namespaceUtils_a8f4a13f11467403825ee90aa736220f6}{Utils::ensure\_file\_is\_open}}(table\_file,SIMILARITY\_TABLE\_FILE\_NAME);}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00043}00043\ \ \ \ \ read\_file\_table(table\_file);}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00045}00045\ \ \ \ \ table\_file.close();}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00046}00046\ \}}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00048}\mbox{\hyperlink{classSimilarity__Table_a2a4703c08a255444950055041905ab9d}{00048}}\ \mbox{\hyperlink{classSimilarity__Table_aa2b6b79ada7c70429b678e6570a54c34}{Similarity\_Table::Similarity\_Table}}(\textcolor{keywordtype}{double}\ \_similarity\_threshold)\{}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00049}00049\ \ \ \ \ similarity\_threshold=\ \_similarity\_threshold;}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00050}00050\ \ \ \ \ init\_similarity\_table();}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00051}00051\ \}}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00053}\mbox{\hyperlink{classSimilarity__Table_aa2b6b79ada7c70429b678e6570a54c34}{00053}}\ \mbox{\hyperlink{classSimilarity__Table_aa2b6b79ada7c70429b678e6570a54c34}{Similarity\_Table::Similarity\_Table}}()\{}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00054}00054\ \ \ \ \ similarity\_threshold\ =\ DEFAULT\_SIMILARITY;}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00055}00055\ \ \ \ \ init\_similarity\_table();}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00056}00056\ \}}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00058}\mbox{\hyperlink{classSimilarity__Table_a35f8cb1b8c488a81d0011795c3e26256}{00058}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSimilarity__Table_a35f8cb1b8c488a81d0011795c3e26256}{Similarity\_Table::update\_similarity}}(\textcolor{keywordtype}{double}\ new\_similarity\_threshold)\{}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00059}00059\ \ \ \ \ similarity\_threshold\ =\ new\_similarity\_threshold;}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00060}00060\ \}}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00062}\mbox{\hyperlink{classSimilarity__Table_ac5060fd7468ab450ee43f3b753e5bd54}{00062}}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classSimilarity__Table_ac5060fd7468ab450ee43f3b753e5bd54}{Similarity\_Table::get\_similarity}}(\mbox{\hyperlink{classPath}{Path}}\ path1,\ \mbox{\hyperlink{classPath}{Path}}\ path2)\{}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00063}00063\ \ \ \ \ \textcolor{keywordtype}{int}\ id1\ =\ find\_id\_path(path1);}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00064}00064\ \ \ \ \ \textcolor{keywordtype}{int}\ id2\ =\ find\_id\_path(path2);}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00066}00066\ \ \ \ \ \textcolor{keywordflow}{if}(id1\ ==\ id2)\{}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ MAXIMUM\_SIMILARITY;}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00068}00068\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00069}00069\ \ \ \ \ \textcolor{keywordflow}{if}(id1\ >\ id2)\{}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ swap(id1,id2);}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00071}00071\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00072}00072\ \ \ \ \ pair<int,int>\ aux\ =\ make\_pair(id1,id2);}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00073}00073\ \ \ \ \ \textcolor{keywordflow}{if}(similarity\_table.find(aux)\ !=\ similarity\_table.end())\{}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ similarity\_table[aux];}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00075}00075\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00076}00076\ \ \ \ \ \textcolor{keywordflow}{return}\ MINIMUM\_SIMILARITY;}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00077}00077\ \}}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00079}00079\ \textcolor{keywordtype}{bool}\ Similarity\_Table::is\_above\_threshold(\textcolor{keywordtype}{double}\ similarity)\{}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00080}00080\ \ \ \ \ \textcolor{keywordflow}{return}\ similarity\_threshold\ <=\ similarity\ +\ EPS\_ERROR\_MARGIN;}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00081}00081\ \}}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00083}\mbox{\hyperlink{classSimilarity__Table_a7744d1810571f17a88cd94bcc200a73f}{00083}}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classSimilarity__Table_a7744d1810571f17a88cd94bcc200a73f}{Similarity\_Table::is\_similar}}(\mbox{\hyperlink{classPath}{Path}}\ path1,\ \mbox{\hyperlink{classPath}{Path}}\ path2)\{}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00084}00084\ \ \ \ \ \textcolor{keywordtype}{double}\ similarity\ =\ \mbox{\hyperlink{classSimilarity__Table_ac5060fd7468ab450ee43f3b753e5bd54}{get\_similarity}}(path1,\ path2);}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00085}00085\ \ \ \ \ \textcolor{keywordflow}{return}\ is\_above\_threshold(similarity);}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00086}00086\ \}}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00088}\mbox{\hyperlink{classSimilarity__Table_a439b3abde9580321bbdfcd781074ed02}{00088}}\ vector<Path>\ \mbox{\hyperlink{classSimilarity__Table_a439b3abde9580321bbdfcd781074ed02}{Similarity\_Table::get\_path\_list}}()\{}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00089}00089\ \ \ \ \ \textcolor{keywordflow}{return}\ paths;}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00090}00090\ \}}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00092}\mbox{\hyperlink{classSimilarity__Table_a6b6ed8039345bf944b987140ddb9ab41}{00092}}\ vector<Path>\ \mbox{\hyperlink{classSimilarity__Table_a6b6ed8039345bf944b987140ddb9ab41}{Similarity\_Table::get\_similar\_path\_to\_the\_reference}}(\mbox{\hyperlink{classPath}{Path}}\ reference)\{}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00093}00093\ \ \ \ \ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id}\ =\ find\_id\_path(reference);}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00094}00094\ \ \ \ \ vector<Path>\ \mbox{\hyperlink{current_2tmp_2source_2test__same__file__different__functions__same__logic_8c_2sum_8c_a339672ff94e6199019102f50d317c3d7}{ret}};}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00095}00095\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ [\textcolor{keywordtype}{id},similarity]\ :\ similarity\_graph[\textcolor{keywordtype}{id}])\{}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(is\_above\_threshold(similarity))\{}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{current_2tmp_2source_2test__same__file__different__functions__same__logic_8c_2sum_8c_a339672ff94e6199019102f50d317c3d7}{ret}}.push\_back(paths[\textcolor{keywordtype}{id}]);}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00099}00099\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00100}00100\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{current_2tmp_2source_2test__same__file__different__functions__same__logic_8c_2sum_8c_a339672ff94e6199019102f50d317c3d7}{ret}};}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00101}00101\ \}}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00103}\mbox{\hyperlink{classSimilarity__Table_a774e4001d75a5d128f428941622a4868}{00103}}\ vector<tuple<double,Path,Path>>\ \mbox{\hyperlink{classSimilarity__Table_a774e4001d75a5d128f428941622a4868}{Similarity\_Table::get\_all\_path\_pairs\_and\_similarity\_sorted\_by\_similarity}}()\{}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00104}00104\ \ \ \ \ vector<tuple<double,Path,Path>>\ similar\_path\_pairs;}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00105}00105\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ [\ ids,\ similarity]\ :\ similarity\_table)\{}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00106}00106\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classPath}{Path}}\ path1\ =\ paths[ids.first];}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00107}00107\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classPath}{Path}}\ path2\ =\ paths[ids.second];}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classSimilarity__Table_a7744d1810571f17a88cd94bcc200a73f}{is\_similar}}(path1,path2))\{}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ similar\_path\_pairs.push\_back(\{similarity,path1,path2\});}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00111}00111\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00112}00112\ \ \ \ \ sort(similar\_path\_pairs.rbegin(),similar\_path\_pairs.rend());}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00113}00113\ \ \ \ \ \textcolor{keywordflow}{return}\ similar\_path\_pairs;}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00114}00114\ \}}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00115}00115\ }
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00116}\mbox{\hyperlink{classSimilarity__Table_ade181f191adb4a2cbbbf0d2dfd8f54c7}{00116}}\ vector<pair<Path,Path>>\ \mbox{\hyperlink{classSimilarity__Table_ade181f191adb4a2cbbbf0d2dfd8f54c7}{Similarity\_Table::get\_all\_similar\_path\_pairs\_sorted\_by\_similarity}}()\{}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00117}00117\ \ \ \ \ \textcolor{keyword}{auto}\ similar\_path\_pairs\ =\ \mbox{\hyperlink{classSimilarity__Table_a774e4001d75a5d128f428941622a4868}{get\_all\_path\_pairs\_and\_similarity\_sorted\_by\_similarity}}();}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00118}00118\ \ \ \ \ vector<pair<Path,Path>>\ \mbox{\hyperlink{current_2tmp_2source_2test__same__file__different__functions__same__logic_8c_2sum_8c_a339672ff94e6199019102f50d317c3d7}{ret}};}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00119}00119\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ [similarity,path1,path2]\ :\ similar\_path\_pairs)\{}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00120}00120\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{current_2tmp_2source_2test__same__file__different__functions__same__logic_8c_2sum_8c_a339672ff94e6199019102f50d317c3d7}{ret}}.push\_back(\{path1,path2\});}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00121}00121\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00122}00122\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{current_2tmp_2source_2test__same__file__different__functions__same__logic_8c_2sum_8c_a339672ff94e6199019102f50d317c3d7}{ret}};}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00123}00123\ \}}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00124}00124\ }
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00125}00125\ vector<tuple<int,Path,Path>>\ Similarity\_Table::sort\_pairs\_by\_line\_number(vector<pair<Path,Path>>\ similar\_path\_pairs)\{}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00126}00126\ \ \ \ \ vector<tuple<int,Path,Path>>\ similar\_path\_pairs\_with\_number\_of\_lines;}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00127}00127\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ [path1,path2]\ :\ similar\_path\_pairs)\{}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00128}00128\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classFunction}{Function}}\ function(path1);}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00129}00129\ \ \ \ \ \ \ \ \ tuple<int,Path,Path>\ aux\ =\ \{function.number\_of\_lines(),path1,path2\};}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00130}00130\ \ \ \ \ \ \ \ \ similar\_path\_pairs\_with\_number\_of\_lines.push\_back(aux);}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00131}00131\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00132}00132\ \ \ \ \ sort(}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ similar\_path\_pairs\_with\_number\_of\_lines.begin(),}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ similar\_path\_pairs\_with\_number\_of\_lines.end(),}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ [\&](tuple<int,Path,Path>\ pair1,\ tuple<int,Path,Path>\ pair2)\{}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ int\ number\_lines1\ =\ get<0>(pair1);}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ int\ number\_lines2\ =\ get<0>(pair2);}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ number\_lines1\ >\ number\_lines2;}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00140}00140\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00141}00141\ \ \ \ \ \textcolor{keywordflow}{return}\ similar\_path\_pairs\_with\_number\_of\_lines;}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00142}00142\ \}}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00143}00143\ }
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00144}\mbox{\hyperlink{classSimilarity__Table_a1ca3f6a266dff65fecef8ea40e74ab48}{00144}}\ vector<pair<Path,Path>>\ \mbox{\hyperlink{classSimilarity__Table_a1ca3f6a266dff65fecef8ea40e74ab48}{Similarity\_Table::get\_all\_similar\_path\_pairs\_sorted\_by\_line\_number}}()\{}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00145}00145\ \ \ \ \ vector<pair<Path,Path>>\ similar\_path\_pairs\ =\ \mbox{\hyperlink{classSimilarity__Table_ade181f191adb4a2cbbbf0d2dfd8f54c7}{get\_all\_similar\_path\_pairs\_sorted\_by\_similarity}}();}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00146}00146\ }
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00147}00147\ \ \ \ \ vector<tuple<int,Path,Path>>\ similar\_path\_pairs\_with\_number\_of\_lines\ =\ }
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00148}00148\ \ \ \ \ \ \ \ \ sort\_pairs\_by\_line\_number(similar\_path\_pairs);}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00149}00149\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00150}00150\ \ \ \ \ vector<pair<Path,Path>>\ \mbox{\hyperlink{current_2tmp_2source_2test__same__file__different__functions__same__logic_8c_2sum_8c_a339672ff94e6199019102f50d317c3d7}{ret}};}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00151}00151\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ [line\_number,path1,path2]\ :\ similar\_path\_pairs\_with\_number\_of\_lines)\{}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00152}00152\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{current_2tmp_2source_2test__same__file__different__functions__same__logic_8c_2sum_8c_a339672ff94e6199019102f50d317c3d7}{ret}}.push\_back(\{path1,path2\});}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00153}00153\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00154}00154\ }
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00155}00155\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{current_2tmp_2source_2test__same__file__different__functions__same__logic_8c_2sum_8c_a339672ff94e6199019102f50d317c3d7}{ret}};}
+\DoxyCodeLine{\Hypertarget{similarity__table_8cpp_source_l00156}00156\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,7 @@
+<map id="master_artifacts/tests/test_multiple_file_equal_code/source.c" name="master_artifacts/tests/test_multiple_file_equal_code/source.c">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,166,61"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="10,109,70,135"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="74,62,56,96,51,94,69,60"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="94,109,168,135"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="102,60,120,94,115,96,97,62"/>
+</map>

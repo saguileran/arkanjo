@@ -1,0 +1,7 @@
+<map id="arkanjo/tests/e2e/codebase/test_multiple_file_big_functions_against_small/big.c" name="arkanjo/tests/e2e/codebase/test_multiple_file_big_functions_against_small/big.c">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,205,61"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="33,109,92,135"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="94,62,77,96,73,94,89,60"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="116,109,179,135"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="121,60,137,94,133,96,116,62"/>
+</map>

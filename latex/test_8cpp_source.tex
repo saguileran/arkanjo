@@ -1,0 +1,113 @@
+\doxysection{test.\+cpp}
+\hypertarget{test_8cpp_source}{}\label{test_8cpp_source}\index{arkanjo/tests/e2e/test.cpp@{arkanjo/tests/e2e/test.cpp}}
+\mbox{\hyperlink{test_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ <bits/stdc++.h>}}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{utils_8hpp}{../../base/utils.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{preprocessor_8hpp}{../../pre/preprocessor.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{config_8hpp}{../../base/config.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00006}00006\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00008}\mbox{\hyperlink{test_8cpp_aacf031faefe1d8e13016c14102394b29}{00008}}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{test_8cpp_aacf031faefe1d8e13016c14102394b29}{EXPECTED\_DIR}}\ =\ \textcolor{stringliteral}{"{}tests/e2e/expected"{}};}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00009}\mbox{\hyperlink{test_8cpp_ad3ae16cf032f1703559ce33a48330663}{00009}}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{test_8cpp_ad3ae16cf032f1703559ce33a48330663}{CURRENT\_DIR}}\ =\ \textcolor{stringliteral}{"{}tests/e2e/current"{}};}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00010}\mbox{\hyperlink{test_8cpp_ac62abfdddb7e883f272d3d83b19ea709}{00010}}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{test_8cpp_ac62abfdddb7e883f272d3d83b19ea709}{CODEBASE\_DIR}}\ =\ \textcolor{stringliteral}{"{}tests/e2e/codebase"{}};}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00012}\mbox{\hyperlink{test_8cpp_a03fb34fd3c0501891894fc75d9565af7}{00012}}\ vector<string>\ \mbox{\hyperlink{test_8cpp_a03fb34fd3c0501891894fc75d9565af7}{skip\_check\_list}}\ =\ \{\textcolor{stringliteral}{"{}/tmp/config.txt"{}},\textcolor{stringliteral}{"{}/tmp/output\_tool.txt"{}},\textcolor{stringliteral}{"{}/tmp/output\_parsed.txt"{}}\};}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00014}\mbox{\hyperlink{test_8cpp_a739782ef75ddbf832a891b0d841512b0}{00014}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{test_8cpp_a739782ef75ddbf832a891b0d841512b0}{should\_skip}}(\textcolor{keywordtype}{string}\ s)\{}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00015}00015\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ x\ :\ \mbox{\hyperlink{test_8cpp_a03fb34fd3c0501891894fc75d9565af7}{skip\_check\_list}})\{}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00016}00016\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(x\ ==\ s)\{}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00019}00019\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00020}00020\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00021}00021\ \}}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00023}\mbox{\hyperlink{test_8cpp_ac8de8f892f1979de37eb710a059a86b6}{00023}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{test_8cpp_ac8de8f892f1979de37eb710a059a86b6}{areEqualFile}}(\textcolor{keywordtype}{string}\ file1,\ \textcolor{keywordtype}{string}\ file2)\{}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00024}00024\ \ \ \ \ vector<string>\ left\ =\ \mbox{\hyperlink{namespaceUtils_a99bf3af71b6d6933fe7fe731962b8c4b}{Utils::read\_file\_generic}}(file1);}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00025}00025\ \ \ \ \ vector<string>\ right\ =\ \mbox{\hyperlink{namespaceUtils_a99bf3af71b6d6933fe7fe731962b8c4b}{Utils::read\_file\_generic}}(file2);}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00026}00026\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00027}00027\ \ \ \ \ \textcolor{keywordflow}{if}(left.size()\ !=\ right.size())\{\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00029}00029\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00031}00031\ \ \ \ \ \textcolor{keywordtype}{int}\ sz\ =\ left.size();}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00033}00033\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ sz;\ i++)\{}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(left[i]\ !=\ right[i])\{}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00037}00037\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00039}00039\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00040}00040\ \}}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00042}\mbox{\hyperlink{test_8cpp_a5ccedaef59ba693290d4cc7a0fb04a5d}{00042}}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{test_8cpp_a5ccedaef59ba693290d4cc7a0fb04a5d}{remove\_prefix}}(\textcolor{keywordtype}{string}\ a,\ \textcolor{keywordtype}{int}\ rem)\{}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00043}00043\ \ \ \ \ reverse(a.begin(),a.end());}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00044}00044\ \ \ \ \ \textcolor{keywordtype}{int}\ cnt\ =\ rem;}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00046}00046\ \ \ \ \ \textcolor{keywordflow}{while}(cnt\ >\ 0\ \&\&\ !a.empty())\{}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ a.pop\_back();}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ cnt-\/-\/;}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00049}00049\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00050}00050\ \ \ \ \ reverse(a.begin(),a.end());}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00051}00051\ \ \ \ \ \textcolor{keywordflow}{return}\ a;}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00052}00052\ \}}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00054}\mbox{\hyperlink{test_8cpp_afcffe8329a548c8c085ea0d987613a0e}{00054}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{test_8cpp_afcffe8329a548c8c085ea0d987613a0e}{Test}}()\{}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00055}00055\ \ \ \ \ vector<string>\ expected\_files;}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00056}00056\ \ \ \ \ vector<string>\ current\_files;}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00058}00058\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&dirEntry:\ std::filesystem::recursive\_directory\_iterator(\mbox{\hyperlink{test_8cpp_aacf031faefe1d8e13016c14102394b29}{EXPECTED\_DIR}}))\{}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ file\_path\ =\ dirEntry.path().string();}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ expected\_files.push\_back(file\_path);}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00061}00061\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00062}00062\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&dirEntry:\ std::filesystem::recursive\_directory\_iterator(\mbox{\hyperlink{test_8cpp_ad3ae16cf032f1703559ce33a48330663}{CURRENT\_DIR}}))\{}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ file\_path\ =\ dirEntry.path().string();}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ current\_files.push\_back(file\_path);}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00065}00065\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00067}00067\ \ \ \ \ sort(expected\_files.begin(),expected\_files.end());}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00068}00068\ \ \ \ \ sort(current\_files.begin(),current\_files.end());}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00069}00069\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00070}00070\ \ \ \ \ \textcolor{keywordtype}{int}\ ite\ =\ min((\textcolor{keywordtype}{int})expected\_files.size(),(\textcolor{keywordtype}{int})current\_files.size());}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00071}00071\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00072}00072\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ ite;\ i++)\{}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ expected\_file\ =\ expected\_files[i];}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ current\_file\ =\ current\_files[i];}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ expected\_without\_prefix\ =\ \mbox{\hyperlink{test_8cpp_a5ccedaef59ba693290d4cc7a0fb04a5d}{remove\_prefix}}(expected\_file,\mbox{\hyperlink{test_8cpp_aacf031faefe1d8e13016c14102394b29}{EXPECTED\_DIR}}.size());}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ current\_without\_prefix\ =\ \mbox{\hyperlink{test_8cpp_a5ccedaef59ba693290d4cc7a0fb04a5d}{remove\_prefix}}(current\_file,\mbox{\hyperlink{test_8cpp_ad3ae16cf032f1703559ce33a48330663}{CURRENT\_DIR}}.size());}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(expected\_without\_prefix\ !=\ current\_without\_prefix)\{}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(expected\_without\_prefix\ <\ current\_without\_prefix)\{}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}TEST\ FAILED"{}}\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Expected\ file\ with\ name\ "{}}\ <<expected\_file\ <<\textcolor{stringliteral}{"{}\ but\ does\ not\ exist"{}}\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}TEST\ FAILED"{}}\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Unexpected\ file\ with\ name\ "{}}\ <<\ current\_file\ <<\ \textcolor{stringliteral}{"{}\ found"{}}\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00090}00090\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{test_8cpp_a739782ef75ddbf832a891b0d841512b0}{should\_skip}}(current\_without\_prefix))\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!\mbox{\hyperlink{test_8cpp_ac8de8f892f1979de37eb710a059a86b6}{areEqualFile}}(expected\_file,current\_file))\{}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}TEST\ FAILED"{}}\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}File\ "{}}\ <<\ expected\_file\ <<\ \textcolor{stringliteral}{"{}\ does\ not\ have\ the\ expected\ content"{}}\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00096}00096\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00097}00097\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}TEST\ PASSED"{}}\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00098}00098\ \}}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00101}\mbox{\hyperlink{test_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{00101}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{test_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}}(\ \textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}\ *argv[]\ )\{}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00102}00102\ \ \ \ \ \mbox{\hyperlink{classConfig_a5f9fd951fe598fea95966a8b9a6af7db}{Config::config}}()-\/>\mbox{\hyperlink{classConfig_a6dc1f7b1c87527053280cce4cb25dbc4}{setTestConfig}}();}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00103}00103\ \ \ \ \ \mbox{\hyperlink{classPreprocessor}{Preprocessor}}(\textcolor{keyword}{true},\mbox{\hyperlink{test_8cpp_ac62abfdddb7e883f272d3d83b19ea709}{CODEBASE\_DIR}},0);}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00104}00104\ \ \ \ \ \mbox{\hyperlink{test_8cpp_afcffe8329a548c8c085ea0d987613a0e}{Test}}();}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00106}00106\ \}}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00107}00107\ }
+
+\end{DoxyCode}

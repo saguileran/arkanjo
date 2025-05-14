@@ -1,0 +1,58 @@
+\doxysection{random\+\_\+selector.\+hpp}
+\hypertarget{random__selector_8hpp_source}{}\label{random__selector_8hpp_source}\index{arkanjo/rand/random\_selector.hpp@{arkanjo/rand/random\_selector.hpp}}
+\mbox{\hyperlink{random__selector_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{random__selector_8hpp_source_l00001}00001\ \textcolor{comment}{//\ The\ Random\ Selector\ random\ selects\ a\ set\ of\ duplicated\ functions\ pairs}}
+\DoxyCodeLine{\Hypertarget{random__selector_8hpp_source_l00002}00002\ \textcolor{comment}{//\ enables\ to\ set\ the\ interval\ of\ acceptable\ similarity\ probability\ and\ }}
+\DoxyCodeLine{\Hypertarget{random__selector_8hpp_source_l00003}00003\ \textcolor{comment}{//\ the\ number\ of\ functions\ to\ be\ selected.}}
+\DoxyCodeLine{\Hypertarget{random__selector_8hpp_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{random__selector_8hpp_source_l00005}00005\ \textcolor{preprocessor}{\#ifndef\ RANDOM\_SELECTOR\_HPP}}
+\DoxyCodeLine{\Hypertarget{random__selector_8hpp_source_l00006}00006\ \textcolor{preprocessor}{\#define\ RANDOM\_SELECTOR\_HPP}}
+\DoxyCodeLine{\Hypertarget{random__selector_8hpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{random__selector_8hpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <bits/stdc++.h>}\ }
+\DoxyCodeLine{\Hypertarget{random__selector_8hpp_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{path_8hpp}{../base/path.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{random__selector_8hpp_source_l00010}00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{utils_8hpp}{../base/utils.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{random__selector_8hpp_source_l00011}00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{similarity__table_8hpp}{../base/similarity\_table.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{random__selector_8hpp_source_l00012}00012\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{random__selector_8hpp_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{random__selector_8hpp_source_l00014}\mbox{\hyperlink{classRandom__Selector}{00014}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classRandom__Selector_a478d14ada399a73dde0d91358a3fbde6}{Random\_Selector}}\{}
+\DoxyCodeLine{\Hypertarget{random__selector_8hpp_source_l00015}00015\ \ \ \ \ \textcolor{keywordtype}{string}\ START\_LINE\_COMPARATION\_PRINT\ =\ \textcolor{stringliteral}{"{}Functions:\ "{}};}
+\DoxyCodeLine{\Hypertarget{random__selector_8hpp_source_l00016}00016\ \ \ \ \ \textcolor{keywordtype}{string}\ BETWEEN\_TWO\_FUNCTION\ =\ \textcolor{stringliteral}{"{}\ AND\ "{}};}
+\DoxyCodeLine{\Hypertarget{random__selector_8hpp_source_l00017}00017\ \ \ \ \ \textcolor{keywordtype}{string}\ BETWEEN\_RELATIVE\_AND\_FUNCTION\_NAME\ =\ \textcolor{stringliteral}{"{}::"{}};}
+\DoxyCodeLine{\Hypertarget{random__selector_8hpp_source_l00018}00018\ \ \ \ \ \textcolor{keywordtype}{string}\ SIMILARITY\_MESSAGE\ =\ \textcolor{stringliteral}{"{}.\ Similarity:\ "{}};}
+\DoxyCodeLine{\Hypertarget{random__selector_8hpp_source_l00019}00019\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{random__selector_8hpp_source_l00020}00020\ \ \ \ \ \mbox{\hyperlink{classSimilarity__Table}{Similarity\_Table}}\ *similarity\_table;}
+\DoxyCodeLine{\Hypertarget{random__selector_8hpp_source_l00021}00021\ \ \ \ \ \textcolor{keywordtype}{double}\ minimum\_similarity;}
+\DoxyCodeLine{\Hypertarget{random__selector_8hpp_source_l00022}00022\ \ \ \ \ \textcolor{keywordtype}{double}\ maximum\_similarity;}
+\DoxyCodeLine{\Hypertarget{random__selector_8hpp_source_l00023}00023\ \ \ \ \ \textcolor{keywordtype}{double}\ maximum\_quantity;}
+\DoxyCodeLine{\Hypertarget{random__selector_8hpp_source_l00024}00024\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{random__selector_8hpp_source_l00025}00025\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ seed\ =\ 123456789;}
+\DoxyCodeLine{\Hypertarget{random__selector_8hpp_source_l00026}00026\ \ \ \ \ mt19937\ rng\ =\ mt19937(seed);}
+\DoxyCodeLine{\Hypertarget{random__selector_8hpp_source_l00027}00027\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{random__selector_8hpp_source_l00028}00028\ \ \ \ \ \textcolor{keywordtype}{int}\ processed\_results\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{random__selector_8hpp_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{random__selector_8hpp_source_l00030}00030\ \ \ \ \ \mbox{\hyperlink{namespaceUtils_a4d656952664ea28855824cc017ccb03a}{Utils::COLOR}}\ choose\_text\_color();}
+\DoxyCodeLine{\Hypertarget{random__selector_8hpp_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{random__selector_8hpp_source_l00032}00032\ \ \ \ \ \textcolor{keywordtype}{string}\ format\_path\_message\_in\_pair(\mbox{\hyperlink{classPath}{Path}}\ path);}
+\DoxyCodeLine{\Hypertarget{random__selector_8hpp_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{random__selector_8hpp_source_l00034}00034\ \ \ \ \ \textcolor{keywordtype}{bool}\ is\_valid\_pair(tuple<double,Path,Path>\ path\_pair);}
+\DoxyCodeLine{\Hypertarget{random__selector_8hpp_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{random__selector_8hpp_source_l00036}00036\ \ \ \ \ vector<tuple<double,Path,Path>>\ get\_similarity\_pairs\_filtered();}
+\DoxyCodeLine{\Hypertarget{random__selector_8hpp_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{random__selector_8hpp_source_l00038}00038\ \ \ \ \ vector<tuple<double,Path,Path>>\ make\_random\_selection(vector<tuple<double,Path,Path>>\ path\_pairs);}
+\DoxyCodeLine{\Hypertarget{random__selector_8hpp_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{random__selector_8hpp_source_l00040}00040\ \ \ \ \ \textcolor{keywordtype}{void}\ print\_path\_pair(tuple<double,Path,Path>\ path\_pair);}
+\DoxyCodeLine{\Hypertarget{random__selector_8hpp_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{random__selector_8hpp_source_l00042}00042\ \ \ \ \ \textcolor{keywordtype}{void}\ print\_path\_pairs(vector<tuple<double,Path,Path>>\ path\_pairs);}
+\DoxyCodeLine{\Hypertarget{random__selector_8hpp_source_l00043}00043\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{random__selector_8hpp_source_l00044}00044\ \ \ \ \ \mbox{\hyperlink{classRandom__Selector_a478d14ada399a73dde0d91358a3fbde6}{Random\_Selector}}(}
+\DoxyCodeLine{\Hypertarget{random__selector_8hpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSimilarity__Table}{Similarity\_Table}}\ *\_similarity\_table,}
+\DoxyCodeLine{\Hypertarget{random__selector_8hpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \_minimum\_similarity,}
+\DoxyCodeLine{\Hypertarget{random__selector_8hpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \_maximum\_similarity,}
+\DoxyCodeLine{\Hypertarget{random__selector_8hpp_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \_maximum\_quantity}
+\DoxyCodeLine{\Hypertarget{random__selector_8hpp_source_l00049}00049\ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{random__selector_8hpp_source_l00050}00050\ \};}
+\DoxyCodeLine{\Hypertarget{random__selector_8hpp_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{random__selector_8hpp_source_l00052}00052\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

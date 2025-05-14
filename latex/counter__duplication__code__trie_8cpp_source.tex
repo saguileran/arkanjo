@@ -1,0 +1,77 @@
+\doxysection{counter\+\_\+duplication\+\_\+code\+\_\+trie.\+cpp}
+\hypertarget{counter__duplication__code__trie_8cpp_source}{}\label{counter__duplication__code__trie_8cpp_source}\index{arkanjo/counter/counter\_duplication\_code\_trie.cpp@{arkanjo/counter/counter\_duplication\_code\_trie.cpp}}
+\mbox{\hyperlink{counter__duplication__code__trie_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code__trie_8cpp_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code__trie_8cpp_source_l00002}00002\ \textcolor{comment}{This\ is\ a\ Trie\ with\ a\ element\ being\ a\ folder\ to\ enable\ count\ of\ duplication\ code\ in\ the\ scope\ of\ files.}}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code__trie_8cpp_source_l00003}00003\ \textcolor{comment}{It\ is\ not\ simple\ to\ understand\ if\ you\ do\ not\ know\ the\ structure.\ Please\ refer\ to\ https://en.wikipedia.org/wiki/Trie\ .}}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code__trie_8cpp_source_l00004}00004\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code__trie_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{counter__duplication__code__trie_8hpp}{counter\_duplication\_code\_trie.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code__trie_8cpp_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{counter__duplication__code__trie_8cpp_source_l00007}00007\ \mbox{\hyperlink{namespaceUtils_a4d656952664ea28855824cc017ccb03a}{Utils::COLOR}}\ Counter\_Duplication\_Code\_Trie::choose\_text\_color()\{}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code__trie_8cpp_source_l00008}00008\ \ \ \ \ number\_printed\_lines++;}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code__trie_8cpp_source_l00009}00009\ \ \ \ \ \mbox{\hyperlink{namespaceUtils_a4d656952664ea28855824cc017ccb03a}{Utils::COLOR}}\ \mbox{\hyperlink{current_2tmp_2source_2test__same__file__different__functions__same__logic_8c_2sum_8c_a339672ff94e6199019102f50d317c3d7}{ret}}\ =\ \mbox{\hyperlink{namespaceUtils_a4d656952664ea28855824cc017ccb03aa13afcdbbd7b6e685715b5e43243fdde4}{Utils::BLACK}};}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code__trie_8cpp_source_l00010}00010\ \ \ \ \ \textcolor{keywordflow}{if}(number\_printed\_lines\%2\ ==\ 0)\{}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code__trie_8cpp_source_l00011}00011\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{current_2tmp_2source_2test__same__file__different__functions__same__logic_8c_2sum_8c_a339672ff94e6199019102f50d317c3d7}{ret}}\ =\ \mbox{\hyperlink{namespaceUtils_a4d656952664ea28855824cc017ccb03aadb19e75afe56cdfbb13f254ba432f0ce}{Utils::BLUE}};}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code__trie_8cpp_source_l00012}00012\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code__trie_8cpp_source_l00013}00013\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{current_2tmp_2source_2test__same__file__different__functions__same__logic_8c_2sum_8c_a339672ff94e6199019102f50d317c3d7}{ret}};}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code__trie_8cpp_source_l00014}00014\ \}}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code__trie_8cpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{counter__duplication__code__trie_8cpp_source_l00016}00016\ \textcolor{keywordtype}{int}\ Counter\_Duplication\_Code\_Trie::create\_node\_at\_the\_end()\{}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code__trie_8cpp_source_l00017}00017\ \ \ \ \ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id}\ =\ trie.size();}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code__trie_8cpp_source_l00018}00018\ \ \ \ \ map<string,int>\ aux;}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code__trie_8cpp_source_l00019}00019\ \ \ \ \ trie.push\_back(aux);}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code__trie_8cpp_source_l00020}00020\ \ \ \ \ counter\_duplication\_lines.push\_back(ZERO\_INITIAL\_COUNTER);}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code__trie_8cpp_source_l00021}00021\ \ \ \ \ \textcolor{keywordflow}{return}\ id;}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code__trie_8cpp_source_l00022}00022\ \}}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code__trie_8cpp_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{counter__duplication__code__trie_8cpp_source_l00024}00024\ \textcolor{keywordtype}{void}\ Counter\_Duplication\_Code\_Trie::create\_edge\_if\_not\_exist(\textcolor{keywordtype}{int}\ node,\ \textcolor{keywordtype}{string}\ folder)\{}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code__trie_8cpp_source_l00025}00025\ \ \ \ \ \textcolor{keywordflow}{if}(trie[node].find(folder)\ ==\ trie[node].end())\{}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code__trie_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ trie[node][folder]\ =\ create\_node\_at\_the\_end();}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code__trie_8cpp_source_l00027}00027\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code__trie_8cpp_source_l00028}00028\ \}}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code__trie_8cpp_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{counter__duplication__code__trie_8cpp_source_l00030}00030\ \textcolor{keywordtype}{string}\ Counter\_Duplication\_Code\_Trie::create\_context\_string\_on\_depth(\textcolor{keywordtype}{int}\ depth)\{}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code__trie_8cpp_source_l00031}00031\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{current_2tmp_2source_2test__same__file__different__functions__same__logic_8c_2sum_8c_a339672ff94e6199019102f50d317c3d7}{ret}}\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code__trie_8cpp_source_l00032}00032\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ depth;\ i++)\{}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code__trie_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{current_2tmp_2source_2test__same__file__different__functions__same__logic_8c_2sum_8c_a339672ff94e6199019102f50d317c3d7}{ret}}\ +=\ BASIC\_SHIFT\_PER\_DEPTH;}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code__trie_8cpp_source_l00034}00034\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code__trie_8cpp_source_l00035}00035\ \ \ \ \ \mbox{\hyperlink{current_2tmp_2source_2test__same__file__different__functions__same__logic_8c_2sum_8c_a339672ff94e6199019102f50d317c3d7}{ret}}\ +=\ END\_ARROW;}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code__trie_8cpp_source_l00036}00036\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{current_2tmp_2source_2test__same__file__different__functions__same__logic_8c_2sum_8c_a339672ff94e6199019102f50d317c3d7}{ret}};}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code__trie_8cpp_source_l00037}00037\ \}}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code__trie_8cpp_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{counter__duplication__code__trie_8cpp_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{counter__duplication__code__trie_8cpp_source_l00040}00040\ \textcolor{keywordtype}{void}\ Counter\_Duplication\_Code\_Trie::print\_node\_information(\textcolor{keywordtype}{int}\ node,\ \textcolor{keywordtype}{int}\ depth,\ \textcolor{keywordtype}{string}\ folder)\{}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code__trie_8cpp_source_l00041}00041\ \ \ \ \ \textcolor{keywordtype}{string}\ line\ =\ create\_context\_string\_on\_depth(depth)\ +\ folder\ +\ TWO\_POINTER\_AFTER\_FOLDER;}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code__trie_8cpp_source_l00042}00042\ \ \ \ \ line\ +=\ to\_string(counter\_duplication\_lines[node])\ +\ LINE\_TEXT;}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code__trie_8cpp_source_l00043}00043\ \ \ \ \ \mbox{\hyperlink{namespaceUtils_a4d656952664ea28855824cc017ccb03a}{Utils::COLOR}}\ color\ =\ choose\_text\_color();}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code__trie_8cpp_source_l00044}00044\ \ \ \ \ cout\ <<\ \mbox{\hyperlink{namespaceUtils_a7f67e71533b529a3c6196b22871dfdb4}{Utils::format\_colored\_message}}(line,color)\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code__trie_8cpp_source_l00045}00045\ \}}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code__trie_8cpp_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{counter__duplication__code__trie_8cpp_source_l00047}00047\ \textcolor{keywordtype}{void}\ Counter\_Duplication\_Code\_Trie::dfs\_print\_duplication\_code\_trie(\textcolor{keywordtype}{int}\ current\_node,\ \textcolor{keywordtype}{int}\ depth,\ \textcolor{keywordtype}{string}\ folder)\{}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code__trie_8cpp_source_l00048}00048\ \ \ \ \ print\_node\_information(current\_node,depth,folder);}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code__trie_8cpp_source_l00049}00049\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ [child\_folder,child\_node]\ :\ trie[current\_node])\{}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code__trie_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ child\_depth\ =\ depth+1;}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code__trie_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ dfs\_print\_duplication\_code\_trie(child\_node,child\_depth,child\_folder);}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code__trie_8cpp_source_l00052}00052\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code__trie_8cpp_source_l00053}00053\ \}}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code__trie_8cpp_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{counter__duplication__code__trie_8cpp_source_l00055}\mbox{\hyperlink{classCounter__Duplication__Code__Trie_ae5a2c87636db73813e03e8a93d1d3e71}{00055}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCounter__Duplication__Code__Trie_ae5a2c87636db73813e03e8a93d1d3e71}{Counter\_Duplication\_Code\_Trie::add\_folder\_duplication\_code}}(vector<string>\ folder\_path,\ \textcolor{keywordtype}{int}\ number\_of\_duplication\_lines)\{}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code__trie_8cpp_source_l00056}00056\ \ \ \ \ \textcolor{keywordtype}{int}\ current\_node\ =\ ROOT\_NODE;}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code__trie_8cpp_source_l00057}00057\ \ \ \ \ counter\_duplication\_lines[current\_node]\ +=\ number\_of\_duplication\_lines;}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code__trie_8cpp_source_l00058}00058\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ folder\ :\ folder\_path)\{}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code__trie_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ create\_edge\_if\_not\_exist(current\_node,folder);}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code__trie_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ current\_node\ =\ trie[current\_node][folder];}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code__trie_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ counter\_duplication\_lines[current\_node]\ +=\ number\_of\_duplication\_lines;}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code__trie_8cpp_source_l00062}00062\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code__trie_8cpp_source_l00063}00063\ \}}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code__trie_8cpp_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{counter__duplication__code__trie_8cpp_source_l00065}\mbox{\hyperlink{classCounter__Duplication__Code__Trie_a32ab2d308bd20e1b917bcc7b1eb39f33}{00065}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCounter__Duplication__Code__Trie_a32ab2d308bd20e1b917bcc7b1eb39f33}{Counter\_Duplication\_Code\_Trie::print\_duplication\_code\_trie}}()\{}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code__trie_8cpp_source_l00066}00066\ \ \ \ \ dfs\_print\_duplication\_code\_trie(ROOT\_NODE,BASE\_DEPTH,EMPTY\_FOLDER);}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code__trie_8cpp_source_l00067}00067\ \}}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code__trie_8cpp_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{counter__duplication__code__trie_8cpp_source_l00069}\mbox{\hyperlink{classCounter__Duplication__Code__Trie_a09f1ebbf0e26db282b990e621e7b6c55}{00069}}\ \mbox{\hyperlink{classCounter__Duplication__Code__Trie_a09f1ebbf0e26db282b990e621e7b6c55}{Counter\_Duplication\_Code\_Trie::Counter\_Duplication\_Code\_Trie}}()\{}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code__trie_8cpp_source_l00070}00070\ \ \ \ \ create\_node\_at\_the\_end();}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code__trie_8cpp_source_l00071}00071\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,7 @@
+<map id="master_artifacts/dbg/test_same_file_big_function_against_small.c" name="master_artifacts/dbg/test_same_file_big_function_against_small.c">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,192,61"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="26,109,86,135"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="88,62,71,96,66,94,83,60"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="110,109,172,135"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="114,60,131,94,126,96,109,62"/>
+</map>

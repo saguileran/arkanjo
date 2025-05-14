@@ -1,0 +1,96 @@
+\doxysection{windows\+\_\+utils.\+cpp}
+\hypertarget{windows__utils_8cpp_source}{}\label{windows__utils_8cpp_source}\index{arkanjo/base/windows\_utils.cpp@{arkanjo/base/windows\_utils.cpp}}
+\mbox{\hyperlink{windows__utils_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{windows__utils_8hpp}{windows\_utils.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#ifdef\ \_WIN32}}
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <windows.h>}}
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00009}00009\ \textcolor{preprocessor}{\#ifndef\ ENABLE\_VIRTUAL\_TERMINAL\_PROCESSING}}
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00010}00010\ \textcolor{preprocessor}{\#define\ ENABLE\_VIRTUAL\_TERMINAL\_PROCESSING\ 0x0004}}
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00011}00011\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00013}00013\ tuple<int,\ int,\ int>\ \mbox{\hyperlink{namespaceUtilsOSDependable_a73ce8621f643db388f85ddefa2dbb361}{UtilsOSDependable::parse\_terminal\_color\_response}}()\{}
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00014}00014\ \ \ HANDLE\ hInput\ =\ GetStdHandle(STD\_INPUT\_HANDLE);}
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00015}00015\ \ \ HANDLE\ hOutput\ =\ GetStdHandle(STD\_OUTPUT\_HANDLE);}
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00017}00017\ \ \ \textcolor{comment}{//\ Save\ original\ console\ mode}}
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00018}00018\ \ \ DWORD\ originalOutMode\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00019}00019\ \ \ GetConsoleMode(hOutput,\ \&originalOutMode);}
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00021}00021\ \ \ \textcolor{comment}{//\ Enable\ virtual\ terminal\ processing}}
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00022}00022\ \ \ SetConsoleMode(hOutput,\ originalOutMode\ |\ ENABLE\_VIRTUAL\_TERMINAL\_PROCESSING);}
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00024}00024\ \ \ \textcolor{comment}{//\ Set\ input\ to\ raw\ mode\ (disable\ line\ input\ and\ echo\ input)}}
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00025}00025\ \ \ DWORD\ originalInMode\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00026}00026\ \ \ GetConsoleMode(hInput,\ \&originalInMode);}
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00027}00027\ \ \ SetConsoleMode(hInput,\ originalInMode\ \&\ \string~(ENABLE\_LINE\_INPUT\ |\ ENABLE\_ECHO\_INPUT));}
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00029}00029\ \ \ \textcolor{comment}{//\ Send\ OSC\ 11\ query\ for\ background\ color}}
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00030}00030\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ query\ =\ \textcolor{stringliteral}{"{}\(\backslash\)x1b]11;?\(\backslash\)x1b\(\backslash\)\(\backslash\)"{}};}
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00031}00031\ \ \ DWORD\ written\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00032}00032\ \ \ WriteConsoleA(hOutput,\ query,\ (DWORD)strlen(query),\ \&written,\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00034}00034\ \ \ \textcolor{comment}{//\ Read\ raw\ input}}
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00035}00035\ \ \ std::string\ response;}
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00036}00036\ \ \ \textcolor{keywordtype}{char}\ buffer[256];}
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00037}00037\ \ \ DWORD\ read\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00038}00038\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 20;\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00039}00039\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ReadFile(hInput,\ buffer,\ \textcolor{keyword}{sizeof}(buffer),\ \&read,\ \textcolor{keyword}{nullptr})\ \&\&\ read\ >\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ response.append(buffer,\ read);}
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (response.find(\textcolor{stringliteral}{'\(\backslash\)x1b'})\ !=\ std::string::npos\ \&\&\ response.find(\textcolor{stringliteral}{"{}rgb:"{}})\ !=\ std::string::npos)\ \{}
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00044}00044\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00045}00045\ \ \ \ \ \ \ Sleep(50);}
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00046}00046\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00048}00048\ \ \ \textcolor{comment}{//\ Restore\ original\ modes}}
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00049}00049\ \ \ SetConsoleMode(hInput,\ originalInMode);}
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00050}00050\ \ \ SetConsoleMode(hOutput,\ originalOutMode);}
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00052}00052\ \ \ \textcolor{comment}{//\ Parse\ RGB\ from\ response}}
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00053}00053\ \ \ \textcolor{keywordtype}{size\_t}\ start\ =\ response.find(\textcolor{stringliteral}{"{}rgb:"{}});}
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00054}00054\ \ \ \textcolor{keywordflow}{if}\ (start\ ==\ std::string::npos)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00055}00055\ \ \ start\ +=\ 4;}
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00057}00057\ \ \ \textcolor{keywordtype}{size\_t}\ end\ =\ response.find(\textcolor{stringliteral}{"{}/"{}},\ start);}
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00058}00058\ \ \ \textcolor{keywordflow}{if}\ (end\ ==\ std::string::npos)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00059}00059\ \ \ std::string\ rStr\ =\ response.substr(start,\ end\ -\/\ start);}
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00061}00061\ \ \ start\ =\ end\ +\ 1;}
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00062}00062\ \ \ end\ =\ response.find(\textcolor{stringliteral}{"{}/"{}},\ start);}
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00063}00063\ \ \ \textcolor{keywordflow}{if}\ (end\ ==\ std::string::npos)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00064}00064\ \ \ std::string\ gStr\ =\ response.substr(start,\ end\ -\/\ start);}
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00066}00066\ \ \ start\ =\ end\ +\ 1;}
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00067}00067\ \ \ end\ =\ response.find(\textcolor{stringliteral}{"{}\(\backslash\)x1b"{}},\ start);}
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00068}00068\ \ \ \textcolor{keywordflow}{if}\ (end\ ==\ std::string::npos)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00069}00069\ \ \ std::string\ bStr\ =\ response.substr(start,\ end\ -\/\ start);}
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00071}00071\ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00072}00072\ \ \ \ \ \ \ r\ =\ std::stoi(rStr,\ \textcolor{keyword}{nullptr},\ 16)\ /\ 256;}
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00073}00073\ \ \ \ \ \ \ g\ =\ std::stoi(gStr,\ \textcolor{keyword}{nullptr},\ 16)\ /\ 256;}
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00074}00074\ \ \ \ \ \ \ b\ =\ std::stoi(bStr,\ \textcolor{keyword}{nullptr},\ 16)\ /\ 256;}
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00075}00075\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \{r,\ g,\ b\};}
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00076}00076\ \ \ \}\ \textcolor{keywordflow}{catch}\ (...)\ \{}
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00077}00077\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \{0,\ 0,\ 0\};}
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00078}00078\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00079}00079\ \}}
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00081}00081\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{namespaceUtilsOSDependable_ae94000387658cfce3f629da04843784f}{UtilsOSDependable::get\_terminal\_bg\_color\_luminance}}()\{}
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00082}00082\ \ \ \textcolor{keyword}{auto}\ [r,\ g,\ b]\ =\ \mbox{\hyperlink{namespaceUtilsOSDependable_a974ef162d7d2726649ea37db8594558d}{parse\_terminal\_color\_response}}();}
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00083}00083\ \ \ \textcolor{keywordflow}{return}\ 0.2126\ *\ (r/255)\ +\ 0.7152\ *\ (g/255)\ +\ 0.0722\ *\ (b/255);}
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00084}00084\ \}}
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00086}00086\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceUtilsOSDependable_a77d0b457dded74d7d1f901d333d25453}{UtilsOSDependable::is\_bg\_color\_dark}}()\{}
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00087}00087\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceUtilsOSDependable_ae94000387658cfce3f629da04843784f}{get\_terminal\_bg\_color\_luminance}}()\ <=\ 0.5;}
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00088}00088\ \}}
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{windows__utils_8cpp_source_l00090}00090\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

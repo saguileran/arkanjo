@@ -1,0 +1,16 @@
+<map id="arkanjo/base/function.hpp" name="arkanjo/base/function.hpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="61,5,231,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,153,103,178"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="113,34,80,52,66,65,55,80,48,108,50,137,44,138,42,108,50,78,62,62,77,48,110,29"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="229,153,362,178"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="172,29,206,49,241,77,266,107,285,137,280,140,262,110,237,81,203,54,169,34"/>
+<area shape="rect" id="Node000004" href="$path_8hpp.html" title=" " alt="" coords="64,79,134,105"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="141,33,118,67,113,64,136,30"/>
+<area shape="rect" id="Node000005" href="$utils_8hpp.html" title="Defines utility functions used across all files." alt="" coords="158,79,227,105"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="156,30,179,64,174,67,151,33"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="94,106,72,141,67,138,90,103"/>
+<area shape="poly" id="edge6_Node000005_Node000002" title=" " alt="" coords="170,108,92,147,90,143,168,103"/>
+<area shape="poly" id="edge7_Node000005_Node000003" title=" " alt="" coords="212,103,267,141,264,146,209,107"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="127,153,205,178"/>
+<area shape="poly" id="edge8_Node000005_Node000006" title=" " alt="" coords="191,106,178,139,173,137,186,104"/>
+</map>

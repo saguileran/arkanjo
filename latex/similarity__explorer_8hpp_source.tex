@@ -1,0 +1,62 @@
+\doxysection{similarity\+\_\+explorer.\+hpp}
+\hypertarget{similarity__explorer_8hpp_source}{}\label{similarity__explorer_8hpp_source}\index{arkanjo/explorer/similarity\_explorer.hpp@{arkanjo/explorer/similarity\_explorer.hpp}}
+\mbox{\hyperlink{similarity__explorer_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{similarity__explorer_8hpp_source_l00001}00001\ \textcolor{comment}{//\ The\ Similarity\ Explorer\ implements\ the\ functionality\ to\ }}
+\DoxyCodeLine{\Hypertarget{similarity__explorer_8hpp_source_l00002}00002\ \textcolor{comment}{//\ implement\ to\ find\ duplicated\ functions\ enabling\ some}}
+\DoxyCodeLine{\Hypertarget{similarity__explorer_8hpp_source_l00003}00003\ \textcolor{comment}{//\ filters\ and\ sortings\ options}}
+\DoxyCodeLine{\Hypertarget{similarity__explorer_8hpp_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{similarity__explorer_8hpp_source_l00005}00005\ \textcolor{preprocessor}{\#ifndef\ SIMILARITY\_EXPLORER\_HPP}}
+\DoxyCodeLine{\Hypertarget{similarity__explorer_8hpp_source_l00006}00006\ \textcolor{preprocessor}{\#define\ SIMILARITY\_EXPLORER\_HPP}}
+\DoxyCodeLine{\Hypertarget{similarity__explorer_8hpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{similarity__explorer_8hpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <bits/stdc++.h>}\ }
+\DoxyCodeLine{\Hypertarget{similarity__explorer_8hpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{similarity__explorer_8hpp_source_l00010}00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{path_8hpp}{../base/path.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{similarity__explorer_8hpp_source_l00011}00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{function_8hpp}{../base/function.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{similarity__explorer_8hpp_source_l00012}00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{utils_8hpp}{../base/utils.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{similarity__explorer_8hpp_source_l00013}00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{similarity__table_8hpp}{../base/similarity\_table.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{similarity__explorer_8hpp_source_l00014}00014\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{similarity__explorer_8hpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{similarity__explorer_8hpp_source_l00016}\mbox{\hyperlink{classSimilarity__Explorer}{00016}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classSimilarity__Explorer_a8bf21da762751a18e9babf733832274a}{Similarity\_Explorer}}\{}
+\DoxyCodeLine{\Hypertarget{similarity__explorer_8hpp_source_l00017}00017\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{similarity__explorer_8hpp_source_l00018}\mbox{\hyperlink{classSimilarity__Explorer_ae85b5477ee986806aefa7044144dc1b3}{00018}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classSimilarity__Explorer_ae85b5477ee986806aefa7044144dc1b3}{UNLIMITED\_RESULTS}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{similarity__explorer_8hpp_source_l00019}\mbox{\hyperlink{classSimilarity__Explorer_a415887327731b75d325dd7734465fc0b}{00019}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{classSimilarity__Explorer_a415887327731b75d325dd7734465fc0b}{EMPTY\_PATTERN}}\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{similarity__explorer_8hpp_source_l00020}00020\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{similarity__explorer_8hpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ BETWEEN\_RELATIVE\_AND\_FUNCTION\_NAME\ =\ \textcolor{stringliteral}{"{}::"{}};}
+\DoxyCodeLine{\Hypertarget{similarity__explorer_8hpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ START\_LINE\_COMPARATION\_PRINT\ =\ \textcolor{stringliteral}{"{}Functions\ find:\ "{}};}
+\DoxyCodeLine{\Hypertarget{similarity__explorer_8hpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ BETWEEN\_TWO\_FUNCTION\ =\ \textcolor{stringliteral}{"{}\ AND\ "{}};}
+\DoxyCodeLine{\Hypertarget{similarity__explorer_8hpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ NUMBER\_LINES\_MESSAGE\ =\ \textcolor{stringliteral}{"{}\ ,\ TOTAL\ NUMBER\ LINES\ IN\ FUNCTIONS:\ "{}};}
+\DoxyCodeLine{\Hypertarget{similarity__explorer_8hpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ INITIAL\_TEXT\_PRINT\_1\ =\ \textcolor{stringliteral}{"{}It\ was\ found\ a\ total\ of\ "{}};}
+\DoxyCodeLine{\Hypertarget{similarity__explorer_8hpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ INITIAL\_TEXT\_PRINT\_2\ =\ \textcolor{stringliteral}{"{}\ pair\ of\ duplicate\ functions\ in\ the\ codebase.\ Which\ the\ first\ "{}};}
+\DoxyCodeLine{\Hypertarget{similarity__explorer_8hpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ INITIAL\_TEXT\_PRINT\_3\ =\ \textcolor{stringliteral}{"{}\ can\ be\ found\ below."{}};}
+\DoxyCodeLine{\Hypertarget{similarity__explorer_8hpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ INITIAL\_PROCESSED\_RESULTS\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{similarity__explorer_8hpp_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{similarity__explorer_8hpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSimilarity__Table}{Similarity\_Table}}\ *similarity\_table;}
+\DoxyCodeLine{\Hypertarget{similarity__explorer_8hpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ limit\_on\_results;}
+\DoxyCodeLine{\Hypertarget{similarity__explorer_8hpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ pattern\_to\_match;}
+\DoxyCodeLine{\Hypertarget{similarity__explorer_8hpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ both\_path\_need\_to\_match\_pattern;}
+\DoxyCodeLine{\Hypertarget{similarity__explorer_8hpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ processed\_results\ =\ INITIAL\_PROCESSED\_RESULTS;}
+\DoxyCodeLine{\Hypertarget{similarity__explorer_8hpp_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{similarity__explorer_8hpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceUtils_a4d656952664ea28855824cc017ccb03a}{Utils::COLOR}}\ choose\_text\_color();}
+\DoxyCodeLine{\Hypertarget{similarity__explorer_8hpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ find\_number\_pairs\_show(\textcolor{keywordtype}{int}\ number\_pair\_found);}
+\DoxyCodeLine{\Hypertarget{similarity__explorer_8hpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ format\_initial\_message(\textcolor{keywordtype}{int}\ number\_pair\_found);}
+\DoxyCodeLine{\Hypertarget{similarity__explorer_8hpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ match\_pattern(\mbox{\hyperlink{classPath}{Path}}\ path1,\ \mbox{\hyperlink{classPath}{Path}}\ path2);}
+\DoxyCodeLine{\Hypertarget{similarity__explorer_8hpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ format\_path\_message\_in\_pair(\mbox{\hyperlink{classPath}{Path}}\ path);}
+\DoxyCodeLine{\Hypertarget{similarity__explorer_8hpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ find\_number\_lines(\mbox{\hyperlink{classPath}{Path}}\ path1);}
+\DoxyCodeLine{\Hypertarget{similarity__explorer_8hpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ print\_similar\_path\_pair(\mbox{\hyperlink{classPath}{Path}}\ path1,\ \mbox{\hyperlink{classPath}{Path}}\ path2);}
+\DoxyCodeLine{\Hypertarget{similarity__explorer_8hpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ process\_similar\_path\_pair(\mbox{\hyperlink{classPath}{Path}}\ path1,\ \mbox{\hyperlink{classPath}{Path}}\ path2);}
+\DoxyCodeLine{\Hypertarget{similarity__explorer_8hpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ find\_number\_pair\_found(vector<pair<Path,Path>>\ similar\_path\_pairs);}
+\DoxyCodeLine{\Hypertarget{similarity__explorer_8hpp_source_l00045}00045\ \ \ \ \ \ \ \ \ vector<pair<Path,Path>>\ build\_similar\_path\_pairs(\textcolor{keywordtype}{bool}\ sorted\_by\_number\_of\_duplicated\_code);}
+\DoxyCodeLine{\Hypertarget{similarity__explorer_8hpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ explorer(\textcolor{keywordtype}{bool}\ sorted\_by\_number\_of\_duplicated\_code);}
+\DoxyCodeLine{\Hypertarget{similarity__explorer_8hpp_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{similarity__explorer_8hpp_source_l00048}00048\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{similarity__explorer_8hpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSimilarity__Explorer_a8bf21da762751a18e9babf733832274a}{Similarity\_Explorer}}(\mbox{\hyperlink{classSimilarity__Table}{Similarity\_Table}}\ *\_similarity\_table,\ }
+\DoxyCodeLine{\Hypertarget{similarity__explorer_8hpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \_limit\_on\_results,\ }
+\DoxyCodeLine{\Hypertarget{similarity__explorer_8hpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ \_pattern\_to\_match,\ }
+\DoxyCodeLine{\Hypertarget{similarity__explorer_8hpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \_both\_path\_need\_to\_match,}
+\DoxyCodeLine{\Hypertarget{similarity__explorer_8hpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ sorted\_by\_number\_of\_duplicated\_code=\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{similarity__explorer_8hpp_source_l00054}00054\ \};}
+\DoxyCodeLine{\Hypertarget{similarity__explorer_8hpp_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{similarity__explorer_8hpp_source_l00056}00056\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

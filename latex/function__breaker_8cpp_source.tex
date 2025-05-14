@@ -1,0 +1,74 @@
+\doxysection{function\+\_\+breaker.\+cpp}
+\hypertarget{function__breaker_8cpp_source}{}\label{function__breaker_8cpp_source}\index{arkanjo/pre/function\_breaker.cpp@{arkanjo/pre/function\_breaker.cpp}}
+\mbox{\hyperlink{function__breaker_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{function__breaker_8cpp_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{function__breaker_8cpp_source_l00002}00002\ \textcolor{comment}{This\ file\ intends\ to\ create\ a\ script\ to\ read\ a\ directory\ with\ }}
+\DoxyCodeLine{\Hypertarget{function__breaker_8cpp_source_l00003}00003\ \textcolor{comment}{code\ in\ c\ and\ extract\ every\ function/struct\ of\ every\ .c\ file\ as\ a\ new\ file}}
+\DoxyCodeLine{\Hypertarget{function__breaker_8cpp_source_l00004}00004\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{function__breaker_8cpp_source_l00005}00005\ \textcolor{comment}{Example\ of\ expected\ behaviour:\ }}
+\DoxyCodeLine{\Hypertarget{function__breaker_8cpp_source_l00006}00006\ \textcolor{comment}{There\ is\ a\ file\ example.c\ with\ functions\ a\ and\ b,\ will\ be\ create\ two\ new\ }}
+\DoxyCodeLine{\Hypertarget{function__breaker_8cpp_source_l00007}00007\ \textcolor{comment}{files:\ example/a.c\ and\ example/b.c}}
+\DoxyCodeLine{\Hypertarget{function__breaker_8cpp_source_l00008}00008\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{function__breaker_8cpp_source_l00009}00009\ \textcolor{comment}{TODO:\ Doesn't\ work\ correct\ if\ the\ file\ has\ an\ incorrect\ bracket\ sequence,\ }}
+\DoxyCodeLine{\Hypertarget{function__breaker_8cpp_source_l00010}00010\ \textcolor{comment}{even\ if\ the\ bracket\ sequence\ is\ in\ a\ commentary}}
+\DoxyCodeLine{\Hypertarget{function__breaker_8cpp_source_l00011}00011\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{function__breaker_8cpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{function__breaker_8cpp_source_l00013}00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{function__breaker_8hpp}{function\_breaker.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{function__breaker_8cpp_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{function__breaker_8cpp_source_l00015}00015\ \textcolor{keywordtype}{bool}\ FunctionBreaker::is\_c\_extension(\textcolor{keywordtype}{string}\ extension)\{}
+\DoxyCodeLine{\Hypertarget{function__breaker_8cpp_source_l00016}00016\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ c\_extension\ :\ C\_EXTENSIONS)\{}
+\DoxyCodeLine{\Hypertarget{function__breaker_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(extension\ ==\ c\_extension)\{}
+\DoxyCodeLine{\Hypertarget{function__breaker_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{function__breaker_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{function__breaker_8cpp_source_l00020}00020\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{function__breaker_8cpp_source_l00021}00021\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{function__breaker_8cpp_source_l00022}00022\ \}}
+\DoxyCodeLine{\Hypertarget{function__breaker_8cpp_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{function__breaker_8cpp_source_l00024}00024\ \textcolor{keywordtype}{bool}\ FunctionBreaker::is\_java\_extension(\textcolor{keywordtype}{string}\ extension)\{}
+\DoxyCodeLine{\Hypertarget{function__breaker_8cpp_source_l00025}00025\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ java\_extension\ :\ JAVA\_EXTENSIONS)\{}
+\DoxyCodeLine{\Hypertarget{function__breaker_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(extension\ ==\ java\_extension)\{}
+\DoxyCodeLine{\Hypertarget{function__breaker_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{function__breaker_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{function__breaker_8cpp_source_l00029}00029\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{function__breaker_8cpp_source_l00030}00030\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{function__breaker_8cpp_source_l00031}00031\ \}}
+\DoxyCodeLine{\Hypertarget{function__breaker_8cpp_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{function__breaker_8cpp_source_l00033}00033\ \textcolor{keywordtype}{bool}\ FunctionBreaker::is\_allowed\_extension(\textcolor{keywordtype}{string}\ extension)\{}
+\DoxyCodeLine{\Hypertarget{function__breaker_8cpp_source_l00034}00034\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ allowed\_extension\ :\ ALLOWED\_EXTENSIONS)\{}
+\DoxyCodeLine{\Hypertarget{function__breaker_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(extension\ ==\ allowed\_extension)\{}
+\DoxyCodeLine{\Hypertarget{function__breaker_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{function__breaker_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{function__breaker_8cpp_source_l00038}00038\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{function__breaker_8cpp_source_l00039}00039\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{function__breaker_8cpp_source_l00040}00040\ \}}
+\DoxyCodeLine{\Hypertarget{function__breaker_8cpp_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{function__breaker_8cpp_source_l00042}00042\ \textcolor{keywordtype}{void}\ FunctionBreaker::file\_breaker(\textcolor{keywordtype}{string}\ file\_path,\ \textcolor{keywordtype}{string}\ folder\_path)\{}
+\DoxyCodeLine{\Hypertarget{function__breaker_8cpp_source_l00043}00043\ \ \ \ \ \textcolor{keywordtype}{string}\ extension\ =\ \mbox{\hyperlink{function__breaker__util_8cpp_aa98958a2eea26c27b022e37565597738}{extract\_extension}}(file\_path);}
+\DoxyCodeLine{\Hypertarget{function__breaker_8cpp_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{function__breaker_8cpp_source_l00045}00045\ \ \ \ \ \textcolor{keywordflow}{if}(!is\_allowed\_extension(extension))\{}
+\DoxyCodeLine{\Hypertarget{function__breaker_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{function__breaker_8cpp_source_l00047}00047\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{function__breaker_8cpp_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{function__breaker_8cpp_source_l00049}00049\ \ \ \ \ \textcolor{keywordflow}{if}(is\_c\_extension(extension))\{}
+\DoxyCodeLine{\Hypertarget{function__breaker_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ FunctionBreakerC\ function\_breaker\_c(file\_path,\ folder\_path);}
+\DoxyCodeLine{\Hypertarget{function__breaker_8cpp_source_l00051}00051\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{function__breaker_8cpp_source_l00052}00052\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(is\_java\_extension(extension))\{}
+\DoxyCodeLine{\Hypertarget{function__breaker_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ FunctionBreakerJava\ function\_breaker\_java(file\_path,\ folder\_path);}
+\DoxyCodeLine{\Hypertarget{function__breaker_8cpp_source_l00054}00054\ \ \ \ \ \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{\Hypertarget{function__breaker_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ assert(\textcolor{keyword}{false}\ \&\&\ \textcolor{stringliteral}{"{}NOT\ ALLOWED\ FILE\ PASSED"{}});}
+\DoxyCodeLine{\Hypertarget{function__breaker_8cpp_source_l00056}00056\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{function__breaker_8cpp_source_l00057}00057\ \}}
+\DoxyCodeLine{\Hypertarget{function__breaker_8cpp_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{function__breaker_8cpp_source_l00059}00059\ \textcolor{keywordtype}{void}\ FunctionBreaker::function\_breaker(\textcolor{keywordtype}{string}\ folder\_path)\{}
+\DoxyCodeLine{\Hypertarget{function__breaker_8cpp_source_l00060}00060\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&dirEntry:\ std::filesystem::recursive\_directory\_iterator(folder\_path))\{}
+\DoxyCodeLine{\Hypertarget{function__breaker_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ file\_path\ =\ dirEntry.path().string();}
+\DoxyCodeLine{\Hypertarget{function__breaker_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ file\_breaker(file\_path,folder\_path);}
+\DoxyCodeLine{\Hypertarget{function__breaker_8cpp_source_l00063}00063\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{function__breaker_8cpp_source_l00064}00064\ \}}
+\DoxyCodeLine{\Hypertarget{function__breaker_8cpp_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{function__breaker_8cpp_source_l00066}\mbox{\hyperlink{classFunctionBreaker_a041958058b6eb1e0581679e7f71701be}{00066}}\ \mbox{\hyperlink{classFunctionBreaker_a041958058b6eb1e0581679e7f71701be}{FunctionBreaker::FunctionBreaker}}(\textcolor{keywordtype}{string}\ folder\_path)\{}
+\DoxyCodeLine{\Hypertarget{function__breaker_8cpp_source_l00067}00067\ \ \ \ \ function\_breaker(folder\_path);}
+\DoxyCodeLine{\Hypertarget{function__breaker_8cpp_source_l00068}00068\ \}}
+
+\end{DoxyCode}

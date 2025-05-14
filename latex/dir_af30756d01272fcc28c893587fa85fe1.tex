@@ -1,0 +1,75 @@
+\doxysection{master\+\_\+artifacts/file\+\_\+parser Directory Reference}
+\hypertarget{dir_af30756d01272fcc28c893587fa85fe1}{}\label{dir_af30756d01272fcc28c893587fa85fe1}\index{master\_artifacts/file\_parser Directory Reference@{master\_artifacts/file\_parser Directory Reference}}
+Directory dependency graph for file\+\_\+parser\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=182pt]{dir_af30756d01272fcc28c893587fa85fe1_dep}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Files}
+\begin{DoxyCompactItemize}
+\item 
+file \mbox{\hyperlink{filter_8cpp}{filter.\+cpp}}
+\item 
+file \mbox{\hyperlink{master__artifacts_2file__parser_2parser_8cpp}{parser.\+cpp}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This tool uses as a subrotine the tool from \href{https://github.com/platisd/duplicate-code-detection-tool}{\texttt{ Duplicate Code Detection Tool}} as a subrotine to compare functions
+
+The tool was created with the desire to facilitate code duplication detection and at the moment the tool it has the following functionalities\+:
+
+
+\begin{DoxyItemize}
+\item Compare every pair of files with C code on a folder and return every pair that pass a threhold of similarity.
+\item Given a file, return every file that the similarity with the file pass a threshold of similarity.
+\end{DoxyItemize}
+
+The concept of similarity is a black-\/box concept given by the \href{https://github.com/platisd/duplicate-code-detection-tool}{\texttt{ Duplicate Code Detection Tool}} with the help of Machine Learning.
+
+Similarity of two objects is a number between on 0 and 100. Higher the number, higher the similarity between the objects.\hypertarget{README.md_autotoc_md24}{}\doxysubsection{\texorpdfstring{Requirements}{Requirements}}\label{README.md_autotoc_md24}
+It is required access to internet to download the subrotine tool.
+
+It is required the g++. The standard C++ compiler in the GNU/\+Linux environment\hypertarget{README.md_autotoc_md25}{}\doxysubsection{\texorpdfstring{How to Setup}{How to Setup}}\label{README.md_autotoc_md25}
+Execute the setup.\+sh script and follow the steps\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{sudo\ bash\ setup.sh}
+
+\end{DoxyCode}
+
+
+After you done the setup, you can request comparations about the folder you given to the tool while you run the setup script.
+
+It is not stored setup\textquotesingle{}s. So if you want to check another code base you will lose the setup of a previous one.\hypertarget{README.md_autotoc_md26}{}\doxysubsection{\texorpdfstring{How to Run}{How to Run}}\label{README.md_autotoc_md26}
+If you has done the standard setup. This is the following command you can execute with the tool\+:\hypertarget{README.md_autotoc_md27}{}\doxysubsubsection{\texorpdfstring{find files that the similarity to a given file is greater or equal to a given value MIN}{find files that the similarity to a given file is greater or equal to a given value MIN}}\label{README.md_autotoc_md27}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{sudo\ bash\ run.sh\ similar\ FILE\_NAME\ MIN\_SIMILARITY}
+
+\end{DoxyCode}
+\hypertarget{README.md_autotoc_md28}{}\doxysubsubsection{\texorpdfstring{finds the quantity and all pair of files that the similarity is greater or equal to a given value\+:}{finds the quantity and all pair of files that the similarity is greater or equal to a given value\+:}}\label{README.md_autotoc_md28}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{sudo\ bash\ run.sh\ all\ MIN\_SIMILARITY}
+
+\end{DoxyCode}
+
+
+The output of the all command start with a number n, the number of comparations made by the tool.
+
+The following n lines of the output has two strings s,t and a decimal number SIMILARITY, a pair of files compared and the similarity between them.
+
+The list of comparations of the output is sorted by similarity in decending order.\hypertarget{README.md_autotoc_md29}{}\doxysubsubsection{\texorpdfstring{Find files that the similarity to a given file from the output of the all command\+:}{Find files that the similarity to a given file from the output of the all command\+:}}\label{README.md_autotoc_md29}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{sudo\ bash\ run.sh\ similar\_from\_all\ FILE\_NAME\ OUTPUT\_ALL}
+
+\end{DoxyCode}
+
+
+To execute the similar\+\_\+from\+\_\+all, save the output of an all command on a temporary file and pass the name of the file to the command. 

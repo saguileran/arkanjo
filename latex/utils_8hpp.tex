@@ -1,0 +1,95 @@
+\doxysection{arkanjo/base/utils.hpp File Reference}
+\hypertarget{utils_8hpp}{}\label{utils_8hpp}\index{arkanjo/base/utils.hpp@{arkanjo/base/utils.hpp}}
+
+
+Defines utility functions used across all files.  
+
+
+{\ttfamily \#include $<$bits/stdc++.\+h$>$}\newline
+{\ttfamily \#include $<$jsoncpp/json/json.\+h$>$}\newline
+{\ttfamily \#include $<$sys/stat.\+h$>$}\newline
+Include dependency graph for utils.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=347pt]{utils_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{utils_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceUtils}{Utils}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespaceUtils_a4d656952664ea28855824cc017ccb03a}{Utils\+::\+COLOR}} \{ \newline
+\mbox{\hyperlink{namespaceUtils_a4d656952664ea28855824cc017ccb03aa12907a9ced1317d0c7ba02f2dbe0b6ec}{Utils\+::\+RESET}}
+, \mbox{\hyperlink{namespaceUtils_a4d656952664ea28855824cc017ccb03aa81f2ebcaa0a7c210d88ddef0748fe312}{Utils\+::\+RED}}
+, \mbox{\hyperlink{namespaceUtils_a4d656952664ea28855824cc017ccb03aa8f60bb1baa792d629878b6d8d4bc1f63}{Utils\+::\+GREEN}}
+, \mbox{\hyperlink{namespaceUtils_a4d656952664ea28855824cc017ccb03aa9f2be4f98823f8ac857dd07bae90a55a}{Utils\+::\+YELLOW}}
+, \newline
+\mbox{\hyperlink{namespaceUtils_a4d656952664ea28855824cc017ccb03aadb19e75afe56cdfbb13f254ba432f0ce}{Utils\+::\+BLUE}}
+, \mbox{\hyperlink{namespaceUtils_a4d656952664ea28855824cc017ccb03aa48528bb8a311b9079ffb50957714a220}{Utils\+::\+MAGENTA}}
+, \mbox{\hyperlink{namespaceUtils_a4d656952664ea28855824cc017ccb03aae23f444f8507ac9f26a976d4b59bbf5e}{Utils\+::\+CYAN}}
+, \mbox{\hyperlink{namespaceUtils_a4d656952664ea28855824cc017ccb03aa6233f9c6343f76131ae140ede9ed90f0}{Utils\+::\+GRAY}}
+, \newline
+\mbox{\hyperlink{namespaceUtils_a4d656952664ea28855824cc017ccb03aa818618257a69565480cf3a303e3dc3fb}{Utils\+::\+WHITE}}
+, \mbox{\hyperlink{namespaceUtils_a4d656952664ea28855824cc017ccb03aa365a8aef4608b1dbe48ff357fe8021d7}{Utils\+::\+BRIGHT\+\_\+\+YELLOW}}
+, \mbox{\hyperlink{namespaceUtils_a4d656952664ea28855824cc017ccb03aa13afcdbbd7b6e685715b5e43243fdde4}{Utils\+::\+BLACK}}
+ \}
+\begin{DoxyCompactList}\small\item\em Enumeration of available colors for formatted messages. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{namespaceUtils_a8f4a13f11467403825ee90aa736220f6}{Utils\+::ensure\+\_\+file\+\_\+is\+\_\+open}} (std\+::ifstream \&file, string file\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Ensures that a file stream is successfully opened. \end{DoxyCompactList}\item 
+vector$<$ string $>$ \mbox{\hyperlink{namespaceUtils_a99bf3af71b6d6933fe7fe731962b8c4b}{Utils\+::read\+\_\+file\+\_\+generic}} (string string\+\_\+path)
+\begin{DoxyCompactList}\small\item\em Reads a file line by line into a vector of strings. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespaceUtils_af167beace554e442af15d3eb264c2033}{Utils\+::write\+\_\+file\+\_\+generic}} (string file\+\_\+path, vector$<$ string $>$ content)
+\begin{DoxyCompactList}\small\item\em Writes content to a file at specified path. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespaceUtils_a581f90e5f02aac10f1ffe2873d011d97}{Utils\+::create\+\_\+parents\+\_\+folder\+\_\+of\+\_\+file\+\_\+path}} (string file\+\_\+path)
+\begin{DoxyCompactList}\small\item\em Creates all parent directories for a given file path. \end{DoxyCompactList}\item 
+Json\+::\+Value \mbox{\hyperlink{namespaceUtils_a007673348afbff920d1c4ad70339dabb}{Utils\+::read\+\_\+json}} (string string\+\_\+path)
+\begin{DoxyCompactList}\small\item\em Reads and parses a JSON file. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespaceUtils_a7bd5db6a9faceb861ee6dc90b0797d98}{Utils\+::does\+\_\+file\+\_\+exist}} (string file\+\_\+path)
+\begin{DoxyCompactList}\small\item\em Checks if a file exists at the given path. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespaceUtils_a519273dc6d52ae9884ca753cf4f5ed3d}{Utils\+::is\+\_\+regular\+\_\+file}} (string path)
+\begin{DoxyCompactList}\small\item\em Determines if a path refers to a regular file. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{namespaceUtils_a7f67e71533b529a3c6196b22871dfdb4}{Utils\+::format\+\_\+colored\+\_\+message}} (string message, \mbox{\hyperlink{namespaceUtils_a4d656952664ea28855824cc017ccb03a}{COLOR}} color)
+\begin{DoxyCompactList}\small\item\em Formats a message with ANSI color codes. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespaceUtils_a84c55dc78b9ab9af93009b25c6a7dc39}{Utils\+::is\+\_\+empty\+\_\+char}} (char c)
+\begin{DoxyCompactList}\small\item\em Checks if a character is considered empty/whitespace. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespaceUtils_a3b0faf30c09facf4f5d77be103ba90a8}{Utils\+::is\+\_\+special\+\_\+char}} (char c)
+\begin{DoxyCompactList}\small\item\em Checks if a character is special (non-\/alphanumeric and not underscore) \end{DoxyCompactList}\item 
+vector$<$ string $>$ \mbox{\hyperlink{namespaceUtils_a36a03199cfc37693d745afe43648df5d}{Utils\+::split\+\_\+string}} (string s, char delimiter)
+\begin{DoxyCompactList}\small\item\em Splits a string by a delimiter into tokens. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const string \mbox{\hyperlink{namespaceUtils_ad4ea1df565fa0f1f8e53637ee66e1160}{Utils\+::\+LIMITER\+\_\+\+PRINT}} = "{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}
+\begin{DoxyCompactList}\small\item\em Constant string used as a visual delimiter/separator in prints. \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{namespaceUtils_aa87f4d3cbcd5399e94d47c7a265f02fc}{Utils\+::\+MKDIR\+\_\+\+FLAG}} = 0700
+\begin{DoxyCompactList}\small\item\em Permission flags used when creating directories (rwx for owner) \end{DoxyCompactList}\item 
+const vector$<$ string $>$ \mbox{\hyperlink{namespaceUtils_a558acfd551c9e5264e761a1d2ed22fde}{Utils\+::\+COLOR\+\_\+\+TOKENS\+\_\+\+UTILS\+\_\+\+LIGTH}}
+\begin{DoxyCompactList}\small\item\em ANSI color codes for light terminal backgrounds. \end{DoxyCompactList}\item 
+const vector$<$ string $>$ \mbox{\hyperlink{namespaceUtils_aac00775355620bcffd669b9ea986a441}{Utils\+::\+COLOR\+\_\+\+TOKENS\+\_\+\+UTILS\+\_\+\+DARK}}
+\begin{DoxyCompactList}\small\item\em ANSI color codes for dark terminal backgrounds. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines utility functions used across all files. 
+
+This header provides generic utility functions that are not project-\/specific. Includes file operations, string manipulation, and colored output utilities. 
+
+Definition in file \mbox{\hyperlink{utils_8hpp_source}{utils.\+hpp}}.
+

@@ -1,0 +1,51 @@
+\doxysection{counter\+\_\+duplication\+\_\+code.\+cpp}
+\hypertarget{counter__duplication__code_8cpp_source}{}\label{counter__duplication__code_8cpp_source}\index{arkanjo/counter/counter\_duplication\_code.cpp@{arkanjo/counter/counter\_duplication\_code.cpp}}
+\mbox{\hyperlink{counter__duplication__code_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{counter__duplication__code_8hpp}{counter\_duplication\_code.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8cpp_source_l00003}00003\ \textcolor{keywordtype}{void}\ Counter\_Duplication\_Code::mark\_path\_as\_processed(\mbox{\hyperlink{classPath}{Path}}\ path)\{}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8cpp_source_l00004}00004\ \ \ \ \ processed\_paths.insert(path);}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8cpp_source_l00005}00005\ \}}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8cpp_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8cpp_source_l00007}00007\ \textcolor{keywordtype}{bool}\ Counter\_Duplication\_Code::is\_path\_processed\_path(\mbox{\hyperlink{classPath}{Path}}\ path)\{}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8cpp_source_l00008}00008\ \ \ \ \ \textcolor{keywordflow}{return}\ processed\_paths.find(path)\ !=\ processed\_paths.end();}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8cpp_source_l00009}00009\ \}}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8cpp_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8cpp_source_l00011}00011\ \textcolor{keywordtype}{int}\ Counter\_Duplication\_Code::get\_number\_of\_lines\_in\_path(\mbox{\hyperlink{classPath}{Path}}\ path)\{}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8cpp_source_l00012}00012\ \ \ \ \ Function\ function(path);}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8cpp_source_l00013}00013\ \ \ \ \ \textcolor{keywordflow}{return}\ function.number\_of\_lines();}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8cpp_source_l00014}00014\ \}}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8cpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8cpp_source_l00016}00016\ \textcolor{keywordtype}{void}\ Counter\_Duplication\_Code::register\_code\_duplication(\mbox{\hyperlink{classPath}{Path}}\ path1,\ \mbox{\hyperlink{classPath}{Path}}\ path2,\ \textcolor{keywordtype}{int}\ number\_of\_lines)\{}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8cpp_source_l00017}00017\ \ \ \ \ vector<string>\ common\_folder\_path\ =\ path1.\mbox{\hyperlink{classPath_ae1a0fe75eefcf9d2e2e0cfcfb948e314}{get\_common\_folders}}(path2);}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8cpp_source_l00018}00018\ \ \ \ \ counter\_duplication\_code\_trie.add\_folder\_duplication\_code(common\_folder\_path,\ number\_of\_lines);}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8cpp_source_l00019}00019\ \}}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8cpp_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8cpp_source_l00021}00021\ \textcolor{keywordtype}{void}\ Counter\_Duplication\_Code::process\_path(\mbox{\hyperlink{classPath}{Path}}\ path)\{}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8cpp_source_l00022}00022\ \ \ \ \ \textcolor{keywordflow}{if}(is\_path\_processed\_path(path))\{}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8cpp_source_l00024}00024\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8cpp_source_l00025}00025\ \ \ \ \ \textcolor{keywordtype}{int}\ number\_of\_lines\ =\ get\_number\_of\_lines\_in\_path(path);}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8cpp_source_l00026}00026\ \ \ \ \ mark\_path\_as\_processed(path);}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8cpp_source_l00027}00027\ \ \ \ \ vector<Path>\ similar\_paths\ =\ similarity\_table-\/>get\_similar\_path\_to\_the\_reference(path);}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8cpp_source_l00028}00028\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ similar\_path\ :\ similar\_paths)\{}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ mark\_path\_as\_processed(similar\_path);}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ register\_code\_duplication(path,\ similar\_path,\ number\_of\_lines);}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8cpp_source_l00031}00031\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8cpp_source_l00032}00032\ \}}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8cpp_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8cpp_source_l00034}00034\ \textcolor{keywordtype}{void}\ Counter\_Duplication\_Code::process\_every\_path\_in\_similarity\_table()\{}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8cpp_source_l00035}00035\ \ \ \ \ vector<Path>\ paths\ =\ similarity\_table-\/>get\_path\_list();}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8cpp_source_l00036}00036\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ path\ :\ paths)\{}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ process\_path(path);}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8cpp_source_l00038}00038\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8cpp_source_l00039}00039\ \}}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8cpp_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8cpp_source_l00041}\mbox{\hyperlink{classCounter__Duplication__Code_ae87c1513ef03d849aac658da818e22a4}{00041}}\ \mbox{\hyperlink{classCounter__Duplication__Code_ae87c1513ef03d849aac658da818e22a4}{Counter\_Duplication\_Code::Counter\_Duplication\_Code}}(\mbox{\hyperlink{classSimilarity__Table}{Similarity\_Table}}\ *\_similarity\_table)\{}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8cpp_source_l00042}00042\ \ \ \ \ similarity\_table\ =\ \_similarity\_table;}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8cpp_source_l00043}00043\ \ \ \ \ process\_every\_path\_in\_similarity\_table();}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8cpp_source_l00044}00044\ \ \ \ \ counter\_duplication\_code\_trie.print\_duplication\_code\_trie();}
+\DoxyCodeLine{\Hypertarget{counter__duplication__code_8cpp_source_l00045}00045\ \}}
+
+\end{DoxyCode}

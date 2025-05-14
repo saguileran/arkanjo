@@ -1,0 +1,564 @@
+\doxysection{Utils Namespace Reference}
+\hypertarget{namespaceUtils}{}\label{namespaceUtils}\index{Utils@{Utils}}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespaceUtils_a4d656952664ea28855824cc017ccb03a}{COLOR}} \{ \newline
+\mbox{\hyperlink{namespaceUtils_a4d656952664ea28855824cc017ccb03aa12907a9ced1317d0c7ba02f2dbe0b6ec}{RESET}}
+, \mbox{\hyperlink{namespaceUtils_a4d656952664ea28855824cc017ccb03aa81f2ebcaa0a7c210d88ddef0748fe312}{RED}}
+, \mbox{\hyperlink{namespaceUtils_a4d656952664ea28855824cc017ccb03aa8f60bb1baa792d629878b6d8d4bc1f63}{GREEN}}
+, \mbox{\hyperlink{namespaceUtils_a4d656952664ea28855824cc017ccb03aa9f2be4f98823f8ac857dd07bae90a55a}{YELLOW}}
+, \newline
+\mbox{\hyperlink{namespaceUtils_a4d656952664ea28855824cc017ccb03aadb19e75afe56cdfbb13f254ba432f0ce}{BLUE}}
+, \mbox{\hyperlink{namespaceUtils_a4d656952664ea28855824cc017ccb03aa48528bb8a311b9079ffb50957714a220}{MAGENTA}}
+, \mbox{\hyperlink{namespaceUtils_a4d656952664ea28855824cc017ccb03aae23f444f8507ac9f26a976d4b59bbf5e}{CYAN}}
+, \mbox{\hyperlink{namespaceUtils_a4d656952664ea28855824cc017ccb03aa6233f9c6343f76131ae140ede9ed90f0}{GRAY}}
+, \newline
+\mbox{\hyperlink{namespaceUtils_a4d656952664ea28855824cc017ccb03aa818618257a69565480cf3a303e3dc3fb}{WHITE}}
+, \mbox{\hyperlink{namespaceUtils_a4d656952664ea28855824cc017ccb03aa365a8aef4608b1dbe48ff357fe8021d7}{BRIGHT\+\_\+\+YELLOW}}
+, \mbox{\hyperlink{namespaceUtils_a4d656952664ea28855824cc017ccb03aa13afcdbbd7b6e685715b5e43243fdde4}{BLACK}}
+ \}
+\begin{DoxyCompactList}\small\item\em Enumeration of available colors for formatted messages. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{namespaceUtils_a8f4a13f11467403825ee90aa736220f6}{ensure\+\_\+file\+\_\+is\+\_\+open}} (std\+::ifstream \&file, string file\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Ensures that a file stream is successfully opened. \end{DoxyCompactList}\item 
+vector$<$ string $>$ \mbox{\hyperlink{namespaceUtils_a99bf3af71b6d6933fe7fe731962b8c4b}{read\+\_\+file\+\_\+generic}} (string string\+\_\+path)
+\begin{DoxyCompactList}\small\item\em Reads a file line by line into a vector of strings. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespaceUtils_af167beace554e442af15d3eb264c2033}{write\+\_\+file\+\_\+generic}} (string file\+\_\+path, vector$<$ string $>$ content)
+\begin{DoxyCompactList}\small\item\em Writes content to a file at specified path. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespaceUtils_a581f90e5f02aac10f1ffe2873d011d97}{create\+\_\+parents\+\_\+folder\+\_\+of\+\_\+file\+\_\+path}} (string file\+\_\+path)
+\begin{DoxyCompactList}\small\item\em Creates all parent directories for a given file path. \end{DoxyCompactList}\item 
+Json\+::\+Value \mbox{\hyperlink{namespaceUtils_a007673348afbff920d1c4ad70339dabb}{read\+\_\+json}} (string string\+\_\+path)
+\begin{DoxyCompactList}\small\item\em Reads and parses a JSON file. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespaceUtils_a7bd5db6a9faceb861ee6dc90b0797d98}{does\+\_\+file\+\_\+exist}} (string file\+\_\+path)
+\begin{DoxyCompactList}\small\item\em Checks if a file exists at the given path. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespaceUtils_a519273dc6d52ae9884ca753cf4f5ed3d}{is\+\_\+regular\+\_\+file}} (string path)
+\begin{DoxyCompactList}\small\item\em Determines if a path refers to a regular file. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{namespaceUtils_a7f67e71533b529a3c6196b22871dfdb4}{format\+\_\+colored\+\_\+message}} (string message, \mbox{\hyperlink{namespaceUtils_a4d656952664ea28855824cc017ccb03a}{COLOR}} color)
+\begin{DoxyCompactList}\small\item\em Formats a message with ANSI color codes. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespaceUtils_a84c55dc78b9ab9af93009b25c6a7dc39}{is\+\_\+empty\+\_\+char}} (char c)
+\begin{DoxyCompactList}\small\item\em Checks if a character is considered empty/whitespace. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespaceUtils_a3b0faf30c09facf4f5d77be103ba90a8}{is\+\_\+special\+\_\+char}} (char c)
+\begin{DoxyCompactList}\small\item\em Checks if a character is special (non-\/alphanumeric and not underscore) \end{DoxyCompactList}\item 
+vector$<$ string $>$ \mbox{\hyperlink{namespaceUtils_a36a03199cfc37693d745afe43648df5d}{split\+\_\+string}} (string s, char delimiter)
+\begin{DoxyCompactList}\small\item\em Splits a string by a delimiter into tokens. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const string \mbox{\hyperlink{namespaceUtils_ad4ea1df565fa0f1f8e53637ee66e1160}{LIMITER\+\_\+\+PRINT}} = "{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}
+\begin{DoxyCompactList}\small\item\em Constant string used as a visual delimiter/separator in prints. \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{namespaceUtils_aa87f4d3cbcd5399e94d47c7a265f02fc}{MKDIR\+\_\+\+FLAG}} = 0700
+\begin{DoxyCompactList}\small\item\em Permission flags used when creating directories (rwx for owner) \end{DoxyCompactList}\item 
+const vector$<$ string $>$ \mbox{\hyperlink{namespaceUtils_a558acfd551c9e5264e761a1d2ed22fde}{COLOR\+\_\+\+TOKENS\+\_\+\+UTILS\+\_\+\+LIGTH}}
+\begin{DoxyCompactList}\small\item\em ANSI color codes for light terminal backgrounds. \end{DoxyCompactList}\item 
+const vector$<$ string $>$ \mbox{\hyperlink{namespaceUtils_aac00775355620bcffd669b9ea986a441}{COLOR\+\_\+\+TOKENS\+\_\+\+UTILS\+\_\+\+DARK}}
+\begin{DoxyCompactList}\small\item\em ANSI color codes for dark terminal backgrounds. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{namespaceUtils_a4d656952664ea28855824cc017ccb03a}\index{Utils@{Utils}!COLOR@{COLOR}}
+\index{COLOR@{COLOR}!Utils@{Utils}}
+\doxysubsubsection{\texorpdfstring{COLOR}{COLOR}}
+{\footnotesize\ttfamily \label{namespaceUtils_a4d656952664ea28855824cc017ccb03a} 
+enum \mbox{\hyperlink{namespaceUtils_a4d656952664ea28855824cc017ccb03a}{Utils\+::\+COLOR}}}
+
+
+
+Enumeration of available colors for formatted messages. 
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RESET@{RESET}!Utils@{Utils}}\index{Utils@{Utils}!RESET@{RESET}}}\Hypertarget{namespaceUtils_a4d656952664ea28855824cc017ccb03aa12907a9ced1317d0c7ba02f2dbe0b6ec}\label{namespaceUtils_a4d656952664ea28855824cc017ccb03aa12907a9ced1317d0c7ba02f2dbe0b6ec} 
+RESET&Reset to default color. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RED@{RED}!Utils@{Utils}}\index{Utils@{Utils}!RED@{RED}}}\Hypertarget{namespaceUtils_a4d656952664ea28855824cc017ccb03aa81f2ebcaa0a7c210d88ddef0748fe312}\label{namespaceUtils_a4d656952664ea28855824cc017ccb03aa81f2ebcaa0a7c210d88ddef0748fe312} 
+RED&Red color. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GREEN@{GREEN}!Utils@{Utils}}\index{Utils@{Utils}!GREEN@{GREEN}}}\Hypertarget{namespaceUtils_a4d656952664ea28855824cc017ccb03aa8f60bb1baa792d629878b6d8d4bc1f63}\label{namespaceUtils_a4d656952664ea28855824cc017ccb03aa8f60bb1baa792d629878b6d8d4bc1f63} 
+GREEN&Green color. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{YELLOW@{YELLOW}!Utils@{Utils}}\index{Utils@{Utils}!YELLOW@{YELLOW}}}\Hypertarget{namespaceUtils_a4d656952664ea28855824cc017ccb03aa9f2be4f98823f8ac857dd07bae90a55a}\label{namespaceUtils_a4d656952664ea28855824cc017ccb03aa9f2be4f98823f8ac857dd07bae90a55a} 
+YELLOW&Yellow color. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BLUE@{BLUE}!Utils@{Utils}}\index{Utils@{Utils}!BLUE@{BLUE}}}\Hypertarget{namespaceUtils_a4d656952664ea28855824cc017ccb03aadb19e75afe56cdfbb13f254ba432f0ce}\label{namespaceUtils_a4d656952664ea28855824cc017ccb03aadb19e75afe56cdfbb13f254ba432f0ce} 
+BLUE&Blue color. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MAGENTA@{MAGENTA}!Utils@{Utils}}\index{Utils@{Utils}!MAGENTA@{MAGENTA}}}\Hypertarget{namespaceUtils_a4d656952664ea28855824cc017ccb03aa48528bb8a311b9079ffb50957714a220}\label{namespaceUtils_a4d656952664ea28855824cc017ccb03aa48528bb8a311b9079ffb50957714a220} 
+MAGENTA&Magenta color. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CYAN@{CYAN}!Utils@{Utils}}\index{Utils@{Utils}!CYAN@{CYAN}}}\Hypertarget{namespaceUtils_a4d656952664ea28855824cc017ccb03aae23f444f8507ac9f26a976d4b59bbf5e}\label{namespaceUtils_a4d656952664ea28855824cc017ccb03aae23f444f8507ac9f26a976d4b59bbf5e} 
+CYAN&Cyan color. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GRAY@{GRAY}!Utils@{Utils}}\index{Utils@{Utils}!GRAY@{GRAY}}}\Hypertarget{namespaceUtils_a4d656952664ea28855824cc017ccb03aa6233f9c6343f76131ae140ede9ed90f0}\label{namespaceUtils_a4d656952664ea28855824cc017ccb03aa6233f9c6343f76131ae140ede9ed90f0} 
+GRAY&Gray color. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WHITE@{WHITE}!Utils@{Utils}}\index{Utils@{Utils}!WHITE@{WHITE}}}\Hypertarget{namespaceUtils_a4d656952664ea28855824cc017ccb03aa818618257a69565480cf3a303e3dc3fb}\label{namespaceUtils_a4d656952664ea28855824cc017ccb03aa818618257a69565480cf3a303e3dc3fb} 
+WHITE&White color. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BRIGHT\_YELLOW@{BRIGHT\_YELLOW}!Utils@{Utils}}\index{Utils@{Utils}!BRIGHT\_YELLOW@{BRIGHT\_YELLOW}}}\Hypertarget{namespaceUtils_a4d656952664ea28855824cc017ccb03aa365a8aef4608b1dbe48ff357fe8021d7}\label{namespaceUtils_a4d656952664ea28855824cc017ccb03aa365a8aef4608b1dbe48ff357fe8021d7} 
+BRIGHT\+\_\+\+YELLOW&Bright yellow color. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BLACK@{BLACK}!Utils@{Utils}}\index{Utils@{Utils}!BLACK@{BLACK}}}\Hypertarget{namespaceUtils_a4d656952664ea28855824cc017ccb03aa13afcdbbd7b6e685715b5e43243fdde4}\label{namespaceUtils_a4d656952664ea28855824cc017ccb03aa13afcdbbd7b6e685715b5e43243fdde4} 
+BLACK&Black color. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{utils_8hpp_source_l00094}{94}} of file \mbox{\hyperlink{utils_8hpp_source}{utils.\+hpp}}.
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespaceUtils_a581f90e5f02aac10f1ffe2873d011d97}\index{Utils@{Utils}!create\_parents\_folder\_of\_file\_path@{create\_parents\_folder\_of\_file\_path}}
+\index{create\_parents\_folder\_of\_file\_path@{create\_parents\_folder\_of\_file\_path}!Utils@{Utils}}
+\doxysubsubsection{\texorpdfstring{create\_parents\_folder\_of\_file\_path()}{create\_parents\_folder\_of\_file\_path()}}
+{\footnotesize\ttfamily \label{namespaceUtils_a581f90e5f02aac10f1ffe2873d011d97} 
+void Utils\+::create\+\_\+parents\+\_\+folder\+\_\+of\+\_\+file\+\_\+path (\begin{DoxyParamCaption}\item[{string}]{file\+\_\+path}{}\end{DoxyParamCaption})}
+
+
+
+Creates all parent directories for a given file path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+\_\+path} & The full file path for which to create parent directories\\
+\hline
+{\em file\+\_\+path} & The full file path for which to create parent directories\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Handles paths with \textquotesingle{}/\textquotesingle{} separators. Creates each directory in the path. 
+\end{DoxyNote}
+
+
+Definition at line \mbox{\hyperlink{utils_8cpp_source_l00074}{74}} of file \mbox{\hyperlink{utils_8cpp_source}{utils.\+cpp}}.
+
+\Hypertarget{namespaceUtils_a7bd5db6a9faceb861ee6dc90b0797d98}\index{Utils@{Utils}!does\_file\_exist@{does\_file\_exist}}
+\index{does\_file\_exist@{does\_file\_exist}!Utils@{Utils}}
+\doxysubsubsection{\texorpdfstring{does\_file\_exist()}{does\_file\_exist()}}
+{\footnotesize\ttfamily \label{namespaceUtils_a7bd5db6a9faceb861ee6dc90b0797d98} 
+bool Utils\+::does\+\_\+file\+\_\+exist (\begin{DoxyParamCaption}\item[{string}]{file\+\_\+path}{}\end{DoxyParamCaption})}
+
+
+
+Checks if a file exists at the given path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+\_\+path} & \doxylink{classPath}{Path} to check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True if file exists and is accessible, false otherwise 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{utils_8cpp_source_l00113}{113}} of file \mbox{\hyperlink{utils_8cpp_source}{utils.\+cpp}}.
+
+\Hypertarget{namespaceUtils_a8f4a13f11467403825ee90aa736220f6}\index{Utils@{Utils}!ensure\_file\_is\_open@{ensure\_file\_is\_open}}
+\index{ensure\_file\_is\_open@{ensure\_file\_is\_open}!Utils@{Utils}}
+\doxysubsubsection{\texorpdfstring{ensure\_file\_is\_open()}{ensure\_file\_is\_open()}}
+{\footnotesize\ttfamily \label{namespaceUtils_a8f4a13f11467403825ee90aa736220f6} 
+void Utils\+::ensure\+\_\+file\+\_\+is\+\_\+open (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{file}{, }\item[{string}]{file\+\_\+name}{}\end{DoxyParamCaption})}
+
+
+
+Ensures that a file stream is successfully opened. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & Reference to the input file stream to check \\
+\hline
+{\em file\+\_\+name} & Name/path of the file being opened (for error message)\\
+\hline
+{\em file} & Reference to the input file stream to check \\
+\hline
+{\em file\+\_\+name} & Name/path of the file being opened (for error message) \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exits} & the program if file is not open\\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyNote}{Note}
+This function will terminate the program if the file is not open 
+\end{DoxyNote}
+
+
+Definition at line \mbox{\hyperlink{utils_8cpp_source_l00020}{20}} of file \mbox{\hyperlink{utils_8cpp_source}{utils.\+cpp}}.
+
+\Hypertarget{namespaceUtils_a7f67e71533b529a3c6196b22871dfdb4}\index{Utils@{Utils}!format\_colored\_message@{format\_colored\_message}}
+\index{format\_colored\_message@{format\_colored\_message}!Utils@{Utils}}
+\doxysubsubsection{\texorpdfstring{format\_colored\_message()}{format\_colored\_message()}}
+{\footnotesize\ttfamily \label{namespaceUtils_a7f67e71533b529a3c6196b22871dfdb4} 
+string Utils\+::format\+\_\+colored\+\_\+message (\begin{DoxyParamCaption}\item[{string}]{message}{, }\item[{\mbox{\hyperlink{namespaceUtils_a4d656952664ea28855824cc017ccb03a}{COLOR}}}]{color}{}\end{DoxyParamCaption})}
+
+
+
+Formats a message with ANSI color codes. 
+
+Formats a message with ANSI color codes based on background darkness.
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & Text to colorize \\
+\hline
+{\em color} & Color to apply \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string Colorized message with reset code at the end
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em message} & Text to colorize \\
+\hline
+{\em color} & Color to apply \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string Colorized message with reset code at the end
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Automatically selects light or dark color variants based on background 
+\end{DoxyNote}
+
+
+Definition at line \mbox{\hyperlink{utils_8cpp_source_l00144}{144}} of file \mbox{\hyperlink{utils_8cpp_source}{utils.\+cpp}}.
+
+\Hypertarget{namespaceUtils_a84c55dc78b9ab9af93009b25c6a7dc39}\index{Utils@{Utils}!is\_empty\_char@{is\_empty\_char}}
+\index{is\_empty\_char@{is\_empty\_char}!Utils@{Utils}}
+\doxysubsubsection{\texorpdfstring{is\_empty\_char()}{is\_empty\_char()}}
+{\footnotesize\ttfamily \label{namespaceUtils_a84c55dc78b9ab9af93009b25c6a7dc39} 
+bool Utils\+::is\+\_\+empty\+\_\+char (\begin{DoxyParamCaption}\item[{char}]{c}{}\end{DoxyParamCaption})}
+
+
+
+Checks if a character is considered empty/whitespace. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & Character to check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True if character is space or control character, false otherwise
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em c} & Character to check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True if character is space or control character (\texorpdfstring{$<$}{<}= 20), false otherwise 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{utils_8cpp_source_l00159}{159}} of file \mbox{\hyperlink{utils_8cpp_source}{utils.\+cpp}}.
+
+\Hypertarget{namespaceUtils_a519273dc6d52ae9884ca753cf4f5ed3d}\index{Utils@{Utils}!is\_regular\_file@{is\_regular\_file}}
+\index{is\_regular\_file@{is\_regular\_file}!Utils@{Utils}}
+\doxysubsubsection{\texorpdfstring{is\_regular\_file()}{is\_regular\_file()}}
+{\footnotesize\ttfamily \label{namespaceUtils_a519273dc6d52ae9884ca753cf4f5ed3d} 
+bool Utils\+::is\+\_\+regular\+\_\+file (\begin{DoxyParamCaption}\item[{string}]{path}{}\end{DoxyParamCaption})}
+
+
+
+Determines if a path refers to a regular file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & \doxylink{classPath}{Path} to check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True if path is a regular file, false otherwise 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{utils_8cpp_source_l00128}{128}} of file \mbox{\hyperlink{utils_8cpp_source}{utils.\+cpp}}.
+
+\Hypertarget{namespaceUtils_a3b0faf30c09facf4f5d77be103ba90a8}\index{Utils@{Utils}!is\_special\_char@{is\_special\_char}}
+\index{is\_special\_char@{is\_special\_char}!Utils@{Utils}}
+\doxysubsubsection{\texorpdfstring{is\_special\_char()}{is\_special\_char()}}
+{\footnotesize\ttfamily \label{namespaceUtils_a3b0faf30c09facf4f5d77be103ba90a8} 
+bool Utils\+::is\+\_\+special\+\_\+char (\begin{DoxyParamCaption}\item[{char}]{c}{}\end{DoxyParamCaption})}
+
+
+
+Checks if a character is special (non-\/alphanumeric and not underscore) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & Character to check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True if character is special, false otherwise
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em c} & Character to check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True if character is special, false if alphanumeric or underscore 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{utils_8cpp_source_l00175}{175}} of file \mbox{\hyperlink{utils_8cpp_source}{utils.\+cpp}}.
+
+\Hypertarget{namespaceUtils_a99bf3af71b6d6933fe7fe731962b8c4b}\index{Utils@{Utils}!read\_file\_generic@{read\_file\_generic}}
+\index{read\_file\_generic@{read\_file\_generic}!Utils@{Utils}}
+\doxysubsubsection{\texorpdfstring{read\_file\_generic()}{read\_file\_generic()}}
+{\footnotesize\ttfamily \label{namespaceUtils_a99bf3af71b6d6933fe7fe731962b8c4b} 
+vector$<$ string $>$ Utils\+::read\+\_\+file\+\_\+generic (\begin{DoxyParamCaption}\item[{string}]{string\+\_\+path}{}\end{DoxyParamCaption})}
+
+
+
+Reads a file line by line into a vector of strings. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em string\+\_\+path} & \doxylink{classPath}{Path} to the file to read \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vector$<$string$>$ Contents of the file as a vector of strings
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em string\+\_\+path} & \doxylink{classPath}{Path} to the file to read \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vector$<$string$>$ Contents of the file as a vector of strings (one per line) 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exits} & program if file cannot be opened (via ensure\+\_\+file\+\_\+is\+\_\+open) \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \mbox{\hyperlink{utils_8cpp_source_l00035}{35}} of file \mbox{\hyperlink{utils_8cpp_source}{utils.\+cpp}}.
+
+\Hypertarget{namespaceUtils_a007673348afbff920d1c4ad70339dabb}\index{Utils@{Utils}!read\_json@{read\_json}}
+\index{read\_json@{read\_json}!Utils@{Utils}}
+\doxysubsubsection{\texorpdfstring{read\_json()}{read\_json()}}
+{\footnotesize\ttfamily \label{namespaceUtils_a007673348afbff920d1c4ad70339dabb} 
+Json\+::\+Value Utils\+::read\+\_\+json (\begin{DoxyParamCaption}\item[{string}]{string\+\_\+path}{}\end{DoxyParamCaption})}
+
+
+
+Reads and parses a JSON file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em string\+\_\+path} & \doxylink{classPath}{Path} to the JSON file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Json\+::\+Value Parsed JSON content
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em string\+\_\+path} & \doxylink{classPath}{Path} to the JSON file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Json\+::\+Value Parsed JSON content 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exits} & program if file cannot be opened (via ensure\+\_\+file\+\_\+is\+\_\+open) \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \mbox{\hyperlink{utils_8cpp_source_l00098}{98}} of file \mbox{\hyperlink{utils_8cpp_source}{utils.\+cpp}}.
+
+\Hypertarget{namespaceUtils_a36a03199cfc37693d745afe43648df5d}\index{Utils@{Utils}!split\_string@{split\_string}}
+\index{split\_string@{split\_string}!Utils@{Utils}}
+\doxysubsubsection{\texorpdfstring{split\_string()}{split\_string()}}
+{\footnotesize\ttfamily \label{namespaceUtils_a36a03199cfc37693d745afe43648df5d} 
+vector$<$ string $>$ Utils\+::split\+\_\+string (\begin{DoxyParamCaption}\item[{string}]{s}{, }\item[{char}]{delimiter}{}\end{DoxyParamCaption})}
+
+
+
+Splits a string by a delimiter into tokens. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & String to split \\
+\hline
+{\em delimiter} & Character to split on \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vector$<$string$>$ Vector of tokens (empty tokens are omitted) 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{utils_8cpp_source_l00198}{198}} of file \mbox{\hyperlink{utils_8cpp_source}{utils.\+cpp}}.
+
+\Hypertarget{namespaceUtils_af167beace554e442af15d3eb264c2033}\index{Utils@{Utils}!write\_file\_generic@{write\_file\_generic}}
+\index{write\_file\_generic@{write\_file\_generic}!Utils@{Utils}}
+\doxysubsubsection{\texorpdfstring{write\_file\_generic()}{write\_file\_generic()}}
+{\footnotesize\ttfamily \label{namespaceUtils_af167beace554e442af15d3eb264c2033} 
+void Utils\+::write\+\_\+file\+\_\+generic (\begin{DoxyParamCaption}\item[{string}]{file\+\_\+path}{, }\item[{vector$<$ string $>$}]{content}{}\end{DoxyParamCaption})}
+
+
+
+Writes content to a file at specified path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+\_\+path} & \doxylink{classPath}{Path} where file should be written \\
+\hline
+{\em content} & Vector of strings to write (each element becomes a line)\\
+\hline
+{\em file\+\_\+path} & \doxylink{classPath}{Path} where file should be written \\
+\hline
+{\em content} & Vector of strings to write (each element becomes a line)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Creates parent directories if they don\textquotesingle{}t exist 
+\end{DoxyNote}
+
+
+Definition at line \mbox{\hyperlink{utils_8cpp_source_l00056}{56}} of file \mbox{\hyperlink{utils_8cpp_source}{utils.\+cpp}}.
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespaceUtils_aac00775355620bcffd669b9ea986a441}\index{Utils@{Utils}!COLOR\_TOKENS\_UTILS\_DARK@{COLOR\_TOKENS\_UTILS\_DARK}}
+\index{COLOR\_TOKENS\_UTILS\_DARK@{COLOR\_TOKENS\_UTILS\_DARK}!Utils@{Utils}}
+\doxysubsubsection{\texorpdfstring{COLOR\_TOKENS\_UTILS\_DARK}{COLOR\_TOKENS\_UTILS\_DARK}}
+{\footnotesize\ttfamily \label{namespaceUtils_aac00775355620bcffd669b9ea986a441} 
+const vector$<$string$>$ Utils\+::\+COLOR\+\_\+\+TOKENS\+\_\+\+UTILS\+\_\+\+DARK}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\(\backslash\)033[0m"{}},\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\(\backslash\)033[31;2m"{}},\ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\(\backslash\)033[32;2m"{}},\ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\(\backslash\)033[33;2m"{}},\ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\(\backslash\)033[34;2m"{}},\ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\(\backslash\)033[35;2m"{}},\ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\(\backslash\)033[36;2m"{}},\ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\(\backslash\)033[37;2m"{}},\ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\(\backslash\)033[30m"{}},\ \ \ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\(\backslash\)033[33m"{}},\ \ \ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\(\backslash\)033[97m"{}}\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+ANSI color codes for dark terminal backgrounds. 
+
+Contains escape sequences for\+:
+\begin{DoxyItemize}
+\item RESET
+\item DARK\+\_\+\+RED
+\item DARK\+\_\+\+GREEN
+\item DARK\+\_\+\+YELLOW
+\item DARK\+\_\+\+BLUE
+\item DARK\+\_\+\+MAGENTA
+\item DARK\+\_\+\+CYAN
+\item DARK\+\_\+\+GRAY
+\item BLACK
+\item YELLOW
+\item WHITE 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{utils_8hpp_source_l00077}{77}} of file \mbox{\hyperlink{utils_8hpp_source}{utils.\+hpp}}.
+
+\Hypertarget{namespaceUtils_a558acfd551c9e5264e761a1d2ed22fde}\index{Utils@{Utils}!COLOR\_TOKENS\_UTILS\_LIGTH@{COLOR\_TOKENS\_UTILS\_LIGTH}}
+\index{COLOR\_TOKENS\_UTILS\_LIGTH@{COLOR\_TOKENS\_UTILS\_LIGTH}!Utils@{Utils}}
+\doxysubsubsection{\texorpdfstring{COLOR\_TOKENS\_UTILS\_LIGTH}{COLOR\_TOKENS\_UTILS\_LIGTH}}
+{\footnotesize\ttfamily \label{namespaceUtils_a558acfd551c9e5264e761a1d2ed22fde} 
+const vector$<$string$>$ Utils\+::\+COLOR\+\_\+\+TOKENS\+\_\+\+UTILS\+\_\+\+LIGTH}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\(\backslash\)033[0m"{}},\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\(\backslash\)033[31m"{}},\ \ \ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\(\backslash\)033[32m"{}},\ \ \ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\(\backslash\)033[33m"{}},\ \ \ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\(\backslash\)033[34m"{}},\ \ \ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\(\backslash\)033[35m"{}},\ \ \ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\(\backslash\)033[36m"{}},\ \ \ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\(\backslash\)033[37m"{}},\ \ \ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\(\backslash\)033[97m"{}},\ \ \ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\(\backslash\)033[33;1m"{}},\ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\(\backslash\)033[30m"{}},\ \ \ }
+\DoxyCodeLine{\ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+ANSI color codes for light terminal backgrounds. 
+
+Contains escape sequences for\+:
+\begin{DoxyItemize}
+\item RESET
+\item RED
+\item GREEN
+\item YELLOW
+\item BLUE
+\item MAGENTA
+\item CYAN
+\item GRAY
+\item WHITE
+\item BRIGHT\+\_\+\+YELLOW
+\item BLACK 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{utils_8hpp_source_l00047}{47}} of file \mbox{\hyperlink{utils_8hpp_source}{utils.\+hpp}}.
+
+\Hypertarget{namespaceUtils_ad4ea1df565fa0f1f8e53637ee66e1160}\index{Utils@{Utils}!LIMITER\_PRINT@{LIMITER\_PRINT}}
+\index{LIMITER\_PRINT@{LIMITER\_PRINT}!Utils@{Utils}}
+\doxysubsubsection{\texorpdfstring{LIMITER\_PRINT}{LIMITER\_PRINT}}
+{\footnotesize\ttfamily \label{namespaceUtils_ad4ea1df565fa0f1f8e53637ee66e1160} 
+const string Utils\+::\+LIMITER\+\_\+\+PRINT = "{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}
+
+
+
+Constant string used as a visual delimiter/separator in prints. 
+
+
+
+Definition at line \mbox{\hyperlink{utils_8hpp_source_l00024}{24}} of file \mbox{\hyperlink{utils_8hpp_source}{utils.\+hpp}}.
+
+\Hypertarget{namespaceUtils_aa87f4d3cbcd5399e94d47c7a265f02fc}\index{Utils@{Utils}!MKDIR\_FLAG@{MKDIR\_FLAG}}
+\index{MKDIR\_FLAG@{MKDIR\_FLAG}!Utils@{Utils}}
+\doxysubsubsection{\texorpdfstring{MKDIR\_FLAG}{MKDIR\_FLAG}}
+{\footnotesize\ttfamily \label{namespaceUtils_aa87f4d3cbcd5399e94d47c7a265f02fc} 
+const int Utils\+::\+MKDIR\+\_\+\+FLAG = 0700}
+
+
+
+Permission flags used when creating directories (rwx for owner) 
+
+
+
+Definition at line \mbox{\hyperlink{utils_8hpp_source_l00029}{29}} of file \mbox{\hyperlink{utils_8hpp_source}{utils.\+hpp}}.
+

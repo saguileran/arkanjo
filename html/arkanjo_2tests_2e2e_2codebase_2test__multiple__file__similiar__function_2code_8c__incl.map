@@ -1,0 +1,7 @@
+<map id="arkanjo/tests/e2e/codebase/test_multiple_file_similiar_function/code.c" name="arkanjo/tests/e2e/codebase/test_multiple_file_similiar_function/code.c">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,187,61"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="24,109,83,135"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="85,62,68,96,64,94,80,60"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="108,109,170,135"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="112,60,128,94,124,96,107,62"/>
+</map>

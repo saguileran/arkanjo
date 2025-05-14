@@ -1,0 +1,12 @@
+<map id="arkanjo/tests/e2e/expected/tmp/source" name="arkanjo/tests/e2e/expected/tmp/source">
+<area shape="rect" id="node2" href="dir_5a67c9b30cb4f4dc8e1ada2961e22cc0.html" title="test_multiple_file\l_big_functions_against_small" alt="" coords="122,63,315,104"/>
+<area shape="rect" id="node3" href="dir_d169d0c66158604a2ef27e0c17655c54.html" title="test_multiple_file\l_equal_code" alt="" coords="340,63,458,104"/>
+<area shape="rect" id="node4" href="dir_54aeef53721c7b3a3e1833987a0d6c9e.html" title="test_multiple_file\l_shuffled_functions" alt="" coords="482,63,614,104"/>
+<area shape="rect" id="node5" href="dir_34c11ac9bf6cd0b959d0c941fdd5a814.html" title="test_multiple_file\l_similiar_function" alt="" coords="639,63,761,104"/>
+<area shape="rect" id="node6" href="dir_da3014b32e42c8fee9d1dc6b18c8817a.html" title="test_same_file_big\l_function_against_small.c" alt="" coords="785,63,956,104"/>
+<area shape="rect" id="node7" href="dir_1f7bd41a7bfb6f83f624976c3205d3b0.html" title="test_same_file_different\l_functions_same_logic.c" alt="" coords="980,63,1145,104"/>
+<area shape="rect" id="node8" href="dir_3d178dadb16d71399869df1d0cf85b8d.html" title="test_same_file_equal\l_functions.c" alt="" coords="1168,63,1312,104"/>
+<area shape="rect" id="node9" href="dir_f02f0d22fba87deaf650c2ed328ec4a7.html" title="test_same_file_similar\l_functions.c" alt="" coords="1336,63,1486,104"/>
+<area shape="rect" id="clust2" href="dir_d89e772fc2753a20e615225804e04aa3.html" alt="" coords="27,52,1496,114"/>
+<area shape="rect" id="clust1" href="dir_604c208c4ca3dbb8585d10422facfe06.html" title="tmp" alt="" coords="16,16,1507,125"/>
+</map>

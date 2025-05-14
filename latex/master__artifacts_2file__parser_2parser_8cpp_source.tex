@@ -1,0 +1,140 @@
+\doxysection{parser.\+cpp}
+\hypertarget{master__artifacts_2file__parser_2parser_8cpp_source}{}\label{master__artifacts_2file__parser_2parser_8cpp_source}\index{master\_artifacts/file\_parser/parser.cpp@{master\_artifacts/file\_parser/parser.cpp}}
+\mbox{\hyperlink{master__artifacts_2file__parser_2parser_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ <bits/stdc++.h>}\ }
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00002}00002\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00005}\mbox{\hyperlink{master__artifacts_2file__parser_2parser_8cpp_a75c6fa8f53430079e319dc7222ec5df6}{00005}}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{master__artifacts_2file__parser_2parser_8cpp_a75c6fa8f53430079e319dc7222ec5df6}{CAP}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00008}\mbox{\hyperlink{master__artifacts_2file__parser_2parser_8cpp_a074f317cea14006e0f62dddd92892f39}{00008}}\ vector<string>\ \mbox{\hyperlink{master__artifacts_2file__parser_2parser_8cpp_a074f317cea14006e0f62dddd92892f39}{parser\_line}}(\textcolor{keywordtype}{string}\ line)\{}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00009}00009\ \ \ \ \ \textcolor{keywordtype}{string}\ at\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00010}00010\ \ \ \ \ vector<string>\ \mbox{\hyperlink{current_2tmp_2source_2test__same__file__different__functions__same__logic_8c_2sum_8c_a339672ff94e6199019102f50d317c3d7}{ret}};}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00011}00011\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ c\ :\ line)\{}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00012}00012\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(c\ <=\ 20\ ||\ c\ ==\ \textcolor{charliteral}{'\ '})\{\ \textcolor{comment}{//an\ space\ on\ non-\/printable\ char}}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00013}00013\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!at.empty())}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00014}00014\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{current_2tmp_2source_2test__same__file__different__functions__same__logic_8c_2sum_8c_a339672ff94e6199019102f50d317c3d7}{ret}}.push\_back(at);}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00015}00015\ \ \ \ \ \ \ \ \ \ \ \ \ at\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00016}00016\ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ \ \ \ \ at\ +=\ c;}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00019}00019\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00020}00020\ \ \ \ \ \textcolor{keywordflow}{if}(!at.empty())}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{current_2tmp_2source_2test__same__file__different__functions__same__logic_8c_2sum_8c_a339672ff94e6199019102f50d317c3d7}{ret}}.push\_back(at);}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00022}00022\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00023}00023\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{current_2tmp_2source_2test__same__file__different__functions__same__logic_8c_2sum_8c_a339672ff94e6199019102f50d317c3d7}{ret}};}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00024}00024\ \}}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00026}\mbox{\hyperlink{master__artifacts_2file__parser_2parser_8cpp_ac82e158927f9724c05bb4f79c6381ce7}{00026}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{master__artifacts_2file__parser_2parser_8cpp_ac82e158927f9724c05bb4f79c6381ce7}{is\_an\_file}}(\textcolor{keywordtype}{string}\ s)\{}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00027}00027\ \ \ \ \ \textcolor{keywordflow}{return}\ !s.empty()\ \&\&\ s[0]\ ==\ \textcolor{charliteral}{'/'};}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00028}00028\ \}}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00030}\mbox{\hyperlink{master__artifacts_2file__parser_2parser_8cpp_a7b93373a7fdd3a973e59e3c33d028149}{00030}}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{master__artifacts_2file__parser_2parser_8cpp_a7b93373a7fdd3a973e59e3c33d028149}{remove\_formatation\_from\_similarity}}(\textcolor{keywordtype}{string}\ s)\{}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00031}00031\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 4;\ i++)\{}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ s.pop\_back();}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00033}00033\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00034}00034\ \ \ \ \ reverse(s.begin(),s.end());}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00035}00035\ \ \ \ \ \textcolor{keywordflow}{while}(s.back()\ !=\ \textcolor{charliteral}{'m'})\{}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ s.pop\_back();}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00037}00037\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00038}00038\ \ \ \ \ s.pop\_back();}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00039}00039\ \ \ \ \ reverse(s.begin(),s.end());}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00040}00040\ \ \ \ \ \textcolor{keywordflow}{return}\ s;}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00041}00041\ \}}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00043}\mbox{\hyperlink{master__artifacts_2file__parser_2parser_8cpp_ae940a5e525736d2918dade4cdb171156}{00043}}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{master__artifacts_2file__parser_2parser_8cpp_ae940a5e525736d2918dade4cdb171156}{retrive\_similarity}}(\textcolor{keywordtype}{string}\ s)\{}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00044}00044\ \ \ \ \ s\ =\ \mbox{\hyperlink{master__artifacts_2file__parser_2parser_8cpp_a7b93373a7fdd3a973e59e3c33d028149}{remove\_formatation\_from\_similarity}}(s);}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00045}00045\ \ \ \ \ \textcolor{keywordtype}{char}\ *cs\ =\ s.data();}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00046}00046\ \ \ \ \ \textcolor{keywordtype}{float}\ similarity\ =\ stod(s);}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00047}00047\ \ \ \ \ \textcolor{keywordflow}{return}\ similarity;}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00048}00048\ \}}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00051}00051\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structComparation}{Comparation}}\{}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00052}00052\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{structComparation_abb702ff4651510f8d76ee7dcb720e431}{path1}},\ \mbox{\hyperlink{structComparation_ae539ef1011d65fbe8278c2fc33af4967}{path2}};}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00053}00053\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structComparation_a1e585bb85ef2c0690c40c3652bceead2}{similarity}};}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00056}\mbox{\hyperlink{structComparation_a1ff81a1d4176d2ed9da455b65dfc5987}{00056}}\ \ \ \ \ \mbox{\hyperlink{structComparation_a1ff81a1d4176d2ed9da455b65dfc5987}{Comparation}}()\{}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00057}00057\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00059}\mbox{\hyperlink{structComparation_a3f01a2380ce5ce4a844b542d52aca829}{00059}}\ \ \ \ \ \mbox{\hyperlink{structComparation_a3f01a2380ce5ce4a844b542d52aca829}{Comparation}}(\textcolor{keywordtype}{string}\ \_path1,\ \textcolor{keywordtype}{string}\ \_path2,\ \textcolor{keywordtype}{double}\ \_sim)\{}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\_path1\ >\ \_path2)\ swap(\_path1,\_path2);}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structComparation_abb702ff4651510f8d76ee7dcb720e431}{path1}}\ =\ \_path1;}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structComparation_ae539ef1011d65fbe8278c2fc33af4967}{path2}}\ =\ \_path2;}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structComparation_a1e585bb85ef2c0690c40c3652bceead2}{similarity}}\ =\ \_sim;}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00064}00064\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00066}\mbox{\hyperlink{structComparation_a0c3fe8a9f593e4ea79b88a3ab2e5af03}{00066}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structComparation_a0c3fe8a9f593e4ea79b88a3ab2e5af03}{operator<}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structComparation_a1ff81a1d4176d2ed9da455b65dfc5987}{Comparation}}\ \&com)\textcolor{keyword}{\ const}\{}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{structComparation_a1e585bb85ef2c0690c40c3652bceead2}{similarity}}\ !=\ com.\mbox{\hyperlink{structComparation_a1e585bb85ef2c0690c40c3652bceead2}{similarity}})\{}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structComparation_a1e585bb85ef2c0690c40c3652bceead2}{similarity}}\ >\ com.\mbox{\hyperlink{structComparation_a1e585bb85ef2c0690c40c3652bceead2}{similarity}};}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{structComparation_abb702ff4651510f8d76ee7dcb720e431}{path1}}\ ==\ com.\mbox{\hyperlink{structComparation_abb702ff4651510f8d76ee7dcb720e431}{path1}})\{}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structComparation_ae539ef1011d65fbe8278c2fc33af4967}{path2}}\ <\ com.\mbox{\hyperlink{structComparation_ae539ef1011d65fbe8278c2fc33af4967}{path2}};}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structComparation_abb702ff4651510f8d76ee7dcb720e431}{path1}}\ <\ com.\mbox{\hyperlink{structComparation_abb702ff4651510f8d76ee7dcb720e431}{path1}};}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00074}00074\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00076}\mbox{\hyperlink{structComparation_ad47199b2989e5e99d4e417f18aa63b18}{00076}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structComparation_ad47199b2989e5e99d4e417f18aa63b18}{operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structComparation_a1ff81a1d4176d2ed9da455b65dfc5987}{Comparation}}\ \&com)\textcolor{keyword}{\ const}\{}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structComparation_abb702ff4651510f8d76ee7dcb720e431}{path1}}\ ==\ com.\mbox{\hyperlink{structComparation_abb702ff4651510f8d76ee7dcb720e431}{path1}}\ \&\&\ \mbox{\hyperlink{structComparation_ae539ef1011d65fbe8278c2fc33af4967}{path2}}\ ==\ com.\mbox{\hyperlink{structComparation_ae539ef1011d65fbe8278c2fc33af4967}{path2}};}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00078}00078\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00079}00079\ \};}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00082}\mbox{\hyperlink{master__artifacts_2file__parser_2parser_8cpp_a0bfbba043fa28c265eda75cb2d9984b4}{00082}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{master__artifacts_2file__parser_2parser_8cpp_a0bfbba043fa28c265eda75cb2d9984b4}{parser\_block}}(\textcolor{keywordtype}{string}\ path,\ set<Comparation>\ \&comparations)\{}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00083}00083\ \ \ \ \ \textcolor{keywordtype}{string}\ line;}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00084}00084\ \ \ \ \ \textcolor{keywordflow}{while}(getline(cin,line))\{}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ vector<string>\ tokens\ =\ \mbox{\hyperlink{master__artifacts_2file__parser_2parser_8cpp_a074f317cea14006e0f62dddd92892f39}{parser\_line}}(line);}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(tokens.empty())\{}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\ int32\_t(tokens.size())\ !=\ 2\ ||\ !\mbox{\hyperlink{master__artifacts_2file__parser_2parser_8cpp_ac82e158927f9724c05bb4f79c6381ce7}{is\_an\_file}}(tokens[0]))\{}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ path\_compared\ =\ tokens[0];}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00094}00094\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ similarity\ =\ \mbox{\hyperlink{master__artifacts_2file__parser_2parser_8cpp_ae940a5e525736d2918dade4cdb171156}{retrive\_similarity}}(tokens[1]);}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structComparation}{Comparation}}\ com(path,path\_compared,similarity);}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(similarity\ >=\ \mbox{\hyperlink{master__artifacts_2file__parser_2parser_8cpp_a75c6fa8f53430079e319dc7222ec5df6}{CAP}})}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ comparations.insert(com);}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00098}00098\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00099}00099\ \}}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00101}00101\ }
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00102}\mbox{\hyperlink{master__artifacts_2file__parser_2parser_8cpp_ac15f7c36f6055edec43d0f0f611c4dc0}{00102}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{master__artifacts_2file__parser_2parser_8cpp_ac15f7c36f6055edec43d0f0f611c4dc0}{parser}}()\{}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00103}00103\ \ \ \ \ \textcolor{keywordtype}{string}\ line;}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00104}00104\ \ \ \ \ set<Comparation>\ comparations;}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00106}00106\ \ \ \ \ \textcolor{keywordflow}{while}(getline(cin,line))\{}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00107}00107\ \ \ \ \ \ \ \ \ vector<string>\ tokens\ =\ \ \mbox{\hyperlink{master__artifacts_2file__parser_2parser_8cpp_a074f317cea14006e0f62dddd92892f39}{parser\_line}}(line);}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(tokens.empty())\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00109}00109\ }
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ path;}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00111}00111\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ token\ :\ tokens)\{}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{master__artifacts_2file__parser_2parser_8cpp_ac82e158927f9724c05bb4f79c6381ce7}{is\_an\_file}}(token))\{}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ path\ =\ token;}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00116}00116\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00117}00117\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Removing\ some\ formatation\ that\ shows\ on\ terminal}}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00118}00118\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 4;\ i++)\ path.pop\_back();}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00119}00119\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{master__artifacts_2file__parser_2parser_8cpp_a0bfbba043fa28c265eda75cb2d9984b4}{parser\_block}}(path,comparations);}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00120}00120\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00121}00121\ \ \ \ \ cout\ <<\ comparations.size()\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00122}00122\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ com\ :\ comparations)\{}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00123}00123\ \ \ \ \ \ \ \ \ cout\ <<\ com.path1\ <<\ \textcolor{charliteral}{'\ '}\ <<\ com.path2\ <<\ \textcolor{charliteral}{'\ '};}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00124}00124\ \ \ \ \ \ \ \ \ cout\ <<\ fixed\ <<\ setprecision(2)\ <<\ com.similarity\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00125}00125\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00126}00126\ \}}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00127}00127\ }
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00128}\mbox{\hyperlink{master__artifacts_2file__parser_2parser_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{00128}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{master__artifacts_2file__parser_2parser_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}}(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}\ *argv[])\{}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00129}00129\ \ \ \ \ \textcolor{keywordflow}{if}(argc\ >=\ 2)\{}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00130}00130\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{master__artifacts_2file__parser_2parser_8cpp_a75c6fa8f53430079e319dc7222ec5df6}{CAP}}\ =\ atof(argv[1]);}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00131}00131\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00132}00132\ \ \ \ \ \mbox{\hyperlink{master__artifacts_2file__parser_2parser_8cpp_ac15f7c36f6055edec43d0f0f611c4dc0}{parser}}();}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00133}00133\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{master__artifacts_2file__parser_2parser_8cpp_source_l00134}00134\ \}}
+
+\end{DoxyCode}

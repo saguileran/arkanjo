@@ -1,0 +1,96 @@
+\doxysection{linux\+\_\+utils.\+cpp}
+\hypertarget{linux__utils_8cpp_source}{}\label{linux__utils_8cpp_source}\index{arkanjo/base/linux\_utils.cpp@{arkanjo/base/linux\_utils.cpp}}
+\mbox{\hyperlink{linux__utils_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{linux__utils_8hpp}{linux\_utils.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <sys/utsname.h>}}
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00005}00005\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespaceUtilsOSDependable_acfff3b9114f5bf307e2aa78cbabfe21f}{UtilsOSDependable::convert\_16\_bit\_to\_8\_bit}}(\textcolor{keyword}{const}\ std::string\&\ hex16)\{}
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00006}00006\ \ \ \textcolor{keywordflow}{try}\{}
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00007}00007\ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ value\ =\ std::stoul(hex16,\ \textcolor{keyword}{nullptr},\ 16);}
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00008}00008\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(value\ /\ 256);\ \ }
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00009}00009\ \ \ \}\ \textcolor{keywordflow}{catch}\ (...)\{}
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00010}00010\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;\ }
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00011}00011\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00012}00012\ \}}
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00014}\mbox{\hyperlink{namespaceUtilsOSDependable_a974ef162d7d2726649ea37db8594558d}{00014}}\ tuple<int,\ int,\ int>\ \mbox{\hyperlink{namespaceUtilsOSDependable_a73ce8621f643db388f85ddefa2dbb361}{UtilsOSDependable::parse\_terminal\_color\_response}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ response)\{}
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00015}00015\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ start\_pos\ =\ response.find(\textcolor{stringliteral}{"{}rgb:"{}});}
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00016}00016\ \ \ \textcolor{keywordflow}{if}\ (start\_pos\ ==\ string::npos)\{}
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00017}00017\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \{0,\ 0,\ 0\};}
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00018}00018\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00020}00020\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ end\_pos\ =\ response.find(\textcolor{stringliteral}{"{}\(\backslash\)033\(\backslash\)\(\backslash\)"{}},\ start\_pos);}
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00021}00021\ \ \ \textcolor{keywordflow}{if}\ (end\_pos\ ==\ string::npos)\{}
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00022}00022\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \{0,\ 0,\ 0\};}
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00023}00023\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00025}00025\ \ \ \textcolor{keywordtype}{string}\ rgb\_str\ =\ response.substr(start\_pos\ +\ 4,\ end\_pos\ -\/\ (start\_pos\ +\ 4));}
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00027}00027\ \ \ replace(rgb\_str.begin(),\ rgb\_str.end(),\ \textcolor{charliteral}{'/'},\ \textcolor{charliteral}{'\ '});}
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00029}00029\ \ \ istringstream\ iss(rgb\_str);}
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00030}00030\ \ \ \textcolor{keywordtype}{string}\ r\_hex,\ g\_hex,\ b\_hex;}
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00031}00031\ \ \ iss\ >>\ r\_hex\ >>\ g\_hex\ >>\ b\_hex;}
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00033}00033\ \ \ \textcolor{keywordtype}{int}\ r\ =\ \mbox{\hyperlink{namespaceUtilsOSDependable_acfff3b9114f5bf307e2aa78cbabfe21f}{convert\_16\_bit\_to\_8\_bit}}(r\_hex);}
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00034}00034\ \ \ \textcolor{keywordtype}{int}\ g\ =\ \mbox{\hyperlink{namespaceUtilsOSDependable_acfff3b9114f5bf307e2aa78cbabfe21f}{convert\_16\_bit\_to\_8\_bit}}(g\_hex);}
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00035}00035\ \ \ \textcolor{keywordtype}{int}\ b\ =\ \mbox{\hyperlink{namespaceUtilsOSDependable_acfff3b9114f5bf307e2aa78cbabfe21f}{convert\_16\_bit\_to\_8\_bit}}(b\_hex);}
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00037}00037\ \ \ \textcolor{keywordflow}{return}\ \{r,\ g,\ b\};}
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00038}00038\ \}}
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00040}\mbox{\hyperlink{namespaceUtilsOSDependable_a4e245ddb29771bf9f2e3190c6182f06d}{00040}}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{namespaceUtilsOSDependable_a4e245ddb29771bf9f2e3190c6182f06d}{UtilsOSDependable::capture\_terminal\_response}}()\{}
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00041}00041\ \ \ termios\ oldt,\ newt;}
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00042}00042\ \ \ tcgetattr(STDIN\_FILENO,\ \&oldt);}
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00043}00043\ \ \ newt\ =\ oldt;}
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00044}00044\ \ \ newt.c\_lflag\ \&=\ \string~(ICANON\ |\ ECHO);}
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00045}00045\ \ \ tcsetattr(STDIN\_FILENO,\ TCSANOW,\ \&newt);}
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00047}00047\ \ \ \textcolor{keywordtype}{int}\ oldf\ =\ fcntl(STDIN\_FILENO,\ F\_GETFL,\ 0);}
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00048}00048\ \ \ fcntl(STDIN\_FILENO,\ F\_SETFL,\ oldf\ |\ O\_NONBLOCK);}
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00050}00050\ \ \ cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)033]11;?\(\backslash\)033\(\backslash\)\(\backslash\)"{}};}
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00051}00051\ \ \ cout.flush();}
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00053}00053\ \ \ \textcolor{keywordtype}{string}\ response;}
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00054}00054\ \ \ \textcolor{keywordtype}{char}\ ch;}
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00055}00055\ \ \ timeval\ tv;}
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00056}00056\ \ \ tv.tv\_sec\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00057}00057\ \ \ tv.tv\_usec\ =\ 100000;\ \textcolor{comment}{//\ 100ms\ timeout}}
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00059}00059\ \ \ fd\_set\ readfds;}
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00060}00060\ \ \ FD\_ZERO(\&readfds);}
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00061}00061\ \ \ FD\_SET(STDIN\_FILENO,\ \&readfds);}
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00063}00063\ \ \ \textcolor{keywordflow}{while}\ (select(STDIN\_FILENO\ +\ 1,\ \&readfds,\ NULL,\ NULL,\ \&tv)\ >\ 0)\{}
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00064}00064\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (read(STDIN\_FILENO,\ \&ch,\ 1)\ >\ 0)\{}
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ response\ +=\ ch;}
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00066}00066\ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00068}00068\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00069}00069\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00071}00071\ \ \ tcsetattr(STDIN\_FILENO,\ TCSANOW,\ \&oldt);}
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00072}00072\ \ \ fcntl(STDIN\_FILENO,\ F\_SETFL,\ oldf);}
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00074}00074\ \ \ \textcolor{keywordflow}{return}\ response;}
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00075}00075\ \}}
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00077}\mbox{\hyperlink{namespaceUtilsOSDependable_ae94000387658cfce3f629da04843784f}{00077}}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{namespaceUtilsOSDependable_ae94000387658cfce3f629da04843784f}{UtilsOSDependable::get\_terminal\_bg\_color\_luminance}}()\{}
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00078}00078\ \ \ \textcolor{keywordflow}{if}\ (!isatty(STDOUT\_FILENO))\{}
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00079}00079\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00080}00080\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00082}00082\ \ \ \textcolor{keywordtype}{string}\ color\_str\ =\ \mbox{\hyperlink{namespaceUtilsOSDependable_a4e245ddb29771bf9f2e3190c6182f06d}{capture\_terminal\_response}}();}
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00083}00083\ \ \ \textcolor{keyword}{auto}\ [r,\ g,\ b]\ =\ \mbox{\hyperlink{namespaceUtilsOSDependable_a974ef162d7d2726649ea37db8594558d}{parse\_terminal\_color\_response}}(color\_str);}
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00084}00084\ \ \ }
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00085}00085\ \ \ \textcolor{keywordflow}{return}\ 0.2126\ *\ (r/255)\ +\ 0.7152\ *\ (g/255)\ +\ 0.0722\ *\ (b/255);}
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00086}00086\ \}}
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00088}\mbox{\hyperlink{namespaceUtilsOSDependable_a77d0b457dded74d7d1f901d333d25453}{00088}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceUtilsOSDependable_a77d0b457dded74d7d1f901d333d25453}{UtilsOSDependable::is\_bg\_color\_dark}}()\{}
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00089}00089\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceUtilsOSDependable_ae94000387658cfce3f629da04843784f}{get\_terminal\_bg\_color\_luminance}}()\ <=\ 0.5;}
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00090}00090\ \}}
+
+\end{DoxyCode}

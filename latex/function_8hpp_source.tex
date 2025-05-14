@@ -1,0 +1,53 @@
+\doxysection{function.\+hpp}
+\hypertarget{function_8hpp_source}{}\label{function_8hpp_source}\index{arkanjo/base/function.hpp@{arkanjo/base/function.hpp}}
+\mbox{\hyperlink{function_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{function_8hpp_source_l00001}00001\ \textcolor{comment}{//\ This\ is\ the\ abstraction\ of\ a\ function\ in\ the\ temporary\ codebase,\ }}
+\DoxyCodeLine{\Hypertarget{function_8hpp_source_l00002}00002\ \textcolor{comment}{//\ contains\ all\ the\ information\ related\ to\ a\ function,\ and\ for\ that\ }}
+\DoxyCodeLine{\Hypertarget{function_8hpp_source_l00003}00003\ \textcolor{comment}{//\ open\ and\ read\ the\ files\ in\ the\ temporary\ codebase.}}
+\DoxyCodeLine{\Hypertarget{function_8hpp_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{function_8hpp_source_l00005}00005\ \textcolor{preprocessor}{\#ifndef\ FUNCTION\_HPP}}
+\DoxyCodeLine{\Hypertarget{function_8hpp_source_l00006}00006\ \textcolor{preprocessor}{\#define\ FUNCTION\_HPP}}
+\DoxyCodeLine{\Hypertarget{function_8hpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{function_8hpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <bits/stdc++.h>}\ }
+\DoxyCodeLine{\Hypertarget{function_8hpp_source_l00009}00009\ \textcolor{comment}{//WARNING\ THIS\ IMPORT\ MAYBE\ ONLY\ WORKS\ IN\ UBUNTU,\ SEE\ HERE:\ https://github.com/stardust95/TinyCompiler/issues/2}}
+\DoxyCodeLine{\Hypertarget{function_8hpp_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <jsoncpp/json/json.h>}}
+\DoxyCodeLine{\Hypertarget{function_8hpp_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{function_8hpp_source_l00012}00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{path_8hpp}{path.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{function_8hpp_source_l00013}00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{utils_8hpp}{utils.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{function_8hpp_source_l00014}00014\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{function_8hpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{function_8hpp_source_l00016}\mbox{\hyperlink{classFunction}{00016}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classFunction_aeb1e057869579d8f707506f4b928934b}{Function}}\{}
+\DoxyCodeLine{\Hypertarget{function_8hpp_source_l00017}00017\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{function_8hpp_source_l00018}00018\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ LINE\_DECLARATION\_JSON\ =\ \textcolor{stringliteral}{"{}line\_declaration"{}};}
+\DoxyCodeLine{\Hypertarget{function_8hpp_source_l00019}00019\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ START\_NUMBER\_LINE\_JSON\ =\ \textcolor{stringliteral}{"{}start\_number\_line"{}};}
+\DoxyCodeLine{\Hypertarget{function_8hpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ END\_NUMBER\_LINE\_JSON\ =\ \textcolor{stringliteral}{"{}end\_number\_line"{}};}
+\DoxyCodeLine{\Hypertarget{function_8hpp_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{function_8hpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ FUNCTION\_PREFIX\_PRINT\ =\ \textcolor{stringliteral}{"{}Function\ Name:\ "{}};}
+\DoxyCodeLine{\Hypertarget{function_8hpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ RELATIVE\_PATH\_PRINT\ =\ \textcolor{stringliteral}{"{}Relative\ Path:\ "{}};}
+\DoxyCodeLine{\Hypertarget{function_8hpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ LINE\_DECLARATION\_PRINT\ =\ \textcolor{stringliteral}{"{}Starts\ on\ line:\ "{}};}
+\DoxyCodeLine{\Hypertarget{function_8hpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ END\_DECLARATION\_PRINT\ =\ \textcolor{stringliteral}{"{}Ends\ on\ line:\ "{}};}
+\DoxyCodeLine{\Hypertarget{function_8hpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ NUMBER\_LINE\_PRINT\ =\ \textcolor{stringliteral}{"{}Total\ number\ of\ lines:\ "{}};}
+\DoxyCodeLine{\Hypertarget{function_8hpp_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{function_8hpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classPath}{Path}}\ path;}
+\DoxyCodeLine{\Hypertarget{function_8hpp_source_l00029}00029\ \ \ \ \ \ \ \ \ vector<string>\ content;}
+\DoxyCodeLine{\Hypertarget{function_8hpp_source_l00030}00030\ \ \ \ \ \ \ \ \ vector<string>\ header;}
+\DoxyCodeLine{\Hypertarget{function_8hpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ start\_number\_line;}
+\DoxyCodeLine{\Hypertarget{function_8hpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ line\_declaration;}
+\DoxyCodeLine{\Hypertarget{function_8hpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ end\_number\_line;}
+\DoxyCodeLine{\Hypertarget{function_8hpp_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{function_8hpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ read\_content();}
+\DoxyCodeLine{\Hypertarget{function_8hpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ read\_header();}
+\DoxyCodeLine{\Hypertarget{function_8hpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ read\_info();}
+\DoxyCodeLine{\Hypertarget{function_8hpp_source_l00038}00038\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{function_8hpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classFunction_af1fb06b1347f9c953cd0e9267e1c885e}{number\_of\_lines}}();}
+\DoxyCodeLine{\Hypertarget{function_8hpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classFunction_aeb1e057869579d8f707506f4b928934b}{Function}}(\mbox{\hyperlink{classPath}{Path}}\ \_path);}
+\DoxyCodeLine{\Hypertarget{function_8hpp_source_l00041}00041\ \ \ \ \ \ \ \ \ array<int,3>\ \mbox{\hyperlink{classFunction_a551116719fafec5d8e387957d96ec744}{get\_scope\_function\_in\_file}}();}
+\DoxyCodeLine{\Hypertarget{function_8hpp_source_l00042}00042\ \ \ \ \ \ \ \ \ vector<string>\ \mbox{\hyperlink{classFunction_aea58fced35931266f4e63472da04c33e}{get\_header}}();}
+\DoxyCodeLine{\Hypertarget{function_8hpp_source_l00043}00043\ \ \ \ \ \ \ \ \ vector<string>\ \mbox{\hyperlink{classFunction_a3a90213ec8ec1e4c2b4ac3478cde8e57}{build\_all\_content}}();}
+\DoxyCodeLine{\Hypertarget{function_8hpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classFunction_aa4177e78fa7bf87334a09084f3af533e}{print\_basic\_info}}();}
+\DoxyCodeLine{\Hypertarget{function_8hpp_source_l00045}00045\ \};}
+\DoxyCodeLine{\Hypertarget{function_8hpp_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{function_8hpp_source_l00047}00047\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

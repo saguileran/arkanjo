@@ -1,0 +1,121 @@
+\doxysection{run\+\_\+action Namespace Reference}
+\hypertarget{namespacerun__action}{}\label{namespacerun__action}\index{run\_action@{run\_action}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacerun__action_a6726274327a8059b1da9d475d71058c8}{make\+\_\+markdown\+\_\+table}} (array)
+\item 
+\mbox{\hyperlink{namespacerun__action_a47e340fc279bcb0c077ae959712d83e5}{get\+\_\+markdown\+\_\+link}} (file, url)
+\item 
+\mbox{\hyperlink{namespacerun__action_ad86aa614d89bec6e77cf4204bfc4f217}{get\+\_\+warning}} (similarity, warn\+\_\+threshold)
+\item 
+\mbox{\hyperlink{namespacerun__action_a675a156314ab3bf559ad6856bf59c3c0}{similarities\+\_\+to\+\_\+markdown}} (similarities, url\+\_\+prefix, warn\+\_\+threshold)
+\item 
+\mbox{\hyperlink{namespacerun__action_ab851906f44b8f6f2bc95edee5f905ea5}{split\+\_\+and\+\_\+trim}} (input\+\_\+list)
+\item 
+\mbox{\hyperlink{namespacerun__action_a06b4a0da28aadb15b4e51a7a38510b6e}{to\+\_\+absolute\+\_\+path}} (paths)
+\item 
+\mbox{\hyperlink{namespacerun__action_a3962ba70dc187697f6d7a02cbc0cd83e}{main}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+str \mbox{\hyperlink{namespacerun__action_ac847adfc5651344fa737249b862997d5}{WARNING\+\_\+\+SUFFIX}} = "{} ⚠️"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacerun__action_a47e340fc279bcb0c077ae959712d83e5}\index{run\_action@{run\_action}!get\_markdown\_link@{get\_markdown\_link}}
+\index{get\_markdown\_link@{get\_markdown\_link}!run\_action@{run\_action}}
+\doxysubsubsection{\texorpdfstring{get\_markdown\_link()}{get\_markdown\_link()}}
+{\footnotesize\ttfamily \label{namespacerun__action_a47e340fc279bcb0c077ae959712d83e5} 
+run\+\_\+action.\+get\+\_\+markdown\+\_\+link (\begin{DoxyParamCaption}\item[{}]{file}{, }\item[{}]{url}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{run__action_8py_source_l00056}{56}} of file \mbox{\hyperlink{run__action_8py_source}{run\+\_\+action.\+py}}.
+
+\Hypertarget{namespacerun__action_ad86aa614d89bec6e77cf4204bfc4f217}\index{run\_action@{run\_action}!get\_warning@{get\_warning}}
+\index{get\_warning@{get\_warning}!run\_action@{run\_action}}
+\doxysubsubsection{\texorpdfstring{get\_warning()}{get\_warning()}}
+{\footnotesize\ttfamily \label{namespacerun__action_ad86aa614d89bec6e77cf4204bfc4f217} 
+run\+\_\+action.\+get\+\_\+warning (\begin{DoxyParamCaption}\item[{}]{similarity}{, }\item[{}]{warn\+\_\+threshold}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{run__action_8py_source_l00060}{60}} of file \mbox{\hyperlink{run__action_8py_source}{run\+\_\+action.\+py}}.
+
+\Hypertarget{namespacerun__action_a3962ba70dc187697f6d7a02cbc0cd83e}\index{run\_action@{run\_action}!main@{main}}
+\index{main@{main}!run\_action@{run\_action}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{namespacerun__action_a3962ba70dc187697f6d7a02cbc0cd83e} 
+run\+\_\+action.\+main (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{run__action_8py_source_l00102}{102}} of file \mbox{\hyperlink{run__action_8py_source}{run\+\_\+action.\+py}}.
+
+\Hypertarget{namespacerun__action_a6726274327a8059b1da9d475d71058c8}\index{run\_action@{run\_action}!make\_markdown\_table@{make\_markdown\_table}}
+\index{make\_markdown\_table@{make\_markdown\_table}!run\_action@{run\_action}}
+\doxysubsubsection{\texorpdfstring{make\_markdown\_table()}{make\_markdown\_table()}}
+{\footnotesize\ttfamily \label{namespacerun__action_a6726274327a8059b1da9d475d71058c8} 
+run\+\_\+action.\+make\+\_\+markdown\+\_\+table (\begin{DoxyParamCaption}\item[{}]{array}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Input: Python list with rows of table as lists
+           First element as header.
+    Output: String to put into a .md file
+
+Ex Input:
+    [["Name", "Age", "Height"],
+     ["Jake", 20, 5'10],
+     ["Mary", 21, 5'7]]
+
+ Adopted from: https://gist.github.com/m0neysha/219bad4b02d2008e0154
+\end{DoxyVerb}
+ 
+
+Definition at line \mbox{\hyperlink{run__action_8py_source_l00014}{14}} of file \mbox{\hyperlink{run__action_8py_source}{run\+\_\+action.\+py}}.
+
+\Hypertarget{namespacerun__action_a675a156314ab3bf559ad6856bf59c3c0}\index{run\_action@{run\_action}!similarities\_to\_markdown@{similarities\_to\_markdown}}
+\index{similarities\_to\_markdown@{similarities\_to\_markdown}!run\_action@{run\_action}}
+\doxysubsubsection{\texorpdfstring{similarities\_to\_markdown()}{similarities\_to\_markdown()}}
+{\footnotesize\ttfamily \label{namespacerun__action_a675a156314ab3bf559ad6856bf59c3c0} 
+run\+\_\+action.\+similarities\+\_\+to\+\_\+markdown (\begin{DoxyParamCaption}\item[{}]{similarities}{, }\item[{}]{url\+\_\+prefix}{, }\item[{}]{warn\+\_\+threshold}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{run__action_8py_source_l00068}{68}} of file \mbox{\hyperlink{run__action_8py_source}{run\+\_\+action.\+py}}.
+
+\Hypertarget{namespacerun__action_ab851906f44b8f6f2bc95edee5f905ea5}\index{run\_action@{run\_action}!split\_and\_trim@{split\_and\_trim}}
+\index{split\_and\_trim@{split\_and\_trim}!run\_action@{run\_action}}
+\doxysubsubsection{\texorpdfstring{split\_and\_trim()}{split\_and\_trim()}}
+{\footnotesize\ttfamily \label{namespacerun__action_ab851906f44b8f6f2bc95edee5f905ea5} 
+run\+\_\+action.\+split\+\_\+and\+\_\+trim (\begin{DoxyParamCaption}\item[{}]{input\+\_\+list}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{run__action_8py_source_l00094}{94}} of file \mbox{\hyperlink{run__action_8py_source}{run\+\_\+action.\+py}}.
+
+\Hypertarget{namespacerun__action_a06b4a0da28aadb15b4e51a7a38510b6e}\index{run\_action@{run\_action}!to\_absolute\_path@{to\_absolute\_path}}
+\index{to\_absolute\_path@{to\_absolute\_path}!run\_action@{run\_action}}
+\doxysubsubsection{\texorpdfstring{to\_absolute\_path()}{to\_absolute\_path()}}
+{\footnotesize\ttfamily \label{namespacerun__action_a06b4a0da28aadb15b4e51a7a38510b6e} 
+run\+\_\+action.\+to\+\_\+absolute\+\_\+path (\begin{DoxyParamCaption}\item[{}]{paths}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{run__action_8py_source_l00098}{98}} of file \mbox{\hyperlink{run__action_8py_source}{run\+\_\+action.\+py}}.
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespacerun__action_ac847adfc5651344fa737249b862997d5}\index{run\_action@{run\_action}!WARNING\_SUFFIX@{WARNING\_SUFFIX}}
+\index{WARNING\_SUFFIX@{WARNING\_SUFFIX}!run\_action@{run\_action}}
+\doxysubsubsection{\texorpdfstring{WARNING\_SUFFIX}{WARNING\_SUFFIX}}
+{\footnotesize\ttfamily \label{namespacerun__action_ac847adfc5651344fa737249b862997d5} 
+str run\+\_\+action.\+WARNING\+\_\+\+SUFFIX = "{} ⚠️"{}}
+
+
+
+Definition at line \mbox{\hyperlink{run__action_8py_source_l00011}{11}} of file \mbox{\hyperlink{run__action_8py_source}{run\+\_\+action.\+py}}.
+

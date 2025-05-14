@@ -1,0 +1,243 @@
+\doxysection{run\+\_\+action.\+py}
+\hypertarget{run__action_8py_source}{}\label{run__action_8py_source}\index{arkanjo/third-\/party/duplicate-\/code-\/detection-\/tool/run\_action.py@{arkanjo/third-\/party/duplicate-\/code-\/detection-\/tool/run\_action.py}}
+\mbox{\hyperlink{run__action_8py}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00001}\mbox{\hyperlink{namespacerun__action}{00001}}\ \textcolor{comment}{\#!/usr/bin/env\ python}}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00003}00003\ \textcolor{keyword}{import}\ os}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00004}00004\ \textcolor{keyword}{import}\ sys}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00005}00005\ \textcolor{keyword}{import}\ json}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00006}00006\ \textcolor{keyword}{import}\ requests}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00007}00007\ \textcolor{keyword}{import}\ argparse}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00009}00009\ \textcolor{keyword}{import}\ duplicate\_code\_detection}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00011}\mbox{\hyperlink{namespacerun__action_ac847adfc5651344fa737249b862997d5}{00011}}\ WARNING\_SUFFIX\ =\ \textcolor{stringliteral}{"{}\ ⚠️"{}}}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00014}\mbox{\hyperlink{namespacerun__action_a6726274327a8059b1da9d475d71058c8}{00014}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespacerun__action_a6726274327a8059b1da9d475d71058c8}{make\_markdown\_table}}(array):}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00015}00015\ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}Input:\ Python\ list\ with\ rows\ of\ table\ as\ lists}}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00016}00016\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ First\ element\ as\ header.}}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00017}00017\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ Output:\ String\ to\ put\ into\ a\ .md\ file}}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00018}00018\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00019}00019\ \textcolor{stringliteral}{\ \ \ \ Ex\ Input:}}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00020}00020\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ [["{}Name"{},\ "{}Age"{},\ "{}Height"{}],}}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00021}00021\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ ["{}Jake"{},\ 20,\ 5'10],}}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00022}00022\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ ["{}Mary"{},\ 21,\ 5'7]]}}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00023}00023\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00024}00024\ \textcolor{stringliteral}{\ \ \ \ \ Adopted\ from:\ https://gist.github.com/m0neysha/219bad4b02d2008e0154}}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00025}00025\ \textcolor{stringliteral}{\ \ \ \ "{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00026}00026\ \ \ \ \ markdown\ =\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}\ +\ str(\textcolor{stringliteral}{"{}|\ "{}})}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00028}00028\ \ \ \ \ \textcolor{keywordflow}{for}\ e\ \textcolor{keywordflow}{in}\ array[0]:}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00029}00029\ \ \ \ \ \ \ \ \ to\_add\ =\ \textcolor{stringliteral}{"{}\ "{}}\ +\ str(e)\ +\ str(\textcolor{stringliteral}{"{}\ |"{}})}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00030}00030\ \ \ \ \ \ \ \ \ markdown\ +=\ to\_add}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00031}00031\ \ \ \ \ markdown\ +=\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00033}00033\ \ \ \ \ markdown\ +=\ \textcolor{stringliteral}{"{}|"{}}}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00034}00034\ \ \ \ \ \textcolor{keywordflow}{for}\ i\ \textcolor{keywordflow}{in}\ range(len(array[0])):}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00035}00035\ \ \ \ \ \ \ \ \ markdown\ +=\ str(\textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ |\ "{}})}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00036}00036\ \ \ \ \ markdown\ +=\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00038}00038\ \ \ \ \ markdown\_characters\ =\ 0}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00039}00039\ \ \ \ \ max\_characters\ =\ 65000}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00040}00040\ \ \ \ \ \textcolor{keywordflow}{for}\ entry\ \textcolor{keywordflow}{in}\ array[1:]:}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00041}00041\ \ \ \ \ \ \ \ \ markdown\ +=\ str(\textcolor{stringliteral}{"{}|\ "{}})}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00042}00042\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ e\ \textcolor{keywordflow}{in}\ entry:}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ to\_add\ =\ str(e)\ +\ str(\textcolor{stringliteral}{"{}\ |\ "{}})}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ markdown\ +=\ to\_add}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00045}00045\ \ \ \ \ \ \ \ \ markdown\ +=\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00046}00046\ \ \ \ \ \ \ \ \ markdown\_characters\ +=\ len(markdown)}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00047}00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ markdown\_characters\ >\ max\_characters:}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ markdown\ +=\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}\ +\ WARNING\_SUFFIX\ +\ \textcolor{stringliteral}{"{}\ "{}}}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ markdown\ +=\ \textcolor{stringliteral}{"{}Results\ were\ omitted\ because\ the\ report\ was\ too\ large.\ "{}}}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ markdown\ +=\ \textcolor{stringliteral}{"{}Please\ consider\ ignoring\ results\ below\ a\ certain\ threshold.\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break}}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00053}00053\ \ \ \ \ \textcolor{keywordflow}{return}\ markdown\ +\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00056}\mbox{\hyperlink{namespacerun__action_a47e340fc279bcb0c077ae959712d83e5}{00056}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespacerun__action_a47e340fc279bcb0c077ae959712d83e5}{get\_markdown\_link}}(file,\ url):}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00057}00057\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}[\%s](\%s\%s)"{}}\ \%\ (file,\ url,\ file)}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00060}\mbox{\hyperlink{namespacerun__action_ad86aa614d89bec6e77cf4204bfc4f217}{00060}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespacerun__action_ad86aa614d89bec6e77cf4204bfc4f217}{get\_warning}}(similarity,\ warn\_threshold):}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00061}00061\ \ \ \ \ \textcolor{keywordflow}{return}\ (}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00062}00062\ \ \ \ \ \ \ \ \ str(similarity)}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00063}00063\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ similarity\ <\ int(warn\_threshold)}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00064}00064\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ str(similarity)\ +\ WARNING\_SUFFIX}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00065}00065\ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00068}\mbox{\hyperlink{namespacerun__action_a675a156314ab3bf559ad6856bf59c3c0}{00068}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespacerun__action_a675a156314ab3bf559ad6856bf59c3c0}{similarities\_to\_markdown}}(similarities,\ url\_prefix,\ warn\_threshold):}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00069}00069\ \ \ \ \ markdown\ =\ str()}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00070}00070\ \ \ \ \ \textcolor{keywordflow}{for}\ checked\_file\ \textcolor{keywordflow}{in}\ similarities.keys():}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00071}00071\ \ \ \ \ \ \ \ \ markdown\ +=\ \textcolor{stringliteral}{"{}<details><summary>\%s</summary>\(\backslash\)n\(\backslash\)n"{}}\ \%\ checked\_file}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00072}00072\ \ \ \ \ \ \ \ \ markdown\ +=\ \textcolor{stringliteral}{"{}\#\#\#\ 📄\ \%s\(\backslash\)n"{}}\ \%\ \mbox{\hyperlink{namespacerun__action_a47e340fc279bcb0c077ae959712d83e5}{get\_markdown\_link}}(checked\_file,\ url\_prefix)}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00074}00074\ \ \ \ \ \ \ \ \ table\_header\ =\ [\textcolor{stringliteral}{"{}File"{}},\ \textcolor{stringliteral}{"{}Similarity\ (\%)"{}}]}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00075}00075\ \ \ \ \ \ \ \ \ table\_contents\ =\ [}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ [\mbox{\hyperlink{namespacerun__action_a47e340fc279bcb0c077ae959712d83e5}{get\_markdown\_link}}(f,\ url\_prefix),\ \mbox{\hyperlink{namespacerun__action_ad86aa614d89bec6e77cf4204bfc4f217}{get\_warning}}(s,\ warn\_threshold)]}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (f,\ s)\ \textcolor{keywordflow}{in}\ similarities[checked\_file].items()}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00078}00078\ \ \ \ \ \ \ \ \ ]}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00079}00079\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Sort\ table\ contents\ based\ on\ similarity}}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00080}00080\ \ \ \ \ \ \ \ \ table\_contents.sort(}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ reverse=\textcolor{keyword}{True},\ key=\textcolor{keyword}{lambda}\ row:\ float(row[1].replace(WARNING\_SUFFIX,\ \textcolor{stringliteral}{"{}"{}}))}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00082}00082\ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00083}00083\ \ \ \ \ \ \ \ \ entire\_table\ =\ [[]\ \textcolor{keywordflow}{for}\ \_\ \textcolor{keywordflow}{in}\ range(len(table\_contents)\ +\ 1)]}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00084}00084\ \ \ \ \ \ \ \ \ entire\_table[0]\ =\ table\_header}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00085}00085\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ i\ \textcolor{keywordflow}{in}\ range(1,\ len(table\_contents)\ +\ 1):}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ entire\_table[i]\ =\ table\_contents[i\ -\/\ 1]}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00088}00088\ \ \ \ \ \ \ \ \ markdown\ +=\ \mbox{\hyperlink{namespacerun__action_a6726274327a8059b1da9d475d71058c8}{make\_markdown\_table}}(entire\_table)}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00089}00089\ \ \ \ \ \ \ \ \ markdown\ +=\ \textcolor{stringliteral}{"{}</details>\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00091}00091\ \ \ \ \ \textcolor{keywordflow}{return}\ markdown}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00094}\mbox{\hyperlink{namespacerun__action_ab851906f44b8f6f2bc95edee5f905ea5}{00094}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespacerun__action_ab851906f44b8f6f2bc95edee5f905ea5}{split\_and\_trim}}(input\_list):}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00095}00095\ \ \ \ \ \textcolor{keywordflow}{return}\ [token.strip()\ \textcolor{keywordflow}{for}\ token\ \textcolor{keywordflow}{in}\ input\_list.split(\textcolor{stringliteral}{"{},"{}})]}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00098}\mbox{\hyperlink{namespacerun__action_a06b4a0da28aadb15b4e51a7a38510b6e}{00098}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespacerun__action_a06b4a0da28aadb15b4e51a7a38510b6e}{to\_absolute\_path}}(paths):}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00099}00099\ \ \ \ \ \textcolor{keywordflow}{return}\ [os.path.abspath(path)\ \textcolor{keywordflow}{for}\ path\ \textcolor{keywordflow}{in}\ paths]}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00101}00101\ }
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00102}\mbox{\hyperlink{namespacerun__action_a3962ba70dc187697f6d7a02cbc0cd83e}{00102}}\ \textcolor{keyword}{def\ }\mbox{\hyperlink{namespacerun__action_a3962ba70dc187697f6d7a02cbc0cd83e}{main}}():}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00103}00103\ \ \ \ \ parser\ =\ argparse.ArgumentParser(}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00104}00104\ \ \ \ \ \ \ \ \ description=\textcolor{stringliteral}{"{}Duplicate\ code\ detection\ action\ runner"{}}}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00105}00105\ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00106}00106\ \ \ \ \ parser.add\_argument(}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00107}00107\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}-\/-\/latest-\/head"{}},}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00108}00108\ \ \ \ \ \ \ \ \ type=str,}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00109}00109\ \ \ \ \ \ \ \ \ default=\textcolor{stringliteral}{"{}master"{}},}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00110}00110\ \ \ \ \ \ \ \ \ help=\textcolor{stringliteral}{"{}The\ latest\ commit\ hash\ or\ branch"{}},}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00111}00111\ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00112}00112\ \ \ \ \ parser.add\_argument(}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00113}00113\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}-\/-\/pull-\/request-\/id"{}},\ type=str,\ required=\textcolor{keyword}{True},\ help=\textcolor{stringliteral}{"{}The\ pull\ request\ id"{}}}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00114}00114\ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00115}00115\ \ \ \ \ args\ =\ parser.parse\_args()}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00116}00116\ }
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00117}00117\ \ \ \ \ fail\_threshold\ =\ os.environ.get(\textcolor{stringliteral}{"{}INPUT\_FAIL\_ABOVE"{}})}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00118}00118\ \ \ \ \ directories\ =\ os.environ.get(\textcolor{stringliteral}{"{}INPUT\_DIRECTORIES"{}})}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00119}00119\ \ \ \ \ ignore\_directories\ =\ os.environ.get(\textcolor{stringliteral}{"{}INPUT\_IGNORE\_DIRECTORIES"{}})}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00120}00120\ \ \ \ \ project\_root\_dir\ =\ os.environ.get(\textcolor{stringliteral}{"{}INPUT\_PROJECT\_ROOT\_DIR"{}})}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00121}00121\ \ \ \ \ file\_extensions\ =\ os.environ.get(\textcolor{stringliteral}{"{}INPUT\_FILE\_EXTENSIONS"{}})}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00122}00122\ \ \ \ \ ignore\_threshold\ =\ os.environ.get(\textcolor{stringliteral}{"{}INPUT\_IGNORE\_BELOW"{}})}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00123}00123\ \ \ \ \ only\_code\ =\ os.environ.get(\textcolor{stringliteral}{"{}INPUT\_ONLY\_CODE"{}})}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00124}00124\ }
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00125}00125\ \ \ \ \ directories\_list\ =\ \mbox{\hyperlink{namespacerun__action_ab851906f44b8f6f2bc95edee5f905ea5}{split\_and\_trim}}(directories)}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00126}00126\ \ \ \ \ directories\_list\ =\ \mbox{\hyperlink{namespacerun__action_a06b4a0da28aadb15b4e51a7a38510b6e}{to\_absolute\_path}}(directories\_list)}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00127}00127\ \ \ \ \ ignore\_directories\_list\ =\ (}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00128}00128\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacerun__action_ab851906f44b8f6f2bc95edee5f905ea5}{split\_and\_trim}}(ignore\_directories)\ \textcolor{keywordflow}{if}\ ignore\_directories\ !=\ \textcolor{stringliteral}{"{}"{}}\ \textcolor{keywordflow}{else}\ list()}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00129}00129\ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00130}00130\ \ \ \ \ ignore\_directories\_list\ =\ \mbox{\hyperlink{namespacerun__action_a06b4a0da28aadb15b4e51a7a38510b6e}{to\_absolute\_path}}(ignore\_directories\_list)}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00131}00131\ \ \ \ \ file\_extensions\_list\ =\ \mbox{\hyperlink{namespacerun__action_ab851906f44b8f6f2bc95edee5f905ea5}{split\_and\_trim}}(file\_extensions)}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00132}00132\ \ \ \ \ project\_root\_dir\ =\ os.path.abspath(project\_root\_dir)}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00133}00133\ }
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00134}00134\ \ \ \ \ files\_list\ =\ \textcolor{keywordtype}{None}}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00135}00135\ \ \ \ \ ignore\_files\_list\ =\ \textcolor{keywordtype}{None}}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00136}00136\ \ \ \ \ json\_output\ =\ \textcolor{keyword}{True}}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00137}00137\ \ \ \ \ csv\_output\_path\ =\ \textcolor{stringliteral}{"{}"{}}\ \ \textcolor{comment}{\#\ No\ CSV\ output\ by\ default\ for\ now\ in\ GitHub\ Actions}}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00138}00138\ \ \ \ \ show\_loc\ =\ \textcolor{keyword}{False}}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00139}00139\ }
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00140}00140\ \ \ \ \ detection\_result,\ code\_similarity\ =\ \mbox{\hyperlink{namespaceduplicate__code__detection_ae591f33a24d4217787d2fec3a769d8af}{duplicate\_code\_detection.run}}(}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00141}00141\ \ \ \ \ \ \ \ \ int(fail\_threshold),}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00142}00142\ \ \ \ \ \ \ \ \ directories\_list,}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00143}00143\ \ \ \ \ \ \ \ \ files\_list,}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00144}00144\ \ \ \ \ \ \ \ \ ignore\_directories\_list,}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00145}00145\ \ \ \ \ \ \ \ \ ignore\_files\_list,}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00146}00146\ \ \ \ \ \ \ \ \ json\_output,}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00147}00147\ \ \ \ \ \ \ \ \ project\_root\_dir,}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00148}00148\ \ \ \ \ \ \ \ \ file\_extensions\_list,}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00149}00149\ \ \ \ \ \ \ \ \ int(ignore\_threshold),}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00150}00150\ \ \ \ \ \ \ \ \ bool(only\_code),}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00151}00151\ \ \ \ \ \ \ \ \ csv\_output\_path,}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00152}00152\ \ \ \ \ \ \ \ \ show\_loc,}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00153}00153\ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00154}00154\ }
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00155}00155\ \ \ \ \ \textcolor{keywordflow}{if}\ detection\_result\ ==\ duplicate\_code\_detection.ReturnCode.BAD\_INPUT:}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00156}00156\ \ \ \ \ \ \ \ \ print(\textcolor{stringliteral}{"{}Action\ aborted\ due\ to\ bad\ user\ input"{}})}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00157}00157\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ detection\_result.value}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00158}00158\ \ \ \ \ \textcolor{keywordflow}{elif}\ detection\_result\ ==\ duplicate\_code\_detection.ReturnCode.THRESHOLD\_EXCEEDED:}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00159}00159\ \ \ \ \ \ \ \ \ print(}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Action\ failed\ due\ to\ maximum\ similarity\ threshold\ exceeded,\ check\ the\ report"{}}}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00161}00161\ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00162}00162\ }
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00163}00163\ \ \ \ \ repo\ =\ os.environ.get(\textcolor{stringliteral}{"{}GITHUB\_REPOSITORY"{}})}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00164}00164\ \ \ \ \ files\_url\_prefix\ =\ \textcolor{stringliteral}{"{}https://github.com/\%s/blob/\%s/"{}}\ \%\ (repo,\ args.latest\_head)}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00165}00165\ \ \ \ \ warn\_threshold\ =\ os.environ.get(\textcolor{stringliteral}{"{}INPUT\_WARN\_ABOVE"{}})}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00166}00166\ }
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00167}00167\ \ \ \ \ header\_message\_start\ =\ os.environ.get(\textcolor{stringliteral}{"{}INPUT\_HEADER\_MESSAGE\_START"{}})\ +\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00168}00168\ \ \ \ \ message\ =\ header\_message\_start}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00169}00169\ \ \ \ \ message\ +=\ \textcolor{stringliteral}{"{}The\ [tool](https://github.com/platisd/duplicate-\/code-\/detection-\/tool)"{}}}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00170}00170\ \ \ \ \ message\ +=\ \textcolor{stringliteral}{"{}\ analyzed\ your\ source\ code\ and\ found\ the\ following\ degree\ of"{}}}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00171}00171\ \ \ \ \ message\ +=\ \textcolor{stringliteral}{"{}\ similarity\ between\ the\ files:\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00172}00172\ \ \ \ \ message\ +=\ \mbox{\hyperlink{namespacerun__action_a675a156314ab3bf559ad6856bf59c3c0}{similarities\_to\_markdown}}(}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00173}00173\ \ \ \ \ \ \ \ \ code\_similarity,\ files\_url\_prefix,\ warn\_threshold}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00174}00174\ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00175}00175\ }
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00176}00176\ \ \ \ \ github\_token\ =\ os.environ.get(\textcolor{stringliteral}{"{}INPUT\_GITHUB\_TOKEN"{}})}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00177}00177\ \ \ \ \ github\_api\_url\ =\ os.environ.get(\textcolor{stringliteral}{"{}GITHUB\_API\_URL"{}})}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00178}00178\ }
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00179}00179\ \ \ \ \ request\_url\ =\ \textcolor{stringliteral}{"{}\%s/repos/\%s/issues/\%s/comments"{}}\ \%\ (}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00180}00180\ \ \ \ \ \ \ \ \ github\_api\_url,}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00181}00181\ \ \ \ \ \ \ \ \ repo,}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00182}00182\ \ \ \ \ \ \ \ \ args.pull\_request\_id,}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00183}00183\ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00184}00184\ }
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00185}00185\ \ \ \ \ headers\ =\ \{}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00186}00186\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Authorization"{}}:\ \textcolor{stringliteral}{"{}token\ \%s"{}}\ \%\ github\_token,}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00187}00187\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00188}00188\ \ \ \ \ report\ =\ \{\textcolor{stringliteral}{"{}body"{}}:\ message\}}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00189}00189\ }
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00190}00190\ \ \ \ \ update\_existing\_comment\ =\ os.environ.get(\textcolor{stringliteral}{"{}INPUT\_ONE\_COMMENT"{}},\ \textcolor{stringliteral}{"{}false"{}}).lower()\ \textcolor{keywordflow}{in}\ (}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00191}00191\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}true"{}},}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00192}00192\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}1"{}},}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00193}00193\ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00194}00194\ \ \ \ \ comment\_updated\ =\ \textcolor{keyword}{False}}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00195}00195\ \ \ \ \ \textcolor{keywordflow}{if}\ update\_existing\_comment:}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00196}00196\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ If\ the\ bot\ has\ posted\ many\ comments,\ update\ the\ last\ one}}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00197}00197\ \ \ \ \ \ \ \ \ pr\_comments\ =\ requests.get(request\_url,\ headers=headers).json()}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00198}00198\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ pr\_comment\ \textcolor{keywordflow}{in}\ pr\_comments[::-\/1]:}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00199}00199\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ pr\_comment[\textcolor{stringliteral}{"{}body"{}}].startswith(header\_message\_start):}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00200}00200\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ update\_result\ =\ requests.patch(}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00201}00201\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pr\_comment[\textcolor{stringliteral}{"{}url"{}}],}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00202}00202\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ json=report,}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00203}00203\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ headers=headers,}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00204}00204\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00205}00205\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ update\_result.status\_code\ !=\ 200:}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00206}00206\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ print(}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00207}00207\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Updating\ existing\ comment\ failed\ with\ code:\ "{}}}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00208}00208\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ str(update\_result.status\_code)}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00209}00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00210}00210\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ print(update\_result.text)}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00211}00211\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ print(\textcolor{stringliteral}{"{}Attempting\ to\ post\ a\ new\ comment\ instead"{}})}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00212}00212\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00213}00213\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ comment\_updated\ =\ \textcolor{keyword}{True}}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00214}00214\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break}}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00215}00215\ }
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00216}00216\ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keywordflow}{not}\ comment\_updated:}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00217}00217\ \ \ \ \ \ \ \ \ post\_result\ =\ requests.post(}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00218}00218\ \ \ \ \ \ \ \ \ \ \ \ \ request\_url,}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00219}00219\ \ \ \ \ \ \ \ \ \ \ \ \ json=report,}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00220}00220\ \ \ \ \ \ \ \ \ \ \ \ \ headers=headers,}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00221}00221\ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00222}00222\ }
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00223}00223\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ post\_result.status\_code\ !=\ 201:}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00224}00224\ \ \ \ \ \ \ \ \ \ \ \ \ print(}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00225}00225\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Posting\ results\ to\ GitHub\ failed\ with\ code:\ "{}}}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00226}00226\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ str(post\_result.status\_code)}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00227}00227\ \ \ \ \ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00228}00228\ \ \ \ \ \ \ \ \ \ \ \ \ print(post\_result.text)}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00229}00229\ }
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00230}00230\ \ \ \ \ \textcolor{keyword}{with}\ open(\textcolor{stringliteral}{"{}message.md"{}},\ \textcolor{stringliteral}{"{}w"{}})\ \textcolor{keyword}{as}\ f:}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00231}00231\ \ \ \ \ \ \ \ \ f.write(message)}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00232}00232\ }
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00233}00233\ \ \ \ \ \textcolor{keywordflow}{return}\ detection\_result.value}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00234}00234\ }
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00235}00235\ }
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00236}00236\ \textcolor{keywordflow}{if}\ \_\_name\_\_\ ==\ \textcolor{stringliteral}{"{}\_\_main\_\_"{}}:}
+\DoxyCodeLine{\Hypertarget{run__action_8py_source_l00237}00237\ \ \ \ \ sys.exit(\mbox{\hyperlink{namespacerun__action_a3962ba70dc187697f6d7a02cbc0cd83e}{main}}())}
+
+\end{DoxyCode}

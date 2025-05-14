@@ -1,0 +1,6 @@
+<map id="arkanjo/tests/e2e/expected/tmp/header/test_multiple_file_big_functions_against_small" name="arkanjo/tests/e2e/expected/tmp/header/test_multiple_file_big_functions_against_small">
+<area shape="rect" id="node2" href="dir_fe418fdab5bfccdb696748b21333e2b7.html" title="big.c" alt="" coords="253,70,302,96"/>
+<area shape="rect" id="node3" href="dir_a7b23050f92376b47f7924b526ed43dc.html" title="small.c" alt="" coords="326,70,388,96"/>
+<area shape="rect" id="clust2" href="dir_4fac14ce726dad722ae4426105cb3916.html" alt="" coords="27,52,399,114"/>
+<area shape="rect" id="clust1" href="dir_9e5bea503681648e30f5ed8cb463f729.html" title="header" alt="" coords="16,16,409,125"/>
+</map>

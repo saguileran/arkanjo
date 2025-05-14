@@ -1,0 +1,127 @@
+\doxysection{parser.\+cpp}
+\hypertarget{arkanjo_2pre_2parser_8cpp_source}{}\label{arkanjo_2pre_2parser_8cpp_source}\index{arkanjo/pre/parser.cpp@{arkanjo/pre/parser.cpp}}
+\mbox{\hyperlink{arkanjo_2pre_2parser_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{parser_8hpp}{parser.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00004}\mbox{\hyperlink{structComparation_a3f01a2380ce5ce4a844b542d52aca829}{00004}}\ \mbox{\hyperlink{structComparation_a1ff81a1d4176d2ed9da455b65dfc5987}{Comparation::Comparation}}(\textcolor{keywordtype}{string}\ \_path1,\ \textcolor{keywordtype}{string}\ \_path2,\ \textcolor{keywordtype}{double}\ \_sim)\{}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00005}00005\ \ \ \ \ \textcolor{keywordflow}{if}(\_path1\ >\ \_path2)\ swap(\_path1,\_path2);}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00006}00006\ \ \ \ \ \mbox{\hyperlink{structComparation_abb702ff4651510f8d76ee7dcb720e431}{path1}}\ =\ \_path1;}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00007}00007\ \ \ \ \ \mbox{\hyperlink{structComparation_ae539ef1011d65fbe8278c2fc33af4967}{path2}}\ =\ \_path2;}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00008}00008\ \ \ \ \ \mbox{\hyperlink{structComparation_a1e585bb85ef2c0690c40c3652bceead2}{similarity}}\ =\ \_sim;}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00009}00009\ \}}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00011}\mbox{\hyperlink{structComparation_a0c3fe8a9f593e4ea79b88a3ab2e5af03}{00011}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structComparation_a0c3fe8a9f593e4ea79b88a3ab2e5af03}{Comparation::operator<}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structComparation_a1ff81a1d4176d2ed9da455b65dfc5987}{Comparation}}\ \&com)\textcolor{keyword}{\ const}\{}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00012}00012\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{structComparation_a1e585bb85ef2c0690c40c3652bceead2}{similarity}}\ !=\ com.\mbox{\hyperlink{structComparation_a1e585bb85ef2c0690c40c3652bceead2}{similarity}})\{}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00013}00013\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structComparation_a1e585bb85ef2c0690c40c3652bceead2}{similarity}}\ >\ com.\mbox{\hyperlink{structComparation_a1e585bb85ef2c0690c40c3652bceead2}{similarity}};}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00014}00014\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00015}00015\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{structComparation_abb702ff4651510f8d76ee7dcb720e431}{path1}}\ ==\ com.\mbox{\hyperlink{structComparation_abb702ff4651510f8d76ee7dcb720e431}{path1}})\{}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00016}00016\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structComparation_ae539ef1011d65fbe8278c2fc33af4967}{path2}}\ <\ com.\mbox{\hyperlink{structComparation_ae539ef1011d65fbe8278c2fc33af4967}{path2}};}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00017}00017\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00018}00018\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structComparation_abb702ff4651510f8d76ee7dcb720e431}{path1}}\ <\ com.\mbox{\hyperlink{structComparation_abb702ff4651510f8d76ee7dcb720e431}{path1}};}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00019}00019\ \}}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00021}\mbox{\hyperlink{structComparation_ad47199b2989e5e99d4e417f18aa63b18}{00021}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structComparation_ad47199b2989e5e99d4e417f18aa63b18}{Comparation::operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structComparation_a1ff81a1d4176d2ed9da455b65dfc5987}{Comparation}}\ \&com)\textcolor{keyword}{\ const}\{}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00022}00022\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structComparation_abb702ff4651510f8d76ee7dcb720e431}{path1}}\ ==\ com.\mbox{\hyperlink{structComparation_abb702ff4651510f8d76ee7dcb720e431}{path1}}\ \&\&\ \mbox{\hyperlink{structComparation_ae539ef1011d65fbe8278c2fc33af4967}{path2}}\ ==\ com.\mbox{\hyperlink{structComparation_ae539ef1011d65fbe8278c2fc33af4967}{path2}};}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00023}00023\ \}}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00025}00025\ vector<string>\ Parser::parser\_line(\textcolor{keywordtype}{string}\ line)\{}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00026}00026\ \ \ \ \ \textcolor{keywordtype}{string}\ at\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00027}00027\ \ \ \ \ vector<string>\ \mbox{\hyperlink{current_2tmp_2source_2test__same__file__different__functions__same__logic_8c_2sum_8c_a339672ff94e6199019102f50d317c3d7}{ret}};}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00028}00028\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ c\ :\ line)\{}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(c\ <=\ 20\ ||\ c\ ==\ \textcolor{charliteral}{'\ '})\{\ \textcolor{comment}{//an\ space\ on\ non-\/printable\ char}}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!at.empty())}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{current_2tmp_2source_2test__same__file__different__functions__same__logic_8c_2sum_8c_a339672ff94e6199019102f50d317c3d7}{ret}}.push\_back(at);}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ at\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ at\ +=\ c;}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00036}00036\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00037}00037\ \ \ \ \ \textcolor{keywordflow}{if}(!at.empty())}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{current_2tmp_2source_2test__same__file__different__functions__same__logic_8c_2sum_8c_a339672ff94e6199019102f50d317c3d7}{ret}}.push\_back(at);}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00039}00039\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00040}00040\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{current_2tmp_2source_2test__same__file__different__functions__same__logic_8c_2sum_8c_a339672ff94e6199019102f50d317c3d7}{ret}};}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00041}00041\ \}}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00043}00043\ \textcolor{keywordtype}{bool}\ Parser::is\_an\_file(\textcolor{keywordtype}{string}\ s)\{}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00044}00044\ \ \ \ \ \textcolor{keywordflow}{return}\ !s.empty()\ \&\&\ s[0]\ ==\ \textcolor{charliteral}{'/'};}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00045}00045\ \}}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00047}00047\ \textcolor{keywordtype}{string}\ Parser::remove\_formatation\_from\_similarity(\textcolor{keywordtype}{string}\ s)\{}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00048}00048\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 4;\ i++)\{}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ s.pop\_back();}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00050}00050\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00051}00051\ \ \ \ \ reverse(s.begin(),s.end());}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00052}00052\ \ \ \ \ \textcolor{keywordflow}{while}(s.back()\ !=\ \textcolor{charliteral}{'m'})\{}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ s.pop\_back();}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00054}00054\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00055}00055\ \ \ \ \ s.pop\_back();}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00056}00056\ \ \ \ \ reverse(s.begin(),s.end());}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00057}00057\ \ \ \ \ \textcolor{keywordflow}{return}\ s;}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00058}00058\ \}}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00060}00060\ \textcolor{keywordtype}{double}\ Parser::retrive\_similarity(\textcolor{keywordtype}{string}\ s)\{\ }
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00061}00061\ \ \ \ \ s\ =\ remove\_formatation\_from\_similarity(s);}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00062}00062\ \ \ \ \ \textcolor{keywordtype}{char}\ *cs\ =\ s.data();}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00063}00063\ \ \ \ \ \textcolor{keywordtype}{float}\ similarity\ =\ stod(s);}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00064}00064\ \ \ \ \ \textcolor{keywordflow}{return}\ similarity;}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00065}00065\ \}}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00067}00067\ \textcolor{keywordtype}{void}\ Parser::parser\_block(\textcolor{keywordtype}{string}\ path,\ set<Comparation>\ \&comparations)\{}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00068}00068\ \ \ \ \ \textcolor{keywordtype}{string}\ line;}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00069}00069\ \ \ \ \ \textcolor{keywordflow}{while}(getline(fin,line))\{}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ vector<string>\ tokens\ =\ parser\_line(line);}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(tokens.empty())\{}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\ int32\_t(tokens.size())\ !=\ 2\ ||\ !is\_an\_file(tokens[0]))\{}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ path\_compared\ =\ tokens[0];}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ similarity\ =\ retrive\_similarity(tokens[1]);}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ Comparation\ com(path,path\_compared,similarity);}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(similarity\ >=\ similarity\_cap\_)}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ comparations.insert(com);}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00083}00083\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00084}00084\ \}}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00086}00086\ \textcolor{keywordtype}{void}\ Parser::exec()\{}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00087}00087\ \ \ \ \ \textcolor{keywordtype}{string}\ line;}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00088}00088\ \ \ \ \ set<Comparation>\ comparations;}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00090}00090\ \ \ \ \ \textcolor{keywordflow}{while}(getline(fin,line))\{}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ vector<string>\ tokens\ =\ \ parser\_line(line);}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(tokens.empty())\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00094}00094\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ path;}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ token\ :\ tokens)\{}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(is\_an\_file(token))\{}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ path\ =\ token;}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00100}00100\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00101}00101\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Removing\ some\ formatation\ that\ shows\ on\ terminal}}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00102}00102\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 4;\ i++)\ path.pop\_back();}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00103}00103\ \ \ \ \ \ \ \ \ parser\_block(path,comparations);}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00104}00104\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00105}00105\ \ \ \ \ fout\ <<\ comparations.size()\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00106}00106\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ com\ :\ comparations)\{}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00107}00107\ \ \ \ \ \ \ \ \ fout\ <<\ com.path1\ <<\ \textcolor{charliteral}{'\ '}\ <<\ com.path2\ <<\ \textcolor{charliteral}{'\ '};}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \ fout\ <<\ fixed\ <<\ setprecision(2)\ <<\ com.similarity\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00109}00109\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00110}00110\ \}}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00111}00111\ }
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00112}\mbox{\hyperlink{classParser_ae1372e72f0f323dbfb13526a0f194f4c}{00112}}\ \mbox{\hyperlink{classParser_ae1372e72f0f323dbfb13526a0f194f4c}{Parser::Parser}}(\textcolor{keywordtype}{string}\ input\_file,\ \textcolor{keywordtype}{string}\ output\_file,\ \textcolor{keywordtype}{double}\ similarity\_cap)\{}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00113}00113\ \ \ \ \ fin\ =\ ifstream(input\_file);}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00114}00114\ \ \ \ \ fout\ =\ ofstream(output\_file);}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00115}00115\ \ \ \ \ similarity\_cap\_\ =\ similarity\_cap;}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00116}00116\ }
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00117}00117\ \ \ \ \ exec();}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00119}00119\ \ \ \ \ fin.close();}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00120}00120\ \ \ \ \ fout.close();}
+\DoxyCodeLine{\Hypertarget{arkanjo_2pre_2parser_8cpp_source_l00121}00121\ \}}
+
+\end{DoxyCode}

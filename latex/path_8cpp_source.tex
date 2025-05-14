@@ -1,0 +1,160 @@
+\doxysection{path.\+cpp}
+\hypertarget{path_8cpp_source}{}\label{path_8cpp_source}\index{arkanjo/base/path.cpp@{arkanjo/base/path.cpp}}
+\mbox{\hyperlink{path_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{path_8hpp}{path.hpp}}"{}}\ }
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00004}00004\ vector<string>\ Path::split\_path(\textcolor{keywordtype}{string}\ string\_path)\{}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00005}00005\ \ \ \ \ \textcolor{keywordtype}{string}\ aux\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00006}00006\ \ \ \ \ vector<string>\ \mbox{\hyperlink{current_2tmp_2source_2test__same__file__different__functions__same__logic_8c_2sum_8c_a339672ff94e6199019102f50d317c3d7}{ret}};}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00007}00007\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ c\ :\ string\_path)\{}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00008}00008\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(c\ ==\ BAR)\{}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00009}00009\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{current_2tmp_2source_2test__same__file__different__functions__same__logic_8c_2sum_8c_a339672ff94e6199019102f50d317c3d7}{ret}}.push\_back(aux);}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00010}00010\ \ \ \ \ \ \ \ \ \ \ \ \ aux\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00011}00011\ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}\{\ }
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00012}00012\ \ \ \ \ \ \ \ \ \ \ \ \ aux\ +=\ c;}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00013}00013\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00014}00014\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00015}00015\ \ \ \ \ \textcolor{keywordflow}{if}(!aux.empty())\{}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00016}00016\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{current_2tmp_2source_2test__same__file__different__functions__same__logic_8c_2sum_8c_a339672ff94e6199019102f50d317c3d7}{ret}}.push\_back(aux);}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00017}00017\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00018}00018\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{current_2tmp_2source_2test__same__file__different__functions__same__logic_8c_2sum_8c_a339672ff94e6199019102f50d317c3d7}{ret}};}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00019}00019\ \}}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00021}00021\ \textcolor{keywordtype}{int}\ Path::find\_position\_start\_relative\_path()\{}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00022}00022\ \ \ \ \ \textcolor{keywordtype}{int}\ sz\ =\ tokens.size();}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00023}00023\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{current_2tmp_2source_2test__same__file__different__functions__same__logic_8c_2sum_8c_a339672ff94e6199019102f50d317c3d7}{ret}}\ =\ sz;}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00024}00024\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ sz-\/1;\ i++)\{}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(tokens[i]\ ==\ BASE\_INIT\_STRING\ \&\&\ tokens[i+1]\ ==\ SOURCE\_STRING)\{}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{current_2tmp_2source_2test__same__file__different__functions__same__logic_8c_2sum_8c_a339672ff94e6199019102f50d317c3d7}{ret}}\ =\ i+2;}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00028}00028\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00029}00029\ \ \ \ \ assert(\mbox{\hyperlink{current_2tmp_2source_2test__same__file__different__functions__same__logic_8c_2sum_8c_a339672ff94e6199019102f50d317c3d7}{ret}}\ !=\ sz\ \&\&\ \textcolor{stringliteral}{"{}PATH\ NOT\ VALID\ FOR\ THE\ TOOL"{}});}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00030}00030\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{current_2tmp_2source_2test__same__file__different__functions__same__logic_8c_2sum_8c_a339672ff94e6199019102f50d317c3d7}{ret}};}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00031}00031\ \}}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00033}\mbox{\hyperlink{classPath_aa9be149ff40e69c853f590325aee9e11}{00033}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classPath_aa9be149ff40e69c853f590325aee9e11}{Path::is\_empty}}()\{}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00034}00034\ \ \ \ \ \textcolor{keywordflow}{return}\ tokens.empty();}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00035}00035\ \}}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00037}\mbox{\hyperlink{classPath_af26cfab021ddf49af73da3b2beca85ac}{00037}}\ \mbox{\hyperlink{classPath_af26cfab021ddf49af73da3b2beca85ac}{Path::Path}}()\{}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00038}00038\ \}}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00040}\mbox{\hyperlink{classPath_a75958a9c74a420184841a3e826070fb1}{00040}}\ \mbox{\hyperlink{classPath_af26cfab021ddf49af73da3b2beca85ac}{Path::Path}}(\textcolor{keywordtype}{string}\ string\_path)\{}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00041}00041\ \ \ \ \ tokens\ =\ split\_path(string\_path);}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00042}00042\ \ \ \ \ position\_start\_relative\_path\ =\ find\_position\_start\_relative\_path();}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00043}00043\ \}}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00045}00045\ \textcolor{keywordtype}{string}\ Path::build\_string\_path(vector<string>\ path)\{}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00046}00046\ \ \ \ \ \textcolor{keywordtype}{string}\ string\_path;}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00047}00047\ \ \ \ \ \textcolor{keywordtype}{int}\ sz\ =\ path.size();}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00048}00048\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ sz;\ i++)\{}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ string\_path\ +=\ path[i];}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(i\ !=\ sz-\/1)\{}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ string\_path\ +=\ BAR;}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00053}00053\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00054}00054\ \ \ \ \ \textcolor{keywordflow}{return}\ string\_path;}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00055}00055\ \}}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00057}00057\ \textcolor{keywordtype}{string}\ Path::build\_base\_path(\textcolor{keywordtype}{string}\ base)\{}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00058}00058\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classPath_aa9be149ff40e69c853f590325aee9e11}{is\_empty}}())\{}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00060}00060\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00061}00061\ \ \ \ \ vector<string>\ path\ =\ tokens;}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00062}00062\ \ \ \ \ \textcolor{keywordtype}{int}\ pos\_change\ =\ position\_start\_relative\_path-\/1;}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00063}00063\ \ \ \ \ path[pos\_change]\ =\ base;}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00064}00064\ \ \ \ \ \textcolor{keywordtype}{string}\ string\_path\ =\ build\_string\_path(path);}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00065}00065\ \ \ \ \ \textcolor{keywordflow}{return}\ string\_path;}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00066}00066\ \}}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00068}\mbox{\hyperlink{classPath_a45c4cec75531202d3d51a73a1fbb267c}{00068}}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{classPath_a45c4cec75531202d3d51a73a1fbb267c}{Path::build\_source\_path}}()\{}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00069}00069\ \ \ \ \ \textcolor{keywordflow}{return}\ build\_base\_path(SOURCE\_STRING);}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00070}00070\ \}}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00072}\mbox{\hyperlink{classPath_a89f564c938860839e2068c0be53fe035}{00072}}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{classPath_a89f564c938860839e2068c0be53fe035}{Path::build\_header\_path}}()\{}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00073}00073\ \ \ \ \ \textcolor{keywordflow}{return}\ build\_base\_path(HEADER\_STRING);}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00074}00074\ \}}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00076}\mbox{\hyperlink{classPath_a5d41b625a19bfd6757c2ecb52ecd61f0}{00076}}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{classPath_a5d41b625a19bfd6757c2ecb52ecd61f0}{Path::build\_info\_path}}()\{}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00077}00077\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{current_2tmp_2source_2test__same__file__different__functions__same__logic_8c_2sum_8c_a339672ff94e6199019102f50d317c3d7}{ret}}\ =\ build\_base\_path(INFO\_STRING);}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00078}00078\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{current_2tmp_2source_2test__same__file__different__functions__same__logic_8c_2sum_8c_a339672ff94e6199019102f50d317c3d7}{ret}}\ ==\ \textcolor{stringliteral}{"{}"{}})\{}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00080}00080\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00081}00081\ \ \ \ \ \mbox{\hyperlink{current_2tmp_2source_2test__same__file__different__functions__same__logic_8c_2sum_8c_a339672ff94e6199019102f50d317c3d7}{ret}}\ =\ remove\_extension(\mbox{\hyperlink{current_2tmp_2source_2test__same__file__different__functions__same__logic_8c_2sum_8c_a339672ff94e6199019102f50d317c3d7}{ret}});}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00082}00082\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{current_2tmp_2source_2test__same__file__different__functions__same__logic_8c_2sum_8c_a339672ff94e6199019102f50d317c3d7}{ret}}\ ==\ \textcolor{stringliteral}{"{}"{}})\{}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00084}00084\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00085}00085\ \ \ \ \ \mbox{\hyperlink{current_2tmp_2source_2test__same__file__different__functions__same__logic_8c_2sum_8c_a339672ff94e6199019102f50d317c3d7}{ret}}\ +=\ JSON\_EXTENSION;}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00086}00086\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{current_2tmp_2source_2test__same__file__different__functions__same__logic_8c_2sum_8c_a339672ff94e6199019102f50d317c3d7}{ret}};}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00087}00087\ \}}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00089}00089\ vector<string>\ Path::get\_tokens\_from\_relative\_path()\{}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00090}00090\ \ \ \ \ vector<string>\ token\_relative\_path\ =\ tokens;}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00091}00091\ \ \ \ \ token\_relative\_path.pop\_back();}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00092}00092\ \ \ \ \ \textcolor{keywordtype}{int}\ to\_remove\ =\ position\_start\_relative\_path;}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00093}00093\ \ \ \ \ reverse(token\_relative\_path.begin(),token\_relative\_path.end());}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00094}00094\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ to\_remove;\ i++)\{}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ token\_relative\_path.pop\_back();}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00096}00096\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00097}00097\ \ \ \ \ reverse(token\_relative\_path.begin(),token\_relative\_path.end());}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00098}00098\ \ \ \ \ \textcolor{keywordflow}{return}\ token\_relative\_path;}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00099}00099\ \}}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00101}00101\ \textcolor{keywordtype}{string}\ Path::remove\_extension(\textcolor{keywordtype}{string}\ token)\{}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00102}00102\ \ \ \ \ \textcolor{keywordflow}{while}(!token.empty())\{}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00103}00103\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ c\ =\ token.back();}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00104}00104\ \ \ \ \ \ \ \ \ token.pop\_back();}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00105}00105\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(c\ ==\ \textcolor{charliteral}{'.'})\{}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00107}00107\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00108}00108\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00109}00109\ \ \ \ \ \textcolor{keywordflow}{return}\ token;}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00110}00110\ \}}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00111}00111\ }
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00112}\mbox{\hyperlink{classPath_a7c2bce76d5bea7271c6661a566353b84}{00112}}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{classPath_a7c2bce76d5bea7271c6661a566353b84}{Path::build\_relative\_path}}()\{}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00113}00113\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classPath_aa9be149ff40e69c853f590325aee9e11}{is\_empty}}())\{}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00114}00114\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00115}00115\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00116}00116\ \ \ \ \ vector<string>\ token\_relative\_path\ =\ get\_tokens\_from\_relative\_path();}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00117}00117\ \ \ \ \ \textcolor{keywordtype}{string}\ string\_path\ =\ build\_string\_path(token\_relative\_path);}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00118}00118\ \ \ \ \ \textcolor{keywordflow}{return}\ string\_path;}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00119}00119\ \}}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00120}00120\ }
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00121}\mbox{\hyperlink{classPath_aff1233c49ba67722430eebc37eb4f31a}{00121}}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{classPath_aff1233c49ba67722430eebc37eb4f31a}{Path::build\_function\_name}}()\{}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00122}00122\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classPath_aa9be149ff40e69c853f590325aee9e11}{is\_empty}}())\{}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00123}00123\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00124}00124\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00125}00125\ \ \ \ \ \textcolor{keywordtype}{string}\ function\_name\ =\ tokens.back();}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00126}00126\ \ \ \ \ function\_name\ =\ remove\_extension(function\_name);}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00127}00127\ \ \ \ \ \textcolor{keywordflow}{return}\ function\_name;}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00128}00128\ \}}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00129}00129\ }
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00130}\mbox{\hyperlink{classPath_ae1a0fe75eefcf9d2e2e0cfcfb948e314}{00130}}\ vector<string>\ \mbox{\hyperlink{classPath_ae1a0fe75eefcf9d2e2e0cfcfb948e314}{Path::get\_common\_folders}}(\mbox{\hyperlink{classPath_af26cfab021ddf49af73da3b2beca85ac}{Path}}\ path)\{}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00131}00131\ \ \ \ \ vector<string>\ tokens\_relative\_1\ =\ get\_tokens\_from\_relative\_path();}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00132}00132\ \ \ \ \ vector<string>\ tokens\_relative\_2\ =\ path.get\_tokens\_from\_relative\_path();}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00133}00133\ \ \ \ \ \textcolor{keywordtype}{int}\ minimum\_size\_tokens\ =\ min(tokens\_relative\_1.size(),tokens\_relative\_2.size());}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00134}00134\ \ \ \ \ vector<string>\ common\_folders;}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00135}00135\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ minimum\_size\_tokens;\ i++)\{}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00136}00136\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ token\_1\ =\ tokens\_relative\_1[i];}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00137}00137\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ token\_2\ =\ tokens\_relative\_2[i];}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00138}00138\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(token\_1\ ==\ token\_2)\{}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ common\_folders.push\_back(token\_1);}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00140}00140\ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00142}00142\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00143}00143\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00144}00144\ \ \ \ \ \textcolor{keywordflow}{return}\ common\_folders;}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00145}00145\ \}}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00146}00146\ }
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00147}\mbox{\hyperlink{classPath_a95754559f4dd407c3b2d793fd0c4aca4}{00147}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classPath_a95754559f4dd407c3b2d793fd0c4aca4}{Path::operator<}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classPath_af26cfab021ddf49af73da3b2beca85ac}{Path}}\ \&path)\textcolor{keyword}{\ const}\{}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00148}00148\ \ \ \ \ \textcolor{keywordflow}{return}\ tokens\ <\ path.tokens;}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00149}00149\ \}}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00150}00150\ }
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00151}\mbox{\hyperlink{classPath_a32d5892f7332c1d61bf223d43f39f882}{00151}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classPath_a32d5892f7332c1d61bf223d43f39f882}{Path::contains\_given\_pattern}}(\textcolor{keywordtype}{string}\ pattern)\{}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00152}00152\ \ \ \ \ \textcolor{keywordtype}{string}\ relative\_path\_plus\_function\_name\ =\ \mbox{\hyperlink{classPath_a7c2bce76d5bea7271c6661a566353b84}{build\_relative\_path}}()\ +\ BAR\ +\ \mbox{\hyperlink{classPath_aff1233c49ba67722430eebc37eb4f31a}{build\_function\_name}}();}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00153}00153\ \ \ \ \ \textcolor{keywordflow}{return}\ relative\_path\_plus\_function\_name.find(pattern)\ !=\ string::npos;}
+\DoxyCodeLine{\Hypertarget{path_8cpp_source_l00154}00154\ \}}
+
+\end{DoxyCode}

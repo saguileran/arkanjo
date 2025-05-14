@@ -1,0 +1,148 @@
+\doxysection{Similarity\+\_\+\+Table Class Reference}
+\hypertarget{classSimilarity__Table}{}\label{classSimilarity__Table}\index{Similarity\_Table@{Similarity\_Table}}
+
+
+{\ttfamily \#include $<$similarity\+\_\+table.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSimilarity__Table_a2a4703c08a255444950055041905ab9d}{Similarity\+\_\+\+Table}} (double \+\_\+similarity\+\_\+threshold)
+\item 
+\mbox{\hyperlink{classSimilarity__Table_aa2b6b79ada7c70429b678e6570a54c34}{Similarity\+\_\+\+Table}} ()
+\item 
+void \mbox{\hyperlink{classSimilarity__Table_a35f8cb1b8c488a81d0011795c3e26256}{update\+\_\+similarity}} (double new\+\_\+similarity\+\_\+threshold)
+\item 
+double \mbox{\hyperlink{classSimilarity__Table_ac5060fd7468ab450ee43f3b753e5bd54}{get\+\_\+similarity}} (\mbox{\hyperlink{classPath}{Path}} path1, \mbox{\hyperlink{classPath}{Path}} path2)
+\item 
+double \mbox{\hyperlink{classSimilarity__Table_a7744d1810571f17a88cd94bcc200a73f}{is\+\_\+similar}} (\mbox{\hyperlink{classPath}{Path}} path1, \mbox{\hyperlink{classPath}{Path}} path2)
+\item 
+vector$<$ \mbox{\hyperlink{classPath}{Path}} $>$ \mbox{\hyperlink{classSimilarity__Table_a439b3abde9580321bbdfcd781074ed02}{get\+\_\+path\+\_\+list}} ()
+\item 
+vector$<$ \mbox{\hyperlink{classPath}{Path}} $>$ \mbox{\hyperlink{classSimilarity__Table_a6b6ed8039345bf944b987140ddb9ab41}{get\+\_\+similar\+\_\+path\+\_\+to\+\_\+the\+\_\+reference}} (\mbox{\hyperlink{classPath}{Path}} reference)
+\item 
+vector$<$ tuple$<$ double, \mbox{\hyperlink{classPath}{Path}}, \mbox{\hyperlink{classPath}{Path}} $>$ $>$ \mbox{\hyperlink{classSimilarity__Table_a774e4001d75a5d128f428941622a4868}{get\+\_\+all\+\_\+path\+\_\+pairs\+\_\+and\+\_\+similarity\+\_\+sorted\+\_\+by\+\_\+similarity}} ()
+\item 
+vector$<$ pair$<$ \mbox{\hyperlink{classPath}{Path}}, \mbox{\hyperlink{classPath}{Path}} $>$ $>$ \mbox{\hyperlink{classSimilarity__Table_ade181f191adb4a2cbbbf0d2dfd8f54c7}{get\+\_\+all\+\_\+similar\+\_\+path\+\_\+pairs\+\_\+sorted\+\_\+by\+\_\+similarity}} ()
+\item 
+vector$<$ pair$<$ \mbox{\hyperlink{classPath}{Path}}, \mbox{\hyperlink{classPath}{Path}} $>$ $>$ \mbox{\hyperlink{classSimilarity__Table_a1ca3f6a266dff65fecef8ea40e74ab48}{get\+\_\+all\+\_\+similar\+\_\+path\+\_\+pairs\+\_\+sorted\+\_\+by\+\_\+line\+\_\+number}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{similarity__table_8hpp_source_l00015}{15}} of file \mbox{\hyperlink{similarity__table_8hpp_source}{similarity\+\_\+table.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classSimilarity__Table_a2a4703c08a255444950055041905ab9d}\index{Similarity\_Table@{Similarity\_Table}!Similarity\_Table@{Similarity\_Table}}
+\index{Similarity\_Table@{Similarity\_Table}!Similarity\_Table@{Similarity\_Table}}
+\doxysubsubsection{\texorpdfstring{Similarity\_Table()}{Similarity\_Table()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classSimilarity__Table_a2a4703c08a255444950055041905ab9d} 
+Similarity\+\_\+\+Table\+::\+Similarity\+\_\+\+Table (\begin{DoxyParamCaption}\item[{double}]{\+\_\+similarity\+\_\+threshold}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{similarity__table_8cpp_source_l00048}{48}} of file \mbox{\hyperlink{similarity__table_8cpp_source}{similarity\+\_\+table.\+cpp}}.
+
+\Hypertarget{classSimilarity__Table_aa2b6b79ada7c70429b678e6570a54c34}\index{Similarity\_Table@{Similarity\_Table}!Similarity\_Table@{Similarity\_Table}}
+\index{Similarity\_Table@{Similarity\_Table}!Similarity\_Table@{Similarity\_Table}}
+\doxysubsubsection{\texorpdfstring{Similarity\_Table()}{Similarity\_Table()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classSimilarity__Table_aa2b6b79ada7c70429b678e6570a54c34} 
+Similarity\+\_\+\+Table\+::\+Similarity\+\_\+\+Table (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{similarity__table_8cpp_source_l00053}{53}} of file \mbox{\hyperlink{similarity__table_8cpp_source}{similarity\+\_\+table.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classSimilarity__Table_a774e4001d75a5d128f428941622a4868}\index{Similarity\_Table@{Similarity\_Table}!get\_all\_path\_pairs\_and\_similarity\_sorted\_by\_similarity@{get\_all\_path\_pairs\_and\_similarity\_sorted\_by\_similarity}}
+\index{get\_all\_path\_pairs\_and\_similarity\_sorted\_by\_similarity@{get\_all\_path\_pairs\_and\_similarity\_sorted\_by\_similarity}!Similarity\_Table@{Similarity\_Table}}
+\doxysubsubsection{\texorpdfstring{get\_all\_path\_pairs\_and\_similarity\_sorted\_by\_similarity()}{get\_all\_path\_pairs\_and\_similarity\_sorted\_by\_similarity()}}
+{\footnotesize\ttfamily \label{classSimilarity__Table_a774e4001d75a5d128f428941622a4868} 
+vector$<$ tuple$<$ double, \mbox{\hyperlink{classPath}{Path}}, \mbox{\hyperlink{classPath}{Path}} $>$ $>$ Similarity\+\_\+\+Table\+::get\+\_\+all\+\_\+path\+\_\+pairs\+\_\+and\+\_\+similarity\+\_\+sorted\+\_\+by\+\_\+similarity (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{similarity__table_8cpp_source_l00103}{103}} of file \mbox{\hyperlink{similarity__table_8cpp_source}{similarity\+\_\+table.\+cpp}}.
+
+\Hypertarget{classSimilarity__Table_a1ca3f6a266dff65fecef8ea40e74ab48}\index{Similarity\_Table@{Similarity\_Table}!get\_all\_similar\_path\_pairs\_sorted\_by\_line\_number@{get\_all\_similar\_path\_pairs\_sorted\_by\_line\_number}}
+\index{get\_all\_similar\_path\_pairs\_sorted\_by\_line\_number@{get\_all\_similar\_path\_pairs\_sorted\_by\_line\_number}!Similarity\_Table@{Similarity\_Table}}
+\doxysubsubsection{\texorpdfstring{get\_all\_similar\_path\_pairs\_sorted\_by\_line\_number()}{get\_all\_similar\_path\_pairs\_sorted\_by\_line\_number()}}
+{\footnotesize\ttfamily \label{classSimilarity__Table_a1ca3f6a266dff65fecef8ea40e74ab48} 
+vector$<$ pair$<$ \mbox{\hyperlink{classPath}{Path}}, \mbox{\hyperlink{classPath}{Path}} $>$ $>$ Similarity\+\_\+\+Table\+::get\+\_\+all\+\_\+similar\+\_\+path\+\_\+pairs\+\_\+sorted\+\_\+by\+\_\+line\+\_\+number (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{similarity__table_8cpp_source_l00144}{144}} of file \mbox{\hyperlink{similarity__table_8cpp_source}{similarity\+\_\+table.\+cpp}}.
+
+\Hypertarget{classSimilarity__Table_ade181f191adb4a2cbbbf0d2dfd8f54c7}\index{Similarity\_Table@{Similarity\_Table}!get\_all\_similar\_path\_pairs\_sorted\_by\_similarity@{get\_all\_similar\_path\_pairs\_sorted\_by\_similarity}}
+\index{get\_all\_similar\_path\_pairs\_sorted\_by\_similarity@{get\_all\_similar\_path\_pairs\_sorted\_by\_similarity}!Similarity\_Table@{Similarity\_Table}}
+\doxysubsubsection{\texorpdfstring{get\_all\_similar\_path\_pairs\_sorted\_by\_similarity()}{get\_all\_similar\_path\_pairs\_sorted\_by\_similarity()}}
+{\footnotesize\ttfamily \label{classSimilarity__Table_ade181f191adb4a2cbbbf0d2dfd8f54c7} 
+vector$<$ pair$<$ \mbox{\hyperlink{classPath}{Path}}, \mbox{\hyperlink{classPath}{Path}} $>$ $>$ Similarity\+\_\+\+Table\+::get\+\_\+all\+\_\+similar\+\_\+path\+\_\+pairs\+\_\+sorted\+\_\+by\+\_\+similarity (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{similarity__table_8cpp_source_l00116}{116}} of file \mbox{\hyperlink{similarity__table_8cpp_source}{similarity\+\_\+table.\+cpp}}.
+
+\Hypertarget{classSimilarity__Table_a439b3abde9580321bbdfcd781074ed02}\index{Similarity\_Table@{Similarity\_Table}!get\_path\_list@{get\_path\_list}}
+\index{get\_path\_list@{get\_path\_list}!Similarity\_Table@{Similarity\_Table}}
+\doxysubsubsection{\texorpdfstring{get\_path\_list()}{get\_path\_list()}}
+{\footnotesize\ttfamily \label{classSimilarity__Table_a439b3abde9580321bbdfcd781074ed02} 
+vector$<$ \mbox{\hyperlink{classPath}{Path}} $>$ Similarity\+\_\+\+Table\+::get\+\_\+path\+\_\+list (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{similarity__table_8cpp_source_l00088}{88}} of file \mbox{\hyperlink{similarity__table_8cpp_source}{similarity\+\_\+table.\+cpp}}.
+
+\Hypertarget{classSimilarity__Table_a6b6ed8039345bf944b987140ddb9ab41}\index{Similarity\_Table@{Similarity\_Table}!get\_similar\_path\_to\_the\_reference@{get\_similar\_path\_to\_the\_reference}}
+\index{get\_similar\_path\_to\_the\_reference@{get\_similar\_path\_to\_the\_reference}!Similarity\_Table@{Similarity\_Table}}
+\doxysubsubsection{\texorpdfstring{get\_similar\_path\_to\_the\_reference()}{get\_similar\_path\_to\_the\_reference()}}
+{\footnotesize\ttfamily \label{classSimilarity__Table_a6b6ed8039345bf944b987140ddb9ab41} 
+vector$<$ \mbox{\hyperlink{classPath}{Path}} $>$ Similarity\+\_\+\+Table\+::get\+\_\+similar\+\_\+path\+\_\+to\+\_\+the\+\_\+reference (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPath}{Path}}}]{reference}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{similarity__table_8cpp_source_l00092}{92}} of file \mbox{\hyperlink{similarity__table_8cpp_source}{similarity\+\_\+table.\+cpp}}.
+
+\Hypertarget{classSimilarity__Table_ac5060fd7468ab450ee43f3b753e5bd54}\index{Similarity\_Table@{Similarity\_Table}!get\_similarity@{get\_similarity}}
+\index{get\_similarity@{get\_similarity}!Similarity\_Table@{Similarity\_Table}}
+\doxysubsubsection{\texorpdfstring{get\_similarity()}{get\_similarity()}}
+{\footnotesize\ttfamily \label{classSimilarity__Table_ac5060fd7468ab450ee43f3b753e5bd54} 
+double Similarity\+\_\+\+Table\+::get\+\_\+similarity (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPath}{Path}}}]{path1}{, }\item[{\mbox{\hyperlink{classPath}{Path}}}]{path2}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{similarity__table_8cpp_source_l00062}{62}} of file \mbox{\hyperlink{similarity__table_8cpp_source}{similarity\+\_\+table.\+cpp}}.
+
+\Hypertarget{classSimilarity__Table_a7744d1810571f17a88cd94bcc200a73f}\index{Similarity\_Table@{Similarity\_Table}!is\_similar@{is\_similar}}
+\index{is\_similar@{is\_similar}!Similarity\_Table@{Similarity\_Table}}
+\doxysubsubsection{\texorpdfstring{is\_similar()}{is\_similar()}}
+{\footnotesize\ttfamily \label{classSimilarity__Table_a7744d1810571f17a88cd94bcc200a73f} 
+double Similarity\+\_\+\+Table\+::is\+\_\+similar (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPath}{Path}}}]{path1}{, }\item[{\mbox{\hyperlink{classPath}{Path}}}]{path2}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{similarity__table_8cpp_source_l00083}{83}} of file \mbox{\hyperlink{similarity__table_8cpp_source}{similarity\+\_\+table.\+cpp}}.
+
+\Hypertarget{classSimilarity__Table_a35f8cb1b8c488a81d0011795c3e26256}\index{Similarity\_Table@{Similarity\_Table}!update\_similarity@{update\_similarity}}
+\index{update\_similarity@{update\_similarity}!Similarity\_Table@{Similarity\_Table}}
+\doxysubsubsection{\texorpdfstring{update\_similarity()}{update\_similarity()}}
+{\footnotesize\ttfamily \label{classSimilarity__Table_a35f8cb1b8c488a81d0011795c3e26256} 
+void Similarity\+\_\+\+Table\+::update\+\_\+similarity (\begin{DoxyParamCaption}\item[{double}]{new\+\_\+similarity\+\_\+threshold}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{similarity__table_8cpp_source_l00058}{58}} of file \mbox{\hyperlink{similarity__table_8cpp_source}{similarity\+\_\+table.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+arkanjo/base/\mbox{\hyperlink{similarity__table_8hpp}{similarity\+\_\+table.\+hpp}}\item 
+arkanjo/base/\mbox{\hyperlink{similarity__table_8cpp}{similarity\+\_\+table.\+cpp}}\end{DoxyCompactItemize}
