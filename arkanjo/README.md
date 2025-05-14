@@ -142,4 +142,3 @@ To execute the relatory commands, execute:
 ```
 ./exec du
 ```
-
