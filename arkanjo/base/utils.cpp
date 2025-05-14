@@ -1,4 +1,3 @@
-
 #include "utils.hpp"
 
 #ifdef _WIN32
@@ -6,9 +5,18 @@
 #elif __linux__
     #include "linux_utils.hpp"
 #elif __APPLE__
-		#include "apple_utils.hpp" 
+    #include "apple_utils.hpp" 
 #endif
 
+/**
+ * @brief Ensures that a file stream is successfully opened
+ * 
+ * @param file Reference to the input file stream to check
+ * @param file_name Name/path of the file being opened (for error message)
+ * @throws Exits the program if file is not open
+ * 
+ * @note This function will terminate the program if the file is not open
+ */
 void Utils::ensure_file_is_open(std::ifstream &file, string file_name){
 	if(!file.is_open()){
 		cout << "Attempted to open file: " << file_name << " ";
@@ -17,6 +25,13 @@ void Utils::ensure_file_is_open(std::ifstream &file, string file_name){
 	}
 }
 
+/**
+ * @brief Reads a file line by line into a vector of strings
+ * 
+ * @param string_path Path to the file to read
+ * @return vector<string> Contents of the file as a vector of strings (one per line)
+ * @throws Exits program if file cannot be opened (via ensure_file_is_open)
+ */
 vector<string> Utils::read_file_generic(string string_path){
 	std::ifstream filein;
 	string line;
@@ -30,6 +45,14 @@ vector<string> Utils::read_file_generic(string string_path){
 	return ret;
 }
 
+/**
+ * @brief Writes content to a file at specified path
+ * 
+ * @param file_path Path where file should be written
+ * @param content Vector of strings to write (each element becomes a line)
+ * 
+ * @note Creates parent directories if they don't exist
+ */
 void Utils::write_file_generic(string file_path, vector<string> content){
 	std::ofstream fileout;
 	create_parents_folder_of_file_path(file_path);
@@ -41,6 +64,13 @@ void Utils::write_file_generic(string file_path, vector<string> content){
 	fileout.close();
 }
 
+/**
+ * @brief Creates all parent directories for a given file path
+ * 
+ * @param file_path The full file path for which to create parent directories
+ * 
+ * @note Handles paths with '/' separators. Creates each directory in the path.
+ */
 void Utils::create_parents_folder_of_file_path(string file_path){
 	vector<string> parents;
 	for(size_t i = 0; i < file_path.size(); i++){
@@ -58,6 +88,13 @@ void Utils::create_parents_folder_of_file_path(string file_path){
 	}
 }
 
+/**
+ * @brief Reads and parses a JSON file
+ * 
+ * @param string_path Path to the JSON file
+ * @return Json::Value Parsed JSON content
+ * @throws Exits program if file cannot be opened (via ensure_file_is_open)
+ */
 Json::Value Utils::read_json(string string_path){
 	ifstream json_file(string_path,std::ifstream::binary);
 	ensure_file_is_open(json_file,string_path);
@@ -67,6 +104,12 @@ Json::Value Utils::read_json(string string_path){
 	return json;
 }
 
+/**
+ * @brief Checks if a file exists at the given path
+ * 
+ * @param file_path Path to check
+ * @return bool True if file exists and is accessible, false otherwise
+ */
 bool Utils::does_file_exist(string file_path){
 	if (FILE *file = fopen(file_path.c_str(), "r")) {
 		fclose(file);
@@ -76,6 +119,12 @@ bool Utils::does_file_exist(string file_path){
 	} 	
 }
 
+/**
+ * @brief Determines if a path refers to a regular file
+ * 
+ * @param path Path to check
+ * @return bool True if path is a regular file, false otherwise
+ */
 bool Utils::is_regular_file(string path){
 	struct stat path_stat;
 	auto path_c_str = path.c_str();
@@ -83,6 +132,15 @@ bool Utils::is_regular_file(string path){
 	return S_ISREG(path_stat.st_mode);
 }
 
+/**
+ * @brief Formats a message with ANSI color codes based on background darkness
+ * 
+ * @param message Text to colorize
+ * @param color Color to apply
+ * @return string Colorized message with reset code at the end
+ * 
+ * @note Automatically selects light or dark color variants based on background
+ */
 string Utils::format_colored_message(string message, COLOR color){
 	if (UtilsOSDependable::is_bg_color_dark()){
 		return COLOR_TOKENS_UTILS_LIGTH[color] + message + COLOR_TOKENS_UTILS_LIGTH[RESET];
@@ -92,6 +150,12 @@ string Utils::format_colored_message(string message, COLOR color){
 	}
 }
 
+/**
+ * @brief Checks if a character is considered empty/whitespace
+ * 
+ * @param c Character to check
+ * @return bool True if character is space or control character (<= 20), false otherwise
+ */
 bool Utils::is_empty_char(char c){
 	if(c == ' '){
 		return true;
@@ -102,6 +166,12 @@ bool Utils::is_empty_char(char c){
 	return false;
 }
 
+/**
+ * @brief Checks if a character is special (non-alphanumeric and not underscore)
+ * 
+ * @param c Character to check
+ * @return bool True if character is special, false if alphanumeric or underscore
+ */
 bool Utils::is_special_char(char c){
 	if(c >= 'a' && c <= 'z'){
 		return false;
@@ -118,6 +188,13 @@ bool Utils::is_special_char(char c){
 	return true;
 }
 
+/**
+ * @brief Splits a string by a delimiter into tokens
+ * 
+ * @param s String to split
+ * @param delimiter Character to split on
+ * @return vector<string> Vector of tokens (empty tokens are omitted)
+ */
 vector<string> Utils::split_string(string s, char delimiter){
 	string cur_token;
 	vector<string> ret;
@@ -136,4 +213,3 @@ vector<string> Utils::split_string(string s, char delimiter){
 	}
 	return ret;
 }
-
