@@ -1,4 +1,4 @@
-\page arkanjo_readme Arkanjo Module Documentation
+\page arkanjo_readme Arkanjo Module
 
 The arkanjo is a cli tool is designed to help developers find code duplications in their codebases.
 The tool is designed to find duplication in the scope of functions.
