@@ -9,12 +9,11 @@ var searchData=
   ['duplicate_5fcode_5fdetection_6',['duplicate_code_detection',['../namespaceduplicate__code__detection.html',1,'']]],
   ['duplicate_5fcode_5fdetection_2epy_7',['duplicate_code_detection.py',['../duplicate__code__detection_8py.html',1,'']]],
   ['duplicates_8',['Find function duplicates',['../arkanjo_readme.html#autotoc_md8',1,'']]],
-  ['duplication_20code_9',['Test Duplication Code',['../master_artifacts_readme.html#autotoc_md30',1,'']]],
-  ['duplication_5ffinder_5fdiff_2ecpp_10',['duplication_finder_diff.cpp',['../duplication__finder__diff_8cpp.html',1,'']]],
-  ['duplication_5ffinder_5fdiff_2ehpp_11',['duplication_finder_diff.hpp',['../duplication__finder__diff_8hpp.html',1,'']]],
-  ['duplication_5ffinder_5ftool_2ecpp_12',['duplication_finder_tool.cpp',['../duplication__finder__tool_8cpp.html',1,'']]],
-  ['duplication_5ffinder_5ftool_2ehpp_13',['duplication_finder_tool.hpp',['../duplication__finder__tool_8hpp.html',1,'']]],
-  ['duplicationfinderdiff_14',['DuplicationFinderDiff',['../classDuplicationFinderDiff.html',1,'DuplicationFinderDiff'],['../classDuplicationFinderDiff.html#afd6fa48bf8650e3d66ed92f6f1194975',1,'DuplicationFinderDiff::DuplicationFinderDiff()']]],
-  ['duplicationfindertool_15',['DuplicationFinderTool',['../classDuplicationFinderTool.html',1,'DuplicationFinderTool'],['../classDuplicationFinderTool.html#a51ccfae6f59662e833c2909540de8e53',1,'DuplicationFinderTool::DuplicationFinderTool()']]],
-  ['duplications_16',['Explore duplications',['../arkanjo_readme.html#autotoc_md7',1,'']]]
+  ['duplication_5ffinder_5fdiff_2ecpp_9',['duplication_finder_diff.cpp',['../duplication__finder__diff_8cpp.html',1,'']]],
+  ['duplication_5ffinder_5fdiff_2ehpp_10',['duplication_finder_diff.hpp',['../duplication__finder__diff_8hpp.html',1,'']]],
+  ['duplication_5ffinder_5ftool_2ecpp_11',['duplication_finder_tool.cpp',['../duplication__finder__tool_8cpp.html',1,'']]],
+  ['duplication_5ffinder_5ftool_2ehpp_12',['duplication_finder_tool.hpp',['../duplication__finder__tool_8hpp.html',1,'']]],
+  ['duplicationfinderdiff_13',['DuplicationFinderDiff',['../classDuplicationFinderDiff.html',1,'DuplicationFinderDiff'],['../classDuplicationFinderDiff.html#afd6fa48bf8650e3d66ed92f6f1194975',1,'DuplicationFinderDiff::DuplicationFinderDiff()']]],
+  ['duplicationfindertool_14',['DuplicationFinderTool',['../classDuplicationFinderTool.html',1,'DuplicationFinderTool'],['../classDuplicationFinderTool.html#a51ccfae6f59662e833c2909540de8e53',1,'DuplicationFinderTool::DuplicationFinderTool()']]],
+  ['duplications_15',['Explore duplications',['../arkanjo_readme.html#autotoc_md7',1,'']]]
 ];

@@ -6,7 +6,7 @@ var searchData=
   ['package_5fdir_3',['package_dir',['../namespacesetup.html#afd7273d426fd6e1796ec17175f6521c3',1,'setup']]],
   ['pair_20of_20files_20that_20the_20similarity_20is_20greater_20or_20equal_20to_20a_20given_20value_3a_4',['finds the quantity and all pair of files that the similarity is greater or equal to a given value:',['..//github/workspace/master_artifacts/file_parser/README.md#autotoc_md28',1,'']]],
   ['parse_5fterminal_5fcolor_5fresponse_5',['parse_terminal_color_response',['../namespaceUtilsOSDependable.html#a974ef162d7d2726649ea37db8594558d',1,'UtilsOSDependable::parse_terminal_color_response(const string &amp;response)'],['../namespaceUtilsOSDependable.html#a73ce8621f643db388f85ddefa2dbb361',1,'UtilsOSDependable::parse_terminal_color_response()']]],
-  ['parser_6',['Parser',['../master_artifacts_readme.html#autotoc_md31',1,'About Parser'],['../classParser.html',1,'Parser'],['../classParser.html#ae1372e72f0f323dbfb13526a0f194f4c',1,'Parser::Parser()']]],
+  ['parser_6',['Parser',['..//github/workspace/master_artifacts/README.md#autotoc_md31',1,'About Parser'],['../classParser.html',1,'Parser'],['../classParser.html#ae1372e72f0f323dbfb13526a0f194f4c',1,'Parser::Parser()']]],
   ['parser_7',['parser',['../master__artifacts_2file__parser_2parser_8cpp.html#ac15f7c36f6055edec43d0f0f611c4dc0',1,'parser.cpp']]],
   ['parser_2ecpp_8',['parser.cpp',['../arkanjo_2pre_2parser_8cpp.html',1,'(Global Namespace)'],['../master__artifacts_2file__parser_2parser_8cpp.html',1,'(Global Namespace)']]],
   ['parser_2ehpp_9',['parser.hpp',['../parser_8hpp.html',1,'']]],
