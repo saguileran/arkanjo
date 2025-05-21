@@ -2573,14 +2573,14 @@ const vector<string> Utils::COLOR_TOKENS_UTILS_DARK}}
 \par
 \pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid = \{\par
             {\cf22 "\\033[0m"},    \par
-            {\cf22 "\\033[31;2m"}, \par
-            {\cf22 "\\033[32;2m"}, \par
-            {\cf22 "\\033[33;2m"}, \par
-            {\cf22 "\\033[34;2m"}, \par
-            {\cf22 "\\033[35;2m"}, \par
-            {\cf22 "\\033[36;2m"}, \par
-            {\cf22 "\\033[37;2m"}, \par
-            {\cf22 "\\033[30m"},   \par
+            {\cf22 "\\033[31m"},   \par
+            {\cf22 "\\033[32m"},   \par
+            {\cf22 "\\033[33m"},   \par
+            {\cf22 "\\033[34m"},   \par
+            {\cf22 "\\033[35m"},   \par
+            {\cf22 "\\033[36m"},   \par
+            {\cf22 "\\033[37m"},   \par
+            {\cf22 "\\033[97m"},   \par
             {\cf22 "\\033[33m"},   \par
             {\cf22 "\\033[97m"}    \par
         \}\par
@@ -2629,17 +2629,17 @@ const vector<string> Utils::COLOR_TOKENS_UTILS_LIGTH}}
 {\b Initial value:}{
 \par
 \pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid = \{\par
-            {\cf22 "\\033[0m"},    \par
-            {\cf22 "\\033[31m"},   \par
-            {\cf22 "\\033[32m"},   \par
-            {\cf22 "\\033[33m"},   \par
-            {\cf22 "\\033[34m"},   \par
-            {\cf22 "\\033[35m"},   \par
-            {\cf22 "\\033[36m"},   \par
-            {\cf22 "\\033[37m"},   \par
-            {\cf22 "\\033[97m"},   \par
-            {\cf22 "\\033[33;1m"}, \par
-            {\cf22 "\\033[30m"},   \par
+            {\cf22 "\\033[0m"},      \par
+            {\cf22 "\\033[31;2m"},   \par
+            {\cf22 "\\033[32;2m"},   \par
+            {\cf22 "\\033[33;2m"},   \par
+            {\cf22 "\\033[34;2m"},   \par
+            {\cf22 "\\033[35;2m"},   \par
+            {\cf22 "\\033[36;2m"},   \par
+            {\cf22 "\\033[37;2m"},   \par
+            {\cf22 "\\033[30;2mm"},  \par
+            {\cf22 "\\033[33;2m"},   \par
+            {\cf22 "\\033[30m"},     \par
         \}\par
 }
 {
@@ -2888,7 +2888,7 @@ Note\par}\pard\plain \s82\li720\widctlpar\ql\adjustright \fs20\cgrid {\s17 \sa60
 Uses {\b get_terminal_bg_color_luminance()} internally \par
 Defaults to true (dark) if unable to determine color \par
 }}}{
-Definition at line {\b 88} of file {\b linux_utils.cpp}.}\par
+Definition at line {\b 89} of file {\b linux_utils.cpp}.}\par
 }
 {\xe \v parse_terminal_color_response\:UtilsOSDependable}
 {\xe \v UtilsOSDependable\:parse_terminal_color_response}
@@ -7189,13 +7189,14 @@ Go to the documentation of this file.\par
 00081 \par
 00082   {\cf18 string} color_str = capture_terminal_response();\par
 00083   {\cf17 auto} [r, g, b] = parse_terminal_color_response(color_str);\par
-00084   \par
-00085   {\cf19 return} 0.2126 * (r/255) + 0.7152 * (g/255) + 0.0722 * (b/255);\par
-00086 \}\par
-00087 \par
-00088 {\cf18 bool} UtilsOSDependable::is_bg_color_dark()\{\par
-00089     {\cf19 return} get_terminal_bg_color_luminance() <= 0.5;\par
-00090 \}\par
+00084   {\cf18 float} luminance = 0.2126 * (r / 255.0) + 0.7152 * (g / 255.0) + 0.0722 * (b / 255.0);\par
+00085   \par
+00086   {\cf19 return} luminance;\par
+00087 \}\par
+00088 \par
+00089 {\cf18 bool} UtilsOSDependable::is_bg_color_dark()\{\par
+00090     {\cf19 return} get_terminal_bg_color_luminance() <= 0.5;\par
+00091 \}\par
 }
 \par \pard\plain 
 
@@ -8099,10 +8100,10 @@ Go to the documentation of this file.\par
 00084 \par
 00085 {\cf18 string} Utils::format_colored_message({\cf18 string} message, COLOR color)\{\par
 00086     {\cf19 if} (UtilsOSDependable::is_bg_color_dark())\{\par
-00087         {\cf19 return} COLOR_TOKENS_UTILS_LIGTH[color] + message + COLOR_TOKENS_UTILS_LIGTH[RESET];\par
+00087         {\cf19 return} COLOR_TOKENS_UTILS_DARK[color] + message + COLOR_TOKENS_UTILS_DARK[RESET];\par
 00088     \}\par
 00089     {\cf19 else}\{\par
-00090         {\cf19 return} COLOR_TOKENS_UTILS_DARK[color] + message + COLOR_TOKENS_UTILS_DARK[RESET];\par
+00090         {\cf19 return} COLOR_TOKENS_UTILS_LIGTH[color] + message + COLOR_TOKENS_UTILS_LIGTH[RESET];\par
 00091     \}\par
 00092 \}\par
 00093 \par
@@ -8375,30 +8376,30 @@ Go to the documentation of this file.\par
 00029         {\cf17 const} {\cf18 int} MKDIR_FLAG = 0700;\par
 00030 \par
 00047         {\cf17 const} vector<string> COLOR_TOKENS_UTILS_LIGTH = \{\par
-00048             {\cf22 "\\033[0m"},    {\cf20 //RESET}\par
-00049             {\cf22 "\\033[31m"},   {\cf20 //RED}\par
-00050             {\cf22 "\\033[32m"},   {\cf20 //GREEN}\par
-00051             {\cf22 "\\033[33m"},   {\cf20 //YELLOW}\par
-00052             {\cf22 "\\033[34m"},   {\cf20 //BLUE}\par
-00053             {\cf22 "\\033[35m"},   {\cf20 //MAGENTA}\par
-00054             {\cf22 "\\033[36m"},   {\cf20 //CYAN}\par
-00055             {\cf22 "\\033[37m"},   {\cf20 //GRAY}\par
-00056             {\cf22 "\\033[97m"},   {\cf20 //WHITE}\par
-00057             {\cf22 "\\033[33;1m"}, {\cf20 //BRIGHT_YELLOW}\par
-00058             {\cf22 "\\033[30m"},   {\cf20 //BLACK}\par
+00048             {\cf22 "\\033[0m"},      {\cf20 // RESET}\par
+00049             {\cf22 "\\033[31;2m"},   {\cf20 // DARK_RED}\par
+00050             {\cf22 "\\033[32;2m"},   {\cf20 // DARK_GREEN}\par
+00051             {\cf22 "\\033[33;2m"},   {\cf20 // DARK_YELLOW}\par
+00052             {\cf22 "\\033[34;2m"},   {\cf20 // DARK_BLUE}\par
+00053             {\cf22 "\\033[35;2m"},   {\cf20 // DARK_MAGENTA}\par
+00054             {\cf22 "\\033[36;2m"},   {\cf20 // DARK_CYAN}\par
+00055             {\cf22 "\\033[37;2m"},   {\cf20 // DARK_GRAY}\par
+00056             {\cf22 "\\033[30;2mm"},  {\cf20 // BLACK}\par
+00057             {\cf22 "\\033[33;2m"},   {\cf20 // YELLOW}\par
+00058             {\cf22 "\\033[30m"},     {\cf20 // BLACK}\par
 00059         \};\par
 00060 \par
 00077         {\cf17 const} vector<string> COLOR_TOKENS_UTILS_DARK = \{\par
 00078             {\cf22 "\\033[0m"},    {\cf20 // RESET}\par
-00079             {\cf22 "\\033[31;2m"}, {\cf20 // DARK_RED}\par
-00080             {\cf22 "\\033[32;2m"}, {\cf20 // DARK_GREEN}\par
-00081             {\cf22 "\\033[33;2m"}, {\cf20 // DARK_YELLOW}\par
-00082             {\cf22 "\\033[34;2m"}, {\cf20 // DARK_BLUE}\par
-00083             {\cf22 "\\033[35;2m"}, {\cf20 // DARK_MAGENTA}\par
-00084             {\cf22 "\\033[36;2m"}, {\cf20 // DARK_CYAN}\par
-00085             {\cf22 "\\033[37;2m"}, {\cf20 // DARK_GRAY}\par
-00086             {\cf22 "\\033[30m"},   {\cf20 // BLACK}\par
-00087             {\cf22 "\\033[33m"},   {\cf20 // YELLOW}\par
+00079             {\cf22 "\\033[31m"},   {\cf20 // RED}\par
+00080             {\cf22 "\\033[32m"},   {\cf20 // GREEN}\par
+00081             {\cf22 "\\033[33m"},   {\cf20 // YELLOW}\par
+00082             {\cf22 "\\033[34m"},   {\cf20 // BLUE}\par
+00083             {\cf22 "\\033[35m"},   {\cf20 // MAGENTA}\par
+00084             {\cf22 "\\033[36m"},   {\cf20 // CYAN}\par
+00085             {\cf22 "\\033[37m"},   {\cf20 // GRAY}\par
+00086             {\cf22 "\\033[97m"},   {\cf20 // WHITE}\par
+00087             {\cf22 "\\033[33m"},   {\cf20 // BRIGHT_YELLOW}\par
 00088             {\cf22 "\\033[97m"}    {\cf20 // WHITE}\par
 00089         \};\par
 00090         \par
@@ -8558,14 +8559,16 @@ Go to the documentation of this file.\par
 00080 \par
 00081 {\cf18 float} UtilsOSDependable::get_terminal_bg_color_luminance()\{\par
 00082   {\cf17 auto} [r, g, b] = parse_terminal_color_response();\par
-00083   {\cf19 return} 0.2126 * (r/255) + 0.7152 * (g/255) + 0.0722 * (b/255);\par
-00084 \}\par
-00085 \par
-00086 {\cf18 bool} UtilsOSDependable::is_bg_color_dark()\{\par
-00087   {\cf19 return} get_terminal_bg_color_luminance() <= 0.5;\par
-00088 \}\par
-00089 \par
-00090 {\cf21 #endif}\par
+00083   {\cf18 float} luminance = 0.2126 * (r/255.0) + 0.7152 * (g/255.0) + 0.0722 * (b/255.0);\par
+00084 \par
+00085   {\cf19 return} luminance;\par
+00086 \}\par
+00087 \par
+00088 {\cf18 bool} UtilsOSDependable::is_bg_color_dark()\{\par
+00089   {\cf19 return} get_terminal_bg_color_luminance() <= 0.5;\par
+00090 \}\par
+00091 \par
+00092 {\cf21 #endif}\par
 }
 \par \pard\plain 
 
@@ -9363,7 +9366,7 @@ Go to the documentation of this file.\par
 00006 \par
 00007 Utils::COLOR Counter_Duplication_Code_Trie::choose_text_color()\{\par
 00008     number_printed_lines++;\par
-00009     Utils::COLOR ret = Utils::WHITE;\par
+00009     Utils::COLOR ret = Utils::BLACK;\par
 00010     {\cf19 if}(number_printed_lines%2 == 0)\{\par
 00011         ret = Utils::BLUE;\par
 00012     \}\par

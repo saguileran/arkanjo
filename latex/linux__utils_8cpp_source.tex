@@ -85,12 +85,13 @@
 \DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00081}00081\ }
 \DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00082}00082\ \ \ \textcolor{keywordtype}{string}\ color\_str\ =\ \mbox{\hyperlink{namespaceUtilsOSDependable_a4e245ddb29771bf9f2e3190c6182f06d}{capture\_terminal\_response}}();}
 \DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00083}00083\ \ \ \textcolor{keyword}{auto}\ [r,\ g,\ b]\ =\ \mbox{\hyperlink{namespaceUtilsOSDependable_a974ef162d7d2726649ea37db8594558d}{parse\_terminal\_color\_response}}(color\_str);}
-\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00084}00084\ \ \ }
-\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00085}00085\ \ \ \textcolor{keywordflow}{return}\ 0.2126\ *\ (r/255)\ +\ 0.7152\ *\ (g/255)\ +\ 0.0722\ *\ (b/255);}
-\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00086}00086\ \}}
-\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00087}00087\ }
-\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00088}\mbox{\hyperlink{namespaceUtilsOSDependable_a77d0b457dded74d7d1f901d333d25453}{00088}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceUtilsOSDependable_a77d0b457dded74d7d1f901d333d25453}{UtilsOSDependable::is\_bg\_color\_dark}}()\{}
-\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00089}00089\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceUtilsOSDependable_ae94000387658cfce3f629da04843784f}{get\_terminal\_bg\_color\_luminance}}()\ <=\ 0.5;}
-\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00090}00090\ \}}
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00084}00084\ \ \ \textcolor{keywordtype}{float}\ luminance\ =\ 0.2126\ *\ (r\ /\ 255.0)\ +\ 0.7152\ *\ (g\ /\ 255.0)\ +\ 0.0722\ *\ (b\ /\ 255.0);}
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00085}00085\ \ \ }
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00086}00086\ \ \ \textcolor{keywordflow}{return}\ luminance;}
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00087}00087\ \}}
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00089}\mbox{\hyperlink{namespaceUtilsOSDependable_a77d0b457dded74d7d1f901d333d25453}{00089}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceUtilsOSDependable_a77d0b457dded74d7d1f901d333d25453}{UtilsOSDependable::is\_bg\_color\_dark}}()\{}
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00090}00090\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceUtilsOSDependable_ae94000387658cfce3f629da04843784f}{get\_terminal\_bg\_color\_luminance}}()\ <=\ 0.5;}
+\DoxyCodeLine{\Hypertarget{linux__utils_8cpp_source_l00091}00091\ \}}
 
 \end{DoxyCode}
